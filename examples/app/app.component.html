@@ -1,0 +1,116 @@
+<h1>DevExtreme Angular 2 Components Usage Samples</h1>
+
+<div class="demo-container">
+    <h2>Bindings</h2>
+
+    <h3>Event handling</h3>
+    <dx-button text="Press me" (onClick)="helloWorld()"></dx-button>
+
+    <h3>Static option value</h3>
+    <dx-text-box value="I'm static text" valueChangeEvent="keyup"></dx-text-box>
+
+    <h3>One-way option binding</h3>
+    <dx-text-box [value]="text" valueChangeEvent="keyup"></dx-text-box>
+    
+    <h3>Two-way option binding</h3>
+    <dx-text-box [(value)]="text" valueChangeEvent="keyup"></dx-text-box>
+
+    <h2>Angular 2 Forms</h2>
+    <form  [ngFormModel]="form">
+        <div class="form-group">
+            
+            <label for="email">Email</label>
+            <dx-text-box [(ngModel)]="email" [isValid]="emailRef.valid || emailRef.pristine" [validationError]="{ message: 'Enter correct email' }" 
+                ngControl="emailControl" #emailRef="ngForm"></dx-text-box>
+
+            <label for="email">Password</label>
+            <dx-text-box [(ngModel)]="password" mode="password" [isValid]="passwordRef.valid || passwordRef.pristine" 
+                [validationError]="{ message: 'Password should be greater that six symbols' }" ngControl="passwordControl" #passwordRef="ngForm"></dx-text-box>
+                
+        </div><br/>
+        <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>
+    </form>
+
+    <h2>Editor Widgets</h2>
+    
+    <dx-button text="Simple button" (onClick)="boolValue=!boolValue"></dx-button><br/>
+    
+    <dx-check-box text="Lonely checkbox" [(value)]="boolValue"></dx-check-box><br/>
+    
+    <dx-switch [(value)]="boolValue"></dx-switch><br/>
+    
+    <dx-text-box placeholder="TextBox" [(value)]="text" valueChangeEvent="keyup"></dx-text-box>
+    
+    <dx-text-area placeholder="TextArea" [(value)]="text" valueChangeEvent="keyup"></dx-text-area>
+    
+    <dx-number-box placeholder="NumberBox" [showSpinButtons]="true" [(value)]="numberValue"></dx-number-box>
+    
+    <dx-date-box placeholder="DateBox" [(value)]="demoDate"></dx-date-box>
+    
+    <dx-progress-bar [(value)]="numberValue"></dx-progress-bar>
+    
+    <dx-slider [(value)]="numberValue"></dx-slider>
+    
+    <dx-range-slider [start]="15" [end]="75"></dx-range-slider>
+    
+    <dx-load-indicator [visible]="true"></dx-load-indicator>
+    
+    <dx-autocomplete placeholder="Autocomplete 'item'" [items]="demoItems"></dx-autocomplete>
+    
+    <dx-select-box placeholder="SelectBox" [items]="demoItems"></dx-select-box>
+    
+    <dx-tag-box placeholder="TagBox" [items]="demoItems"></dx-tag-box>
+    
+    <dx-radio-group [items]="demoItems"></dx-radio-group>
+    
+    <dx-color-box placeholder="ColorBox"></dx-color-box>
+    
+    <dx-calendar></dx-calendar>
+
+    <h2>Custom Templates</h2>
+
+    <h3>dxList</h3>
+
+    <dx-list [grouped]="true" style="height: 600px" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
+        <div *dxTemplate="let t = data of 'itemTemplate'">
+            {{t}}       
+            <dx-button class="float-right" text="Buy" (onClick)="buy(t)">
+                <div *dxTemplate="let b = data of 'template'">
+                    <span class="dx-button-text">{{b.text}}</span>
+                </div>
+            </dx-button>  
+        </div>
+        <div *dxTemplate="let g = data of 'groupTemplate'">
+            Group {{g.key}}
+        </div>
+    </dx-list>
+
+    <h3>dxPopup</h3>
+
+    <dx-popup [showTitle]="true" title="Demo of dxPopup" [(visible)]="popupVisible">
+        <div *dxTemplate="let t = data of 'contentTemplate'">
+            <div>Hello from dxPopup</div>
+        </div>
+    </dx-popup>
+
+    <dx-button text="Show Popup" (onClick)="popupVisible = !popupVisible"></dx-button>
+</div>
+
+<h2>dxChart</h2>
+
+<dx-chart class="full-width" [dataSource]="oranges" [series]="series"></dx-chart>
+
+<h2>dxDataGrid</h2>
+
+<dx-data-grid
+    [columns]='["CompanyName", "City", "State", "Phone", "Fax"]'
+    [dataSource]='customers'
+    [paging]='{
+        pageSize: 10
+    }'
+    [pager]= '{
+        showPageSizeSelector: true,
+        allowedPageSizes: [5, 10, 20],
+        showInfo: true
+    }'
+></dx-data-grid>
