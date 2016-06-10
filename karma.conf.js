@@ -19,7 +19,7 @@ module.exports = function(config) {
             'node_modules/zone.js/dist/async-test.js',
             'node_modules/zone.js/dist/fake-async-test.js',
                         
-            // RxJs.
+            // RxJs
             { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
             { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
@@ -29,10 +29,7 @@ module.exports = function(config) {
             
             // DevExtreme
             { pattern: 'node_modules/jquery/dist/jquery.js', included: true, watched: false},
-            
-            //{ pattern: 'node_modules/devextreme/js/dx.all.js', included: true, watched: false },
-            { pattern: 'node_modules/devextreme/js/dx.all.debug.js', included: true, watched: false },
-            
+            { pattern: 'node_modules/devextreme/dist/js/dx.all.debug.js', included: true, watched: false },
             { pattern: 'dist/**/*.js', included: false, watched: true },   
             
             // Karma config

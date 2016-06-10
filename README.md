@@ -42,8 +42,8 @@ npm install devextreme-angular2
 Modify the references in the index.html file as follows:
 
 ```html 
-    <link rel="stylesheet" type="text/css" href="../node_modules/devextreme/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="../node_modules/devextreme/css/dx.light.css" />
+    <link rel="stylesheet" type="text/css" href="../node_modules/devextreme/dist/css/dx.common.css" />
+    <link rel="stylesheet" type="text/css" href="../node_modules/devextreme/dist/css/dx.light.css" />
     
     <script src="../node_modules/core-js/client/shim.min.js"></script>
     <script src="../node_modules/zone.js/dist/zone.js"></script>
@@ -51,7 +51,7 @@ Modify the references in the index.html file as follows:
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
 
     <script src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../node_modules/devextreme/js/dx.all.js"></script>   
+    <script src="../node_modules/devextreme/dist/js/dx.all.js"></script>
     
     <script src="systemjs.config.js"></script>
 ```
