@@ -64,26 +64,6 @@ gulp.task("generate.facades", ['generate.components'], function() {
     generator.generate(buildConfig.tools.facadeGenerator);    
 });
 
-gulp.task('build.components.bundle', ['generate.components', 'generate.facades'], function() {
-    // var config = buildConfig.components;
-
-    // var tsProject = typescript.createProject(config.tsConfigPath, { 
-    //     typescript: tsc,
-    //     outFile: config.bundleName + ".js"
-    // });
-
-    // var tsResult = tsProject.src()
-    //     .pipe(sourcemaps.init())
-    //     .pipe(typescript(tsProject));
-
-    // return merge([
-    //     tsResult.dts.pipe(gulp.dest(config.outputPath)),
-    //     tsResult.js
-    //     .pipe(sourcemaps.write('.'))
-    //     .pipe(gulp.dest(config.outputPath))
-    // ]);
-});
-
 gulp.task('build.components', ['generate.components', 'generate.facades'], function() {
     var config = buildConfig.components;
 
@@ -104,24 +84,39 @@ gulp.task('build.components', ['generate.components', 'generate.facades'], funct
 
 });
 
+
 //------------npm------------
 
-gulp.task('npm.licence', function() {
+gulp.task('npm.clean', function() {
     var config = buildConfig.npm;
 
-    return gulp.src(config.licensePath)
-        .pipe(gulp.dest(config.rootPath));
+    return del([config.distPath + '/**/*']);
 });
 
-gulp.task('npm.package.json', function() {
+gulp.task('npm.content', ['npm.clean'], function() {
     var config = buildConfig.npm;
 
-    gulp.src(config.npmPackageJsonPath) 
-        .pipe(rename("package.json"))
-        .pipe(gulp.dest(config.rootPath));
-})
+    return gulp.src(config.content)
+        .pipe(gulp.dest(config.distPath));
+});
 
-gulp.task('npm.pack', ['npm.licence', 'npm.package.json', 'build.components'], shell.task(['npm pack'], { cwd: buildConfig.npm.rootPath }));
+gulp.task('npm.sources', ['npm.clean'], function() {
+    var npmConfig = buildConfig.npm,
+        cmpConfig = buildConfig.components;
+
+    return gulp.src(cmpConfig.srcFilesPattern)
+        .pipe(gulp.dest(path.join(npmConfig.distPath, npmConfig.sourcesTargetFolder)));
+});
+
+gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
+    var npmConfig = buildConfig.npm,
+        cmpConfig = buildConfig.components;
+
+    return gulp.src(cmpConfig.outputPath + "/**/*")
+        .pipe(gulp.dest(npmConfig.distPath));
+});
+
+gulp.task('npm.pack', ['npm.content', 'npm.sources', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Examples------------
