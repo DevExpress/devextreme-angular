@@ -37,11 +37,11 @@ import {
 import {
     Orange,
     OrangeService
-} from './orangeService';
+} from './orange.service';
 import{
     Customer,
     CustomerService
-} from './customerService';
+} from './customer.service';
 
 declare var $:any;
 
