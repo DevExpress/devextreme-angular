@@ -17,12 +17,10 @@ var ngPackageNames = [
   'common',
   'compiler',
   'core',
+  'forms',
   'http',
   'platform-browser',
   'platform-browser-dynamic',
-  'router',
-  'router-deprecated',
-  'upgrade',
 ];
 
 function packIndex(pkgName) {

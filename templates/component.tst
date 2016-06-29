@@ -12,7 +12,7 @@ import {
 import {
     ControlValueAccessor,
     NG_VALUE_ACCESSOR
-} from '@angular/common';
+} from '@angular/forms';
 
 import { DxComponent } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
@@ -55,11 +55,11 @@ export class <#= it.className #> extends DxComponent {
             'this.<#= prop.name #>',
         <#~#>
         ];
-    
+
     <#~ it.events :event:i #>
         this.<#= event.emit #> = new EventEmitter();
     <#~#>
-    
+
     }
 }
 
@@ -70,7 +70,7 @@ const CUSTOM_VALUE_ACCESSOR = new Provider(
 
 
 @Directive({
-  selector: '<#= it.selector #>[ngControl],<#= it.selector #>[ngFormControl],<#= it.selector #>[ngModel]',
+  selector: '<#= it.selector #>[formControlName],<#= it.selector #>[formControl],<#= it.selector #>[ngModel]',
   host: {'(valueChange)': 'onChange($event)'},
   providers: [CUSTOM_VALUE_ACCESSOR]
 })

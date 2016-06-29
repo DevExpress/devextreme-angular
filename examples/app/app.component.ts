@@ -1,16 +1,17 @@
 import {
-    Component, 
-    OnInit, 
+    Component,
+    OnInit,
     ElementRef
 } from '@angular/core';
 import {
+    REACTIVE_FORM_DIRECTIVES,
     NgForm,
-    ControlGroup,
-    Control,
+    FormGroup,
+    FormControl,
     Validators
-} from '@angular/common';
+} from '@angular/forms';
 import {
-    DxButton,            
+    DxButton,
     DxCheckBox,
     DxSwitch,
     DxTextBox,
@@ -62,13 +63,14 @@ declare var $:any;
             float: right;
         }
         .full-width {
-            width: 100%; 
+            width: 100%;
             display: block;
         }
     `],
     templateUrl: "app/app.component.html",
     directives: [
-        DxButton,            
+        REACTIVE_FORM_DIRECTIVES,
+        DxButton,
         DxCheckBox,
         DxSwitch,
         DxTextBox,
@@ -95,13 +97,13 @@ declare var $:any;
     providers: [
         OrangeService,
         CustomerService
-    ] 
+    ]
 })
 export class AppComponent implements OnInit {
     text = "Initial text";
     email: string;
     password: string;
-    form: ControlGroup;
+    form: FormGroup;
     boolValue: boolean;
     numberValue: number;
     dateValue: Date;
@@ -138,10 +140,10 @@ export class AppComponent implements OnInit {
         console.log("submitted");
         return false;
     }
-    ngOnInit() {        
-        this.form = new ControlGroup({
-            emailControl: new Control('', Validators.compose([Validators.required, CustomValidator.mailFormat])),
-            passwordControl: new Control('', Validators.compose([Validators.required, Validators.minLength(6)]))
+    ngOnInit() {
+        this.form = new FormGroup({
+            emailControl: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat])),
+            passwordControl: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)]))
         });
         this.oranges = this.orangeService.getOranges();
         this.customers = this.customerService.getCustomers();
@@ -149,7 +151,7 @@ export class AppComponent implements OnInit {
 }
 
 export class CustomValidator {
-    static mailFormat(control: Control) {
+    static mailFormat(control: FormControl) {
         var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
         if (control.value && control.value.length && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
