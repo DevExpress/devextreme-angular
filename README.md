@@ -31,7 +31,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 ### <a name="create-application"></a>Adding DevExteme widgets to an Angular 2 application
 
 We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the 
-[original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstarp the application.
+[original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
 
 Once the application is ready and works install the devextreme-angular2 npm package as follows:
 
