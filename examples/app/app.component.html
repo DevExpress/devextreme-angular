@@ -20,10 +20,10 @@
         <div class="form-group">
 
             <label for="email">Email</label>
-            <dx-text-box name="emailControl" [(ngModel)]="email" [isValid]="emailRef.valid || emailRef.pristine" [validationError]="{ message: 'Enter correct email' }" #emailRef="ngModel"></dx-text-box>
+            <dx-text-box name="emailControl" [(ngModel)]="email" [isValid]="emailControl.valid || emailControl.pristine" [validationError]="{ message: 'Enter correct email' }"></dx-text-box>
 
             <label for="email">Password</label>
-            <dx-text-box name="passwordControl" [(ngModel)]="password" mode="password" [isValid]="passwordRef.valid || passwordRef.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }" #passwordRef="ngModel"></dx-text-box>
+            <dx-text-box name="passwordControl" [(ngModel)]="password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
 
         </div><br/>
         <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>

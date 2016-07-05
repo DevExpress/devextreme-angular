@@ -5,7 +5,9 @@ import {
 } from '@angular/core';
 import {
     REACTIVE_FORM_DIRECTIVES,
+    FORM_DIRECTIVES,
     NgForm,
+    AbstractControl,
     FormGroup,
     FormControl,
     Validators
@@ -70,6 +72,7 @@ declare var $:any;
     templateUrl: "app/app.component.html",
     directives: [
         REACTIVE_FORM_DIRECTIVES,
+        FORM_DIRECTIVES,
         DxButton,
         DxCheckBox,
         DxSwitch,
@@ -102,7 +105,9 @@ declare var $:any;
 export class AppComponent implements OnInit {
     text = "Initial text";
     email: string;
+    emailControl: AbstractControl;
     password: string;
+    passwordControl: AbstractControl;
     form: FormGroup;
     boolValue: boolean;
     numberValue: number;
@@ -145,6 +150,8 @@ export class AppComponent implements OnInit {
             emailControl: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat])),
             passwordControl: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)]))
         });
+        this.emailControl = this.form.controls['emailControl'];
+        this.passwordControl = this.form.controls['passwordControl'];
         this.oranges = this.orangeService.getOranges();
         this.customers = this.customerService.getCustomers();
     }
