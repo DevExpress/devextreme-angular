@@ -1,0 +1,18 @@
+#set your language below
+language: node_js
+
+#set language version. This is only required if you use the default Shippable image for your build
+node_js:
+    - "5.10"
+
+before_script:
+    - npm install
+    
+build:
+  pre_ci_boot:
+    image_name: drydock/u14nod
+    image_tag: prod
+    pull: true
+        
+script:
+- gulp test
