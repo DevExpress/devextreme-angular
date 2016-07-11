@@ -5,7 +5,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
-var doT = require('doT'); 
+var doT = require('dot');
 
 doT.templateSettings = {
   evaluate:    /\<#([\s\S]+?)#\>/g,
@@ -32,9 +32,9 @@ export default class doTGenerator {
         var that = this,
             template = this.createTemplate(config.templateFilePath),
             files;
-        
+
         mkdirp.sync(config.outputFolderPath);
-        
+
         console.log("List directory: " + config.metadataFolderPath);
         files = fs.readdirSync(config.metadataFolderPath);
         files.forEach(fileName => {
