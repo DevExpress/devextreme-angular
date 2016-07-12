@@ -183,10 +183,10 @@ The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'f
 ```html
 <form [formGroup]="form">
         <dx-text-box
+            name="email"
             [(ngModel)]="email"
-            [isValid]="emailRef.valid || emailRef.pristine"
-            [validationError]="{ message: 'Email is invalid'}"
-            #emailRef="ngModel">
+            [isValid]="emailControl.valid || emailControl.pristine"
+            [validationError]="{ message: 'Email is invalid'}">
         </dx-text-box>
 </form>
 ```
@@ -203,11 +203,13 @@ The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'f
 })
 export class AppComponent implements OnInit {
    email: string;
+   emailControl: AbstractControl;
    form: FormGroup;
    ngOnInit() {
        this.form = new FormGroup({
            email: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat]))
        });
+       this.emailControl = this.form.controls['email'];
    }
 }
 ```
