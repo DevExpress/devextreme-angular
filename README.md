@@ -1,6 +1,8 @@
+[![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular2.svg)](https://badge.fury.io/js/devextreme-angular2)
+
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets
 
-Project status: **CTP**  
+Project status: **CTP**
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
 
@@ -30,7 +32,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 
 ### <a name="create-application"></a>Adding DevExteme widgets to an Angular 2 application
 
-We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the 
+We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
 [original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
 
 Once the application is ready and works install the devextreme-angular2 npm package as follows:
@@ -240,12 +242,12 @@ export class AppComponent implements OnChanges {
         this.dataGrid.instance.refresh();
     }
 }
-```  
+```
 
 ## License
 
 Familiarize yourself with the
-[DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).  
+[DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).
 [Free trial is available!](http://js.devexpress.com/Buy/)
 
 **DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
