@@ -242,11 +242,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the itemTitleClick event."
-        },
-        "onItemTitleHold": {
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A handler for the itemTitleHold event."
         }
       }
     },
@@ -705,6 +700,12 @@
             "bool"
           ],
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+        },
+        "fieldEditEnabled": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsDeprecated": true
         },
         "onClosed": {
           "IsFunc": true,
@@ -1564,6 +1565,12 @@
           ],
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
+        "fieldEditEnabled": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsDeprecated": true
+        },
         "onClosed": {
           "IsFunc": true,
           "IsEvent": true,
@@ -2171,7 +2178,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget should hide columns in order to adapt to the screen size."
+          "Description": "Specifies whether or not the widget should hide columns in order to adapt to the screen or container size."
         },
         "columns": {
           "IsCollection": true,
@@ -2204,7 +2211,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether the user can group data by values of this column. Applies only when the grouping | enabled option is true."
+              "Description": "Specifies whether the user can group data by values of this column. Applies only when grouping is enabled."
             },
             "allowHeaderFiltering": {
               "PrimitiveTypes": [
@@ -2298,11 +2305,6 @@
               ],
               "Description": "Specifies a CSS class to be applied to a column."
             },
-            "currency": {
-              "PrimitiveTypes": [
-                "string"
-              ]
-            },
             "customizeText": {
               "IsFunc": true,
               "Description": "Specifies a callback function that returns the text to be displayed in the cells of a column."
@@ -2374,6 +2376,10 @@
               "Description": "Specifies the grid edge to which the column is anchored."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for the values displayed in a column."
             },
@@ -2417,7 +2423,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the order according to which grid columns must be concealed when the widget adapts to the screen size."
+              "Description": "Specifies the order according to which grid columns must be concealed when the widget adapts to the screen or container size."
             },
             "isBand": {
               "PrimitiveTypes": [
@@ -2468,11 +2474,12 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted values displayed in a column."
+              "IsDeprecated": true,
+              "Description": "Use the format | precision option instead."
             },
             "selectedFilterOperation": {
               "EnumName": "FilterOperations",
-              "Description": "Specifies a filter operation applied to a column."
+              "Description": "Specifies the default filter operation of a column."
             },
             "setCellValue": {
               "IsFunc": true,
@@ -2544,6 +2551,10 @@
         "customizeColumns": {
           "IsFunc": true,
           "Description": "Specifies a function that customizes grid columns after they are created."
+        },
+        "customizeExportData": {
+          "IsFunc": true,
+          "Description": "Customizes grid columns and data before exporting."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -2617,7 +2628,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Revert\" button. Setting this option makes sense only when the editMode option is set to batch."
+                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Revert\" button. Setting this option makes sense only when the mode option is set to batch."
                 },
                 "cancelRowChanges": {
                   "PrimitiveTypes": [
@@ -2653,7 +2664,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Save\" button. Setting this option makes sense only when the editMode option is set to batch."
+                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Save\" button. Setting this option makes sense only when the mode option is set to batch."
                 },
                 "saveRowChanges": {
                   "PrimitiveTypes": [
@@ -2671,7 +2682,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Cancel changes\" button. Setting this option makes sense only when the editMode option is set to cell and the validation capabilities are enabled."
+                  "Description": "Specifies text for a hint that appears when a user hovers the mouse pointer over the \"Cancel changes\" button. Setting this option makes sense only when the mode option is set to cell and the validation capabilities are enabled."
                 }
               }
             }
@@ -2684,19 +2695,19 @@
           "Description": "Indicates whether to show the error row for the grid."
         },
         "export": {
-          "Description": "Specifies options for exporting grid data.",
+          "Description": "Configures client-side export.",
           "Options": {
             "allowExportSelectedData": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Indicates whether to allow end users to export not only the data displayed in the grid, but the selected rows only."
+              "Description": "Allows an end user to export selected rows only."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Indicates if the export feature is enabled in the grid."
+              "Description": "Enables the client-side export feature."
             },
             "excelFilterEnabled": {
               "PrimitiveTypes": [
@@ -2720,44 +2731,46 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE8, IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE9 and Safari browsers."
             },
             "texts": {
               "Description": "Contains options that specify texts for the export-related commands and hints.",
               "Options": {
                 "excelFormat": {
                   "PrimitiveTypes": [
-                    "string"
+                    "any"
                   ],
-                  "Description": "Specifies text for the item in the Export dropdown menu that exports grid data to Excel."
+                  "IsDeprecated": true
                 },
                 "exportAll": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Specifies the text of the command that exports all data."
                 },
                 "exportSelectedRows": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Specifies the text of the drop-down menu command that exports selected rows."
                 },
                 "exportTo": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for the Export button when this button invokes a dropdown menu so you can choose the required export format."
+                  "Description": "Specifies the hint of the Export button when the allowExportSelectedData option is true."
                 },
                 "exportToExcel": {
                   "PrimitiveTypes": [
-                    "string"
+                    "any"
                   ],
-                  "Description": "Specifies text for the Export button's hint when this button exports to the XSLX format without invoking the drop-down menu."
+                  "IsDeprecated": true
                 },
                 "selectedRows": {
                   "PrimitiveTypes": [
-                    "string"
+                    "any"
                   ],
-                  "Description": "Specifies text for the option in the Export dropdown menu that allows you to choose whether to export all the grid data or the selected rows only."
+                  "IsDeprecated": true
                 }
               }
             }
@@ -2821,7 +2834,7 @@
           }
         },
         "grouping": {
-          "Description": "Specifies the behavior of grouped grid records.",
+          "Description": "Specifies grouping settings and the behavior of grouped grid records.",
           "Options": {
             "allowCollapsing": {
               "PrimitiveTypes": [
@@ -2838,7 +2851,8 @@
             "contextMenuEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the user to group data using the context menu."
             },
             "expandMode": {
               "EnumName": "GridGroupingExpandMode",
@@ -2859,11 +2873,11 @@
             "texts": {
               "Description": "Defines the texts of grouping-related visual elements.",
               "Options": {
-                "clearGrouping": {
+                "groupByThisColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the text of the context menu item that clears grouping settings."
+                  "Description": "Specifies the text of the context menu item that groups data by a specific column."
                 },
                 "groupContinuedMessage": {
                   "PrimitiveTypes": [
@@ -2877,17 +2891,17 @@
                   ],
                   "Description": "Specifies the message displayed in a group row when the corresponding group continues on the next page."
                 },
-                "groupData": {
+                "ungroup": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the text of the context menu item that groups data by the current column."
+                  "Description": "Specifies the text of the context menu item that clears grouping settings of a specific column."
                 },
-                "ungroupData": {
+                "ungroupAll": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the text of the context menu item that ungroups data by the current column."
+                  "Description": "Specifies the text of the context menu item that clears grouping settings of all columns."
                 }
               }
             }
@@ -2968,7 +2982,8 @@
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "bool"
+                "bool",
+                "string"
               ],
               "Description": "Specifies whether to show the load panel or not."
             },
@@ -3039,7 +3054,8 @@
         },
         "onAdaptiveDetailRowPreparing": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the adaptiveDetailRowPreparing event."
         },
         "onCellClick": {
           "IsFunc": true,
@@ -3348,7 +3364,8 @@
             "searchVisibleColumnsOnly": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether to search all columns or only visible ones."
             },
             "text": {
               "PrimitiveTypes": [
@@ -3530,11 +3547,6 @@
                   ],
                   "Description": "Specifies the column that provides data for a group summary item."
                 },
-                "currency": {
-                  "PrimitiveTypes": [
-                    "string"
-                  ]
-                },
                 "customizeText": {
                   "IsFunc": true,
                   "Description": "Customizes the text to be displayed in the summary item."
@@ -3555,7 +3567,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the summary item value of a numeric format."
+                  "IsDeprecated": true,
+                  "Description": "Use the valueFormat | precision option instead."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -3580,6 +3593,10 @@
                   "Description": "Specifies how to aggregate data for a summary item."
                 },
                 "valueFormat": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the summary item value."
                 }
@@ -3671,11 +3688,6 @@
                   ],
                   "Description": "Specifies a CSS class to be applied to a summary item."
                 },
-                "currency": {
-                  "PrimitiveTypes": [
-                    "string"
-                  ]
-                },
                 "customizeText": {
                   "IsFunc": true,
                   "Description": "Customizes the text to be displayed in the summary item."
@@ -3696,7 +3708,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the summary item value of a numeric format."
+                  "IsDeprecated": true,
+                  "Description": "Use the valueFormat | precision option instead."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -3715,6 +3728,10 @@
                   "Description": "Specifies how to aggregate data for a summary item."
                 },
                 "valueFormat": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the summary item value."
                 }
@@ -3956,6 +3973,12 @@
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
+        "acceptCustomValue": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+        },
         "applyValueMode": {
           "EnumName": "EditorValueApplyMode",
           "Description": "Specifies the way an end-user applies the selected value."
@@ -3968,9 +3991,9 @@
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
-            "bool"
+            "any"
           ],
-          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+          "IsDeprecated": true
         },
         "onClosed": {
           "IsFunc": true,
@@ -3987,6 +4010,12 @@
             "bool"
           ],
           "Description": "Specifies whether or not the drop-down editor is displayed."
+        },
+        "adaptivityEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not adaptive widget rendering is enabled on a small screen."
         },
         "applyButtonText": {
           "PrimitiveTypes": [
@@ -4006,15 +4035,25 @@
           ],
           "Description": "Specifies the message displayed if the specified date is later than the max value or earlier than the min value."
         },
+        "displayFormat": {
+          "ComplexTypes": [
+            "Format"
+          ],
+          "IsFunc": true,
+          "EnumName": "Format",
+          "Description": "Specifies the date display format."
+        },
         "format": {
-          "EnumName": "DateBoxFormat",
-          "Description": "A format used to display date/time information."
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsDeprecated": true
         },
         "formatString": {
           "PrimitiveTypes": [
-            "string"
+            "any"
           ],
-          "Description": "A Globalize format string specifying the date display format."
+          "IsDeprecated": true
         },
         "interval": {
           "PrimitiveTypes": [
@@ -4055,6 +4094,10 @@
         "pickerType": {
           "EnumName": "DateBoxPickerType",
           "Description": "Specifies the type of date/time picker."
+        },
+        "type": {
+          "EnumName": "DateBoxFormat",
+          "Description": "A format used to display date/time information."
         },
         "useCalendar": {
           "PrimitiveTypes": [
@@ -4470,9 +4513,33 @@
           "Description": "The count of columns in the form layout."
         },
         "colCountByScreen": {
-          "PrimitiveTypes": [
-            "any"
-          ]
+          "Description": "Specifies dependency between the screen factor and the count of columns in the form layout.",
+          "Options": {
+            "lg": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The count of columns for a large screen size."
+            },
+            "md": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The count of columns for a middle-sized screen."
+            },
+            "sm": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The count of columns for a small-sized screen."
+            },
+            "xs": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The count of columns for an extra small-sized screen."
+            }
+          }
         },
         "customizeItem": {
           "IsFunc": true,
@@ -4537,7 +4604,8 @@
           "Description": "Specifies the message that is shown for end-users if a required field value is not specified."
         },
         "screenByWidth": {
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Specifies the function returning the screen factor depending on the screen width."
         },
         "scrollingEnabled": {
           "PrimitiveTypes": [
@@ -5083,12 +5151,21 @@
           "Description": "Specifies the way a user can delete items from the list."
         },
         "menuItems": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "IsCollection": true,
           "SingularName": "menuItem",
-          "Description": "Specifies the array of items for a context menu called for a list item."
+          "Description": "Specifies the array of items for a context menu called for a list item.",
+          "Options": {
+            "action": {
+              "IsFunc": true,
+              "Description": "Holds on a function called when the item is clicked."
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the menu item text."
+            }
+          }
         },
         "menuMode": {
           "EnumName": "ListMenuMode",
@@ -5674,6 +5751,12 @@
           ],
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
+        "fieldEditEnabled": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsDeprecated": true
+        },
         "onClosed": {
           "IsFunc": true,
           "IsEvent": true,
@@ -6071,12 +6154,14 @@
             "lat": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "The latitude location of the widget."
             },
             "lng": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "The longitude location of the widget."
             }
           }
         },
@@ -6140,12 +6225,14 @@
                 "lat": {
                   "PrimitiveTypes": [
                     "double"
-                  ]
+                  ],
+                  "Description": "The latitude location of the widget."
                 },
                 "lng": {
                   "PrimitiveTypes": [
                     "double"
-                  ]
+                  ],
+                  "Description": "The longitude location of the widget."
                 }
               }
             },
@@ -6229,12 +6316,14 @@
                 "lat": {
                   "PrimitiveTypes": [
                     "double"
-                  ]
+                  ],
+                  "Description": "The latitude location of the widget."
                 },
                 "lng": {
                   "PrimitiveTypes": [
                     "double"
-                  ]
+                  ],
+                  "Description": "The longitude location of the widget."
                 }
               }
             },
@@ -6560,6 +6649,12 @@
               "Description": "Specifies the mode name."
             }
           }
+        },
+        "adaptivityEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not adaptive widget rendering is enabled on a small screen."
         },
         "hideSubmenuOnMouseLeave": {
           "PrimitiveTypes": [
@@ -7239,6 +7334,12 @@
           ],
           "Description": "Specifies DOM event names that update a widget's value."
         },
+        "invalidValueMessage": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text of the message displayed if the specified value is not a number."
+        },
         "max": {
           "PrimitiveTypes": [
             "double"
@@ -7742,7 +7843,8 @@
           "Description": "Allows an end-user to sort columns by summary values."
         },
         "dataFieldArea": {
-          "EnumName": "PivotGridDataFieldArea"
+          "EnumName": "PivotGridDataFieldArea",
+          "Description": "Specifies the area to which data field headers must belong."
         },
         "dataSource": {
           "ComplexTypes": [
@@ -7751,13 +7853,13 @@
           "Description": "Specifies a data source for the pivot grid."
         },
         "export": {
-          "Description": "Specifies options for exporting pivot grid data.",
+          "Description": "Configures client-side export.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Indicates whether the export feature is enabled for the pivot grid."
+              "Description": "Enables client-side export."
             },
             "fileName": {
               "PrimitiveTypes": [
@@ -7769,7 +7871,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE8, IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE9 and Safari browsers."
             }
           }
         },
@@ -7994,8 +8096,9 @@
           "IsEvent": true,
           "Description": "A handler for the fileSaving event."
         },
-        "rowHeadersLayout": {
-          "EnumName": "PivotGridRowHeadersLayout"
+        "rowHeaderLayout": {
+          "EnumName": "PivotGridRowHeadersLayout",
+          "Description": "Specifies the layout of items in the row header."
         },
         "scrolling": {
           "Description": "A configuration object specifying scrolling options.",
@@ -8157,7 +8260,8 @@
         "wordWrapEnabled": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether long text in header items should be wrapped."
         }
       }
     },
@@ -8396,7 +8500,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element."
+          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element.  For more information on updating the option values at runtime, see the Change Options topic. "
         },
         "contentTemplate": {
           "IsTemplate": true,
@@ -8489,7 +8593,8 @@
           ],
           "IsCollection": true,
           "IsDeprecated": true,
-          "SingularName": "button"
+          "SingularName": "button",
+          "Description": "Use the toolbarItems option instead."
         },
         "onTitleRendered": {
           "IsFunc": true,
@@ -8521,43 +8626,53 @@
         "toolbarItems": {
           "IsCollection": true,
           "SingularName": "toolbarItem",
+          "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
           "Options": {
             "disabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not a toolbar item must be displayed disabled."
             },
             "html": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies html code inserted into the toolbar item element."
             },
             "location": {
-              "EnumName": "ToolbarItemLocation"
+              "EnumName": "ToolbarItemLocation",
+              "Description": "Specifies a location for the item on the toolbar."
             },
             "options": {
               "PrimitiveTypes": [
                 "any"
-              ]
+              ],
+              "Description": "Specifies a configuration object for the widget that presents a toolbar item."
             },
             "template": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "Specifies an item template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies text displayed for the toolbar item."
             },
             "toolbar": {
-              "EnumName": "VerticalEdge"
+              "EnumName": "VerticalEdge",
+              "Description": "Specifies whether the item is displayed on a top or bottom toolbar."
             },
             "visible": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not a widget item must be displayed."
             },
             "widget": {
-              "EnumName": "ToolbarItemWidget"
+              "EnumName": "ToolbarItemWidget",
+              "Description": "A widget that presents a toolbar item."
             }
           }
         },
@@ -8793,7 +8908,8 @@
           ],
           "IsCollection": true,
           "IsDeprecated": true,
-          "SingularName": "button"
+          "SingularName": "button",
+          "Description": "Use the toolbarItems option instead."
         },
         "fullScreen": {
           "PrimitiveTypes": [
@@ -8831,43 +8947,53 @@
         "toolbarItems": {
           "IsCollection": true,
           "SingularName": "toolbarItem",
+          "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
           "Options": {
             "disabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not a toolbar item must be displayed disabled."
             },
             "html": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies html code inserted into the toolbar item element."
             },
             "location": {
-              "EnumName": "ToolbarItemLocation"
+              "EnumName": "ToolbarItemLocation",
+              "Description": "Specifies a location for the item on the toolbar."
             },
             "options": {
               "PrimitiveTypes": [
                 "any"
-              ]
+              ],
+              "Description": "Specifies a configuration object for the widget that presents a toolbar item."
             },
             "template": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "Specifies an item template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies text displayed for the toolbar item."
             },
             "toolbar": {
-              "EnumName": "VerticalEdge"
+              "EnumName": "VerticalEdge",
+              "Description": "Specifies whether the item is displayed on a top or bottom toolbar."
             },
             "visible": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not a widget item must be displayed."
             },
             "widget": {
-              "EnumName": "ToolbarItemWidget"
+              "EnumName": "ToolbarItemWidget",
+              "Description": "A widget that presents a toolbar item."
             }
           }
         },
@@ -9320,7 +9446,11 @@
           "Description": "Specifies options for labels displayed at the min and max values.",
           "Options": {
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
               "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for labels."
             },
             "position": {
@@ -9357,7 +9487,11 @@
               "Description": "Specifies whether or not the tooltip is enabled."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
               "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies format for the tooltip."
             },
             "position": {
@@ -9596,28 +9730,93 @@
               "Description": "Specifies whether or not a widget item must be displayed."
             },
             "location": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "Description": "Specifies the item location and size against the widget grid."
+              "IsCollection": true,
+              "SingularName": "location",
+              "Description": "Specifies the item location and size against the widget grid.",
+              "Options": {
+                "col": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the column component of the element location."
+                },
+                "colspan": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the element in columns."
+                },
+                "row": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the row component of the element location."
+                },
+                "rowspan": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the height of the element in rows."
+                },
+                "screen": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "The screen factor or factors by which the current location is applied to the element."
+                }
+              }
             }
           }
         },
         "cols": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "IsCollection": true,
           "SingularName": "col",
-          "Description": "Specifies the collection of columns for the grid used to position layout elements."
+          "Description": "Specifies the collection of columns for the grid used to position layout elements.",
+          "Options": {
+            "baseSize": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The base width of the column."
+            },
+            "ratio": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The column width ratio."
+            },
+            "screen": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "The screen factor or factors by which the current column is used. If this field is not defined, the column is used by all screen factors."
+            }
+          }
         },
         "rows": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "IsCollection": true,
           "SingularName": "row",
-          "Description": "Specifies the collection of rows for the grid used to position layout elements."
+          "Description": "Specifies the collection of rows for the grid used to position layout elements.",
+          "Options": {
+            "baseSize": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The base height of the row."
+            },
+            "ratio": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The row height ratio."
+            },
+            "screen": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "The screen factor or factors by which the current row is used. If this field is not defined, the row is used by all screen factors."
+            }
+          }
         },
         "screenByWidth": {
           "IsFunc": true,
@@ -9805,7 +10004,8 @@
         "endDateTimeZoneExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the name of the data source item field that defines the timezone of the appointment end date."
         },
         "endDayHour": {
           "PrimitiveTypes": [
@@ -9819,7 +10019,7 @@
         },
         "groups": {
           "PrimitiveTypes": [
-            "any"
+            "string"
           ],
           "IsCollection": true,
           "SingularName": "group",
@@ -9842,6 +10042,12 @@
             "date"
           ],
           "Description": "The earliest date the widget allows you to select."
+        },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty. Available for the Agenda view only."
         },
         "onAppointmentAdded": {
           "IsFunc": true,
@@ -9996,7 +10202,8 @@
         "startDateTimeZoneExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the name of the data source item field that defines the timezone of the appointment start date."
         },
         "startDayHour": {
           "PrimitiveTypes": [
@@ -10013,7 +10220,8 @@
         "timeZone": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the timezone of the widget."
         },
         "useDropDownViewSwitcher": {
           "PrimitiveTypes": [
@@ -10424,6 +10632,12 @@
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
+        "acceptCustomValue": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+        },
         "deferRendering": {
           "PrimitiveTypes": [
             "bool"
@@ -10432,9 +10646,9 @@
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
-            "bool"
+            "any"
           ],
-          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+          "IsDeprecated": true
         },
         "onClosed": {
           "IsFunc": true,
@@ -10531,12 +10745,6 @@
             "bool"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
-        },
-        "autocompletionEnabled": {
-          "PrimitiveTypes": [
-            "bool"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget predicts the remaining characters in a word or phrase while a user types."
         },
         "onCustomItemCreating": {
           "IsFunc": true,
@@ -11001,7 +11209,11 @@
           "Description": "Specifies options for labels displayed at the min and max values.",
           "Options": {
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
               "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for labels."
             },
             "position": {
@@ -11038,7 +11250,11 @@
               "Description": "Specifies whether or not the tooltip is enabled."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
               "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies format for the tooltip."
             },
             "position": {
@@ -11912,6 +12128,12 @@
           "IsReadonly": true,
           "Description": "The read-only option that holds the text displayed by the widget input element."
         },
+        "acceptCustomValue": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+        },
         "applyValueMode": {
           "EnumName": "EditorValueApplyMode",
           "Description": "Specifies how the widget applies values."
@@ -11924,9 +12146,9 @@
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
-            "bool"
+            "any"
           ],
-          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+          "IsDeprecated": true
         },
         "onClosed": {
           "IsFunc": true,
@@ -12010,12 +12232,6 @@
             "bool"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
-        },
-        "autocompletionEnabled": {
-          "PrimitiveTypes": [
-            "bool"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget predicts the remaining characters in a word or phrase while a user types."
         },
         "onCustomItemCreating": {
           "IsFunc": true,
@@ -13153,7 +13369,8 @@
               "Description": "Specifies a configuration object for the widget that presents a toolbar item."
             },
             "showText": {
-              "EnumName": "ToolbarItemShowText"
+              "EnumName": "ToolbarItemShowText",
+              "Description": "Specifies when to display the text for the widget item."
             },
             "widget": {
               "EnumName": "ToolbarItemWidget",
@@ -13265,7 +13482,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element."
+          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element.  For more information on updating the option values at runtime, see the Change Options topic. "
         },
         "contentTemplate": {
           "IsTemplate": true,
@@ -13358,7 +13575,8 @@
           ],
           "IsCollection": true,
           "IsDeprecated": true,
-          "SingularName": "button"
+          "SingularName": "button",
+          "Description": "Use the toolbarItems option instead."
         },
         "position": {
           "ComplexTypes": [
@@ -13666,11 +13884,13 @@
         "onItemSelected": {
           "IsDeprecated": true,
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "Use the itemSelectionChanged event instead."
         },
         "onItemSelectionChanged": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the itemSelectionChanged event."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -13706,6 +13926,12 @@
             "string"
           ],
           "Description": "Specifies the text displayed at the \"Select All\" check box."
+        },
+        "selectByClick": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not an item becomes selected if a user clicks it."
         },
         "selectNodesRecursive": {
           "PrimitiveTypes": [
@@ -13880,10 +14106,35 @@
           "Description": "Specifies the width of the widget."
         },
         "adapter": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "Description": "An object that specifies what and when to validate and how to apply the validation result."
+          "Description": "An object that specifies what and when to validate and how to apply the validation result.",
+          "Options": {
+            "applyValidationResults": {
+              "IsFunc": true,
+              "Description": "A function that the dxValidator widget calls after validating a specified value."
+            },
+            "bypass": {
+              "IsFunc": true,
+              "Description": "A function that returns a Boolean value specifying whether or not to bypass validation."
+            },
+            "focus": {
+              "IsFunc": true,
+              "Description": "A function that sets focus to the validated editors when the dxValidationSummary is focused."
+            },
+            "getValue": {
+              "IsFunc": true,
+              "Description": "A function that returns the value to be validated."
+            },
+            "reset": {
+              "IsFunc": true,
+              "Description": "A function that resets the validated values."
+            },
+            "validationRequestsCallbacks": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": "The jQuery.Callbacks() object that is fired when the specified value should be validated."
+            }
+          }
         },
         "name": {
           "PrimitiveTypes": [
@@ -13937,33 +14188,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -14032,15 +14293,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -14238,7 +14502,11 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
-              "EnumName": "GaugeFormat",
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
             "opacity": {
@@ -14263,7 +14531,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -14400,7 +14669,11 @@
               "Description": "Specifies font options for bar labels."
             },
             "format": {
-              "EnumName": "GaugeFormat",
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for bar labels."
             },
             "indent": {
@@ -14413,7 +14686,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for the formatted value displayed by labels."
+              "IsDeprecated": true,
+              "Description": "Use the label | format | precision option instead."
             },
             "visible": {
               "PrimitiveTypes": [
@@ -14542,15 +14816,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -14651,6 +14928,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -14676,7 +14957,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -14802,7 +15084,7 @@
       }
     },
     "dxChart": {
-      "Description": "A widget used to embed charts into HTML JS applications.",
+      "Description": "A widget used to embed charts into web applications.",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -14826,33 +15108,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -14921,15 +15213,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -15122,6 +15417,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -15147,7 +15446,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -15191,6 +15491,10 @@
               "Description": "Specifies the z-index of tooltips."
             },
             "argumentFormat": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
             },
@@ -15198,7 +15502,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted arguments displayed in tooltips."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | argumentFormat | precision option instead."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -15208,7 +15513,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for a percent value displayed in tooltips for stacked series and dxPieChart series."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | percentPrecision option instead."
             },
             "location": {
               "EnumName": "ChartTooltipLocation",
@@ -15673,6 +15979,10 @@
                   "Description": "Specifies a callback function that returns the text to be displayed by argument axis labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
                 },
@@ -15680,7 +15990,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the axis labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the argumentAxis | label | format | precision option instead."
                 }
               }
             },
@@ -15905,7 +16216,9 @@
             },
             "categories": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string",
+                "date"
               ],
               "IsCollection": true,
               "SingularName": "categorie",
@@ -16675,6 +16988,10 @@
                       "Description": "Specifies font options for the text of the label that belongs to the horizontal crosshair line."
                     },
                     "format": {
+                      "ComplexTypes": [
+                        "Format"
+                      ],
+                      "IsFunc": true,
                       "EnumName": "Format",
                       "Description": "Specifies the format of the values displayed by crosshair labels."
                     },
@@ -16682,7 +16999,8 @@
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "Description": "Specifies a precision for formatted values."
+                      "IsDeprecated": true,
+                      "Description": "Use the crosshair | horizontalLine | label | format | precision option instead."
                     },
                     "visible": {
                       "PrimitiveTypes": [
@@ -16732,6 +17050,10 @@
                   "Description": "Specifies font options for the text of the crosshair labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies the format of the values displayed by crosshair labels."
                 },
@@ -16739,7 +17061,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for formatted values."
+                  "IsDeprecated": true,
+                  "Description": "Use the crosshair | label | format | precision option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -16791,6 +17114,10 @@
                       "Description": "Specifies font options for the text of the label that belongs to the vertical crosshair line."
                     },
                     "format": {
+                      "ComplexTypes": [
+                        "Format"
+                      ],
+                      "IsFunc": true,
                       "EnumName": "Format",
                       "Description": "Specifies the format of the values displayed by crosshair labels."
                     },
@@ -16798,7 +17125,8 @@
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "Description": "Specifies a precision for formatted values."
+                      "IsDeprecated": true,
+                      "Description": "Use the crosshair | verticalLine | label | format | precision option instead."
                     },
                     "visible": {
                       "PrimitiveTypes": [
@@ -17252,6 +17580,10 @@
                   "Description": "Specifies a callback function that returns the text to be displayed in value axis labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
                 },
@@ -17259,7 +17591,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the axis labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the valueAxis | label | format | precision option instead."
                 }
               }
             },
@@ -17480,7 +17813,9 @@
             },
             "categories": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string",
+                "date"
               ],
               "IsCollection": true,
               "SingularName": "categorie",
@@ -17815,33 +18150,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -17910,15 +18255,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -18116,7 +18464,11 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
-              "EnumName": "GaugeFormat",
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
             "opacity": {
@@ -18141,7 +18493,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -18290,7 +18643,7 @@
           "Options": {
             "customMinorTicks": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "customMinorTick",
@@ -18298,7 +18651,7 @@
             },
             "customTicks": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "customTick",
@@ -18352,7 +18705,11 @@
                   "Description": "Specifies font options for the text displayed in the scale labels of the gauge."
                 },
                 "format": {
-                  "EnumName": "GaugeFormat",
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
+                  "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
                 },
                 "overlappingBehavior": {
@@ -18374,7 +18731,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the scale labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the scale | label | format | precision option instead."
                 },
                 "useRangeColors": {
                   "PrimitiveTypes": [
@@ -18599,7 +18957,7 @@
         },
         "subvalues": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "subvalue",
@@ -18639,7 +18997,7 @@
       }
     },
     "dxExporter": {
-      "Description": "A widget that allows you to export any DevExtreme data visualization widget into an image or a document.",
+      "Description": "[note]This widget is deprecated. Instead of it, use the built-in client-side exporting. For further information, refer to the export option of a particular widget.",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -18719,33 +19077,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -18814,15 +19182,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -19020,7 +19391,11 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
-              "EnumName": "GaugeFormat",
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
             "opacity": {
@@ -19045,7 +19420,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -19212,7 +19588,7 @@
           "Options": {
             "customMinorTicks": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "customMinorTick",
@@ -19220,7 +19596,7 @@
             },
             "customTicks": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "customTick",
@@ -19274,7 +19650,11 @@
                   "Description": "Specifies font options for the text displayed in the scale labels of the gauge."
                 },
                 "format": {
-                  "EnumName": "GaugeFormat",
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
+                  "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
                 },
                 "overlappingBehavior": {
@@ -19296,7 +19676,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the scale labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the scale | label | format | precision option instead."
                 },
                 "useRangeColors": {
                   "PrimitiveTypes": [
@@ -19525,7 +19906,7 @@
         },
         "subvalues": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "subvalue",
@@ -19557,7 +19938,7 @@
       }
     },
     "dxPieChart": {
-      "Description": "A circular chart widget for HTML JS applications.",
+      "Description": "A circular chart widget for web applications.",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -19581,33 +19962,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -19676,15 +20067,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -19877,6 +20271,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -19902,7 +20300,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -19946,6 +20345,10 @@
               "Description": "Specifies the z-index of tooltips."
             },
             "argumentFormat": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
             },
@@ -19953,7 +20356,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted arguments displayed in tooltips."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | argumentFormat | precision option instead."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -19963,7 +20367,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for a percent value displayed in tooltips for stacked series and dxPieChart series."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | percentPrecision option instead."
             }
           }
         },
@@ -20316,33 +20721,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -20411,15 +20826,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -20612,6 +21030,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -20637,7 +21059,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -20681,6 +21104,10 @@
               "Description": "Specifies the z-index of tooltips."
             },
             "argumentFormat": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
             },
@@ -20688,7 +21115,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted arguments displayed in tooltips."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | argumentFormat | precision option instead."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -20698,7 +21126,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for a percent value displayed in tooltips for stacked series and dxPieChart series."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | percentPrecision option instead."
             },
             "shared": {
               "PrimitiveTypes": [
@@ -21103,6 +21532,10 @@
                   "Description": "Specifies a callback function that returns the text to be displayed by argument axis labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
                 },
@@ -21110,7 +21543,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the axis labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the argumentAxis | label | format | precision option instead."
                 }
               }
             },
@@ -21265,7 +21699,9 @@
             },
             "categories": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string",
+                "date"
               ],
               "IsCollection": true,
               "SingularName": "categorie",
@@ -22038,6 +22474,10 @@
                   "Description": "Specifies a callback function that returns the text to be displayed in value axis labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
                 },
@@ -22045,7 +22485,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the axis labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the valueAxis | label | format | precision option instead."
                 }
               }
             },
@@ -22196,7 +22637,9 @@
             },
             "categories": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string",
+                "date"
               ],
               "IsCollection": true,
               "SingularName": "categorie",
@@ -22503,33 +22946,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -22598,15 +23051,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -22982,7 +23438,9 @@
           "Options": {
             "categories": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string",
+                "date"
               ],
               "IsCollection": true,
               "SingularName": "categorie",
@@ -23010,6 +23468,10 @@
                   "Description": "Specifies font options for the text displayed in the range selector's scale labels."
                 },
                 "format": {
+                  "ComplexTypes": [
+                    "Format"
+                  ],
+                  "IsFunc": true,
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
                 },
@@ -23017,7 +23479,8 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies a precision for the formatted value displayed in the scale labels."
+                  "IsDeprecated": true,
+                  "Description": "Use the scale | label | format | precision option instead."
                 },
                 "topIndent": {
                   "PrimitiveTypes": [
@@ -23108,7 +23571,11 @@
                       "Description": "Specifies a callback function that returns the text to be displayed in scale markers."
                     },
                     "format": {
-                      "EnumName": "RangeSelectorLabelFormat",
+                      "ComplexTypes": [
+                        "Format"
+                      ],
+                      "IsFunc": true,
+                      "EnumName": "Format",
                       "Description": "Specifies a format for the text displayed in scale markers."
                     }
                   }
@@ -23489,7 +23956,7 @@
               }
             },
             "type": {
-              "EnumName": "AxisScale",
+              "EnumName": "RangeSelectorAxisScale",
               "Description": "Specifies the type of the scale."
             },
             "useTicksAutoArrangement": {
@@ -23591,6 +24058,10 @@
               "Description": "Specifies font options for the text displayed by the range selector slider markers."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed in slider markers."
             },
@@ -23663,7 +24134,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for the formatted value displayed in slider markers."
+              "IsDeprecated": true,
+              "Description": "Use the sliderMarker | format | precision option instead."
             },
             "visible": {
               "PrimitiveTypes": [
@@ -23735,15 +24207,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -23844,6 +24319,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -23869,7 +24348,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -24067,6 +24547,7 @@
       }
     },
     "dxTreeMap": {
+      "Description": "A widget for displaying hierarchical data by using nested rectangles.",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -24090,33 +24571,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -24156,15 +24647,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -24357,6 +24851,10 @@
               "Description": "Specifies the font of the text displayed by a tooltip."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies the format of the value displayed by a tooltip."
             },
@@ -24382,7 +24880,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the precision of formatted values in a tooltip."
+              "IsDeprecated": true,
+              "Description": "Use the tooltip | format | precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -24424,13 +24923,12 @@
                 "int32"
               ],
               "Description": "Specifies the z-index of tooltips."
+            },
+            "customizeTooltip": {
+              "IsFunc": true,
+              "Description": "Allows you to change tooltip appearance."
             }
           }
-        },
-        "bubbleToGroup": {
-          "PrimitiveTypes": [
-            "bool"
-          ]
         },
         "childrenField": {
           "PrimitiveTypes": [
@@ -24467,7 +24965,7 @@
             },
             "range": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "range",
@@ -24484,29 +24982,54 @@
           "Description": "Specifies the origin of data for the widget."
         },
         "group": {
+          "Description": "Configures groups.",
           "Options": {
-            "header": {
+            "border": {
+              "Description": "Configures the group borders.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the group borders."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the group borders in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the group headers."
+            },
+            "headerHeight": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the group headers in pixels."
+            },
+            "hoverStyle": {
+              "Description": "Specifies the appearance of groups in the hover state.",
               "Options": {
                 "border": {
-                  "Description": "Configures the header borders.",
+                  "Description": "Configures the appearance of the group borders in the hover state.",
                   "Options": {
                     "color": {
                       "PrimitiveTypes": [
                         "string"
                       ],
-                      "Description": "Colors the header borders."
-                    },
-                    "opacity": {
-                      "PrimitiveTypes": [
-                        "double"
-                      ],
-                      "Description": "Specifies how transparent the header borders should be."
+                      "Description": "Colors the group borders in the hover state."
                     },
                     "width": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "Description": "Specifies the width of the header borders in pixels."
+                      "Description": "Specifies the width of the group borders in pixels. Applies to a group in the hover state."
                     }
                   }
                 },
@@ -24514,103 +25037,12 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Colors the group headers."
-                },
-                "height": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "Description": "Specifies the height of the group headers in pixels."
-                },
-                "hoverStyle": {
-                  "Description": "Specifies the appearance of group headers in the hover state.",
-                  "Options": {
-                    "border": {
-                      "Description": "Configures the appearance of the header borders in the hover state.",
-                      "Options": {
-                        "color": {
-                          "PrimitiveTypes": [
-                            "string"
-                          ],
-                          "Description": "Colors the header borders in the hover state."
-                        },
-                        "opacity": {
-                          "PrimitiveTypes": [
-                            "double"
-                          ],
-                          "Description": "Specifies how transparent the header borders should be when a group is in the hover state."
-                        },
-                        "width": {
-                          "PrimitiveTypes": [
-                            "double"
-                          ],
-                          "Description": "Specifies the width of the header borders in pixels. Applies to a group header in the hover state."
-                        }
-                      }
-                    },
-                    "color": {
-                      "PrimitiveTypes": [
-                        "string"
-                      ],
-                      "Description": "Colors the group headers in the hover state."
-                    },
-                    "opacity": {
-                      "PrimitiveTypes": [
-                        "double"
-                      ],
-                      "Description": "Specifies how transparent the group headers should be in the hover state."
-                    }
-                  }
-                },
-                "opacity": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "Description": "Specifies how transparent the group headers should be."
-                },
-                "selectionStyle": {
-                  "Description": "Specifies the appearance of group headers in the selected state.",
-                  "Options": {
-                    "border": {
-                      "Description": "Configures the appearance of the header borders in the selected state.",
-                      "Options": {
-                        "color": {
-                          "PrimitiveTypes": [
-                            "string"
-                          ],
-                          "Description": "Colors the header borders in the selected state."
-                        },
-                        "opacity": {
-                          "PrimitiveTypes": [
-                            "double"
-                          ],
-                          "Description": "Specifies how transparent the header borders should be when a group is selected."
-                        },
-                        "width": {
-                          "PrimitiveTypes": [
-                            "double"
-                          ],
-                          "Description": "Specifies the width of the header borders in pixels. Applies to a group header in the selected state."
-                        }
-                      }
-                    },
-                    "color": {
-                      "PrimitiveTypes": [
-                        "string"
-                      ],
-                      "Description": "Colors the group headers in the selected state."
-                    },
-                    "opacity": {
-                      "PrimitiveTypes": [
-                        "double"
-                      ],
-                      "Description": "Specifies how transparent the group header should be when a group selected."
-                    }
-                  }
+                  "Description": "Colors the group headers in the hover state."
                 }
               }
             },
             "label": {
+              "Description": "Configures the group labels.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -24626,10 +25058,33 @@
                 }
               }
             },
-            "padding": {
-              "PrimitiveTypes": [
-                "double"
-              ]
+            "selectionStyle": {
+              "Description": "Specifies the appearance of groups in the selected state.",
+              "Options": {
+                "border": {
+                  "Description": "Configures the appearance of the group borders in the selected state.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Colors the group borders in the selected state."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the width of the group borders in pixels. Applies to a group in the selected state."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the group headers in the selected state."
+                }
+              }
             }
           }
         },
@@ -24637,13 +25092,19 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether tiles and group headers change their style in the hover state."
+          "Description": "Specifies whether tiles and groups change their style in the hover state."
         },
         "idField": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies the name of the data source field that provides IDs for items. Applies to flat data sources only."
+        },
+        "interactWithGroup": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the user will interact with a single tile or its group."
         },
         "labelField": {
           "PrimitiveTypes": [
@@ -24652,23 +25113,28 @@
           "Description": "Specifies the name of the data source field that provides texts for tile and group labels."
         },
         "layoutAlgorithm": {
-          "EnumName": "TreeMapLayoutAlgorithm"
+          "EnumName": "TreeMapLayoutAlgorithm",
+          "Description": "Specifies the layout algorithm."
         },
         "layoutDirection": {
-          "EnumName": "TreeMapLayoutDirection"
+          "EnumName": "TreeMapLayoutDirection",
+          "Description": "Specifies the direction in which the items will be laid out."
         },
         "maxDepth": {
           "PrimitiveTypes": [
             "double"
-          ]
+          ],
+          "Description": "Specifies how many hierarchical levels must be visualized."
         },
         "onClick": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the click event."
         },
         "onDrill": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the drill event."
         },
         "onHoverChanged": {
           "IsFunc": true,
@@ -24677,7 +25143,13 @@
         },
         "onNodesInitialized": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the nodesInitialized event."
+        },
+        "onNodesRendering": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the nodesRendering event."
         },
         "onSelectionChanged": {
           "IsFunc": true,
@@ -24695,6 +25167,7 @@
           "Description": "Specifies whether a single or multiple nodes can be in the selected state simultaneously."
         },
         "tile": {
+          "Description": "Configures tiles.",
           "Options": {
             "border": {
               "Description": "Configures the tile borders.",
@@ -24704,12 +25177,6 @@
                     "string"
                   ],
                   "Description": "Colors the tile borders."
-                },
-                "opacity": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "Description": "Specifies how transparent the tile borders should be."
                 },
                 "width": {
                   "PrimitiveTypes": [
@@ -24737,12 +25204,6 @@
                       ],
                       "Description": "Colors the tile borders in the hover state."
                     },
-                    "opacity": {
-                      "PrimitiveTypes": [
-                        "double"
-                      ],
-                      "Description": "Specifies how transparent the tile borders should be when a tile is in the hover state."
-                    },
                     "width": {
                       "PrimitiveTypes": [
                         "double"
@@ -24756,16 +25217,11 @@
                     "string"
                   ],
                   "Description": "Colors tiles in the hover state."
-                },
-                "opacity": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "Description": "Specifies how transparent tiles should be in the hover state."
                 }
               }
             },
             "label": {
+              "Description": "Configures the tile labels.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -24781,12 +25237,6 @@
                 }
               }
             },
-            "opacity": {
-              "PrimitiveTypes": [
-                "double"
-              ],
-              "Description": "Specifies how transparent the tiles should be."
-            },
             "selectionStyle": {
               "Description": "Specifies the appearance of tiles in the selected state.",
               "Options": {
@@ -24798,12 +25248,6 @@
                         "string"
                       ],
                       "Description": "Colors the tile borders in the selected state."
-                    },
-                    "opacity": {
-                      "PrimitiveTypes": [
-                        "double"
-                      ],
-                      "Description": "Specifies how transparent the tile borders should be when a tile is selected."
                     },
                     "width": {
                       "PrimitiveTypes": [
@@ -24818,12 +25262,6 @@
                     "string"
                   ],
                   "Description": "Colors tiles in the selected state."
-                },
-                "opacity": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "Description": "Specifies how transparent tiles should be in the selected state."
                 }
               }
             }
@@ -24862,33 +25300,43 @@
           "Description": "Specifies whether or not the widget supports right-to-left representation."
         },
         "export": {
+          "Description": "Configures the exporting and printing features.",
           "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the client-side exporting in the widget."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
             },
             "formats": {
-              "PrimitiveTypes": [
-                "any"
-              ],
               "IsCollection": true,
-              "SingularName": "format"
+              "EnumName": "ExportFormat",
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -24928,15 +25376,18 @@
         },
         "onExported": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exported event."
         },
         "onExporting": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the exporting event."
         },
         "onFileSaving": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
@@ -25352,7 +25803,7 @@
         },
         "bounds": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "bound",
@@ -25360,7 +25811,7 @@
         },
         "center": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "center",
@@ -25440,7 +25891,7 @@
             },
             "colorGroups": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "colorGroup",
@@ -25588,7 +26039,7 @@
             },
             "sizeGroups": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "SingularName": "sizeGroup",
@@ -25727,7 +26178,8 @@
               "Description": "Specifies the color of item markers in the legend. The specified color applied only when the legend uses 'size' source."
             },
             "markerShape": {
-              "EnumName": "VectorMapMarkerShape"
+              "EnumName": "VectorMapMarkerShape",
+              "Description": "Specifies the shape of item markers."
             },
             "markerSize": {
               "PrimitiveTypes": [
@@ -26192,12 +26644,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "A caption that will be displayed in the pivot grid's field chooser to identify the field."
-            },
-            "currency": {
-              "PrimitiveTypes": [
-                "string"
-              ]
+              "Description": "A caption that will be displayed in the pivot grid's field chooser and field panel to identify the field."
             },
             "customizeText": {
               "IsFunc": true,
@@ -26238,6 +26685,10 @@
               "Description": "The filter values for the current field."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a display format for field values."
             },
@@ -26270,7 +26721,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted field values."
+              "IsDeprecated": true,
+              "Description": "Use the format | precision option instead."
             },
             "runningTotal": {
               "EnumName": "PivotGridRunningTotalMode",
@@ -26304,7 +26756,8 @@
             },
             "sortBySummaryPath": {
               "PrimitiveTypes": [
-                "any"
+                "double",
+                "string"
               ],
               "IsCollection": true,
               "SingularName": "sortBySummaryPath",
@@ -26341,7 +26794,8 @@
             "wordWrapEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not long text in header items should be wrapped."
             }
           }
         },
@@ -26390,6 +26844,35 @@
               "Description": "Specifies the type of the store used to access data."
             }
           }
+        }
+      }
+    },
+    "format": {
+      "Description": "Formats values.",
+      "Options": {
+        "currency": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the currency code for the 'currency' format."
+        },
+        "formatter": {
+          "IsFunc": true,
+          "Description": "Specifies a custom format."
+        },
+        "parser": {
+          "IsFunc": true,
+          "Description": "Parses string values into numeric or date-time values."
+        },
+        "precision": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies a precision for values of a numeric format."
+        },
+        "type": {
+          "EnumName": "Format",
+          "Description": "Specifies a predefined format."
         }
       }
     },
@@ -26703,7 +27186,11 @@
               "Description": "Specifies font options for the text displayed by the indicator."
             },
             "format": {
-              "EnumName": "GaugeFormat",
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for the text displayed in an indicator."
             },
             "indent": {
@@ -26716,7 +27203,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for the formatted value displayed by an indicator."
+              "IsDeprecated": true,
+              "Description": "Use the text | format | precision option instead."
             }
           }
         },
@@ -26943,16 +27431,19 @@
               "Description": "Specifies how to align point labels relative to the corresponding data points that they represent."
             },
             "argumentFormat": {
-              "PrimitiveTypes": [
-                "string"
+              "ComplexTypes": [
+                "Format"
               ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point arguments displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -27021,6 +27512,10 @@
               "Description": "Specifies font options for the text displayed in point labels."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
             },
@@ -27034,7 +27529,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for the percentage values displayed in the labels of a full-stacked-like series."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | percentPrecision instead."
             },
             "position": {
               "EnumName": "RelativePosition",
@@ -27044,7 +27540,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point values displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -27789,16 +28286,19 @@
           "Description": "An object defining the label configuration options.",
           "Options": {
             "argumentFormat": {
-              "PrimitiveTypes": [
-                "string"
+              "ComplexTypes": [
+                "Format"
               ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point arguments displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -27867,6 +28367,10 @@
               "Description": "Specifies font options for the text displayed in point labels."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
             },
@@ -27874,7 +28378,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for the percentage values displayed in labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | percentPrecision instead."
             },
             "position": {
               "EnumName": "PieChartLabelPosition",
@@ -27884,7 +28389,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point values displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
             },
             "radialOffset": {
               "PrimitiveTypes": [
@@ -28188,16 +28694,19 @@
           "Description": "An object defining the label configuration options.",
           "Options": {
             "argumentFormat": {
-              "PrimitiveTypes": [
-                "string"
+              "ComplexTypes": [
+                "Format"
               ],
+              "IsFunc": true,
+              "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point arguments displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -28266,6 +28775,10 @@
               "Description": "Specifies font options for the text displayed in point labels."
             },
             "format": {
+              "ComplexTypes": [
+                "Format"
+              ],
+              "IsFunc": true,
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
             },
@@ -28277,7 +28790,8 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a precision for formatted point values displayed in point labels."
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -28684,7 +29198,7 @@
           "Description": "An object that specifies configuration options for all series of the 'stackedBar' type in the chart."
         },
         "type": {
-          "EnumName": "PolarChartSerieType",
+          "EnumName": "PolarChartSeriesType",
           "Description": "Sets a series type."
         }
       }
@@ -29225,6 +29739,7 @@
       "Items": [
         "column",
         "data",
+        "filter",
         "row"
       ]
     },
@@ -29329,48 +29844,13 @@
         "shortTime",
         "thousands",
         "trillions",
-        "year"
+        "year",
+        "dayOfWeek",
+        "hour",
+        "longDateLongTime",
+        "minute",
+        "shortDateShortTime"
       ]
-    },
-    "GaugeFormat": {
-      "Items": [
-        "billions",
-        "currency",
-        "decimal",
-        "exponential",
-        "fixedPoint",
-        "largeNumber",
-        "millions",
-        "percent",
-        "thousands",
-        "trillions"
-      ]
-    },
-    "RangeSelectorLabelFormat": {
-      "Items": [
-        "day",
-        "longDate",
-        "longTime",
-        "millisecond",
-        "month",
-        "monthAndDay",
-        "monthAndYear",
-        "q",
-        "Q",
-        "qq",
-        "QQ",
-        "quarter",
-        "quarterAndYear",
-        "shortDate",
-        "shortTime",
-        "year"
-      ],
-      "Renamings": {
-        "q": "RomanQuarter",
-        "qq": "RomanQuarterWithPrefix",
-        "Q": "ArabicQuarter",
-        "QQ": "ArabicQuarterWithPrefix"
-      }
     },
     "VizPalette": {
       "Items": [
@@ -29481,6 +29961,14 @@
         "continuous",
         "discrete",
         "logarithmic"
+      ]
+    },
+    "RangeSelectorAxisScale": {
+      "Items": [
+        "continuous",
+        "discrete",
+        "logarithmic",
+        "semidiscrete"
       ]
     },
     "DashStyle": {
@@ -29689,15 +30177,6 @@
         "last"
       ]
     },
-    "ExportFormat": {
-      "Items": [
-        "GIF",
-        "JPEG",
-        "PDF",
-        "PNG",
-        "SVG"
-      ]
-    },
     "GaugeIndicatorType": {
       "Items": [
         "circle",
@@ -29717,7 +30196,7 @@
         "ignore"
       ]
     },
-    "PolarChartSerieType": {
+    "PolarChartSeriesType": {
       "Items": [
         "area",
         "bar",
@@ -29857,6 +30336,15 @@
         "<": "lessThan",
         "<=": "lessThanOrEqual"
       }
+    },
+    "ExportFormat": {
+      "Items": [
+        "GIF",
+        "JPEG",
+        "PDF",
+        "PNG",
+        "SVG"
+      ]
     }
   }
 }
