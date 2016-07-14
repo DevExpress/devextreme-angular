@@ -1,18 +1,24 @@
 #set your language below
 language: node_js
 
-#set language version. This is only required if you use the default Shippable image for your build
+env:
+	- XUNIT_FILE=shippable/testresults/test-results.xml
+
 node_js:
-    - "5.10"
+  - "5.10"
+
+before_install:
+  - npm install -g gulp
 
 before_script:
-    - npm install
-    
+  - mkdir -p shippable/testresults
+
 build:
   pre_ci_boot:
     image_name: drydock/u14nod
     image_tag: prod
     pull: true
-        
-script:
-- gulp test
+
+  ci:
+    - npm install
+    - gulp test
