@@ -7,6 +7,9 @@ env:
 node_js:
   - "5.10"
 
+before_install:
+  - npm install -g gulp
+
 before_script:
   - mkdir -p shippable/testresults
 
