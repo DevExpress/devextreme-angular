@@ -18,35 +18,27 @@ import {
     expect,
     inject,
     beforeEach,
-    beforeEachProviders
+    beforeEachProviders,
+    TestComponentBuilder
 } from "@angular/core/testing";
 
-import{
-    TestComponentBuilder
-} from "@angular/compiler/testing";
-
 import {
-    DxComponent, 
+    DxComponent,
     DxTemplateHost
 } from "../../dist";
 
 describe('DevExtreme Angular 2 widget', () => {
     let tcb;
-  
-    //setup
-    beforeEachProviders(() => [
-        TestComponentBuilder
-    ]);
 
     beforeEach(inject([TestComponentBuilder], _tcb => {
         tcb = _tcb;
     }));
-    
+
     function getWidget(fixture) {
         var widgetElement = fixture.nativeElement.querySelector(".dx-test-widget") || fixture.nativeElement;
         return dxTestWidget.getInstance(widgetElement);
     }
-    
+
     //specs
     it('should be rendered', done => {
        tcb
@@ -54,40 +46,40 @@ describe('DevExtreme Angular 2 widget', () => {
        .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
-                
+
                 let element = getWidget(fixture).element().get(0);
-                
+
                 expect(element.classList).toContain("dx-test-widget");
-                
+
                 done();
             })
             .catch(e => done.fail(e));
     });
-    
+
     it('should set testOption value to insatnce', done => {
        tcb
        .overrideTemplate(TestContainerComponent, '<dx-test-widget [testOption]="\'Test Value\'"></dx-test-widget>')
        .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
-                
+
                 let outerComponent =  fixture.componentInstance,
                     innerComponent = outerComponent.innerWidgets.toArray()[0],
                     instance = getWidget(fixture);
-                
+
                 expect(instance.option("testOption")).toBe('Test Value');
                 expect(innerComponent.testOption).toBe('Test Value');
-                
+
                 done();
             })
             .catch(e => done.fail(e));
     });
-    
+
     it('should change component option value', done => {
        tcb.createAsync(DxTestWidget)
             .then(fixture => {
                 fixture.detectChanges();
-                
+
                 let component =  fixture.componentInstance,
                     instance = getWidget(fixture);
 
@@ -98,19 +90,19 @@ describe('DevExtreme Angular 2 widget', () => {
             })
             .catch(e => done.fail(e));
     });
-    
-    it('should change instance option value and fire optionChanged event', done => {       
+
+    it('should change instance option value and fire optionChanged event', done => {
        tcb
        .overrideTemplate(TestContainerComponent, '<dx-test-widget [testOption]="testOption"></dx-test-widget>')
        .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
-                
+
                 var testComponent =  fixture.componentInstance,
                     instance = getWidget(fixture);
-                                
+
                 testComponent.testOption = "Changed 2";
-                fixture.detectChanges();                
+                fixture.detectChanges();
                 expect(instance.option("testOption")).toBe('Changed 2');
                 done();
             })
@@ -142,7 +134,7 @@ export class DxTestWidget extends DxComponent{
     testOption: any;
     onOptionChanged: EventEmitter<any>;
     testOptionChange: EventEmitter<any>;
-    
+
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
         super(elementRef, ngZone, templateHost);
         this.widgetClassName = 'dxTestWidget';
