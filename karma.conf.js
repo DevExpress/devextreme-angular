@@ -62,10 +62,21 @@ module.exports = function(config) {
 
         browsers: ['PhantomJS2'],
 
+        reporters: [
+            'progress',
+            'junit'
+        ],
+
+        junitReporter: {
+            outputDir: 'shippable/testresults/',
+            outputFile: 'test-results.xml'
+        },
+
         // Karma plugins loaded
         plugins: [
             'karma-jasmine',
             'karma-coverage',
+            'karma-junit-reporter',
             'karma-phantomjs2-launcher'
         ],
 
