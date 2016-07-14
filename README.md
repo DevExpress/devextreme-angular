@@ -66,7 +66,7 @@ Make sure your html document has DOCTYPE specified:
   ...
 ```
 
-Modify the 'system.config.js' file as follows:
+Modify the 'systemjs.config.js' file as follows:
 
 ```js
   var map = {
