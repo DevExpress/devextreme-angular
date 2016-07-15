@@ -108,6 +108,8 @@ export class AppComponent implements OnInit {
     emailControl: AbstractControl;
     password: string;
     passwordControl: AbstractControl;
+    birthDate: any;
+    birthDateControl: AbstractControl;
     form: FormGroup;
     boolValue: boolean;
     numberValue: number;
@@ -148,10 +150,12 @@ export class AppComponent implements OnInit {
     ngOnInit() {
         this.form = new FormGroup({
             emailControl: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat])),
-            passwordControl: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)]))
+            passwordControl: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)])),
+            birthDateControl: new FormControl('', Validators.compose([Validators.required])),
         });
         this.emailControl = this.form.controls['emailControl'];
         this.passwordControl = this.form.controls['passwordControl'];
+        this.birthDateControl = this.form.controls['birthDateControl'];
         this.oranges = this.orangeService.getOranges();
         this.customers = this.customerService.getCustomers();
     }
