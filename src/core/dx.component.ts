@@ -24,58 +24,54 @@ export class DxComponent implements OnChanges {
     protected _events: {subscribe?: string, emit: string}[];
     protected _properties: string[];
     
-    private _createWidget() {
-        var that = this,
-            $element = $(this.element.nativeElement);
-
+    private _initTemplates() {
         if(this.templates.length) {
-            var initialTemplates = {};
+            let initialTemplates = {};
             this.templates.forEach(template => { 
-                that._initialOptions[template.name] = function(itemData, itemIndex, itemElement) {
-                    if(itemElement === undefined) {
-                        if(itemIndex === undefined) {
-                            itemElement = itemData;
-                            itemData = undefined;
-                        }
-                        else {
-                            itemElement = itemIndex;
-                            itemIndex = undefined;
-                        }
-                    }
-                    itemElement.empty();
-                    template.render(itemData, itemElement, itemIndex);
-                }; 
+                this._initialOptions[template.name] = template.render.bind(template);
+                initialTemplates[template.name] = template;                
             });
             this._initialOptions._templates = initialTemplates;
         }
-        $element[this.widgetClassName](this._initialOptions);
-        this.instance = $element[this.widgetClassName]("instance");
-
+    }
+    private _initEvents() {
         this._events.forEach(event => {
             if(event.subscribe) {
-                that.instance.on(event.subscribe, function (e) {
+                this.instance.on(event.subscribe, e => {
                     if(event.subscribe === "optionChanged") {
                         var changeEventName = e.name + "Change";
-                        if (that[changeEventName] && !that._isChangesProcessing) {
-                            that[e.name] = e.value;
-                            that[changeEventName].next(e.value);
+                        if(this[changeEventName] && !this._isChangesProcessing) {
+                            this[e.name] = e.value;
+                            this[changeEventName].next(e.value);
                         }
                     }
                     else {
-                        if(that[event.emit]) {
-                            that.ngZone.run(function() {
-                                that[event.emit].next(e);
+                        if(this[event.emit]) {
+                            this.ngZone.run(() => {
+                                this[event.emit].next(e);
                             });
                         }
                     }
                 });
             }
         });
-        
+    }
+    private _initProperties() {
         var defaultOptions = this.instance.option();
         this._properties.forEach(property => {
-            that[property] = defaultOptions[property];
+            this[property] = defaultOptions[property];
         });
+    }
+    private _createInstance() {
+        var $element = $(this.element.nativeElement);
+        $element[this.widgetClassName](this._initialOptions);
+        this.instance = $element[this.widgetClassName]("instance");
+    }
+    private _createWidget() {
+        this._initTemplates();
+        this._createInstance();
+        this._initEvents();
+        this._initProperties();
     }
     constructor(private element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost) {
         this._initialOptions = {};

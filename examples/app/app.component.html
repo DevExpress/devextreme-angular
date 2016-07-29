@@ -101,7 +101,16 @@
 <h2>dxDataGrid</h2>
 
 <dx-data-grid
-    [columns]='["CompanyName", "City", "State", "Phone", "Fax"]'
+    [columns]='[
+        "CompanyName", 
+        "City", 
+        "State", 
+        "Fax", 
+        { 
+            dataField: "Phone", 
+            cellTemplate: "phoneCellTemplate" 
+        }
+    ]'
     [dataSource]='customers'
     [paging]='{
         pageSize: 10
@@ -110,5 +119,8 @@
         showPageSizeSelector: true,
         allowedPageSizes: [5, 10, 20],
         showInfo: true
-    }'
-></dx-data-grid>
+    }'>
+    <div *dxTemplate="let cellData = data of 'phoneCellTemplate'">
+        <dx-button (onClick)="callNumber(cellData.value)" [text]="cellData.text"></dx-button>
+    </div>
+</dx-data-grid>

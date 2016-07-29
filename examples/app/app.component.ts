@@ -140,6 +140,9 @@ export class AppComponent implements OnInit {
     buy(model) {
         alert(model + " has been added to order");
     }
+    callNumber(number) {
+        alert(number + " is being called...");
+    }
     onSubmit() {
         this.form.updateValueAndValidity();
         console.log("submitted");

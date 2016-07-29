@@ -174,6 +174,7 @@ gulp.task('test.components', ['build.tests'], function(done){
 gulp.task('test.components.debug', ['build.tests'], function(done){
     new karmaServer({
         configFile: __dirname + '/karma.conf.js',
+        browsers: [ 'Chrome' ],
         singleRun: false
     }, done).start();
 });
