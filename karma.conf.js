@@ -77,7 +77,8 @@ module.exports = function(config) {
             'karma-jasmine',
             'karma-coverage',
             'karma-junit-reporter',
-            'karma-phantomjs2-launcher'
+            'karma-phantomjs2-launcher',
+            'karma-chrome-launcher'
         ],
 
         singleRun: true,
