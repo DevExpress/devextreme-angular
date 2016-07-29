@@ -251,8 +251,6 @@ export class DxTestWidget extends DxComponent{
     }
 })
 export class TestContainerComponent {
-    a = '123'
     constructor() {
-
     }
 }
