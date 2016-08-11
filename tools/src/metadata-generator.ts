@@ -36,7 +36,7 @@ export default class DXComponentMetadataGenerator {
             inflector = require('inflector-js'),
             metadata = this._store.read(config.sourceMetadataFilePath),
             widgetsMetadata = metadata["Widgets"];
-        
+
         mkdirp.sync(config.outputFolderPath);
 
         for(var widgetName in widgetsMetadata) {
@@ -52,11 +52,11 @@ export default class DXComponentMetadataGenerator {
 
             for(var optionName in widget.Options) {
                 var option = widget.Options[optionName];
-                
+
                 if(option.IsEvent) {
                     var eventName = inflector.camelize(optionName.substr("on".length), true);
-                    
-                    events.push({ 
+
+                    events.push({
                         emit: optionName,
                         subscribe: eventName
                     });
@@ -66,25 +66,25 @@ export default class DXComponentMetadataGenerator {
                         name: optionName,
                         type: "any"
                     };
-                    
+
                     if(option.PrimitiveTypes) {
-                        //TODO specify primitive types
-                        //property.type = primitiveType;
+                        // TODO specify primitive types
+                        // property.type = primitiveType;
                     }
                     properties.push(property);
-                    
-                    changeEvents.push({  
+
+                    changeEvents.push({
                         emit: optionName + "Change"
                     });
-                    
+
                     if(optionName === "value") {
                         isEditor = true;
                     }
                 }
             }
-            
+
             var allEvents = events.concat(changeEvents);
-        
+
             var widgetMetadata = {
                 className: inflector.classify(widgetName),
                 widgetName: widgetName,
@@ -92,8 +92,8 @@ export default class DXComponentMetadataGenerator {
                 events: allEvents,
                 properties: properties,
                 isEditor: isEditor
-            };               
-                
+            };
+
             console.log("Write metadata to file " + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
         }
