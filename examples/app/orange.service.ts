@@ -6,25 +6,25 @@ export class Orange {
 }
 
 var ORANGES: Orange[] = [{
-            day: "Monday",
+            day: 'Monday',
             oranges: 3
         }, {
-            day: "Tuesday",
+            day: 'Tuesday',
             oranges: 2
         }, {
-            day: "Wednesday",
+            day: 'Wednesday',
             oranges: 3
         }, {
-            day: "Thursday",
+            day: 'Thursday',
             oranges: 4
         }, {
-            day: "Friday",
+            day: 'Friday',
             oranges: 6
         }, {
-            day: "Saturday",
+            day: 'Saturday',
             oranges: 11
         }, {
-            day: "Sunday",
+            day: 'Sunday',
             oranges: 4
         }];
 

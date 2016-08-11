@@ -6,13 +6,13 @@ import {
 } from '@angular/core';
 
 import { DxComponent } from './dx.component';
-import { DxTemplateHost } from "./dx.template-host";
+import { DxTemplateHost } from './dx.template-host';
 
 declare var $:any;
 
 @Directive({
-    selector: "[dxTemplate]",
-    inputs: ["dxTemplate", "dxTemplateOf"]
+    selector: '[dxTemplate]',
+    inputs: ['dxTemplate', 'dxTemplateOf']
 })
 export class DxTemplate {
     childView: EmbeddedViewRef<any>;
@@ -21,7 +21,7 @@ export class DxTemplate {
         templateHost.setTemplate(this);
     }
     private _renderCore(data, $container?:any, itemIndex?:number) {
-        var childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { "data": data });
+        var childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
         if($container) {
             $container.append(childView.rootNodes);
         }
@@ -40,7 +40,7 @@ export class DxTemplate {
             else {
                 itemElement = itemData;
                 itemData = itemIndex;
-            } 
+            }
         }
         itemElement.empty();
         this._renderCore(itemData, itemElement, itemIndex);

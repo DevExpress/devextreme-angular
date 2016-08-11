@@ -11,15 +11,15 @@ export interface IObjectStore {
 }
 
 export class FSObjectStore implements IObjectStore {
-    private _encoding = "utf8";
+    private _encoding = 'utf8';
     read(filePath) {
-        console.log("Read from file: " + filePath);
+        console.log('Read from file: ' + filePath);
         var dataString = fs.readFileSync(filePath, this._encoding);
-        console.log("Parse data");
+        console.log('Parse data');
         return JSON.parse(dataString);
     }
     write(filePath, data) {
-        console.log("Write data to file " + filePath);
+        console.log('Write data to file ' + filePath);
         var dataString = JSON.stringify(data, null, 4);
         fs.writeFileSync(filePath, dataString, { encoding: this._encoding });
     }
@@ -35,16 +35,16 @@ export default class DXComponentMetadataGenerator {
         var that = this,
             inflector = require('inflector-js'),
             metadata = this._store.read(config.sourceMetadataFilePath),
-            widgetsMetadata = metadata["Widgets"];
+            widgetsMetadata = metadata['Widgets'];
 
         mkdirp.sync(config.outputFolderPath);
 
         for(var widgetName in widgetsMetadata) {
-            console.log("Generate metadata for " + widgetName);
+            console.log('Generate metadata for ' + widgetName);
 
             var widget = widgetsMetadata[widgetName],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
-                outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr("dx-".length) + ".json"),
+                outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
                 changeEvents = [],
                 properties = [],
@@ -54,7 +54,7 @@ export default class DXComponentMetadataGenerator {
                 var option = widget.Options[optionName];
 
                 if(option.IsEvent) {
-                    var eventName = inflector.camelize(optionName.substr("on".length), true);
+                    var eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
                         emit: optionName,
@@ -64,7 +64,7 @@ export default class DXComponentMetadataGenerator {
                 else {
                     var property = {
                         name: optionName,
-                        type: "any"
+                        type: 'any'
                     };
 
                     if(option.PrimitiveTypes) {
@@ -74,10 +74,10 @@ export default class DXComponentMetadataGenerator {
                     properties.push(property);
 
                     changeEvents.push({
-                        emit: optionName + "Change"
+                        emit: optionName + 'Change'
                     });
 
-                    if(optionName === "value") {
+                    if(optionName === 'value') {
                         isEditor = true;
                     }
                 }
@@ -94,7 +94,7 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor
             };
 
-            console.log("Write metadata to file " + outputFilePath);
+            console.log('Write metadata to file ' + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
         }
     }

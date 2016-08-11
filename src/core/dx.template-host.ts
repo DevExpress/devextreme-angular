@@ -1,5 +1,5 @@
-import { DxComponent } from "./dx.component";
-import { DxTemplate } from "./dx.template";
+import { DxComponent } from './dx.component';
+import { DxTemplate } from './dx.template';
 
 export class DxTemplateHost {
     host: DxComponent;

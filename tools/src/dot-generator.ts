@@ -22,9 +22,9 @@ doT.templateSettings = {
 };
 
 export default class doTGenerator {
-    private _encoding = "utf8";
+    private _encoding = 'utf8';
     createTemplate(templateFilePath: string) {
-        console.log("Create doT template from " + templateFilePath);
+        console.log('Create doT template from ' + templateFilePath);
         var templateString = fs.readFileSync(templateFilePath, this._encoding);
         return doT.template(templateString);
     }
@@ -35,17 +35,17 @@ export default class doTGenerator {
 
         mkdirp.sync(config.outputFolderPath);
 
-        console.log("List directory: " + config.metadataFolderPath);
+        console.log('List directory: ' + config.metadataFolderPath);
         files = fs.readdirSync(config.metadataFolderPath);
         files.forEach(fileName => {
             var filePath = path.join(config.metadataFolderPath, fileName);
-            console.log("Read data from " + filePath);
+            console.log('Read data from ' + filePath);
             var data = fs.readFileSync(filePath, this._encoding);
-            console.log("Apply template");
+            console.log('Apply template');
             var result = template(JSON.parse(data));
-            var resultFileName = path.parse(filePath).name + ".ts";
+            var resultFileName = path.parse(filePath).name + '.ts';
             var resultFilePath = path.join(config.outputFolderPath, resultFileName);
-            console.log("Write result to " + resultFilePath);
+            console.log('Write result to ' + resultFilePath);
             fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
         });
     }

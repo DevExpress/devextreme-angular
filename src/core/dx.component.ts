@@ -5,10 +5,10 @@ import {
     ElementRef,
     SimpleChange,
     NgZone
-} from "@angular/core";
+} from '@angular/core';
 
-import {DxTemplate} from "./dx.template";
-import {DxTemplateHost} from "./dx.template-host";
+import {DxTemplate} from './dx.template';
+import {DxTemplateHost} from './dx.template-host';
 
 declare var DevExpress:any;
 declare var $:any;
@@ -39,8 +39,8 @@ export class DxComponent implements OnChanges, AfterViewInit {
         this._events.forEach(event => {
             if(event.subscribe) {
                 this.instance.on(event.subscribe, e => {
-                    if(event.subscribe === "optionChanged") {
-                        var changeEventName = e.name + "Change";
+                    if(event.subscribe === 'optionChanged') {
+                        var changeEventName = e.name + 'Change';
                         if(this[changeEventName] && !this._isChangesProcessing) {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
@@ -66,7 +66,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
     private _createInstance() {
         var $element = $(this.element.nativeElement);
         $element[this.widgetClassName](this._initialOptions);
-        this.instance = $element[this.widgetClassName]("instance");
+        this.instance = $element[this.widgetClassName]('instance');
     }
     private _createWidget() {
         this._initTemplates();
