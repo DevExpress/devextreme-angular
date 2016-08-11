@@ -1,11 +1,12 @@
 import {
     Component,
-    OnChanges, 
+    OnChanges,
+    AfterViewInit,
     ElementRef,
     SimpleChange,
     NgZone
 } from "@angular/core";
-    
+
 import {DxTemplate} from "./dx.template";
 import {DxTemplateHost} from "./dx.template-host";
 
@@ -14,22 +15,22 @@ declare var $:any;
 
 var DX = DevExpress;
 
-export class DxComponent implements OnChanges {
+export class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
     templates: DxTemplate[];
     widgetClassName: string;
     instance: any;
-    
+
     protected _events: {subscribe?: string, emit: string}[];
     protected _properties: string[];
-    
+
     private _initTemplates() {
         if(this.templates.length) {
             let initialTemplates = {};
-            this.templates.forEach(template => { 
+            this.templates.forEach(template => {
                 this._initialOptions[template.name] = template.render.bind(template);
-                initialTemplates[template.name] = template;                
+                initialTemplates[template.name] = template;
             });
             this._initialOptions._templates = initialTemplates;
         }
@@ -95,7 +96,7 @@ export class DxComponent implements OnChanges {
             $.each(changes, function(propertyName, change) {
                 that._initialOptions[propertyName] = change.currentValue;
             });
-        }        
+        }
     }
     ngAfterViewInit() {
         this._createWidget();
