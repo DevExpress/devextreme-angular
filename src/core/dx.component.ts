@@ -10,8 +10,8 @@ import {
 import {DxTemplate} from './dx.template';
 import {DxTemplateHost} from './dx.template-host';
 
-declare var DevExpress:any;
-declare var $:any;
+declare var DevExpress: any;
+declare var $: any;
 
 var DX = DevExpress;
 
@@ -26,7 +26,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
     protected _properties: string[];
 
     private _initTemplates() {
-        if(this.templates.length) {
+        if (this.templates.length) {
             let initialTemplates = {};
             this.templates.forEach(template => {
                 this._initialOptions[template.name] = template.render.bind(template);
@@ -37,17 +37,17 @@ export class DxComponent implements OnChanges, AfterViewInit {
     }
     private _initEvents() {
         this._events.forEach(event => {
-            if(event.subscribe) {
+            if (event.subscribe) {
                 this.instance.on(event.subscribe, e => {
-                    if(event.subscribe === 'optionChanged') {
+                    if (event.subscribe === 'optionChanged') {
                         var changeEventName = e.name + 'Change';
-                        if(this[changeEventName] && !this._isChangesProcessing) {
+                        if (this[changeEventName] && !this._isChangesProcessing) {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
                         }
                     }
                     else {
-                        if(this[event.emit]) {
+                        if (this[event.emit]) {
                             this.ngZone.run(() => {
                                 this[event.emit].next(e);
                             });
@@ -85,7 +85,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
     ngOnChanges(changes: {[key: string]: SimpleChange}) {
         var that = this;
 
-        if(that.instance) {
+        if (that.instance) {
             $.each(changes, function(propertyName, change) {
                 that._isChangesProcessing = true; // prevent cycle change event emitting
                 that.instance.option(propertyName, change.currentValue);

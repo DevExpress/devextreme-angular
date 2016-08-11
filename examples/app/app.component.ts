@@ -46,7 +46,7 @@ import{
     CustomerService
 } from './customer.service';
 
-declare var $:any;
+declare var $: any;
 
 @Component({
     selector: 'my-app',

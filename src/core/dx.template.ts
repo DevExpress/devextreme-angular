@@ -8,7 +8,7 @@ import {
 import { DxComponent } from './dx.component';
 import { DxTemplateHost } from './dx.template-host';
 
-declare var $:any;
+declare var $: any;
 
 @Directive({
     selector: '[dxTemplate]',
@@ -17,12 +17,12 @@ declare var $:any;
 export class DxTemplate {
     childView: EmbeddedViewRef<any>;
     name: string;
-    constructor(private templateRef:TemplateRef<any>, private viewContainerRef:ViewContainerRef, private templateHost:DxTemplateHost) {
+    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
     }
-    private _renderCore(data, $container?:any, itemIndex?:number) {
+    private _renderCore(data, $container?: any, itemIndex?: number) {
         var childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
-        if($container) {
+        if ($container) {
             $container.append(childView.rootNodes);
         }
         return $(childView.rootNodes);

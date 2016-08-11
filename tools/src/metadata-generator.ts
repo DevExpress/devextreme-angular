@@ -27,7 +27,7 @@ export class FSObjectStore implements IObjectStore {
 
 export default class DXComponentMetadataGenerator {
     constructor(private _store?: IObjectStore) {
-        if(!this._store) {
+        if (!this._store) {
             this._store = new FSObjectStore();
         }
     }
@@ -39,7 +39,7 @@ export default class DXComponentMetadataGenerator {
 
         mkdirp.sync(config.outputFolderPath);
 
-        for(var widgetName in widgetsMetadata) {
+        for (var widgetName in widgetsMetadata) {
             console.log('Generate metadata for ' + widgetName);
 
             var widget = widgetsMetadata[widgetName],
@@ -50,10 +50,10 @@ export default class DXComponentMetadataGenerator {
                 properties = [],
                 isEditor = false;
 
-            for(var optionName in widget.Options) {
+            for (var optionName in widget.Options) {
                 var option = widget.Options[optionName];
 
-                if(option.IsEvent) {
+                if (option.IsEvent) {
                     var eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
@@ -67,7 +67,7 @@ export default class DXComponentMetadataGenerator {
                         type: 'any'
                     };
 
-                    if(option.PrimitiveTypes) {
+                    if (option.PrimitiveTypes) {
                         // TODO specify primitive types
                         // property.type = primitiveType;
                     }
@@ -77,7 +77,7 @@ export default class DXComponentMetadataGenerator {
                         emit: optionName + 'Change'
                     });
 
-                    if(optionName === 'value') {
+                    if (optionName === 'value') {
                         isEditor = true;
                     }
                 }
