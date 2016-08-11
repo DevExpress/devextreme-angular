@@ -29,8 +29,7 @@ export default class doTGenerator {
         return doT.template(templateString);
     }
     generate(config) {
-        var that = this,
-            template = this.createTemplate(config.templateFilePath),
+        var template = this.createTemplate(config.templateFilePath),
             files;
 
         mkdirp.sync(config.outputFolderPath);

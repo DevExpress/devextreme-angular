@@ -32,8 +32,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
     generate(config) {
-        var that = this,
-            inflector = require('inflector-js'),
+        var inflector = require('inflector-js'),
             metadata = this._store.read(config.sourceMetadataFilePath),
             widgetsMetadata = metadata['Widgets'];
 

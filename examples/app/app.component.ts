@@ -1,12 +1,10 @@
 import {
     Component,
-    OnInit,
-    ElementRef
+    OnInit
 } from '@angular/core';
 import {
     REACTIVE_FORM_DIRECTIVES,
     FORM_DIRECTIVES,
-    NgForm,
     AbstractControl,
     FormGroup,
     FormControl,

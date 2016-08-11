@@ -1,5 +1,4 @@
 import {
-    Component,
     OnChanges,
     AfterViewInit,
     ElementRef,
@@ -10,10 +9,7 @@ import {
 import {DxTemplate} from './dx.template';
 import {DxTemplateHost} from './dx.template-host';
 
-declare var DevExpress: any;
 declare var $: any;
-
-var DX = DevExpress;
 
 export class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;

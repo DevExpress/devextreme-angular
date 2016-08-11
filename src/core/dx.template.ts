@@ -5,7 +5,6 @@ import {
     ViewContainerRef
 } from '@angular/core';
 
-import { DxComponent } from './dx.component';
 import { DxTemplateHost } from './dx.template-host';
 
 declare var $: any;
