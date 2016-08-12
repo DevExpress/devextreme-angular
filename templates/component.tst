@@ -13,7 +13,8 @@ import {
     Output<#? it.isEditor #>,
     Directive,
     Provider,
-    forwardRef
+    forwardRef,
+    HostListener
 <#?#>
 } from '@angular/core';
 
@@ -70,11 +71,10 @@ const CUSTOM_VALUE_ACCESSOR = new Provider(
 
 @Directive({
     selector: '<#= it.selector #>[formControlName],<#= it.selector #>[formControl],<#= it.selector #>[ngModel]',
-    host: {'(valueChange)': 'onChange($event)'},
     providers: [CUSTOM_VALUE_ACCESSOR]
 })
 export class <#= it.className #>ValueAccessor implements ControlValueAccessor {
-    onChange = (_) => {};
+    @HostListener('valueChange', ['$event']) onChange(_) { }
     onTouched = () => {};
 
     constructor(private host: <#= it.className #>) {

@@ -1,3 +1,5 @@
+/* tslint:disable:use-input-property-decorator */
+
 import {
     Directive,
     EmbeddedViewRef,
