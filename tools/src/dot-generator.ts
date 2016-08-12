@@ -21,7 +21,7 @@ doT.templateSettings = {
   selfcontained: false
 };
 
-export default class doTGenerator {
+export default class DoTGenerator {
     private _encoding = 'utf8';
     createTemplate(templateFilePath: string) {
         console.log('Create doT template from ' + templateFilePath);

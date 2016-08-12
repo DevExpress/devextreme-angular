@@ -51,8 +51,8 @@ gulp.task("generate.metadata", ['build.tools'], function() {
 });
 
 gulp.task("generate.components", ['generate.metadata'], function() {
-    var doTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
-        generator = new doTGenerator();
+    var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
+        generator = new DoTGenerator();
 
     generator.generate(buildConfig.tools.componentGenerator);
 });
