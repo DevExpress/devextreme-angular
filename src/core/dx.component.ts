@@ -41,8 +41,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
                         }
-                    }
-                    else {
+                    } else {
                         if (this[event.emit]) {
                             this.ngZone.run(() => {
                                 this[event.emit].next(e);
@@ -87,8 +86,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
                 that.instance.option(propertyName, change.currentValue);
                 that._isChangesProcessing = false;
             });
-        }
-        else {
+        } else {
             $.each(changes, function(propertyName, change) {
                 that._initialOptions[propertyName] = change.currentValue;
             });

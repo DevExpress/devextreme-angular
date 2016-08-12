@@ -59,8 +59,7 @@ export default class DXComponentMetadataGenerator {
                         emit: optionName,
                         subscribe: eventName
                     });
-                }
-                else {
+                } else {
                     let property = {
                         name: optionName,
                         type: 'any'

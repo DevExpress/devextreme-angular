@@ -31,12 +31,10 @@ export class DxTemplate {
             if (itemIndex === undefined) {
                 itemElement = itemData;
                 itemData = undefined;
-            }
-            else if (itemIndex instanceof $) {
+            } else if (itemIndex instanceof $) {
                 itemElement = itemIndex;
                 itemIndex = undefined;
-            }
-            else {
+            } else {
                 itemElement = itemData;
                 itemData = itemIndex;
             }
