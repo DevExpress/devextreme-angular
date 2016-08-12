@@ -44,7 +44,7 @@ import{
     CustomerService
 } from './customer.service';
 
-declare var $: any;
+declare let $: any;
 
 @Component({
     selector: 'my-app',
@@ -160,7 +160,7 @@ export class AppComponent implements OnInit {
 
 export class CustomValidator {
     static mailFormat(control: FormControl) {
-        var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+        let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
         if (control.value && control.value.length && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
             return { 'incorrectMailFormat': true };

@@ -14,13 +14,13 @@ export class FSObjectStore implements IObjectStore {
     private _encoding = 'utf8';
     read(filePath) {
         console.log('Read from file: ' + filePath);
-        var dataString = fs.readFileSync(filePath, this._encoding);
+        let dataString = fs.readFileSync(filePath, this._encoding);
         console.log('Parse data');
         return JSON.parse(dataString);
     }
     write(filePath, data) {
         console.log('Write data to file ' + filePath);
-        var dataString = JSON.stringify(data, null, 4);
+        let dataString = JSON.stringify(data, null, 4);
         fs.writeFileSync(filePath, dataString, { encoding: this._encoding });
     }
 }
@@ -32,16 +32,16 @@ export default class DXComponentMetadataGenerator {
         }
     }
     generate(config) {
-        var inflector = require('inflector-js'),
+        let inflector = require('inflector-js'),
             metadata = this._store.read(config.sourceMetadataFilePath),
             widgetsMetadata = metadata['Widgets'];
 
         mkdirp.sync(config.outputFolderPath);
 
-        for (var widgetName in widgetsMetadata) {
+        for (let widgetName in widgetsMetadata) {
             console.log('Generate metadata for ' + widgetName);
 
-            var widget = widgetsMetadata[widgetName],
+            let widget = widgetsMetadata[widgetName],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
                 outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
@@ -49,11 +49,11 @@ export default class DXComponentMetadataGenerator {
                 properties = [],
                 isEditor = false;
 
-            for (var optionName in widget.Options) {
-                var option = widget.Options[optionName];
+            for (let optionName in widget.Options) {
+                let option = widget.Options[optionName];
 
                 if (option.IsEvent) {
-                    var eventName = inflector.camelize(optionName.substr('on'.length), true);
+                    let eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
                         emit: optionName,
@@ -61,7 +61,7 @@ export default class DXComponentMetadataGenerator {
                     });
                 }
                 else {
-                    var property = {
+                    let property = {
                         name: optionName,
                         type: 'any'
                     };
@@ -82,9 +82,9 @@ export default class DXComponentMetadataGenerator {
                 }
             }
 
-            var allEvents = events.concat(changeEvents);
+            let allEvents = events.concat(changeEvents);
 
-            var widgetMetadata = {
+            let widgetMetadata = {
                 className: inflector.classify(widgetName),
                 widgetName: widgetName,
                 selector: dasherizedWidgetName,

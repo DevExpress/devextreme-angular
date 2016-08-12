@@ -5,7 +5,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
-var doT = require('dot');
+let doT = require('dot');
 
 doT.templateSettings = {
   evaluate:    /\<#([\s\S]+?)#\>/g,
@@ -25,11 +25,11 @@ export default class doTGenerator {
     private _encoding = 'utf8';
     createTemplate(templateFilePath: string) {
         console.log('Create doT template from ' + templateFilePath);
-        var templateString = fs.readFileSync(templateFilePath, this._encoding);
+        let templateString = fs.readFileSync(templateFilePath, this._encoding);
         return doT.template(templateString);
     }
     generate(config) {
-        var template = this.createTemplate(config.templateFilePath),
+        let template = this.createTemplate(config.templateFilePath),
             files;
 
         mkdirp.sync(config.outputFolderPath);
@@ -37,13 +37,13 @@ export default class doTGenerator {
         console.log('List directory: ' + config.metadataFolderPath);
         files = fs.readdirSync(config.metadataFolderPath);
         files.forEach(fileName => {
-            var filePath = path.join(config.metadataFolderPath, fileName);
+            let filePath = path.join(config.metadataFolderPath, fileName);
             console.log('Read data from ' + filePath);
-            var data = fs.readFileSync(filePath, this._encoding);
+            let data = fs.readFileSync(filePath, this._encoding);
             console.log('Apply template');
-            var result = template(JSON.parse(data));
-            var resultFileName = path.parse(filePath).name + '.ts';
-            var resultFilePath = path.join(config.outputFolderPath, resultFileName);
+            let result = template(JSON.parse(data));
+            let resultFileName = path.parse(filePath).name + '.ts';
+            let resultFilePath = path.join(config.outputFolderPath, resultFileName);
             console.log('Write result to ' + resultFilePath);
             fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
         });

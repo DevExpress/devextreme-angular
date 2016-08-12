@@ -12,7 +12,7 @@ export class Customer {
     Website: string;
 }
 
-var CUSTOMERS: Customer[] = [{
+let CUSTOMERS: Customer[] = [{
     ID: 1,
     CompanyName: 'Super Mart of the West',
     Address: '702 SW 8th Street',

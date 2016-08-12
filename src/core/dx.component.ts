@@ -9,7 +9,7 @@ import {
 import {DxTemplate} from './dx.template';
 import {DxTemplateHost} from './dx.template-host';
 
-declare var $: any;
+declare let $: any;
 
 export class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
@@ -36,7 +36,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
             if (event.subscribe) {
                 this.instance.on(event.subscribe, e => {
                     if (event.subscribe === 'optionChanged') {
-                        var changeEventName = e.name + 'Change';
+                        let changeEventName = e.name + 'Change';
                         if (this[changeEventName] && !this._isChangesProcessing) {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
@@ -54,13 +54,13 @@ export class DxComponent implements OnChanges, AfterViewInit {
         });
     }
     private _initProperties() {
-        var defaultOptions = this.instance.option();
+        let defaultOptions = this.instance.option();
         this._properties.forEach(property => {
             this[property] = defaultOptions[property];
         });
     }
     private _createInstance() {
-        var $element = $(this.element.nativeElement);
+        let $element = $(this.element.nativeElement);
         $element[this.widgetClassName](this._initialOptions);
         this.instance = $element[this.widgetClassName]('instance');
     }
@@ -79,7 +79,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
         this.templates.push(template);
     }
     ngOnChanges(changes: {[key: string]: SimpleChange}) {
-        var that = this;
+        let that = this;
 
         if (that.instance) {
             $.each(changes, function(propertyName, change) {

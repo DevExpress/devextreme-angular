@@ -8,14 +8,14 @@ export default class FacadeGenerator {
     generate(config) {
         Object.keys(config.facades).forEach(facadeFilePath => {
             console.log('Generate facade: ' + facadeFilePath);
-            var facadeConfig = config.facades[facadeFilePath],
+            let facadeConfig = config.facades[facadeFilePath],
                 resultContent = '';
 
             facadeConfig.sourceDirectories.forEach(directoryPath => {
                 console.log('List directory: ' + directoryPath);
-                var files = fs.readdirSync(directoryPath);
+                let files = fs.readdirSync(directoryPath);
                 files.forEach(fileName => {
-                    var filePath = path.join(directoryPath, fileName),
+                    let filePath = path.join(directoryPath, fileName),
                         relativePath = path.relative(path.dirname(facadeFilePath), filePath),
                         parsedPath = path.parse(relativePath),
                         modulePath = path.join(parsedPath.dir, parsedPath.name);

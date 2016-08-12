@@ -5,7 +5,7 @@ export class Orange {
     oranges: number;
 }
 
-var ORANGES: Orange[] = [{
+let ORANGES: Orange[] = [{
             day: 'Monday',
             oranges: 3
         }, {

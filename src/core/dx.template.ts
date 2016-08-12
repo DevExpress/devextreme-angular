@@ -7,7 +7,7 @@ import {
 
 import { DxTemplateHost } from './dx.template-host';
 
-declare var $: any;
+declare let $: any;
 
 @Directive({
     selector: '[dxTemplate]',
@@ -20,7 +20,7 @@ export class DxTemplate {
         templateHost.setTemplate(this);
     }
     private _renderCore(data, $container?: any, itemIndex?: number) {
-        var childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
+        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
         if ($container) {
             $container.append(childView.rootNodes);
         }
