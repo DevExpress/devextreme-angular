@@ -1,3 +1,8 @@
+<#? it.isEditor #>
+/* tslint:disable:directive-selector-name */
+/* tslint:disable:directive-selector-type */
+<#?#>
+
 import {
     Component,
     ElementRef,
