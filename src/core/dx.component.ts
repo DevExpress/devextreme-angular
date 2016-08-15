@@ -1,52 +1,48 @@
 import {
-    Component,
-    OnChanges, 
+    OnChanges,
+    AfterViewInit,
     ElementRef,
     SimpleChange,
     NgZone
-} from "@angular/core";
-    
-import {DxTemplate} from "./dx.template";
-import {DxTemplateHost} from "./dx.template-host";
+} from '@angular/core';
 
-declare var DevExpress:any;
-declare var $:any;
+import {DxTemplate} from './dx.template';
+import {DxTemplateHost} from './dx.template-host';
 
-var DX = DevExpress;
+declare let $: any;
 
-export class DxComponent implements OnChanges {
+export class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
     templates: DxTemplate[];
     widgetClassName: string;
     instance: any;
-    
+
     protected _events: {subscribe?: string, emit: string}[];
     protected _properties: string[];
-    
+
     private _initTemplates() {
-        if(this.templates.length) {
+        if (this.templates.length) {
             let initialTemplates = {};
-            this.templates.forEach(template => { 
+            this.templates.forEach(template => {
                 this._initialOptions[template.name] = template.render.bind(template);
-                initialTemplates[template.name] = template;                
+                initialTemplates[template.name] = template;
             });
             this._initialOptions._templates = initialTemplates;
         }
     }
     private _initEvents() {
         this._events.forEach(event => {
-            if(event.subscribe) {
+            if (event.subscribe) {
                 this.instance.on(event.subscribe, e => {
-                    if(event.subscribe === "optionChanged") {
-                        var changeEventName = e.name + "Change";
-                        if(this[changeEventName] && !this._isChangesProcessing) {
+                    if (event.subscribe === 'optionChanged') {
+                        let changeEventName = e.name + 'Change';
+                        if (this[changeEventName] && !this._isChangesProcessing) {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
                         }
-                    }
-                    else {
-                        if(this[event.emit]) {
+                    } else {
+                        if (this[event.emit]) {
                             this.ngZone.run(() => {
                                 this[event.emit].next(e);
                             });
@@ -57,15 +53,15 @@ export class DxComponent implements OnChanges {
         });
     }
     private _initProperties() {
-        var defaultOptions = this.instance.option();
+        let defaultOptions = this.instance.option();
         this._properties.forEach(property => {
             this[property] = defaultOptions[property];
         });
     }
     private _createInstance() {
-        var $element = $(this.element.nativeElement);
+        let $element = $(this.element.nativeElement);
         $element[this.widgetClassName](this._initialOptions);
-        this.instance = $element[this.widgetClassName]("instance");
+        this.instance = $element[this.widgetClassName]('instance');
     }
     private _createWidget() {
         this._initTemplates();
@@ -82,20 +78,19 @@ export class DxComponent implements OnChanges {
         this.templates.push(template);
     }
     ngOnChanges(changes: {[key: string]: SimpleChange}) {
-        var that = this;
+        let that = this;
 
-        if(that.instance) {
+        if (that.instance) {
             $.each(changes, function(propertyName, change) {
                 that._isChangesProcessing = true; // prevent cycle change event emitting
                 that.instance.option(propertyName, change.currentValue);
                 that._isChangesProcessing = false;
             });
-        }
-        else {
+        } else {
             $.each(changes, function(propertyName, change) {
                 that._initialOptions[propertyName] = change.currentValue;
             });
-        }        
+        }
     }
     ngAfterViewInit() {
         this._createWidget();

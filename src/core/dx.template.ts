@@ -1,3 +1,5 @@
+/* tslint:disable:use-input-property-decorator */
+
 import {
     Directive,
     EmbeddedViewRef,
@@ -5,24 +7,23 @@ import {
     ViewContainerRef
 } from '@angular/core';
 
-import { DxComponent } from './dx.component';
-import { DxTemplateHost } from "./dx.template-host";
+import { DxTemplateHost } from './dx.template-host';
 
-declare var $:any;
+declare let $: any;
 
 @Directive({
-    selector: "[dxTemplate]",
-    inputs: ["dxTemplate", "dxTemplateOf"]
+    selector: '[dxTemplate]',
+    inputs: ['dxTemplate', 'dxTemplateOf']
 })
 export class DxTemplate {
     childView: EmbeddedViewRef<any>;
     name: string;
-    constructor(private templateRef:TemplateRef<any>, private viewContainerRef:ViewContainerRef, private templateHost:DxTemplateHost) {
+    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
     }
-    private _renderCore(data, $container?:any, itemIndex?:number) {
-        var childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { "data": data });
-        if($container) {
+    private _renderCore(data, $container?: any, itemIndex?: number) {
+        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
+        if ($container) {
             $container.append(childView.rootNodes);
         }
         return $(childView.rootNodes);
@@ -32,15 +33,13 @@ export class DxTemplate {
             if (itemIndex === undefined) {
                 itemElement = itemData;
                 itemData = undefined;
-            }
-            else if (itemIndex instanceof $) {
+            } else if (itemIndex instanceof $) {
                 itemElement = itemIndex;
                 itemIndex = undefined;
-            }
-            else {
+            } else {
                 itemElement = itemData;
                 itemData = itemIndex;
-            } 
+            }
         }
         itemElement.empty();
         this._renderCore(itemData, itemElement, itemIndex);

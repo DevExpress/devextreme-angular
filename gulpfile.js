@@ -27,11 +27,11 @@ gulp.task('build', [
 
 gulp.task('build.tools', function() {
     var config = buildConfig.tools;
-    
+
     var tsResult = gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
         .pipe(typescript(config.tsc));
-        
+
     return merge([
         tsResult.dts.pipe(gulp.dest(config.distPath)),
         tsResult.js
@@ -46,13 +46,13 @@ gulp.task('build.tools', function() {
 gulp.task("generate.metadata", ['build.tools'], function() {
     var MetadataGenerator = require(buildConfig.tools.metadataGenerator.importFrom).default,
         generator = new MetadataGenerator();
-    
+
     generator.generate(buildConfig.tools.metadataGenerator);
 });
 
 gulp.task("generate.components", ['generate.metadata'], function() {
-    var doTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
-        generator = new doTGenerator();
+    var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
+        generator = new DoTGenerator();
 
     generator.generate(buildConfig.tools.componentGenerator);
 });
@@ -60,14 +60,14 @@ gulp.task("generate.components", ['generate.metadata'], function() {
 gulp.task("generate.facades", ['generate.components'], function() {
     var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default,
         generator = new FacadeGenerator();
-    
-    generator.generate(buildConfig.tools.facadeGenerator);    
+
+    generator.generate(buildConfig.tools.facadeGenerator);
 });
 
 gulp.task('build.components', ['generate.components', 'generate.facades'], function() {
     var config = buildConfig.components;
 
-    var tsProject = typescript.createProject(config.tsConfigPath, { 
+    var tsProject = typescript.createProject(config.tsConfigPath, {
         typescript: tsc
     });
 
@@ -127,7 +127,7 @@ gulp.task('build.examples', ['build.components'], function() {
     var tsResult = gulp.src([config.appPath + '/*.ts', '!' + config.appPath + '/**/*.d.ts'])
         .pipe(sourcemaps.init())
         .pipe(typescript(config.tsc));
-        
+
     return merge([
         tsResult.dts.pipe(gulp.dest(config.appPath)),
         tsResult.js
@@ -138,7 +138,7 @@ gulp.task('build.examples', ['build.components'], function() {
 
 gulp.task('watch.examples', function() {
     var config = buildConfig.examples;
-    
+
     gulp.watch([config.appPath + '/*.ts', '!' + config.appPath + '/*.d.ts'], ['build.examples']);
 });
 
@@ -148,11 +148,11 @@ gulp.task('watch.examples', function() {
 gulp.task('build.tests', ['build.components'], function() {
     var config = buildConfig.components,
         testConfig = buildConfig.tests;
-    
+
     var tsResult = gulp.src(config.tsTestSrc)
         .pipe(sourcemaps.init())
         .pipe(typescript(testConfig.tsc));
-        
+
     return merge([
         tsResult.dts.pipe(gulp.dest(config.testsPath)),
         tsResult.js
@@ -201,16 +201,7 @@ gulp.task("lint", function(){
         .pipe(tslint({
             tslint: require('tslint').default,
             rulesDirectory: null,
-            configuration: {
-                "rules": {
-                    "no-debugger": true,
-                    "no-invalid-this": true,
-                    "semicolon": true,
-                    "whitespace": [true,  "check-operator", "check-separator", "check-typecast"],
-                    "use-strict": true,              
-                    "no-string-literal": false
-                }
-            }
+            configuration: "tslint.json"
         }))
         .pipe(tslint.report("prose"));
 });

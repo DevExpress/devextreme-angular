@@ -1,12 +1,10 @@
 import {
     Component,
-    OnInit,
-    ElementRef
+    OnInit
 } from '@angular/core';
 import {
     REACTIVE_FORM_DIRECTIVES,
     FORM_DIRECTIVES,
-    NgForm,
     AbstractControl,
     FormGroup,
     FormControl,
@@ -46,7 +44,7 @@ import{
     CustomerService
 } from './customer.service';
 
-declare var $:any;
+declare let $: any;
 
 @Component({
     selector: 'my-app',
@@ -69,7 +67,7 @@ declare var $:any;
             display: block;
         }
     `],
-    templateUrl: "app/app.component.html",
+    templateUrl: 'app/app.component.html',
     directives: [
         REACTIVE_FORM_DIRECTIVES,
         FORM_DIRECTIVES,
@@ -103,7 +101,7 @@ declare var $:any;
     ]
 })
 export class AppComponent implements OnInit {
-    text = "Initial text";
+    text = 'Initial text';
     email: string;
     emailControl: AbstractControl;
     password: string;
@@ -115,37 +113,37 @@ export class AppComponent implements OnInit {
     demoItems: string[];
     popupVisible = false;
     series = {
-        argumentField: "day",
-        valueField: "oranges",
-        name: "My oranges",
-        type: "bar",
+        argumentField: 'day',
+        valueField: 'oranges',
+        name: 'My oranges',
+        type: 'bar',
         color: '#ffa500'
     };
     oranges: Orange[];
     customers: Customer[];
     constructor(private orangeService: OrangeService, private customerService: CustomerService) {
-        this.text = "Text in textbox";
+        this.text = 'Text in textbox';
         this.boolValue = true;
         this.numberValue = 10;
         this.dateValue = new Date();
         this.demoItems = [
-            "item1",
-            "item2",
-            "item3"
+            'item1',
+            'item2',
+            'item3'
         ];
     }
     helloWorld() {
-        alert("Hello world");
+        alert('Hello world');
     }
     buy(model) {
-        alert(model + " has been added to order");
+        alert(model + ' has been added to order');
     }
     callNumber(number) {
-        alert(number + " is being called...");
+        alert(number + ' is being called...');
     }
     onSubmit() {
         this.form.updateValueAndValidity();
-        console.log("submitted");
+        console.log('submitted');
         return false;
     }
     ngOnInit() {
@@ -162,10 +160,10 @@ export class AppComponent implements OnInit {
 
 export class CustomValidator {
     static mailFormat(control: FormControl) {
-        var EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+        let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
 
         if (control.value && control.value.length && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
-            return { "incorrectMailFormat": true };
+            return { 'incorrectMailFormat': true };
         }
 
         return null;

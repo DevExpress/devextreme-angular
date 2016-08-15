@@ -46,7 +46,7 @@ module.exports = {
         outputPath: 'dist'
     },
     examples: {
-        srcFilesPattern: ['examples/**/*.ts'],
+        srcFilesPattern: ['examples/**/*.ts', '!examples/**/*.d.ts'],
         path: 'examples',
         appPath: 'examples/app',
         tsc: {
