@@ -135,32 +135,7 @@ describe('DevExtreme Angular 2 widget', () => {
             .catch(e => done.fail(e));
     });
 
-    it('should have methods render, dispose, owner and source in template', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
-            <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
-            </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
-
-                let instance = getWidget(fixture),
-                    templatesHash = instance.option('_templates'),
-                    template = templatesHash['testTemplate'];
-
-                expect(typeof template.render).toBe('function');
-                expect(typeof template.dispose).toBe('function');
-                expect(typeof template.owner).toBe('function');
-                expect(typeof template.source).toBe('function');
-
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
-
-    it('should have implementation of methods render, dispose, owner and source in template', done => {
+    it('should implement the DevExpress.ui.TemplateBase interface', done => {
         tcb
             .overrideTemplate(TestContainerComponent, `
             <dx-test-widget>
