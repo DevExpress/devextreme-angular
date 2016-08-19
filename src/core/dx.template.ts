@@ -18,8 +18,10 @@ declare let $: any;
 export class DxTemplate {
     childView: EmbeddedViewRef<any>;
     name: string;
+    private $element: any;
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
+        this.$element = $(templateRef.elementRef);
     }
     private _renderCore(data, $container?: any, itemIndex?: number) {
         let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
@@ -40,11 +42,27 @@ export class DxTemplate {
                 itemElement = itemData;
                 itemData = itemIndex;
             }
+        } else if (itemIndex instanceof $) {
+            let cachedItemIndex = itemElement;
+
+            itemElement = itemIndex;
+            itemIndex = cachedItemIndex;
         }
+
         itemElement.empty();
-        this._renderCore(itemData, itemElement, itemIndex);
+        return this._renderCore(itemData, itemElement, itemIndex);
     }
     dispose() {
+        this.templateHost = null;
+    }
+    owner() {
+        if (this.templateHost) {
+            return this.templateHost.host.instance;
+        }
+        return null;
+    }
+    source() {
+        return this.$element;
     }
     set dxTemplateOf(value) {
         this.name = value;
