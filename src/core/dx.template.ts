@@ -18,10 +18,8 @@ declare let $: any;
 export class DxTemplate {
     childView: EmbeddedViewRef<any>;
     name: string;
-    private $element: any;
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
-        this.$element = $(templateRef.elementRef);
     }
     private _renderCore(data, $container?: any, itemIndex?: number) {
         let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
@@ -62,7 +60,7 @@ export class DxTemplate {
         return null;
     }
     source() {
-        return this.$element;
+        return $();
     }
     set dxTemplateOf(value) {
         this.name = value;

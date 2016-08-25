@@ -26,12 +26,7 @@ import {
 } from '../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-let dxTestWidget = DevExpress.ui.dxButton['inherit']({
-    NAME: 'dxTestWidget',
-    _render() {
-        this.element()[0].classList.add('dx-test-widget');
-    }
-});
+let dxTestWidget = DevExpress.ui.dxButton['inherit']({});
 
 DevExpress.registerComponent('dxTestWidget', dxTestWidget);
 
@@ -79,7 +74,7 @@ export class TestContainerComponent {
 }
 
 
-describe('DevExtreme Angular 2 widget', () => {
+describe('DevExtreme Angular 2 widget\'s template', () => {
     let tcb;
 
     beforeEach(inject([TestComponentBuilder], _tcb => {
@@ -151,11 +146,18 @@ describe('DevExtreme Angular 2 widget', () => {
                     template = templatesHash['testTemplate'],
                     itemData = {},
                     itemIndex = 0,
-                    itemElement = $('<div>');
+                    itemElement = $('<div>'),
+                    newDiv = document.createElement('div');
 
-                expect(typeof template.render(itemData, itemIndex, itemElement)).toBe('object');
-                expect(typeof template.owner()).toBe('object');
-                expect(typeof template.source()).toBe('object');
+                newDiv.innerHTML = 'Template content';
+
+                let renderResult = template.render(itemData, itemIndex, itemElement)[0];
+                expect(newDiv.isEqualNode(renderResult)).toBe(true);
+
+                expect(template.owner()).toBe(instance);
+
+                expect(template.source() instanceof $).toBe(true);
+
                 template.dispose();
                 expect(template.owner()).toBeNull();
 
