@@ -197,7 +197,11 @@ gulp.task('watch.test', function(done){
 //------------TSLint------------
 
 gulp.task("lint", function(){
-    gulp.src(buildConfig.components.srcFilesPattern.concat(buildConfig.tools.srcFilesPattern).concat(buildConfig.examples.srcFilesPattern))
+    gulp.src(buildConfig.components.srcFilesPattern
+            .concat(buildConfig.components.tsTestSrc)
+            .concat(buildConfig.examples.srcFilesPattern)
+            .concat(buildConfig.tools.srcFilesPattern)
+            )
         .pipe(tslint({
             tslint: require('tslint').default,
             rulesDirectory: null,
