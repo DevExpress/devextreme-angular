@@ -22,7 +22,8 @@ import {
 import {
     DxComponent,
     DxTemplateHost,
-    DxTemplate
+    DxTemplate,
+    RenderData
 } from '../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
@@ -88,13 +89,34 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
     // spec
     it('should initialize template options of a widget', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, `
+        tcb
+            .overrideTemplate(TestContainerComponent, `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
        `)
-       .createAsync(TestContainerComponent)
+            .createAsync(TestContainerComponent)
+            .then(fixture => {
+                fixture.detectChanges();
+
+                let instance = getWidget(fixture);
+
+                expect(instance.option('testTemplate')).not.toBeUndefined();
+                expect(typeof instance.option('testTemplate')).toBe('function');
+
+                done();
+            })
+            .catch(e => done.fail(e));
+    });
+
+    it('should initialize template options of a widget', done => {
+        tcb
+            .overrideTemplate(TestContainerComponent, `
+            <dx-test-widget>
+                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
+            </dx-test-widget>
+       `)
+            .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
 
@@ -109,13 +131,13 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
     });
 
     it('should initialize named templates #17', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, `
+        tcb
+            .overrideTemplate(TestContainerComponent, `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
        `)
-       .createAsync(TestContainerComponent)
+            .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
 
@@ -144,14 +166,16 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
                 let instance = getWidget(fixture),
                     templatesHash = instance.option('_templates'),
                     template = templatesHash['testTemplate'],
-                    itemData = {},
-                    itemIndex = 0,
-                    itemElement = $('<div>'),
+                    renderData: RenderData = {
+                        model: {},
+                        itemIndex: 0,
+                        container: $('<div>')
+                    },
                     newDiv = document.createElement('div');
 
                 newDiv.innerHTML = 'Template content';
 
-                let renderResult = template.render(itemData, itemIndex, itemElement)[0];
+                let renderResult = template.render(renderData)[0];
                 expect(newDiv.isEqualNode(renderResult)).toBe(true);
 
                 expect(template.owner()).toBe(instance);
@@ -172,13 +196,13 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
         <div *dxTemplate='let d = data of 'testTemplate''>Template content {{d}}</div>
     */
     it('should nonrmalize template function arguments order (#17)', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, `
+        tcb
+            .overrideTemplate(TestContainerComponent, `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
        `)
-       .createAsync(TestContainerComponent)
+            .createAsync(TestContainerComponent)
             .then(fixture => {
                 fixture.detectChanges();
 
