@@ -109,27 +109,6 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
             .catch(e => done.fail(e));
     });
 
-    it('should initialize template options of a widget', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
-            <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
-            </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
-
-                let instance = getWidget(fixture);
-
-                expect(instance.option('testTemplate')).not.toBeUndefined();
-                expect(typeof instance.option('testTemplate')).toBe('function');
-
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
-
     it('should initialize named templates #17', done => {
         tcb
             .overrideTemplate(TestContainerComponent, `
