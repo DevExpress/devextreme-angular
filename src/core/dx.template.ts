@@ -11,6 +11,12 @@ import { DxTemplateHost } from './dx.template-host';
 
 declare let $: any;
 
+export class RenderData {
+    model: any;
+    itemIndex: number;
+    container: any;
+}
+
 @Directive({
     selector: '[dxTemplate]',
     inputs: ['dxTemplate', 'dxTemplateOf']
@@ -21,34 +27,45 @@ export class DxTemplate {
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
     }
-    private _renderCore(data, $container?: any, itemIndex?: number) {
-        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': data });
-        if ($container) {
-            $container.append(childView.rootNodes);
+    private _renderCore(renderData: RenderData) {
+        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': renderData.model });
+        if (renderData.container) {
+            renderData.container.append(childView.rootNodes);
         }
         return $(childView.rootNodes);
     }
-    render(itemData, itemIndex, itemElement) {
-        if (itemElement === undefined) {
+    templateAsFunction(model, itemIndex, container) {
+        let renderData: RenderData = this._normalizeArguments(model, itemIndex, container);
+        this.render(renderData);
+    }
+    _normalizeArguments(model, itemIndex, container): RenderData {
+        if (container === undefined) {
             if (itemIndex === undefined) {
-                itemElement = itemData;
-                itemData = undefined;
+                container = model;
+                model = undefined;
             } else if (itemIndex instanceof $) {
-                itemElement = itemIndex;
+                container = itemIndex;
                 itemIndex = undefined;
             } else {
-                itemElement = itemData;
-                itemData = itemIndex;
+                container = model;
+                model = itemIndex;
             }
         } else if (itemIndex instanceof $) {
-            let cachedItemIndex = itemElement;
+            let cachedItemIndex = container;
 
-            itemElement = itemIndex;
+            container = itemIndex;
             itemIndex = cachedItemIndex;
         }
 
-        itemElement.empty();
-        return this._renderCore(itemData, itemElement, itemIndex);
+        return {
+            model: model,
+            itemIndex: itemIndex,
+            container: container
+        };
+    }
+    render(renderData: RenderData) {
+        renderData.container.empty();
+        return this._renderCore(renderData);
     }
     dispose() {
         this.templateHost = null;
