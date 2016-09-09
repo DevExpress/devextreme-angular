@@ -34,7 +34,7 @@ import { DxTemplateHost } from '../core/dx.template-host';
     selector: '<#= it.selector #>',
     template: '',
     providers: [
-        provide(DxTemplateHost, { useClass: DxTemplateHost })
+        { provide: DxTemplateHost, useClass: DxTemplateHost }
     ]
 })
 export class <#= it.className #> extends DxComponent {
@@ -65,8 +65,7 @@ export class <#= it.className #> extends DxComponent {
 
 <#? it.isEditor #>
 
-const CUSTOM_VALUE_ACCESSOR = new Provider(
-    NG_VALUE_ACCESSOR, { useExisting: forwardRef(() => <#= it.className #>ValueAccessor), multi: true });
+const CUSTOM_VALUE_ACCESSOR = { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => <#= it.className #>ValueAccessor), multi: true });
 
 
 @Directive({
