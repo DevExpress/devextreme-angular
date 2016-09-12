@@ -5,6 +5,7 @@
 
 import {
     Component,
+    NgModule,
     ElementRef,
     EventEmitter,
     NgZone,
@@ -88,5 +89,16 @@ export class <#= it.className #>ValueAccessor implements ControlValueAccessor {
     registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
     registerOnTouched(fn: () => void): void { this.onTouched = fn; }
 }
-
 <#?#>
+
+@NgModule({
+  declarations: [
+    <#= it.className #><#? it.isEditor #>,
+    <#= it.className #>ValueAccessor<#?#>
+  ],
+  exports: [
+    <#= it.className #><#? it.isEditor #>,
+    <#= it.className #>ValueAccessor<#?#>
+  ],
+})
+export class <#= it.className #>Module { }

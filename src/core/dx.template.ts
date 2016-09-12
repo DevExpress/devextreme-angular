@@ -2,6 +2,7 @@
 
 import {
     Directive,
+    NgModule,
     EmbeddedViewRef,
     TemplateRef,
     ViewContainerRef
@@ -83,3 +84,9 @@ export class DxTemplate {
         this.name = value;
     }
 }
+
+@NgModule({
+    declarations: [DxTemplate],
+    exports: [DxTemplate]
+})
+export class DxTemplateModule { }
