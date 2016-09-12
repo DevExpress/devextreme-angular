@@ -9,20 +9,20 @@ import {
     EventEmitter,
     ViewChildren,
     NgZone,
-    provide,
     Input,
-    Output
+    Output,
+    QueryList
 } from '@angular/core';
 
 import {
-    inject,
-    TestComponentBuilder
+    TestBed,
+    async
 } from '@angular/core/testing';
 
 import {
     DxComponent,
     DxTemplateHost,
-    DxTemplate,
+    DxTemplateModule,
     RenderData
 } from '../../dist';
 
@@ -34,9 +34,7 @@ DevExpress.registerComponent('dxTestWidget', dxTestWidget);
 @Component({
     selector: 'dx-test-widget',
     template: '',
-    providers: [
-        provide(DxTemplateHost, { useClass: DxTemplateHost })
-    ]
+    providers: [DxTemplateHost]
 })
 export class DxTestWidget extends DxComponent {
     @Input() testTemplate: any;
@@ -63,24 +61,22 @@ export class DxTestWidget extends DxComponent {
 
 @Component({
     selector: 'test-container-component',
-    template: '',
-    directives: [DxTestWidget, DxTemplate],
-    queries: {
-        innerWidgets: new ViewChildren(DxTestWidget)
-    }
+    template: ''
 })
 export class TestContainerComponent {
-    constructor() {
-    }
+    @ViewChildren(DxTestWidget) innerWidgets: QueryList<DxTestWidget>;
 }
 
 
 describe('DevExtreme Angular 2 widget\'s template', () => {
-    let tcb;
 
-    beforeEach(inject([TestComponentBuilder], _tcb => {
-        tcb = _tcb;
-    }));
+    beforeEach(() => {
+        TestBed.configureTestingModule(
+            {
+                declarations: [TestContainerComponent, DxTestWidget],
+                imports: [DxTemplateModule]
+            });
+    });
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
@@ -88,58 +84,54 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
     }
 
     // spec
-    it('should initialize template options of a widget', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
+    it('should initialize template options of a widget', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
 
-                let instance = getWidget(fixture);
+        let instance = getWidget(fixture);
 
-                expect(instance.option('testTemplate')).not.toBeUndefined();
-                expect(typeof instance.option('testTemplate')).toBe('function');
+        expect(instance.option('testTemplate')).not.toBeUndefined();
+        expect(typeof instance.option('testTemplate')).toBe('function');
+    }));
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
-
-    it('should initialize named templates #17', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
+    it('should initialize named templates #17', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
 
-                let instance = getWidget(fixture),
-                    templatesHash = instance.option('_templates');
+        let instance = getWidget(fixture),
+            templatesHash = instance.option('_templates');
 
-                expect(templatesHash['testTemplate']).not.toBeUndefined();
-                expect(typeof templatesHash['testTemplate'].render).toBe('function');
+        expect(templatesHash['testTemplate']).not.toBeUndefined();
+        expect(typeof templatesHash['testTemplate'].render).toBe('function');
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
-    it('should implement the DevExpress.ui.TemplateBase interface', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
+    it('should implement the DevExpress.ui.TemplateBase interface', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
                 fixture.detectChanges();
 
                 let instance = getWidget(fixture),
@@ -164,29 +156,27 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
                 template.dispose();
                 expect(template.owner()).toBeNull();
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
     /*
         TODO
         Interpolation doesn't work in the test for unclear reason if we specify it as follows:
         <div *dxTemplate='let d = data of 'testTemplate''>Template content {{d}}</div>
     */
-    it('should nonrmalize template function arguments order (#17)', done => {
-        tcb
-            .overrideTemplate(TestContainerComponent, `
+    it('should nonrmalize template function arguments order (#17)', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
             <dx-test-widget>
                 <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
             </dx-test-widget>
-       `)
-            .createAsync(TestContainerComponent)
-            .then(fixture => {
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
                 fixture.detectChanges();
 
                 let testComponent = fixture.componentInstance,
-                    innerComponent = testComponent.innerWidgets.toArray()[0],
+                    innerComponent = testComponent.innerWidgets.first,
                     template = innerComponent.testTemplate,
                     $container = $('<div>');
 
@@ -204,10 +194,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
                 template('test', $container, 0);
                 expect($container.text()).toBe('Template content');
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
 
 });

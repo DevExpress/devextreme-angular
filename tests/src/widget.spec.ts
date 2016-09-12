@@ -9,14 +9,14 @@ import {
     EventEmitter,
     ViewChildren,
     NgZone,
-    provide,
     Input,
-    Output
+    Output,
+    QueryList
 } from '@angular/core';
 
 import {
-    inject,
-    TestComponentBuilder
+    TestBed,
+    async
 } from '@angular/core/testing';
 
 import {
@@ -37,12 +37,9 @@ DevExpress.registerComponent('dxTestWidget', dxTestWidget);
 @Component({
     selector: 'dx-test-widget',
     template: '',
-    providers: [
-        provide(DxTemplateHost, { useClass: DxTemplateHost })
-    ]
+    providers: [DxTemplateHost]
 })
 export class DxTestWidget extends DxComponent {
-
     @Input() testOption: any;
 
     @Output() onOptionChanged: EventEmitter<any>;
@@ -67,97 +64,89 @@ export class DxTestWidget extends DxComponent {
 
 @Component({
     selector: 'test-container-component',
-    template: '',
-    directives: [DxTestWidget],
-    queries: {
-        innerWidgets: new ViewChildren(DxTestWidget)
-    }
+    template: ''
 })
 export class TestContainerComponent {
-    constructor() {
-    }
+    testOption: string;
+    @ViewChildren(DxTestWidget) innerWidgets: QueryList<DxTestWidget>;
 }
 
 
 describe('DevExtreme Angular 2 widget', () => {
-    let tcb;
 
-    beforeEach(inject([TestComponentBuilder], _tcb => {
-        tcb = _tcb;
-    }));
+    beforeEach(() => {
+        TestBed.configureTestingModule(
+            {
+                declarations: [TestContainerComponent, DxTestWidget]
+            });
+    });
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
         return dxTestWidget.getInstance(widgetElement);
     }
 
-    // specs
-    it('should be rendered', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, '<dx-test-widget [testOption]="\'Test Value\'" > </dx-test-widget>')
-       .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
+    // spec
+    it('should be rendered', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [testOption]="\'Test Value\'" > </dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
 
-                let element = getWidget(fixture).element().get(0);
+        let element = getWidget(fixture).element().get(0);
 
-                expect(element.classList).toContain('dx-test-widget');
+        expect(element.classList).toContain('dx-test-widget');
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
-    it('should set testOption value to insatnce', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, '<dx-test-widget [testOption]="\'Test Value\'" > </dx-test-widget>')
-       .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
+    it('should set testOption value to insatnce', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [testOption]="\'Test Value\'" > </dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
 
-                let outerComponent =  fixture.componentInstance,
-                    innerComponent = outerComponent.innerWidgets.toArray()[0],
-                    instance = getWidget(fixture);
+        let outerComponent = fixture.componentInstance,
+            innerComponent = outerComponent.innerWidgets.first,
+            instance = getWidget(fixture);
 
-                expect(instance.option('testOption')).toBe('Test Value');
-                expect(innerComponent.testOption).toBe('Test Value');
+        expect(instance.option('testOption')).toBe('Test Value');
+        expect(innerComponent.testOption).toBe('Test Value');
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
-    it('should change component option value', done => {
-       tcb.createAsync(DxTestWidget)
-            .then(fixture => {
-                fixture.detectChanges();
+    it('should change component option value', async(() => {
+        let fixture = TestBed.createComponent(DxTestWidget);
+        fixture.detectChanges();
 
-                let component =  fixture.componentInstance,
-                    instance = getWidget(fixture);
+        let component = fixture.componentInstance,
+            instance = getWidget(fixture);
 
-                instance.option('testOption', 'Changed');
-                expect(component.testOption).toBe('Changed');
+        instance.option('testOption', 'Changed');
+        expect(component.testOption).toBe('Changed');
 
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+    }));
 
-    it('should change instance option value and fire optionChanged event', done => {
-       tcb
-       .overrideTemplate(TestContainerComponent, '<dx-test-widget [testOption]="testOption"></dx-test-widget>')
-       .createAsync(TestContainerComponent)
-            .then(fixture => {
-                fixture.detectChanges();
+    it('should change instance option value and fire optionChanged event', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [testOption]="testOption"></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
 
-                let testComponent =  fixture.componentInstance,
-                    instance = getWidget(fixture);
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
 
-                testComponent.testOption = 'Changed 2';
-                fixture.detectChanges();
-                expect(instance.option('testOption')).toBe('Changed 2');
-                done();
-            })
-            .catch(e => done.fail(e));
-    });
+        testComponent.testOption = 'Changed 2';
+        fixture.detectChanges();
+        expect(instance.option('testOption')).toBe('Changed 2');
+
+    }));
 });
