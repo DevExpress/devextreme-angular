@@ -9,7 +9,6 @@ import {
     EventEmitter,
     ViewChildren,
     NgZone,
-    provide,
     Input,
     Output
 } from '@angular/core';
