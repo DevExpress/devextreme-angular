@@ -9,7 +9,6 @@ import {
     EventEmitter,
     ViewChildren,
     NgZone,
-    provide,
     Input,
     Output
 } from '@angular/core';
@@ -38,7 +37,7 @@ DevExpress.registerComponent('dxTestWidget', dxTestWidget);
     selector: 'dx-test-widget',
     template: '',
     providers: [
-        provide(DxTemplateHost, { useClass: DxTemplateHost })
+        { provide: DxTemplateHost, useClass: DxTemplateHost }
     ]
 })
 export class DxTestWidget extends DxComponent {
