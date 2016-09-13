@@ -32,9 +32,7 @@ import { DxTemplateHost } from '../core/dx.template-host';
 @Component({
     selector: '<#= it.selector #>',
     template: '',
-    providers: [
-        { provide: DxTemplateHost, useClass: DxTemplateHost }
-    ]
+    providers: [DxTemplateHost]
 })
 export class <#= it.className #> extends DxComponent {
     <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
