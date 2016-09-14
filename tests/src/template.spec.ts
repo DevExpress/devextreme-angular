@@ -36,7 +36,7 @@ DevExpress.registerComponent('dxTestWidget', dxTestWidget);
     template: '',
     providers: [DxTemplateHost]
 })
-export class DxTestWidget extends DxComponent {
+export class DxTestWidgetComponent extends DxComponent {
     @Input() testTemplate: any;
 
     @Output() onOptionChanged: EventEmitter<any>;
@@ -64,7 +64,7 @@ export class DxTestWidget extends DxComponent {
     template: ''
 })
 export class TestContainerComponent {
-    @ViewChildren(DxTestWidget) innerWidgets: QueryList<DxTestWidget>;
+    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
 }
 
 
@@ -73,7 +73,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
-                declarations: [TestContainerComponent, DxTestWidget],
+                declarations: [TestContainerComponent, DxTestWidgetComponent],
                 imports: [DxTemplateModule]
             });
     });
@@ -132,29 +132,29 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
            `}
         });
         let fixture = TestBed.createComponent(TestContainerComponent);
-                fixture.detectChanges();
+        fixture.detectChanges();
 
-                let instance = getWidget(fixture),
-                    templatesHash = instance.option('_templates'),
-                    template = templatesHash['testTemplate'],
-                    renderData: RenderData = {
-                        model: {},
-                        itemIndex: 0,
-                        container: $('<div>')
-                    },
-                    newDiv = document.createElement('div');
+        let instance = getWidget(fixture),
+            templatesHash = instance.option('_templates'),
+            template = templatesHash['testTemplate'],
+            renderData: RenderData = {
+                model: {},
+                itemIndex: 0,
+                container: $('<div>')
+            },
+            newDiv = document.createElement('div');
 
-                newDiv.innerHTML = 'Template content';
+        newDiv.innerHTML = 'Template content';
 
-                let renderResult = template.render(renderData)[0];
-                expect(newDiv.isEqualNode(renderResult)).toBe(true);
+        let renderResult = template.render(renderData)[0];
+        expect(newDiv.isEqualNode(renderResult)).toBe(true);
 
-                expect(template.owner()).toBe(instance);
+        expect(template.owner()).toBe(instance);
 
-                expect(template.source() instanceof $).toBe(true);
+        expect(template.source() instanceof $).toBe(true);
 
-                template.dispose();
-                expect(template.owner()).toBeNull();
+        template.dispose();
+        expect(template.owner()).toBeNull();
 
     }));
 
@@ -173,26 +173,26 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
            `}
         });
         let fixture = TestBed.createComponent(TestContainerComponent);
-                fixture.detectChanges();
+        fixture.detectChanges();
 
-                let testComponent = fixture.componentInstance,
-                    innerComponent = testComponent.innerWidgets.first,
-                    template = innerComponent.testTemplate,
-                    $container = $('<div>');
+        let testComponent = fixture.componentInstance,
+            innerComponent = testComponent.innerWidgets.first,
+            template = innerComponent.testTemplate,
+            $container = $('<div>');
 
-                expect(template).not.toBeUndefined;
+        expect(template).not.toBeUndefined;
 
-                template($container);
-                expect($container.text()).toBe('Template content');
+        template($container);
+        expect($container.text()).toBe('Template content');
 
-                template('test', $container);
-                expect($container.text()).toBe('Template content');
+        template('test', $container);
+        expect($container.text()).toBe('Template content');
 
-                template($container, 'test');
-                expect($container.text()).toBe('Template content');
+        template($container, 'test');
+        expect($container.text()).toBe('Template content');
 
-                template('test', $container, 0);
-                expect($container.text()).toBe('Template content');
+        template('test', $container, 0);
+        expect($container.text()).toBe('Template content');
 
     }));
 

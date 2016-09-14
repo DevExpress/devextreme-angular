@@ -39,7 +39,7 @@ DevExpress.registerComponent('dxTestWidget', dxTestWidget);
     template: '',
     providers: [DxTemplateHost]
 })
-export class DxTestWidget extends DxComponent {
+export class DxTestWidgetComponent extends DxComponent {
     @Input() testOption: any;
 
     @Output() onOptionChanged: EventEmitter<any>;
@@ -68,7 +68,7 @@ export class DxTestWidget extends DxComponent {
 })
 export class TestContainerComponent {
     testOption: string;
-    @ViewChildren(DxTestWidget) innerWidgets: QueryList<DxTestWidget>;
+    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
 }
 
 
@@ -77,7 +77,7 @@ describe('DevExtreme Angular 2 widget', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
-                declarations: [TestContainerComponent, DxTestWidget]
+                declarations: [TestContainerComponent, DxTestWidgetComponent]
             });
     });
 
@@ -121,7 +121,7 @@ describe('DevExtreme Angular 2 widget', () => {
     }));
 
     it('should change component option value', async(() => {
-        let fixture = TestBed.createComponent(DxTestWidget);
+        let fixture = TestBed.createComponent(DxTestWidgetComponent);
         fixture.detectChanges();
 
         let component = fixture.componentInstance,

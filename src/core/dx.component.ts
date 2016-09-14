@@ -6,19 +6,19 @@ import {
     NgZone
 } from '@angular/core';
 
-import {DxTemplate} from './dx.template';
-import {DxTemplateHost} from './dx.template-host';
+import { DxTemplateDirective } from './dx.template';
+import { DxTemplateHost } from './dx.template-host';
 
 declare let $: any;
 
 export class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
-    templates: DxTemplate[];
+    templates: DxTemplateDirective[];
     widgetClassName: string;
     instance: any;
 
-    protected _events: {subscribe?: string, emit: string}[];
+    protected _events: { subscribe?: string, emit: string }[];
     protected _properties: string[];
 
     private _initTemplates() {
@@ -74,20 +74,20 @@ export class DxComponent implements OnChanges, AfterViewInit {
         this.templates = [];
         templateHost.setHost(this);
     }
-    setTemplate(template: DxTemplate) {
+    setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
     }
-    ngOnChanges(changes: {[key: string]: SimpleChange}) {
+    ngOnChanges(changes: { [key: string]: SimpleChange }) {
         let that = this;
 
         if (that.instance) {
-            $.each(changes, function(propertyName, change) {
+            $.each(changes, function (propertyName, change) {
                 that._isChangesProcessing = true; // prevent cycle change event emitting
                 that.instance.option(propertyName, change.currentValue);
                 that._isChangesProcessing = false;
             });
         } else {
-            $.each(changes, function(propertyName, change) {
+            $.each(changes, function (propertyName, change) {
                 that._initialOptions[propertyName] = change.currentValue;
             });
         }

@@ -22,7 +22,7 @@ export class RenderData {
     selector: '[dxTemplate]',
     inputs: ['dxTemplate', 'dxTemplateOf']
 })
-export class DxTemplate {
+export class DxTemplateDirective {
     childView: EmbeddedViewRef<any>;
     name: string;
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
@@ -86,7 +86,7 @@ export class DxTemplate {
 }
 
 @NgModule({
-    declarations: [DxTemplate],
-    exports: [DxTemplate]
+    declarations: [DxTemplateDirective],
+    exports: [DxTemplateDirective]
 })
 export class DxTemplateModule { }
