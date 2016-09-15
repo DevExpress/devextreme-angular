@@ -43,25 +43,39 @@ gulp.task('build.tools', function() {
 
 //------------Components------------
 
-gulp.task("generate.metadata", ['build.tools'], function() {
+gulp.task("generate.metadata", ['build.tools'], function () {
     var MetadataGenerator = require(buildConfig.tools.metadataGenerator.importFrom).default,
         generator = new MetadataGenerator();
 
     generator.generate(buildConfig.tools.metadataGenerator);
 });
 
-gulp.task("generate.components", ['generate.metadata'], function() {
+gulp.task('claen.components', function () {
+    var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
+
+    return del([outputFolderPath]);
+});
+
+
+gulp.task("generate.components", ['generate.metadata', 'claen.components'], function () {
     var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
         generator = new DoTGenerator();
 
     generator.generate(buildConfig.tools.componentGenerator);
 });
 
-gulp.task("generate.facades", ['generate.components'], function() {
-    var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default,
-        generator = new FacadeGenerator();
+gulp.task("generate.moduleFacades", ['generate.components'], function () {
+    var ModuleFacadeGenerator = require(buildConfig.tools.moduleFacadeGenerator.importFrom).default;
+    moduleFacadeGenerator = new ModuleFacadeGenerator();
 
-    generator.generate(buildConfig.tools.facadeGenerator);
+    moduleFacadeGenerator.generate(buildConfig.tools.moduleFacadeGenerator);
+});
+
+gulp.task("generate.facades", ['generate.moduleFacades'], function () {
+    var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default;
+    facadeGenerator = new FacadeGenerator();
+
+    facadeGenerator.generate(buildConfig.tools.facadeGenerator);
 });
 
 gulp.task('build.components', ['generate.components', 'generate.facades'], function() {

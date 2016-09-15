@@ -26,6 +26,20 @@ module.exports = {
                 }
             }
         },
+        moduleFacadeGenerator: {
+            importFrom: './tools/dist/module.facade-generator',
+            moduleFacades: {
+                './src/ui/all.ts': {
+                    sourceComponentDirectories: [
+                        './src/ui'
+                    ],
+                    additionalImports: {
+                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/dx.template\''
+
+                    }
+                }
+            }
+        },
         tsc: {
             "target": "ES5",
             "module": "commonjs",
