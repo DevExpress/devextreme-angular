@@ -35,7 +35,6 @@ module.exports = {
                     ],
                     additionalImports: {
                         'DxTemplateModule': 'import { DxTemplateModule } from \'../core/dx.template\''
-
                     }
                 }
             }
