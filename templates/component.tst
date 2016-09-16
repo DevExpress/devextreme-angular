@@ -5,6 +5,7 @@
 
 import {
     Component,
+    NgModule,
     ElementRef,
     EventEmitter,
     NgZone,
@@ -31,11 +32,9 @@ import { DxTemplateHost } from '../core/dx.template-host';
 @Component({
     selector: '<#= it.selector #>',
     template: '',
-    providers: [
-        { provide: DxTemplateHost, useClass: DxTemplateHost }
-    ]
+    providers: [DxTemplateHost]
 })
-export class <#= it.className #> extends DxComponent {
+export class <#= it.className #>Component extends DxComponent {
     <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
     <#?#><#~#>
 
@@ -65,7 +64,7 @@ export class <#= it.className #> extends DxComponent {
 
 const CUSTOM_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => <#= it.className #>ValueAccessor),
+    useExisting: forwardRef(() => <#= it.className #>ValueAccessorDirective),
     multi: true
 };
 
@@ -73,11 +72,11 @@ const CUSTOM_VALUE_ACCESSOR = {
     selector: '<#= it.selector #>[formControlName],<#= it.selector #>[formControl],<#= it.selector #>[ngModel]',
     providers: [CUSTOM_VALUE_ACCESSOR]
 })
-export class <#= it.className #>ValueAccessor implements ControlValueAccessor {
+export class <#= it.className #>ValueAccessorDirective implements ControlValueAccessor {
     @HostListener('valueChange', ['$event']) onChange(_) { }
     onTouched = () => {};
 
-    constructor(private host: <#= it.className #>) {
+    constructor(private host: <#= it.className #>Component) {
 
     }
 
@@ -88,5 +87,16 @@ export class <#= it.className #>ValueAccessor implements ControlValueAccessor {
     registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
     registerOnTouched(fn: () => void): void { this.onTouched = fn; }
 }
-
 <#?#>
+
+@NgModule({
+  declarations: [
+    <#= it.className #>Component<#? it.isEditor #>,
+    <#= it.className #>ValueAccessorDirective<#?#>
+  ],
+  exports: [
+    <#= it.className #>Component<#? it.isEditor #>,
+    <#= it.className #>ValueAccessorDirective<#?#>
+  ],
+})
+export class <#= it.className #>Module { }

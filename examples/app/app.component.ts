@@ -3,38 +3,11 @@ import {
     OnInit
 } from '@angular/core';
 import {
-    REACTIVE_FORM_DIRECTIVES,
-    FORM_DIRECTIVES,
     AbstractControl,
     FormGroup,
     FormControl,
     Validators
 } from '@angular/forms';
-import {
-    DxButton,
-    DxCheckBox,
-    DxSwitch,
-    DxTextBox,
-    DxTextBoxValueAccessor,
-    DxTextArea,
-    DxNumberBox,
-    DxDateBox,
-    DxProgressBar,
-    DxSlider,
-    DxRangeSlider,
-    DxLoadIndicator,
-    DxAutocomplete,
-    DxSelectBox,
-    DxTagBox,
-    DxRadioGroup,
-    DxColorBox,
-    DxCalendar,
-    DxTemplate,
-    DxList,
-    DxPopup,
-    DxChart,
-    DxDataGrid
-} from '../../dist/';
 import {
     Orange,
     OrangeService
@@ -68,33 +41,6 @@ declare let $: any;
         }
     `],
     templateUrl: 'app/app.component.html',
-    directives: [
-        REACTIVE_FORM_DIRECTIVES,
-        FORM_DIRECTIVES,
-        DxButton,
-        DxCheckBox,
-        DxSwitch,
-        DxTextBox,
-        DxTextBoxValueAccessor,
-        DxTextArea,
-        DxNumberBox,
-        DxDateBox,
-        DxProgressBar,
-        DxSlider,
-        DxRangeSlider,
-        DxLoadIndicator,
-        DxAutocomplete,
-        DxSelectBox,
-        DxTagBox,
-        DxRadioGroup,
-        DxColorBox,
-        DxCalendar,
-        DxList,
-        DxPopup,
-        DxTemplate,
-        DxChart,
-        DxDataGrid
-    ],
     providers: [
         OrangeService,
         CustomerService

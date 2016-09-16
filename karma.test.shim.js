@@ -25,12 +25,12 @@ System.import('karma.systemjs.conf.js')
     ])
   })
   .then(function (providers) {
-    var testing = providers[0];
-    var testingBrowser = providers[1];
+    var coreTesting = providers[0];
+    var browserTesting = providers[1];
 
-    testing.setBaseTestProviders(
-      testingBrowser.TEST_BROWSER_DYNAMIC_PLATFORM_PROVIDERS,
-      testingBrowser.TEST_BROWSER_DYNAMIC_APPLICATION_PROVIDERS);
+    coreTesting.TestBed.initTestEnvironment(
+            browserTesting.BrowserDynamicTestingModule,
+            browserTesting.platformBrowserDynamicTesting());
   })
   .then(function() {
     return Promise.all(
