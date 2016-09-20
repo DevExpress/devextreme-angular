@@ -10,6 +10,8 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 You can start either with [running examples](#running-examples) or with [creating a new Angular 2 application](#create-application).
 
+Also we have a simple application on [Plunker](http://plnkr.co/edit/HNf0vB).
+
 ### Prerequisites
 
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
@@ -44,60 +46,76 @@ npm install devextreme-angular2
 Modify the references in the index.html file as follows:
 
 ```html
-    <link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.common.css" />
-    <link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.light.css" />
+<link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.common.css" />
+<link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.light.css" />
 
-    <script src="node_modules/core-js/client/shim.min.js"></script>
-    <script src="node_modules/zone.js/dist/zone.js"></script>
-    <script src="node_modules/reflect-metadata/Reflect.js"></script>
-    <script src="node_modules/systemjs/dist/system.src.js"></script>
+<!-- Polyfill(s) for older browsers -->
+<script src="node_modules/core-js/client/shim.min.js"></script>
 
-    <script src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="node_modules/devextreme/dist/js/dx.all.js"></script>
+<script src="node_modules/zone.js/dist/zone.js"></script>
+<script src="node_modules/reflect-metadata/Reflect.js"></script>
+<script src="node_modules/systemjs/dist/system.src.js"></script>
 
-    <script src="systemjs.config.js"></script>
-```
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="node_modules/devextreme/dist/js/dx.all.js"></script>
 
-Make sure your html document has DOCTYPE specified:
-
-```html
-<!DOCTYPE html>
-<html>
-  ...
+<script src="systemjs.config.js"></script>
 ```
 
 Modify the 'systemjs.config.js' file as follows:
 
 ```js
-  var map = {
-    'app':                        'app',
-    '@angular':                   'node_modules/@angular',
-    'angular2-in-memory-web-api': 'node_modules/angular2-in-memory-web-api',
-    'rxjs':                       'node_modules/rxjs',
+paths: {
+    // paths serve as alias
+    'npm:': '../node_modules/'
+},
+map: {
+    // our app is within the app folder
+    app: 'app',
+    // angular bundles
+    '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+    '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
+    '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
+    '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
+    '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
+    '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
+    '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
+    '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+    // other libraries
+    'rxjs': 'npm:rxjs',
+    'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
     'devextreme-angular2':        'node_modules/devextreme-angular2' // <== add this line
-  };
-
-  var packages = {
+},
+packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'devextreme-angular2':        { main: 'index.js', defaultExtension: 'js' } // <== add this line
-  };
+}
 ```
 
-In the **/app/app.component.ts** file import the necessary devextreme component:
+Add the required DevExtreme modules to the **/app/app.module.ts** file and add them to the imports section of the application module:
 
 ```js
-import { DxButton } from 'devextreme-angular2';
+import { DevExtremeModule } from 'devextreme-angular2';
+
+@NgModule({
+    declarations: [AppComponent],
+    imports: [
+        BrowserModule,
+        DevExtremeModule
+    ],
+    bootstrap: [AppComponent],
+})
+export class AppModule {}
 ```
 
-Add the imported components as directives to the host component. Now you can use the widget in the component's template.
+Now you can use the widget within the component's template.
 
 ```js
 @Component({
     selector: 'my-app',
-    template: '<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>',
-    directives: [ DxButton ]
+    template: '<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>'
 })
 export class AppComponent {
     helloWorld() {
@@ -197,11 +215,7 @@ The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'f
 ```js
 @Component({
    selector: 'my-app',
-   templateUrl: "app/app.component.html",
-   directives: [
-       DxTextBox,
-       DxTextBoxValueAccessor,
-   ]
+   templateUrl: 'app/app.component.html'
 })
 export class AppComponent implements OnInit {
    email: string;
@@ -226,15 +240,14 @@ method of the dxDataGrid is called:
 
 ```js
 import { Component, ViewChild } from '@angular/core';
-import { DxDataGrid, DxButton } from "devextreme-angular2";
+import { DxDataGrid } from "devextreme-angular2";
 
 @Component({
     selector: 'my-app',
     template: `
         <dx-data-grid [dataSource]="dataSource"></dx-data-grid>
         <dx-button text="Refresh data" (onClick)="refresh()"></dx-button>
-    `,
-    directives: [ DxDataGrid, DxButton ]
+    `
 })
 export class AppComponent implements OnChanges {
     @ViewChild(DxDataGrid) dataGrid:DxDataGrid
