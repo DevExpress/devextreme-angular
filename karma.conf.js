@@ -41,11 +41,11 @@ module.exports = function(config) {
             {pattern: 'karma.test.shim.js', included: true, watched: true},
 
             // Tests
-            {pattern: 'tests/dist/*.js', included: false, watched: true},
+            {pattern: 'tests/dist/**/*.js', included: false, watched: true},
 
             // paths to support debugging with source maps in dev tools
-            {pattern: 'tests/dist/*.ts', included: false, watched: true},
-            {pattern: 'tests/dist/*.js.map', included: false, watched: true}
+            {pattern: 'tests/dist/**/*.ts', included: false, watched: true},
+            {pattern: 'tests/dist/**/*.js.map', included: false, watched: true}
         ],
 
         // proxied base paths
