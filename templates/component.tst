@@ -31,7 +31,7 @@ import { DxTemplateHost } from '../core/dx.template-host';
 
 @Component({
     selector: '<#= it.selector #>',
-    template: '',
+    template: '<#? it.template #><#= it.template #><#?#>',
     providers: [DxTemplateHost]
 })
 export class <#= it.className #>Component extends DxComponent {

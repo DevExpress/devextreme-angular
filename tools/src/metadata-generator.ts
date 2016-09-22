@@ -34,7 +34,9 @@ export default class DXComponentMetadataGenerator {
     generate(config) {
         let inflector = require('inflector-js'),
             metadata = this._store.read(config.sourceMetadataFilePath),
-            widgetsMetadata = metadata['Widgets'];
+            widgetsMetadata = metadata['Widgets'],
+            addMetadata = this._store.read(config.additionalMetadataFilePath),
+            widgetsAddMetadata = addMetadata['Widgets'];
 
         mkdirp.sync(config.outputFolderPath);
 
@@ -43,6 +45,8 @@ export default class DXComponentMetadataGenerator {
 
             let widget = widgetsMetadata[widgetName],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
+                additionalData = widgetsAddMetadata[widgetName] || {},
+                template = additionalData['template'],
                 outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
                 changeEvents = [],
@@ -87,6 +91,7 @@ export default class DXComponentMetadataGenerator {
                 className: inflector.classify(widgetName),
                 widgetName: widgetName,
                 selector: dasherizedWidgetName,
+                template: template,
                 events: allEvents,
                 properties: properties,
                 isEditor: isEditor
