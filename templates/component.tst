@@ -2,7 +2,6 @@
 /* tslint:disable:directive-selector-name */
 /* tslint:disable:directive-selector-type */
 <#?#>
-
 <# var collectionProperties = it.properties.filter(item => item.collection).map(item => item.name); #>
 
 import {
@@ -18,12 +17,7 @@ import {
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
     DoCheck,
-    SimpleChanges,
-    IterableDiffers,
-    IterableDiffer,
-    ChangeDetectorRef,
-    DefaultIterableDiffer,
-    CollectionChangeRecord<#?#>
+    SimpleChanges<#?#>
 } from '@angular/core';
 
 <#? it.isEditor #>
@@ -37,11 +31,12 @@ import {
 
 import { DxComponent } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+<#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
 @Component({
     selector: '<#= it.selector #>',
     template: '',
-    providers: [DxTemplateHost]
+    providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
 })
 export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
@@ -50,10 +45,9 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
-    <#? collectionProperties.length #>private _propertyDiffers: { [id: string]: IterableDiffer; } = {};<#?#>
-
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
-            private _differs: IterableDiffers, private _cdr: ChangeDetectorRef<#?#>) {
+            private _idh: IterableDifferHelper<#?#>) {
+
         super(elementRef, ngZone, templateHost);
         this.widgetClassName = '<#= it.widgetName #>';
         this._events = [
@@ -67,41 +61,19 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
         ];
 
         <#~ it.events :event:i #>this.<#= event.emit #> = new EventEmitter();<#? i < it.events.length-1 #>
-        <#?#><#~#>
+        <#?#><#~#><#? collectionProperties.length #>
+
+        this._idh.setHost(this);<#?#>
     }
 <#? collectionProperties.length #>
     ngOnChanges(changes: SimpleChanges) {
         super.ngOnChanges(changes);
 <#~ collectionProperties :prop:i #>
-        this._setupIterableDiffer('<#= prop #>', changes);<#~#>
-    }
-
-    _setupIterableDiffer(prop: string, changes: SimpleChanges) {
-         if (prop in changes) {
-            const value = changes[prop].currentValue;
-            if (value && Array.isArray(value)) {
-                if (!this._propertyDiffers[prop]) {
-                    try {
-                        this._propertyDiffers[prop] = this._differs.find(value).create(this._cdr, null);
-                    } catch (e) { }
-                }
-            } else {
-                delete this._propertyDiffers[prop];
-            }
-        }
+        this._idh.setup('<#= prop #>', changes);<#~#>
     }
 
     ngDoCheck() {<#~ collectionProperties :prop:i #>
-        this._doCheckIterableDiffer('<#= prop #>');<#~#>
-    }
-
-    _doCheckIterableDiffer(prop: string) {
-        if (this._propertyDiffers[prop]) {
-            const changes = <DefaultIterableDiffer>this._propertyDiffers[prop].diff(this[prop]);
-            if (changes && this.instance) {
-                this.instance.option(prop, this[prop]);
-            }
-        }
+        this._idh.doCheck('<#= prop #>');<#~#>
     }<#?#>
 }
 
