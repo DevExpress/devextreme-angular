@@ -2,6 +2,7 @@
 /* tslint:disable:directive-selector-name */
 /* tslint:disable:directive-selector-type */
 <#?#>
+<# var collectionProperties = it.properties.filter(item => item.collection).map(item => item.name); #>
 
 import {
     Component,
@@ -13,8 +14,10 @@ import {
     Output<#? it.isEditor #>,
     Directive,
     forwardRef,
-    HostListener
-<#?#>
+    HostListener<#?#><#? collectionProperties.length #>,
+    OnChanges,
+    DoCheck,
+    SimpleChanges<#?#>
 } from '@angular/core';
 
 <#? it.isEditor #>
@@ -28,20 +31,23 @@ import {
 
 import { DxComponent } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+<#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
 @Component({
     selector: '<#= it.selector #>',
     template: '',
-    providers: [DxTemplateHost]
+    providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
 })
-export class <#= it.className #>Component extends DxComponent {
+export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
     <#?#><#~#>
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
+            private _idh: IterableDifferHelper<#?#>) {
+
         super(elementRef, ngZone, templateHost);
         this.widgetClassName = '<#= it.widgetName #>';
         this._events = [
@@ -55,9 +61,20 @@ export class <#= it.className #>Component extends DxComponent {
         ];
 
         <#~ it.events :event:i #>this.<#= event.emit #> = new EventEmitter();<#? i < it.events.length-1 #>
-        <#?#><#~#>
+        <#?#><#~#><#? collectionProperties.length #>
 
+        this._idh.setHost(this);<#?#>
     }
+<#? collectionProperties.length #>
+    ngOnChanges(changes: SimpleChanges) {
+        super.ngOnChanges(changes);
+<#~ collectionProperties :prop:i #>
+        this._idh.setup('<#= prop #>', changes);<#~#>
+    }
+
+    ngDoCheck() {<#~ collectionProperties :prop:i #>
+        this._idh.doCheck('<#= prop #>');<#~#>
+    }<#?#>
 }
 
 <#? it.isEditor #>

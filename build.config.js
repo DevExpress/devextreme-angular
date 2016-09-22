@@ -53,7 +53,7 @@ module.exports = {
     components: {
         srcFilesPattern: ['src/**/*.ts'],
         tsConfigPath: 'src/tsconfig.json',
-        tsTestSrc: ['tests/src/*.spec.ts'],
+        tsTestSrc: ['tests/src/**/*.spec.ts'],
         testsPath: 'tests/dist',
         bundleName: bundleName,
         outputPath: 'dist'

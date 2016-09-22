@@ -62,7 +62,8 @@ export default class DXComponentMetadataGenerator {
                 } else {
                     let property = {
                         name: optionName,
-                        type: 'any'
+                        type: 'any',
+                        collection: !!option.IsCollection
                     };
 
                     if (option.PrimitiveTypes) {
