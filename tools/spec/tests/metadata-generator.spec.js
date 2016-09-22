@@ -24,6 +24,13 @@ describe("metadata-generator", function() {
                     Options: {
                         value: {}
                     }
+                },
+                dxCollectionWidget: {
+                    Options: {
+                        collectionProperty: {
+                            IsCollection: true
+                        }
+                    }
                 }
             }
         };
@@ -53,13 +60,13 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(2);
+            expect(store.write.calls.count()).toBe(3);
             expect(store.write.calls.argsFor(0)[0]).toBe("output-path\\test-widget.json");
             expect(store.write.calls.argsFor(1)[0]).toBe("output-path\\editor-widget.json");
         });
 
         it("should generate matadata", function() {
-            expect(metas.length).toBe(2);
+            expect(metas.length).toBe(3);
             expect(metas[0]).not.toBeNull();
             expect(metas[1]).not.toBeNull();
         });
@@ -86,8 +93,14 @@ describe("metadata-generator", function() {
 
         it("should generate proper properties", function() {
             expect(metas[0].properties).toEqual([
-                { name: 'testTemplate', type: 'any' },
-                { name: 'testProperty', type: 'any' }
+                { name: 'testTemplate', type: 'any', collection: false },
+                { name: 'testProperty', type: 'any', collection: false }
+            ]);
+        });
+
+        it("should generate proper collection properties", function() {
+            expect(metas[2].properties).toEqual([
+                { name: 'collectionProperty', type: 'any', collection: true }
             ]);
         });
 

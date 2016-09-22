@@ -1,4 +1,4 @@
-/// <reference path="../../typings/main/ambient/jasmine/index.d.ts" />
+/// <reference path="../../../typings/main/ambient/jasmine/index.d.ts" />
 
 declare var DevExpress: any;
 declare var $: any;
@@ -24,7 +24,7 @@ import {
     DxTemplateHost,
     DxTemplateModule,
     RenderData
-} from '../../dist';
+} from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
 let dxTestWidget = DevExpress.ui.dxButton['inherit']({});
