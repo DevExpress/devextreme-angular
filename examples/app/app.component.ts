@@ -22,7 +22,7 @@ import{
 } from './appointment.service';
 import{
     OwnerService
-} from './owner.serveice';
+} from './owner.service';
 
 declare let $: any;
 
