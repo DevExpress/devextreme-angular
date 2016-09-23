@@ -16,6 +16,14 @@ import{
     Customer,
     CustomerService
 } from './customer.service';
+import{
+    Appointment,
+    AppointmentService
+} from './appointment.service';
+import{
+    Resource,
+    ResourceService
+} from './resource.serveice';
 
 declare let $: any;
 
@@ -43,7 +51,9 @@ declare let $: any;
     templateUrl: 'app/app.component.html',
     providers: [
         OrangeService,
-        CustomerService
+        CustomerService,
+        AppointmentService,
+        ResourceService
     ]
 })
 export class AppComponent implements OnInit {
@@ -56,6 +66,7 @@ export class AppComponent implements OnInit {
     boolValue: boolean;
     numberValue: number;
     dateValue: Date;
+    currentDate: Date;
     demoItems: string[];
     popupVisible = false;
     series = {
@@ -67,11 +78,14 @@ export class AppComponent implements OnInit {
     };
     oranges: Orange[];
     customers: Customer[];
-    constructor(private orangeService: OrangeService, private customerService: CustomerService) {
+    appointments: Appointment[];
+    resources: any[];
+    constructor(private orangeService: OrangeService, private customerService: CustomerService, private appointmentService: AppointmentService, private resourceService: ResourceService) {
         this.text = 'Text in textbox';
         this.boolValue = true;
         this.numberValue = 10;
         this.dateValue = new Date();
+        this.currentDate = new Date(2015, 4, 25);
         this.demoItems = [
             'item1',
             'item2',
@@ -101,6 +115,14 @@ export class AppComponent implements OnInit {
         this.passwordControl = this.form.controls['passwordControl'];
         this.oranges = this.orangeService.getOranges();
         this.customers = this.customerService.getCustomers();
+        this.appointments = this.appointmentService.getAppointments();
+        this.resources = [{
+            field: "OwnerId",
+            allowMultiple: true, 
+            dataSource: this.resourceService.getResources(),
+            label: "Owner"
+        }];
+
     }
 }
 
