@@ -21,7 +21,6 @@ import{
     AppointmentService
 } from './appointment.service';
 import{
-    Resource,
     ResourceService
 } from './resource.serveice';
 
@@ -80,7 +79,10 @@ export class AppComponent implements OnInit {
     customers: Customer[];
     appointments: Appointment[];
     resources: any[];
-    constructor(private orangeService: OrangeService, private customerService: CustomerService, private appointmentService: AppointmentService, private resourceService: ResourceService) {
+    constructor(private orangeService: OrangeService,
+        private customerService: CustomerService,
+        private appointmentService: AppointmentService,
+        private resourceService: ResourceService) {
         this.text = 'Text in textbox';
         this.boolValue = true;
         this.numberValue = 10;
@@ -117,10 +119,10 @@ export class AppComponent implements OnInit {
         this.customers = this.customerService.getCustomers();
         this.appointments = this.appointmentService.getAppointments();
         this.resources = [{
-            field: "OwnerId",
-            allowMultiple: true, 
+            field: 'OwnerId',
+            allowMultiple: true,
             dataSource: this.resourceService.getResources(),
-            label: "Owner"
+            label: 'Owner'
         }];
 
     }
