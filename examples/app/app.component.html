@@ -124,3 +124,20 @@
         <dx-button (onClick)="callNumber(cellData.value)" [text]="cellData.text"></dx-button>
     </div>
 </dx-data-grid>
+
+<h2>dxScheduler</h2>
+
+<dx-scheduler 
+    style="height: 500px; display: block"
+    [dataSource]="appointments"
+    [currentDate]="currentDate"
+    startDateExpr="StartDate"
+    endDateExpr="EndDate"
+    textExpr="Text"
+    [views]="['agenda','month','week','workWeek','day']"
+    currentView="week"
+    firstDayOfWeek="0"
+    startDayHour=8
+    endDayHour=19
+    [resources]="resources"
+></dx-scheduler>
