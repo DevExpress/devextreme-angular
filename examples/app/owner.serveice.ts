@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 
-export class Resource {
+export class Owner {
     text: string;
     id: number;
     color: string;
 }
 
-let Resources: Resource[] = [
+let Owners: Owner[] = [
     {
         text: 'Samantha Bright',
         id: 1,
@@ -27,8 +27,8 @@ let Resources: Resource[] = [
 ];
 
 @Injectable()
-export class ResourceService {
-  getResources() {
-    return Resources;
+export class OwnerService {
+  getOwners() {
+    return Owners;
   }
 }

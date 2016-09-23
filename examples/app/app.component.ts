@@ -21,8 +21,8 @@ import{
     AppointmentService
 } from './appointment.service';
 import{
-    ResourceService
-} from './resource.serveice';
+    OwnerService
+} from './owner.serveice';
 
 declare let $: any;
 
@@ -52,7 +52,7 @@ declare let $: any;
         OrangeService,
         CustomerService,
         AppointmentService,
-        ResourceService
+        OwnerService
     ]
 })
 export class AppComponent implements OnInit {
@@ -82,7 +82,7 @@ export class AppComponent implements OnInit {
     constructor(private orangeService: OrangeService,
         private customerService: CustomerService,
         private appointmentService: AppointmentService,
-        private resourceService: ResourceService) {
+        private ownerService: OwnerService) {
         this.text = 'Text in textbox';
         this.boolValue = true;
         this.numberValue = 10;
@@ -121,7 +121,7 @@ export class AppComponent implements OnInit {
         this.resources = [{
             field: 'OwnerId',
             allowMultiple: true,
-            dataSource: this.resourceService.getResources(),
+            dataSource: this.ownerService.getOwners(),
             label: 'Owner'
         }];
 
