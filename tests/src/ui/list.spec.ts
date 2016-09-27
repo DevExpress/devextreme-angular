@@ -1,4 +1,4 @@
-/// <reference path="../../../typings/main/ambient/jasmine/index.d.ts" />
+/// <reference path="../../../typings/globals/jasmine/index.d.ts" />
 
 declare var DevExpress: any;
 declare var $: any;
