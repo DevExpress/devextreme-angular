@@ -1,17 +1,18 @@
 var gulp = require('gulp');
+var runSequence = require("run-sequence");
 var path = require('path');
 var typescript = require('gulp-typescript');
 var tsc = require('typescript');
-var tslint = require("gulp-tslint");
+var tslint = require('gulp-tslint');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var del = require('del');
-var merge = require("merge-stream");
+var merge = require('merge-stream');
 var karmaServer = require('karma').Server;
-var buildConfig = require("./build.config");
+var buildConfig = require('./build.config');
 
 //------------Main------------
 
@@ -22,80 +23,67 @@ gulp.task('build', [
     ]
 );
 
+gulp.task('default', ['build']);
+
 
 //------------Tools------------
 
 gulp.task('build.tools', function() {
-    var config = buildConfig.tools;
-
-    var tsResult = gulp.src(config.srcFilesPattern)
+        var config = buildConfig.tools;
+    
+    return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsc));
-
-    return merge([
-        tsResult.dts.pipe(gulp.dest(config.distPath)),
-        tsResult.js
+        .pipe(typescript(config.tsc))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.distPath))
-    ]);
+        .pipe(gulp.dest(config.distPath));
 });
 
 
 //------------Components------------
 
-gulp.task("generate.metadata", ['build.tools'], function () {
+gulp.task('generate.metadata', ['build.tools'], function () {
     var MetadataGenerator = require(buildConfig.tools.metadataGenerator.importFrom).default,
         generator = new MetadataGenerator();
 
     generator.generate(buildConfig.tools.metadataGenerator);
 });
 
-gulp.task('claen.components', function () {
+gulp.task('clean.components', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
 
     return del([outputFolderPath]);
 });
 
 
-gulp.task("generate.components", ['generate.metadata', 'claen.components'], function () {
+gulp.task('generate.components', ['generate.metadata', 'clean.components'], function () {
     var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
         generator = new DoTGenerator();
 
     generator.generate(buildConfig.tools.componentGenerator);
 });
 
-gulp.task("generate.moduleFacades", ['generate.components'], function () {
+gulp.task('generate.moduleFacades', ['generate.components'], function () {
     var ModuleFacadeGenerator = require(buildConfig.tools.moduleFacadeGenerator.importFrom).default;
     moduleFacadeGenerator = new ModuleFacadeGenerator();
 
     moduleFacadeGenerator.generate(buildConfig.tools.moduleFacadeGenerator);
 });
 
-gulp.task("generate.facades", ['generate.moduleFacades'], function () {
+gulp.task('generate.facades', ['generate.moduleFacades'], function () {
     var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default;
     facadeGenerator = new FacadeGenerator();
 
     facadeGenerator.generate(buildConfig.tools.facadeGenerator);
 });
 
-gulp.task('build.components', ['generate.components', 'generate.facades'], function() {
+gulp.task('build.components', ['generate.components', 'generate.facades'], function () {
     var config = buildConfig.components;
 
-    var tsProject = typescript.createProject(config.tsConfigPath, {
-        typescript: tsc
-    });
-
-    var tsResult = tsProject.src()
+    return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
-        .pipe(typescript(tsProject));
-
-    return merge([
-        tsResult.dts.pipe(gulp.dest(config.outputPath)),
-        tsResult.js
+        .pipe(typescript(config.tsConfigPath))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.outputPath))
-    ]);
-
+        .pipe(gulp.dest(config.outputPath));
 });
 
 
@@ -126,7 +114,7 @@ gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src(cmpConfig.outputPath + "/**/*")
+    return gulp.src(cmpConfig.outputPath + '/**/*')
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
@@ -135,19 +123,14 @@ gulp.task('npm.pack', ['npm.content', 'npm.sources', 'npm.modules'], shell.task(
 
 //------------Examples------------
 
-gulp.task('build.examples', ['build.components'], function() {
+gulp.task('build.examples', ['build.components'], function () {
     var config = buildConfig.examples;
 
-    var tsResult = gulp.src([config.appPath + '/*.ts', '!' + config.appPath + '/**/*.d.ts'])
+    return gulp.src([config.appPath + '/*.ts', '!' + config.appPath + '/**/*.d.ts'])
         .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsc));
-
-    return merge([
-        tsResult.dts.pipe(gulp.dest(config.appPath)),
-        tsResult.js
+        .pipe(typescript(config.tsc))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.appPath))
-    ]);
+        .pipe(gulp.dest(config.appPath));
 });
 
 gulp.task('watch.examples', function() {
@@ -160,19 +143,14 @@ gulp.task('watch.examples', function() {
 //------------Testing------------
 
 gulp.task('build.tests', ['build.components'], function() {
-    var config = buildConfig.components,
+    var config = buildConfig.components,        
         testConfig = buildConfig.tests;
 
-    var tsResult = gulp.src(config.tsTestSrc)
+    return gulp.src(config.tsTestSrc)
         .pipe(sourcemaps.init())
-        .pipe(typescript(testConfig.tsc));
-
-    return merge([
-        tsResult.dts.pipe(gulp.dest(config.testsPath)),
-        tsResult.js
+        .pipe(typescript(testConfig.tsc))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.testsPath))
-    ]);
+        .pipe(gulp.dest(config.testsPath));
 });
 
 gulp.task('watch.spec', function(){
@@ -194,11 +172,15 @@ gulp.task('test.components.debug', ['build.tests'], function(done){
 });
 
 gulp.task('test.tools', ['build.tools'], function(done){
-    gulp.src('tools/spec/tests/*.spec.js')
+    return gulp.src('tools/spec/tests/*.spec.js')
         .pipe(jasmine());
 });
 
-gulp.task('test', ['test.tools', 'test.components', 'lint'], function(done){
+gulp.task('test', function(done){
+    runSequence(
+        ['test.tools', 'test.components'],
+        'lint',
+        done);
 });
 
 gulp.task('watch.test', function(done){
@@ -210,8 +192,8 @@ gulp.task('watch.test', function(done){
 
 //------------TSLint------------
 
-gulp.task("lint", function(){
-    gulp.src(buildConfig.components.srcFilesPattern
+gulp.task('lint', function(){
+    return gulp.src(buildConfig.components.srcFilesPattern
             .concat(buildConfig.components.tsTestSrc)
             .concat(buildConfig.examples.srcFilesPattern)
             .concat(buildConfig.tools.srcFilesPattern)
@@ -219,7 +201,7 @@ gulp.task("lint", function(){
         .pipe(tslint({
             tslint: require('tslint').default,
             rulesDirectory: null,
-            configuration: "tslint.json"
+            configuration: 'tslint.json'
         }))
-        .pipe(tslint.report("prose"));
+        .pipe(tslint.report('prose'));
 });
