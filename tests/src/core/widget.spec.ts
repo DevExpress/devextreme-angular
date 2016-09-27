@@ -2,6 +2,7 @@
 
 declare var DevExpress: any;
 declare var $: any;
+declare var sinon: any;
 
 import {
     Component,
@@ -43,6 +44,7 @@ export class DxTestWidgetComponent extends DxComponent {
     @Input() testOption: any;
 
     @Output() onOptionChanged: EventEmitter<any>;
+    @Output() onInitialized: EventEmitter<any>;
     @Output() testOptionChange: EventEmitter<any>;
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
@@ -58,6 +60,7 @@ export class DxTestWidgetComponent extends DxComponent {
         ];
 
         this.onOptionChanged = new EventEmitter();
+        this.onInitialized = new EventEmitter();
         this.testOptionChange = new EventEmitter();
     }
 }
@@ -68,6 +71,8 @@ export class DxTestWidgetComponent extends DxComponent {
 })
 export class TestContainerComponent {
     testOption: string;
+    testMethod() {
+    }
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
 }
 
@@ -149,4 +154,18 @@ describe('DevExtreme Angular 2 widget', () => {
         expect(instance.option('testOption')).toBe('Changed 2');
 
     }));
-});
+
+    it('should fire onInitialized event', async(() => {
+        let testSpy = sinon.spy(TestContainerComponent.prototype, 'testMethod');
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget (onInitialized)="testMethod()"></dx-test-widget>'
+            }
+        });
+        
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        expect(testSpy.calledOnce).toBe(true);
+
+    }));
+  });

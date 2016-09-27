@@ -3,7 +3,7 @@ module.exports = function(config) {
 
         basePath: './',
 
-        frameworks: ['jasmine'],
+        frameworks: ['jasmine', 'sinon'],
 
         files: [
             // System.js for module loading
@@ -77,6 +77,7 @@ module.exports = function(config) {
         // Karma plugins loaded
         plugins: [
             'karma-jasmine',
+            'karma-sinon',
             'karma-coverage',
             'karma-junit-reporter',
             'karma-phantomjs2-launcher',
