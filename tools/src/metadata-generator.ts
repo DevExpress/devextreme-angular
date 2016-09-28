@@ -42,6 +42,7 @@ export default class DXComponentMetadataGenerator {
             console.log('Generate metadata for ' + widgetName);
 
             let widget = widgetsMetadata[widgetName],
+                isTranscludedContent = widget['IsTranscludedContent'],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
                 outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
@@ -87,6 +88,7 @@ export default class DXComponentMetadataGenerator {
             let widgetMetadata = {
                 className: inflector.classify(widgetName),
                 widgetName: widgetName,
+                isTranscludedContent: isTranscludedContent,
                 selector: dasherizedWidgetName,
                 events: allEvents,
                 properties: properties,

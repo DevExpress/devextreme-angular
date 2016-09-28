@@ -35,7 +35,7 @@ import { DxTemplateHost } from '../core/dx.template-host';
 
 @Component({
     selector: '<#= it.selector #>',
-    template: '',
+    template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
     providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
 })
 export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {

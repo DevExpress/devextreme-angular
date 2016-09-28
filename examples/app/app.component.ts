@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ViewChild
 } from '@angular/core';
 import {
     AbstractControl,
@@ -16,6 +17,12 @@ import{
     Customer,
     CustomerService
 } from './customer.service';
+import{
+    DxPopoverComponent
+} from '../../dist';
+import{
+    DxPopupComponent
+} from '../../dist';
 
 declare let $: any;
 
@@ -39,6 +46,17 @@ declare let $: any;
             width: 100%;
             display: block;
         }
+        .container-widget-height {
+            height: 200px;
+            display: block;
+        }
+        .defer-rendering-load-indicator {
+            line-height: 150px;
+        }
+        .resizable {
+            display: block; 
+            background-color: #ccc;
+        }
     `],
     templateUrl: 'app/app.component.html',
     providers: [
@@ -47,6 +65,8 @@ declare let $: any;
     ]
 })
 export class AppComponent implements OnInit {
+    @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
+    @ViewChild('popupWithContent') popup: DxPopupComponent;
     text = 'Initial text';
     email: string;
     emailControl: AbstractControl;
@@ -101,6 +121,14 @@ export class AppComponent implements OnInit {
         this.passwordControl = this.form.controls['passwordControl'];
         this.oranges = this.orangeService.getOranges();
         this.customers = this.customerService.getCustomers();
+    }
+
+    showPopover() {
+        this.popover.instance.show();
+    }
+
+    showPopup() {
+        this.popup.instance.show();
     }
 }
 
