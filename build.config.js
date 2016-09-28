@@ -70,7 +70,8 @@ module.exports = {
             "experimentalDecorators": true,
             "sourceMap": true,
             "removeComments": true,
-            "declaration": true
+            "declaration": true,
+            "lib": ["es2015", "dom"]
         }
     },
     tests: {
@@ -82,7 +83,8 @@ module.exports = {
             "experimentalDecorators": true,
             "sourceMap": true,
             "removeComments": true,
-            "declaration": true
+            "declaration": true,
+            "lib": ["es2015", "dom"]
         }
     },
     npm: {
