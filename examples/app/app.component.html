@@ -82,102 +82,66 @@
             Group {{g.key}}
         </div>
     </dx-list>
-
-    <h3>dxPopup</h3>
-
-    <dx-popup [showTitle]="true" title="Demo of dxPopup" [(visible)]="popupVisible">
-        <div *dxTemplate="let t = data of 'contentTemplate'">
-            <div>Hello from dxPopup</div>
-        </div>
-    </dx-popup>
-
-    <dx-button text="Show Popup" (onClick)="popupVisible = !popupVisible"></dx-button>
-
-    <h2>Widgets with transcluded content</h2>
-
-    <h3>dxDeferRendering</h3>
-
-    <p>Toggle the loading status</p>
-    <dx-switch #deferRenderingStatus [value]="false"></dx-switch>
-
-    <dx-defer-rendering 
-        class="container-widget-height" 
-        [(renderWhen)]="deferRenderingStatus.value" 
-        staggerItemSelector=".dx-list-item" 
-        animation="stagger-3d-drop">
-        <div class="dx-visible-while-pending-rendering">
-            <div class="defer-rendering-load-indicator">Loading...</div>
-        </div>
-        <div class="dx-invisible-while-pending-rendering">
-            <dx-list [items]="[ 'item1', 'item2', 'item3', 'item4', 'item5' ]">
-            </dx-list>
-        </div>
-    </dx-defer-rendering>
-
-    <h3>dxResizable</h3>
-
-    <dx-resizable 
-        class="resizable"
-        handles="right bottom"
-        minHeight="100" 
-        minWidth="200" 
-        maxHeight="400" 
-        maxWidth="300" 
-        width="200" 
-        height="100">
-        <p><b>Resize this element</b></p>
-    </dx-resizable>
-
-    <h3>dxPopover</h3>
-
-    <dx-button 
-        id="popoverButton" 
-        text="Show popover" 
-        (onClick)="showPopover()"
-    ></dx-button><br/>
-    <dx-popover 
-        target="#popoverButton" 
-        width="300" 
-        position="top" 
-        showTitle="true" 
-        title="Popover title">
-        <p>Popover content</p>
-    </dx-popover>
-
-    <h3>dxPopup</h3>
-
-    <dx-button text="Show popup" (onClick)="showPopup()"></dx-button><br/>
-    <dx-popup 
-        #popupWithContent
-        width="300" 
-        height="400" 
-        showTitle="true" 
-        title="Popup title">
-        <p>Popup content</p>
-    </dx-popup>
-
-    <h3>dxScrollView</h3>
-
-    <dx-scroll-view class="container-widget-height">
-        <div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eveniet tempore, perspiciatis totam qui est minima dicta beatae dolores, omnis enim ut incidunt. Ut reprehenderit, tempore iusto deserunt doloremque fugit.</p>
-            <p>Sint natus quia repellendus cum neque. Velit similique dicta corrupti nesciunt quas ea quam minima, aliquid qui ratione suscipit magnam molestiae aspernatur iure, tenetur sapiente voluptates laborum quidem nisi molestias.</p>
-            <p>Id, nesciunt adipisci sint. Doloribus minima expedita, soluta. Eveniet reiciendis eius ducimus provident autem amet alias quis natus. In veritatis, repellendus laborum illo voluptates est quis consectetur consequuntur reiciendis rem!</p>
-            <p>In cum, ipsum ratione beatae odio officia doloribus ullam magnam impedit repudiandae odit, vero! Minus quisquam earum aliquam tempore iusto consequatur modi laborum facilis dolorum! Earum, exercitationem error. Placeat, optio!</p>
-            <p>Necessitatibus praesentium quisquam autem non dolores, doloremque architecto, suscipit nemo nisi et laboriosam temporibus maiores, quasi amet unde aut consectetur dolor quo. Minus laudantium, enim iste nesciunt ea pariatur eveniet!</p>
-            <p>Illo, delectus deleniti nesciunt minima nisi eius accusantium asperiores corporis id repudiandae quia. Cum esse magni accusantium omnis laboriosam iure excepturi, saepe placeat laudantium amet molestiae dolores hic, labore laborum!</p>
-            <p>Impedit deleniti rem delectus illum accusamus magni facere nam dolore dolor veniam quos accusantium nostrum magnam, velit praesentium! Optio amet quasi minus perspiciatis ex sit, similique reiciendis libero nostrum voluptatibus?</p>
-            <p>Qui quidem natus voluptatibus et id doloribus distinctio tempora, eius, error rerum, commodi in accusamus iusto quos adipisci quasi? Quis error quae expedita hic modi ipsum pariatur, minima alias nesciunt.</p>
-            <p>Voluptas illum excepturi aut quae, autem impedit sed non at corporis inventore itaque nostrum repellendus placeat, eum consequuntur cumque, vel voluptates esse. Suscipit mollitia aliquam optio, consectetur dicta quis officia.</p>
-            <p>Possimus voluptas saepe quam reiciendis rerum reprehenderit error adipisci totam. Tempore doloribus, porro nemo odio neque rerum voluptatum dignissimos illo quis! Quidem quos maiores ipsum explicabo dolorem pariatur quas assumenda.</p>
-            <p>Nisi maiores illum soluta provident placeat aspernatur cumque quod voluptatibus impedit id et minus, dicta tempore accusamus at inventore veritatis neque culpa mollitia. Animi, necessitatibus in dolorem perspiciatis harum voluptatum.</p>
-            <p>Quas reprehenderit eveniet ex dicta soluta atque, quae facilis itaque mollitia consequatur consectetur, minima? Aliquid quae inventore eius odit vero ipsam quisquam adipisci harum vitae ad quis, tempora reprehenderit quia.</p>
-            <p>Labore, temporibus, doloremque? Voluptates aut voluptatum corporis eum, consectetur labore similique quisquam, velit officia soluta nesciunt numquam quo, nostrum. Molestias delectus facilis odio id quae eveniet molestiae nobis sed fugit!</p>
-            <p>Corporis nam quidem error. Excepturi eos nemo quas at ullam nesciunt quae, ipsam ad ducimus esse voluptatum, vel, sed consectetur. Laboriosam non, ipsam eos, reiciendis fugiat earum facere temporibus voluptas!</p>
-            <p>Quos maiores, cumque nobis! Quisquam rem quidem, ex necessitatibus at ullam! Excepturi sit asperiores ad quibusdam, eum modi sed iusto perspiciatis vel officia hic nam perferendis ipsa saepe reiciendis non.</p>    
-        </div>
-    </dx-scroll-view>
 </div>
+
+<h2>dxPopup</h2>
+
+<dx-popup showTitle="true" title="Demo of dxPopup" [(visible)]="popupVisible">
+    <div>Hello from dxPopup</div>
+</dx-popup>
+<dx-button text="Show Popup via model" (onClick)="popupVisible = !popupVisible"></dx-button>
+
+<h2>dxPopover</h2>
+
+<dx-popover 
+    target="#popoverButton" 
+    width="300" 
+    position="top" 
+    showTitle="true" 
+    title="Demo of dxPopover">
+    <p>Hello from dxPopover</p>
+</dx-popover>
+<dx-button 
+    id="popoverButton" 
+    text="Show Popover via method" 
+    (onClick)="showPopover()"
+></dx-button><br/>
+
+<h2>dxResizable</h2>
+
+<dx-resizable 
+    class="resizable"
+    handles="right bottom"
+    minHeight="100" 
+    minWidth="200" 
+    maxHeight="400" 
+    maxWidth="300" 
+    width="200" 
+    height="100">
+    <p><b>Resize this element</b></p>
+</dx-resizable>
+
+<h2>dxScrollView</h2>
+
+<dx-scroll-view class="scroll-view-height">
+    <div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eveniet tempore, perspiciatis totam qui est minima dicta beatae dolores, omnis enim ut incidunt. Ut reprehenderit, tempore iusto deserunt doloremque fugit.</p>
+        <p>Sint natus quia repellendus cum neque. Velit similique dicta corrupti nesciunt quas ea quam minima, aliquid qui ratione suscipit magnam molestiae aspernatur iure, tenetur sapiente voluptates laborum quidem nisi molestias.</p>
+        <p>Id, nesciunt adipisci sint. Doloribus minima expedita, soluta. Eveniet reiciendis eius ducimus provident autem amet alias quis natus. In veritatis, repellendus laborum illo voluptates est quis consectetur consequuntur reiciendis rem!</p>
+        <p>In cum, ipsum ratione beatae odio officia doloribus ullam magnam impedit repudiandae odit, vero! Minus quisquam earum aliquam tempore iusto consequatur modi laborum facilis dolorum! Earum, exercitationem error. Placeat, optio!</p>
+        <p>Necessitatibus praesentium quisquam autem non dolores, doloremque architecto, suscipit nemo nisi et laboriosam temporibus maiores, quasi amet unde aut consectetur dolor quo. Minus laudantium, enim iste nesciunt ea pariatur eveniet!</p>
+        <p>Illo, delectus deleniti nesciunt minima nisi eius accusantium asperiores corporis id repudiandae quia. Cum esse magni accusantium omnis laboriosam iure excepturi, saepe placeat laudantium amet molestiae dolores hic, labore laborum!</p>
+        <p>Impedit deleniti rem delectus illum accusamus magni facere nam dolore dolor veniam quos accusantium nostrum magnam, velit praesentium! Optio amet quasi minus perspiciatis ex sit, similique reiciendis libero nostrum voluptatibus?</p>
+        <p>Qui quidem natus voluptatibus et id doloribus distinctio tempora, eius, error rerum, commodi in accusamus iusto quos adipisci quasi? Quis error quae expedita hic modi ipsum pariatur, minima alias nesciunt.</p>
+        <p>Voluptas illum excepturi aut quae, autem impedit sed non at corporis inventore itaque nostrum repellendus placeat, eum consequuntur cumque, vel voluptates esse. Suscipit mollitia aliquam optio, consectetur dicta quis officia.</p>
+        <p>Possimus voluptas saepe quam reiciendis rerum reprehenderit error adipisci totam. Tempore doloribus, porro nemo odio neque rerum voluptatum dignissimos illo quis! Quidem quos maiores ipsum explicabo dolorem pariatur quas assumenda.</p>
+        <p>Nisi maiores illum soluta provident placeat aspernatur cumque quod voluptatibus impedit id et minus, dicta tempore accusamus at inventore veritatis neque culpa mollitia. Animi, necessitatibus in dolorem perspiciatis harum voluptatum.</p>
+        <p>Quas reprehenderit eveniet ex dicta soluta atque, quae facilis itaque mollitia consequatur consectetur, minima? Aliquid quae inventore eius odit vero ipsam quisquam adipisci harum vitae ad quis, tempora reprehenderit quia.</p>
+        <p>Labore, temporibus, doloremque? Voluptates aut voluptatum corporis eum, consectetur labore similique quisquam, velit officia soluta nesciunt numquam quo, nostrum. Molestias delectus facilis odio id quae eveniet molestiae nobis sed fugit!</p>
+        <p>Corporis nam quidem error. Excepturi eos nemo quas at ullam nesciunt quae, ipsam ad ducimus esse voluptatum, vel, sed consectetur. Laboriosam non, ipsam eos, reiciendis fugiat earum facere temporibus voluptas!</p>
+        <p>Quos maiores, cumque nobis! Quisquam rem quidem, ex necessitatibus at ullam! Excepturi sit asperiores ad quibusdam, eum modi sed iusto perspiciatis vel officia hic nam perferendis ipsa saepe reiciendis non.</p>    
+    </div>
+</dx-scroll-view>
 
 <h2>dxChart</h2>
 

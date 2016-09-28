@@ -27,9 +27,6 @@ import{
 import{
     DxPopoverComponent
 } from '../../dist';
-import{
-    DxPopupComponent
-} from '../../dist';
 
 declare let $: any;
 
@@ -53,12 +50,9 @@ declare let $: any;
             width: 100%;
             display: block;
         }
-        .container-widget-height {
+        .scroll-view-height {
             height: 200px;
             display: block;
-        }
-        .defer-rendering-load-indicator {
-            line-height: 150px;
         }
         .resizable {
             display: block; 
@@ -75,7 +69,6 @@ declare let $: any;
 })
 export class AppComponent implements OnInit {
     @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
-    @ViewChild('popupWithContent') popup: DxPopupComponent;
     text = 'Initial text';
     email: string;
     emailControl: AbstractControl;
@@ -144,15 +137,9 @@ export class AppComponent implements OnInit {
             dataSource: this.ownerService.getOwners(),
             label: 'Owner'
         }];
-
     }
-
     showPopover() {
         this.popover.instance.show();
-    }
-
-    showPopup() {
-        this.popup.instance.show();
     }
 }
 
