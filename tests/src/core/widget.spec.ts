@@ -71,9 +71,9 @@ export class DxTestWidgetComponent extends DxComponent {
 })
 export class TestContainerComponent {
     testOption: string;
+    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
     testMethod() {
     }
-    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
 }
 
 
@@ -162,7 +162,7 @@ describe('DevExtreme Angular 2 widget', () => {
                 template: '<dx-test-widget (onInitialized)="testMethod()"></dx-test-widget>'
             }
         });
-        
+
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
         expect(testSpy.calledOnce).toBe(true);

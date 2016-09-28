@@ -33,7 +33,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
     }
     private _initOptions() {
         this._initialOptions.onInitialized = (e) => {
-            let emitter = this['onInitialized']; 
+            let emitter = this['onInitialized'];
             return emitter && emitter.next(e);
         };
     }
