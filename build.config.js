@@ -7,7 +7,6 @@ module.exports = {
         metadataGenerator: {
             importFrom: './tools/dist/metadata-generator',
             sourceMetadataFilePath: './metadata/StrongMetaData.json',
-            additionalMetadataFilePath: './metadata/AdditionalMetaData.json',
             outputFolderPath: './metadata/generated'
         },
         componentGenerator: {
