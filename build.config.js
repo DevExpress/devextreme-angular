@@ -48,6 +48,9 @@ module.exports = {
             "sourceMap": true,
             "removeComments": true,
             "declaration": true
+        },
+        tests: {
+            srcFilesPattern: 'tools/spec/tests/*.spec.js'
         }
     },
     components: {
@@ -70,7 +73,8 @@ module.exports = {
             "experimentalDecorators": true,
             "sourceMap": true,
             "removeComments": true,
-            "declaration": true
+            "declaration": true,
+            "lib": ["es2015", "dom"]
         }
     },
     tests: {
@@ -82,7 +86,8 @@ module.exports = {
             "experimentalDecorators": true,
             "sourceMap": true,
             "removeComments": true,
-            "declaration": true
+            "declaration": true,
+            "lib": ["es2015", "dom"]
         }
     },
     npm: {

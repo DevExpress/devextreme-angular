@@ -1,6 +1,6 @@
-/// <reference path="../../typings/main/ambient/node/index.d.ts" />
-/// <reference path="../../typings/main/ambient/dot/index.d.ts" />
-/// <reference path="../../typings/main/definitions/mkdirp/index.d.ts" />
+/// <reference path="../../typings/globals/node/index.d.ts" />
+/// <reference path="../../typings/globals/dot/index.d.ts" />
+/// <reference path="../../typings/modules/mkdirp/index.d.ts" />
 
 import fs = require('fs');
 import path = require('path');

@@ -1,4 +1,4 @@
-/// <reference path="../../typings/main/ambient/node/index.d.ts" />
+/// <reference path="../../typings/globals/node/index.d.ts" />
 
 import fs = require('fs');
 import path = require('path');
