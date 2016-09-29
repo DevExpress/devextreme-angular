@@ -2,7 +2,6 @@
 
 declare var DevExpress: any;
 declare var $: any;
-declare var sinon: any;
 
 import {
     Component,
@@ -156,7 +155,7 @@ describe('DevExtreme Angular 2 widget', () => {
     }));
 
     it('should fire onInitialized event', async(() => {
-        let testSpy = sinon.spy(TestContainerComponent.prototype, 'testMethod');
+        let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget (onInitialized)="testMethod()"></dx-test-widget>'
@@ -165,7 +164,7 @@ describe('DevExtreme Angular 2 widget', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
-        expect(testSpy.calledOnce).toBe(true);
+        expect(testSpy).toHaveBeenCalledTimes(1);
 
     }));
   });
