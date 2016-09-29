@@ -31,6 +31,12 @@ export class DxComponent implements OnChanges, AfterViewInit {
             this._initialOptions._templates = initialTemplates;
         }
     }
+    private _initOptions() {
+        this._initialOptions.onInitialized = (e) => {
+            let emitter = this['onInitialized'];
+            return emitter && emitter.next(e);
+        };
+    }
     private _initEvents() {
         this._events.forEach(event => {
             if (event.subscribe) {
@@ -65,6 +71,7 @@ export class DxComponent implements OnChanges, AfterViewInit {
     }
     private _createWidget() {
         this._initTemplates();
+        this._initOptions();
         this._createInstance();
         this._initEvents();
         this._initProperties();
