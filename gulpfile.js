@@ -30,7 +30,7 @@ gulp.task('default', ['build']);
 
 gulp.task('build.tools', function() {
         var config = buildConfig.tools;
-    
+
     return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
         .pipe(typescript(config.tsc))
@@ -143,7 +143,7 @@ gulp.task('watch.examples', function() {
 //------------Testing------------
 
 gulp.task('build.tests', ['build.components'], function() {
-    var config = buildConfig.components,        
+    var config = buildConfig.components,
         testConfig = buildConfig.tests;
 
     return gulp.src(config.tsTestSrc)
@@ -172,8 +172,12 @@ gulp.task('test.components.debug', ['build.tests'], function(done){
 });
 
 gulp.task('test.tools', ['build.tools'], function(done){
-    return gulp.src('tools/spec/tests/*.spec.js')
-        .pipe(jasmine());
+    var config = buildConfig.tools.tests;
+
+    return gulp.src(config.srcFilesPattern)
+        .pipe(jasmine({
+            errorOnFail: false
+        }));
 });
 
 gulp.task('test', function(done){

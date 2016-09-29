@@ -48,6 +48,9 @@ module.exports = {
             "sourceMap": true,
             "removeComments": true,
             "declaration": true
+        },
+        tests: {
+            srcFilesPattern: 'tools/spec/tests/*.spec.js'
         }
     },
     components: {
