@@ -240,7 +240,7 @@ method of the dxDataGrid is called:
 
 ```js
 import { Component, ViewChild } from '@angular/core';
-import { DxDataGrid } from "devextreme-angular2";
+import { DxDataGridComponent } from "devextreme-angular2";
 
 @Component({
     selector: 'my-app',
@@ -250,7 +250,7 @@ import { DxDataGrid } from "devextreme-angular2";
     `
 })
 export class AppComponent implements OnChanges {
-    @ViewChild(DxDataGrid) dataGrid:DxDataGrid
+    @ViewChild(DxDataGridComponent) dataGrid:DxDataGridComponent
     refresh() {
         this.dataGrid.instance.refresh();
     }
