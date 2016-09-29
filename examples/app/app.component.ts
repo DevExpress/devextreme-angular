@@ -1,6 +1,7 @@
 import {
     Component,
-    OnInit
+    OnInit,
+    ViewChild
 } from '@angular/core';
 import {
     AbstractControl,
@@ -23,6 +24,9 @@ import{
 import{
     OwnerService
 } from './owner.service';
+import{
+    DxPopoverComponent
+} from '../../dist';
 
 declare let $: any;
 
@@ -46,6 +50,14 @@ declare let $: any;
             width: 100%;
             display: block;
         }
+        .scroll-view-height {
+            height: 200px;
+            display: block;
+        }
+        .resizable {
+            display: block; 
+            background-color: #ccc;
+        }
     `],
     templateUrl: 'app/app.component.html',
     providers: [
@@ -56,6 +68,7 @@ declare let $: any;
     ]
 })
 export class AppComponent implements OnInit {
+    @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
     text = 'Initial text';
     email: string;
     emailControl: AbstractControl;
@@ -124,7 +137,9 @@ export class AppComponent implements OnInit {
             dataSource: this.ownerService.getOwners(),
             label: 'Owner'
         }];
-
+    }
+    showPopover() {
+        this.popover.instance.show();
     }
 }
 

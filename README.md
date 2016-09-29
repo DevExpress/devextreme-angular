@@ -195,6 +195,22 @@ of the dxList widget as follows:
 The local 'item' and 'group' variables (that are declared via the 'let' keyword) expose the corresponding item data object. You can use it to
 render the data where you need inside the template.
 
+### Widgets with transcluded content
+
+In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
+[DxResizable](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxResizable/), 
+[DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/), 
+[DxPopup](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxPopup/), 
+[DxPopover](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxPopover/).
+For instance, we can set the content for 
+the [DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/) widget as shown below: 
+
+```html
+<dx-scroll-view>
+    <div>Some scrollable content</div>
+</dx-scroll-view>
+```
+
 ### Angular 2 Forms
 
 The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'formControlName' directive, which are necessary for the
