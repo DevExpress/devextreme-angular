@@ -29,7 +29,7 @@ gulp.task('default', ['build']);
 //------------Tools------------
 
 gulp.task('build.tools', function() {
-        var config = buildConfig.tools;
+    var config = buildConfig.tools;
 
     return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
