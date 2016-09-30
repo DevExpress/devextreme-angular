@@ -14,6 +14,7 @@ var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var buildConfig = require('./build.config');
+var exec = require('gulp-exec');
 
 //------------Main------------
 
@@ -82,7 +83,7 @@ gulp.task('build.components', ['generate.components', 'generate.facades'], funct
 
     return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsConfigPath))
+        .pipe(exec('node_modules/.bin/ngc -p "' + config.tsConfigPath + '"'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.outputPath));
 });
