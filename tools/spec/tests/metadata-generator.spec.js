@@ -18,19 +18,22 @@ describe("metadata-generator", function() {
                             IsTemplate: true,
                         },
                         testProperty: { }
-                    }
+                    },
+                    Module: 'test_widget'
                 },
                 dxEditorWidget: {
                     Options: {
                         value: {}
-                    }
+                    },
+                    Module: 'test_widget'
                 },
                 dxCollectionWidget: {
                     Options: {
                         collectionProperty: {
                             IsCollection: true
                         }
-                    }
+                    },
+                    Module: 'test_widget'
                 }
             }
         };
@@ -102,6 +105,10 @@ describe("metadata-generator", function() {
             expect(metas[2].properties).toEqual([
                 { name: 'collectionProperty', type: 'any', collection: true }
             ]);
+        });
+
+        it("should generate proper module name", function() {
+            expect(metas[0].module).toBe("devextreme/test_widget");
         });
 
         it("should detect editors", function() {

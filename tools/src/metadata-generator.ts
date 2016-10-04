@@ -39,10 +39,16 @@ export default class DXComponentMetadataGenerator {
         mkdirp.sync(config.outputFolderPath);
 
         for (let widgetName in widgetsMetadata) {
+            let widget = widgetsMetadata[widgetName];
+
+            if (!widget.Module) {
+                console.log('Skipping metadata for ' + widgetName);
+                continue;
+            }
+
             console.log('Generate metadata for ' + widgetName);
 
-            let widget = widgetsMetadata[widgetName],
-                isTranscludedContent = widget['IsTranscludedContent'],
+            let isTranscludedContent = widget['IsTranscludedContent'],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
                 outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
@@ -92,7 +98,8 @@ export default class DXComponentMetadataGenerator {
                 selector: dasherizedWidgetName,
                 events: allEvents,
                 properties: properties,
-                isEditor: isEditor
+                isEditor: isEditor,
+                module: 'devextreme/' + widget.Module
             };
 
             console.log('Write metadata to file ' + outputFilePath);

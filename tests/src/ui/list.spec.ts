@@ -1,7 +1,5 @@
 /// <reference path="../../../typings/globals/jasmine/index.d.ts" />
-
-declare var DevExpress: any;
-declare var $: any;
+/// <reference path="../../../src/devextreme-modules.d.ts" />
 
 import {
     Component,
@@ -13,6 +11,8 @@ import {
     TestBed,
     async
 } from '@angular/core/testing';
+
+import DxList = require('devextreme/ui/list');
 
 import {
     DxListModule,
@@ -41,7 +41,7 @@ describe('DxList', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-list') || fixture.nativeElement;
-        return DevExpress.ui.dxList.getInstance(widgetElement);
+        return DxList.getInstance(widgetElement);
     }
 
     // spec

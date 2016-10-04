@@ -20,6 +20,8 @@ import {
     SimpleChanges<#?#>
 } from '@angular/core';
 
+import <#= it.className #> = require('<#= it.module #>');
+
 <#? it.isEditor #>
 
 import {
@@ -65,6 +67,10 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
 
         this._idh.setHost(this);<#?#>
     }
+
+    protected _createInstance(element, options) {
+        return new <#= it.className #>(element, options);
+    }
 <#? collectionProperties.length #>
     ngOnChanges(changes: SimpleChanges) {
         super.ngOnChanges(changes);
@@ -93,9 +99,7 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
     @HostListener('valueChange', ['$event']) onChange(_) { }
     onTouched = () => {};
 
-    constructor(private host: <#= it.className #>Component) {
-
-    }
+    constructor(private host: <#= it.className #>Component) { }
 
     writeValue(value: any): void {
         this.host.value = value;

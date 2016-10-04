@@ -9,9 +9,7 @@ import {
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
 
-declare let $: any;
-
-export class DxComponent implements OnChanges, AfterViewInit {
+export abstract class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
     templates: DxTemplateDirective[];
@@ -64,15 +62,11 @@ export class DxComponent implements OnChanges, AfterViewInit {
             this[property] = defaultOptions[property];
         });
     }
-    private _createInstance() {
-        let $element = $(this.element.nativeElement);
-        $element[this.widgetClassName](this._initialOptions);
-        this.instance = $element[this.widgetClassName]('instance');
-    }
+    protected abstract _createInstance(element, options)
     private _createWidget() {
         this._initTemplates();
         this._initOptions();
-        this._createInstance();
+        this.instance = this._createInstance(this.element.nativeElement, this._initialOptions);
         this._initEvents();
         this._initProperties();
     }
@@ -85,18 +79,24 @@ export class DxComponent implements OnChanges, AfterViewInit {
         this.templates.push(template);
     }
     ngOnChanges(changes: { [key: string]: SimpleChange }) {
-        let that = this;
+        if (this.instance) {
+            for (let propertyName in changes) {
+                if (changes.hasOwnProperty(propertyName)) {
+                    let change = changes[propertyName];
 
-        if (that.instance) {
-            $.each(changes, function (propertyName, change) {
-                that._isChangesProcessing = true; // prevent cycle change event emitting
-                that.instance.option(propertyName, change.currentValue);
-                that._isChangesProcessing = false;
-            });
+                    this._isChangesProcessing = true; // prevent cycle change event emitting
+                    this.instance.option(propertyName, change.currentValue);
+                    this._isChangesProcessing = false;
+                }
+            }
         } else {
-            $.each(changes, function (propertyName, change) {
-                that._initialOptions[propertyName] = change.currentValue;
-            });
+            for (let propertyName in changes) {
+                if (changes.hasOwnProperty(propertyName)) {
+                    let change = changes[propertyName];
+
+                    this._initialOptions[propertyName] = change.currentValue;
+                }
+            }
         }
     }
     ngAfterViewInit() {

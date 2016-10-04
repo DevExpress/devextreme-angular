@@ -26,12 +26,14 @@ module.exports = function(config) {
             { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
 
             // Angular 2 itself and the testing library
-            {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
-            {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
+            {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false },
+            {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false },
 
-            // DevExtreme
-            { pattern: 'node_modules/jquery/dist/jquery.js', included: true, watched: false},
-            { pattern: 'node_modules/devextreme/dist/js/dx.all.debug.js', included: true, watched: false },
+            // DevExtreme & DevExtreme Deps
+            { pattern: 'node_modules/jquery/dist/jquery.min.js', included: false, watched: false },
+            { pattern: 'node_modules/jszip/dist/jszip.min.js', included: false, watched: false },
+            { pattern: 'node_modules/devextreme/**/*.js', included: false, watched: false },
+
             { pattern: 'dist/**/*.js', included: false, watched: true },
 
             { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false }, // PhantomJS2 require it
@@ -86,5 +88,5 @@ module.exports = function(config) {
         singleRun: true,
 
         concurrency: Infinity
-    })
+    });
 };

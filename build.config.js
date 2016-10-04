@@ -78,21 +78,11 @@ module.exports = {
         }
     },
     tests: {
-        tsc: {
-            "target": "ES5",
-            "module": "system",
-            "moduleResolution": "node",
-            "emitDecoratorMetadata": true,
-            "experimentalDecorators": true,
-            "sourceMap": true,
-            "removeComments": true,
-            "declaration": true,
-            "lib": ["es2015", "dom"]
-        }
+        tsConfigPath: "tests/src/tsconfig.json"
     },
     npm: {
         distPath: "npm/dist",
         sourcesTargetFolder: "ts",
         content: [ "LICENSE", "npm/package.json", "npm/README.md" ]
     }
-}
+};
