@@ -56,9 +56,6 @@ Modify the references in the index.html file as follows:
 <script src="node_modules/reflect-metadata/Reflect.js"></script>
 <script src="node_modules/systemjs/dist/system.src.js"></script>
 
-<script src="node_modules/jquery/dist/jquery.min.js"></script>
-<script src="node_modules/devextreme/dist/js/dx.all.js"></script>
-
 <script src="systemjs.config.js"></script>
 ```
 
