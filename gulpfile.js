@@ -111,7 +111,7 @@ gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
         .pipe(gulp.dest(config.distPath));
 });
 
-gulp.task('npm.sources', ['npm.clean'], function() {
+gulp.task('npm.sources', ['npm.clean', 'build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
