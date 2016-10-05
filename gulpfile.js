@@ -11,6 +11,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var del = require('del');
 var merge = require('merge-stream');
+var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var buildConfig = require('./build.config');
 
@@ -95,7 +96,15 @@ gulp.task('npm.clean', function() {
     return del([config.distPath + '/**/*']);
 });
 
-gulp.task('npm.content', ['npm.clean'], function() {
+gulp.task('npm.content.package', ['npm.clean'], function() {
+    var config = buildConfig.npm;
+
+    return gulp.src(config.package)
+        .pipe(mergeJson('package.json'))
+        .pipe(gulp.dest(config.distPath))
+});
+
+gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
     var config = buildConfig.npm;
 
     return gulp.src(config.content)
