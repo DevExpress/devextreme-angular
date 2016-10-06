@@ -22,30 +22,25 @@ module.exports = function(config) {
             'node_modules/zone.js/dist/fake-async-test.js',
 
             // RxJs
-            { pattern: 'node_modules/rxjs/**/*.js', included: false, watched: false },
-            { pattern: 'node_modules/rxjs/**/*.js.map', included: false, watched: false },
+            { pattern: 'node_modules/rxjs/**/*.+(js|js.map)', included: false, watched: false },
 
             // Angular 2 itself and the testing library
-            {pattern: 'node_modules/@angular/**/*.js', included: false, watched: false},
-            {pattern: 'node_modules/@angular/**/*.js.map', included: false, watched: false},
+            {pattern: 'node_modules/@angular/**/*.+(js|js.map)', included: false, watched: false},
 
             // DevExtreme
             { pattern: 'node_modules/jquery/dist/jquery.js', included: true, watched: false},
             { pattern: 'node_modules/devextreme/dist/js/dx.all.debug.js', included: true, watched: false },
-            { pattern: 'dist/**/*.js', included: false, watched: true },
+
+            { pattern: 'dist/**/*.+(js|js.map|ts)', included: false, watched: true },
 
             { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false }, // PhantomJS2 require it
 
             // Karma config
-            {pattern: 'karma.systemjs.conf.js', included: false, watched: false},
-            {pattern: 'karma.test.shim.js', included: true, watched: true},
+            { pattern: 'karma.systemjs.conf.js', included: false, watched: false },
+            { pattern: 'karma.test.shim.js', included: true, watched: true },
 
             // Tests
-            {pattern: 'tests/dist/**/*.js', included: false, watched: true},
-
-            // paths to support debugging with source maps in dev tools
-            {pattern: 'tests/dist/**/*.ts', included: false, watched: true},
-            {pattern: 'tests/dist/**/*.js.map', included: false, watched: true}
+            { pattern: 'tests/dist/**/*.+(js|js.map|ts)', included: false, watched: true }
         ],
 
         // proxied base paths
