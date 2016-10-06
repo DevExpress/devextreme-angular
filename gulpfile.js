@@ -101,7 +101,7 @@ gulp.task('npm.content.package', ['npm.clean'], function() {
 
     return gulp.src(config.package)
         .pipe(mergeJson('package.json'))
-        .pipe(gulp.dest(config.distPath))
+        .pipe(gulp.dest(config.distPath));
 });
 
 gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
