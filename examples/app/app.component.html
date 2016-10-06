@@ -70,15 +70,11 @@
     <h3>dxList</h3>
 
     <dx-list [grouped]="true" style="height: 600px" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
-        <div *dxTemplate="let t = data of 'itemTemplate'">
+        <div *dxTemplate="let t of 'itemTemplate'">
             {{t}}
-            <dx-button class="float-right" text="Buy" (onClick)="buy(t)">
-                <div *dxTemplate="let b = data of 'template'">
-                    <span class="dx-button-text">{{b.text}}</span>
-                </div>
-            </dx-button>
+            <dx-button class="float-right" text="Buy" (onClick)="buy(t)"></dx-button>
         </div>
-        <div *dxTemplate="let g = data of 'groupTemplate'">
+        <div *dxTemplate="let g of 'groupTemplate'">
             Group {{g.key}}
         </div>
     </dx-list>
@@ -169,7 +165,7 @@
         allowedPageSizes: [5, 10, 20],
         showInfo: true
     }'>
-    <div *dxTemplate="let cellData = data of 'phoneCellTemplate'">
+    <div *dxTemplate="let cellData of 'phoneCellTemplate'">
         <dx-button (onClick)="callNumber(cellData.value)" [text]="cellData.text"></dx-button>
     </div>
 </dx-data-grid>

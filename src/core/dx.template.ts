@@ -29,7 +29,7 @@ export class DxTemplateDirective {
         templateHost.setTemplate(this);
     }
     private _renderCore(renderData: RenderData) {
-        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { 'data': renderData.model });
+        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { '$implicit': renderData.model });
         if (renderData.container) {
             renderData.container.append(childView.rootNodes);
         }
