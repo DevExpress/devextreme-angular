@@ -2,6 +2,7 @@
 
 import fs = require('fs');
 let inflector = require('inflector-js');
+import logger from './logger';
 
 export default class FacadeGenerator {
     private _encoding = 'utf8';
@@ -16,13 +17,13 @@ export default class FacadeGenerator {
 
     generate(config) {
         Object.keys(config.moduleFacades).forEach(moduleFilePath => {
-            console.log('Generate facade: ' + moduleFilePath);
+            logger('Generate facade: ' + moduleFilePath);
             let facadeConfig = config.moduleFacades[moduleFilePath],
                 moduleNamesString = '',
                 importModuleString = '';
 
             facadeConfig.sourceComponentDirectories.forEach(directoryPath => {
-                console.log('List directory: ' + directoryPath);
+                logger('List directory: ' + directoryPath);
                 let files = fs.readdirSync(directoryPath);
 
                 files.forEach(fileName => {
@@ -52,7 +53,7 @@ export default class FacadeGenerator {
 export class DevExtremeModule {}
 `;
 
-            console.log('Write result to ' + moduleFilePath);
+            logger('Write result to ' + moduleFilePath);
             fs.writeFileSync(moduleFilePath, resultContent, { encoding: this._encoding });
         });
     }

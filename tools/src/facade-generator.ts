@@ -2,17 +2,18 @@
 
 import fs = require('fs');
 import path = require('path');
+import logger from './logger';
 
 export default class FacadeGenerator {
     private _encoding = 'utf8';
     generate(config) {
         Object.keys(config.facades).forEach(facadeFilePath => {
-            console.log('Generate facade: ' + facadeFilePath);
+            logger('Generate facade: ' + facadeFilePath);
             let facadeConfig = config.facades[facadeFilePath],
                 resultContent = '';
 
             facadeConfig.sourceDirectories.forEach(directoryPath => {
-                console.log('List directory: ' + directoryPath);
+                logger('List directory: ' + directoryPath);
                 let files = fs.readdirSync(directoryPath);
                 files.forEach(fileName => {
                     let filePath = path.join(directoryPath, fileName),
@@ -24,7 +25,7 @@ export default class FacadeGenerator {
                 });
             });
 
-            console.log('Write result to ' + facadeFilePath);
+            logger('Write result to ' + facadeFilePath);
             fs.writeFileSync(facadeFilePath, resultContent, { encoding: this._encoding });
         });
     }

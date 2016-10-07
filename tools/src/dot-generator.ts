@@ -5,6 +5,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
+import logger from './logger';
 let doT = require('dot');
 
 doT.templateSettings = {
@@ -24,7 +25,7 @@ doT.templateSettings = {
 export default class DoTGenerator {
     private _encoding = 'utf8';
     createTemplate(templateFilePath: string) {
-        console.log('Create doT template from ' + templateFilePath);
+        logger('Create doT template from ' + templateFilePath);
         let templateString = fs.readFileSync(templateFilePath, this._encoding);
         return doT.template(templateString);
     }
@@ -34,17 +35,17 @@ export default class DoTGenerator {
 
         mkdirp.sync(config.outputFolderPath);
 
-        console.log('List directory: ' + config.metadataFolderPath);
+        logger('List directory: ' + config.metadataFolderPath);
         files = fs.readdirSync(config.metadataFolderPath);
         files.forEach(fileName => {
             let filePath = path.join(config.metadataFolderPath, fileName);
-            console.log('Read data from ' + filePath);
+            logger('Read data from ' + filePath);
             let data = fs.readFileSync(filePath, this._encoding);
-            console.log('Apply template');
+            logger('Apply template');
             let result = template(JSON.parse(data));
             let resultFileName = path.parse(filePath).name + '.ts';
             let resultFilePath = path.join(config.outputFolderPath, resultFileName);
-            console.log('Write result to ' + resultFilePath);
+            logger('Write result to ' + resultFilePath);
             fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
         });
     }
