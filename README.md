@@ -184,10 +184,10 @@ of the dxList widget as follows:
 
 ```html
 <dx-list [grouped]="true" [items]="grouppedItems">
-    <div *dxTemplate="let item = data of 'itemTemplate'">
+    <div *dxTemplate="let item of 'itemTemplate'">
         {{item.someProperty}}
     </div>
-    <div *dxTemplate="let group = data of 'groupTemplate'">
+    <div *dxTemplate="let group of 'groupTemplate'">
         {{group.someProperty}}
     </div>
 </dx-list>

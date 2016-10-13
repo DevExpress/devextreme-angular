@@ -1,5 +1,12 @@
-# 16.1.7-alpha (2016-09-19)
-###Angular 2.0.0 version.
+## [Unreleased]
+
+### Breaking changes
+
+- The DxTemplate directive syntax has been changed. Now instead of assigning `data` to a local variable, use its local variable definition only. To migrate to the new syntax, please remove `= data` from `*dxTemplate="let item = data of 'itemTemplate'"`. After this change, the directive should be as follows: *dxTemplate="let item of 'itemTemplate'"`.
+
+## 16.1.7-alpha (2016-09-19)
+
+### Angular 2.0.0 version.
 
 We have supported [NgModules](https://angular.io/docs/ts/latest/api/core/index/NgModule-interface.html) in the context of updating to Angular 2.0.
 You can read more about NgModules [here](https://angular.io/docs/ts/latest/guide/ngmodule.html).
@@ -14,7 +21,7 @@ Also we defined a `DevExtremeModule`, which exports all our components:
 import { DevExtremeModule } from 'devextreme-angular2';
 ```
 
-###Breaking changes
+### Breaking changes
 
 - Added 'Directive' suffix has been added to the `DxTemplate` directive's class name. Use `DxTemplateDirective` instead of `DxTemplate`.
 - Added 'Component' suffix has been added to all our components' class names. Example: Use `DxButtonComponent` instead of `DxButton`.
