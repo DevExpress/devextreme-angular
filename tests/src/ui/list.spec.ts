@@ -1,5 +1,4 @@
 /// <reference path="../../../typings/globals/jasmine/index.d.ts" />
-/// <reference path="../../../src/devextreme-modules.d.ts" />
 
 import {
     Component,
@@ -41,7 +40,7 @@ describe('DxList', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-list') || fixture.nativeElement;
-        return DxList.getInstance(widgetElement);
+        return DxList['getInstance'](widgetElement);
     }
 
     // spec

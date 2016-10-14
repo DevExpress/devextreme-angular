@@ -1,6 +1,5 @@
 /// <reference path="../../../typings/globals/jasmine/index.d.ts" />
 /// <reference path="../../../typings/globals/jquery/index.d.ts" />
-/// <reference path="../../../src/devextreme-modules.d.ts" />
 
 import $ = require('jquery');
 

@@ -41,6 +41,8 @@ import { DxTemplateHost } from '../core/dx.template-host';
     providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
 })
 export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
+    instance: <#= it.className #>;
+
     <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
     <#?#><#~#>
 
