@@ -1,8 +1,20 @@
-## [Unreleased]
+## 16.1.7 (2016-10-13)
+
+### Features
+
+- Create "IterableDiffer" for every option that supports collections.
+- Add new scenarios to examples: DxSchedulerComponent, DxScrollViewComponent, DxResizableComponent.
+- Update vendor scripts.
+
+### Bug Fixes
+
+- Fix the onInitialized event (#14)
+- Enhancements to building tools (#94)
+- Add a component template for widgets with transcluded content (#49)
 
 ### Breaking changes
 
-- The DxTemplate directive syntax has been changed. Now instead of assigning `data` to a local variable, use its local variable definition only. To migrate to the new syntax, please remove `= data` from `*dxTemplate="let item = data of 'itemTemplate'"`. After this change, the directive should be as follows: *dxTemplate="let item of 'itemTemplate'"`.
+- The DxTemplate directive syntax has been changed. Now instead of assigning `data` to a local variable, use its local variable definition only. To migrate to the new syntax, please remove `= data` from `*dxTemplate="let item = data of 'itemTemplate'"`. After this change, the directive should be as follows: `*dxTemplate="let item of 'itemTemplate'"`.
 
 ## 16.1.7-alpha (2016-09-19)
 
