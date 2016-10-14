@@ -4,6 +4,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
+import logger from './logger';
 
 export interface IObjectStore {
     read(name: string): Object;
@@ -13,13 +14,13 @@ export interface IObjectStore {
 export class FSObjectStore implements IObjectStore {
     private _encoding = 'utf8';
     read(filePath) {
-        console.log('Read from file: ' + filePath);
+        logger('Read from file: ' + filePath);
         let dataString = fs.readFileSync(filePath, this._encoding);
-        console.log('Parse data');
+        logger('Parse data');
         return JSON.parse(dataString);
     }
     write(filePath, data) {
-        console.log('Write data to file ' + filePath);
+        logger('Write data to file ' + filePath);
         let dataString = JSON.stringify(data, null, 4);
         fs.writeFileSync(filePath, dataString, { encoding: this._encoding });
     }
@@ -42,11 +43,11 @@ export default class DXComponentMetadataGenerator {
             let widget = widgetsMetadata[widgetName];
 
             if (!widget.Module) {
-                console.log('Skipping metadata for ' + widgetName);
+                logger('Skipping metadata for ' + widgetName);
                 continue;
             }
 
-            console.log('Generate metadata for ' + widgetName);
+            logger('Generate metadata for ' + widgetName);
 
             let isTranscludedContent = widget['IsTranscludedContent'],
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
@@ -102,7 +103,7 @@ export default class DXComponentMetadataGenerator {
                 module: 'devextreme/' + widget.Module
             };
 
-            console.log('Write metadata to file ' + outputFilePath);
+            logger('Write metadata to file ' + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
         }
     }

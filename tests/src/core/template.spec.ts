@@ -96,7 +96,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
             </dx-test-widget>
            `}
         });
@@ -114,7 +114,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
             </dx-test-widget>
            `}
         });
@@ -134,7 +134,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
             </dx-test-widget>
            `}
         });
@@ -168,14 +168,14 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
     /*
         TODO
         Interpolation doesn't work in the test for unclear reason if we specify it as follows:
-        <div *dxTemplate='let d = data of 'testTemplate''>Template content {{d}}</div>
+        <div *dxTemplate='let d of 'testTemplate''>Template content {{d}}</div>
     */
     it('should nonrmalize template function arguments order (#17)', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d = data of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'testTemplate'">Template content: {{d}}</div>
             </dx-test-widget>
            `}
         });
@@ -190,16 +190,20 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
         expect(template).not.toBeUndefined;
 
         template($container);
-        expect($container.text()).toBe('Template content');
+        fixture.detectChanges();
+        expect($container.text()).toBe('Template content: ');
 
         template('test', $container);
-        expect($container.text()).toBe('Template content');
+        fixture.detectChanges();
+        expect($container.text()).toBe('Template content: test');
 
         template($container, 'test');
-        expect($container.text()).toBe('Template content');
+        fixture.detectChanges();
+        expect($container.text()).toBe('Template content: test');
 
         template('test', $container, 0);
-        expect($container.text()).toBe('Template content');
+        fixture.detectChanges();
+        expect($container.text()).toBe('Template content: test');
 
     }));
 
