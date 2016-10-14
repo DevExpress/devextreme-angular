@@ -1,4 +1,16 @@
-## [Unreleased]
+## 16.1.7 (2016-10-13)
+
+### Features
+
+- Create "IterableDiffer" for every option that supports collections.
+- Add new scenarios to examples: DxSchedulerComponent, DxScrollViewComponent, DxResizableComponent.
+- Update vendor scripts.
+
+### Bug Fixes
+
+- Fix the onInitialized event (#14)
+- Enhancements to building tools (#94)
+- Add a component template for widgets with transcluded content (#49)
 
 ### Breaking changes
 
