@@ -588,6 +588,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -1168,6 +1173,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -1334,6 +1344,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -1471,6 +1486,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1917,22 +1937,11 @@
             }
           }
         },
-        "alternativeInvocationMode": {
-          "Description": "Holds an object that specifies options of alternative menu invocation.",
-          "Options": {
-            "enabled": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not an alternative invocation mode is enabled."
-            },
-            "invokingElement": {
-              "PrimitiveTypes": [
-                "jquery"
-              ],
-              "Description": "Specifies the element used to invoke the context menu."
-            }
-          }
+        "closeOnOutsideClick": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the context menu."
         },
         "onHidden": {
           "IsFunc": true,
@@ -1958,6 +1967,26 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the shown event."
+        },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of context menu showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the context menu is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
         },
         "submenuDirection": {
           "EnumName": "ContextMenuSubmenuDirection",
@@ -2808,10 +2837,63 @@
               "Description": "Specifies text for the range start in the 'between' filter type."
             },
             "operationDescriptions": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "Description": "Specifies descriptions for filter operations."
+              "Options": {
+                "between": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "contains": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "endsWith": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "equal": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "greaterThan": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "greaterThanOrEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "lessThan": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "lessThanOrEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "notContains": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "notEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "startsWith": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                }
+              }
             },
             "resetOperationText": {
               "PrimitiveTypes": [
@@ -3197,6 +3279,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the selectionChanged event."
+        },
+        "onToolbarPreparing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the toolbarPreparing event."
         },
         "pager": {
           "Description": "Specifies the options of a grid pager.",
@@ -3866,6 +3953,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -4263,6 +4355,12 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the value passed to the name attribute of the underlying input element."
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -4317,12 +4415,6 @@
             "bool"
           ],
           "Description": "Specifies whether the widget enables an end-user to select a single file or multiple files."
-        },
-        "name": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the value passed to the name attribute of the underlying input element."
         },
         "onProgress": {
           "IsFunc": true,
@@ -5702,6 +5794,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -7250,6 +7347,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -8686,12 +8788,52 @@
             }
           }
         },
+        "hideEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover hiding.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is hidden."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is hidden."
+            }
+          }
+        },
         "position": {
           "ComplexTypes": [
             "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
+        },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
         },
         "target": {
           "PrimitiveTypes": [
@@ -9237,6 +9379,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -9529,11 +9676,23 @@
           ],
           "Description": "The right edge of the interval currently selected using the range slider."
         },
+        "endName": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the form field representing the end option value."
+        },
         "start": {
           "PrimitiveTypes": [
             "double"
           ],
           "Description": "The left edge of the interval currently selected using the range slider."
+        },
+        "startName": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the form field representing the start option value."
         }
       }
     },
@@ -9970,9 +10129,17 @@
           "EnumName": "SchedulerView",
           "Description": "Specifies the view used in the scheduler by default."
         },
+        "dataCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering table cells."
+        },
         "dataSource": {
           "IsDataSource": true,
           "Description": "A data source used to fetch data to be displayed by the widget."
+        },
+        "dateCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering date scale items."
         },
         "descriptionExpr": {
           "PrimitiveTypes": [
@@ -10149,6 +10316,10 @@
           ],
           "Description": "Specifies whether filtering is performed on the server or client side."
         },
+        "resourceCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering resource headers."
+        },
         "resources": {
           "IsCollection": true,
           "SingularName": "resource",
@@ -10159,6 +10330,12 @@
                 "bool"
               ],
               "Description": "Indicates whether or not several resources of this kind can be assigned to an appointment."
+            },
+            "colorExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the resource object field that is used as a resource color."
             },
             "dataSource": {
               "IsDataSource": true,
@@ -10240,6 +10417,10 @@
           ],
           "Description": "Specifies the name of the data source item field that holds the subject of an appointment."
         },
+        "timeCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering time scale items."
+        },
         "timeZone": {
           "PrimitiveTypes": [
             "string"
@@ -10256,7 +10437,59 @@
           "IsCollection": true,
           "EnumName": "SchedulerView",
           "SingularName": "view",
-          "Description": "Lists the views to be available within the scheduler's View Selector."
+          "Options": {
+            "agendaDuration": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "appointmentTemplate": {
+              "IsTemplate": true
+            },
+            "appointmentTooltipTemplate": {
+              "IsTemplate": true
+            },
+            "cellDuration": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "dataCellTemplate": {
+              "IsTemplate": true
+            },
+            "dateCellTemplate": {
+              "IsTemplate": true
+            },
+            "endDayHour": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "firstDayOfWeek": {
+              "EnumName": "FirstDayOfWeek"
+            },
+            "groups": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "group"
+            },
+            "resourceCellTemplate": {
+              "IsTemplate": true
+            },
+            "startDayHour": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "timeCellTemplate": {
+              "IsTemplate": true
+            },
+            "type": {
+              "EnumName": "SchedulerView"
+            }
+          }
         }
       }
     },
@@ -10541,6 +10774,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -11189,6 +11427,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -11394,6 +11637,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12081,6 +12329,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -12422,6 +12675,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -12656,6 +12914,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -13591,12 +13854,52 @@
           "SingularName": "button",
           "Description": "Use the toolbarItems option instead."
         },
+        "hideEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover hiding.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is hidden."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is hidden."
+            }
+          }
+        },
         "position": {
           "ComplexTypes": [
             "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
+        },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
         },
         "target": {
           "PrimitiveTypes": [
@@ -13807,13 +14110,16 @@
             },
             "items": {
               "PrimitiveTypes": [
-                "string"
+                "any"
               ],
+              "IsCollection": true,
+              "SingularName": "item",
               "Description": "Holds an array of tree view items."
             },
             "parentId": {
               "PrimitiveTypes": [
-                "double"
+                "double",
+                "string"
               ],
               "Description": "Holds the key of the parent item."
             },
@@ -13860,6 +14166,9 @@
             "bool"
           ],
           "Description": "Specifies whether or not to animate item collapsing and expanding."
+        },
+        "dataLoader": {
+          "IsFunc": true
         },
         "dataStructure": {
           "EnumName": "TreeViewDataStructure",
@@ -25237,6 +25546,9 @@
           ],
           "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to flat data sources only."
         },
+        "resolveLabelOverflow": {
+          "EnumName": "TreeMapLabelOverflowResolution"
+        },
         "selectionMode": {
           "EnumName": "SelectionMode",
           "Description": "Specifies whether a single or multiple nodes can be in the selected state simultaneously."
@@ -26808,7 +27120,7 @@
             },
             "selector": {
               "IsFunc": true,
-              "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type."
+              "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type and along with remote operations."
             },
             "showGrandTotals": {
               "PrimitiveTypes": [
@@ -26903,6 +27215,12 @@
           "IsEvent": true,
           "Description": "A handler for the loadingChanged event."
         },
+        "remoteOperations": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not all the operations (filtering, grouping and summary calculation) are performed remotely."
+        },
         "retrieveFields": {
           "PrimitiveTypes": [
             "bool"
@@ -26955,7 +27273,7 @@
       }
     },
     "CompareRule": {
-      "Description": "A validation rule that demands that a validated editor has a value that equals to a specified expression.",
+      "Description": "A validation rule that demands that a validated editor has a value that is equal to a specified expression.",
       "Options": {
         "comparisonTarget": {
           "IsFunc": true,
@@ -31442,6 +31760,16 @@
         },
         {
           "Name": "range"
+        }
+      ]
+    },
+    "TreeMapLabelOverflowResolution": {
+      "Items": [
+        {
+          "Name": "ellipsis"
+        },
+        {
+          "Name": "hide"
         }
       ]
     },
