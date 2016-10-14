@@ -2,6 +2,7 @@
   "Widgets": {
     "dxAccordion": {
       "Description": "A widget that displays data source items on collapsible panels.",
+      "Module": "ui/accordion",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -247,6 +248,7 @@
     },
     "dxActionSheet": {
       "Description": "A widget consisting of a set of choices related to a certain task.",
+      "Module": "ui/action_sheet",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -429,6 +431,7 @@
     },
     "dxAutocomplete": {
       "Description": "A textbox widget that supports autocompletion.",
+      "Module": "ui/autocomplete",
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -585,6 +588,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -707,12 +715,6 @@
           ],
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true
-        },
         "onClosed": {
           "IsFunc": true,
           "IsEvent": true,
@@ -790,6 +792,7 @@
     },
     "dxBox": {
       "Description": "A container widget used to arrange inner elements.",
+      "Module": "ui/box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -953,6 +956,7 @@
     },
     "dxButton": {
       "Description": "A button widget.",
+      "Module": "ui/button",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1078,6 +1082,7 @@
     },
     "dxCalendar": {
       "Description": "A calendar widget.",
+      "Module": "ui/calendar",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1167,6 +1172,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1243,6 +1253,7 @@
     },
     "dxCheckBox": {
       "Description": "A check box widget.",
+      "Module": "ui/check_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1333,6 +1344,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -1370,6 +1386,7 @@
     },
     "dxColorBox": {
       "Description": "A widget used to specify a color value.",
+      "Module": "ui/color_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1469,6 +1486,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1571,12 +1593,6 @@
           ],
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true
-        },
         "onClosed": {
           "IsFunc": true,
           "IsEvent": true,
@@ -1621,6 +1637,7 @@
     },
     "dxContextMenu": {
       "Description": "A context menu widget.",
+      "Module": "ui/context_menu",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1920,22 +1937,11 @@
             }
           }
         },
-        "alternativeInvocationMode": {
-          "Description": "Holds an object that specifies options of alternative menu invocation.",
-          "Options": {
-            "enabled": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the standard context menu invocation (on a right mouse click or on a long tap) is disabled."
-            },
-            "invokingElement": {
-              "PrimitiveTypes": [
-                "jquery"
-              ],
-              "Description": "Specifies the element used to invoke the context menu."
-            }
-          }
+        "closeOnOutsideClick": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the context menu."
         },
         "onHidden": {
           "IsFunc": true,
@@ -1962,6 +1968,26 @@
           "IsEvent": true,
           "Description": "A handler for the shown event."
         },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of context menu showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the context menu is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
+        },
         "submenuDirection": {
           "EnumName": "ContextMenuSubmenuDirection",
           "Description": "Specifies the direction at which submenus are displayed."
@@ -1982,6 +2008,7 @@
     },
     "dxDataGrid": {
       "Description": "A data grid widget.",
+      "Module": "ui/data_grid",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -2810,10 +2837,63 @@
               "Description": "Specifies text for the range start in the 'between' filter type."
             },
             "operationDescriptions": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "Description": "Specifies descriptions for filter operations."
+              "Options": {
+                "between": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "contains": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "endsWith": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "equal": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "greaterThan": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "greaterThanOrEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "lessThan": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "lessThanOrEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "notContains": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "notEqual": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "startsWith": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                }
+              }
             },
             "resetOperationText": {
               "PrimitiveTypes": [
@@ -3199,6 +3279,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the selectionChanged event."
+        },
+        "onToolbarPreparing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the toolbarPreparing event."
         },
         "pager": {
           "Description": "Specifies the options of a grid pager.",
@@ -3767,6 +3852,7 @@
     },
     "dxDateBox": {
       "Description": "A date box widget.",
+      "Module": "ui/date_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -3866,6 +3952,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -4132,6 +4223,7 @@
     "dxDeferRendering": {
       "Description": "A container for elements that must be rendered at a specified moment.",
       "IsTranscludedContent": true,
+      "Module": "ui/defer_rendering",
       "Options": {
         "onRendered": {
           "IsFunc": true,
@@ -4172,6 +4264,7 @@
     },
     "dxFileUploader": {
       "Description": "A widget used to select and upload a file or multiple files.",
+      "Module": "ui/file_uploader",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -4262,6 +4355,12 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the value passed to the name attribute of the underlying input element."
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -4316,12 +4415,6 @@
             "bool"
           ],
           "Description": "Specifies whether the widget enables an end-user to select a single file or multiple files."
-        },
-        "name": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the value passed to the name attribute of the underlying input element."
         },
         "onProgress": {
           "IsFunc": true,
@@ -4420,6 +4513,7 @@
     },
     "dxForm": {
       "Description": "A form widget used to display and edit values of object fields.",
+      "Module": "ui/form",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -4657,6 +4751,7 @@
     },
     "dxGallery": {
       "Description": "An image gallery widget.",
+      "Module": "ui/gallery",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -4902,6 +4997,7 @@
     },
     "dxList": {
       "Description": "A list widget.",
+      "Module": "ui/list",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -5301,6 +5397,7 @@
     },
     "dxLoadIndicator": {
       "Description": "The widget used to indicate the loading process.",
+      "Module": "ui/load_indicator",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -5359,6 +5456,7 @@
     },
     "dxLoadPanel": {
       "Description": "A widget used to indicate whether or not an element is loading.",
+      "Module": "ui/load_panel",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -5551,6 +5649,7 @@
     },
     "dxLookup": {
       "Description": "A widget that allows a user to select predefined values from a lookup window.",
+      "Module": "ui/lookup",
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -5695,6 +5794,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -6060,6 +6164,7 @@
     },
     "dxMap": {
       "Description": "An interactive map widget.",
+      "Module": "ui/map",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -6366,6 +6471,7 @@
     },
     "dxMenu": {
       "Description": "A menu widget.",
+      "Module": "ui/menu",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -6731,6 +6837,7 @@
     },
     "dxMultiView": {
       "Description": "A widget used to display a view and to switch between several views.",
+      "Module": "ui/multi_view",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -6928,6 +7035,7 @@
     },
     "dxNavBar": {
       "Description": "A widget that contains items used to navigate through application views.",
+      "Module": "ui/nav_bar",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -7138,6 +7246,7 @@
     },
     "dxNumberBox": {
       "Description": "A textbox widget that enables a user to enter numeric values.",
+      "Module": "ui/number_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -7237,6 +7346,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -7379,6 +7493,7 @@
     },
     "dxPanorama": {
       "Description": "A widget displaying the required content in a long horizontal canvas that extends beyond the frames of the screen.",
+      "Module": "ui/panorama",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -7575,6 +7690,7 @@
     },
     "dxPivot": {
       "Description": "A widget that is similar to a traditional tab control, but optimized for the phone with simplified end-user interaction.",
+      "Module": "ui/pivot",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -7754,6 +7870,7 @@
     },
     "dxPivotGrid": {
       "Description": "A data summarization widget for multi-dimensional data analysis and data mining.",
+      "Module": "ui/pivot_grid",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -8274,6 +8391,7 @@
     },
     "dxPivotGridFieldChooser": {
       "Description": "A complementary widget for dxPivotGrid that allows you to manage data displayed in the dxPivotGrid.",
+      "Module": "ui/pivot_grid_field_chooser",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -8416,6 +8534,7 @@
     "dxPopover": {
       "Description": "A widget that displays the required content in a popup window.",
       "IsTranscludedContent": true,
+      "Module": "ui/popover",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -8669,12 +8788,52 @@
             }
           }
         },
+        "hideEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover hiding.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is hidden."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is hidden."
+            }
+          }
+        },
         "position": {
           "ComplexTypes": [
             "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
+        },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
         },
         "target": {
           "PrimitiveTypes": [
@@ -8687,6 +8846,7 @@
     "dxPopup": {
       "Description": "A widget that displays required content in a popup window.",
       "IsTranscludedContent": true,
+      "Module": "ui/popup",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9001,6 +9161,7 @@
     },
     "dxProgressBar": {
       "Description": "A widget used to indicate progress.",
+      "Module": "ui/progress_bar",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9127,6 +9288,7 @@
     },
     "dxRadioGroup": {
       "Description": "A widget that enables a user to select one item within a list of items represented by radio buttons.",
+      "Module": "ui/radio_group",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9216,6 +9378,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -9307,6 +9474,7 @@
     },
     "dxRangeSlider": {
       "Description": "A widget that enables a user to select a range of numeric values.",
+      "Module": "ui/range_slider",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9508,17 +9676,30 @@
           ],
           "Description": "The right edge of the interval currently selected using the range slider."
         },
+        "endName": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the form field representing the end option value."
+        },
         "start": {
           "PrimitiveTypes": [
             "double"
           ],
           "Description": "The left edge of the interval currently selected using the range slider."
+        },
+        "startName": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the form field representing the start option value."
         }
       }
     },
     "dxResizable": {
       "Description": "A widget that displays required content in a resizable element.",
       "IsTranscludedContent": true,
+      "Module": "ui/resizable",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9602,6 +9783,7 @@
     },
     "dxResponsiveBox": {
       "Description": "A widget used to build an adaptive markup that is dependent on screen resolution.",
+      "Module": "ui/responsive_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9831,6 +10013,7 @@
     },
     "dxScheduler": {
       "Description": "A widget that displays scheduled data using different views and provides the capability to load, add and edit appointments.",
+      "Module": "ui/scheduler",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9946,9 +10129,17 @@
           "EnumName": "SchedulerView",
           "Description": "Specifies the view used in the scheduler by default."
         },
+        "dataCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering table cells."
+        },
         "dataSource": {
           "IsDataSource": true,
           "Description": "A data source used to fetch data to be displayed by the widget."
+        },
+        "dateCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering date scale items."
         },
         "descriptionExpr": {
           "PrimitiveTypes": [
@@ -10125,6 +10316,10 @@
           ],
           "Description": "Specifies whether filtering is performed on the server or client side."
         },
+        "resourceCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering resource headers."
+        },
         "resources": {
           "IsCollection": true,
           "SingularName": "resource",
@@ -10135,6 +10330,12 @@
                 "bool"
               ],
               "Description": "Indicates whether or not several resources of this kind can be assigned to an appointment."
+            },
+            "colorExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the resource object field that is used as a resource color."
             },
             "dataSource": {
               "IsDataSource": true,
@@ -10216,6 +10417,10 @@
           ],
           "Description": "Specifies the name of the data source item field that holds the subject of an appointment."
         },
+        "timeCellTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering time scale items."
+        },
         "timeZone": {
           "PrimitiveTypes": [
             "string"
@@ -10232,13 +10437,66 @@
           "IsCollection": true,
           "EnumName": "SchedulerView",
           "SingularName": "view",
-          "Description": "Lists the views to be available within the scheduler's View Selector."
+          "Options": {
+            "agendaDuration": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "appointmentTemplate": {
+              "IsTemplate": true
+            },
+            "appointmentTooltipTemplate": {
+              "IsTemplate": true
+            },
+            "cellDuration": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "dataCellTemplate": {
+              "IsTemplate": true
+            },
+            "dateCellTemplate": {
+              "IsTemplate": true
+            },
+            "endDayHour": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "firstDayOfWeek": {
+              "EnumName": "FirstDayOfWeek"
+            },
+            "groups": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "group"
+            },
+            "resourceCellTemplate": {
+              "IsTemplate": true
+            },
+            "startDayHour": {
+              "PrimitiveTypes": [
+                "double"
+              ]
+            },
+            "timeCellTemplate": {
+              "IsTemplate": true
+            },
+            "type": {
+              "EnumName": "SchedulerView"
+            }
+          }
         }
       }
     },
     "dxScrollView": {
       "Description": "A widget used to display scrollable content.",
       "IsTranscludedContent": true,
+      "Module": "ui/scroll_view",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -10361,6 +10619,7 @@
     },
     "dxSelectBox": {
       "Description": "A widget that allows you to select an item in a dropdown list.",
+      "Module": "ui/select_box",
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -10515,6 +10774,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -10761,6 +11025,7 @@
     },
     "dxSlideOut": {
       "Description": "The widget that allows you to slide-out the current view to reveal an item list.",
+      "Module": "ui/slide_out",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -10976,6 +11241,7 @@
     },
     "dxSlideOutView": {
       "Description": "The widget that allows you to slide-out the current view to reveal a custom menu.",
+      "Module": "ui/slide_out_view",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11070,6 +11336,7 @@
     },
     "dxSlider": {
       "Description": "A widget that allows a user to select a numeric value within a given range.",
+      "Module": "ui/slider",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11159,6 +11426,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -11275,6 +11547,7 @@
     },
     "dxSwitch": {
       "Description": "A switch widget.",
+      "Module": "ui/switch",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11365,6 +11638,11 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "onValueChanged": {
           "IsFunc": true,
           "IsEvent": true,
@@ -11408,6 +11686,7 @@
     },
     "dxTabPanel": {
       "Description": "A widget used to display a view and to switch between several views by clicking the appropriate tabs.",
+      "Module": "ui/tab_panel",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11671,6 +11950,7 @@
     },
     "dxTabs": {
       "Description": "A tab strip used to switch between pages.",
+      "Module": "ui/tabs",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11893,6 +12173,7 @@
     },
     "dxTagBox": {
       "Description": "A widget that allows you to select multiple items from a dropdown list.",
+      "Module": "ui/tag_box",
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -12047,6 +12328,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12288,6 +12574,7 @@
     },
     "dxTextArea": {
       "Description": "A widget used to display and edit multi-line text.",
+      "Module": "ui/text_area",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -12387,6 +12674,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12522,6 +12814,7 @@
     },
     "dxTextBox": {
       "Description": "A single-line text box widget.",
+      "Module": "ui/text_box",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -12621,6 +12914,11 @@
             "bool"
           ],
           "Description": "Specifies whether the editor's value is valid."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12776,6 +13074,7 @@
     },
     "dxTileView": {
       "Description": "A widget displaying several blocks of data as tiles.",
+      "Module": "ui/tile_view",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -12984,6 +13283,7 @@
     },
     "dxToast": {
       "Description": "The toast message widget.",
+      "Module": "ui/toast",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -13201,6 +13501,7 @@
     },
     "dxToolbar": {
       "Description": "A toolbar widget.",
+      "Module": "ui/toolbar",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -13379,6 +13680,7 @@
     },
     "dxTooltip": {
       "Description": "A tooltip widget.",
+      "Module": "ui/tooltip",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -13552,12 +13854,52 @@
           "SingularName": "button",
           "Description": "Use the toolbarItems option instead."
         },
+        "hideEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover hiding.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is hidden."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is hidden."
+            }
+          }
+        },
         "position": {
           "ComplexTypes": [
             "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
+        },
+        "showEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies options of popover showing.",
+          "Options": {
+            "delay": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "The time span after which the popover is shown."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the event names on which the widget is shown."
+            }
+          }
         },
         "target": {
           "PrimitiveTypes": [
@@ -13569,6 +13911,7 @@
     },
     "dxTreeView": {
       "Description": "A widget displaying specified data items as a tree.",
+      "Module": "ui/tree_view",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -13703,6 +14046,10 @@
           "IsEvent": true,
           "Description": "A handler for the selectionChanged event."
         },
+        "selectionMode": {
+          "EnumName": "NavSelectionMode",
+          "Description": "Specifies item selection mode."
+        },
         "items": {
           "IsCollection": true,
           "SingularName": "item",
@@ -13763,13 +14110,16 @@
             },
             "items": {
               "PrimitiveTypes": [
-                "string"
+                "any"
               ],
+              "IsCollection": true,
+              "SingularName": "item",
               "Description": "Holds an array of tree view items."
             },
             "parentId": {
               "PrimitiveTypes": [
-                "double"
+                "double",
+                "string"
               ],
               "Description": "Holds the key of the parent item."
             },
@@ -13816,6 +14166,9 @@
             "bool"
           ],
           "Description": "Specifies whether or not to animate item collapsing and expanding."
+        },
+        "dataLoader": {
+          "IsFunc": true
         },
         "dataStructure": {
           "EnumName": "TreeViewDataStructure",
@@ -13934,6 +14287,7 @@
     },
     "dxValidationGroup": {
       "Description": "The widget that is used in the Knockout and Angular approaches to combine the editors to be validated.",
+      "Module": "ui/validation_group",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -13968,6 +14322,7 @@
     },
     "dxValidationSummary": {
       "Description": "A widget for displaying the result of checking validation rules for editors.",
+      "Module": "ui/validation_summary",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -14049,6 +14404,7 @@
     },
     "dxValidator": {
       "Description": "A widget that is used to validate the associated DevExtreme editors against the defined validation rules.",
+      "Module": "ui/validator",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -14139,6 +14495,7 @@
     },
     "dxBarGauge": {
       "Description": "A circular bar widget.",
+      "Module": "viz/bar_gauge",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -14736,6 +15093,7 @@
     },
     "dxBullet": {
       "Description": "A bullet graph widget.",
+      "Module": "viz/bullet",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -15065,6 +15423,7 @@
     },
     "dxChart": {
       "Description": "A widget providing charts of various types for web applications.",
+      "Module": "viz/chart",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -18125,6 +18484,7 @@
     },
     "dxCircularGauge": {
       "Description": "A widget that represents a gauge with a circular scale.",
+      "Module": "viz/circular_gauge",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -19056,6 +19416,7 @@
     },
     "dxLinearGauge": {
       "Description": "A widget that represents a gauge with a linear scale.",
+      "Module": "viz/linear_gauge",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -19945,6 +20306,7 @@
     },
     "dxPieChart": {
       "Description": "A circular chart widget for web applications.",
+      "Module": "viz/pie_chart",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -20708,6 +21070,7 @@
     },
     "dxPolarChart": {
       "Description": "A chart widget displaying data in a polar coordinate system.",
+      "Module": "viz/polar_chart",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -22931,6 +23294,7 @@
     },
     "dxRangeSelector": {
       "Description": "A widget that allows end users to select a range of values on a scale.",
+      "Module": "viz/range_selector",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -24163,6 +24527,7 @@
     },
     "dxSparkline": {
       "Description": "A sparkline widget.",
+      "Module": "viz/sparkline",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -24564,6 +24929,7 @@
     },
     "dxTreeMap": {
       "Description": "A widget for displaying hierarchical data by using nested rectangles.",
+      "Module": "viz/tree_map",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -25180,6 +25546,9 @@
           ],
           "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to flat data sources only."
         },
+        "resolveLabelOverflow": {
+          "EnumName": "TreeMapLabelOverflowResolution"
+        },
         "selectionMode": {
           "EnumName": "SelectionMode",
           "Description": "Specifies whether a single or multiple nodes can be in the selected state simultaneously."
@@ -25295,6 +25664,7 @@
     },
     "dxVectorMap": {
       "Description": "A vector map widget.",
+      "Module": "viz/vector_map",
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -26750,7 +27120,7 @@
             },
             "selector": {
               "IsFunc": true,
-              "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type."
+              "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type and along with remote operations."
             },
             "showGrandTotals": {
               "PrimitiveTypes": [
@@ -26845,6 +27215,12 @@
           "IsEvent": true,
           "Description": "A handler for the loadingChanged event."
         },
+        "remoteOperations": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not all the operations (filtering, grouping and summary calculation) are performed remotely."
+        },
         "retrieveFields": {
           "PrimitiveTypes": [
             "bool"
@@ -26897,7 +27273,7 @@
       }
     },
     "CompareRule": {
-      "Description": "A validation rule that demands that a validated editor has a value that equals to a specified expression.",
+      "Description": "A validation rule that demands that a validated editor has a value that is equal to a specified expression.",
       "Options": {
         "comparisonTarget": {
           "IsFunc": true,
@@ -31384,6 +31760,16 @@
         },
         {
           "Name": "range"
+        }
+      ]
+    },
+    "TreeMapLabelOverflowResolution": {
+      "Items": [
+        {
+          "Name": "ellipsis"
+        },
+        {
+          "Name": "hide"
         }
       ]
     },
