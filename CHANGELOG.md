@@ -8,9 +8,9 @@
 
 ### Bug Fixes
 
-- Fix the onInitialized event (#14)
-- Enhancements to building tools (#94)
-- Add a component template for widgets with transcluded content (#49)
+- Fix the onInitialized event ([#14](https://github.com/DevExpress/devextreme-angular2/issues/14))
+- Enhancements to building tools ([#94](https://github.com/DevExpress/devextreme-angular2/issues/94))
+- Add a component template for widgets with transcluded content ([#49](https://github.com/DevExpress/devextreme-angular2/issues/49))
 
 ### Breaking changes
 
