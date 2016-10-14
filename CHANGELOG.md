@@ -2,7 +2,7 @@
 
 ### Breaking changes
 
-- The DxTemplate directive syntax has been changed. Now instead of assigning `data` to a local variable, use its local variable definition only. To migrate to the new syntax, please remove `= data` from `*dxTemplate="let item = data of 'itemTemplate'"`. After this change, the directive should be as follows: *dxTemplate="let item of 'itemTemplate'"`.
+- The DxTemplate directive syntax has been changed. Now instead of assigning `data` to a local variable, use its local variable definition only. To migrate to the new syntax, please remove `= data` from `*dxTemplate="let item = data of 'itemTemplate'"`. After this change, the directive should be as follows: `*dxTemplate="let item of 'itemTemplate'"`.
 
 ## 16.1.7-alpha (2016-09-19)
 
