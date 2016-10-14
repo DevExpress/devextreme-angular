@@ -81,13 +81,13 @@ map: {
     '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
     '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
     // devextreme & devextreme deps
-    'devextreme': 'npm:devextreme',
-    'jquery': 'npm:jquery/dist/jquery.min.js',
-    'jszip': 'npm:jszip/dist/jszip.min.js',
+    'devextreme': 'npm:devextreme',                   // <== add this line
+    'jquery': 'npm:jquery/dist/jquery.min.js',        // <== add this line
+    'jszip': 'npm:jszip/dist/jszip.min.js',           // <== add this line
+    'devextreme-angular2': 'npm:devextreme-angular2', // <== add this line
     // other libraries
     'rxjs': 'npm:rxjs',
-    'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-    'devextreme-angular2':        'node_modules/devextreme-angular2' // <== add this line
+    'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
 },
 packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
