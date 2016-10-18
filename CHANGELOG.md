@@ -2,7 +2,7 @@
 
 ### Features
 
-- Using devextreme modules for better integration with webpack ([#16](https://github.com/DevExpress/devextreme-angular2/issues/16))
+- Use DevExtreme modules to provide better integration with WebPack ([#16](https://github.com/DevExpress/devextreme-angular2/issues/16))
 
 ### Bug Fixes
 
@@ -10,7 +10,7 @@
 
 ### Breaking changes
 
-- Devextreme package linking has changed. Now instead of referencing devextreme and jquery in script tag, it will be resolved automatically by js modules imports. For more info please see: [Adding DevExteme widgets to an Angular 2 application](https://github.com/DevExpress/devextreme-angular2#adding-devexteme-widgets-to-an-angular-2-application) 
+- The algorithm of DevExtreme package linking has been changed. Now instead of referencing DevExtreme and jQuery links in a script tag, the links will be resolved automatically by js module loading. For more information, please see: [Adding DevExteme widgets to an Angular 2 application](https://github.com/DevExpress/devextreme-angular2#adding-devexteme-widgets-to-an-angular-2-application)
 
 ## 16.1.7 (2016-10-13)
 
