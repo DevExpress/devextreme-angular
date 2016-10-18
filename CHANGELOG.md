@@ -2,7 +2,7 @@
 
 ### Bug Fixes
 
-- Fix the onContentReady and onOptionChanged events (#137)
+- Fix the onContentReady and onOptionChanged events ([#137](https://github.com/DevExpress/devextreme-angular2/issues/137))
 
 ## 16.1.7 (2016-10-13)
 
