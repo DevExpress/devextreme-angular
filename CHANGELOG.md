@@ -1,8 +1,16 @@
 ## Next release
 
+### Features
+
+- Using devextreme modules for better integration with webpack ([#16](https://github.com/DevExpress/devextreme-angular2/issues/16))
+
 ### Bug Fixes
 
 - Fix the onContentReady and onOptionChanged events ([#137](https://github.com/DevExpress/devextreme-angular2/issues/137))
+
+### Breaking changes
+
+- Devextreme package linking has changed. Now instead of referencing devextreme and jquery in script tag, it will be resolved automatically by js modules imports. For more info please see: [Adding DevExteme widgets to an Angular 2 application](https://github.com/DevExpress/devextreme-angular2#adding-devexteme-widgets-to-an-angular-2-application) 
 
 ## 16.1.7 (2016-10-13)
 
