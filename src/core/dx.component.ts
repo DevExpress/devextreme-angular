@@ -79,25 +79,16 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
         this.templates.push(template);
     }
     ngOnChanges(changes: { [key: string]: SimpleChange }) {
-        if (this.instance) {
-            for (let propertyName in changes) {
-                if (changes.hasOwnProperty(propertyName)) {
-                    let change = changes[propertyName];
-
-                    this._isChangesProcessing = true; // prevent cycle change event emitting
-                    this.instance.option(propertyName, change.currentValue);
-                    this._isChangesProcessing = false;
-                }
+        Object.keys(changes).forEach(propertyName => {
+            let change = changes[propertyName];
+            if (this.instance) {
+                this._isChangesProcessing = true; // prevent cycle change event emitting
+                this.instance.option(propertyName, change.currentValue);
+                this._isChangesProcessing = false;
+            } else {
+                this._initialOptions[propertyName] = change.currentValue;
             }
-        } else {
-            for (let propertyName in changes) {
-                if (changes.hasOwnProperty(propertyName)) {
-                    let change = changes[propertyName];
-
-                    this._initialOptions[propertyName] = change.currentValue;
-                }
-            }
-        }
+        });
     }
     ngAfterViewInit() {
         this._createWidget();
