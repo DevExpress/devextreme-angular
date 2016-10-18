@@ -25,6 +25,7 @@ import {
 import DxButton = require('devextreme/ui/button');
 let DxTestWidget = DxButton['inherit']({
     _render() {
+        this.callBase();
         this.element()[0].classList.add('dx-test-widget');
     }
 });
@@ -39,6 +40,7 @@ export class DxTestWidgetComponent extends DxComponent {
 
     @Output() onOptionChanged: EventEmitter<any>;
     @Output() onInitialized: EventEmitter<any>;
+    @Output() onContentReady: EventEmitter<any>;
     @Output() testOptionChange: EventEmitter<any>;
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
@@ -46,7 +48,9 @@ export class DxTestWidgetComponent extends DxComponent {
         this.widgetClassName = 'dxTestWidget';
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
-            { subscribe: 'initialized', emit: 'onInitialized' }
+            { subscribe: 'initialized', emit: 'onInitialized' },
+            { subscribe: 'contentReady', emit: 'onContentReady' },
+            { emit: 'testOptionChange' }
         ];
 
         this._properties = [
@@ -55,6 +59,7 @@ export class DxTestWidgetComponent extends DxComponent {
 
         this.onOptionChanged = new EventEmitter();
         this.onInitialized = new EventEmitter();
+        this.onContentReady = new EventEmitter();
         this.testOptionChange = new EventEmitter();
     }
 
@@ -135,7 +140,7 @@ describe('DevExtreme Angular 2 widget', () => {
 
     }));
 
-    it('should change instance option value and fire optionChanged event', async(() => {
+    it('should change instance option value', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget [testOption]="testOption"></dx-test-widget>'
@@ -153,6 +158,26 @@ describe('DevExtreme Angular 2 widget', () => {
 
     }));
 
+    it('should fire optionChanged event', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [testOption]="testOption" (onOptionChanged)="testMethod()"></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        let testSpy = spyOn(testComponent, 'testMethod');
+        testComponent.testOption = 'Changed 2';
+        fixture.detectChanges();
+        expect(instance.option('testOption')).toBe('Changed 2');
+        expect(testSpy).toHaveBeenCalledTimes(1);
+
+    }));
+
     it('should fire onInitialized event', async(() => {
         let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
         TestBed.overrideComponent(TestContainerComponent, {
@@ -166,4 +191,19 @@ describe('DevExtreme Angular 2 widget', () => {
         expect(testSpy).toHaveBeenCalledTimes(1);
 
     }));
+
+    it('should fire onContentReady event', async(() => {
+        let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget (onContentReady)="testMethod()"></dx-test-widget>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(1);
+
+    }));
+
   });

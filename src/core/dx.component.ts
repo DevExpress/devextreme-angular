@@ -9,6 +9,8 @@ import {
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
 
+const startupEvents = ['onInitialized', 'onContentReady'];
+
 export abstract class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
@@ -30,10 +32,12 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
         }
     }
     private _initOptions() {
-        this._initialOptions.onInitialized = (e) => {
-            let emitter = this['onInitialized'];
-            return emitter && emitter.next(e);
-        };
+        startupEvents.forEach(eventName => {
+            this._initialOptions[eventName] = (e) => {
+                let emitter = this[eventName];
+                return emitter && emitter.next(e);
+            };
+        });
     }
     private _initEvents() {
         this._events.forEach(event => {
@@ -45,6 +49,7 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
                             this[e.name] = e.value;
                             this[changeEventName].next(e.value);
                         }
+                        this[event.emit].next(e);
                     } else {
                         if (this[event.emit]) {
                             this.ngZone.run(() => {
