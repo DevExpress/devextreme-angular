@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
+var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
 var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
@@ -185,7 +186,17 @@ gulp.task('test.tools', ['build.tools'], function(done){
 
     return gulp.src(config.srcFilesPattern)
         .pipe(jasmine({
-            errorOnFail: false
+            errorOnFail: false,
+            reporter: [
+                new jasmineReporters.TerminalReporter({
+                    verbosity: 1,
+                    color: true,
+                    showStack: true
+                }),
+                new jasmineReporters.JUnitXmlReporter({
+                    savePath: 'shippable/testresults/tools'
+                })
+            ]
         }));
 });
 

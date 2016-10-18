@@ -1,5 +1,6 @@
 describe("metadata-generator", function() {
     var extend = require('util')._extend;
+    var path = require('path');
     var Generator = require('../../dist/metadata-generator').default;
 
     var testConfig = {
@@ -64,8 +65,8 @@ describe("metadata-generator", function() {
 
         it("should write generated data to a separate file for each widget", function() {
             expect(store.write.calls.count()).toBe(3);
-            expect(store.write.calls.argsFor(0)[0]).toBe("output-path\\test-widget.json");
-            expect(store.write.calls.argsFor(1)[0]).toBe("output-path\\editor-widget.json");
+            expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
+            expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
         });
 
         it("should generate matadata", function() {

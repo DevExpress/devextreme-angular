@@ -58,7 +58,7 @@ module.exports = function(config) {
 
         autoWatch: true,
 
-        browsers: ['PhantomJS2'],
+        browsers: ['PhantomJS'],
 
         reporters: [
             'progress',
@@ -75,7 +75,7 @@ module.exports = function(config) {
             'karma-jasmine',
             'karma-coverage',
             'karma-junit-reporter',
-            'karma-phantomjs2-launcher',
+            'karma-phantomjs-launcher',
             'karma-chrome-launcher'
         ],
 
