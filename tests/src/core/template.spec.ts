@@ -1,7 +1,7 @@
 /// <reference path="../../../typings/globals/jasmine/index.d.ts" />
+/// <reference path="../../../typings/globals/jquery/index.d.ts" />
 
-declare var DevExpress: any;
-declare var $: any;
+import $ = require('jquery');
 
 import {
     Component,
@@ -27,9 +27,12 @@ import {
 } from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-let dxTestWidget = DevExpress.ui.dxButton['inherit']({});
-
-DevExpress.registerComponent('dxTestWidget', dxTestWidget);
+import DxButton = require('devextreme/ui/button');
+let DxTestWidget = DxButton['inherit']({
+    _render() {
+        this.element()[0].classList.add('dx-test-widget');
+    }
+});
 
 @Component({
     selector: 'dx-test-widget',
@@ -57,6 +60,10 @@ export class DxTestWidgetComponent extends DxComponent {
         this.onOptionChanged = new EventEmitter();
         this.testTemplateChange = new EventEmitter();
     }
+
+    protected _createInstance(element, options) {
+        return new DxTestWidget(element, options);
+    }
 }
 
 @Component({
@@ -80,7 +87,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
-        return dxTestWidget.getInstance(widgetElement);
+        return DxTestWidget.getInstance(widgetElement);
     }
 
     // spec
@@ -122,7 +129,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
     }));
 
-    it('should implement the DevExpress.ui.TemplateBase interface', async(() => {
+    it('should implement the TemplateBase interface', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `

@@ -9,11 +9,9 @@ import {
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
 
-declare let $: any;
-
 const startupEvents = ['onInitialized', 'onContentReady'];
 
-export class DxComponent implements OnChanges, AfterViewInit {
+export abstract class DxComponent implements OnChanges, AfterViewInit {
     private _initialOptions: any;
     private _isChangesProcessing = false;
     templates: DxTemplateDirective[];
@@ -69,15 +67,11 @@ export class DxComponent implements OnChanges, AfterViewInit {
             this[property] = defaultOptions[property];
         });
     }
-    private _createInstance() {
-        let $element = $(this.element.nativeElement);
-        $element[this.widgetClassName](this._initialOptions);
-        this.instance = $element[this.widgetClassName]('instance');
-    }
+    protected abstract _createInstance(element, options)
     private _createWidget() {
         this._initTemplates();
         this._initOptions();
-        this._createInstance();
+        this.instance = this._createInstance(this.element.nativeElement, this._initialOptions);
         this._initEvents();
         this._initProperties();
     }
@@ -90,19 +84,16 @@ export class DxComponent implements OnChanges, AfterViewInit {
         this.templates.push(template);
     }
     ngOnChanges(changes: { [key: string]: SimpleChange }) {
-        let that = this;
-
-        if (that.instance) {
-            $.each(changes, function (propertyName, change) {
-                that._isChangesProcessing = true; // prevent cycle change event emitting
-                that.instance.option(propertyName, change.currentValue);
-                that._isChangesProcessing = false;
-            });
-        } else {
-            $.each(changes, function (propertyName, change) {
-                that._initialOptions[propertyName] = change.currentValue;
-            });
-        }
+        Object.keys(changes).forEach(propertyName => {
+            let change = changes[propertyName];
+            if (this.instance) {
+                this._isChangesProcessing = true; // prevent cycle change event emitting
+                this.instance.option(propertyName, change.currentValue);
+                this._isChangesProcessing = false;
+            } else {
+                this._initialOptions[propertyName] = change.currentValue;
+            }
+        });
     }
     ngAfterViewInit() {
         this._createWidget();

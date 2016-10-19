@@ -158,7 +158,7 @@ gulp.task('build.tests', ['build.components'], function() {
 
     return gulp.src(config.tsTestSrc)
         .pipe(sourcemaps.init())
-        .pipe(typescript(testConfig.tsc))
+        .pipe(typescript(testConfig.tsConfigPath))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.testsPath));
 });
@@ -221,7 +221,7 @@ gulp.task('lint', function(){
             .concat(buildConfig.components.tsTestSrc)
             .concat(buildConfig.examples.srcFilesPattern)
             .concat(buildConfig.tools.srcFilesPattern)
-         )
+        )
         .pipe(tslint({
             tslint: require('tslint').default,
             rulesDirectory: null,

@@ -1,8 +1,5 @@
 /// <reference path="../../../typings/globals/jasmine/index.d.ts" />
 
-declare var DevExpress: any;
-declare var $: any;
-
 import {
     Component,
     ElementRef,
@@ -25,15 +22,13 @@ import {
 } from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-let dxTestWidget = DevExpress.ui.dxButton['inherit']({
-    NAME: 'dxTestWidget',
+import DxButton = require('devextreme/ui/button');
+let DxTestWidget = DxButton['inherit']({
     _render() {
         this.callBase();
         this.element()[0].classList.add('dx-test-widget');
     }
 });
-
-DevExpress.registerComponent('dxTestWidget', dxTestWidget);
 
 @Component({
     selector: 'dx-test-widget',
@@ -67,6 +62,10 @@ export class DxTestWidgetComponent extends DxComponent {
         this.onContentReady = new EventEmitter();
         this.testOptionChange = new EventEmitter();
     }
+
+    protected _createInstance(element, options) {
+        return new DxTestWidget(element, options);
+    }
 }
 
 @Component({
@@ -92,7 +91,7 @@ describe('DevExtreme Angular 2 widget', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
-        return dxTestWidget.getInstance(widgetElement);
+        return DxTestWidget.getInstance(widgetElement);
     }
 
     // spec

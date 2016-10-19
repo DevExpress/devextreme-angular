@@ -25,11 +25,12 @@ module.exports = function(config) {
             { pattern: 'node_modules/rxjs/**/*.+(js|js.map)', included: false, watched: false },
 
             // Angular 2 itself and the testing library
-            {pattern: 'node_modules/@angular/**/*.+(js|js.map)', included: false, watched: false},
+            { pattern: 'node_modules/@angular/**/*.+(js|js.map)', included: false, watched: false },
 
-            // DevExtreme
-            { pattern: 'node_modules/jquery/dist/jquery.js', included: true, watched: false},
-            { pattern: 'node_modules/devextreme/dist/js/dx.all.debug.js', included: true, watched: false },
+            // DevExtreme & DevExtreme Deps
+            { pattern: 'node_modules/jquery/dist/jquery.min.js', included: false, watched: false },
+            { pattern: 'node_modules/jszip/dist/jszip.min.js', included: false, watched: false },
+            { pattern: 'node_modules/devextreme/**/*.js', included: false, watched: false },
 
             { pattern: 'dist/**/*.+(js|js.map|ts)', included: false, watched: true },
 
@@ -81,5 +82,5 @@ module.exports = function(config) {
         singleRun: true,
 
         concurrency: Infinity
-    })
+    });
 };

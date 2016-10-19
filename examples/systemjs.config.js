@@ -16,10 +16,14 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+      // devextreme & devextreme deps
+      'devextreme': 'npm:devextreme',
+      'jquery': 'npm:jquery/dist/jquery.min.js',
+      'jszip': 'npm:jszip/dist/jszip.min.js',
+      '../../dist': '../../dist',
       // other libraries
       'rxjs': 'npm:rxjs',
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api',
-      '../../dist': '../../dist'
+      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
     },
     packages: {
       app: {
@@ -35,6 +39,9 @@
       },
       '../../dist': {
         main: 'index.js',
+        defaultExtension: 'js'
+      },
+      'devextreme': {
         defaultExtension: 'js'
       }
     }

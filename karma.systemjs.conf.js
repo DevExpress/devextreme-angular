@@ -24,6 +24,11 @@
       '@angular/platform-browser-dynamic/testing': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic-testing.umd.js',
       '@angular/forms/testing': 'npm:@angular/forms/bundles/forms-testing.umd.js',
 
+      // devextreme & devextreme deps
+      'devextreme': 'npm:devextreme',
+      'jquery': 'npm:jquery/dist/jquery.min.js',
+      'jszip': 'npm:jszip/dist/jszip.min.js',
+
       // other libraries
       'rxjs': 'npm:rxjs',
       'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
@@ -42,6 +47,9 @@
       },
       'dist': {
         main: 'index.js',
+        defaultExtension: 'js'
+      },
+      'devextreme': {
         defaultExtension: 'js'
       }
     }
