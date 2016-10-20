@@ -1,8 +1,9 @@
-## Next release
+## 16.2.1-alpha.1 (2016-10-20)
 
 ### Features
 
 - Use DevExtreme modules to provide better integration with WebPack ([#16](https://github.com/DevExpress/devextreme-angular2/issues/16))
+- Add new scenarios to examples: DxTabsComponent, DxTabPanelComponent.
 
 ### Bug Fixes
 
