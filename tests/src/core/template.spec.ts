@@ -23,7 +23,8 @@ import {
     DxComponent,
     DxTemplateHost,
     DxTemplateModule,
-    RenderData
+    RenderData,
+    WatcherHelper
 } from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
@@ -37,7 +38,7 @@ let DxTestWidget = DxButton['inherit']({
 @Component({
     selector: 'dx-test-widget',
     template: '',
-    providers: [DxTemplateHost]
+    providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestWidgetComponent extends DxComponent {
     @Input() testTemplate: any;
@@ -45,8 +46,8 @@ export class DxTestWidgetComponent extends DxComponent {
     @Output() onOptionChanged: EventEmitter<any>;
     @Output() testTemplateChange: EventEmitter<any>;
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
-        super(elementRef, ngZone, templateHost);
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
+        super(elementRef, ngZone, templateHost, _watcherHelper);
         this.widgetClassName = 'dxTestWidget';
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },

@@ -29,12 +29,13 @@ import {
 
 import { DxComponent } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
-    providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
+    providers: [DxTemplateHost, WatcherHelper<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
 })
 export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     instance: <#= it.className #>;
@@ -45,10 +46,10 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _watcherHelper: WatcherHelper<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>) {
 
-        super(elementRef, ngZone, templateHost);
+        super(elementRef, ngZone, templateHost, _watcherHelper);
         this.widgetClassName = '<#= it.widgetName #>';
         this._events = [
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
@@ -78,6 +79,7 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
 
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
+        this._watcherHelper.checkWatchers();
     }<#?#>
 }
 
