@@ -139,6 +139,66 @@
     </div>
 </dx-scroll-view>
 
+<h2>DxTabs</h2>
+
+<dx-tabs
+    id="tabs"
+    [dataSource]="tabs"
+    [selectedIndex]="0"
+    (onItemClick)="selectTab($event)">
+</dx-tabs>
+<div class="tab-content dx-fieldset">
+    <div class="dx-field">
+        <div class="dx-field-label">Selected content:</div>
+        <div class="dx-field-value-static left-aligned">
+            {{tabContent}}
+        </div>
+    </div>
+</div>
+
+<h2>DxTabPanel</h2>
+
+<dx-tab-panel
+    [height]="260"
+    [dataSource]="tabPanelItems"
+    [selectedIndex]="0"
+    [loop]="true"
+    [animationEnabled]="true"
+    [swipeEnabled]="true">
+    <div *dxTemplate="let company of 'itemTitleTemplate'">
+        <span>{{company.CompanyName}}</span>
+    </div>
+    <div *dxTemplate="let company of 'itemTemplate'">
+        <div class="tabpanel-item">
+            <div>
+                <p>
+                    <b>{{company.City}}</b> 
+                    (<span>{{company.State}}</span>)
+                </p>
+                <p>
+                    <span>{{company.Zipcode}}</span> 
+                    <span>{{company.Address}}</span>
+                </p>
+            </div>
+            <div>
+                <p>
+                    Phone: <b>{{company.Phone}}</b>
+                </p>
+                <p>
+                    Fax: <b>{{company.Fax}}</b>
+                </p>
+                <p>
+                    Website: 
+                    <a href="{{company.Website}}" 
+                        target="_blank">
+                        {{company.Website}}
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</dx-tab-panel>
+
 <h2>dxChart</h2>
 
 <dx-chart class="full-width" [dataSource]="oranges" [series]="series"></dx-chart>
