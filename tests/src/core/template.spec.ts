@@ -27,7 +27,7 @@ import {
 } from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-import DxButton = require('devextreme/ui/button');
+import DxButton from 'devextreme/ui/button';
 let DxTestWidget = DxButton['inherit']({
     _render() {
         this.element()[0].classList.add('dx-test-widget');

@@ -11,7 +11,7 @@ import {
     async
 } from '@angular/core/testing';
 
-import DxList = require('devextreme/ui/list');
+import DxList from 'devextreme/ui/list';
 
 import {
     DxListModule,
