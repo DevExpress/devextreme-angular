@@ -58,6 +58,31 @@ declare let $: any;
             display: block; 
             background-color: #ccc;
         }
+        .tab-content {
+            text-align: justify;
+            margin-top: 25px;
+        }
+        #tabs {
+            margin-top: 60px;
+        }
+        .tabpanel-item {
+            height: 200px;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            padding-left: 25px;
+            padding-top: 55px;
+        }
+        .tabpanel-item  > div {
+            float: left;
+            padding: 0 85px 10px 10px
+        }
+        .tabpanel-item  p {
+            font-size: 16px;
+        }
     `],
     templateUrl: 'app/app.component.html',
     providers: [
@@ -92,6 +117,26 @@ export class AppComponent implements OnInit {
     customers: Customer[];
     appointments: Appointment[];
     resources: any[];
+    tabs = [
+        {
+            id: 0,
+            text: 'user',
+            icon: 'user',
+            content: 'User tab content'
+        }, {
+            id: 1,
+            text: 'comment',
+            icon: 'comment',
+            content: 'Comment tab content'
+        }, {
+            id: 2,
+            text: 'find',
+            icon: 'find',
+            content: 'Find tab content'
+        }
+    ];
+    tabPanelItems: Customer[];
+    tabContent: string;
     constructor(private orangeService: OrangeService,
         private customerService: CustomerService,
         private appointmentService: AppointmentService,
@@ -106,6 +151,7 @@ export class AppComponent implements OnInit {
             'item2',
             'item3'
         ];
+        this.tabContent = this.tabs[0].content;
     }
     helloWorld() {
         alert('Hello world');
@@ -137,9 +183,13 @@ export class AppComponent implements OnInit {
             dataSource: this.ownerService.getOwners(),
             label: 'Owner'
         }];
+        this.tabPanelItems = this.customers.slice(0, 4);
     }
     showPopover() {
         this.popover.instance.show();
+    }
+    selectTab(e) {
+        this.tabContent = this.tabs[e.itemIndex].content;
     }
 }
 
