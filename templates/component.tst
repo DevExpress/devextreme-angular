@@ -20,16 +20,12 @@ import {
     SimpleChanges<#?#>
 } from '@angular/core';
 
-import <#= it.className #> = require('<#= it.module #>');
-
+import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
-
 import {
     ControlValueAccessor,
     NG_VALUE_ACCESSOR
-} from '@angular/forms';
-
-<#?#>
+} from '@angular/forms';<#?#>
 
 import { DxComponent } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
