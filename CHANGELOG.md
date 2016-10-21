@@ -1,3 +1,8 @@
+## Next release
+
+### Bug Fixes
+- Fix the 2-way data binding to DevExtreme collection widgets, dxDataGrid and dxForm ([#36](https://github.com/DevExpress/devextreme-angular2/issues/36))
+
 ## 16.2.1-alpha.1 (2016-10-20)
 
 ### Features
