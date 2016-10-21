@@ -2,6 +2,9 @@ import {
     Injectable
 } from '@angular/core';
 
+const DECIMAL = 10;
+const DOCUMENT_NODE_TYPE = 9;
+
 @Injectable()
 export class WatcherHelper {
     private _watchers: any[];
@@ -12,12 +15,19 @@ export class WatcherHelper {
         let watchMethod = (valueGetter, valueChangeCallback, options) => {
             let that = this;
             let oldValue = valueGetter();
-            let watcher = function() {
-                let newValue = valueGetter();
-                let isWatcherExpired = that._isElementExpired(options && options.disposeWithElement);
+            options = options || {};
 
-                if (!isWatcherExpired && that._isDifferentValues(oldValue, newValue, options && options.deep)) {
+            if (!options.skipImmediate) {
+                valueChangeCallback(oldValue);
+            }
+
+            let watcher = () => {
+                let newValue = valueGetter();
+                let isWatcherExpired = that._isElementExpired(options.disposeWithElement);
+
+                if (!isWatcherExpired && that._isDifferentValues(oldValue, newValue, options.deep)) {
                     valueChangeCallback(newValue);
+                    oldValue = newValue;
                 }
 
                 return isWatcherExpired;
@@ -25,15 +35,9 @@ export class WatcherHelper {
 
             this._watchers.push(watcher);
 
-            return function() {
-                let index = -1;
+            return () => {
+                let index = that._watchers.indexOf(watcher);
 
-                for (let item in that._watchers) {
-                    if (that._watchers[item] === watcher) {
-                        index = parseInt(item, 10);
-                        break;
-                    }
-                }
                 if (index !== -1) {
                     that._watchers.splice(index, 1);
                 }
@@ -47,7 +51,6 @@ export class WatcherHelper {
         let isExpired = false;
 
         if (element) {
-            let DOCUMENT_NODE_TYPE = 9;
             isExpired = element.getRootNode().nodeType !== DOCUMENT_NODE_TYPE;
         }
 
@@ -58,19 +61,11 @@ export class WatcherHelper {
         let valueType = typeof newValue;
         let isDifferentValue = false;
 
-        switch (valueType) {
-            case 'object':
-                if (deepCheck) {
-                    isDifferentValue = this._checkObjectsFields(newValue, oldValue);
 
-                    if (!isDifferentValue) {
-                        isDifferentValue = this._checkObjectsFields(oldValue, newValue);
-                    }
-                }
-                break;
-            default:
-                isDifferentValue = oldValue !== newValue;
-                break;
+        if (valueType === 'object' && deepCheck) {
+            isDifferentValue = this._checkObjectsFields(newValue, oldValue);
+        } else {
+            isDifferentValue = oldValue !== newValue;
         }
 
         return isDifferentValue;
@@ -95,7 +90,7 @@ export class WatcherHelper {
             let isWatcherExpired = this._watchers[watcher]();
 
             if (isWatcherExpired) {
-                this._watchers.splice(parseInt(watcher, 10), 1);
+                this._watchers.splice(parseInt(watcher, DECIMAL), 1);
             }
         }
     }
