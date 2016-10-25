@@ -10,7 +10,8 @@ import {
 
 import { DxTemplateHost } from './dx.template-host';
 
-declare let $: any;
+declare function require(params: any): any;
+let $ = require('jquery');
 
 export class RenderData {
     model: any;
