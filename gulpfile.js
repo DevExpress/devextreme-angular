@@ -101,7 +101,11 @@ gulp.task('npm.content.package', ['npm.clean'], function() {
     var config = buildConfig.npm;
 
     return gulp.src(config.package)
-        .pipe(mergeJson('package.json'))
+        .pipe(mergeJson('package.json', function(parsedJson, file) {
+            if (parsedJson.scripts)
+                delete parsedJson.scripts;
+            return parsedJson;
+        }))
         .pipe(gulp.dest(config.distPath));
 });
 
