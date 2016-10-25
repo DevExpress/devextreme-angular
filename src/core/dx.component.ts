@@ -35,7 +35,7 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
         startupEvents.forEach(eventName => {
             this._initialOptions[eventName] = (e) => {
                 let emitter = this[eventName];
-                return emitter && emitter.next(e);
+                return emitter && emitter.emit(e);
             };
         });
     }
@@ -47,13 +47,13 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
                         let changeEventName = e.name + 'Change';
                         if (this[changeEventName] && !this._isChangesProcessing) {
                             this[e.name] = e.value;
-                            this[changeEventName].next(e.value);
+                            this[changeEventName].emit(e.value);
                         }
-                        this[event.emit].next(e);
+                        this[event.emit].emit(e);
                     } else {
                         if (this[event.emit]) {
                             this.ngZone.run(() => {
-                                this[event.emit].next(e);
+                                this[event.emit].emit(e);
                             });
                         }
                     }
