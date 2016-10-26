@@ -60,7 +60,7 @@ describe("metadata-generator", function() {
             generator.generate(testConfig);
             metas = {};
             store.write.calls.allArgs().forEach(function(args) {
-                let metaData = args[1]; 
+                var metaData = args[1];
                 metas[metaData.widgetName] = metaData;
             })
         });
