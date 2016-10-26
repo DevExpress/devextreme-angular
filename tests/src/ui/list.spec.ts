@@ -56,12 +56,11 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        let spy = jasmine.createSpy('option change');
-        instance.option = spy;
+        spyOn(instance, 'option').and.callThrough();
 
         testComponent.items.push(2);
         fixture.detectChanges();
 
-        expect(spy).toHaveBeenCalledWith('items', [1, 2]);
+        expect(instance.option).toHaveBeenCalledWith('items', [1, 2]);
     }));
 });

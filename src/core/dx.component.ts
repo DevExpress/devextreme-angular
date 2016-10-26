@@ -1,8 +1,6 @@
 import {
-    OnChanges,
     AfterViewInit,
     ElementRef,
-    SimpleChange,
     NgZone
 } from '@angular/core';
 
@@ -11,9 +9,8 @@ import { DxTemplateHost } from './dx.template-host';
 
 const startupEvents = ['onInitialized', 'onContentReady'];
 
-export abstract class DxComponent implements OnChanges, AfterViewInit {
+export abstract class DxComponent implements AfterViewInit {
     private _initialOptions: any;
-    private _isChangesProcessing = false;
     templates: DxTemplateDirective[];
     widgetClassName: string;
     instance: any;
@@ -45,8 +42,7 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
                 this.instance.on(event.subscribe, e => {
                     if (event.subscribe === 'optionChanged') {
                         let changeEventName = e.name + 'Change';
-                        if (this[changeEventName] && !this._isChangesProcessing) {
-                            this[e.name] = e.value;
+                        if (this[changeEventName]) {
                             this[changeEventName].emit(e.value);
                         }
                         this[event.emit].emit(e);
@@ -60,6 +56,20 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
                 });
             }
         });
+    }
+    protected _getOption(name: string) {
+        if (this.instance) {
+            return this.instance.option(name);
+        } else {
+            return this._initialOptions[name];
+        }
+    }
+    protected _setOption(name: string, value: any) {
+        if (this.instance) {
+            this.instance.option(name, value);
+        } else {
+            this._initialOptions[name] = value;
+        }
     }
     private _initProperties() {
         let defaultOptions = this.instance.option();
@@ -82,18 +92,6 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
     }
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
-    }
-    ngOnChanges(changes: { [key: string]: SimpleChange }) {
-        Object.keys(changes).forEach(propertyName => {
-            let change = changes[propertyName];
-            if (this.instance) {
-                this._isChangesProcessing = true; // prevent cycle change event emitting
-                this.instance.option(propertyName, change.currentValue);
-                this._isChangesProcessing = false;
-            } else {
-                this._initialOptions[propertyName] = change.currentValue;
-            }
-        });
     }
     ngAfterViewInit() {
         this._createWidget();

@@ -39,7 +39,14 @@ import { DxTemplateHost } from '../core/dx.template-host';
 export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     instance: <#= it.className #>;
 
-    <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
+    <#~ it.properties :prop:i #>@Input()
+    get <#= prop.name #>(): any {
+        return this._getOption('<#= prop.name #>');
+    }
+    set <#= prop.name #>(value: any) {
+        this._setOption('<#= prop.name #>', value);
+    }<#? i < it.properties.length-1 #>
+
     <#?#><#~#>
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
@@ -70,9 +77,7 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
         return new <#= it.className #>(element, options);
     }
 <#? collectionProperties.length #>
-    ngOnChanges(changes: SimpleChanges) {
-        super.ngOnChanges(changes);
-<#~ collectionProperties :prop:i #>
+    ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
         this._idh.setup('<#= prop #>', changes);<#~#>
     }
 
