@@ -107,8 +107,8 @@ describe("metadata-generator", function() {
 
         it("should generate proper collection properties", function() {
             expect(metas[2].properties).toEqual([
-                { name: 'collectionProperty', type: 'any', collection: true },
-                { name: 'dataSourceProperty', type: 'any', collection: true }
+                { name: 'collectionProperty', type: 'any', isCollection: true },
+                { name: 'dataSourceProperty', type: 'any', isCollection: true }
             ]);
         });
 

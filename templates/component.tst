@@ -2,7 +2,7 @@
 /* tslint:disable:directive-selector-name */
 /* tslint:disable:directive-selector-type */
 <#?#>
-<# var collectionProperties = it.properties.filter(item => item.collection).map(item => item.name); #>
+<# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
 
 import {
     Component,

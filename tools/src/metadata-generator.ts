@@ -68,13 +68,13 @@ export default class DXComponentMetadataGenerator {
                         subscribe: eventName
                     });
                 } else {
-                    let property = {
+                    let property: any = {
                         name: optionName,
                         type: 'any'
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
-                        property['collection'] = true;
+                        property.isCollection = true;
                     }
 
                     if (option.PrimitiveTypes) {
