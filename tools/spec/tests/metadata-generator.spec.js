@@ -29,6 +29,9 @@ describe("metadata-generator", function() {
                     Options: {
                         collectionProperty: {
                             IsCollection: true
+                        },
+                        dataSourceProperty: {
+                            IsDataSource: true
                         }
                     }
                 }
@@ -93,14 +96,15 @@ describe("metadata-generator", function() {
 
         it("should generate proper properties", function() {
             expect(metas[0].properties).toEqual([
-                { name: 'testTemplate', type: 'any', collection: false },
-                { name: 'testProperty', type: 'any', collection: false }
+                { name: 'testTemplate', type: 'any' },
+                { name: 'testProperty', type: 'any' }
             ]);
         });
 
         it("should generate proper collection properties", function() {
             expect(metas[2].properties).toEqual([
-                { name: 'collectionProperty', type: 'any', collection: true }
+                { name: 'collectionProperty', type: 'any', collection: true },
+                { name: 'dataSourceProperty', type: 'any', collection: true }
             ]);
         });
 
