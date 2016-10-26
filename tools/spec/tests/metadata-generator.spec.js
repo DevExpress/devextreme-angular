@@ -35,7 +35,12 @@ describe("metadata-generator", function() {
                         }
                     },
                     Module: 'test_widget'
-                }
+                },
+                dxExtensionWidget: {
+                    IsExtensionComponent: true,
+                    Options: {},
+                    Module: 'test_widget'
+                }                
             }
         };
 
@@ -53,9 +58,10 @@ describe("metadata-generator", function() {
             };
             generator = new Generator(store);
             generator.generate(testConfig);
-            metas = [];
+            metas = {};
             store.write.calls.allArgs().forEach(function(args) {
-                metas.push(args[1]);
+                let metaData = args[1]; 
+                metas[metaData.widgetName] = metaData;
             })
         });
 
@@ -64,31 +70,33 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(3);
+            expect(store.write.calls.count()).toBe(4);
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
         });
 
         it("should generate matadata", function() {
-            expect(metas.length).toBe(3);
-            expect(metas[0]).not.toBeNull();
-            expect(metas[1]).not.toBeNull();
+            expect(Object.keys(metas).length).toBe(4);
+            expect(metas.dxTestWidget).not.toBe(undefined);
+            expect(metas.dxCollectionWidget).not.toBe(undefined);
+            expect(metas.dxEditorWidget).not.toBe(undefined);
+            expect(metas.dxExtensionWidget).not.toBe(undefined);
         });
 
         it("should generate proper component class name", function() {
-            expect(metas[0].className).toBe("DxTestWidget");
+            expect(metas.dxTestWidget.className).toBe("DxTestWidget");
         });
 
         it("should generate proper component selector", function() {
-            expect(metas[0].selector).toBe("dx-test-widget");
+            expect(metas.dxTestWidget.selector).toBe("dx-test-widget");
         });
 
         it("should generate proper widget name", function() {
-            expect(metas[0].widgetName).toBe("dxTestWidget");
+            expect(metas.dxTestWidget.widgetName).toBe("dxTestWidget");
         });
 
         it("should generate proper events", function() {
-            expect(metas[0].events).toEqual([
+            expect(metas.dxTestWidget.events).toEqual([
                 { emit: 'onTestEvent', subscribe: 'testEvent' },
                 { emit: 'testTemplateChange' },
                 { emit: 'testPropertyChange' }
@@ -96,25 +104,35 @@ describe("metadata-generator", function() {
         });
 
         it("should generate proper properties", function() {
-            expect(metas[0].properties).toEqual([
+            expect(metas.dxTestWidget.properties).toEqual([
                 { name: 'testTemplate', type: 'any', collection: false },
                 { name: 'testProperty', type: 'any', collection: false }
             ]);
         });
 
         it("should generate proper collection properties", function() {
-            expect(metas[2].properties).toEqual([
+            expect(metas.dxCollectionWidget.properties).toEqual([
                 { name: 'collectionProperty', type: 'any', collection: true }
             ]);
         });
 
         it("should generate proper module name", function() {
-            expect(metas[0].module).toBe("devextreme/test_widget");
+            expect(metas.dxTestWidget.module).toBe("devextreme/test_widget");
         });
 
         it("should detect editors", function() {
-            expect(metas[0].isEditor).toBe(false);
-            expect(metas[1].isEditor).toBe(true);
+            expect(metas.dxTestWidget.isEditor).toBe(false);
+            expect(metas.dxEditorWidget.isEditor).toBe(true);
+        });
+
+        it("should detect extensions", function() {
+            expect(metas.dxTestWidget.isExtension).toBe(false);
+            expect(metas.dxExtensionWidget.isExtension).toBe(true);
+        });
+
+        it("should generate proper baseClass", function() {
+            expect(metas.dxTestWidget.baseClass).toBe('DxComponent');
+            expect(metas.dxExtensionWidget.baseClass).toBe('DxComponentExtension');
         });
 
     });

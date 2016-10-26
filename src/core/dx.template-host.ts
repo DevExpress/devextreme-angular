@@ -1,9 +1,9 @@
-import { DxComponent } from './dx.component';
+import { DxComponentBase } from './dx.component';
 import { DxTemplateDirective } from './dx.template';
 
 export class DxTemplateHost {
-    host: DxComponent;
-    setHost(host: DxComponent) {
+    host: DxComponentBase;
+    setHost(host: DxComponentBase) {
         this.host = host;
     }
     setTemplate(template: DxTemplateDirective) {

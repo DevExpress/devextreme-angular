@@ -11,7 +11,7 @@ import { DxTemplateHost } from './dx.template-host';
 
 const startupEvents = ['onInitialized', 'onContentReady'];
 
-export abstract class DxComponent implements OnChanges, AfterViewInit {
+export abstract class DxComponentBase implements OnChanges {
     private _initialOptions: any;
     private _isChangesProcessing = false;
     templates: DxTemplateDirective[];
@@ -68,14 +68,14 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
         });
     }
     protected abstract _createInstance(element, options)
-    private _createWidget() {
+    protected _createWidget(element: any) {
         this._initTemplates();
         this._initOptions();
-        this.instance = this._createInstance(this.element.nativeElement, this._initialOptions);
+        this.instance = this._createInstance(element, this._initialOptions);
         this._initEvents();
         this._initProperties();
     }
-    constructor(private element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost) {
+    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost) {
         this._initialOptions = {};
         this.templates = [];
         templateHost.setHost(this);
@@ -95,11 +95,19 @@ export abstract class DxComponent implements OnChanges, AfterViewInit {
             }
         });
     }
+}
+
+export abstract class DxComponent extends DxComponentBase implements AfterViewInit {
     ngAfterViewInit() {
-        this._createWidget();
+        this._createWidget(this.element.nativeElement);
     }
 }
 
+export abstract class DxComponentExtension extends DxComponentBase {
+    createInstance(element: any) {
+        this._createWidget(element);
+    }
+}
 
 
 
