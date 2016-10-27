@@ -104,7 +104,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering dxAccordion items."
+          "Description": "The template to be used for rendering Accordion items."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -312,7 +312,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the dxActionSheet widget is visible."
+          "Description": "A Boolean value specifying whether or not the ActionSheet widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -425,7 +425,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not to show the action sheet within a dxPopover widget."
+          "Description": "Specifies whether or not to show the action sheet within a Popover widget."
         }
       }
     },
@@ -929,7 +929,7 @@
               "ComplexTypes": [
                 "dxBoxOptions"
               ],
-              "Description": "Holds a dxBox configuration object for the item."
+              "Description": "Holds a Box configuration object for the item."
             },
             "ratio": {
               "PrimitiveTypes": [
@@ -1060,7 +1060,7 @@
         },
         "template": {
           "IsTemplate": true,
-          "Description": "A template to be used for rendering the dxButton widget."
+          "Description": "A template to be used for rendering the Button widget."
         },
         "text": {
           "PrimitiveTypes": [
@@ -1071,6 +1071,11 @@
         "type": {
           "EnumName": "ButtonType",
           "Description": "Specifies the button type."
+        },
+        "useSubmitBehavior": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -1972,13 +1977,13 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies options of context menu showing.",
+          "Description": "Specifies options for displaying the widget.",
           "Options": {
             "delay": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the context menu is shown."
+              "Description": "The time span after which the widget is shown."
             },
             "name": {
               "PrimitiveTypes": [
@@ -2442,6 +2447,7 @@
               "Description": "Specifies column-level options for filtering using a column header filter.",
               "Options": {
                 "dataSource": {
+                  "IsFunc": true,
                   "IsDataSource": true,
                   "Description": "Specifies the data source to be used for the header filter."
                 },
@@ -2476,6 +2482,7 @@
                   "Description": "Specifies whether or not a user can nullify values of a lookup column."
                 },
                 "dataSource": {
+                  "IsFunc": true,
                   "IsDataSource": true,
                   "Description": "Specifies the data source providing data for a lookup column."
                 },
@@ -2837,61 +2844,73 @@
               "Description": "Specifies text for the range start in the 'between' filter type."
             },
             "operationDescriptions": {
+              "Description": "Specifies descriptions for filter operations.",
               "Options": {
                 "between": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the 'between' operation."
                 },
                 "contains": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the 'contains' operation."
                 },
                 "endsWith": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the 'endswith' operation."
                 },
                 "equal": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '=' operation."
                 },
                 "greaterThan": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '>' operation."
                 },
                 "greaterThanOrEqual": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '>=' operation."
                 },
                 "lessThan": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '<' operation."
                 },
                 "lessThanOrEqual": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '<=' operation."
                 },
                 "notContains": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the 'notcontains' operation."
                 },
                 "notEqual": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the '<>' operation."
                 },
                 "startsWith": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Description for the 'startswith' operation."
                 }
               }
             },
@@ -3336,7 +3355,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether dxDataGrid loads data page by page or all at once."
+              "Description": "Specifies whether DataGrid loads data page by page or all at once."
             },
             "pageIndex": {
               "PrimitiveTypes": [
@@ -3370,6 +3389,12 @@
                 "bool"
               ],
               "Description": "Specifies whether or not grouping must be performed on the server side."
+            },
+            "groupPaging": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether or not paging by groups must be peformed on the server side."
             },
             "paging": {
               "PrimitiveTypes": [
@@ -3500,6 +3525,10 @@
             "mode": {
               "EnumName": "SelectionMode",
               "Description": "Specifies the selection mode."
+            },
+            "selectAllMode": {
+              "EnumName": "SelectAllMode",
+              "Description": "Specifies the selectAll mode."
             },
             "showCheckBoxesMode": {
               "EnumName": "GridSelectionShowCheckBoxesMode",
@@ -4198,7 +4227,7 @@
         },
         "pickerType": {
           "EnumName": "DateBoxPickerType",
-          "Description": "Specifies the type of date/time picker."
+          "Description": "Specifies the type of the date/time picker."
         },
         "type": {
           "EnumName": "DateBoxFormat",
@@ -6152,7 +6181,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not to show lookup contents in a dxPopover widget."
+          "Description": "Specifies whether or not to show lookup contents in a Popover widget."
         },
         "position": {
           "ComplexTypes": [
@@ -8310,7 +8339,7 @@
           }
         },
         "texts": {
-          "Description": "Strings that can be changed or localized in the dxPivotGrid widget.",
+          "Description": "Strings that can be changed or localized in the PivotGrid widget.",
           "Options": {
             "collapseAll": {
               "PrimitiveTypes": [
@@ -8390,7 +8419,7 @@
       }
     },
     "dxPivotGridFieldChooser": {
-      "Description": "A complementary widget for dxPivotGrid that allows you to manage data displayed in the dxPivotGrid.",
+      "Description": "A complementary widget for PivotGrid that allows you to manage data displayed in the PivotGrid.",
       "Module": "ui/pivot_grid_field_chooser",
       "Options": {
         "onDisposing": {
@@ -8483,7 +8512,7 @@
         },
         "dataSource": {
           "IsDataSource": true,
-          "Description": "The data source of a dxPivotGrid widget."
+          "Description": "The data source of a PivotGrid widget."
         },
         "layout": {
           "EnumName": "PivotGridFieldChooserLayout",
@@ -8495,7 +8524,7 @@
           "Description": "A handler for the contextMenuPreparing event."
         },
         "texts": {
-          "Description": "Strings that can be changed or localized in the dxPivotGridFieldChooser widget.",
+          "Description": "Strings that can be changed or localized in the PivotGridFieldChooser widget.",
           "Options": {
             "allFields": {
               "PrimitiveTypes": [
@@ -8819,13 +8848,13 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies options of popover showing.",
+          "Description": "Specifies options for displaying the widget.",
           "Options": {
             "delay": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the popover is shown."
+              "Description": "The time span after which the widget is shown."
             },
             "name": {
               "PrimitiveTypes": [
@@ -10437,57 +10466,71 @@
           "IsCollection": true,
           "EnumName": "SchedulerView",
           "SingularName": "view",
+          "Description": "Lists the views to be available within the scheduler's View Selector.",
           "Options": {
             "agendaDuration": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "Specifies the number of dates that can be shown at a time in the agenda view."
             },
             "appointmentTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering appointments."
             },
             "appointmentTooltipTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering an appointment tooltip."
             },
             "cellDuration": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "The cell duration in minutes."
             },
             "dataCellTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering table cells."
             },
             "dateCellTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering date scale items."
             },
             "endDayHour": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "The end hour of the view time scale."
             },
             "firstDayOfWeek": {
-              "EnumName": "FirstDayOfWeek"
+              "EnumName": "FirstDayOfWeek",
+              "Description": "The first day of a week."
             },
             "groups": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsCollection": true,
-              "SingularName": "group"
+              "SingularName": "group",
+              "Description": "The resource kinds by which appointments are grouped."
             },
             "resourceCellTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering resource headers."
             },
             "startDayHour": {
               "PrimitiveTypes": [
                 "double"
-              ]
+              ],
+              "Description": "The start hour of the view time scale."
             },
             "timeCellTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering time scale items."
             },
             "type": {
-              "EnumName": "SchedulerView"
+              "EnumName": "SchedulerView",
+              "Description": "The name of the view."
             }
           }
         }
@@ -13476,13 +13519,13 @@
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "The time span in milliseconds during which the dxToast widget is visible."
+          "Description": "The time span in milliseconds during which the Toast widget is visible."
         },
         "message": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The dxToast message text."
+          "Description": "The Toast message text."
         },
         "position": {
           "PrimitiveTypes": [
@@ -13495,7 +13538,7 @@
         },
         "type": {
           "EnumName": "ToastType",
-          "Description": "Specifies the dxToast widget type."
+          "Description": "Specifies the Toast widget type."
         }
       }
     },
@@ -13885,13 +13928,13 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies options of popover showing.",
+          "Description": "Specifies options for displaying the widget.",
           "Options": {
             "delay": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the popover is shown."
+              "Description": "The time span after which the widget is shown."
             },
             "name": {
               "PrimitiveTypes": [
@@ -14167,8 +14210,9 @@
           ],
           "Description": "Specifies whether or not to animate item collapsing and expanding."
         },
-        "dataLoader": {
-          "IsFunc": true
+        "createChildren": {
+          "IsFunc": true,
+          "Description": "Allows you to load nodes manually."
         },
         "dataStructure": {
           "EnumName": "TreeViewDataStructure",
@@ -14286,7 +14330,8 @@
       }
     },
     "dxValidationGroup": {
-      "Description": "The widget that is used in the Knockout and Angular approaches to combine the editors to be validated.",
+      "Description": "The widget that is used in the Knockout and AngularJS approaches to combine the editors to be validated.",
+      "IsTranscludedContent": true,
       "Module": "ui/validation_group",
       "Options": {
         "onDisposing": {
@@ -14404,6 +14449,7 @@
     },
     "dxValidator": {
       "Description": "A widget that is used to validate the associated DevExtreme editors against the defined validation rules.",
+      "IsExtensionComponent": true,
       "Module": "ui/validator",
       "Options": {
         "onDisposing": {
@@ -14440,7 +14486,7 @@
           "Options": {
             "applyValidationResults": {
               "IsFunc": true,
-              "Description": "A function that the dxValidator widget calls after validating a specified value."
+              "Description": "A function that the Validator widget calls after validating a specified value."
             },
             "bypass": {
               "IsFunc": true,
@@ -14448,7 +14494,7 @@
             },
             "focus": {
               "IsFunc": true,
-              "Description": "A function that sets focus to the validated editors when the dxValidationSummary is focused."
+              "Description": "A function that sets focus to the validated editors when the ValidationSummary is focused."
             },
             "getValue": {
               "IsFunc": true,
@@ -17734,7 +17780,7 @@
           ],
           "IsCollection": true,
           "SingularName": "serie",
-          "Description": "Specifies options for dxChart widget series."
+          "Description": "Specifies options for Chart widget series."
         },
         "seriesSelectionMode": {
           "EnumName": "ChartElementSelectionMode",
@@ -18988,7 +19034,7 @@
             },
             "orientation": {
               "EnumName": "CircularGaugeOrientation",
-              "Description": "Specifies the orientation of the range container in the dxCircularGauge widget."
+              "Description": "Specifies the orientation of the range container in the CircularGauge widget."
             },
             "width": {
               "PrimitiveTypes": [
@@ -19332,7 +19378,7 @@
           "Description": "Specifies the main value on a gauge."
         },
         "geometry": {
-          "Description": "Specifies the options required to set the geometry of the dxCircularGauge widget.",
+          "Description": "Specifies the options required to set the geometry of the CircularGauge widget.",
           "Options": {
             "endAngle": {
               "PrimitiveTypes": [
@@ -19920,17 +19966,17 @@
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of the range container on a vertically oriented dxLinearGauge widget."
+              "Description": "Specifies the orientation of the range container on a vertically oriented LinearGauge widget."
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of a range container on a horizontally oriented dxLinearGauge widget."
+              "Description": "Specifies the orientation of a range container on a horizontally oriented LinearGauge widget."
             },
             "width": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the width of the range container's start and end boundaries in the dxLinearGauge widget.",
+              "Description": "Specifies the width of the range container's start and end boundaries in the LinearGauge widget.",
               "Options": {
                 "end": {
                   "PrimitiveTypes": [
@@ -20242,11 +20288,11 @@
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of scale ticks on a vertically oriented dxLinearGauge widget."
+              "Description": "Specifies the orientation of scale ticks on a vertically oriented LinearGauge widget."
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of scale ticks on a horizontally oriented dxLinearGauge widget."
+              "Description": "Specifies the orientation of scale ticks on a horizontally oriented LinearGauge widget."
             }
           }
         },
@@ -20286,11 +20332,11 @@
           "Description": "Specifies the main value on a gauge."
         },
         "geometry": {
-          "Description": "Specifies the options required to set the geometry of the dxLinearGauge widget.",
+          "Description": "Specifies the options required to set the geometry of the LinearGauge widget.",
           "Options": {
             "orientation": {
               "EnumName": "Orientation",
-              "Description": "Indicates whether to display the dxLinearGauge widget vertically or horizontally."
+              "Description": "Indicates whether to display the LinearGauge widget vertically or horizontally."
             }
           }
         },
@@ -20810,7 +20856,7 @@
           "Description": "Specifies the origin of data for the widget."
         },
         "legend": {
-          "Description": "Specifies dxPieChart legend options.",
+          "Description": "Specifies PieChart legend options.",
           "Options": {
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -21021,7 +21067,7 @@
           "ComplexTypes": [
             "PieChartCommonSeriesSettings"
           ],
-          "Description": "An object defining the configuration options that are common for all series of the dxPieChart widget."
+          "Description": "An object defining the configuration options that are common for all series of the PieChart widget."
         },
         "diameter": {
           "PrimitiveTypes": [
@@ -21054,7 +21100,7 @@
           ],
           "IsCollection": true,
           "SingularName": "serie",
-          "Description": "Specifies options for the series of the dxPieChart widget."
+          "Description": "Specifies options for the series of the PieChart widget."
         },
         "startAngle": {
           "PrimitiveTypes": [
@@ -21788,7 +21834,7 @@
           "Description": "Specifies whether a single point or multiple points can be selected in the chart."
         },
         "argumentAxis": {
-          "Description": "Specifies argument axis options for the dxPolarChart widget.",
+          "Description": "Specifies argument axis options for the PolarChart widget.",
           "Options": {
             "color": {
               "PrimitiveTypes": [
@@ -21839,7 +21885,7 @@
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
             },
             "grid": {
-              "Description": "An object defining the configuration options for the grid lines of an axis in the dxPolarChart widget.",
+              "Description": "An object defining the configuration options for the grid lines of an axis in the PolarChart widget.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
@@ -22363,7 +22409,7 @@
           "Description": "Specifies a common bar width as a percentage from 0 to 1."
         },
         "commonAxisSettings": {
-          "Description": "An object defining the configuration options that are common for all axes of the dxPolarChart widget.",
+          "Description": "An object defining the configuration options that are common for all axes of the PolarChart widget.",
           "Options": {
             "color": {
               "PrimitiveTypes": [
@@ -22414,7 +22460,7 @@
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
             },
             "grid": {
-              "Description": "An object defining the configuration options for the grid lines of an axis in the dxPolarChart widget.",
+              "Description": "An object defining the configuration options for the grid lines of an axis in the PolarChart widget.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
@@ -22449,7 +22495,7 @@
               "Description": "Indicates whether or not an axis is inverted."
             },
             "label": {
-              "Description": "An object defining the label configuration options that are common for all axes in the dxPolarChart widget.",
+              "Description": "An object defining the label configuration options that are common for all axes in the PolarChart widget.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -22620,7 +22666,7 @@
           "ComplexTypes": [
             "PolarChartCommonSeriesSettings"
           ],
-          "Description": "An object defining the configuration options that are common for all series of the dxPolarChart widget."
+          "Description": "An object defining the configuration options that are common for all series of the PolarChart widget."
         },
         "containerBackgroundColor": {
           "PrimitiveTypes": [
@@ -22698,7 +22744,7 @@
           ],
           "IsCollection": true,
           "SingularName": "serie",
-          "Description": "Specifies options for dxPolarChart widget series."
+          "Description": "Specifies options for PolarChart widget series."
         },
         "seriesSelectionMode": {
           "EnumName": "ChartElementSelectionMode",
@@ -22726,7 +22772,7 @@
           "Description": "Indicates whether or not to display a \"spider web\"."
         },
         "valueAxis": {
-          "Description": "Specifies value axis options for the dxPolarChart widget.",
+          "Description": "Specifies value axis options for the PolarChart widget.",
           "Options": {
             "color": {
               "PrimitiveTypes": [
@@ -22777,7 +22823,7 @@
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
             },
             "grid": {
-              "Description": "An object defining the configuration options for the grid lines of an axis in the dxPolarChart widget.",
+              "Description": "An object defining the configuration options for the grid lines of an axis in the PolarChart widget.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
@@ -23567,7 +23613,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the background color for the dxRangeSelector."
+              "Description": "Specifies the background color for the RangeSelector."
             },
             "image": {
               "Description": "Specifies image options.",
@@ -23593,7 +23639,7 @@
           }
         },
         "behavior": {
-          "Description": "Specifies the dxRangeSelector's behavior options.",
+          "Description": "Specifies the RangeSelector's behavior options.",
           "Options": {
             "allowSlidersSwap": {
               "PrimitiveTypes": [
@@ -23729,7 +23775,7 @@
               "Description": "Specifies whether or not to filter the series points depending on their quantity."
             },
             "valueAxis": {
-              "Description": "Specifies options for the chart's value axis.",
+              "Description": "Configures the chart value axis.",
               "Options": {
                 "inverted": {
                   "PrimitiveTypes": [
@@ -24348,7 +24394,7 @@
           }
         },
         "selectedRange": {
-          "Description": "Specifies the range to be selected when displaying the dxRangeSelector.",
+          "Description": "Specifies the range to be selected when displaying the RangeSelector.",
           "Options": {
             "endValue": {
               "PrimitiveTypes": [
@@ -24356,7 +24402,7 @@
                 "double",
                 "string"
               ],
-              "Description": "Specifies the end value of the range to be selected when displaying the dxRangeSelector widget on a page."
+              "Description": "Specifies the end value of the range to be selected when displaying the RangeSelector widget on a page."
             },
             "startValue": {
               "PrimitiveTypes": [
@@ -24364,7 +24410,7 @@
                 "double",
                 "string"
               ],
-              "Description": "Specifies the start value of the range to be selected when displaying the dxRangeSelector widget on a page."
+              "Description": "Specifies the start value of the range to be selected when displaying the RangeSelector widget on a page."
             }
           }
         },
@@ -25547,7 +25593,8 @@
           "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to flat data sources only."
         },
         "resolveLabelOverflow": {
-          "EnumName": "TreeMapLabelOverflowResolution"
+          "EnumName": "TreeMapLabelOverflowResolution",
+          "Description": "Decides whether to hide or truncate with ellipsis those labels that overflow their tile/group."
         },
         "selectionMode": {
           "EnumName": "SelectionMode",
@@ -26251,7 +26298,7 @@
         "layers": {
           "IsCollection": true,
           "SingularName": "layer",
-          "Description": "Specifies options for dxVectorMap widget layers.",
+          "Description": "Specifies options for VectorMap widget layers.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -26973,7 +27020,7 @@
   },
   "ExtraObjects": {
     "PivotGridDataSource": {
-      "Description": "An object that provides access to data for the dxPivotGrid widget.",
+      "Description": "An object that provides access to data for the PivotGrid widget.",
       "Options": {
         "fields": {
           "IsCollection": true,
@@ -27512,7 +27559,7 @@
         },
         "horizontalOrientation": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator on a vertically oriented dxLinearGauge widget."
+          "Description": "Specifies the orientation of the rangeBar indicator on a vertically oriented LinearGauge widget."
         },
         "indentFromCenter": {
           "PrimitiveTypes": [
@@ -27608,7 +27655,7 @@
         },
         "verticalOrientation": {
           "EnumName": "VerticalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator on a horizontally oriented dxLinearGauge widget."
+          "Description": "Specifies the orientation of the rangeBar indicator on a horizontally oriented LinearGauge widget."
         },
         "width": {
           "PrimitiveTypes": [
@@ -28563,7 +28610,7 @@
       }
     },
     "PieChartCommonSeriesSettings": {
-      "Description": "An object defining the configuration options that are common for all series of the dxPieChart widget.",
+      "Description": "An object defining the configuration options that are common for all series of the PieChart widget.",
       "Options": {
         "argumentField": {
           "PrimitiveTypes": [
@@ -28958,7 +29005,7 @@
       }
     },
     "PolarChartCommonSeriesSettings": {
-      "Description": "An object defining the configuration options that are common for all series of the dxPolarChart widget.",
+      "Description": "An object defining the configuration options that are common for all series of the PolarChart widget.",
       "Options": {
         "argumentField": {
           "PrimitiveTypes": [
@@ -29982,6 +30029,16 @@
         },
         {
           "Name": "single"
+        }
+      ]
+    },
+    "SelectAllMode": {
+      "Items": [
+        {
+          "Name": "allPages"
+        },
+        {
+          "Name": "singlePage"
         }
       ]
     },

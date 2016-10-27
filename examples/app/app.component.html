@@ -25,9 +25,29 @@
             <label for="email">Password</label>
             <dx-text-box formControlName="passwordControl" [(ngModel)]="password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
 
-        </div><br/>
+        </div>
         <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>
     </form>
+
+    <h2>DevExtreme validation features</h2>
+    <dx-validation-group>
+        <div class="form-group">
+
+            <label>Email</label>
+            <dx-text-box [(value)]="email">
+                <dx-validator [validationRules]="dxValidationRules.email"></dx-validator>
+            </dx-text-box>
+
+            <label>Password</label>
+            <dx-text-box [(value)]="password" mode="password">
+                <dx-validator [validationRules]="dxValidationRules.password"></dx-validator>
+            </dx-text-box>
+
+            <dx-validation-summary></dx-validation-summary>
+
+        </div>
+        <dx-button (onClick)="validate($event)" text="Submit"></dx-button>
+    </dx-validation-group>
 
     <h2>Editor Widgets</h2>
 

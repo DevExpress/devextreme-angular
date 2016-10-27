@@ -2,8 +2,7 @@
 Error.stackTraceLimit = Infinity;
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 1000;
 
-__karma__.loaded = function () {
-};
+__karma__.loaded = function () {};
 
 function isSpecFile(path) {
   return /\.spec\.js$/.test(path);
@@ -31,6 +30,11 @@ System.import('karma.systemjs.conf.js')
     coreTesting.TestBed.initTestEnvironment(
             browserTesting.BrowserDynamicTestingModule,
             browserTesting.platformBrowserDynamicTesting());
+  })
+  .then(function() {
+    return System.import('jquery').then(function($) {
+      $.noConflict(true); 
+    });
   })
   .then(function() {
     return Promise.all(

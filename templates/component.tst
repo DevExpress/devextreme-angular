@@ -2,7 +2,8 @@
 /* tslint:disable:directive-selector-name */
 /* tslint:disable:directive-selector-type */
 <#?#>
-<# var collectionProperties = it.properties.filter(item => item.collection).map(item => item.name); #>
+<# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
+<# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
     Component,
@@ -12,6 +13,7 @@ import {
     NgZone,
     Input,
     Output<#? it.isEditor #>,
+    ContentChild,
     Directive,
     forwardRef,
     HostListener<#?#><#? collectionProperties.length #>,
@@ -22,24 +24,42 @@ import {
 
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
+import { DxValidatorComponent } from './validator';
+
 import {
     ControlValueAccessor,
     NG_VALUE_ACCESSOR
 } from '@angular/forms';<#?#>
 
-import { DxComponent } from '../core/dx.component';
+import { <#= baseClass #> } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
+
+let providers = [];
+providers.push(DxTemplateHost);
+<#? collectionProperties.length #>providers.push(IterableDifferHelper);<#?#>
 
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
-    providers: [DxTemplateHost<#? collectionProperties.length #>, IterableDifferHelper<#?#>]
+    providers: providers
 })
-export class <#= it.className #>Component extends DxComponent<#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
+export class <#= it.className #>Component extends <#= baseClass #><#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     instance: <#= it.className #>;
 
-    <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
+<#? it.isEditor #>
+    @ContentChild(DxValidatorComponent)
+    validator: DxValidatorComponent;<#?#>
+    <#~ it.properties :prop:i #>@Input()
+    get <#= prop.name #>(): any {
+        return this._getOption('<#= prop.name #>');
+    }
+
+    set <#= prop.name #>(value: any) {
+        this._setOption('<#= prop.name #>', value);
+    }<#? i < it.properties.length-1 #>
+
     <#?#><#~#>
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
@@ -67,12 +87,14 @@ export class <#= it.className #>Component extends DxComponent<#? collectionPrope
     }
 
     protected _createInstance(element, options) {
-        return new <#= it.className #>(element, options);
+        <#? it.isEditor #>let widget = new <#= it.className #>(element, options);
+        if (this.validator) {
+            this.validator.createInstance(element);
+        }
+        return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
     }
 <#? collectionProperties.length #>
-    ngOnChanges(changes: SimpleChanges) {
-        super.ngOnChanges(changes);
-<#~ collectionProperties :prop:i #>
+    ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
         this._idh.setup('<#= prop #>', changes);<#~#>
     }
 
