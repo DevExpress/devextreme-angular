@@ -30,23 +30,28 @@ export default class DoTGenerator {
         return doT.template(templateString);
     }
     generate(config) {
-        let template = this.createTemplate(config.templateFilePath),
-            files;
+        this.generateTemplate(config.templateFilePath, config.metadataFolderPath, config.outputFolderPath);
+        this.generateTemplate(config.nestedTemplateFilePath, config.nestedMetadataFolderPath, config.nestedOutputFolderPath);
+    }
 
-        mkdirp.sync(config.outputFolderPath);
+    private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string) {
+        let template = this.createTemplate(templateFilePath)
+        mkdirp.sync(outputFolderPath);
 
-        logger('List directory: ' + config.metadataFolderPath);
-        files = fs.readdirSync(config.metadataFolderPath);
-        files.forEach(fileName => {
-            let filePath = path.join(config.metadataFolderPath, fileName);
-            logger('Read data from ' + filePath);
-            let data = fs.readFileSync(filePath, this._encoding);
-            logger('Apply template');
-            let result = template(JSON.parse(data));
-            let resultFileName = path.parse(filePath).name + '.ts';
-            let resultFilePath = path.join(config.outputFolderPath, resultFileName);
-            logger('Write result to ' + resultFilePath);
-            fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
-        });
+        logger('List directory: ' + metadataFolderPath);
+        fs.readdirSync(metadataFolderPath)
+            .filter(fileName => fs.lstatSync(path.join(metadataFolderPath, fileName)).isFile())
+            .forEach(fileName => {
+                let filePath = path.join(metadataFolderPath, fileName);
+
+                logger('Read data from ' + filePath);
+                let data = fs.readFileSync(filePath, this._encoding);
+                logger('Apply template');
+                let result = template(JSON.parse(data));
+                let resultFileName = path.parse(filePath).name + '.ts';
+                let resultFilePath = path.join(outputFolderPath, resultFileName);
+                logger('Write result to ' + resultFilePath);
+                fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
+            });
     }
 }

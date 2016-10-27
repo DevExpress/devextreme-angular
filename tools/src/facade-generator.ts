@@ -15,14 +15,16 @@ export default class FacadeGenerator {
             facadeConfig.sourceDirectories.forEach(directoryPath => {
                 logger('List directory: ' + directoryPath);
                 let files = fs.readdirSync(directoryPath);
-                files.forEach(fileName => {
-                    let filePath = path.join(directoryPath, fileName),
-                        relativePath = path.relative(path.dirname(facadeFilePath), filePath),
-                        parsedPath = path.parse(relativePath),
-                        modulePath = path.join(parsedPath.dir, parsedPath.name);
+                files
+                    .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile())
+                    .forEach(fileName => {
+                        let filePath = path.join(directoryPath, fileName),
+                            relativePath = path.relative(path.dirname(facadeFilePath), filePath),
+                            parsedPath = path.parse(relativePath),
+                            modulePath = path.join(parsedPath.dir, parsedPath.name);
 
-                    resultContent += 'export * from \'./' + modulePath.replace(/\\/g, '/') + '\'\n';
-                });
+                        resultContent += 'export * from \'./' + modulePath.replace(/\\/g, '/') + '\'\n';
+                    });
             });
 
             logger('Write result to ' + facadeFilePath);

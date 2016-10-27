@@ -7,13 +7,17 @@ module.exports = {
         metadataGenerator: {
             importFrom: './tools/dist/metadata-generator',
             sourceMetadataFilePath: './metadata/StrongMetaData.json',
-            outputFolderPath: './metadata/generated'
+            outputFolderPath: './metadata/generated',
+            nestedOutputFolderPath: './metadata/generated/nested'
         },
         componentGenerator: {
             importFrom: './tools/dist/dot-generator',
             templateFilePath: './templates/component.tst',
+            nestedTemplateFilePath: './templates/nested-component.tst',
             metadataFolderPath: './metadata/generated/',
-            outputFolderPath: './src/ui/'
+            nestedMetadataFolderPath: './metadata/generated/nested',
+            outputFolderPath: './src/ui/',
+            nestedOutputFolderPath: './src/ui/nested'
         },
         facadeGenerator: {
             importFrom: './tools/dist/facade-generator',

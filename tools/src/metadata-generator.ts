@@ -5,6 +5,11 @@ import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
 import logger from './logger';
+let inflector = require('inflector-js');
+
+function trimDx(value: string) {
+    return value.substr('dx-'.length);
+}
 
 export interface IObjectStore {
     read(name: string): Object;
@@ -33,14 +38,15 @@ export default class DXComponentMetadataGenerator {
         }
     }
     generate(config) {
-        let inflector = require('inflector-js'),
-            metadata = this._store.read(config.sourceMetadataFilePath),
+        let metadata = this._store.read(config.sourceMetadataFilePath),
             widgetsMetadata = metadata['Widgets'];
 
         mkdirp.sync(config.outputFolderPath);
+        mkdirp.sync(config.nestedOutputFolderPath);
 
         for (let widgetName in widgetsMetadata) {
-            let widget = widgetsMetadata[widgetName];
+            let widget = widgetsMetadata[widgetName],
+                nestedComponents = [];
 
             if (!widget.Module) {
                 logger('Skipping metadata for ' + widgetName);
@@ -50,8 +56,9 @@ export default class DXComponentMetadataGenerator {
             logger('Generate metadata for ' + widgetName);
 
             let isTranscludedContent = widget['IsTranscludedContent'],
+                className = inflector.camelize(widgetName),
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
-                outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
+                outputFilePath = path.join(config.outputFolderPath, trimDx(dasherizedWidgetName) + '.json'),
                 events = [],
                 changeEvents = [],
                 properties = [],
@@ -68,7 +75,7 @@ export default class DXComponentMetadataGenerator {
                         subscribe: eventName
                     });
                 } else {
-                    let property = {
+                    let property: any = {
                         name: optionName,
                         type: 'any',
                         collection: !!option.IsCollection
@@ -87,24 +94,71 @@ export default class DXComponentMetadataGenerator {
                     if (optionName === 'value') {
                         isEditor = true;
                     }
+
+                    if (widgetName === 'dxTreeMap' && option.Options && !option.IsCollection) {
+                        let components = this.generateComplexOption(option, config, className, optionName);
+                        nestedComponents = nestedComponents.concat(...components);
+                    }
+
                 }
             }
 
             let allEvents = events.concat(changeEvents);
 
             let widgetMetadata = {
-                className: inflector.classify(widgetName),
+                className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
                 selector: dasherizedWidgetName,
                 events: allEvents,
                 properties: properties,
                 isEditor: isEditor,
-                module: 'devextreme/' + widget.Module
+                module: 'devextreme/' + widget.Module,
+                nestedComponents: nestedComponents
             };
 
             logger('Write metadata to file ' + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
         }
+    }
+
+    generateComplexOption(option, config, hostClassName, baseOptionPath) {
+        if (!option.Options || option.IsCollection) {
+            return;
+        }
+
+        let underscoreHostClassName = inflector.underscore(hostClassName);
+        let underscoreSelector = underscoreHostClassName + '_' + inflector.underscore(baseOptionPath).split('.').join('_');
+        let selector = inflector.dasherize(underscoreSelector);
+
+        let complexOptionMetadata: any = {
+            className: inflector.camelize(underscoreSelector),
+            selector:  selector,
+            hostClassName: hostClassName,
+            hostModulePath: trimDx(inflector.dasherize(underscoreHostClassName)),
+            baseOptionPath: baseOptionPath,
+            props: []
+        };
+
+        let nestedComponents = [{
+            className: complexOptionMetadata.className,
+            path: trimDx(selector)
+        }];
+
+        for (let optName in option.Options) {
+            let property: any = {
+                name: optName
+            };
+
+            let components = this.generateComplexOption(option.Options[optName], config, hostClassName, baseOptionPath + '.' + optName);
+            nestedComponents = nestedComponents.concat(...components);
+
+            complexOptionMetadata.props.push(property);
+        }
+
+        let outputFilePath = path.join(config.nestedOutputFolderPath, trimDx(selector) + '.json');
+        this._store.write(outputFilePath, complexOptionMetadata);
+
+        return nestedComponents;
     }
 }

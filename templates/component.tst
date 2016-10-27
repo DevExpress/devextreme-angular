@@ -108,13 +108,17 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 }
 <#?#>
 
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
+<#~#>
 @NgModule({
   declarations: [
-    <#= it.className #>Component<#? it.isEditor #>,
+    <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
+    <#= component.className #>Component<#~#><#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
   exports: [
-    <#= it.className #>Component<#? it.isEditor #>,
+    <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
+    <#= component.className #>Component<#~#><#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
 })

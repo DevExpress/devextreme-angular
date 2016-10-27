@@ -1,6 +1,7 @@
 /// <reference path="../../typings/globals/node/index.d.ts" />
 
 import fs = require('fs');
+import path = require('path');
 let inflector = require('inflector-js');
 import logger from './logger';
 
@@ -9,7 +10,7 @@ export default class FacadeGenerator {
 
     prepareModuleName(fileName: string) {
         fileName = fileName.replace(/-/g, '_');
-        fileName = inflector.classify(fileName);
+        fileName = inflector.camelize(fileName);
         fileName = 'Dx' + fileName + 'Module';
 
         return fileName;
@@ -26,13 +27,15 @@ export default class FacadeGenerator {
                 logger('List directory: ' + directoryPath);
                 let files = fs.readdirSync(directoryPath);
 
-                files.forEach(fileName => {
-                    fileName = fileName.substring(0, fileName.length - 3);
-                    let moduleName = this.prepareModuleName(fileName);
+                files
+                    .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile())
+                    .forEach(fileName => {
+                        fileName = fileName.substring(0, fileName.length - 3);
+                        let moduleName = this.prepareModuleName(fileName);
 
-                    moduleNamesString += '\n    ' + moduleName + ',';
-                    importModuleString += `import { ` + moduleName + ` } from './` + fileName + `';\n`;
-                });
+                        moduleNamesString += '\n    ' + moduleName + ',';
+                        importModuleString += `import { ` + moduleName + ` } from './` + fileName + `';\n`;
+                    });
             });
 
             Object.keys(facadeConfig.additionalImports).forEach(importName => {
