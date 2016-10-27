@@ -51,8 +51,15 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
 <#? it.isEditor #>
     @ContentChild(DxValidatorComponent)
     validator: DxValidatorComponent;<#?#>
+    <#~ it.properties :prop:i #>@Input()
+    get <#= prop.name #>(): any {
+        return this._getOption('<#= prop.name #>');
+    }
 
-    <#~ it.properties :prop:i #>@Input() <#= prop.name #>: any;<#? i < it.properties.length-1 #>
+    set <#= prop.name #>(value: any) {
+        this._setOption('<#= prop.name #>', value);
+    }<#? i < it.properties.length-1 #>
+
     <#?#><#~#>
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
@@ -87,9 +94,7 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
         return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
     }
 <#? collectionProperties.length #>
-    ngOnChanges(changes: SimpleChanges) {
-        super.ngOnChanges(changes);
-<#~ collectionProperties :prop:i #>
+    ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
         this._idh.setup('<#= prop #>', changes);<#~#>
     }
 

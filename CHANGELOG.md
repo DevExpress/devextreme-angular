@@ -3,6 +3,7 @@
 ### Bug Fixes
 
 - Fix the 'dx-validator' component ([#30](https://github.com/DevExpress/devextreme-angular2/issues/30))
+- Fix the component property change propagation to the corresponding widget option ([#6](https://github.com/DevExpress/devextreme-angular2/issues/6))
 
 ## 16.2.1-alpha.1 (2016-10-20)
 
