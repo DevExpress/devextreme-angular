@@ -1,3 +1,9 @@
+## Next Release
+
+### Bug Fixes
+
+- Fix the component property change propagation to the corresponding widget option ([#6](https://github.com/DevExpress/devextreme-angular2/issues/6))
+
 ## 16.2.1-alpha.1 (2016-10-20)
 
 ### Features
