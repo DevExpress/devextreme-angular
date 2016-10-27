@@ -25,7 +25,6 @@ import{
     OwnerService
 } from './owner.service';
 import{
-    DxButtonComponent,
     DxPopoverComponent
 } from '../../dist';
 
@@ -94,7 +93,6 @@ declare let $: any;
     ]
 })
 export class AppComponent implements OnInit {
-    @ViewChild('button') button: DxButtonComponent;
     @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
     text = 'Initial text';
     email: string;
@@ -155,8 +153,8 @@ export class AppComponent implements OnInit {
         ];
         this.tabContent = this.tabs[0].content;
     }
-    changeText() {
-        this.button.text = 'Press me again!';
+    helloWorld() {
+        alert('Hello world');
     }
     buy(model) {
         alert(model + ' has been added to order');
