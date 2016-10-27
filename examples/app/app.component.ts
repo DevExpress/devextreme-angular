@@ -83,6 +83,9 @@ declare let $: any;
         .tabpanel-item  p {
             font-size: 16px;
         }
+        .form-group {
+            margin-bottom: 10px;
+        }
     `],
     templateUrl: 'app/app.component.html',
     providers: [
@@ -99,6 +102,15 @@ export class AppComponent implements OnInit {
     emailControl: AbstractControl;
     password: string;
     passwordControl: AbstractControl;
+    dxValidationRules = {
+        email: [
+            { type: 'required', message: 'Email is required.' },
+            { type: 'email', message: 'Email is invalid.' }
+        ],
+        password: [
+            { type: 'required', message: 'Email is required.' }
+        ]
+    };
     form: FormGroup;
     boolValue: boolean;
     numberValue: number;
@@ -166,6 +178,14 @@ export class AppComponent implements OnInit {
         this.form.updateValueAndValidity();
         console.log('submitted');
         return false;
+    }
+    validate(params) {
+        let result = params.validationGroup.validate();
+        if (result.isValid) {
+            alert('Form data is valid');
+        } else {
+            alert('Form data is invalid');
+        }
     }
     ngOnInit() {
         this.form = new FormGroup({

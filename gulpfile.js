@@ -156,7 +156,13 @@ gulp.task('watch.examples', function() {
 
 //------------Testing------------
 
-gulp.task('build.tests', ['build.components'], function() {
+gulp.task('clean.tests', function () {
+    var outputFolderPath = buildConfig.components.testsPath;
+
+    return del([outputFolderPath]);
+});
+
+gulp.task('build.tests', ['build.components', 'clean.tests'], function() {
     var config = buildConfig.components,
         testConfig = buildConfig.tests;
 

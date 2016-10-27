@@ -250,11 +250,63 @@ export class AppComponent implements OnInit {
 }
 ```
 
+### Using DevExtreme validation features 
+
+You can use the [built-in validators](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
+validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
+
+
+```html
+<dx-validation-group>
+
+    <dx-text-box [(value)]="email">
+        <dx-validator [validationRules]="validationRules.email"></dx-validator>
+    </dx-text-box>
+    <dx-text-box [(value)]="password" mode="password">
+        <dx-validator [validationRules]="validationRules.password"></dx-validator>
+    </dx-text-box>
+
+    <dx-validation-summary></dx-validation-summary>
+
+    <dx-button (onClick)="validate($event)" text="Submit"></dx-button>
+
+</dx-validation-group>
+```
+
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    email: string;
+    password: string;
+    validationRules = {
+        email: [
+            { type: 'required', message: 'Email is required.' },
+            { type: 'email', message: 'Email is invalid.' }
+        ],
+        password: [
+            { type: 'required', message: 'Email is required.' }
+        ]
+    };
+    validate(params) {
+        let result = params.validationGroup.validate();
+        if (result.isValid) {
+            // form data is valid
+            // params.validationGroup.reset();
+        }
+    }
+}
+```
+
+
 ### Accessing a DevExtreme Widget Instance
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
 'instance' property. In the example below, the
-[refresh](http://jsserver:8080/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/?version=16_1#refresh)
+[refresh](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
 
 
