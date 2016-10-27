@@ -3,6 +3,7 @@
 /* tslint:disable:directive-selector-type */
 <#?#>
 <# var collectionProperties = it.properties.filter(item => item.collection).map(item => item.name); #>
+<# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
     Component,
@@ -30,7 +31,7 @@ import {
     NG_VALUE_ACCESSOR
 } from '@angular/forms';<#?#>
 
-import { <#= it.baseClass #> } from '../core/dx.component';
+import { <#= baseClass #> } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
 
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
@@ -44,7 +45,7 @@ providers.push(DxTemplateHost);
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
     providers: providers
 })
-export class <#= it.className #>Component extends <#= it.baseClass #><#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
+export class <#= it.className #>Component extends <#= baseClass #><#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     instance: <#= it.className #>;
 
 <#? it.isEditor #>

@@ -130,11 +130,6 @@ describe("metadata-generator", function() {
             expect(metas.dxExtensionWidget.isExtension).toBe(true);
         });
 
-        it("should generate proper baseClass", function() {
-            expect(metas.dxTestWidget.baseClass).toBe('DxComponent');
-            expect(metas.dxExtensionWidget.baseClass).toBe('DxComponentExtension');
-        });
-
     });
 
 });

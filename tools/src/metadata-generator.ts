@@ -98,7 +98,6 @@ export default class DXComponentMetadataGenerator {
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
                 isExtension: isExtension,
-                baseClass: isExtension ? 'DxComponentExtension' : 'DxComponent',
                 selector: dasherizedWidgetName,
                 events: allEvents,
                 properties: properties,
