@@ -99,7 +99,7 @@ export default class DXComponentMetadataGenerator {
                         isEditor = true;
                     }
 
-                    if (widgetName === 'dxTreeMap' && option.Options && !option.IsCollection) {
+                    if (option.Options && !option.IsCollection && widgetName !== 'dxPivotGridFieldChooser') {
                         let components = this.generateComplexOption(option, config, className, optionName);
                         nestedComponents = nestedComponents.concat(...components);
                     }
@@ -142,7 +142,7 @@ export default class DXComponentMetadataGenerator {
             hostClassName: hostClassName,
             hostModulePath: trimDx(inflector.dasherize(underscoreHostClassName)),
             baseOptionPath: baseOptionPath,
-            props: []
+            properties: []
         };
 
         let nestedComponents = [{
@@ -158,7 +158,7 @@ export default class DXComponentMetadataGenerator {
             let components = this.generateComplexOption(option.Options[optName], config, hostClassName, baseOptionPath + '.' + optName);
             nestedComponents = nestedComponents.concat(...components);
 
-            complexOptionMetadata.props.push(property);
+            complexOptionMetadata.properties.push(property);
         }
 
         let outputFilePath = path.join(config.nestedOutputFolderPath, trimDx(selector) + '.json');
