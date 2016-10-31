@@ -34,6 +34,10 @@ export class DxTemplateDirective {
         if (renderData.container) {
             renderData.container.append(childView.rootNodes);
         }
+        // =========== WORKAROUND =============
+        // https://github.com/angular/angular/issues/12243
+        childView['detectChanges']();
+        // =========== /WORKAROUND =============
         return $(childView.rootNodes);
     }
     templateAsFunction(model, itemIndex, container) {
