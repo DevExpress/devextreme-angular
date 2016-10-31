@@ -35,7 +35,7 @@ export default class DoTGenerator {
     }
 
     private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string) {
-        let template = this.createTemplate(templateFilePath)
+        let template = this.createTemplate(templateFilePath);
         mkdirp.sync(outputFolderPath);
 
         logger('List directory: ' + metadataFolderPath);

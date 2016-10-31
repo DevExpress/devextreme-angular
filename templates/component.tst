@@ -33,11 +33,13 @@ import {
 
 import { <#= baseClass #> } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+import { NestedOptionHost } from '../core/nested-option';
 
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
 let providers = [];
 providers.push(DxTemplateHost);
+providers.push(NestedOptionHost);
 <#? collectionProperties.length #>providers.push(IterableDifferHelper);<#?#>
 
 @Component({
@@ -66,7 +68,7 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     <#?#><#~#>
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
-            private _idh: IterableDifferHelper<#?#>) {
+            private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost);
         this.widgetClassName = '<#= it.widgetName #>';
@@ -84,6 +86,13 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
         <#?#><#~#><#? collectionProperties.length #>
 
         this._idh.setHost(this);<#?#>
+        this._noh.setHost(this);
+    }
+
+    protected _createWidget(element: any) {
+        super._createWidget(element);
+
+        this._noh.setupChanges();
     }
 
     protected _createInstance(element, options) {
@@ -130,17 +139,19 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 }
 <#?#>
 
-<#~ it.nestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
 <#~#>
 @NgModule({
+  imports: [<#~ it.nestedComponents :component:i #>
+    <#= component.className #>Module,<#~#>
+  ],
   declarations: [
-    <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
-    <#= component.className #>Component<#~#><#? it.isEditor #>,
+    <#= it.className #>Component<#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
   exports: [
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
-    <#= component.className #>Component<#~#><#? it.isEditor #>,
+    <#= component.className #>Module<#~#><#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
 })

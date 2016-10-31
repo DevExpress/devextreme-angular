@@ -6,10 +6,11 @@ import {
 
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
+import { INestedOptionContainer } from './nested-option';
 
 const startupEvents = ['onInitialized', 'onContentReady'];
 
-export abstract class DxComponentBase {
+export abstract class DxComponentBase implements INestedOptionContainer {
     private _initialOptions: any;
     templates: DxTemplateDirective[];
     widgetClassName: string;

@@ -1,56 +1,54 @@
 import {
     Component,
     Input,
+    Output,
+    EventEmitter,
+    NgModule,
     Host,
-    Inject
+    SkipSelf
 } from '@angular/core';
 
-import { <#= it.hostClassName #>Component } from '../<#= it.hostModulePath #>';
+import { NestedOption, NestedOptionHost } from '../../core/nested-option';
 
 @Component({
     selector: '<#= it.selector #>',
-    template: ''
+    template: '',
+    providers: [NestedOptionHost]
 })
-export class <#= it.className #>Component {<#~ it.properties :prop:i #><# var propPath = it.baseOptionPath + '.' + prop.name; #>
+export class <#= it.className #>Component extends NestedOption {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
-        return this.getProperty('<#= prop.name #>');
+        return this._getOption('<#= prop.name #>');
     }
     set <#= prop.name #>(value: any) {
-        this.setProperty('<#= prop.name #>', value);
+        this._setOption('<#= prop.name #>', value);
     }
-
+    @Output() <#= prop.name #>Change = new EventEmitter<any>();
 <#~#>
-    private get instance() {
-        return this.host.instance;
+    get optionPath() {
+        return '<#= it.optionName #>';
     }
 
-    private get baseOptionPath() {
-        return '<#= it.baseOptionPath #>.';
+    get options() {
+        return [<#~ it.properties :prop:i #>
+            '<#= prop.name #>'<#? i < it.properties.length-1 #>,<#?#><#~#>
+        ];
     }
 
-    private get baseOption() {
-        return this.host.<#= it.baseOptionPath #>;
-    }
-    private set baseOption(value) {
-        this.host.<#= it.baseOptionPath #> = value;
-    }
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super();
 
-    private getProperty(name: string): any {
-        if (this.instance) {
-            return this.instance.option(this.baseOptionPath + name);
-        }
-        return this.baseOption[name];
-    }
-
-    private setProperty(name: string, value: any) {
-        if (this.instance) {
-            this.instance.option(this.baseOptionPath + name, value)
-        }
-        this.baseOption[name] = value;
-    }
-
-    constructor(@Host() @Inject(<#= it.hostClassName #>Component) private host: <#= it.hostClassName #>Component) {
-        this.baseOption = this.baseOption || {};
+        this._pnoh.setNestedOption(this);
+        this._noh.setHost(this, this._baseOptionPath);
     }
 }
+
+@NgModule({
+  declarations: [
+    <#= it.className #>Component
+  ],
+  exports: [
+    <#= it.className #>Component
+  ],
+})
+export class <#= it.className #>Module { }

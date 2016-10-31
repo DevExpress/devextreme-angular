@@ -11,6 +11,10 @@ function trimDx(value: string) {
     return value.substr('dx-'.length);
 }
 
+function trimDxo(value: string) {
+    return value.substr('dxo-'.length);
+}
+
 export interface IObjectStore {
     read(name: string): Object;
     write(name: string, data: Object): void;
@@ -39,7 +43,8 @@ export default class DXComponentMetadataGenerator {
     }
     generate(config) {
         let metadata = this._store.read(config.sourceMetadataFilePath),
-            widgetsMetadata = metadata['Widgets'];
+            widgetsMetadata = metadata['Widgets'],
+            allNestedComponents = [];
 
         mkdirp.sync(config.outputFolderPath);
         mkdirp.sync(config.nestedOutputFolderPath);
@@ -109,6 +114,20 @@ export default class DXComponentMetadataGenerator {
 
             let allEvents = events.concat(changeEvents);
 
+            let widgetNestedComponents = nestedComponents
+                .reduce((result, component) => {
+                    if (result.filter(c => c.className === component.className).length === 0) {
+                        result.push({
+                            path: component.path,
+                            className: component.className
+                        });
+                    }
+
+                    return result;
+                }, []);
+
+            allNestedComponents = allNestedComponents.concat(...nestedComponents);
+
             let widgetMetadata = {
                 className: className,
                 widgetName: widgetName,
@@ -119,51 +138,72 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
-                nestedComponents: nestedComponents
+                nestedComponents: widgetNestedComponents
             };
 
             logger('Write metadata to file ' + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
         }
+
+        this.generateNestedOptions(config, allNestedComponents);
     }
 
-    generateComplexOption(option, config, hostClassName, baseOptionPath) {
-        if (!option.Options || option.IsCollection) {
+    generateComplexOption(option, config, hostClassName, optionName) {
+        if (option.IsCollection || !option.Options || !Object.keys(option.Options).length) {
             return;
         }
 
-        let underscoreHostClassName = inflector.underscore(hostClassName);
-        let underscoreSelector = underscoreHostClassName + '_' + inflector.underscore(baseOptionPath).split('.').join('_');
+        let underscoreSelector = 'dxo' + '_' + inflector.underscore(optionName).split('.').join('_');
         let selector = inflector.dasherize(underscoreSelector);
 
         let complexOptionMetadata: any = {
             className: inflector.camelize(underscoreSelector),
             selector:  selector,
-            hostClassName: hostClassName,
-            hostModulePath: trimDx(inflector.dasherize(underscoreHostClassName)),
-            baseOptionPath: baseOptionPath,
-            properties: []
+            optionName: optionName,
+            properties: [],
+            path: trimDxo(selector)
         };
 
-        let nestedComponents = [{
-            className: complexOptionMetadata.className,
-            path: trimDx(selector)
-        }];
+        let nestedComponents = [complexOptionMetadata];
 
         for (let optName in option.Options) {
             let property: any = {
                 name: optName
             };
 
-            let components = this.generateComplexOption(option.Options[optName], config, hostClassName, baseOptionPath + '.' + optName);
+            let components = this.generateComplexOption(option.Options[optName], config, hostClassName, optName);
             nestedComponents = nestedComponents.concat(...components);
 
             complexOptionMetadata.properties.push(property);
         }
 
-        let outputFilePath = path.join(config.nestedOutputFolderPath, trimDx(selector) + '.json');
-        this._store.write(outputFilePath, complexOptionMetadata);
-
         return nestedComponents;
+    }
+
+    generateNestedOptions(config, nestedComponentsMetadata) {
+        nestedComponentsMetadata.
+            reduce((result, component) => {
+                let existingComponent = result.filter(c => c.className === component.className)[0];
+
+                if (!existingComponent) {
+                    result.push(component);
+                } else {
+                    existingComponent.properties = existingComponent.properties.concat(...component.properties);
+
+                    existingComponent.properties = existingComponent.properties.reduce((result1, property) => {
+                        if (result1.filter(p => p.name === property.name).length === 0) {
+                            result1.push(property);
+                        }
+
+                        return result1;
+                    }, []);
+                }
+
+                return result;
+            }, [])
+            .forEach(componet => {
+                let outputFilePath = path.join(config.nestedOutputFolderPath, componet.path + '.json');
+                this._store.write(outputFilePath, componet);
+            });
     }
 }

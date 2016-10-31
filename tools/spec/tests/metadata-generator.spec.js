@@ -58,6 +58,16 @@ describe("metadata-generator", function() {
                         }
                     },
                     Module: 'test_widget'
+                },
+                dxAnotherComplexWidget: {
+                    Options: {
+                        property: {
+                            Options: {
+                                anotherNested: {}
+                            }
+                        }
+                    },
+                    Module: 'test_widget'
                 }
             }
         };
@@ -88,24 +98,25 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(7);
+            expect(store.write.calls.count()).toBe(8);
 
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
-            expect(store.write.calls.argsFor(4)[0]).toBe(path.join("output-path", "nested", "complex-widget-property-nested.json"));
-            expect(store.write.calls.argsFor(5)[0]).toBe(path.join("output-path", "nested", "complex-widget-property.json"));
+            expect(store.write.calls.argsFor(6)[0]).toBe(path.join("output-path", "nested", "property.json"));
+            expect(store.write.calls.argsFor(7)[0]).toBe(path.join("output-path", "nested", "nested.json"));
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(7);
+            expect(Object.keys(metas).length).toBe(8);
 
             expect(metas.DxTestWidget).not.toBe(undefined);
             expect(metas.DxCollectionWidget).not.toBe(undefined);
             expect(metas.DxEditorWidget).not.toBe(undefined);
             expect(metas.DxExtensionWidget).not.toBe(undefined);
             expect(metas.DxComplexWidget).not.toBe(undefined);
-            expect(metas.DxComplexWidgetProperty).not.toBe(undefined);
-            expect(metas.DxComplexWidgetPropertyNested).not.toBe(undefined);
+            expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
+            expect(metas.DxoProperty).not.toBe(undefined);
+            expect(metas.DxoNested).not.toBe(undefined);
         });
 
         it("should generate proper component class name", function() {
@@ -156,18 +167,20 @@ describe("metadata-generator", function() {
             expect(metas.DxExtensionWidget.isExtension).toBe(true);
         });
 
-        it("should generate nested components", function() {
-            expect(metas.DxComplexWidgetProperty.hostClassName).toBe('DxComplexWidget');
-            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxComplexWidgetProperty');
+        it("should generate nested components with merged properties", function() {
+            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
+            expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
 
-            expect(metas.DxComplexWidgetProperty.properties.map(p => p.name)).toEqual(['nested']);
+            expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nested', 'anotherNested']);
+            expect(metas.DxoProperty.optionName).toEqual('property');
         });
 
         it("should generate deep nested components", function() {
-            expect(metas.DxComplexWidgetPropertyNested.hostClassName).toBe('DxComplexWidget');
-            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxComplexWidgetPropertyNested');
+            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoNested');
+            expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoNested');
 
-            expect(metas.DxComplexWidgetPropertyNested.properties.map(p => p.name)).toEqual(['deep']);
+            expect(metas.DxoNested.properties.map(p => p.name)).toEqual(['deep']);
+            expect(metas.DxoNested.optionName).toEqual('nested');
         });
 
     });
