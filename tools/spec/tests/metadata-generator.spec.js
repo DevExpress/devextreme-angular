@@ -68,6 +68,24 @@ describe("metadata-generator", function() {
                         }
                     },
                     Module: 'test_widget'
+                },
+                dxCollectionWidgetWithTemplatedItems: {
+                    Options: {
+                        items: {
+                            IsCollection: true
+                        },
+                        itemTemplate: {
+                        }
+                    },
+                    Module: 'test_widget'
+                },
+                dxCollectionWidgetWithoutTemplatedItems: {
+                    Options: {
+                        items: {
+                            IsCollection: true
+                        }
+                    },
+                    Module: 'test_widget'
                 }
             }
         };
@@ -98,16 +116,16 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(8);
+            expect(store.write.calls.count()).toBe(10);
 
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
-            expect(store.write.calls.argsFor(6)[0]).toBe(path.join("output-path", "nested", "property.json"));
-            expect(store.write.calls.argsFor(7)[0]).toBe(path.join("output-path", "nested", "nested.json"));
+            expect(store.write.calls.argsFor(8)[0]).toBe(path.join("output-path", "nested", "property.json"));
+            expect(store.write.calls.argsFor(9)[0]).toBe(path.join("output-path", "nested", "nested.json"));
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(8);
+            expect(Object.keys(metas).length).toBe(10);
 
             expect(metas.DxTestWidget).not.toBe(undefined);
             expect(metas.DxCollectionWidget).not.toBe(undefined);
@@ -181,6 +199,11 @@ describe("metadata-generator", function() {
 
             expect(metas.DxoNested.properties.map(p => p.name)).toEqual(['deep']);
             expect(metas.DxoNested.optionName).toEqual('nested');
+        });
+
+        it("should detect templated item collection properties", function() {
+            expect(metas.DxCollectionWidgetWithTemplatedItems.items.isTemplatedCollection).toBe(true);
+            expect(metas.DxCollectionWidgetWithoutTemplatedItems.items.isTemplatedCollection).toBe(false);
         });
 
     });

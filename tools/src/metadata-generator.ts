@@ -68,7 +68,8 @@ export default class DXComponentMetadataGenerator {
                 events = [],
                 changeEvents = [],
                 properties = [],
-                isEditor = false;
+                isEditor = false,
+                hasItemTemplateOption = Object.keys(widget.Options).indexOf('itemTemplate') > -1;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
@@ -88,6 +89,10 @@ export default class DXComponentMetadataGenerator {
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
                         property.isCollection = true;
+                    }
+
+                    if (optionName === 'items' && hasItemTemplateOption) {
+                        property.isTemplatedCollection = true;
                     }
 
                     if (option.PrimitiveTypes) {
@@ -170,7 +175,6 @@ export default class DXComponentMetadataGenerator {
             let property: any = {
                 name: optName
             };
-
             let components = this.generateComplexOption(option.Options[optName], config, hostClassName, optName);
             nestedComponents = nestedComponents.concat(...components);
 

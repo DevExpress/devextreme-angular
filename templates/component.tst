@@ -3,6 +3,7 @@
 /* tslint:disable:directive-selector-type */
 <#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
+<# var templatedCollectionProperties = it.properties.filter(item => item.isTemplatedCollection).map(item => item.name); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
@@ -19,8 +20,13 @@ import {
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
     DoCheck,
-    SimpleChanges<#?#>
+    SimpleChanges<#?#><#? templatedCollectionProperties.length #>,
+    ContentChildren,
+    QueryList<#?#>
 } from '@angular/core';
+
+<#? templatedCollectionProperties.length #>
+import { DxItemModule, DxItemComponent } from '../core/item';<#?#>
 
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
@@ -67,6 +73,19 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
+<#? templatedCollectionProperties.length #>
+<#~ templatedCollectionProperties :prop:i #>
+    @ContentChildren(DxItemComponent)
+    get <#= prop #>Children(): QueryList<DxItemComponent> {
+        return this._getOption('<#= prop #>');
+    }
+    set <#= prop #>Children(value) {
+        if (value && value.length) {
+            this._setOption('<#= prop #>', value.toArray());
+        }
+    }
+<#~#>
+<#?#>
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
@@ -143,7 +162,8 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 <#~#>
 @NgModule({
   imports: [<#~ it.nestedComponents :component:i #>
-    <#= component.className #>Module,<#~#>
+    <#= component.className #>Module,<#~#><#? templatedCollectionProperties.length #>
+    DxItemModule<#?#>
   ],
   declarations: [
     <#= it.className #>Component<#? it.isEditor #>,
