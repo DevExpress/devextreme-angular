@@ -106,10 +106,10 @@ export class DxoTestOptionComponent extends NestedOption {
     }
     @Output() testNestedOptionChange = new EventEmitter<any>();
 
-    get optionPath() {
+    protected get _optionPath() {
         return 'testOption';
     }
-    get options() {
+    protected get _options() {
         return ['testNestedOption'];
     }
 
