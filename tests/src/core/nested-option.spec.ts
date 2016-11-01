@@ -195,4 +195,58 @@ describe('DevExtreme Angular 2 widget', () => {
         expect(testComponent.testOption).toEqual('test');
     }));
 
+    it('option binding should not be fired on another option path', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        instance.option().testOption.testNestedOption = 'test';
+        instance.option('ghostOption', 'test');
+
+        expect(testComponent.testOption).not.toEqual('test');
+    }));
+
+    it('option binding should not be fired on another nested option path', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        instance.option().testOption.testNestedOption = 'test';
+        instance.option('testOption.ghostOption', 'value');
+
+        expect(testComponent.testOption).not.toEqual('test');
+    }));
+
+    it('option binding should not be fired on another nested option path', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        instance.option().testOption.testNestedOption = 'test';
+        instance.option('testOption.ghostOption', 'value');
+
+        expect(testComponent.testOption).not.toEqual('test');
+    }));
+
   });

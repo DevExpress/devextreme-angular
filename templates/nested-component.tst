@@ -25,11 +25,11 @@ export class <#= it.className #>Component extends NestedOption {<#~ it.propertie
     }
     @Output() <#= prop.name #>Change = new EventEmitter<any>();
 <#~#>
-    get optionPath() {
+    get _optionPath() {
         return '<#= it.optionName #>';
     }
 
-    get options() {
+    get _options() {
         return [<#~ it.properties :prop:i #>
             '<#= prop.name #>'<#? i < it.properties.length-1 #>,<#?#><#~#>
         ];

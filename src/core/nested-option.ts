@@ -3,20 +3,28 @@ export interface INestedOptionContainer {
 }
 
 export abstract class NestedOption implements INestedOptionContainer {
-
     protected _host: INestedOptionContainer;
     protected _baseOptionPath: string;
     setHost(host: INestedOptionContainer, optionPath: string) {
         this._host = host;
 
-        this._host[this.optionPath] = {};
-        this._baseOptionPath = optionPath + this.optionPath + '.';
+        this._host[this._optionPath] = {};
+        this._baseOptionPath = optionPath + this._optionPath + '.';
     }
 
     setupChanges() {
         this.instance.on('optionChanged', e => {
-            if (e.fullName.startsWith(this._baseOptionPath.split('.')[0])) {
-                for (let option of this.options) {
+            let fullName = e.fullName;
+            if (fullName.startsWith(this._baseOptionPath)) {
+                let fullNameParts = fullName.split('.');
+                if (fullNameParts.length === this._baseOptionPath.split('.').length) {
+                    let lastPart = fullNameParts[fullNameParts.length - 1];
+                    if (this._options.indexOf(lastPart) >= 1) {
+                        this[lastPart + 'Change'].emit(this[lastPart]);
+                    }
+                }
+            } else if (fullName.startsWith(this._baseOptionPath.split('.')[0])) {
+                for (let option of this._options) {
                     this[option + 'Change'].emit(this[option]);
                 }
             }
@@ -27,11 +35,11 @@ export abstract class NestedOption implements INestedOptionContainer {
         return this._host.instance;
     }
 
-    abstract get optionPath(): string;
-    abstract get options(): string[];
+    protected abstract get _optionPath(): string;
+    protected abstract get _options(): string[];
 
     private get _initialOptions() {
-        return this._host[this.optionPath];
+        return this._host[this._optionPath];
     }
 
     protected _getOption(name: string): any {
