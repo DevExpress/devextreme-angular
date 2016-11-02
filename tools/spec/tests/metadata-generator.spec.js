@@ -57,12 +57,24 @@ describe("metadata-generator", function() {
                                 }
                             }
                         },
+                        collectionItem: {
+                            Options: {
+                                nested: {}
+                            }
+                        },
                         collectionItems: {
                             Options: {
                                 nested: {}
                             },
                             IsCollection: true,
                             SingularName: "collectionItem"
+                        },
+                        valueAxis: {
+                            Options: {
+                                nested: {}
+                            },
+                            IsCollection: true,
+                            SingularName: "valueAxis"
                         },
                         collectionItemsWithTemplate: {
                             Options: {
@@ -115,17 +127,18 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(10);
+            expect(store.write.calls.count()).toBe(12);
 
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
             expect(store.write.calls.argsFor(6)[0]).toBe(path.join("output-path", "nested", "property.json"));
             expect(store.write.calls.argsFor(7)[0]).toBe(path.join("output-path", "nested", "nested.json"));
-            expect(store.write.calls.argsFor(8)[0]).toBe(path.join("output-path", "nested", "collection-items.json"));
+            expect(store.write.calls.argsFor(8)[0]).toBe(path.join("output-path", "nested", "collection-item.json"));
+            expect(store.write.calls.argsFor(9)[0]).toBe(path.join("output-path", "nested", "collection-items.json"));
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(10);
+            expect(Object.keys(metas).length).toBe(12);
 
             expect(metas.DxTestWidget).not.toBe(undefined);
             expect(metas.DxCollectionWidget).not.toBe(undefined);
@@ -134,9 +147,11 @@ describe("metadata-generator", function() {
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
             expect(metas.DxoProperty).not.toBe(undefined);
-            expect(metas.DxoCollectionItems).not.toBe(undefined);
-            expect(metas.DxoCollectionItemsWithTemplate).not.toBe(undefined);
+            expect(metas.DxCollectionItem).not.toBe(undefined);
+            expect(metas.DxoCollectionItem).not.toBe(undefined);
+            expect(metas.DxCollectionItemWithTemplate).not.toBe(undefined);
             expect(metas.DxoNested).not.toBe(undefined);
+            expect(metas.DxValueAxis).not.toBe(undefined);
         });
 
         it("should generate proper component class name", function() {
@@ -204,18 +219,23 @@ describe("metadata-generator", function() {
         });
 
         it("should generate collection nested components", function() {
-            let collectionItems = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxoCollectionItems')[0];
-            expect(collectionItems).not.toBe(undefined);
-            expect(collectionItems.path).toBe('collection-items');
-            expect(collectionItems.propertyName).toBe('collectionItems');
-            expect(collectionItems.isCollection).toBe(true);
-            expect(collectionItems.hasTemplate).toBe(undefined);
+            let collectionItem = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxCollectionItem')[0];
+            expect(collectionItem).not.toBe(undefined);
+            expect(collectionItem.path).toBe('collection-items');
+            expect(collectionItem.propertyName).toBe('collectionItems');
+            expect(collectionItem.isCollection).toBe(true);
+            expect(collectionItem.hasTemplate).toBe(undefined);
+        });
+
+        it("should generate nested options where plural name equals singular", function() {
+            let collectionItem = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxValueAxis')[0];
+            expect(collectionItem.path).toBe('value-axis-collection');
         });
 
         it("should generate collection nested components with templates", function() {
-            let collectionItemsWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxoCollectionItemsWithTemplate')[0];
-            expect(collectionItemsWithTemplate).not.toBe(undefined);
-            expect(collectionItemsWithTemplate.hasTemplate).toBe(true);
+            let collectionItemWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxCollectionItemWithTemplate')[0];
+            expect(collectionItemWithTemplate).not.toBe(undefined);
+            expect(collectionItemWithTemplate.hasTemplate).toBe(true);
         });
 
     });

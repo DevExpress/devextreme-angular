@@ -92,8 +92,8 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items>Item 1</dxo-items>
-                        <dxo-items>Item 2</dxo-items>
+                        <dx-item>Item 1</dx-item>
+                        <dx-item>Item 2</dx-item>
                     </dx-list>
                 `
             }
@@ -113,8 +113,8 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items [disabled]="true">Item 1</dxo-items>
-                        <dxo-items>Item 2</dxo-items>
+                        <dx-item [disabled]="true">Item 1</dx-item>
+                        <dx-item>Item 2</dx-item>
                     </dx-list>
                 `
             }
@@ -133,8 +133,8 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items [disabled]="disabled">Item 1</dxo-items>
-                        <dxo-items>Item 2</dxo-items>
+                        <dx-item [disabled]="disabled">Item 1</dx-item>
+                        <dx-item>Item 2</dx-item>
                     </dx-list>
                 `
             }
@@ -158,7 +158,7 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items *ngFor="let item of items">{{item}}</dxo-items>
+                        <dx-item *ngFor="let item of items">{{item}}</dx-item>
                     </dx-list>
                 `
             }
@@ -187,7 +187,7 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items *ngFor="let item of items">{{item}}</dxo-items>
+                        <dx-item *ngFor="let item of items">{{item}}</dx-item>
                     </dx-list>
                 `
             }
@@ -215,7 +215,7 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dxo-items *ngFor="let item of complexItems">{{item.text}}</dxo-items>
+                        <dx-item *ngFor="let item of complexItems">{{item.text}}</dx-item>
                     </dx-list>
                 `
             }

@@ -8,11 +8,11 @@ import logger from './logger';
 let inflector = require('inflector-js');
 
 function trimDx(value: string) {
-    return value.substr('dx-'.length);
+    return trimPrefix('dx-', value);
 }
 
-function trimDxo(value: string) {
-    return value.substr('dxo-'.length);
+function trimPrefix(prefix: string, value: string) {
+    return value.substr(prefix.length);
 }
 
 export interface IObjectStore {
@@ -158,15 +158,25 @@ export default class DXComponentMetadataGenerator {
             return;
         }
 
-        let underscoreSelector = 'dxo' + '_' + inflector.underscore(optionName).split('.').join('_');
-        let selector = inflector.dasherize(underscoreSelector);
+        let pluralName = optionName;
+        if (option.IsCollection && optionName === option.SingularName) {
+            pluralName += 'Collection';
+        }
+
+        let singularName = option.SingularName || pluralName,
+            underscoreSingular = inflector.underscore(singularName).split('.').join('_'),
+            underscorePlural = inflector.underscore(pluralName).split('.').join('_'),
+            prefix = (option.IsCollection ? 'dx' : 'dxo') + '_',
+            underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
+            selector = inflector.dasherize(underscoreSelector),
+            path = inflector.dasherize(underscorePlural);
 
         let complexOptionMetadata: any = {
             className: inflector.camelize(underscoreSelector),
             selector:  selector,
             optionName: optionName,
             properties: [],
-            path: trimDxo(selector),
+            path: path,
             propertyName: optionName,
             isCollection: option.IsCollection,
             hasTemplate: option.Options['template'] && option.Options['template'].IsTemplate
