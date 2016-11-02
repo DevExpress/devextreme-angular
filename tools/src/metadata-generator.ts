@@ -47,7 +47,8 @@ export default class DXComponentMetadataGenerator {
             allNestedComponents = [];
 
         mkdirp.sync(config.outputFolderPath);
-        mkdirp.sync(config.nestedOutputFolderPath);
+        mkdirp.sync(path.join(config.outputFolderPath, config.nestedPathPart));
+        mkdirp.sync(path.join(config.outputFolderPath, config.nestedPathPart, config.basePathPart));
 
         for (let widgetName in widgetsMetadata) {
             let widget = widgetsMetadata[widgetName],
@@ -68,7 +69,7 @@ export default class DXComponentMetadataGenerator {
                 events = [],
                 changeEvents = [],
                 properties = [],
-                isEditor = false;
+                isEditor = Object.keys(widget.Options).indexOf('value') !== -1;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
@@ -90,30 +91,18 @@ export default class DXComponentMetadataGenerator {
                         property.isCollection = true;
                     }
 
-                    if (option.PrimitiveTypes) {
-                        // TODO specify primitive types
-                        // property.type = primitiveType;
-                    }
                     properties.push(property);
 
                     changeEvents.push({
                         emit: optionName + 'Change'
                     });
 
-                    if (optionName === 'value') {
-                        isEditor = true;
-                    }
-
-                    if (option.Options && !option.IsCollection && widgetName !== 'dxPivotGridFieldChooser') {
-                        let components = this.generateComplexOption(option, config, className, optionName);
-                        nestedComponents = nestedComponents.concat(...components);
-                    }
-
+                    let components = this.generateComplexOptionByType(metadata, option, optionName, []);
+                    nestedComponents = nestedComponents.concat(...components);
                 }
             }
 
             let allEvents = events.concat(changeEvents);
-
             let widgetNestedComponents = nestedComponents
                 .reduce((result, component) => {
                     if (result.filter(c => c.className === component.className).length === 0) {
@@ -125,8 +114,6 @@ export default class DXComponentMetadataGenerator {
 
                     return result;
                 }, []);
-
-            allNestedComponents = allNestedComponents.concat(...nestedComponents);
 
             let widgetMetadata = {
                 className: className,
@@ -143,13 +130,43 @@ export default class DXComponentMetadataGenerator {
 
             logger('Write metadata to file ' + outputFilePath);
             this._store.write(outputFilePath, widgetMetadata);
+
+            allNestedComponents = allNestedComponents.concat(...nestedComponents);
         }
 
         this.generateNestedOptions(config, allNestedComponents);
     }
 
-    generateComplexOption(option, config, hostClassName, optionName) {
-        if (option.IsCollection || !option.Options || !Object.keys(option.Options).length) {
+    private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
+        if (option.IsCollection) {
+            return;
+        }
+
+        if (option.Options) {
+            return this.generateComplexOption(metadata, option.Options, optionName, complexTypes);
+        } else if (option.ComplexTypes && option.ComplexTypes.length === 1) {
+            if (complexTypes.indexOf(complexTypes[complexTypes.length - 1]) !== complexTypes.length - 1) {
+                return;
+            }
+
+            let complexType = option.ComplexTypes[0];
+            let externalObject = metadata.ExtraObjects[complexType];
+            if (externalObject) {
+                let nestedOptions = externalObject.Options;
+                let nestedComplexTypes = complexTypes.concat(complexType);
+
+                let components = this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes);
+                components[0].baseClass = 'Dxo' + complexType;
+                components[0].basePath = inflector.dasherize(inflector.underscore(complexType));
+                return components;
+            } else {
+                logger('WARN: missed complex type: ' + complexType);
+            }
+        }
+    }
+
+    private generateComplexOption(metadata, nestedOptions, optionName, complexTypes) {
+        if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
 
@@ -166,28 +183,27 @@ export default class DXComponentMetadataGenerator {
 
         let nestedComponents = [complexOptionMetadata];
 
-        for (let optName in option.Options) {
+        for (let optName in nestedOptions) {
             let property: any = {
                 name: optName
             };
-
-            let components = this.generateComplexOption(option.Options[optName], config, hostClassName, optName);
-            nestedComponents = nestedComponents.concat(...components);
-
             complexOptionMetadata.properties.push(property);
+
+            let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes);
+            nestedComponents = nestedComponents.concat(...components);
         }
 
         return nestedComponents;
     }
 
-    generateNestedOptions(config, nestedComponentsMetadata) {
-        nestedComponentsMetadata.
-            reduce((result, component) => {
+    private generateNestedOptions(config, metadata) {
+        let normalizedMetadata = metadata
+            .reduce((result, component) => {
                 let existingComponent = result.filter(c => c.className === component.className)[0];
 
                 if (!existingComponent) {
                     result.push(component);
-                } else {
+                } else if (existingComponent.properties && component.properties) {
                     existingComponent.properties = existingComponent.properties.concat(...component.properties);
 
                     existingComponent.properties = existingComponent.properties.reduce((result1, property) => {
@@ -197,12 +213,43 @@ export default class DXComponentMetadataGenerator {
 
                         return result1;
                     }, []);
+
+                    existingComponent.baseClass = existingComponent.baseClass || component.baseClass;
+                    existingComponent.basePath = existingComponent.basePath || component.basePath;
+                }
+
+                return result;
+            }, []);
+
+        normalizedMetadata
+            .reduce((result, component) => {
+                let existingComponent = result.filter(c => c.className === component.baseClass)[0];
+                if (!existingComponent && component.baseClass) {
+                    result.push({
+                        properties: component.properties,
+                        className: component.baseClass,
+                        path: component.basePath
+                    });
                 }
 
                 return result;
             }, [])
             .forEach(componet => {
-                let outputFilePath = path.join(config.nestedOutputFolderPath, componet.path + '.json');
+                let outputFilePath = path.join(config.outputFolderPath,
+                    config.nestedPathPart, config.basePathPart, componet.path + '.json');
+                this._store.write(outputFilePath, componet);
+            });
+
+        normalizedMetadata
+            .forEach((component) => {
+                if (component.baseClass) {
+                    delete component.properties;
+                }
+            });
+
+        normalizedMetadata
+            .forEach(componet => {
+                let outputFilePath = path.join(config.outputFolderPath, config.nestedPathPart, componet.path + '.json');
                 this._store.write(outputFilePath, componet);
             });
     }

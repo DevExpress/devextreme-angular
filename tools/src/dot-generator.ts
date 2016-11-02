@@ -30,8 +30,17 @@ export default class DoTGenerator {
         return doT.template(templateString);
     }
     generate(config) {
-        this.generateTemplate(config.templateFilePath, config.metadataFolderPath, config.outputFolderPath);
-        this.generateTemplate(config.nestedTemplateFilePath, config.nestedMetadataFolderPath, config.nestedOutputFolderPath);
+        this.generateTemplate(config.templateFilePath,
+            config.metadataFolderPath,
+            config.outputFolderPath);
+
+        this.generateTemplate(config.nestedTemplateFilePath,
+            path.join(config.metadataFolderPath, config.nestedPathPart),
+            path.join(config.outputFolderPath, config.nestedPathPart));
+
+        this.generateTemplate(config.baseNestedTemplateFilePath,
+            path.join(config.metadataFolderPath, config.nestedPathPart, config.basePathPart),
+            path.join(config.outputFolderPath, config.nestedPathPart, config.basePathPart));
     }
 
     private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string) {

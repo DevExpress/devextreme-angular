@@ -8,16 +8,18 @@ module.exports = {
             importFrom: './tools/dist/metadata-generator',
             sourceMetadataFilePath: './metadata/StrongMetaData.json',
             outputFolderPath: './metadata/generated',
-            nestedOutputFolderPath: './metadata/generated/nested'
+            nestedPathPart: 'nested',
+            basePathPart: 'base'
         },
         componentGenerator: {
             importFrom: './tools/dist/dot-generator',
             templateFilePath: './templates/component.tst',
             nestedTemplateFilePath: './templates/nested-component.tst',
+            baseNestedTemplateFilePath: './templates/base-nested-component.tst',
             metadataFolderPath: './metadata/generated/',
-            nestedMetadataFolderPath: './metadata/generated/nested',
             outputFolderPath: './src/ui/',
-            nestedOutputFolderPath: './src/ui/nested'
+            nestedPathPart: 'nested',
+            basePathPart: 'base'
         },
         facadeGenerator: {
             importFrom: './tools/dist/facade-generator',

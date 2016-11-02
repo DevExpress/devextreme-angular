@@ -89,12 +89,6 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
         this._noh.setHost(this);
     }
 
-    protected _createWidget(element: any) {
-        super._createWidget(element);
-
-        this._noh.setupChanges();
-    }
-
     protected _createInstance(element, options) {
         <#? it.isEditor #>let widget = new <#= it.className #>(element, options);
         if (this.validator) {

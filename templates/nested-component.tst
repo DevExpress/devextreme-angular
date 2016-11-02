@@ -1,21 +1,20 @@
 import {
     Component,
-    Input,
-    Output,
-    EventEmitter,
     NgModule,
     Host,
-    SkipSelf
+    SkipSelf<#? it.properties #>,
+    Input<#?#>
 } from '@angular/core';
 
-import { NestedOption, NestedOptionHost } from '../../core/nested-option';
+import { <#? !it.baseClass #>NestedOption, <#?#>NestedOptionHost } from '../../core/nested-option';<#? it.baseClass #>
+import { <#= it.baseClass #> } from './base/<#= it.basePath #>';<#?#>
 
-@Component({
+@Component(<#? it.baseClass #>Object.assign(<#?#>{
     selector: '<#= it.selector #>',
     template: '',
     providers: [NestedOptionHost]
-})
-export class <#= it.className #>Component extends NestedOption {<#~ it.properties :prop:i #>
+}<#? it.baseClass #>, <#= it.baseClass #>.metaData)<#?#>)
+export class <#= it.className #>Component extends <#= it.baseClass || 'NestedOption' #> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
@@ -23,16 +22,9 @@ export class <#= it.className #>Component extends NestedOption {<#~ it.propertie
     set <#= prop.name #>(value: any) {
         this._setOption('<#= prop.name #>', value);
     }
-    @Output() <#= prop.name #>Change = new EventEmitter<any>();
 <#~#>
     protected get _optionPath() {
         return '<#= it.optionName #>';
-    }
-
-    protected get _options() {
-        return [<#~ it.properties :prop:i #>
-            '<#= prop.name #>'<#? i < it.properties.length-1 #>,<#?#><#~#>
-        ];
     }
 
     constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {

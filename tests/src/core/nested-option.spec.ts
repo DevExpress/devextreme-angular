@@ -79,12 +79,6 @@ export class DxTestWidgetComponent extends DxComponent {
         this._noh.setHost(this);
     }
 
-    protected _createWidget(element: any) {
-        super._createWidget(element);
-
-        this._noh.setupChanges();
-    }
-
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
     }
@@ -104,13 +98,9 @@ export class DxoTestOptionComponent extends NestedOption {
     set testNestedOption(value: any) {
         this._setOption('testNestedOption', value);
     }
-    @Output() testNestedOptionChange = new EventEmitter<any>();
 
     protected get _optionPath() {
         return 'testOption';
-    }
-    protected get _options() {
-        return ['testNestedOption'];
     }
 
     constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
@@ -176,77 +166,6 @@ describe('DevExtreme Angular 2 widget', () => {
         fixture.detectChanges();
 
         expect(instance.option('testOption')).toEqual({ testNestedOption: 'text' });
-    }));
-
-    it('option binding should work correctly', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
-
-        instance.option('testOption', { testNestedOption: 'test' });
-
-        expect(testComponent.testOption).toEqual('test');
-    }));
-
-    it('option binding should not be fired on another option path', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
-
-        instance.option().testOption.testNestedOption = 'test';
-        instance.option('ghostOption', 'test');
-
-        expect(testComponent.testOption).not.toEqual('test');
-    }));
-
-    it('option binding should not be fired on another nested option path', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
-
-        instance.option().testOption.testNestedOption = 'test';
-        instance.option('testOption.ghostOption', 'value');
-
-        expect(testComponent.testOption).not.toEqual('test');
-    }));
-
-    it('option binding should not be fired on another nested option path', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-test-widget><dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option></dx-test-widget>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
-
-        instance.option().testOption.testNestedOption = 'test';
-        instance.option('testOption.ghostOption', 'value');
-
-        expect(testComponent.testOption).not.toEqual('test');
     }));
 
   });
