@@ -2,18 +2,14 @@ import {
     Injectable
 } from '@angular/core';
 
-const DECIMAL = 10;
 const DOCUMENT_NODE_TYPE = 9;
 
 @Injectable()
 export class WatcherHelper {
-    private _watchers: any[];
+    private _watchers: any[] = [];
 
     getWatchMethod() {
-        this._watchers = [];
-
         let watchMethod = (valueGetter, valueChangeCallback, options) => {
-            let that = this;
             let oldValue = valueGetter();
             options = options || {};
 
@@ -23,23 +19,24 @@ export class WatcherHelper {
 
             let watcher = () => {
                 let newValue = valueGetter();
-                let isWatcherExpired = that._isElementExpired(options.disposeWithElement);
 
-                if (!isWatcherExpired && that._isDifferentValues(oldValue, newValue, options.deep)) {
+                if (this._isDifferentValues(oldValue, newValue, options.deep)) {
+                    if (this._isElementExpired(options.disposeWithElement)) {
+                        return true;
+                    }
+
                     valueChangeCallback(newValue);
                     oldValue = newValue;
                 }
-
-                return isWatcherExpired;
             };
 
             this._watchers.push(watcher);
 
             return () => {
-                let index = that._watchers.indexOf(watcher);
+                let index = this._watchers.indexOf(watcher);
 
                 if (index !== -1) {
-                    that._watchers.splice(index, 1);
+                    this._watchers.splice(index, 1);
                 }
             };
         };
@@ -62,7 +59,7 @@ export class WatcherHelper {
         let isDifferentValue = false;
 
 
-        if (valueType === 'object' && deepCheck) {
+        if (deepCheck && valueType === 'object') {
             isDifferentValue = this._checkObjectsFields(newValue, oldValue);
         } else {
             isDifferentValue = oldValue !== newValue;
@@ -86,11 +83,11 @@ export class WatcherHelper {
     }
 
     checkWatchers() {
-       for (let watcher in this._watchers) {
-            let isWatcherExpired = this._watchers[watcher]();
+       for (let watcher of this._watchers) {
+            let isWatcherExpired = watcher();
 
             if (isWatcherExpired) {
-                this._watchers.splice(parseInt(watcher, DECIMAL), 1);
+                this._watchers.splice(this._watchers.indexOf(watcher), 1);
             }
         }
     }
