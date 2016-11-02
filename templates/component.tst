@@ -3,7 +3,8 @@
 /* tslint:disable:directive-selector-type */
 <#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
-<# var templatedCollectionProperties = it.properties.filter(item => item.isTemplatedCollection).map(item => item.name); #>
+<# var complexCollectionProperties = it.properties.filter(item => item.isComplexCollection); #>
+<# var hasTemplatedCollectionProperties = it.properties.filter(item => item.isComplexCollection && item.type.hasTemplate).length > 0; #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
@@ -20,13 +21,10 @@ import {
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
     DoCheck,
-    SimpleChanges<#?#><#? templatedCollectionProperties.length #>,
+    SimpleChanges<#?#><#? complexCollectionProperties.length #>,
     ContentChildren,
     QueryList<#?#>
 } from '@angular/core';
-
-<#? templatedCollectionProperties.length #>
-import { DxItemModule, DxItemComponent } from '../core/item';<#?#>
 
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
@@ -42,6 +40,24 @@ import { DxTemplateHost } from '../core/dx.template-host';
 import { NestedOptionHost } from '../core/nested-option';
 
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
+
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
+<#~#>
+<#? hasTemplatedCollectionProperties #>
+import DxTemplatedItemComponent from '../core/templated-item';<#?#>
+<#~ complexCollectionProperties :prop:i #>
+@Component({
+  selector: '<#= prop.type.selector #>',
+  template: `<ng-content></ng-content>`
+})
+export class <#= prop.type.className #><#? hasTemplatedCollectionProperties #> extends DxTemplatedItemComponent<#?#> {
+<#~ prop.type.properties :childProp:j #>
+  @Input() <#= childProp.name #>: any;<#~#><#? hasTemplatedCollectionProperties #>
+  constructor(_element: ElementRef) {
+    super(_element);
+  }<#?#>
+}
+<#~#>
 
 let providers = [];
 providers.push(DxTemplateHost);
@@ -73,19 +89,17 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
-<#? templatedCollectionProperties.length #>
-<#~ templatedCollectionProperties :prop:i #>
-    @ContentChildren(DxItemComponent)
-    get <#= prop #>Children(): QueryList<DxItemComponent> {
-        return this._getOption('<#= prop #>');
+<#~ complexCollectionProperties :prop:i #>
+    @ContentChildren(<#= prop.type.className #>)
+    get <#= prop.name #>Children(): QueryList<<#= prop.type.className #>> {
+        return this._getOption('<#= prop.name #>');
     }
-    set <#= prop #>Children(value) {
+    set <#= prop.name #>Children(value) {
         if (value && value.length) {
-            this._setOption('<#= prop #>', value.toArray());
+            this._setOption('<#= prop.name #>', value.toArray());
         }
     }
 <#~#>
-<#?#>
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
@@ -158,18 +172,17 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 }
 <#?#>
 
-<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
-<#~#>
 @NgModule({
   imports: [<#~ it.nestedComponents :component:i #>
-    <#= component.className #>Module,<#~#><#? templatedCollectionProperties.length #>
-    DxItemModule<#?#>
+    <#= component.className #>Module,<#~#>
   ],
-  declarations: [
+  declarations: [<#~ complexCollectionProperties :prop:i #>
+    <#= prop.type.className #>,<#~#>
     <#= it.className #>Component<#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
-  exports: [
+  exports: [<#~ complexCollectionProperties :prop:i #>
+    <#= prop.type.className #>,<#~#>
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
     <#= component.className #>Module<#~#><#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>

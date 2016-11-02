@@ -68,8 +68,7 @@ export default class DXComponentMetadataGenerator {
                 events = [],
                 changeEvents = [],
                 properties = [],
-                isEditor = false,
-                hasItemTemplateOption = Object.keys(widget.Options).indexOf('itemTemplate') > -1;
+                isEditor = false;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
@@ -91,10 +90,6 @@ export default class DXComponentMetadataGenerator {
                         property.isCollection = true;
                     }
 
-                    if (optionName === 'items' && hasItemTemplateOption) {
-                        property.isTemplatedCollection = true;
-                    }
-
                     if (option.PrimitiveTypes) {
                         // TODO specify primitive types
                         // property.type = primitiveType;
@@ -109,9 +104,36 @@ export default class DXComponentMetadataGenerator {
                         isEditor = true;
                     }
 
-                    if (option.Options && !option.IsCollection && widgetName !== 'dxPivotGridFieldChooser') {
-                        let components = this.generateComplexOption(option, config, className, optionName);
-                        nestedComponents = nestedComponents.concat(...components);
+                    if (option.Options) {
+                        if (!option.IsCollection && widgetName !== 'dxPivotGridFieldChooser') {
+                            let components = this.generateComplexOption(option, config, className, optionName);
+                            nestedComponents = nestedComponents.concat(...components);
+                        }
+                        if (option.IsCollection) {
+                            let childClassName = className + inflector.camelize(option.SingularName),
+                                hasTemplate = undefined;
+
+                            property.type = {
+                                className: childClassName + 'Component',
+                                selector: inflector.dasherize(inflector.underscore(childClassName)),
+                                properties: Object.keys(option.Options)
+                                .filter(childOptionName => {
+                                    if (option.Options[childOptionName].IsTemplate) {
+                                        hasTemplate = true;
+                                        return false;
+                                    }
+                                    return true;
+                                })
+                                .map(childOptionName => {
+                                    return {
+                                        name: childOptionName
+                                    };
+                                })
+                            };
+
+                            property.type.hasTemplate = hasTemplate;
+                            property.isComplexCollection = true;
+                        }
                     }
 
                 }

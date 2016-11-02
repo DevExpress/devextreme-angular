@@ -75,6 +75,7 @@ declare let $: any;
             user-select: none;
             padding-left: 25px;
             padding-top: 55px;
+            display: block;
         }
         .tabpanel-item  > div {
             float: left;

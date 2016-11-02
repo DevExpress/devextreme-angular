@@ -18,10 +18,6 @@ import {
     DxListComponent
 } from '../../../dist';
 
-import {
-    DxItemModule,
-} from '../../../dist/core/item';
-
 @Component({
     selector: 'test-container-component',
     template: ''
@@ -38,7 +34,7 @@ describe('DxList', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxListModule, DxItemModule]
+                imports: [DxListModule]
             });
     });
 
@@ -95,8 +91,8 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dx-item>Item 1</dx-item>
-                        <dx-item>Item 2</dx-item>
+                        <dx-list-item>Item 1</dx-list-item>
+                        <dx-list-item>Item 2</dx-list-item>
                     </dx-list>
                 `
             }
@@ -111,12 +107,32 @@ describe('DxList', () => {
         expect(instance.element().find('.dx-list-item-content').eq(1).text()).toBe('Item 2');
     }));
 
+    it('should use properties of the nested components', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dx-list-item [disabled]='true'>Item 1</dx-list-item>
+                        <dx-list-item>Item 2</dx-list-item>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().find('.dx-list-item').length).toBe(2);
+        expect(instance.element().find('.dx-list-item.dx-state-disabled').length).toBe(1);
+    }));
+
     it('should be able to accept items as an *ngFor components list', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
                     <dx-list>
-                        <dx-item *ngFor="let item of items">{{item}}</dx-item>
+                        <dx-list-item *ngFor="let item of items">{{item}}</dx-list-item>
                     </dx-list>
                 `
             }
@@ -145,7 +161,7 @@ describe('DxList', () => {
             set: {
                 template: `
                     <dx-list>
-                        <dx-item *ngFor="let item of complexItems">{{item.text}}</dx-item>
+                        <dx-list-item *ngFor="let item of complexItems">{{item.text}}</dx-list-item>
                     </dx-list>
                 `
             }

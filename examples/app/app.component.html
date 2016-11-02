@@ -89,7 +89,7 @@
 
     <h3>dxList</h3>
 
-    <dx-list [grouped]="true" style="height: 600px" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
+    <dx-list [grouped]="true" style="height: 450px" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
         <div *dxTemplate="let t of 'itemTemplate'">
             {{t}}
             <dx-button class="float-right" text="Buy" (onClick)="buy(t)"></dx-button>
@@ -178,6 +178,8 @@
 
 <h2>DxTabPanel</h2>
 
+<h3>With data source</h3>
+
 <dx-tab-panel
     [height]="260"
     [dataSource]="tabPanelItems"
@@ -217,6 +219,19 @@
             </div>
         </div>
     </div>
+</dx-tab-panel>
+
+<h3>With static items</h3>
+
+<dx-tab-panel [height]="260" [selectedIndex]="0">
+    <dx-tab-panel-item class="tabpanel-item" title="Home" icon="home">
+        <h3>Home</h3>
+        <p>Content of the Home tab</p>
+    </dx-tab-panel-item>
+    <dx-tab-panel-item class="tabpanel-item" title="About" icon="info">
+        <h3>About</h3>
+        <p>Content of the About tab</p>
+    </dx-tab-panel-item>
 </dx-tab-panel>
 
 <h2>dxChart</h2>

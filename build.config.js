@@ -38,8 +38,7 @@ module.exports = {
                         './src/ui'
                     ],
                     additionalImports: {
-                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/dx.template\'',
-                        'DxItemModule': 'import { DxItemModule } from \'../core/item\''
+                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/dx.template\''
                     }
                 }
             }
