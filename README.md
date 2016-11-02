@@ -302,6 +302,34 @@ export class AppComponent {
 ```
 
 
+### Advanced DevExtreme Widget options configuration
+
+You can use the `dxo-` prefixed components to configure complex nested options for widgets.
+The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/16_1/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
+
+```html
+<dx-tree-map [dataSource]="treeData">
+    <dxo-tooltip [enabled]="showTooltip" format="thousands"></dxo-tooltip>
+</dx-tree-map>
+
+<dx-button text="Toggle tooltip" (onClick)="toggleTooltip()"></dx-button>
+```
+
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    treeData = ...;
+    showTooltip = false;
+    toggleTooltip() {
+        this.showTooltip = !this.showTooltip;
+    }
+}
+```
+
 ### Accessing a DevExtreme Widget Instance
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
