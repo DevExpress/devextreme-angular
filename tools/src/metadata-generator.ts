@@ -203,16 +203,16 @@ export default class DXComponentMetadataGenerator {
 
                 if (!existingComponent) {
                     result.push(component);
-                } else if (existingComponent.properties && component.properties) {
-                    existingComponent.properties = existingComponent.properties.concat(...component.properties);
+                } else {
+                    existingComponent.properties = existingComponent.properties
+                        .concat(...component.properties)
+                        .reduce((properties, property) => {
+                            if (properties.filter(p => p.name === property.name).length === 0) {
+                                properties.push(property);
+                            }
 
-                    existingComponent.properties = existingComponent.properties.reduce((result1, property) => {
-                        if (result1.filter(p => p.name === property.name).length === 0) {
-                            result1.push(property);
-                        }
-
-                        return result1;
-                    }, []);
+                            return properties;
+                        }, []);
 
                     existingComponent.baseClass = existingComponent.baseClass || component.baseClass;
                     existingComponent.basePath = existingComponent.basePath || component.basePath;
@@ -241,13 +241,13 @@ export default class DXComponentMetadataGenerator {
             });
 
         normalizedMetadata
-            .forEach((component) => {
+            .map((component) => {
                 if (component.baseClass) {
                     delete component.properties;
                 }
-            });
 
-        normalizedMetadata
+                return component;
+            })
             .forEach(componet => {
                 let outputFilePath = path.join(config.outputFolderPath, config.nestedPathPart, componet.path + '.json');
                 this._store.write(outputFilePath, componet);
