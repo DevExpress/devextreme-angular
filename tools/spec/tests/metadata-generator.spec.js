@@ -1,3 +1,4 @@
+"use strict";
 describe("metadata-generator", function() {
     var extend = require('util')._extend;
     var path = require('path');
