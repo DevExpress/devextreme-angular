@@ -21,7 +21,7 @@ export class WatcherHelper {
                 let newValue = valueGetter();
 
                 if (this._isDifferentValues(oldValue, newValue, options.deep)) {
-                    if (this._isElementExpired(options.disposeWithElement)) {
+                    if (options.disposeWithElement && this._isElementExpired(options.disposeWithElement)) {
                         return true;
                     }
 
@@ -55,11 +55,9 @@ export class WatcherHelper {
     }
 
     private _isDifferentValues(oldValue: any, newValue: any, deepCheck: boolean) {
-        let valueType = typeof newValue;
         let isDifferentValue = false;
 
-
-        if (deepCheck && valueType === 'object') {
+        if (deepCheck && newValue instanceof (Object)) {
             isDifferentValue = this._checkObjectsFields(newValue, oldValue);
         } else {
             isDifferentValue = oldValue !== newValue;
