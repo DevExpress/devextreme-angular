@@ -224,16 +224,15 @@
 <h3>With static items</h3>
 
 <dx-tab-panel [height]="260" [selectedIndex]="0">
-    <dx-tab-panel-item class="tabpanel-item" title="Home" icon="home">
+    <dxo-items class="tabpanel-item" title="Home" icon="home">
         <h3>Home</h3>
         <p>Content of the Home tab</p>
-    </dx-tab-panel-item>
-    <dx-tab-panel-item class="tabpanel-item" title="About" icon="info">
+    </dxo-items>
+    <dxo-items class="tabpanel-item" title="About" icon="info" [badge]="badge">
         <h3>About</h3>
         <p>Content of the About tab</p>
-    </dx-tab-panel-item>
+    </dxo-items>
 </dx-tab-panel>
-
 <h2>dxChart</h2>
 
 <dx-chart class="full-width" [dataSource]="oranges" [series]="series"></dx-chart>

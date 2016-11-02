@@ -1,3 +1,4 @@
+<# var baseClass = it.isCollection ? 'CollectionNestedOption' : 'NestedOption'; #>
 import {
     Component,
     Input,
@@ -5,17 +6,18 @@ import {
     EventEmitter,
     NgModule,
     Host,
-    SkipSelf
+    SkipSelf,
+    ElementRef
 } from '@angular/core';
 
-import { NestedOption, NestedOptionHost } from '../../core/nested-option';
+import { <#= baseClass #>, NestedOptionHost } from '../../core/nested-option';
 
 @Component({
     selector: '<#= it.selector #>',
-    template: '',
+    template: '<#? it.hasTemplate #><ng-content></ng-content><#?#>',
     providers: [NestedOptionHost]
 })
-export class <#= it.className #>Component extends NestedOption {<#~ it.properties :prop:i #>
+export class <#= it.className #>Component extends <#= baseClass #> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
@@ -29,14 +31,14 @@ export class <#= it.className #>Component extends NestedOption {<#~ it.propertie
         return '<#= it.optionName #>';
     }
 
-    get options() {
+    get __options() {
         return [<#~ it.properties :prop:i #>
             '<#= prop.name #>'<#? i < it.properties.length-1 #>,<#?#><#~#>
         ];
     }
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super();
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, _element: ElementRef) {
+        super(_element);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._baseOptionPath);

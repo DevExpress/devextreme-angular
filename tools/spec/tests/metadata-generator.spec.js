@@ -56,6 +56,22 @@ describe("metadata-generator", function() {
                                     }
                                 }
                             }
+                        },
+                        collectionItems: {
+                            Options: {
+                                nested: {}
+                            },
+                            IsCollection: true,
+                            SingularName: "collectionItem"
+                        },
+                        collectionItemsWithTemplate: {
+                            Options: {
+                                template: {
+                                    IsTemplate: true
+                                }
+                            },
+                            IsCollection: true,
+                            SingularName: "collectionItemWithTemplate"
                         }
                     },
                     Module: 'test_widget'
@@ -65,28 +81,6 @@ describe("metadata-generator", function() {
                         property: {
                             Options: {
                                 anotherNested: {}
-                            }
-                        }
-                    },
-                    Module: 'test_widget'
-                },
-                dxWidgetWithComplexCollections: {
-                    Options: {
-                        items: {
-                            IsCollection: true,
-                            SingularName: "item",
-                            Options: {
-                                text: { }
-                            }
-                        },
-                        templatedItems: {
-                            IsCollection: true,
-                            SingularName: "templatedItem",
-                            Options: {
-                                text: { },
-                                template: {
-                                    IsTemplate: true
-                                }
                             }
                         }
                     },
@@ -121,16 +115,17 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(9);
+            expect(store.write.calls.count()).toBe(10);
 
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
-            expect(store.write.calls.argsFor(7)[0]).toBe(path.join("output-path", "nested", "property.json"));
-            expect(store.write.calls.argsFor(8)[0]).toBe(path.join("output-path", "nested", "nested.json"));
+            expect(store.write.calls.argsFor(6)[0]).toBe(path.join("output-path", "nested", "property.json"));
+            expect(store.write.calls.argsFor(7)[0]).toBe(path.join("output-path", "nested", "nested.json"));
+            expect(store.write.calls.argsFor(8)[0]).toBe(path.join("output-path", "nested", "collection-items.json"));
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(9);
+            expect(Object.keys(metas).length).toBe(10);
 
             expect(metas.DxTestWidget).not.toBe(undefined);
             expect(metas.DxCollectionWidget).not.toBe(undefined);
@@ -139,6 +134,8 @@ describe("metadata-generator", function() {
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
             expect(metas.DxoProperty).not.toBe(undefined);
+            expect(metas.DxoCollectionItems).not.toBe(undefined);
+            expect(metas.DxoCollectionItemsWithTemplate).not.toBe(undefined);
             expect(metas.DxoNested).not.toBe(undefined);
         });
 
@@ -207,27 +204,18 @@ describe("metadata-generator", function() {
         });
 
         it("should generate collection nested components", function() {
-            let itemsProp = metas.DxWidgetWithComplexCollections.properties[0]; 
-            expect(itemsProp).not.toBe(undefined);
-            expect(itemsProp.name).toBe('items');
-            expect(itemsProp.isCollection).toBe(true);
-            expect(itemsProp.isComplexCollection).toBe(true);
-            expect(itemsProp.type.className).toBe('DxWidgetWithComplexCollectionsItemComponent');
-            expect(itemsProp.type.selector).toBe('dx-widget-with-complex-collections-item');
-            expect(itemsProp.type.hasTemplate).toBe(undefined);
-            expect(itemsProp.type.properties.length).toBe(1);
-            expect(itemsProp.type.properties[0].name).toBe('text');
+            let collectionItems = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxoCollectionItems')[0];
+            expect(collectionItems).not.toBe(undefined);
+            expect(collectionItems.path).toBe('collection-items');
+            expect(collectionItems.propertyName).toBe('collectionItems');
+            expect(collectionItems.isCollection).toBe(true);
+            expect(collectionItems.hasTemplate).toBe(undefined);
+        });
 
-            let templatedItemsProp = metas.DxWidgetWithComplexCollections.properties[1]; 
-            expect(templatedItemsProp).not.toBe(undefined);
-            expect(templatedItemsProp.name).toBe('templatedItems');
-            expect(templatedItemsProp.isCollection).toBe(true);
-            expect(templatedItemsProp.isComplexCollection).toBe(true);
-            expect(templatedItemsProp.type.className).toBe('DxWidgetWithComplexCollectionsTemplatedItemComponent');
-            expect(templatedItemsProp.type.selector).toBe('dx-widget-with-complex-collections-templated-item');
-            expect(templatedItemsProp.type.hasTemplate).toBe(true);
-            expect(templatedItemsProp.type.properties.length).toBe(1);
-            expect(templatedItemsProp.type.properties[0].name).toBe('text');
+        it("should generate collection nested components with templates", function() {
+            let collectionItemsWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxoCollectionItemsWithTemplate')[0];
+            expect(collectionItemsWithTemplate).not.toBe(undefined);
+            expect(collectionItemsWithTemplate.hasTemplate).toBe(true);
         });
 
     });

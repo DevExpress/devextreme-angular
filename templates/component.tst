@@ -3,8 +3,7 @@
 /* tslint:disable:directive-selector-type */
 <#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
-<# var complexCollectionProperties = it.properties.filter(item => item.isComplexCollection); #>
-<# var hasTemplatedCollectionProperties = it.properties.filter(item => item.isComplexCollection && item.type.hasTemplate).length > 0; #>
+<# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
@@ -21,7 +20,7 @@ import {
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
     DoCheck,
-    SimpleChanges<#?#><#? complexCollectionProperties.length #>,
+    SimpleChanges<#?#><#? collectionNestedComponents.length #>,
     ContentChildren,
     QueryList<#?#>
 } from '@angular/core';
@@ -43,20 +42,7 @@ import { NestedOptionHost } from '../core/nested-option';
 
 <#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
 <#~#>
-<#? hasTemplatedCollectionProperties #>
-import DxTemplatedItemComponent from '../core/templated-item';<#?#>
-<#~ complexCollectionProperties :prop:i #>
-@Component({
-  selector: '<#= prop.type.selector #>',
-  template: `<ng-content></ng-content>`
-})
-export class <#= prop.type.className #><#? hasTemplatedCollectionProperties #> extends DxTemplatedItemComponent<#?#> {
-<#~ prop.type.properties :childProp:j #>
-  @Input() <#= childProp.name #>: any;<#~#><#? hasTemplatedCollectionProperties #>
-  constructor(_element: ElementRef) {
-    super(_element);
-  }<#?#>
-}
+<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
 <#~#>
 
 let providers = [];
@@ -89,17 +75,16 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
-<#~ complexCollectionProperties :prop:i #>
-    @ContentChildren(<#= prop.type.className #>)
-    get <#= prop.name #>Children(): QueryList<<#= prop.type.className #>> {
-        return this._getOption('<#= prop.name #>');
+<#~ collectionNestedComponents :component:i #>
+    @ContentChildren(<#= component.className #>Component)
+    get <#= component.propertyName #>Children(): QueryList<<#= component.className #>Component> {
+        return this._getOption('<#= component.propertyName #>');
     }
-    set <#= prop.name #>Children(value) {
-        if (value && value.length) {
-            this._setOption('<#= prop.name #>', value.toArray());
-        }
+    set <#= component.propertyName #>Children(value) {
+        this.setChildren('<#= component.propertyName #>', value);
     }
 <#~#>
+
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
@@ -176,13 +161,11 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
   imports: [<#~ it.nestedComponents :component:i #>
     <#= component.className #>Module,<#~#>
   ],
-  declarations: [<#~ complexCollectionProperties :prop:i #>
-    <#= prop.type.className #>,<#~#>
+  declarations: [
     <#= it.className #>Component<#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>
   ],
-  exports: [<#~ complexCollectionProperties :prop:i #>
-    <#= prop.type.className #>,<#~#>
+  exports: [
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
     <#= component.className #>Module<#~#><#? it.isEditor #>,
     <#= it.className #>ValueAccessorDirective<#?#>

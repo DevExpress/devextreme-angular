@@ -105,34 +105,9 @@ export default class DXComponentMetadataGenerator {
                     }
 
                     if (option.Options) {
-                        if (!option.IsCollection && widgetName !== 'dxPivotGridFieldChooser') {
+                        if (widgetName !== 'dxPivotGridFieldChooser') {
                             let components = this.generateComplexOption(option, config, className, optionName);
                             nestedComponents = nestedComponents.concat(...components);
-                        }
-                        if (option.IsCollection) {
-                            let childClassName = className + inflector.camelize(option.SingularName),
-                                hasTemplate = undefined;
-
-                            property.type = {
-                                className: childClassName + 'Component',
-                                selector: inflector.dasherize(inflector.underscore(childClassName)),
-                                properties: Object.keys(option.Options)
-                                .filter(childOptionName => {
-                                    if (option.Options[childOptionName].IsTemplate) {
-                                        hasTemplate = true;
-                                        return false;
-                                    }
-                                    return true;
-                                })
-                                .map(childOptionName => {
-                                    return {
-                                        name: childOptionName
-                                    };
-                                })
-                            };
-
-                            property.type.hasTemplate = hasTemplate;
-                            property.isComplexCollection = true;
                         }
                     }
 
@@ -146,7 +121,10 @@ export default class DXComponentMetadataGenerator {
                     if (result.filter(c => c.className === component.className).length === 0) {
                         result.push({
                             path: component.path,
-                            className: component.className
+                            propertyName: component.propertyName,
+                            className: component.className,
+                            isCollection: component.isCollection,
+                            hasTemplate: component.hasTemplate
                         });
                     }
 
@@ -176,7 +154,7 @@ export default class DXComponentMetadataGenerator {
     }
 
     generateComplexOption(option, config, hostClassName, optionName) {
-        if (option.IsCollection || !option.Options || !Object.keys(option.Options).length) {
+        if (!option.Options || !Object.keys(option.Options).length) {
             return;
         }
 
@@ -188,12 +166,18 @@ export default class DXComponentMetadataGenerator {
             selector:  selector,
             optionName: optionName,
             properties: [],
-            path: trimDxo(selector)
+            path: trimDxo(selector),
+            propertyName: optionName,
+            isCollection: option.IsCollection,
+            hasTemplate: option.Options['template'] && option.Options['template'].IsTemplate
         };
 
         let nestedComponents = [complexOptionMetadata];
 
         for (let optName in option.Options) {
+            if (optName === 'template' && option.Options[optName].IsTemplate) {
+                continue;
+            };
             let property: any = {
                 name: optName
             };

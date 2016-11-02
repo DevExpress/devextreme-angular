@@ -1,3 +1,5 @@
+import { QueryList, ElementRef } from '@angular/core';
+
 export interface INestedOptionContainer {
     instance: any;
 }
@@ -6,17 +8,19 @@ export abstract class NestedOption implements INestedOptionContainer {
 
     protected _host: INestedOptionContainer;
     protected _baseOptionPath: string;
+    protected _hostOptionPath: string;
+
     setHost(host: INestedOptionContainer, optionPath: string) {
         this._host = host;
-
-        this._host[this.optionPath] = {};
-        this._baseOptionPath = optionPath + this.optionPath + '.';
+        this._hostOptionPath = optionPath;
+        this._setInitialOptions();
+        this._updateBaseOptionPath();
     }
 
     setupChanges() {
         this.instance.on('optionChanged', e => {
             if (e.fullName.startsWith(this._baseOptionPath.split('.')[0])) {
-                for (let option of this.options) {
+                for (let option of this.__options) {
                     this[option + 'Change'].emit(this[option]);
                 }
             }
@@ -28,9 +32,17 @@ export abstract class NestedOption implements INestedOptionContainer {
     }
 
     abstract get optionPath(): string;
-    abstract get options(): string[];
+    abstract get __options(): string[];
 
-    private get _initialOptions() {
+    protected _updateBaseOptionPath() {
+        this._baseOptionPath = this._hostOptionPath + this.optionPath + '.';
+    }
+
+    protected _setInitialOptions() {
+        this._host[this.optionPath] = {};
+    }
+
+    protected get _initialOptions() {
         return this._host[this.optionPath];
     }
 
@@ -48,6 +60,54 @@ export abstract class NestedOption implements INestedOptionContainer {
         } else {
             this._initialOptions[name] = value;
         }
+    }
+
+    constructor(private _element: ElementRef) {
+        this.template = this.template.bind(this);
+    }
+
+    template(item: any, index, container) {
+        return container.append(this._element.nativeElement);
+    }
+}
+
+export interface ICollectionNestedOptionContainer {
+    setChildren<T>(propertyName: string, items: QueryList<T>);
+}
+
+export interface ICollectionNestedOption {
+    index: number;
+    value: Object;
+}
+
+export abstract class CollectionNestedOption extends NestedOption implements ICollectionNestedOption {
+    private _index: number;
+    private _initialValue: Object;
+
+    protected _updateBaseOptionPath() {
+        this._baseOptionPath = this._hostOptionPath + this.optionPath + '[' + this.index + '].';
+    }
+
+    protected _setInitialOptions() {
+        this._initialValue = {
+            template: this.template
+        };
+    }
+
+    protected get _initialOptions() {
+        return this._initialValue;
+    }
+
+    get value() {
+        return this._initialValue;
+    }
+
+    get index() {
+        return this._index;
+    }
+    set index(value) {
+        this._index = value;
+        this._updateBaseOptionPath();
     }
 }
 
