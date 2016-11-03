@@ -89,7 +89,7 @@
 
     <h3>dxList</h3>
 
-    <dx-list [grouped]="true" style="height: 600px" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
+    <dx-list [grouped]="true" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
         <div *dxTemplate="let t of 'itemTemplate'">
             {{t}}
             <dx-button class="float-right" text="Buy" (onClick)="buy(t)"></dx-button>
@@ -221,7 +221,21 @@
 
 <h2>dxChart</h2>
 
-<dx-chart class="full-width" [dataSource]="oranges" [series]="series"></dx-chart>
+<dx-select-box
+    [items]="chartSeriesTypes"
+    [(value)]="chartSeriesType"
+    [width]="200"></dx-select-box>
+
+<dx-chart
+    class="full-width"
+    [dataSource]="oranges"
+    [series]="series">
+    <dxo-common-series-settings
+        color="#ffa500"
+        [type]="chartSeriesType"></dxo-common-series-settings>
+    <dxo-size
+        [height]="300"></dxo-size>
+</dx-chart>
 
 <h2>dxDataGrid</h2>
 
