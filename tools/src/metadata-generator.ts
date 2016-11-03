@@ -49,7 +49,8 @@ export default class DXComponentMetadataGenerator {
 
             logger('Generate metadata for ' + widgetName);
 
-            let isTranscludedContent = widget['IsTranscludedContent'],
+            let isTranscludedContent = widget.IsTranscludedContent,
+                isExtension = widget.IsExtensionComponent || false,
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
                 outputFilePath = path.join(config.outputFolderPath, dasherizedWidgetName.substr('dx-'.length) + '.json'),
                 events = [],
@@ -68,11 +69,14 @@ export default class DXComponentMetadataGenerator {
                         subscribe: eventName
                     });
                 } else {
-                    let property = {
+                    let property: any = {
                         name: optionName,
-                        type: 'any',
-                        collection: !!option.IsCollection
+                        type: 'any'
                     };
+
+                    if (!!option.IsCollection || !!option.IsDataSource) {
+                        property.isCollection = true;
+                    }
 
                     if (option.PrimitiveTypes) {
                         // TODO specify primitive types
@@ -96,6 +100,7 @@ export default class DXComponentMetadataGenerator {
                 className: inflector.classify(widgetName),
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
+                isExtension: isExtension,
                 selector: dasherizedWidgetName,
                 events: allEvents,
                 properties: properties,

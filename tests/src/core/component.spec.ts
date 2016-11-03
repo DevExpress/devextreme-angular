@@ -37,7 +37,13 @@ let DxTestWidget = DxButton['inherit']({
     providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestWidgetComponent extends DxComponent {
-    @Input() testOption: any;
+    @Input()
+    get testOption(): any {
+        return this._getOption('testOption');
+    }
+    set testOption(value: any) {
+        this._setOption('testOption', value);
+    };
 
     @Output() onOptionChanged: EventEmitter<any>;
     @Output() onInitialized: EventEmitter<any>;
@@ -155,6 +161,23 @@ describe('DevExtreme Angular 2 widget', () => {
 
         testComponent.testOption = 'Changed 2';
         fixture.detectChanges();
+        expect(instance.option('testOption')).toBe('Changed 2');
+
+    }));
+
+    it('should change instance option value by component option setter', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [testOption]="testOption"></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance.innerWidgets.first,
+            instance = getWidget(fixture);
+
+        testComponent.testOption = 'Changed 2';
         expect(instance.option('testOption')).toBe('Changed 2');
 
     }));

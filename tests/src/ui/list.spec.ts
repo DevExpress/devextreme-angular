@@ -57,13 +57,32 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        let spy = jasmine.createSpy('option change');
-        instance.option = spy;
+        spyOn(instance, 'option').and.callThrough();
 
         testComponent.items.push(2);
         fixture.detectChanges();
 
-        expect(spy).toHaveBeenCalledWith('items', [1, 2]);
+        expect(instance.option).toHaveBeenCalledWith('items', [1, 2]);
+    }));
+
+    it('should not react if the same value is assigned to the collection', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-list [items]="items"></dx-list>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        spyOn(instance, 'option').and.callThrough();
+
+        testComponent.items = testComponent.items;
+        fixture.detectChanges();
+
+        expect(instance.option).toHaveBeenCalledTimes(1);
     }));
 
     it('should react to item option change', async(() => {
