@@ -24,6 +24,7 @@ import {
 })
 class TestContainerComponent {
     items = [1];
+    defaultTemplateItems = [{ text: 'test', disabled: false }];
     @ViewChildren(DxListComponent) innerWidgets: QueryList<DxListComponent>;
 }
 
@@ -82,5 +83,27 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         expect(instance.option).toHaveBeenCalledTimes(1);
+    }));
+
+    it('should react to item option change', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-list [(items)]="defaultTemplateItems"></dx-list>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        testComponent.defaultTemplateItems[0].disabled = true;
+        fixture.detectChanges();
+
+        let listItem = instance.element().find('.dx-list-item');
+        let listItemHasDisabledClass = listItem.hasClass('dx-state-disabled');
+
+        expect(listItem.length).toEqual(1);
+        expect(listItemHasDisabledClass).toBeTruthy();
     }));
 });
