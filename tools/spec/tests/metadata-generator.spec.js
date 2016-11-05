@@ -223,22 +223,22 @@ describe("metadata-generator", function() {
         it("should write generated data to a separate file for each widget", function() {
             expect(store.write.calls.count()).toBe(11);
 
-            let writeToPathCount = (...pathParts) => {
+            let writeToPathCount = (path) => {
                 return store.write.calls
                     .allArgs()
-                    .filter(args => args[0] === path.join(...pathParts)).length;
+                    .filter(args => args[0] === path).length;
             };
 
-            expect(writeToPathCount("output-path", "nested", "nested-external-property.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "base", "external-property-type.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "property.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "nested.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "collection-item.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "collection-items.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "external-property.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "value-axis-collection.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "collection-items-with-template.json")).toBe(1);
-            expect(writeToPathCount("output-path", "nested", "nested-external-property.json")).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "nested.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "collection-item.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "collection-items.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "value-axis-collection.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "collection-items-with-template.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
         });
 
         it("should generate matadata", function() {
