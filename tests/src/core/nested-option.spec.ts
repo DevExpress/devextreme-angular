@@ -103,8 +103,8 @@ export class DxoTestOptionComponent extends NestedOption {
         return 'testOption';
     }
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super();
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, element: ElementRef) {
+        super(element);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this);

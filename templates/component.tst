@@ -3,6 +3,7 @@
 /* tslint:disable:directive-selector-type */
 <#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
+<# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 import {
@@ -19,7 +20,9 @@ import {
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
     DoCheck,
-    SimpleChanges<#?#>
+    SimpleChanges<#?#><#? collectionNestedComponents.length #>,
+    ContentChildren,
+    QueryList<#?#>
 } from '@angular/core';
 
 import <#= it.className #> from '<#= it.module #>';
@@ -36,6 +39,11 @@ import { DxTemplateHost } from '../core/dx.template-host';
 import { NestedOptionHost } from '../core/nested-option';
 
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
+
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
+<#~#>
+<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
+<#~#>
 
 let providers = [];
 providers.push(DxTemplateHost);
@@ -66,6 +74,16 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
     <#?#><#~#>
+
+<#~ collectionNestedComponents :component:i #>
+    @ContentChildren(<#= component.className #>Component)
+    get <#= component.propertyName #>Children(): QueryList<<#= component.className #>Component> {
+        return this._getOption('<#= component.propertyName #>');
+    }
+    set <#= component.propertyName #>Children(value) {
+        this.setChildren('<#= component.propertyName #>', value);
+    }
+<#~#>
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
@@ -133,8 +151,6 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 }
 <#?#>
 
-<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
-<#~#>
 @NgModule({
   imports: [<#~ it.nestedComponents :component:i #>
     <#= component.className #>Module,<#~#>

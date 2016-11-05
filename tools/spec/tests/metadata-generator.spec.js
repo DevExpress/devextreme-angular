@@ -1,3 +1,4 @@
+"use strict";
 describe("metadata-generator", function() {
     var extend = require('util')._extend;
     var path = require('path');
@@ -156,7 +157,36 @@ describe("metadata-generator", function() {
                                         }
                                     }
                                 }
-                            }
+                            },
+                            collectionItem: {
+                                Options: {
+                                    nested: {}
+                                }
+                            },
+                            collectionItems: {
+                                Options: {
+                                    nested: {}
+                                },
+                                IsCollection: true,
+                                SingularName: "collectionItem"
+                            },
+                            valueAxis: {
+                                Options: {
+                                    nested: {}
+                                },
+                                IsCollection: true,
+                                SingularName: "valueAxis"
+                            },
+                            collectionItemsWithTemplate: {
+                                Options: {
+                                    template: {
+                                        IsTemplate: true
+                                    }
+                                },
+                                IsCollection: true,
+                                SingularName: "collectionItemWithTemplate"
+                            }                            
+                            
                         },
                         Module: 'test_widget'
                     },
@@ -191,17 +221,28 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(7);
+            expect(store.write.calls.count()).toBe(11);
 
-            expect(store.write.calls.argsFor(2)[0]).toBe(path.join("output-path", "nested", "base", "external-property-type.json"));
-            expect(store.write.calls.argsFor(3)[0]).toBe(path.join("output-path", "nested", "property.json"));
-            expect(store.write.calls.argsFor(4)[0]).toBe(path.join("output-path", "nested", "nested.json"));
-            expect(store.write.calls.argsFor(5)[0]).toBe(path.join("output-path", "nested", "external-property.json"));
-            expect(store.write.calls.argsFor(6)[0]).toBe(path.join("output-path", "nested", "nested-external-property.json"));
+            let writeToPathCount = (...pathParts) => {
+                return store.write.calls
+                    .allArgs()
+                    .filter(args => args[0] === path.join(...pathParts)).length;
+            };
+
+            expect(writeToPathCount("output-path", "nested", "nested-external-property.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "base", "external-property-type.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "property.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "nested.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "collection-item.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "collection-items.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "external-property.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "value-axis-collection.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "collection-items-with-template.json")).toBe(1);
+            expect(writeToPathCount("output-path", "nested", "nested-external-property.json")).toBe(1);
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(7);
+            expect(Object.keys(metas).length).toBe(11);
 
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
@@ -210,6 +251,10 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalProperty).not.toBe(undefined);
             expect(metas.DxoNestedExternalProperty).not.toBe(undefined);
             expect(metas.DxoExternalPropertyType).not.toBe(undefined);
+            expect(metas.DxcCollectionItem).not.toBe(undefined);
+            expect(metas.DxoCollectionItem).not.toBe(undefined);
+            expect(metas.DxcCollectionItemWithTemplate).not.toBe(undefined);
+            expect(metas.DxcValueAxis).not.toBe(undefined);
         });
 
         it("should generate nested components with merged properties", function() {
@@ -217,7 +262,7 @@ describe("metadata-generator", function() {
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
 
             expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nested', 'anotherNested']);
-            expect(metas.DxoProperty.optionName).toEqual('property');
+            expect(metas.DxoProperty.optionName).toBe('property');
         });
 
         it("should generate deep nested components", function() {
@@ -225,25 +270,49 @@ describe("metadata-generator", function() {
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoNested');
 
             expect(metas.DxoNested.properties.map(p => p.name)).toEqual(['deep']);
-            expect(metas.DxoNested.optionName).toEqual('nested');
+            expect(metas.DxoNested.optionName).toBe('nested');
+            expect(metas.DxoNested.baseClass).toBe('NestedOption');
+            expect(metas.DxoNested.hasSimpleBaseClass).toBe(true);
         });
 
         it("should generate external nested components", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoExternalProperty');
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoExternalProperty');
 
-            expect(metas.DxoExternalProperty.properties).toEqual(undefined);
-            expect(metas.DxoExternalProperty.baseClass).toEqual('DxoExternalPropertyType');
-            expect(metas.DxoExternalProperty.optionName).toEqual('externalProperty');
+            expect(metas.DxoExternalProperty.properties).toBe(undefined);
+            expect(metas.DxoExternalProperty.baseClass).toBe('DxoExternalPropertyType');
+            expect(metas.DxoExternalProperty.hasSimpleBaseClass).toBe(undefined);
+            expect(metas.DxoExternalProperty.optionName).toBe('externalProperty');
         });
 
         it("should generate recurcive external nested components", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoNestedExternalProperty');
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoNestedExternalProperty');
 
-            expect(metas.DxoNestedExternalProperty.properties).toEqual(undefined);
-            expect(metas.DxoNestedExternalProperty.baseClass).toEqual('DxoExternalPropertyType');
-            expect(metas.DxoNestedExternalProperty.optionName).toEqual('nestedExternalProperty');
+            expect(metas.DxoNestedExternalProperty.properties).toBe(undefined);
+            expect(metas.DxoNestedExternalProperty.baseClass).toBe('DxoExternalPropertyType');
+            expect(metas.DxoNestedExternalProperty.hasSimpleBaseClass).toBe(undefined);
+            expect(metas.DxoNestedExternalProperty.optionName).toBe('nestedExternalProperty');
+        });
+
+        it("should generate collection nested components", function() {
+            let collectionItem = metas.DxcCollectionItem;
+            expect(collectionItem).not.toBe(undefined);
+            expect(collectionItem.path).toBe('collection-items');
+            expect(collectionItem.propertyName).toBe('collectionItems');
+            expect(collectionItem.isCollection).toBe(true);
+            expect(collectionItem.hasTemplate).toBe(undefined);
+        });
+
+        it("should generate nested options where plural name equals singular", function() {
+            let collectionItem = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxcValueAxis')[0];
+            expect(collectionItem.path).toBe('value-axis-collection');
+        });
+
+        it("should generate collection nested components with templates", function() {
+            let collectionItemWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxcCollectionItemWithTemplate')[0];
+            expect(collectionItemWithTemplate).not.toBe(undefined);
+            expect(collectionItemWithTemplate.hasTemplate).toBe(true);
         });
 
     });

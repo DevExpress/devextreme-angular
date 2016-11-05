@@ -2,19 +2,20 @@ import {
     Component,
     NgModule,
     Host,
+    ElementRef,
     SkipSelf<#? it.properties #>,
     Input<#?#>
 } from '@angular/core';
 
-import { <#? !it.baseClass #>NestedOption, <#?#>NestedOptionHost } from '../../core/nested-option';<#? it.baseClass #>
-import { <#= it.baseClass #> } from './base/<#= it.basePath #>';<#?#>
+import { NestedOptionHost } from '../../core/nested-option';
+import { <#= it.baseClass #> } from '<#= it.basePath #>';
 
-@Component(<#? it.baseClass #>Object.assign(<#?#>{
+@Component(<#? !it.hasSimpleBaseClass #>Object.assign(<#?#>{
     selector: '<#= it.selector #>',
-    template: '',
+    template: '<#? it.hasTemplate #><ng-content></ng-content><#?#>',
     providers: [NestedOptionHost]
-}<#? it.baseClass #>, <#= it.baseClass #>.metaData)<#?#>)
-export class <#= it.className #>Component extends <#= it.baseClass || 'NestedOption' #> {<#~ it.properties :prop:i #>
+}<#? !it.hasSimpleBaseClass #>, <#= it.baseClass #>.metaData)<#?#>)
+export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
@@ -27,8 +28,8 @@ export class <#= it.className #>Component extends <#= it.baseClass || 'NestedOpt
         return '<#= it.optionName #>';
     }
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super();
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, _element: ElementRef) {
+        super(_element);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._baseOptionPath);

@@ -8,11 +8,11 @@ import logger from './logger';
 let inflector = require('inflector-js');
 
 function trimDx(value: string) {
-    return value.substr('dx-'.length);
+    return trimPrefix('dx-', value);
 }
 
-function trimDxo(value: string) {
-    return value.substr('dxo-'.length);
+function trimPrefix(prefix: string, value: string) {
+    return value.substr(prefix.length);
 }
 
 export interface IObjectStore {
@@ -108,7 +108,10 @@ export default class DXComponentMetadataGenerator {
                     if (result.filter(c => c.className === component.className).length === 0) {
                         result.push({
                             path: component.path,
-                            className: component.className
+                            propertyName: component.propertyName,
+                            className: component.className,
+                            isCollection: component.isCollection,
+                            hasTemplate: component.hasTemplate
                         });
                     }
 
@@ -138,12 +141,8 @@ export default class DXComponentMetadataGenerator {
     }
 
     private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
-        if (option.IsCollection) {
-            return;
-        }
-
         if (option.Options) {
-            return this.generateComplexOption(metadata, option.Options, optionName, complexTypes);
+            return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
         } else if (option.ComplexTypes && option.ComplexTypes.length === 1) {
             if (complexTypes.indexOf(complexTypes[complexTypes.length - 1]) !== complexTypes.length - 1) {
                 return;
@@ -155,8 +154,8 @@ export default class DXComponentMetadataGenerator {
                 let nestedOptions = externalObject.Options;
                 let nestedComplexTypes = complexTypes.concat(complexType);
 
-                let components = this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes);
-                components[0].baseClass = 'Dxo' + complexType;
+                let components = this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option);
+                components[0].baseClass = (option.IsCollection ? 'Dxc' : 'Dxo') + complexType;
                 components[0].basePath = inflector.dasherize(inflector.underscore(complexType));
                 return components;
             } else {
@@ -165,31 +164,49 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOption(metadata, nestedOptions, optionName, complexTypes) {
+    private generateComplexOption(metadata, nestedOptions, optionName, complexTypes, option) {
         if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
 
-        let underscoreSelector = 'dxo' + '_' + inflector.underscore(optionName).split('.').join('_');
-        let selector = inflector.dasherize(underscoreSelector);
+        let pluralName = optionName;
+        if (option.IsCollection && optionName === option.SingularName) {
+            pluralName += 'Collection';
+        }
+
+        let singularName = option.SingularName || pluralName,
+            underscoreSingular = inflector.underscore(singularName).split('.').join('_'),
+            underscorePlural = inflector.underscore(pluralName).split('.').join('_'),
+            prefix = (option.IsCollection ? 'dxc' : 'dxo') + '_',
+            underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
+            selector = inflector.dasherize(underscoreSelector),
+            path = inflector.dasherize(underscorePlural);
 
         let complexOptionMetadata: any = {
             className: inflector.camelize(underscoreSelector),
             selector:  selector,
             optionName: optionName,
             properties: [],
-            path: trimDxo(selector)
+            path: path,
+            propertyName: optionName,
+            isCollection: option.IsCollection,
+            hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate
         };
 
         let nestedComponents = [complexOptionMetadata];
 
         for (let optName in nestedOptions) {
+            if (optName === 'template' && option.Options[optName].IsTemplate) {
+                continue;
+            };
+
             let property: any = {
                 name: optName
             };
             complexOptionMetadata.properties.push(property);
 
             let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes);
+
             nestedComponents = nestedComponents.concat(...components);
         }
 
@@ -244,6 +261,11 @@ export default class DXComponentMetadataGenerator {
             .map((component) => {
                 if (component.baseClass) {
                     delete component.properties;
+                    component.basePath = './base/' + component.basePath;
+                } else {
+                    component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
+                    component.basePath = '../../core/nested-option';
+                    component.hasSimpleBaseClass = true;
                 }
 
                 return component;
