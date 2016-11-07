@@ -25,6 +25,7 @@ import {
 class TestContainerComponent {
     items = [1];
     complexItems = [{ text: 'Item 1' }];
+    defaultTemplateItems = [{ text: 'test', disabled: false }];
     disabled = false;
     @ViewChildren(DxListComponent) innerWidgets: QueryList<DxListComponent>;
 }
@@ -106,6 +107,28 @@ describe('DxList', () => {
         expect(instance.element().find('.dx-item-content').length).toBe(2);
         expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('Item 1');
         expect(instance.element().find('.dx-item-content').eq(1).text()).toBe('Item 2');
+    }));
+
+    it('should react to item option change', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-list [(items)]="defaultTemplateItems"></dx-list>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        testComponent.defaultTemplateItems[0].disabled = true;
+        fixture.detectChanges();
+
+        let listItem = instance.element().find('.dx-list-item');
+        let listItemHasDisabledClass = listItem.hasClass('dx-state-disabled');
+
+        expect(listItem.length).toEqual(1);
+        expect(listItemHasDisabledClass).toBeTruthy();
     }));
 
     it('should use properties of the nested components', async(() => {

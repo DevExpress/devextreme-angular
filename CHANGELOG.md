@@ -9,6 +9,8 @@
 
 - Fix the 'dx-validator' component ([#30](https://github.com/DevExpress/devextreme-angular2/issues/30))
 - Fix the component property change propagation to the corresponding widget option ([#6](https://github.com/DevExpress/devextreme-angular2/issues/6))
+- Fix the 'dxTemplate' directive issues ([#4](https://github.com/DevExpress/devextreme-angular2/issues/4) and [#106](https://github.com/DevExpress/devextreme-angular2/issues/106))  
+- Fix the 2-way data binding to DevExtreme collection widgets, dxDataGrid and dxForm ([#36](https://github.com/DevExpress/devextreme-angular2/issues/36))
 
 ## 16.2.1-alpha.1 (2016-10-20)
 

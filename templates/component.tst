@@ -37,7 +37,7 @@ import {
 import { <#= baseClass #> } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
 import { NestedOptionHost } from '../core/nested-option';
-
+import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
 
 <#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
@@ -46,7 +46,7 @@ import { NestedOptionHost } from '../core/nested-option';
 <#~#>
 
 let providers = [];
-providers.push(DxTemplateHost);
+providers.push(DxTemplateHost, WatcherHelper);
 providers.push(NestedOptionHost);
 <#? collectionProperties.length #>providers.push(IterableDifferHelper);<#?#>
 
@@ -85,10 +85,11 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     }
 <#~#>
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost<#? collectionProperties.length #>,
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost,
+            private _watcherHelper: WatcherHelper<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
-        super(elementRef, ngZone, templateHost);
+        super(elementRef, ngZone, templateHost, _watcherHelper);
         this.widgetClassName = '<#= it.widgetName #>';
         this._events = [
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
@@ -121,6 +122,7 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
 
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
+        this._watcherHelper.checkWatchers();
     }<#?#>
 }
 

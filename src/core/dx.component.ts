@@ -7,6 +7,7 @@ import {
 
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
+import { WatcherHelper } from './watcher-helper';
 import {
     INestedOptionContainer,
     ICollectionNestedOption,
@@ -42,6 +43,8 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
                 return emitter && emitter.emit(e);
             };
         });
+
+        this._initialOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     private _initEvents() {
         this._events.forEach(event => {
@@ -92,7 +95,7 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
         this._initEvents();
         this._initProperties();
     }
-    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost) {
+    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
         this._initialOptions = {};
         this.templates = [];
         templateHost.setHost(this);

@@ -18,6 +18,7 @@ import {
     async
 } from '@angular/core/testing';
 
+import { WatcherHelper } from '../../../dist/core/watcher-helper';
 import {
     DxComponent,
     DxTemplateHost
@@ -40,7 +41,7 @@ let DxTestWidget = DxButton['inherit']({
 @Component({
     selector: 'dx-test-widget',
     template: '',
-    providers: [DxTemplateHost, NestedOptionHost]
+    providers: [DxTemplateHost, NestedOptionHost, WatcherHelper]
 })
 export class DxTestWidgetComponent extends DxComponent {
     @Input()
@@ -56,8 +57,9 @@ export class DxTestWidgetComponent extends DxComponent {
     @Output() onContentReady: EventEmitter<any>;
     @Output() testOptionChange: EventEmitter<any>;
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost) {
-        super(elementRef, ngZone, templateHost);
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost,
+        _watcherHelper: WatcherHelper) {
+        super(elementRef, ngZone, templateHost, _watcherHelper);
 
         this.widgetClassName = 'dxTestWidget';
         this._events = [

@@ -18,7 +18,8 @@ import {
 
 import {
     DxComponentExtension,
-    DxTemplateHost
+    DxTemplateHost,
+    WatcherHelper
 } from '../../../dist';
 
 import DxButton from 'devextreme/ui/button';
@@ -32,14 +33,14 @@ let DxTestExtension = DxButton['inherit']({
 @Component({
     selector: 'dx-test-extension',
     template: '',
-    providers: [DxTemplateHost]
+    providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestExtensionComponent extends DxComponentExtension {
     @Input() testOption: any;
     @Output() testOptionChange: EventEmitter<any>;
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost) {
-        super(elementRef, ngZone, templateHost);
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
+        super(elementRef, ngZone, templateHost, _watcherHelper);
         this.widgetClassName = 'dxTestExtension';
         this._events = [
             { emit: 'testOptionChange' }
