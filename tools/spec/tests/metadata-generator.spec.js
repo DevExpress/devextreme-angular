@@ -251,10 +251,10 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalProperty).not.toBe(undefined);
             expect(metas.DxoNestedExternalProperty).not.toBe(undefined);
             expect(metas.DxoExternalPropertyType).not.toBe(undefined);
-            expect(metas.DxcCollectionItem).not.toBe(undefined);
+            expect(metas.DxiCollectionItem).not.toBe(undefined);
             expect(metas.DxoCollectionItem).not.toBe(undefined);
-            expect(metas.DxcCollectionItemWithTemplate).not.toBe(undefined);
-            expect(metas.DxcValueAxis).not.toBe(undefined);
+            expect(metas.DxiCollectionItemWithTemplate).not.toBe(undefined);
+            expect(metas.DxiValueAxis).not.toBe(undefined);
         });
 
         it("should generate nested components with merged properties", function() {
@@ -296,7 +296,7 @@ describe("metadata-generator", function() {
         });
 
         it("should generate collection nested components", function() {
-            let collectionItem = metas.DxcCollectionItem;
+            let collectionItem = metas.DxiCollectionItem;
             expect(collectionItem).not.toBe(undefined);
             expect(collectionItem.path).toBe('collection-items');
             expect(collectionItem.propertyName).toBe('collectionItems');
@@ -305,12 +305,12 @@ describe("metadata-generator", function() {
         });
 
         it("should generate nested options where plural name equals singular", function() {
-            let collectionItem = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxcValueAxis')[0];
+            let collectionItem = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxiValueAxis')[0];
             expect(collectionItem.path).toBe('value-axis-collection');
         });
 
         it("should generate collection nested components with templates", function() {
-            let collectionItemWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxcCollectionItemWithTemplate')[0];
+            let collectionItemWithTemplate = metas.DxComplexWidget.nestedComponents.filter(c => c.className === 'DxiCollectionItemWithTemplate')[0];
             expect(collectionItemWithTemplate).not.toBe(undefined);
             expect(collectionItemWithTemplate.hasTemplate).toBe(true);
         });

@@ -7,6 +7,9 @@ import mkdirp = require('mkdirp');
 import logger from './logger';
 let inflector = require('inflector-js');
 
+const OPTION_COMPONENT_PREFIX = 'Dxo';
+const ITEM_COMPONENT_PREFIX = 'Dxi';
+
 function trimDx(value: string) {
     return trimPrefix('dx-', value);
 }
@@ -155,7 +158,7 @@ export default class DXComponentMetadataGenerator {
                 let nestedComplexTypes = complexTypes.concat(complexType);
 
                 let components = this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option);
-                components[0].baseClass = (option.IsCollection ? 'Dxc' : 'Dxo') + complexType;
+                components[0].baseClass = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + complexType;
                 components[0].basePath = inflector.dasherize(inflector.underscore(complexType));
                 return components;
             } else {
@@ -177,7 +180,7 @@ export default class DXComponentMetadataGenerator {
         let singularName = option.SingularName || pluralName,
             underscoreSingular = inflector.underscore(singularName).split('.').join('_'),
             underscorePlural = inflector.underscore(pluralName).split('.').join('_'),
-            prefix = (option.IsCollection ? 'dxc' : 'dxo') + '_',
+            prefix = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX).toLocaleLowerCase() + '_',
             underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);

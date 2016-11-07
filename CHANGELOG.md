@@ -1,5 +1,10 @@
 ## Next Release
 
+### Features
+
+- Introduce configuration components ([#5](https://github.com/DevExpress/devextreme-angular2/issues/5)). 
+(https://github.com/DevExpress/devextreme-angular2#advanced-devextreme-widget-options-configuration)[See examples].
+
 ### Bug Fixes
 
 - Fix the 'dx-validator' component ([#30](https://github.com/DevExpress/devextreme-angular2/issues/30))
