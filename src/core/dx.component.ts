@@ -1,17 +1,24 @@
 import {
     AfterViewInit,
     ElementRef,
-    NgZone
+    NgZone,
+    QueryList
 } from '@angular/core';
 
 import { DxTemplateDirective } from './dx.template';
 import { DxTemplateHost } from './dx.template-host';
 import { WatcherHelper } from './watcher-helper';
+import {
+    INestedOptionContainer,
+    ICollectionNestedOption,
+    ICollectionNestedOptionContainer
+} from './nested-option';
 
 const startupEvents = ['onInitialized', 'onContentReady'];
 
-export abstract class DxComponentBase {
+export abstract class DxComponentBase implements INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
+    private _activatedQueries = {};
     templates: DxTemplateDirective[];
     widgetClassName: string;
     instance: any;
@@ -95,6 +102,18 @@ export abstract class DxComponentBase {
     }
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
+    }
+    setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        if (items.length) {
+            this._activatedQueries[propertyName] = true;
+        }
+        if (this._activatedQueries[propertyName]) {
+            let widgetItems = items.map((item, index) => {
+                item.index = index;
+                return item.value;
+            });
+            this._setOption(propertyName, widgetItems);
+        }
     }
 }
 

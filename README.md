@@ -302,6 +302,94 @@ export class AppComponent {
 ```
 
 
+### Advanced DevExtreme Widget options configuration
+
+You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
+The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/16_1/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
+
+```html
+<dx-tree-map [dataSource]="treeData">
+    <dxo-tooltip [enabled]="showTooltip" format="thousands"></dxo-tooltip>
+</dx-tree-map>
+
+<dx-button text="Toggle tooltip" (onClick)="toggleTooltip()"></dx-button>
+```
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    treeData = ...;
+    showTooltip = false;
+    toggleTooltip() {
+        this.showTooltip = !this.showTooltip;
+    }
+}
+```
+
+You can also use `dxi-` ('i' is a contraction of 'item') prefixed components to configure complex collection options for widgets. 
+The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the DataGrid widget: 
+
+```html
+<dx-data-grid [dataSource]="data">
+    <dxi-column dataField="firstName" caption="First Name"></dxi-column>
+    <dxi-column dataField="lastName" caption="Last Name" [visible]="showLastName"></dxi-column>
+</dx-data-grid>
+
+<dx-button text="Toggle the 'Last Name' column" (onClick)="toggleLastName()"></dx-button>
+```
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    data = ...;
+    showLastName = false;
+    toggleLastName() {
+        this.showLastName = !this.showLastName;
+    }
+}
+```
+
+It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
+(https://angular.io/docs/ts/latest/guide/structural-directives.html)[structural directives] such as ngFor. Note that
+the available item properties are described in the (https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxList/Default_Item_Template/)[Default Item Template] 
+section of a corresponding widget documentation reference.
+
+```html
+<dx-list>
+    <dxi-item>
+        <h1>Items available</h1>
+    </dxi-item>
+    <dxi-item *ngFor="let item of listItems" [badge]="item.badge">
+        <h2>{{item.text}}</h2>
+    </dxi-item>
+</dx-list>
+```
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    listItems = [
+        {
+            text: 'Cars',
+            badge: '12'
+        },
+        {
+            text: 'Bikes',
+            badge: '5'
+        }
+    ];
+}
+```
+
 ### Accessing a DevExtreme Widget Instance
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's

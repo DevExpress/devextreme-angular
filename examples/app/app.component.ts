@@ -75,6 +75,7 @@ declare let $: any;
             user-select: none;
             padding-left: 25px;
             padding-top: 55px;
+            display: block;
         }
         .tabpanel-item  > div {
             float: left;
@@ -118,12 +119,12 @@ export class AppComponent implements OnInit {
     currentDate: Date;
     demoItems: string[];
     popupVisible = false;
+    chartSeriesTypes = ['bar', 'line', 'spline'];
+    chartSeriesType = this.chartSeriesTypes[0];
     series = {
         argumentField: 'day',
         valueField: 'oranges',
-        name: 'My oranges',
-        type: 'bar',
-        color: '#ffa500'
+        name: 'My oranges'
     };
     oranges: Orange[];
     customers: Customer[];

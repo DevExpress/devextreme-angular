@@ -43,7 +43,13 @@ gulp.task('build.tools', function() {
 
 //------------Components------------
 
-gulp.task('generate.metadata', ['build.tools'], function () {
+gulp.task('clean.metadata', ['build.tools'], function () {
+    var outputFolderPath = buildConfig.tools.metadataGenerator.outputFolderPath;
+
+    return del([outputFolderPath]);
+});
+
+gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
     var MetadataGenerator = require(buildConfig.tools.metadataGenerator.importFrom).default,
         generator = new MetadataGenerator();
 
