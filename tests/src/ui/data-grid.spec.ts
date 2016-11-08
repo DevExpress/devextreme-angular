@@ -63,6 +63,6 @@ describe('DxDataGrid', () => {
             fixture.detectChanges();
 
             done();
-        }, 100);
+        }, 0);
     });
 });
