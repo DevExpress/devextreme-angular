@@ -45,15 +45,15 @@ import { WatcherHelper } from '../core/watcher-helper';
 <#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
 <#~#>
 
-let providers = [];
-providers.push(DxTemplateHost, WatcherHelper);
-providers.push(NestedOptionHost);
-<#? collectionProperties.length #>providers.push(IterableDifferHelper);<#?#>
-
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
-    providers: providers
+    providers: [
+        DxTemplateHost,
+        WatcherHelper,
+        NestedOptionHost<#? collectionProperties.length #>,
+        IterableDifferHelper<#?#>
+    ]
 })
 export class <#= it.className #>Component extends <#= baseClass #><#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
     instance: <#= it.className #>;
