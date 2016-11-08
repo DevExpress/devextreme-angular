@@ -1,8 +1,8 @@
 [![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular2.svg)](https://badge.fury.io/js/devextreme-angular2)
 
-### If you are looking for the 16.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular2/tree/16.1).
-
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets
+
+### :bangbang: If you are looking for the 16.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular2/tree/16.1). :bangbang:
 
 Project status: **CTP**
 
@@ -42,7 +42,7 @@ We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/q
 Once the application is ready and works install the devextreme-angular2 npm package as follows:
 
 ```
-npm install devextreme-angular2
+npm install --save devextreme-angular2@16.2-unstable
 ```
 
 Modify the references in the index.html file as follows:
@@ -59,6 +59,14 @@ Modify the references in the index.html file as follows:
 <script src="node_modules/systemjs/dist/system.src.js"></script>
 
 <script src="systemjs.config.js"></script>
+```
+
+Make sure your html document has DOCTYPE specified:
+
+```html
+<!DOCTYPE html>
+<html>
+  ...
 ```
 
 Modify the 'systemjs.config.js' file as follows:
@@ -356,8 +364,8 @@ export class AppComponent {
 ```
 
 It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
-(https://angular.io/docs/ts/latest/guide/structural-directives.html)[structural directives] such as ngFor. Note that
-the available item properties are described in the (https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxList/Default_Item_Template/)[Default Item Template] 
+[structural directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) such as ngFor. Note that
+the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
 section of a corresponding widget documentation reference.
 
 ```html
