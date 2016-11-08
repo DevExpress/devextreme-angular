@@ -45,39 +45,24 @@ export class WatcherHelper {
     }
 
     private _isElementExpired(element: any) {
-        let isExpired = false;
-
         if (element) {
-            isExpired = element.getRootNode().nodeType !== DOCUMENT_NODE_TYPE;
+            return element.getRootNode().nodeType !== DOCUMENT_NODE_TYPE;
         }
-
-        return isExpired;
     }
 
     private _isDifferentValues(oldValue: any, newValue: any, deepCheck: boolean) {
-        let isDifferentValue = false;
-
         if (deepCheck && newValue instanceof (Object)) {
-            isDifferentValue = this._checkObjectsFields(newValue, oldValue);
-        } else {
-            isDifferentValue = oldValue !== newValue;
+            return this._checkObjectsFields(newValue, oldValue);
         }
-
-        return isDifferentValue;
+        return oldValue !== newValue;
     }
 
     private _checkObjectsFields(checkingFromObject: Object, checkingToObject: Object) {
-        let isDifferentObjects = false;
-
         for (let field in checkingFromObject) {
-            isDifferentObjects = checkingFromObject[field] !== checkingToObject[field];
-
-            if (isDifferentObjects) {
-                break;
+            if (checkingFromObject[field] > checkingToObject[field] || checkingFromObject[field] < checkingToObject[field]) {
+                return true;
             }
         }
-
-        return isDifferentObjects;
     }
 
     checkWatchers() {
