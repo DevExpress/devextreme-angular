@@ -1,4 +1,4 @@
-var bundleName = "devextreme-angular2";
+var bundleName = "devextreme-angular";
 
 module.exports = {
     tools: {

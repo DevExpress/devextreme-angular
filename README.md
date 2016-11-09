@@ -1,8 +1,8 @@
-[![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular2.svg)](https://badge.fury.io/js/devextreme-angular2)
+[![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets
 
-### :red_circle: If you are looking for the 16.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular2/tree/16.1)
+### :red_circle: If you are looking for the 16.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular/tree/16.1)
 
 Project status: **CTP**
 
@@ -39,10 +39,10 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
 [original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
 
-Once the application is ready and works install the devextreme-angular2 npm package as follows:
+Once the application is ready and works install the devextreme-angular npm package as follows:
 
 ```
-npm install --save devextreme-angular2@16.2-unstable
+npm install --save devextreme-angular@16.2-unstable
 ```
 
 Modify the references in the index.html file as follows:
@@ -92,7 +92,7 @@ map: {
     'devextreme': 'npm:devextreme',                   // <== add this line
     'jquery': 'npm:jquery/dist/jquery.min.js',        // <== add this line
     'jszip': 'npm:jszip/dist/jszip.min.js',           // <== add this line
-    'devextreme-angular2': 'npm:devextreme-angular2', // <== add this line
+    'devextreme-angular': 'npm:devextreme-angular', // <== add this line
     // other libraries
     'rxjs': 'npm:rxjs',
     'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
@@ -101,7 +101,7 @@ packages = {
     'app':                        { main: 'main.js',  defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
     'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'devextreme-angular2':        { main: 'index.js', defaultExtension: 'js' }, // <== add this line
+    'devextreme-angular':        { main: 'index.js', defaultExtension: 'js' }, // <== add this line
     'devextreme':                 { defaultExtension: 'js' }                    // <== add this line
 }
 ```
@@ -109,7 +109,7 @@ packages = {
 Add the required DevExtreme modules to the **/app/app.module.ts** file and add them to the imports section of the application module:
 
 ```js
-import { DevExtremeModule } from 'devextreme-angular2';
+import { DevExtremeModule } from 'devextreme-angular';
 
 @NgModule({
     declarations: [AppComponent],
@@ -408,7 +408,7 @@ method of the dxDataGrid is called:
 
 ```js
 import { Component, ViewChild } from '@angular/core';
-import { DxDataGridComponent } from "devextreme-angular2";
+import { DxDataGridComponent } from "devextreme-angular";
 
 @Component({
     selector: 'my-app',
@@ -437,4 +437,4 @@ Familiarize yourself with the
 
 * For general Angular 2 topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
 * For questions regarding DevExtreme libraries and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center)
-* For DevExtreme Angular 2 integration bugs, questions and suggestions, use the [GitHub issue tracker](https://github.com/DevExpress/devextreme-angular2/issues)
+* For DevExtreme Angular 2 integration bugs, questions and suggestions, use the [GitHub issue tracker](https://github.com/DevExpress/devextreme-angular/issues)
