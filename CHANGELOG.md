@@ -1,9 +1,9 @@
-## Next Release
+## 16.2.1-alpha.2 (2016-11-09)
 
 ### Features
 
 - Introduce configuration components ([#5](https://github.com/DevExpress/devextreme-angular2/issues/5)). 
-(https://github.com/DevExpress/devextreme-angular2#advanced-devextreme-widget-options-configuration)[See examples].
+[See examples](https://github.com/DevExpress/devextreme-angular2#advanced-devextreme-widget-options-configuration).
 
 ### Bug Fixes
 

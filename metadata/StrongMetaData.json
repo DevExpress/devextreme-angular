@@ -591,7 +591,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -704,8 +705,7 @@
         },
         "maxLength": {
           "PrimitiveTypes": [
-            "double",
-            "string"
+            "int32"
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
@@ -739,7 +739,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "double"
+            "int32"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -1075,7 +1075,8 @@
         "useSubmitBehavior": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether the button must submit an HTML form."
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -1181,7 +1182,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1352,7 +1354,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1495,7 +1498,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1589,7 +1593,7 @@
           "Description": "The read-only option that holds the text displayed by the widget input element."
         },
         "applyValueMode": {
-          "EnumName": "EditorValueApplyMode",
+          "EnumName": "EditorApplyValueMode",
           "Description": "Specifies the way an end-user applies the selected value."
         },
         "deferRendering": {
@@ -2462,7 +2466,7 @@
             },
             "hidingPriority": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "Specifies the order according to which grid columns must be concealed when the widget adapts to the screen or container size."
             },
@@ -2508,7 +2512,7 @@
             },
             "ownerBand": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
             },
@@ -2822,7 +2826,7 @@
           "Description": "Specifies filter row options.",
           "Options": {
             "applyFilter": {
-              "EnumName": "GridFilterRowApplyMode",
+              "EnumName": "GridApplyFilterMode",
               "Description": "Specifies when to apply a filter."
             },
             "applyFilterText": {
@@ -3365,7 +3369,7 @@
             },
             "pageSize": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "Specifies the size of grid pages."
             }
@@ -3376,7 +3380,7 @@
             "bool",
             "string"
           ],
-          "Description": "Specifies the operations that must be performed on the server side.",
+          "Description": "Specifies the operations that must be performed server side.",
           "Options": {
             "filtering": {
               "PrimitiveTypes": [
@@ -3452,7 +3456,7 @@
               "Description": "Specifies whether or not the scrollbar thumb scrolling enabled."
             },
             "showScrollbar": {
-              "EnumName": "ScrollbarDisplayMode",
+              "EnumName": "ShowScrollbarMode",
               "Description": "Specifies the scrollbar display policy."
             },
             "useNative": {
@@ -3511,7 +3515,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of the records that must appear selected initially."
+          "Description": "Specifies the keys of the records that must appear initially selected."
         },
         "selection": {
           "Description": "Specifies options of runtime selection.",
@@ -3522,19 +3526,31 @@
               ],
               "Description": "Specifies whether the user can select all grid records at once."
             },
+            "async": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether or not selection is performed asynchronously."
+            },
             "mode": {
               "EnumName": "SelectionMode",
               "Description": "Specifies the selection mode."
             },
             "selectAllMode": {
               "EnumName": "SelectAllMode",
-              "Description": "Specifies the selectAll mode."
+              "Description": "Specifies the mode in which all the records are selected."
             },
             "showCheckBoxesMode": {
               "EnumName": "GridSelectionShowCheckBoxesMode",
               "Description": "Specifies the checkbox row display policy in the multiple mode."
             }
           }
+        },
+        "selectionFilter": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies filters for the records that must appear initially selected."
         },
         "showBorders": {
           "PrimitiveTypes": [
@@ -3985,7 +4001,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -4100,8 +4117,7 @@
         },
         "maxLength": {
           "PrimitiveTypes": [
-            "double",
-            "string"
+            "int32"
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
@@ -4112,7 +4128,7 @@
           "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
         },
         "applyValueMode": {
-          "EnumName": "EditorValueApplyMode",
+          "EnumName": "EditorApplyValueMode",
           "Description": "Specifies the way an end-user applies the selected value."
         },
         "deferRendering": {
@@ -4230,7 +4246,7 @@
           "Description": "Specifies the type of the date/time picker."
         },
         "type": {
-          "EnumName": "DateBoxFormat",
+          "EnumName": "DateBoxType",
           "Description": "A format used to display date/time information."
         },
         "useCalendar": {
@@ -4656,25 +4672,25 @@
           "Options": {
             "lg": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "The count of columns for a large screen size."
             },
             "md": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "The count of columns for a middle-sized screen."
             },
             "sm": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "The count of columns for a small-sized screen."
             },
             "xs": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "The count of columns for an extra small-sized screen."
             }
@@ -4775,6 +4791,12 @@
             "bool"
           ],
           "Description": "Specifies whether or not the total validation summary is displayed on the form."
+        },
+        "validationGroup": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Gives a name to the internal validation group."
         }
       }
     },
@@ -5407,7 +5429,7 @@
           "IsDeprecated": true
         },
         "showScrollbar": {
-          "EnumName": "ScrollbarDisplayMode",
+          "EnumName": "ShowScrollbarMode",
           "Description": "Specifies when the widget shows the scrollbar."
         },
         "showSelectionControls": {
@@ -5827,7 +5849,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -5882,7 +5905,7 @@
           "Description": "Specifies DOM event names that update a widget's value."
         },
         "applyValueMode": {
-          "EnumName": "EditorValueApplyMode",
+          "EnumName": "EditorApplyValueMode",
           "Description": "Specifies the way an end-user applies the selected value."
         },
         "deferRendering": {
@@ -5925,7 +5948,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "double"
+            "int32"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -7379,7 +7402,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -9411,7 +9435,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -9709,7 +9734,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the form field representing the end option value."
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "start": {
           "PrimitiveTypes": [
@@ -9721,7 +9746,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the form field representing the start option value."
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         }
       }
     },
@@ -9946,25 +9971,25 @@
               "Options": {
                 "col": {
                   "PrimitiveTypes": [
-                    "double"
+                    "int32"
                   ],
                   "Description": "Specifies the column component of the element location."
                 },
                 "colspan": {
                   "PrimitiveTypes": [
-                    "double"
+                    "int32"
                   ],
                   "Description": "Specifies the width of the element in columns."
                 },
                 "row": {
                   "PrimitiveTypes": [
-                    "double"
+                    "int32"
                   ],
                   "Description": "Specifies the row component of the element location."
                 },
                 "rowspan": {
                   "PrimitiveTypes": [
-                    "double"
+                    "int32"
                   ],
                   "Description": "Specifies the height of the element in rows."
                 },
@@ -10136,7 +10161,7 @@
         },
         "cellDuration": {
           "PrimitiveTypes": [
-            "double"
+            "int32"
           ],
           "Description": "Specifies cell duration in minutes."
         },
@@ -10155,7 +10180,7 @@
           "Description": "Specifies a date displayed on the current scheduler view by default."
         },
         "currentView": {
-          "EnumName": "SchedulerView",
+          "EnumName": "SchedulerViewType",
           "Description": "Specifies the view used in the scheduler by default."
         },
         "dataCellTemplate": {
@@ -10464,13 +10489,13 @@
         },
         "views": {
           "IsCollection": true,
-          "EnumName": "SchedulerView",
+          "EnumName": "SchedulerViewType",
           "SingularName": "view",
           "Description": "Lists the views to be available within the scheduler's View Selector.",
           "Options": {
             "agendaDuration": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "Specifies the number of dates that can be shown at a time in the agenda view."
             },
@@ -10484,7 +10509,7 @@
             },
             "cellDuration": {
               "PrimitiveTypes": [
-                "double"
+                "int32"
               ],
               "Description": "The cell duration in minutes."
             },
@@ -10529,7 +10554,7 @@
               "Description": "The template to be used for rendering time scale items."
             },
             "type": {
-              "EnumName": "SchedulerView",
+              "EnumName": "SchedulerViewType",
               "Description": "The name of the view."
             }
           }
@@ -10615,7 +10640,7 @@
           "Description": "A Boolean value specifying whether or not an end-user can scroll the widget content using the scrollbar."
         },
         "showScrollbar": {
-          "EnumName": "ScrollbarDisplayMode",
+          "EnumName": "ShowScrollbarMode",
           "Description": "Specifies when the widget shows the scrollbar."
         },
         "useNative": {
@@ -10821,7 +10846,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -10934,8 +10960,7 @@
         },
         "maxLength": {
           "PrimitiveTypes": [
-            "double",
-            "string"
+            "int32"
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
@@ -10985,7 +11010,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "double"
+            "int32"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -11473,7 +11498,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -11684,7 +11710,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12375,7 +12402,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12468,7 +12496,7 @@
           "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
         },
         "applyValueMode": {
-          "EnumName": "EditorValueApplyMode",
+          "EnumName": "EditorApplyValueMode",
           "Description": "Specifies how the widget applies values."
         },
         "deferRendering": {
@@ -12505,7 +12533,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "double"
+            "int32"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -12721,7 +12749,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12828,8 +12857,7 @@
         },
         "maxLength": {
           "PrimitiveTypes": [
-            "double",
-            "string"
+            "int32"
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
@@ -12961,7 +12989,8 @@
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The value to be assigned to the name attribute of the underlying `` element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -13104,8 +13133,7 @@
         },
         "maxLength": {
           "PrimitiveTypes": [
-            "double",
-            "string"
+            "int32"
           ],
           "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
@@ -13702,7 +13730,7 @@
               "Description": "Specifies a configuration object for the widget that presents a toolbar item."
             },
             "showText": {
-              "EnumName": "ToolbarItemShowText",
+              "EnumName": "ToolbarItemShowTextMode",
               "Description": "Specifies when to display the text for the widget item."
             },
             "widget": {
@@ -16330,11 +16358,11 @@
                   "Description": "Adds a pixel-measured empty space between an axis and its labels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "OverlappingBehaviorMode",
+                  "EnumName": "OverlappingBehavior",
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them.",
                   "Options": {
                     "mode": {
-                      "EnumName": "OverlappingBehaviorMode",
+                      "EnumName": "OverlappingBehavior",
                       "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
                     },
                     "rotationAngle": {
@@ -16876,7 +16904,7 @@
               }
             },
             "type": {
-              "EnumName": "AxisScale",
+              "EnumName": "AxisScaleType",
               "Description": "Specifies the type of the argument axis."
             }
           }
@@ -17009,11 +17037,11 @@
                   "Description": "Adds a pixel-measured empty space between an axis and its labels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "OverlappingBehaviorMode",
+                  "EnumName": "OverlappingBehavior",
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them.",
                   "Options": {
                     "mode": {
-                      "EnumName": "OverlappingBehaviorMode",
+                      "EnumName": "OverlappingBehavior",
                       "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
                     },
                     "rotationAngle": {
@@ -17771,7 +17799,7 @@
           }
         },
         "scrollingMode": {
-          "EnumName": "ChartManipulationMode",
+          "EnumName": "ChartInputDevice",
           "Description": "Enables scrolling in your chart."
         },
         "series": {
@@ -17945,11 +17973,11 @@
                   "Description": "Adds a pixel-measured empty space between an axis and its labels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "OverlappingBehaviorMode",
+                  "EnumName": "OverlappingBehavior",
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them.",
                   "Options": {
                     "mode": {
-                      "EnumName": "OverlappingBehaviorMode",
+                      "EnumName": "OverlappingBehavior",
                       "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
                     },
                     "rotationAngle": {
@@ -18513,7 +18541,7 @@
               }
             },
             "type": {
-              "EnumName": "AxisScale",
+              "EnumName": "AxisScaleType",
               "Description": "Specifies the type of the value axis."
             },
             "valueType": {
@@ -18523,7 +18551,7 @@
           }
         },
         "zoomingMode": {
-          "EnumName": "ChartManipulationMode",
+          "EnumName": "ChartInputDevice",
           "Description": "Enables zooming in your chart."
         }
       }
@@ -19033,7 +19061,7 @@
               }
             },
             "orientation": {
-              "EnumName": "CircularGaugeOrientation",
+              "EnumName": "CircularGaugeElementOrientation",
               "Description": "Specifies the orientation of the range container in the CircularGauge widget."
             },
             "width": {
@@ -19124,7 +19152,7 @@
                   "Description": "Specifies the overlap resolving options to be applied to scale labels.",
                   "Options": {
                     "hideFirstOrLast": {
-                      "EnumName": "GaugeOverlappingBehaviorMode",
+                      "EnumName": "GaugeOverlappingResolution",
                       "Description": "Specifies what label to hide in case of overlapping."
                     },
                     "useAutoArrangement": {
@@ -19337,7 +19365,7 @@
               "Description": "Specifies an interval between major ticks."
             },
             "orientation": {
-              "EnumName": "CircularGaugeOrientation",
+              "EnumName": "CircularGaugeElementOrientation",
               "Description": "Specifies the orientation of scale ticks."
             }
           }
@@ -20074,7 +20102,7 @@
                   "Description": "Specifies the overlap resolving options to be applied to scale labels.",
                   "Options": {
                     "hideFirstOrLast": {
-                      "EnumName": "GaugeOverlappingBehaviorMode",
+                      "EnumName": "GaugeOverlappingResolution",
                       "Description": "Specifies what label to hide in case of overlapping."
                     },
                     "useAutoArrangement": {
@@ -21935,7 +21963,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartOverlappingBehaviorMode",
+                  "EnumName": "PolarChartLabelOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -22397,7 +22425,7 @@
               }
             },
             "type": {
-              "EnumName": "AxisScale",
+              "EnumName": "AxisScaleType",
               "Description": "Specifies the required type of the argument axis."
             }
           }
@@ -22510,7 +22538,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartOverlappingBehaviorMode",
+                  "EnumName": "PolarChartLabelOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -22735,7 +22763,7 @@
           "Description": "A handler for the seriesSelectionChanged event."
         },
         "resolveLabelOverlapping": {
-          "EnumName": "PolarChartLabelOverlappingMode",
+          "EnumName": "PolarChartOverlappingResolution",
           "Description": "Specifies how the chart must behave when series point labels overlap."
         },
         "series": {
@@ -22873,7 +22901,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartOverlappingBehaviorMode",
+                  "EnumName": "PolarChartLabelOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -23321,7 +23349,7 @@
               }
             },
             "type": {
-              "EnumName": "AxisScale",
+              "EnumName": "AxisScaleType",
               "Description": "Specifies the required type of the value axis."
             },
             "valueMarginsEnabled": {
@@ -23802,7 +23830,7 @@
                   "Description": "Specifies the minimum value of the chart's value axis."
                 },
                 "type": {
-                  "EnumName": "RangeSelectorChartAxisScale",
+                  "EnumName": "RangeSelectorChartAxisScaleType",
                   "Description": "Specifies the type of the value axis."
                 },
                 "valueType": {
@@ -24378,7 +24406,7 @@
               }
             },
             "type": {
-              "EnumName": "RangeSelectorAxisScale",
+              "EnumName": "RangeSelectorAxisScaleType",
               "Description": "Specifies the type of the scale."
             },
             "useTicksAutoArrangement": {
@@ -25594,7 +25622,7 @@
         },
         "resolveLabelOverflow": {
           "EnumName": "TreeMapLabelOverflowResolution",
-          "Description": "Decides whether to hide or truncate with ellipsis those labels that overflow their tile/group."
+          "Description": "Decides whether those labels that overflow their tile/group should be hidden or truncated with ellipsis."
         },
         "selectionMode": {
           "EnumName": "SelectionMode",
@@ -26352,7 +26380,7 @@
               "Description": "Specifies a data source for the layer."
             },
             "elementType": {
-              "EnumName": "VectorMapLayerElementType",
+              "EnumName": "VectorMapMarkerType",
               "Description": "Specifies the type of a marker element. Setting this option makes sense only if the layer type is \"marker\"."
             },
             "hoveredBorderColor": {
@@ -26914,7 +26942,7 @@
             },
             "type": {
               "IsDeprecated": true,
-              "EnumName": "VectorMapLayerElementType",
+              "EnumName": "VectorMapMarkerType",
               "Description": "Use the layers | elementType option instead."
             }
           }
@@ -27182,7 +27210,7 @@
               "Description": "Specifies whether or not to display Total values for the field."
             },
             "sortBy": {
-              "EnumName": "PivotGridSortMode",
+              "EnumName": "PivotGridSortBy",
               "Description": "Specifies how field data should be sorted. Can be used for the XmlaStore store type only."
             },
             "sortBySummaryField": {
@@ -30017,7 +30045,18 @@
         {
           "Name": "dxTextBox"
         }
-      ]
+      ],
+      "Renamings": {
+        "dxAutocomplete": "Autocomplete",
+        "dxButton": "Button",
+        "dxCheckBox": "CheckBox",
+        "dxDateBox": "DateBox",
+        "dxDropDownMenu": "DropDownMenu",
+        "dxMenu": "Menu",
+        "dxSelectBox": "SelectBox",
+        "dxTabs": "Tabs",
+        "dxTextBox": "TextBox"
+      }
     },
     "SelectionMode": {
       "Items": [
@@ -30169,7 +30208,7 @@
         }
       ]
     },
-    "ScrollbarDisplayMode": {
+    "ShowScrollbarMode": {
       "Items": [
         {
           "Name": "always"
@@ -30201,7 +30240,7 @@
         }
       ]
     },
-    "EditorValueApplyMode": {
+    "EditorApplyValueMode": {
       "Items": [
         {
           "Name": "instantly"
@@ -30224,7 +30263,7 @@
         }
       ]
     },
-    "DateBoxFormat": {
+    "DateBoxType": {
       "Items": [
         {
           "Name": "date"
@@ -30405,7 +30444,7 @@
         }
       ]
     },
-    "SchedulerView": {
+    "SchedulerViewType": {
       "Items": [
         {
           "Name": "agenda"
@@ -30528,7 +30567,7 @@
         }
       ]
     },
-    "GridFilterRowApplyMode": {
+    "GridApplyFilterMode": {
       "Items": [
         {
           "Name": "auto"
@@ -30729,7 +30768,7 @@
         }
       ]
     },
-    "PivotGridSortMode": {
+    "PivotGridSortBy": {
       "Items": [
         {
           "Name": "displayText"
@@ -31010,7 +31049,7 @@
         }
       ]
     },
-    "OverlappingBehaviorMode": {
+    "OverlappingBehavior": {
       "Items": [
         {
           "Name": "enlargeTickInterval"
@@ -31026,7 +31065,7 @@
         }
       ]
     },
-    "ChartManipulationMode": {
+    "ChartInputDevice": {
       "Items": [
         {
           "Name": "all"
@@ -31137,7 +31176,7 @@
         }
       ]
     },
-    "AxisScale": {
+    "AxisScaleType": {
       "Items": [
         {
           "Name": "continuous"
@@ -31150,7 +31189,7 @@
         }
       ]
     },
-    "RangeSelectorAxisScale": {
+    "RangeSelectorAxisScaleType": {
       "Items": [
         {
           "Name": "continuous"
@@ -31517,7 +31556,7 @@
         }
       ]
     },
-    "RangeSelectorChartAxisScale": {
+    "RangeSelectorChartAxisScaleType": {
       "Items": [
         {
           "Name": "continuous"
@@ -31549,7 +31588,7 @@
         }
       ]
     },
-    "CircularGaugeOrientation": {
+    "CircularGaugeElementOrientation": {
       "Items": [
         {
           "Name": "center"
@@ -31562,7 +31601,7 @@
         }
       ]
     },
-    "GaugeOverlappingBehaviorMode": {
+    "GaugeOverlappingResolution": {
       "Items": [
         {
           "Name": "first"
@@ -31603,7 +31642,7 @@
         }
       ]
     },
-    "PolarChartOverlappingBehaviorMode": {
+    "PolarChartLabelOverlappingBehavior": {
       "Items": [
         {
           "Name": "enlargeTickInterval"
@@ -31632,7 +31671,7 @@
         }
       ]
     },
-    "PolarChartLabelOverlappingMode": {
+    "PolarChartOverlappingResolution": {
       "Items": [
         {
           "Name": "hide"
@@ -31673,7 +31712,7 @@
         }
       ]
     },
-    "VectorMapLayerElementType": {
+    "VectorMapMarkerType": {
       "Items": [
         {
           "Name": "bubble"
@@ -31762,7 +31801,7 @@
         }
       ]
     },
-    "ToolbarItemShowText": {
+    "ToolbarItemShowTextMode": {
       "Items": [
         {
           "Name": "always"
