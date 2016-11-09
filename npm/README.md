@@ -3,7 +3,7 @@
 Project status: **CTP**
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
-The sources for this package are in the [devextreme-angular2](https://github.com/DevExpress/devextreme-angular2) repo. 
+The sources for this package are in the [devextreme-angular](https://github.com/DevExpress/devextreme-angular) repo. 
 Please file issues and pull requests against that repo.
 
 ## Content
