@@ -20,11 +20,11 @@ export class WatcherHelper {
             let watcher = () => {
                 let newValue = valueGetter();
 
-                if (this._isDifferentValues(oldValue, newValue, options.deep)) {
-                    if (options.disposeWithElement && this._isElementExpired(options.disposeWithElement)) {
-                        return true;
-                    }
+                if (options.disposeWithElement && this._getRootNode(options.disposeWithElement).nodeType !== DOCUMENT_NODE_TYPE) {
+                    return true;
+                }
 
+                if (this._isDifferentValues(oldValue, newValue, options.deep)) {
                     valueChangeCallback(newValue);
                     oldValue = newValue;
                 }
@@ -44,9 +44,11 @@ export class WatcherHelper {
         return watchMethod;
     }
 
-    private _isElementExpired(element: any) {
-        if (element) {
-            return element.getRootNode().nodeType !== DOCUMENT_NODE_TYPE;
+    private _getRootNode(node: any) {
+        if (!node.parentNode) {
+            return node;
+        } else {
+            return this._getRootNode(node.parentNode);
         }
     }
 
