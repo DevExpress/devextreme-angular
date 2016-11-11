@@ -3,11 +3,8 @@
 import {
     Component,
     ElementRef,
-    EventEmitter,
     ViewChildren,
     NgZone,
-    Input,
-    Output,
     QueryList
 } from '@angular/core';
 
@@ -36,21 +33,10 @@ let DxTestExtension = DxButton['inherit']({
     providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestExtensionComponent extends DxComponentExtension {
-    @Input() testOption: any;
-    @Output() testOptionChange: EventEmitter<any>;
-
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
-        this.widgetClassName = 'dxTestExtension';
-        this._events = [
-            { emit: 'testOptionChange' }
-        ];
 
-        this._properties = [
-            'testOption'
-        ];
-
-        this.testOptionChange = new EventEmitter();
+        this._events = [];
     }
 
     protected _createInstance(element, options) {

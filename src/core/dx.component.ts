@@ -20,11 +20,9 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
     private _initialOptions: any;
     private _activatedQueries = {};
     templates: DxTemplateDirective[];
-    widgetClassName: string;
     instance: any;
 
     protected _events: { subscribe?: string, emit: string }[];
-    protected _properties: string[];
 
     private _initTemplates() {
         if (this.templates.length) {
@@ -81,19 +79,12 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
             this._initialOptions[name] = value;
         }
     }
-    private _initProperties() {
-        let defaultOptions = this.instance.option();
-        this._properties.forEach(property => {
-            this[property] = defaultOptions[property];
-        });
-    }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
         this._initTemplates();
         this._initOptions();
         this.instance = this._createInstance(element, this._initialOptions);
         this._initEvents();
-        this._initProperties();
     }
     constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
         this._initialOptions = {};
