@@ -12,7 +12,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 You can start either with [running examples](#running-examples) or with [creating a new Angular 2 application](#create-application).
 
-Also we have a simple application on [Plunker](http://plnkr.co/edit/HNf0vB).
+Also we have a simple application on [Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview).
 
 ### Prerequisites
 
