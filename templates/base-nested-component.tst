@@ -1,11 +1,6 @@
-import {
-    Input
-} from '@angular/core';
-
 import { NestedOption } from '../../../core/nested-option';
 
 export abstract class <#= it.className #> extends NestedOption {<#~ it.properties :prop:i #>
-    @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
     }
