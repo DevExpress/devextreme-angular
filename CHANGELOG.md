@@ -1,3 +1,11 @@
+## 16.2.1-alpha.3 (2016-11-11)
+
+### Bug Fixes
+
+- Fix an issue in Plunker when jszip was used
+- Fix a DataGrid issue in Mozila FF
+
+
 ## 16.2.1-alpha.2 (2016-11-09)
 
 ### Features
