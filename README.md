@@ -200,8 +200,7 @@ render the data where you need inside the template.
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
 [DxResizable](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxResizable/), 
 [DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/), 
-[DxPopup](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxPopup/), 
-[DxPopover](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxPopover/).
+[DxValidationGroup](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxValidationGroup/).
 For instance, we can set the content for 
 the [DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/) widget as shown below: 
 

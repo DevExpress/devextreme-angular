@@ -83,7 +83,9 @@
 <h2>dxPopup</h2>
 
 <dx-popup showTitle="true" title="Demo of dxPopup" [(visible)]="popupVisible">
-    <div>Hello from dxPopup</div>
+    <div *dxTemplate="let data of 'content'">
+        <div>Hello from dxPopup</div>
+    </div>
 </dx-popup>
 <dx-button text="Show Popup via model" (onClick)="popupVisible = !popupVisible"></dx-button>
 
@@ -95,7 +97,9 @@
     position="top" 
     showTitle="true" 
     title="Demo of dxPopover">
-    <p>Hello from dxPopover</p>
+    <div *dxTemplate="let data of 'content'">
+        <p>Hello from dxPopover</p>
+    </div>
 </dx-popover>
 <dx-button 
     id="popoverButton" 
