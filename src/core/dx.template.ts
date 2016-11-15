@@ -13,6 +13,8 @@ import { DxTemplateHost } from './dx.template-host';
 declare function require(params: any): any;
 let $ = require('jquery');
 
+const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
+
 export class RenderData {
     model: any;
     itemIndex: number;
@@ -38,7 +40,8 @@ export class DxTemplateDirective {
         // https://github.com/angular/angular/issues/12243
         childView['detectChanges']();
         // =========== /WORKAROUND =============
-        return $(childView.rootNodes);
+        return $(childView.rootNodes)
+            .addClass(DX_TEMPLATE_WRAPPER_CLASS);
     }
     templateAsFunction(model, itemIndex, container) {
         let renderData: RenderData = this._normalizeArguments(model, itemIndex, container);
