@@ -41,25 +41,24 @@ let DxTestWidget = DxButton['inherit']({
     providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestWidgetComponent extends DxComponent {
-    @Input() testTemplate: any;
+    @Input()
+    get testTemplate(): any {
+        return this._getOption('testTemplate');
+    }
+    set testTemplate(value: any) {
+        this._setOption('testTemplate', value);
+    };
 
-    @Output() onOptionChanged: EventEmitter<any>;
-    @Output() testTemplateChange: EventEmitter<any>;
+    @Output() onOptionChanged = new EventEmitter<any>();
+    @Output() testTemplateChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
-        this.widgetClassName = 'dxTestWidget';
+
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
             { subscribe: 'initialized', emit: 'onInitialized' }
         ];
-
-        this._properties = [
-            'testTemplate'
-        ];
-
-        this.onOptionChanged = new EventEmitter();
-        this.testTemplateChange = new EventEmitter();
     }
 
     protected _createInstance(element, options) {

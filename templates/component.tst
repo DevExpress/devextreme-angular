@@ -65,14 +65,13 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     get <#= prop.name #>(): any {
         return this._getOption('<#= prop.name #>');
     }
-
     set <#= prop.name #>(value: any) {
         this._setOption('<#= prop.name #>', value);
     }<#? i < it.properties.length-1 #>
 
     <#?#><#~#>
 
-    <#~ it.events :event:i #>@Output() <#= event.emit #>: EventEmitter<any>;<#? i < it.events.length-1 #>
+    <#~ it.events :event:i #>@Output() <#= event.emit #> = new EventEmitter<any>();<#? i < it.events.length-1 #>
     <#?#><#~#>
 
 <#~ collectionNestedComponents :component:i #>
@@ -90,19 +89,11 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
-        this.widgetClassName = '<#= it.widgetName #>';
+
         this._events = [
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
             <#?#><#~#>
-        ];
-
-        this._properties = [
-            <#~ it.properties :prop:i #>'this.<#= prop.name #>'<#? i < it.properties.length-1 #>,
-            <#?#><#~#>
-        ];
-
-        <#~ it.events :event:i #>this.<#= event.emit #> = new EventEmitter();<#? i < it.events.length-1 #>
-        <#?#><#~#><#? collectionProperties.length #>
+        ];<#? collectionProperties.length #>
 
         this._idh.setHost(this);<#?#>
         this._noh.setHost(this);

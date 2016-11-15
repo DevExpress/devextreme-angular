@@ -52,31 +52,17 @@ export class DxTestWidgetComponent extends DxComponent {
         this._setOption('testOption', value);
     };
 
-    @Output() onOptionChanged: EventEmitter<any>;
-    @Output() onInitialized: EventEmitter<any>;
-    @Output() onContentReady: EventEmitter<any>;
-    @Output() testOptionChange: EventEmitter<any>;
+    @Output() onOptionChanged = new EventEmitter<any>();
+    @Output() testOptionChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost,
         _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
 
-        this.widgetClassName = 'dxTestWidget';
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
-            { subscribe: 'initialized', emit: 'onInitialized' },
-            { subscribe: 'contentReady', emit: 'onContentReady' },
             { emit: 'testOptionChange' }
         ];
-
-        this._properties = [
-            'testOption'
-        ];
-
-        this.onOptionChanged = new EventEmitter();
-        this.onInitialized = new EventEmitter();
-        this.onContentReady = new EventEmitter();
-        this.testOptionChange = new EventEmitter();
 
         this._noh.setHost(this);
     }
