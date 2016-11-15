@@ -148,13 +148,10 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
                 model: {},
                 itemIndex: 0,
                 container: $('<div>')
-            },
-            newDiv = document.createElement('div');
-
-        newDiv.innerHTML = 'Template content';
+            };
 
         let renderResult = template.render(renderData)[0];
-        expect(newDiv.isEqualNode(renderResult)).toBe(true);
+        expect(renderResult.innerHTML).toBe('Template content');
 
         expect(template.owner()).toBe(instance);
 
@@ -207,6 +204,31 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
     }));
 
+
+    it('should add template wrapper class as template has root container', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+            <dx-test-widget>
+                <div *dxTemplate="let d of 'testTemplate'">Template content: {{d}}</div>
+            </dx-test-widget>
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            innerComponent = testComponent.innerWidgets.first,
+            template = innerComponent.testTemplate,
+            $container = $('<div>');
+
+        expect(template).not.toBeUndefined;
+
+        template($container);
+        fixture.detectChanges();
+        expect($container.children().eq(0).hasClass('dx-template-wrapper')).toBe(true);
+
+    }));
 
 });
 
