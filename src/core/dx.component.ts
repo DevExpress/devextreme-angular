@@ -11,14 +11,15 @@ import { WatcherHelper } from './watcher-helper';
 import {
     INestedOptionContainer,
     ICollectionNestedOption,
-    ICollectionNestedOptionContainer
+    ICollectionNestedOptionContainer,
+    CollectionNestedOptionContainerImpl
 } from './nested-option';
 
 const startupEvents = ['onInitialized', 'onContentReady'];
 
 export abstract class DxComponentBase implements INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
-    private _activatedQueries = {};
+    private _collectionContainerImpl: ICollectionNestedOptionContainer;
     templates: DxTemplateDirective[];
     instance: any;
 
@@ -90,21 +91,13 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
         this._initialOptions = {};
         this.templates = [];
         templateHost.setHost(this);
+        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
     }
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
     }
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
-        if (items.length) {
-            this._activatedQueries[propertyName] = true;
-        }
-        if (this._activatedQueries[propertyName]) {
-            let widgetItems = items.map((item, index) => {
-                item.index = index;
-                return item.value;
-            });
-            this._setOption(propertyName, widgetItems);
-        }
+        return this._collectionContainerImpl.setChildren(propertyName, items);
     }
 }
 

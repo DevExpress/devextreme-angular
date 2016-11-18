@@ -4,11 +4,15 @@ import {
     Host,
     ElementRef,
     SkipSelf<#? it.properties #>,
-    Input<#?#>
+    Input<#?#><#? it.collectionNestedComponents.length #>,
+    ContentChildren,
+    QueryList<#?#>
 } from '@angular/core';
 
 import { NestedOptionHost } from '../../core/nested-option';
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
+<#~ it.collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './<#= component.path #>';
+<#~#>
 
 @Component(<#? !it.hasSimpleBaseClass #>Object.assign(<#?#>{
     selector: '<#= it.selector #>',
@@ -27,6 +31,16 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
     protected get _optionPath() {
         return '<#= it.optionName #>';
     }
+
+<#~ it.collectionNestedComponents :component:i #>
+    @ContentChildren(<#= component.className #>Component)
+    get <#= component.propertyName #>Children(): QueryList<<#= component.className #>Component> {
+        return this._getOption('<#= component.propertyName #>');
+    }
+    set <#= component.propertyName #>Children(value) {
+        this.setChildren('<#= component.propertyName #>', value);
+    }
+<#~#>
 
     constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, _element: ElementRef) {
         super(_element);

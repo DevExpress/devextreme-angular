@@ -4,10 +4,11 @@ export interface INestedOptionContainer {
     instance: any;
 }
 
-export abstract class NestedOption implements INestedOptionContainer {
+export abstract class NestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
     protected _host: INestedOptionContainer;
     protected _baseOptionPath: string;
     protected _hostOptionPath: string;
+    private _collectionContainerImpl: ICollectionNestedOptionContainer;
 
     protected _updateBaseOptionPath() {
         this._baseOptionPath = this._hostOptionPath + this._optionPath + '.';
@@ -41,6 +42,7 @@ export abstract class NestedOption implements INestedOptionContainer {
 
     constructor(private _element: ElementRef) {
         this.template = this.template.bind(this);
+        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
     }
 
     setHost(host: INestedOptionContainer, optionPath: string) {
@@ -54,6 +56,10 @@ export abstract class NestedOption implements INestedOptionContainer {
         return container.append(this._element.nativeElement);
     }
 
+    setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        return this._collectionContainerImpl.setChildren(propertyName, items);
+    }
+
     get instance() {
         return this._host.instance;
     }
@@ -62,6 +68,24 @@ export abstract class NestedOption implements INestedOptionContainer {
 
 export interface ICollectionNestedOptionContainer {
     setChildren<T>(propertyName: string, items: QueryList<T>);
+}
+
+export class CollectionNestedOptionContainerImpl implements ICollectionNestedOptionContainer {
+    private _activatedQueries = {};
+    constructor(private _setOption: Function) {
+    }
+    setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        if (items.length) {
+            this._activatedQueries[propertyName] = true;
+        }
+        if (this._activatedQueries[propertyName]) {
+            let widgetItems = items.map((item, index) => {
+                item.index = index;
+                return item.value;
+            });
+            this._setOption(propertyName, widgetItems);
+        }
+    }
 }
 
 export interface ICollectionNestedOption {
