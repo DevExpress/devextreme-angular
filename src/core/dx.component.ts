@@ -14,7 +14,7 @@ import {
     ICollectionNestedOptionContainer
 } from './nested-option';
 
-const startupEvents = ['onInitialized', 'onContentReady'];
+const startupEvents = ['onInitialized', 'onContentReady', 'onToolbarPreparing'];
 
 export abstract class DxComponentBase implements INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
