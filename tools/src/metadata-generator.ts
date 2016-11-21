@@ -114,7 +114,8 @@ export default class DXComponentMetadataGenerator {
                             propertyName: component.propertyName,
                             className: component.className,
                             isCollection: component.isCollection,
-                            hasTemplate: component.hasTemplate
+                            hasTemplate: component.hasTemplate,
+                            root: properties.filter(p => p.name === component.propertyName).length === 1 ? true : undefined
                         });
                     }
 
@@ -173,8 +174,8 @@ export default class DXComponentMetadataGenerator {
         }
 
         let pluralName = optionName;
-        if (option.IsCollection && optionName === option.SingularName) {
-            pluralName += 'Collection';
+        if (option.IsCollection) {
+            pluralName = option.SingularName + 'Dxi';
         }
 
         let singularName = option.SingularName || pluralName,
@@ -193,12 +194,14 @@ export default class DXComponentMetadataGenerator {
             path: path,
             propertyName: optionName,
             isCollection: option.IsCollection,
-            hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate
+            hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate,
+            collectionNestedComponents: []
         };
 
         let nestedComponents = [complexOptionMetadata];
 
         for (let optName in nestedOptions) {
+            let optionMetadata = nestedOptions[optName];
             if (optName === 'template' && option.Options[optName].IsTemplate) {
                 continue;
             };
@@ -206,11 +209,32 @@ export default class DXComponentMetadataGenerator {
             let property: any = {
                 name: optName
             };
+            if (optionMetadata.IsCollection) {
+                property.isCollection = true;
+            }
+
             complexOptionMetadata.properties.push(property);
 
-            let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes);
+            let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes) || [];
 
             nestedComponents = nestedComponents.concat(...components);
+
+            let ownCollectionNestedComponents = components
+                .filter(c => {
+                    return complexOptionMetadata
+                        .properties
+                        .filter(p => p.name === c.propertyName && p.isCollection).length === 1;
+                })
+                .map(c => {
+                    return {
+                        className: c.className,
+                        path: c.path,
+                        propertyName: c.propertyName
+                    };
+                });
+
+            complexOptionMetadata.collectionNestedComponents.push
+                .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
         return nestedComponents;
@@ -236,10 +260,21 @@ export default class DXComponentMetadataGenerator {
 
                     existingComponent.baseClass = existingComponent.baseClass || component.baseClass;
                     existingComponent.basePath = existingComponent.basePath || component.basePath;
+                    existingComponent.collectionNestedComponents.push
+                        .apply(existingComponent.collectionNestedComponents, component.collectionNestedComponents);
                 }
 
                 return result;
             }, []);
+
+        normalizedMetadata.forEach(component => {
+            component.collectionNestedComponents = component.collectionNestedComponents.reduce((result, nestedComponent) => {
+                if (result.filter(c => nestedComponent.className === c.className).length === 0) {
+                    result.push(nestedComponent);
+                }
+                return result;
+            }, []);
+        });
 
         normalizedMetadata
             .reduce((result, component) => {
