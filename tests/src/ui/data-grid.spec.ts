@@ -36,6 +36,8 @@ class TestContainerComponent {
     ];
 
     @ViewChildren(DxDataGridComponent) innerWidgets: QueryList<DxDataGridComponent>;
+
+    testMethod() {}
 }
 
 
@@ -64,5 +66,18 @@ describe('DxDataGrid', () => {
 
             done();
         }, 0);
+    });
+
+     it('should fire onToolbarPreparing event', () => {
+        let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-data-grid (onToolbarPreparing)="testMethod()"></dx-data-grid>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(1);
     });
 });
