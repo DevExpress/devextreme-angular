@@ -29,7 +29,6 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
         if (this.templates.length) {
             let initialTemplates = {};
             this.templates.forEach(template => {
-                this._initialOptions[template.name] = template.templateAsFunction.bind(template);
                 initialTemplates[template.name] = template;
             });
             this._initialOptions._templates = initialTemplates;

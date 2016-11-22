@@ -1,3 +1,9 @@
+## Unreleased
+
+### Breaking changes
+
+- The DxTemplate directive now uses template names instead of template option names. For example, for the DxList widget, use `*dxTemplate="let data of 'item'"` instead of `*dxTemplate="let data of 'itemTemplate'"`.
+
 ## 16.2.1-alpha.3 (2016-11-11)
 
 ### Bug Fixes

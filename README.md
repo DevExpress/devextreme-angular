@@ -196,16 +196,18 @@ of the dxList widget as follows:
 
 ```html
 <dx-list [grouped]="true" [items]="grouppedItems">
-    <div *dxTemplate="let item of 'itemTemplate'">
-        {{item.someProperty}}
+    <div *dxTemplate="let itemData of 'item'">
+        {{itemData.someProperty}}
     </div>
-    <div *dxTemplate="let group of 'groupTemplate'">
-        {{group.someProperty}}
+    <div *dxTemplate="let groupData of 'group'">
+        {{groupData.someProperty}}
     </div>
 </dx-list>
 ```
-The local 'item' and 'group' variables (that are declared via the 'let' keyword) expose the corresponding item data object. You can use it to
+The local 'itemData' and 'groupData' variables (that are declared via the 'let' keyword) expose the corresponding item data object. You can use it to
 render the data where you need inside the template.
+
+The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
 ### Widgets with transcluded content
 

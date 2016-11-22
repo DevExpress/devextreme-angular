@@ -90,11 +90,11 @@
     <h3>dxList</h3>
 
     <dx-list [grouped]="true" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
-        <div *dxTemplate="let t of 'itemTemplate'">
+        <div *dxTemplate="let t of 'item'">
             {{t}}
             <dx-button class="float-right" text="Buy" (onClick)="buy(t)"></dx-button>
         </div>
-        <div *dxTemplate="let g of 'groupTemplate'">
+        <div *dxTemplate="let g of 'group'">
             Group {{g.key}}
         </div>
     </dx-list>
@@ -191,10 +191,10 @@
     [loop]="true"
     [animationEnabled]="true"
     [swipeEnabled]="true">
-    <div *dxTemplate="let company of 'itemTitleTemplate'">
+    <div *dxTemplate="let company of 'itemTitle'">
         <span>{{company.CompanyName}}</span>
     </div>
-    <div *dxTemplate="let company of 'itemTemplate'">
+    <div *dxTemplate="let company of 'item'">
         <div class="tabpanel-item">
             <div>
                 <p>

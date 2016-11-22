@@ -91,30 +91,12 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
     }
 
     // spec
-    it('should initialize template options of a widget', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-            <dx-test-widget>
-                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
-            </dx-test-widget>
-           `}
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let instance = getWidget(fixture);
-
-        expect(instance.option('testTemplate')).not.toBeUndefined();
-        expect(typeof instance.option('testTemplate')).toBe('function');
-    }));
-
     it('should initialize named templates #17', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'templateName'">Template content</div>
             </dx-test-widget>
            `}
         });
@@ -124,8 +106,8 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
         let instance = getWidget(fixture),
             templatesHash = instance.option('_templates');
 
-        expect(templatesHash['testTemplate']).not.toBeUndefined();
-        expect(typeof templatesHash['testTemplate'].render).toBe('function');
+        expect(templatesHash['templateName']).not.toBeUndefined();
+        expect(typeof templatesHash['templateName'].render).toBe('function');
 
     }));
 
@@ -134,7 +116,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
             set: {
                 template: `
             <dx-test-widget>
-                <div *dxTemplate="let d of 'testTemplate'">Template content</div>
+                <div *dxTemplate="let d of 'templateName'">Template content</div>
             </dx-test-widget>
            `}
         });
@@ -143,7 +125,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
         let instance = getWidget(fixture),
             templatesHash = instance.option('_templates'),
-            template = templatesHash['testTemplate'],
+            template = templatesHash['templateName'],
             renderData: RenderData = {
                 model: {},
                 itemIndex: 0,
@@ -162,55 +144,13 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
     }));
 
-    /*
-        TODO
-        Interpolation doesn't work in the test for unclear reason if we specify it as follows:
-        <div *dxTemplate='let d of 'testTemplate''>Template content {{d}}</div>
-    */
-    it('should nonrmalize template function arguments order (#17)', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-            <dx-test-widget>
-                <div *dxTemplate="let d of 'testTemplate'">Template content: {{d}}</div>
-            </dx-test-widget>
-           `}
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            innerComponent = testComponent.innerWidgets.first,
-            template = innerComponent.testTemplate,
-            $container = $('<div>');
-
-        expect(template).not.toBeUndefined;
-
-        template($container);
-        fixture.detectChanges();
-        expect($container.text()).toBe('Template content: ');
-
-        template('test', $container);
-        fixture.detectChanges();
-        expect($container.text()).toBe('Template content: test');
-
-        template($container, 'test');
-        fixture.detectChanges();
-        expect($container.text()).toBe('Template content: test');
-
-        template('test', $container, 0);
-        fixture.detectChanges();
-        expect($container.text()).toBe('Template content: test');
-
-    }));
-
 
     it('should add template wrapper class as template has root container', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-            <dx-test-widget>
-                <div *dxTemplate="let d of 'testTemplate'">Template content: {{d}}</div>
+            <dx-test-widget testTemplate="templateName">
+                <div *dxTemplate="let d of 'templateName'">Template content: {{d}}</div>
             </dx-test-widget>
            `}
         });
@@ -219,12 +159,13 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
         let testComponent = fixture.componentInstance,
             innerComponent = testComponent.innerWidgets.first,
+            templatesHash = innerComponent.instance.option('_templates'),
             template = innerComponent.testTemplate,
             $container = $('<div>');
 
         expect(template).not.toBeUndefined;
 
-        template($container);
+        templatesHash[template].render({ container: $container });
         fixture.detectChanges();
         expect($container.children().eq(0).hasClass('dx-template-wrapper')).toBe(true);
 

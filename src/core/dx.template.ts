@@ -43,35 +43,6 @@ export class DxTemplateDirective {
         return $(childView.rootNodes)
             .addClass(DX_TEMPLATE_WRAPPER_CLASS);
     }
-    templateAsFunction(model, itemIndex, container) {
-        let renderData: RenderData = this._normalizeArguments(model, itemIndex, container);
-        this.render(renderData);
-    }
-    _normalizeArguments(model, itemIndex, container): RenderData {
-        if (container === undefined) {
-            if (itemIndex === undefined) {
-                container = model;
-                model = undefined;
-            } else if (itemIndex instanceof $) {
-                container = itemIndex;
-                itemIndex = undefined;
-            } else {
-                container = model;
-                model = itemIndex;
-            }
-        } else if (itemIndex instanceof $) {
-            let cachedItemIndex = container;
-
-            container = itemIndex;
-            itemIndex = cachedItemIndex;
-        }
-
-        return {
-            model: model,
-            itemIndex: itemIndex,
-            container: container
-        };
-    }
     render(renderData: RenderData) {
         renderData.container.empty();
         return this._renderCore(renderData);
