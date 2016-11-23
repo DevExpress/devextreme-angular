@@ -44,7 +44,6 @@ export class DxTemplateDirective {
             .addClass(DX_TEMPLATE_WRAPPER_CLASS);
     }
     render(renderData: RenderData) {
-        renderData.container.empty();
         return this._renderCore(renderData);
     }
     dispose() {
