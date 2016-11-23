@@ -67,6 +67,12 @@ describe("metadata-generator", function() {
                         IsExtensionComponent: true,
                         Options: {},
                         Module: 'test_widget'
+                    },
+                    dxVizWidget: {
+                        Options: {
+                            value: {}
+                        },
+                        Module: 'viz/test_widget'
                     }
                 }
             });
@@ -77,14 +83,14 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(4);
+            expect(store.write.calls.count()).toBe(5);
 
             expect(store.write.calls.argsFor(0)[0]).toBe(path.join("output-path", "test-widget.json"));
             expect(store.write.calls.argsFor(1)[0]).toBe(path.join("output-path", "editor-widget.json"));
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(4);
+            expect(Object.keys(metas).length).toBe(5);
 
             expect(metas.DxTestWidget).not.toBe(undefined);
             expect(metas.DxCollectionWidget).not.toBe(undefined);
@@ -124,6 +130,11 @@ describe("metadata-generator", function() {
                 { name: 'collectionProperty', type: 'any', isCollection: true },
                 { name: 'dataSourceProperty', type: 'any', isCollection: true }
             ]);
+        });
+
+        it("should generate proper viz property", function() {
+            expect(metas.DxTestWidget.isViz).toBe(false);
+            expect(metas.DxVizWidget.isViz).toBe(true);
         });
 
         it("should generate proper module name", function() {

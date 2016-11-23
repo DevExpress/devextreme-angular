@@ -47,7 +47,8 @@ import { WatcherHelper } from '../core/watcher-helper';
 
 @Component({
     selector: '<#= it.selector #>',
-    template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',
+    template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
+    styles: [ ' :host {  display: block; }'],<#?#>
     providers: [
         DxTemplateHost,
         WatcherHelper,

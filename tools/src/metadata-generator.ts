@@ -65,6 +65,7 @@ export default class DXComponentMetadataGenerator {
             logger('Generate metadata for ' + widgetName);
 
             let isTranscludedContent = widget.IsTranscludedContent,
+                isViz = widget.Module.indexOf('viz') === 0,
                 isExtension = widget.IsExtensionComponent || false,
                 className = inflector.camelize(widgetName),
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
@@ -126,6 +127,7 @@ export default class DXComponentMetadataGenerator {
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
+                isViz: isViz,
                 isExtension: isExtension,
                 selector: dasherizedWidgetName,
                 events: allEvents,
