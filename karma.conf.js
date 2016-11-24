@@ -25,7 +25,7 @@ module.exports = function(config) {
             { pattern: 'node_modules/rxjs/**/*.+(js|js.map)', included: false, watched: false },
 
             // Angular 2 itself and the testing library
-            { pattern: 'node_modules/@angular/**/*.+(js|js.map)', included: false, watched: false },
+            { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.+(js|js.map)', included: false, watched: false },
 
             // DevExtreme & DevExtreme Deps
             { pattern: 'node_modules/jquery/dist/jquery.min.js', included: false, watched: false },

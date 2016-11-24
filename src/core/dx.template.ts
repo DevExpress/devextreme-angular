@@ -5,7 +5,8 @@ import {
     NgModule,
     EmbeddedViewRef,
     TemplateRef,
-    ViewContainerRef
+    ViewContainerRef,
+    Input
 } from '@angular/core';
 
 import { DxTemplateHost } from './dx.template-host';
@@ -22,10 +23,14 @@ export class RenderData {
 }
 
 @Directive({
-    selector: '[dxTemplate]',
-    inputs: ['dxTemplate', 'dxTemplateOf']
+    selector: '[dxTemplate][dxTemplateOf]'
 })
 export class DxTemplateDirective {
+    @Input()
+    set dxTemplateOf(value) {
+        this.name = value;
+    };
+
     childView: EmbeddedViewRef<any>;
     name: string;
     constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
@@ -57,9 +62,6 @@ export class DxTemplateDirective {
     }
     source() {
         return $();
-    }
-    set dxTemplateOf(value) {
-        this.name = value;
     }
 }
 
