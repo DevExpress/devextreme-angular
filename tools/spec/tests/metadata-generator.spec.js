@@ -212,6 +212,11 @@ describe("metadata-generator", function() {
                                 ComplexTypes: [
                                     'ExternalPropertyType'
                                 ]
+                            },
+                            widgetReference: {
+                                ComplexTypes: [
+                                    'dxAnotherComplexWidgetOptions'
+                                ]
                             }
                         },
                         Module: 'test_widget'
@@ -232,7 +237,7 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(11);
+            expect(store.write.calls.count()).toBe(13);
 
             let writeToPathCount = (path) => {
                 return store.write.calls
@@ -250,10 +255,12 @@ describe("metadata-generator", function() {
             expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item-with-template-dxi.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "widget-reference.json"))).toBe(1);
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(11);
+            expect(Object.keys(metas).length).toBe(13);
 
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
@@ -266,6 +273,8 @@ describe("metadata-generator", function() {
             expect(metas.DxiCollectionItem).not.toBe(undefined);
             expect(metas.DxoCollectionItem).not.toBe(undefined);
             expect(metas.DxiCollectionItemWithTemplate).not.toBe(undefined);
+            expect(metas.DxoWidgetReference).not.toBe(undefined);
+            expect(metas.DxoAnotherComplexWidgetOptions).not.toBe(undefined);
         });
 
         it("should generate nested components with merged properties", function() {

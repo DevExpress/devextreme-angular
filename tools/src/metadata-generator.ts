@@ -156,6 +156,16 @@ export default class DXComponentMetadataGenerator {
 
             let complexType = option.ComplexTypes[0];
             let externalObject = metadata.ExtraObjects[complexType];
+
+            if (!externalObject) {
+                const postfix = 'Options';
+                if (complexType.endsWith(postfix)) {
+                    let widgetName = complexType.substr(0, complexType.length - postfix.length);
+                    externalObject = metadata.Widgets[widgetName];
+                    complexType = trimPrefix('dx', complexType);
+                }
+            }
+
             if (externalObject) {
                 let nestedOptions = externalObject.Options;
                 let nestedComplexTypes = complexTypes.concat(complexType);
