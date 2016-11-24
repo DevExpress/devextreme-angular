@@ -2,7 +2,7 @@
 
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets
 
-### :red_circle: If you are looking for the 16.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular/tree/16.1)
+### :red_circle: If you are looking for the 16.1 branch, please follow the [link](https://github.com/DevExpress/devextreme-angular/tree/16.1)
 
 Project status: **CTP**
 
