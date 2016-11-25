@@ -11,7 +11,8 @@ import {
     NgZone,
     Input,
     Output,
-    QueryList
+    QueryList,
+    AfterViewInit
 } from '@angular/core';
 
 import {
@@ -40,7 +41,7 @@ let DxTestWidget = DxButton['inherit']({
     template: '',
     providers: [DxTemplateHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent {
+export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
     @Input()
     get testTemplate(): any {
         return this._getOption('testTemplate');
@@ -63,6 +64,10 @@ export class DxTestWidgetComponent extends DxComponent {
 
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
+    }
+
+    ngAfterViewInit() {
+        this._createWidget(this.element.nativeElement);
     }
 }
 

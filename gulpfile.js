@@ -56,14 +56,14 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
     generator.generate(buildConfig.tools.metadataGenerator);
 });
 
-gulp.task('clean.components', function () {
+gulp.task('clean.generatedComponents', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
 
     return del([outputFolderPath]);
 });
 
 
-gulp.task('generate.components', ['generate.metadata', 'clean.components'], function () {
+gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponents'], function () {
     var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
         generator = new DoTGenerator();
 
@@ -84,15 +84,16 @@ gulp.task('generate.facades', ['generate.moduleFacades'], function () {
     facadeGenerator.generate(buildConfig.tools.facadeGenerator);
 });
 
-gulp.task('build.components', ['generate.components', 'generate.facades'], function () {
-    var config = buildConfig.components;
+gulp.task('clean.components', function () {
+    var outputFolderPath = buildConfig.components.outputPath;
 
-    return gulp.src(config.srcFilesPattern)
-        .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsConfigPath))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.outputPath));
+    return del([outputFolderPath]);
 });
+
+gulp.task('build.components',
+    ['clean.components', 'generate.components', 'generate.facades'],
+    shell.task(['ngc -p ' + buildConfig.components.tsConfigPath ])
+);
 
 
 //------------npm------------

@@ -310,6 +310,7 @@ export default class DXComponentMetadataGenerator {
         normalizedMetadata
             .map((component) => {
                 if (component.baseClass) {
+                    component.inputs = component.properties;
                     delete component.properties;
                     component.basePath = './base/' + component.basePath;
                 } else {

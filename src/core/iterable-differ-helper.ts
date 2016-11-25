@@ -8,18 +8,18 @@ import {
 } from '@angular/core';
 
 import {
-    DxComponentBase
+    DxComponent
 } from './dx.component';
 
 @Injectable()
 export class IterableDifferHelper {
 
-    private _host: DxComponentBase;
+    private _host: DxComponent;
     private _propertyDiffers: { [id: string]: IterableDiffer; } = {};
 
     constructor(private _differs: IterableDiffers, private _cdr: ChangeDetectorRef) { }
 
-    setHost(host: DxComponentBase) {
+    setHost(host: DxComponent) {
         this._host = host;
     }
 

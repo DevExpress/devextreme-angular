@@ -10,7 +10,8 @@ import {
     Output,
     QueryList,
     Host,
-    SkipSelf
+    SkipSelf,
+    AfterViewInit
 } from '@angular/core';
 
 import {
@@ -43,7 +44,7 @@ let DxTestWidget = DxButton['inherit']({
     template: '',
     providers: [DxTemplateHost, NestedOptionHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent {
+export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
     @Input()
     get testOption(): any {
         return this._getOption('testOption');
@@ -69,6 +70,10 @@ export class DxTestWidgetComponent extends DxComponent {
 
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
+    }
+
+    ngAfterViewInit() {
+        this._createWidget(this.element.nativeElement);
     }
 }
 
