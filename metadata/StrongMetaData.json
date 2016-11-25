@@ -19,6 +19,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -106,6 +112,12 @@
           "IsTemplate": true,
           "Description": "The template to be used for rendering Accordion items."
         },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides keys for widget items."
+        },
         "noDataText": {
           "PrimitiveTypes": [
             "string"
@@ -148,6 +160,14 @@
             "any"
           ],
           "Description": "The selected item object."
+        },
+        "selectedItemKeys": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "selectedItemKey",
+          "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
@@ -264,6 +284,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -504,6 +530,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -625,7 +657,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -809,6 +847,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -973,6 +1017,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -1104,6 +1154,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -1277,6 +1333,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -1411,6 +1473,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -1532,7 +1600,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -1662,6 +1736,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -2033,6 +2113,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -3526,11 +3612,11 @@
               ],
               "Description": "Specifies whether the user can select all grid records at once."
             },
-            "async": {
+            "deferred": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not selection is performed asynchronously."
+              "Description": "Specifies whether or not deferred row selection is enabled."
             },
             "mode": {
               "EnumName": "SelectionMode",
@@ -3914,6 +4000,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -4037,7 +4129,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -4325,6 +4423,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -4574,6 +4678,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -4817,6 +4927,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -5064,6 +5180,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -5151,6 +5273,12 @@
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
         },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides keys for widget items."
+        },
         "noDataText": {
           "PrimitiveTypes": [
             "string"
@@ -5196,6 +5324,18 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the selectionChanged event."
+        },
+        "selectAllMode": {
+          "EnumName": "SelectAllMode",
+          "Description": "Specifies the mode in which all items are selected."
+        },
+        "selectedItemKeys": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "selectedItemKey",
+          "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
@@ -5464,6 +5604,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -5522,6 +5668,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -5771,6 +5923,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -5876,7 +6034,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -6232,6 +6396,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -6538,6 +6708,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -6905,6 +7081,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -7103,6 +7285,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -7184,6 +7372,12 @@
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
         },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides keys for widget items."
+        },
         "onItemClick": {
           "IsFunc": true,
           "IsEvent": true,
@@ -7220,6 +7414,14 @@
             "any"
           ],
           "Description": "The selected item object."
+        },
+        "selectedItemKeys": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "selectedItemKey",
+          "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
@@ -7313,6 +7515,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -7435,7 +7643,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -7561,6 +7775,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -7759,6 +7979,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -7938,6 +8164,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -8460,6 +8692,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -8601,6 +8839,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -8824,7 +9068,7 @@
               "Description": "Specifies text displayed for the toolbar item."
             },
             "toolbar": {
-              "EnumName": "VerticalEdge",
+              "EnumName": "Toolbar",
               "Description": "Specifies whether the item is displayed on a top or bottom toolbar."
             },
             "visible": {
@@ -8912,6 +9156,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -9186,7 +9436,7 @@
               "Description": "Specifies text displayed for the toolbar item."
             },
             "toolbar": {
-              "EnumName": "VerticalEdge",
+              "EnumName": "Toolbar",
               "Description": "Specifies whether the item is displayed on a top or bottom toolbar."
             },
             "visible": {
@@ -9227,6 +9477,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -9354,6 +9610,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -9541,6 +9803,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -9767,6 +10035,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -9850,6 +10124,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -10080,6 +10360,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -10578,6 +10864,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -10756,6 +11048,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -10877,7 +11175,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -11107,6 +11411,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -11323,6 +11633,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -11417,6 +11733,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -11630,6 +11952,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -11769,6 +12097,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -12034,6 +12368,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -12115,6 +12455,12 @@
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
         },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides keys for widget items."
+        },
         "onItemClick": {
           "IsFunc": true,
           "IsEvent": true,
@@ -12151,6 +12497,14 @@
             "any"
           ],
           "Description": "The selected item object."
+        },
+        "selectedItemKeys": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "selectedItemKey",
+          "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
@@ -12312,6 +12666,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -12435,7 +12795,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -12659,6 +13025,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -12780,7 +13152,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "onChange": {
           "IsFunc": true,
@@ -12899,6 +13277,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -13020,7 +13404,13 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies HTML attributes applied to the inner input element of the widget."
+          "IsDeprecated": true
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element."
         },
         "mask": {
           "PrimitiveTypes": [
@@ -13158,6 +13548,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -13367,6 +13763,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -13586,6 +13988,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -13764,6 +14172,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -13996,6 +14410,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -14082,6 +14502,12 @@
         "itemTemplate": {
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
+        },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides keys for TreeView items."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -14216,12 +14642,6 @@
             "string"
           ],
           "Description": "Specifies the name of the data source item field that contains an array of nested items."
-        },
-        "keyExpr": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the name of the data source item field used as a key."
         },
         "selectedExpr": {
           "PrimitiveTypes": [
@@ -14374,6 +14794,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "height": {
           "PrimitiveTypes": [
             "double",
@@ -14408,6 +14834,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "hoverStateEnabled": {
           "PrimitiveTypes": [
@@ -14491,6 +14923,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "height": {
           "PrimitiveTypes": [
@@ -14582,6 +15020,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15181,6 +15625,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "bool"
@@ -15510,6 +15960,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -17747,7 +18203,7 @@
           }
         },
         "resolveLabelOverlapping": {
-          "EnumName": "ChartOverlappingResolution",
+          "EnumName": "ChartResolveLabelOverlapping",
           "Description": "Specifies how the chart must behave when series point labels overlap."
         },
         "rotated": {
@@ -17796,7 +18252,7 @@
           }
         },
         "scrollingMode": {
-          "EnumName": "ChartInputDevice",
+          "EnumName": "ChartPointerType",
           "Description": "Enables scrolling in your chart."
         },
         "series": {
@@ -18548,7 +19004,7 @@
           }
         },
         "zoomingMode": {
-          "EnumName": "ChartInputDevice",
+          "EnumName": "ChartPointerType",
           "Description": "Enables zooming in your chart."
         }
       }
@@ -18571,6 +19027,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -19149,7 +19611,7 @@
                   "Description": "Specifies the overlap resolving options to be applied to scale labels.",
                   "Options": {
                     "hideFirstOrLast": {
-                      "EnumName": "GaugeOverlappingResolution",
+                      "EnumName": "GaugeOverlappingBehavior",
                       "Description": "Specifies what label to hide in case of overlapping."
                     },
                     "useAutoArrangement": {
@@ -19503,6 +19965,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -20099,7 +20567,7 @@
                   "Description": "Specifies the overlap resolving options to be applied to scale labels.",
                   "Options": {
                     "hideFirstOrLast": {
-                      "EnumName": "GaugeOverlappingResolution",
+                      "EnumName": "GaugeOverlappingBehavior",
                       "Description": "Specifies what label to hide in case of overlapping."
                     },
                     "useAutoArrangement": {
@@ -20393,6 +20861,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -21112,7 +21586,7 @@
           "Description": "A handler for the legendClick event."
         },
         "resolveLabelOverlapping": {
-          "EnumName": "PieChartOverlappingResolution",
+          "EnumName": "PieChartResolveLabelOverlapping",
           "Description": "Specifies how a chart must behave when series point labels overlap."
         },
         "segmentsDirection": {
@@ -21157,6 +21631,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -21960,7 +22440,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartLabelOverlappingBehavior",
+                  "EnumName": "PolarChartOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -22535,7 +23015,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartLabelOverlappingBehavior",
+                  "EnumName": "PolarChartOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -22760,7 +23240,7 @@
           "Description": "A handler for the seriesSelectionChanged event."
         },
         "resolveLabelOverlapping": {
-          "EnumName": "PolarChartOverlappingResolution",
+          "EnumName": "PolarChartResolveLabelOverlapping",
           "Description": "Specifies how the chart must behave when series point labels overlap."
         },
         "series": {
@@ -22898,7 +23378,7 @@
                   "Description": "Specifies the spacing between an axis and its labels in pixels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "PolarChartLabelOverlappingBehavior",
+                  "EnumName": "PolarChartOverlappingBehavior",
                   "Description": "Specifies the overlap resolving algorithm to be applied to axis labels."
                 },
                 "visible": {
@@ -23381,6 +23861,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -24615,6 +25101,12 @@
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "bool"
@@ -25016,6 +25508,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -25752,6 +26250,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -27315,7 +27819,68 @@
         }
       }
     },
-    "format": {
+    "AnimationConfig": {
+      "Description": "Defines animation options.",
+      "Options": {
+        "complete": {
+          "IsFunc": true,
+          "Description": "A function called after animation is completed."
+        },
+        "delay": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "A number specifying wait time before animation execution."
+        },
+        "direction": {
+          "EnumName": "Direction",
+          "Description": "Specifies the animation direction for the \"slideIn\" and \"slideOut\" animation types."
+        },
+        "duration": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "A number specifying the time in milliseconds spent on animation."
+        },
+        "easing": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "A string specifying the easing function for animation."
+        },
+        "from": {
+          "PrimitiveTypes": [
+            "any",
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the initial animation state."
+        },
+        "staggerDelay": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "A number specifying the time period to wait before the animation of the next stagger item starts."
+        },
+        "start": {
+          "IsFunc": true,
+          "Description": "A function called before animation is started."
+        },
+        "to": {
+          "PrimitiveTypes": [
+            "any",
+            "double",
+            "string"
+          ],
+          "Description": "Specifies a final animation state."
+        },
+        "type": {
+          "EnumName": "AnimationType",
+          "Description": "A string value specifying the animation type."
+        }
+      }
+    },
+    "Format": {
       "Description": "Formats values.",
       "Options": {
         "currency": {
@@ -27341,6 +27906,107 @@
         "type": {
           "EnumName": "Format",
           "Description": "Specifies a predefined format."
+        }
+      }
+    },
+    "PositionConfig": {
+      "Description": "The position object specifies the widget positioning options.",
+      "Options": {
+        "at": {
+          "EnumName": "PositionAlignment",
+          "Description": "The target element position that the widget is positioned against.",
+          "Options": {
+            "x": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Holds the horizontal position specifier."
+            },
+            "y": {
+              "EnumName": "VerticalAlignment",
+              "Description": "Holds the vertical position specifier."
+            }
+          }
+        },
+        "boundary": {
+          "PrimitiveTypes": [
+            "jquery",
+            "window"
+          ],
+          "Description": "The element within which the widget is positioned."
+        },
+        "boundaryOffset": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the horizontal and vertical offset from the window's boundaries.",
+          "Options": {
+            "x": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the horizontal offset."
+            },
+            "y": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the vertical offset."
+            }
+          }
+        },
+        "collision": {
+          "EnumName": "PositionXYCollisionResolution",
+          "Description": "Specifies how to move the widget if it overflows the screen.",
+          "Options": {
+            "x": {
+              "EnumName": "PositionCollisionResolution",
+              "Description": "Specifies the horizontal collision handler."
+            },
+            "y": {
+              "EnumName": "PositionCollisionResolution",
+              "Description": "Specifies the vertical collision handler."
+            }
+          }
+        },
+        "my": {
+          "EnumName": "PositionAlignment",
+          "Description": "The position of the widget to align against the target element.",
+          "Options": {
+            "x": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Holds the horizontal position specifier."
+            },
+            "y": {
+              "EnumName": "VerticalAlignment",
+              "Description": "Holds the vertical position specifier."
+            }
+          }
+        },
+        "of": {
+          "PrimitiveTypes": [
+            "jquery",
+            "window"
+          ],
+          "Description": "The target element that the widget is positioned against."
+        },
+        "offset": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies horizontal and vertical offset in pixels.",
+          "Options": {
+            "x": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the horizontal offset."
+            },
+            "y": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the vertical offset."
+            }
+          }
         }
       }
     },
@@ -29684,6 +30350,1829 @@
           "Description": "Sets a series type."
         }
       }
+    },
+    "ChartSeries": {
+      "Description": "Specifies options for Chart widget series.",
+      "Options": {
+        "argumentField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides arguments for series points."
+        },
+        "axis": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Binds the series to a value axis."
+        },
+        "border": {
+          "Description": "Configures the series border (in area-like series) or the series point border (in bar-like and bubble series).",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the series border (in area-like series) or the series point border (in bar-like and bubble series)."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Sets a dash style for the series border (in area-like series) or for the series point border (in bar-like and bubble series)."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Shows the series border (in area-like series) or the series point border (in bar-like and bubble series)."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Sets a pixel-measured width for the series border (in area-like series) or for the series point border (in bar-like and bubble series)."
+            }
+          }
+        },
+        "closeValueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides close values for points of a financial series."
+        },
+        "color": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the color of the series."
+        },
+        "cornerRadius": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Makes bars look rounded. Applies only to bar-like series."
+        },
+        "dashStyle": {
+          "EnumName": "DashStyle",
+          "Description": "Specifies the dash style of the series line. Applies only to line-like series."
+        },
+        "highValueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides high values for points of a financial series."
+        },
+        "hoverMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies series elements to be highlighted when a user points to a series."
+        },
+        "hoverStyle": {
+          "Description": "Configures the appearance adopted by the series when a user points to it.",
+          "Options": {
+            "border": {
+              "Description": "Configures the appearance adopted by the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user points to the series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user points to the series."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Sets a dash style for the series border (in area-like series) or for the series point border (in bar-like and bubble series) when a user points to the series."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Shows the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user points to the series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a pixel-measured width for the series border (in area-like series) or for the series point border (in bar-like and bubble series) when a user points to the series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color of the series in the hovered state."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies the dash style of the series line when the series is in the hovered state. Applies only to line-like series."
+            },
+            "hatching": {
+              "Description": "Configures hatching that applies when a user points to the series.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies the direction of hatching lines."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies how transparent hatching lines should be."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between two side-by-side hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the pixel-measured width of the series line when the series is in the hovered state."
+            }
+          }
+        },
+        "ignoreEmptyPoints": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the series should ignore null data points."
+        },
+        "innerColor": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a filling color for the body of a series point that visualizes a non-reduced value. Applies only to candlestick series."
+        },
+        "label": {
+          "Description": "Configures point labels.",
+          "Options": {
+            "alignment": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Aligns point labels in relation to their points."
+            },
+            "argumentFormat": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Formats the point argument before it will be displayed in the point label."
+            },
+            "argumentPrecision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
+            },
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the background of point labels. By default, point labels inherit the color from their points."
+            },
+            "border": {
+              "Description": "Configures the borders of point labels.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the border."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies the dash style of the border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Makes the border visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the border in pixels."
+                }
+              }
+            },
+            "connector": {
+              "Description": "Configures the label connectors.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the connectors."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Makes the connectors visible. Applies only if label | visible is set to true."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the connectors in pixels."
+                }
+              }
+            },
+            "customizeText": {
+              "IsFunc": true,
+              "Description": "Customizes the text displayed by point labels."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for point labels."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Formats the point value before it will be displayed in the point label."
+            },
+            "horizontalOffset": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Along with verticalOffset, shifts point labels from their initial positions."
+            },
+            "percentPrecision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | percentPrecision instead."
+            },
+            "position": {
+              "EnumName": "RelativePosition",
+              "Description": "Specifies whether to display point labels inside or outside of series points. Applies only to bubble, range-like and bar-like series."
+            },
+            "precision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
+            },
+            "rotationAngle": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Rotates point labels."
+            },
+            "showForZeroValues": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether or not to show labels for points with zero value. Applies only to bar-like series."
+            },
+            "verticalOffset": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Along with horizontalOffset, shifts point labels from their initial positions."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Makes the point labels visible."
+            }
+          }
+        },
+        "lowValueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides low values for points of a financial series."
+        },
+        "maxLabelCount": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies a limit for the number of point labels."
+        },
+        "minBarSize": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the minimal possible height (or length if the chart is rotated) of a bar in pixels. Applies only to bar-like series."
+        },
+        "opacity": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies how transparent the series should be."
+        },
+        "openValueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides open values for points of a financial series."
+        },
+        "pane": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which pane the series should belong to. Accepts the name of the pane."
+        },
+        "point": {
+          "Description": "Configures series points in scatter, line- and area-like series.",
+          "Options": {
+            "border": {
+              "Description": "Configures the appearance of the series point border in scatter, line- and area-like series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Makes the border visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets the width of the border in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the series points."
+            },
+            "hoverMode": {
+              "EnumName": "ChartPointInteractionMode",
+              "Description": "Specifies series elements to be highlighted when a user pauses on a series point."
+            },
+            "hoverStyle": {
+              "Description": "Configures the appearance adopted by a series point when a user pauses on it.",
+              "Options": {
+                "border": {
+                  "Description": "Configures the appearance of the point border when a user pauses on the point.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the color of the point border when the point is in the hovered state."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Makes the border visible when a user pauses on the series point."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the width of the point border when the point is in the hovered state."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of series points in the hovered state."
+                },
+                "size": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specfies the diameter of series points in the hovered state."
+                }
+              }
+            },
+            "image": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Substitutes the standard point symbols with an image.",
+              "Options": {
+                "height": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the height of the image used instead of a point marker.",
+                  "Options": {
+                    "rangeMaxPoint": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the height of the image that represents the maximum point in a range area series."
+                    },
+                    "rangeMinPoint": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the height of the image that represents the minimum point in a range area series."
+                    }
+                  }
+                },
+                "url": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the URL of the image to be used as a point marker.",
+                  "Options": {
+                    "rangeMaxPoint": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the URL of the image to be used as a maximum point marker."
+                    },
+                    "rangeMinPoint": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the URL of the image to be used as a maximum point marker."
+                    }
+                  }
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of an image that is used as a point marker.",
+                  "Options": {
+                    "rangeMaxPoint": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the width of the image that represents the maximum point in a range area series."
+                    },
+                    "rangeMinPoint": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the width of the image that represents the minimum point in a range area series."
+                    }
+                  }
+                }
+              }
+            },
+            "selectionMode": {
+              "EnumName": "ChartPointInteractionMode",
+              "Description": "Specifies series elements to be highlighted when a user selects a series point."
+            },
+            "selectionStyle": {
+              "Description": "Configures the appearance of a selected series point.",
+              "Options": {
+                "border": {
+                  "Description": "Configures the border of a selected point.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the color of the point border when the point is selected."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Makes the border of a selected point visible."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the width of the point border when the point is selected."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of series points in the selected state."
+                },
+                "size": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specfies the diameter of series points in the selected state."
+                }
+              }
+            },
+            "size": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the diameter of series points in pixels."
+            },
+            "symbol": {
+              "EnumName": "PointSymbol",
+              "Description": "Specifies which symbol should represent series points in scatter, line- and area-like series."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Makes the series points visible."
+            }
+          }
+        },
+        "rangeValue1Field": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Coupled with the rangeValue2Field option, specifies which data source field provides values for a range-like series."
+        },
+        "rangeValue2Field": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Coupled with the rangeValue1Field option, specifies which data source field provides values for a range-like series."
+        },
+        "reduction": {
+          "Description": "Specifies reduction options for financial series.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a color for the points whose price has decreased in comparison to the price of the previous point."
+            },
+            "level": {
+              "EnumName": "FinancialChartReductionLevel",
+              "Description": "Specifies whether high, low, open or close prices of points should be compared."
+            }
+          }
+        },
+        "selectionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies series elements to be highlighted when a user selects a series."
+        },
+        "selectionStyle": {
+          "Description": "Configures the appearance adopted by the series when a user selects it.",
+          "Options": {
+            "border": {
+              "Description": "Configures the appearance adopted by the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user selects the series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user selects the series."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Sets a dash style for the series border (in area-like series) or for the series point border (in bar-like and bubble series) when a user selects the series."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Shows the series border (in area-like series) or the series point border (in bar-like and bubble series) when a user selects the series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a pixel-measured width for the series border (in area-like series) or for the series point border (in bar-like and bubble series) when a user selects the series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color of the series in the selected state."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies the dash style of the series line when the series is in the selected state. Applies only to line-like series."
+            },
+            "hatching": {
+              "Description": "Configures hatching that applies when a user selects the series.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies the direction of hatching lines."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies how transparent hatching lines should be."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between two side-by-side hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the pixel-measured width of the series line when the series is in the selected state."
+            }
+          }
+        },
+        "showInLegend": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether to show the series in the legend or not."
+        },
+        "sizeField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides size values for bubbles. Required by and applies only to bubble series."
+        },
+        "stack": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which stack the series should belongs to. Applies only to stacked bar and full-stacked bar series."
+        },
+        "tagField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides auxiliary data for series points."
+        },
+        "valueErrorBar": {
+          "Description": "Configures error bars.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color of error bars."
+            },
+            "displayMode": {
+              "EnumName": "ValueErrorBarDisplayMode",
+              "Description": "Specifies whether error bars must be displayed in full or partially."
+            },
+            "edgeLength": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the length of the lines that indicate the error bar edges."
+            },
+            "highValueField": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies which data field provides high error values."
+            },
+            "lineWidth": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the error bar line."
+            },
+            "lowValueField": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies which data field provides low error values."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies how trasparent error bars should be."
+            },
+            "type": {
+              "EnumName": "ValueErrorBarType",
+              "Description": "Specifies how error bar values must be calculated."
+            },
+            "value": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the value to be used for generating error bars."
+            }
+          }
+        },
+        "valueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides values for series points."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the series is visible or not."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the width of the series line in pixels. Applies only to line-like series."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name that identifies the series."
+        },
+        "tag": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies data about a series."
+        },
+        "type": {
+          "EnumName": "SeriesType",
+          "Description": "Sets the series type."
+        }
+      }
+    },
+    "PieChartSeries": {
+      "Description": "Specifies options for the series of the PieChart widget.",
+      "Options": {
+        "argumentField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the data source field that provides arguments for series points."
+        },
+        "argumentType": {
+          "EnumName": "ChartDataType",
+          "Description": "Specifies the required type for series arguments."
+        },
+        "border": {
+          "Description": "An object defining the series border configuration options.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a border color for a series."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies a dash style for the border of a series point."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Sets border visibility for a series."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Sets a border width for a series in pixels."
+            }
+          }
+        },
+        "color": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a series color."
+        },
+        "hoverMode": {
+          "EnumName": "PieChartSeriesInteractionMode",
+          "Description": "Specifies the chart elements to highlight when a series is hovered over."
+        },
+        "hoverStyle": {
+          "Description": "An object defining configuration options for a hovered series.",
+          "Options": {
+            "border": {
+              "Description": "An object defining the border options for a hovered series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a border color for the series when it is hovered over."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the border of a series point when this point is hovered over."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Sets border visibility for a hovered series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a border width for a hovered series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a color for the series when it is hovered over."
+            },
+            "hatching": {
+              "Description": "Specifies the hatching options to be applied when a point is hovered over.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies how to apply hatching to highlight the hovered point."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the opacity of hatching lines."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between two hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            }
+          }
+        },
+        "innerRadius": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the innerRadius option instead."
+        },
+        "label": {
+          "Description": "An object defining the label configuration options.",
+          "Options": {
+            "argumentFormat": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Specifies a format for arguments displayed by point labels."
+            },
+            "argumentPrecision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
+            },
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a background color for point labels."
+            },
+            "border": {
+              "Description": "Specifies border options for point labels.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies a border color for point labels."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the borders of point labels."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Indicates whether or not borders are visible in point labels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the border width for point labels."
+                }
+              }
+            },
+            "connector": {
+              "Description": "Specifies connector options for series point labels.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of label connectors."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Indicates whether or not label connectors are visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of label connectors."
+                }
+              }
+            },
+            "customizeText": {
+              "IsFunc": true,
+              "Description": "Specifies a callback function that returns the text to be displayed by point labels."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the text displayed in point labels."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Specifies a format for the text displayed by point labels."
+            },
+            "percentPrecision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | percentPrecision instead."
+            },
+            "position": {
+              "EnumName": "PieChartLabelPosition",
+              "Description": "Specifies a label position relative to the chart."
+            },
+            "precision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
+            },
+            "radialOffset": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies how to shift labels from their initial position in a radial direction in pixels."
+            },
+            "rotationAngle": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the angle used to rotate point labels from their initial position."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies the visibility of point labels."
+            }
+          }
+        },
+        "maxLabelCount": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
+        },
+        "minSegmentSize": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies a minimal size of a displayed pie segment."
+        },
+        "segmentsDirection": {
+          "IsDeprecated": true,
+          "EnumName": "PieChartSegmentsDirection",
+          "Description": "Use the segmentsDirection option instead."
+        },
+        "selectionMode": {
+          "EnumName": "PieChartSeriesInteractionMode",
+          "Description": "Specifies the chart elements to highlight when the series is selected."
+        },
+        "selectionStyle": {
+          "Description": "An object defining configuration options for the series when it is selected.",
+          "Options": {
+            "border": {
+              "Description": "An object defining the border options for a selected series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a border color for a selected series."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the border of a selected series point."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Sets a border visibility for a selected series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a border width for a selected series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a color for a series when it is selected."
+            },
+            "hatching": {
+              "Description": "Specifies the hatching options to be applied when a point is selected.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies how to apply hatching to highlight the selected point."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the opacity of hatching lines."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between two hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            }
+          }
+        },
+        "smallValuesGrouping": {
+          "Description": "Specifies chart segment grouping options.",
+          "Options": {
+            "groupName": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the name of the grouped chart segment. This name represents the segment in the chart legend."
+            },
+            "mode": {
+              "EnumName": "SmallValuesGroupingMode",
+              "Description": "Specifies the segment grouping mode."
+            },
+            "threshold": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies a threshold for segment values."
+            },
+            "topCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "Specifies how many segments must not be grouped."
+            }
+          }
+        },
+        "startAngle": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the startAngle option instead."
+        },
+        "tagField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the data source field that provides data about a point."
+        },
+        "valueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the data source field that provides values for series points."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name that identifies the series."
+        },
+        "tag": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies data about a series."
+        },
+        "type": {
+          "IsDeprecated": true,
+          "EnumName": "PieChartType",
+          "Description": "Use the type option instead."
+        }
+      }
+    },
+    "PolarChartSeries": {
+      "Description": "Specifies options for PolarChart widget series.",
+      "Options": {
+        "argumentField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the data source field that provides arguments for series points."
+        },
+        "border": {
+          "Description": "An object defining the series border configuration options.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a border color for a series."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies a dash style for the borders of series points."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Sets border visibility for a series."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Sets a border width for a series in pixels."
+            }
+          }
+        },
+        "closed": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not to close the chart by joining the end point with the first point."
+        },
+        "color": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a series color."
+        },
+        "dashStyle": {
+          "EnumName": "DashStyle",
+          "Description": "Specifies the dash style of the series' line."
+        },
+        "hoverMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the series elements to highlight when a series is hovered over."
+        },
+        "hoverStyle": {
+          "Description": "An object defining configuration options for a hovered series.",
+          "Options": {
+            "border": {
+              "Description": "An object defining the border options for a hovered series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a border color for a hovered series."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the borders of point labels."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Sets a border visibility for a hovered series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a border width for a hovered series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a color for a series when it is hovered over."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies the dash style for the line in a hovered series."
+            },
+            "hatching": {
+              "Description": "Specifies the hatching options to be applied when a series is hovered over.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies how to apply hatching to highlight the hovered series."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the opacity of hatching lines."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of a line in a hovered series."
+            }
+          }
+        },
+        "ignoreEmptyPoints": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether a chart ignores null data points or not."
+        },
+        "label": {
+          "Description": "An object defining the label configuration options.",
+          "Options": {
+            "argumentFormat": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Specifies a format for arguments displayed by point labels."
+            },
+            "argumentPrecision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | argumentFormat | precision instead."
+            },
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a background color for point labels."
+            },
+            "border": {
+              "Description": "Specifies border options for point labels.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies a border color for point labels."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the borders of point labels."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Indicates whether borders are visible in point labels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the border width for point labels."
+                }
+              }
+            },
+            "connector": {
+              "Description": "Specifies connector options for series point labels.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of label connectors."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Indicates whether or not label connectors are visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of label connectors."
+                }
+              }
+            },
+            "customizeText": {
+              "IsFunc": true,
+              "Description": "Specifies a callback function that returns the text to be displayed by point labels."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the text displayed in point labels."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Specifies a format for the text displayed by point labels."
+            },
+            "position": {
+              "EnumName": "RelativePosition",
+              "Description": "Specifies a label position in bar-like series."
+            },
+            "precision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the series | label | format | precision option instead."
+            },
+            "rotationAngle": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the angle used to rotate point labels from their initial position."
+            },
+            "showForZeroValues": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether or not to show a label when the point has a zero value."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies the visibility of point labels."
+            }
+          }
+        },
+        "maxLabelCount": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
+        },
+        "minBarSize": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the minimal length of a displayed bar in pixels."
+        },
+        "opacity": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies opacity for a series."
+        },
+        "point": {
+          "Description": "An object defining configuration options for points in line and area series.",
+          "Options": {
+            "border": {
+              "Description": "Specifies border options for points in the line and area series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a border color for points in the line and area series."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Sets border visibility for points in the line and area series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a border width for points in the line or area series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the points color."
+            },
+            "hoverMode": {
+              "EnumName": "ChartPointInteractionMode",
+              "Description": "Specifies what series points to highlight when a point is hovered over."
+            },
+            "hoverStyle": {
+              "Description": "An object defining configuration options for a hovered point.",
+              "Options": {
+                "border": {
+                  "Description": "An object defining the border options for a hovered point.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Sets a border color for a hovered point."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Sets border visibility for a hovered point."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Sets a border width for a hovered point."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a color for a point when it is hovered over."
+                },
+                "size": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the diameter of a hovered point in the series that represents data points as symbols (not as bars for instance)."
+                }
+              }
+            },
+            "image": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "An object specifying the parameters of an image that is used as a point marker.",
+              "Options": {
+                "height": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the height of an image that is used as a point marker."
+                },
+                "url": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies a URL leading to the image to be used as a point marker."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of an image that is used as a point marker."
+                }
+              }
+            },
+            "selectionMode": {
+              "EnumName": "ChartPointInteractionMode",
+              "Description": "Specifies what series points to highlight when a point is selected."
+            },
+            "selectionStyle": {
+              "Description": "An object defining configuration options for a selected point.",
+              "Options": {
+                "border": {
+                  "Description": "An object defining the border options for a selected point.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Sets a border color for a selected point."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Sets border visibility for a selected point."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Sets a border width for a selected point."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a color for a point when it is selected."
+                },
+                "size": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the diameter of a selected point in the series that represents data points as symbols (not as bars for instance)."
+                }
+              }
+            },
+            "size": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the point diameter in pixels for those series that represent data points as symbols (not as bars for instance)."
+            },
+            "symbol": {
+              "EnumName": "VizPointSymbol",
+              "Description": "Specifies a symbol for presenting points of the line and area series."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies the points visibility for a line and area series."
+            }
+          }
+        },
+        "selectionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the series elements to highlight when the series is selected."
+        },
+        "selectionStyle": {
+          "Description": "An object defining configuration options for a selected series.",
+          "Options": {
+            "border": {
+              "Description": "An object defining the border options for a selected series.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Sets a border color for a selected series."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies a dash style for the borders of point labels."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Sets border visibility for a selected series."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets a border width for a selected series."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Sets a color for a series when it is selected."
+            },
+            "dashStyle": {
+              "EnumName": "DashStyle",
+              "Description": "Specifies the dash style for the line in a selected series."
+            },
+            "hatching": {
+              "Description": "Specifies the hatching options to be applied when a series is selected.",
+              "Options": {
+                "direction": {
+                  "EnumName": "HatchingDirection",
+                  "Description": "Specifies how to apply hatching to highlight a selected series."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the opacity of hatching lines."
+                },
+                "step": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the distance between hatching lines in pixels."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of hatching lines in pixels."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of a line in a selected series."
+            }
+          }
+        },
+        "showInLegend": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not to show the series in the chart's legend."
+        },
+        "stack": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the stack where the values of the 'stackedBar' series must be located."
+        },
+        "tagField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the data source field that provides data about a point."
+        },
+        "valueErrorBar": {
+          "Description": "Configures error bars.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color of error bars."
+            },
+            "displayMode": {
+              "EnumName": "ValueErrorBarDisplayMode",
+              "Description": "Specifies whether error bars must be displayed in full or partially."
+            },
+            "edgeLength": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the length of the lines that indicate the error bar edges."
+            },
+            "highValueField": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the data field that provides data for high error values."
+            },
+            "lineWidth": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the error bar line."
+            },
+            "lowValueField": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the data field that provides data for low error values."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the opacity of error bars."
+            },
+            "type": {
+              "EnumName": "ValueErrorBarType",
+              "Description": "Specifies how error bar values must be calculated."
+            },
+            "value": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the value to be used for generating error bars."
+            }
+          }
+        },
+        "valueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the data source field that provides values for series points."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies the visibility of a series."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies a line width."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name that identifies the series."
+        },
+        "tag": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies data about a series."
+        },
+        "type": {
+          "EnumName": "PolarChartSeriesType",
+          "Description": "Sets the series type."
+        }
+      }
     }
   },
   "Enums": {
@@ -29799,10 +32288,90 @@
           "Name": "flip"
         },
         {
-          "Name": "flipFit"
+          "Name": "flipfit"
         },
         {
           "Name": "none"
+        }
+      ],
+      "Renamings": {
+        "flipfit": "flipFit"
+      }
+    },
+    "PositionXYCollisionResolution": {
+      "Items": [
+        {
+          "Name": "fit"
+        },
+        {
+          "Name": "fit flip"
+        },
+        {
+          "Name": "fit flipfit"
+        },
+        {
+          "Name": "fit none"
+        },
+        {
+          "Name": "flip"
+        },
+        {
+          "Name": "flip fit"
+        },
+        {
+          "Name": "flip none"
+        },
+        {
+          "Name": "flipfit"
+        },
+        {
+          "Name": "flipfit fit"
+        },
+        {
+          "Name": "flipfit none"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "none fit"
+        },
+        {
+          "Name": "none flip"
+        },
+        {
+          "Name": "none flipfit"
+        }
+      ]
+    },
+    "PositionAlignment": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "center"
+        },
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "left bottom"
+        },
+        {
+          "Name": "left top"
+        },
+        {
+          "Name": "right"
+        },
+        {
+          "Name": "right bottom"
+        },
+        {
+          "Name": "right top"
+        },
+        {
+          "Name": "top"
         }
       ]
     },
@@ -29990,6 +32559,16 @@
         }
       ]
     },
+    "Toolbar": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
     "ToolbarItemLocation": {
       "Items": [
         {
@@ -30074,7 +32653,7 @@
           "Name": "allPages"
         },
         {
-          "Name": "singlePage"
+          "Name": "page"
         }
       ]
     },
@@ -31020,7 +33599,7 @@
         }
       ]
     },
-    "ChartOverlappingResolution": {
+    "ChartResolveLabelOverlapping": {
       "Items": [
         {
           "Name": "hide"
@@ -31033,7 +33612,7 @@
         }
       ]
     },
-    "PieChartOverlappingResolution": {
+    "PieChartResolveLabelOverlapping": {
       "Items": [
         {
           "Name": "hide"
@@ -31062,7 +33641,7 @@
         }
       ]
     },
-    "ChartInputDevice": {
+    "ChartPointerType": {
       "Items": [
         {
           "Name": "all"
@@ -31598,7 +34177,7 @@
         }
       ]
     },
-    "GaugeOverlappingResolution": {
+    "GaugeOverlappingBehavior": {
       "Items": [
         {
           "Name": "first"
@@ -31606,7 +34185,11 @@
         {
           "Name": "last"
         }
-      ]
+      ],
+      "Renamings": {
+        "first": "HideFirstLabel",
+        "last": "HideLastLabel"
+      }
     },
     "GaugeIndicatorType": {
       "Items": [
@@ -31639,7 +34222,7 @@
         }
       ]
     },
-    "PolarChartLabelOverlappingBehavior": {
+    "PolarChartOverlappingBehavior": {
       "Items": [
         {
           "Name": "enlargeTickInterval"
@@ -31668,7 +34251,7 @@
         }
       ]
     },
-    "PolarChartOverlappingResolution": {
+    "PolarChartResolveLabelOverlapping": {
       "Items": [
         {
           "Name": "hide"

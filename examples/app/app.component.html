@@ -247,8 +247,11 @@
 
 <dx-chart
     class="full-width"
-    [dataSource]="oranges"
-    [series]="series">
+    [dataSource]="oranges">
+    <dxi-serie
+        argumentField="day"
+        valueField="oranges"
+        name="My oranges"></dxi-serie>    
     <dxo-common-series-settings
         color="#ffa500"
         [type]="chartSeriesType"></dxo-common-series-settings>

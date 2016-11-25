@@ -121,11 +121,6 @@ export class AppComponent implements OnInit {
     popupVisible = false;
     chartSeriesTypes = ['bar', 'line', 'spline'];
     chartSeriesType = this.chartSeriesTypes[0];
-    series = {
-        argumentField: 'day',
-        valueField: 'oranges',
-        name: 'My oranges'
-    };
     oranges: Orange[];
     customers: Customer[];
     appointments: Appointment[];

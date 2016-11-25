@@ -1,6 +1,6 @@
-import { NestedOption } from '../../../core/nested-option';
+import { <#= it.baseClass #> } from '<#= it.basePath #>';
 
-export abstract class <#= it.className #> extends NestedOption {<#~ it.properties :prop:i #>
+export abstract class <#= it.className #> extends <#= it.baseClass #> {<#~ it.properties :prop:i #>
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
     }

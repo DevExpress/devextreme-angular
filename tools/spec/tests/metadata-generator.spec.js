@@ -213,6 +213,13 @@ describe("metadata-generator", function() {
                                     'ExternalPropertyType'
                                 ]
                             },
+                            externalPropertyItems: { // DxoExternalProperty
+                                IsCollection: true,
+                                SingularName: 'externalPropertyItem',
+                                ComplexTypes: [
+                                    'ExternalPropertyType'
+                                ]
+                            },
                             widgetReference: {
                                 ComplexTypes: [
                                     'dxAnotherComplexWidgetOptions'
@@ -237,7 +244,7 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(13);
+            expect(store.write.calls.count()).toBe(15);
 
             let writeToPathCount = (path) => {
                 return store.write.calls
@@ -257,11 +264,13 @@ describe("metadata-generator", function() {
             expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "widget-reference.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property-item-dxi.json"))).toBe(1);
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(13);
-
+            expect(Object.keys(metas).length).toBe(15);
+            
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
             expect(metas.DxoProperty).not.toBe(undefined);
@@ -275,6 +284,8 @@ describe("metadata-generator", function() {
             expect(metas.DxiCollectionItemWithTemplate).not.toBe(undefined);
             expect(metas.DxoWidgetReference).not.toBe(undefined);
             expect(metas.DxoAnotherComplexWidgetOptions).not.toBe(undefined);
+            expect(metas.DxiExternalPropertyType).not.toBe(undefined);
+            expect(metas.DxiExternalPropertyItem).not.toBe(undefined);
         });
 
         it("should generate nested components with merged properties", function() {
@@ -283,6 +294,29 @@ describe("metadata-generator", function() {
 
             expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nested', 'nestedItems', 'anotherNested']);
             expect(metas.DxoProperty.optionName).toBe('property');
+        });
+
+        it("should generate proper properties of base components", function() {
+            expect(metas.DxoExternalPropertyType.properties.map(p => p.name)).toEqual(['nestedExternalProperty']);
+            expect(metas.DxoExternalPropertyType.className).toBe('DxoExternalPropertyType');
+            expect(metas.DxoExternalPropertyType.path).toBe('external-property-type');
+            expect(metas.DxoExternalPropertyType.baseClass).toBe('NestedOption');
+            expect(metas.DxoExternalPropertyType.basePath).toBe('../../../core/nested-option');
+        });
+
+        it("should generate proper properties of base collection components", function() {
+            expect(metas.DxiExternalPropertyType.properties.map(p => p.name)).toEqual(['nestedExternalProperty']);
+            expect(metas.DxiExternalPropertyType.className).toBe('DxiExternalPropertyType');
+            expect(metas.DxiExternalPropertyType.path).toBe('external-property-type-dxi');
+            expect(metas.DxiExternalPropertyType.baseClass).toBe('CollectionNestedOption');
+            expect(metas.DxiExternalPropertyType.basePath).toBe('../../../core/nested-option');
+        });
+
+        it("should generate proper properties of collection nested components with base class", function() {
+            expect(metas.DxiExternalPropertyItem.className).toBe('DxiExternalPropertyItem');
+            expect(metas.DxiExternalPropertyItem.path).toBe('external-property-item-dxi');
+            expect(metas.DxiExternalPropertyItem.baseClass).toBe('DxiExternalPropertyType');
+            expect(metas.DxiExternalPropertyItem.basePath).toBe('./base/external-property-type-dxi');
         });
 
         it("should generate deep nested components", function() {
@@ -314,7 +348,7 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalProperty.optionName).toBe('externalProperty');
         });
 
-        it("should generate recurcive external nested components", function() {
+        it("should generate recursive external nested components", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoNestedExternalProperty');
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoNestedExternalProperty');
 

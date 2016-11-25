@@ -252,6 +252,10 @@ export default class DXComponentMetadataGenerator {
         return nestedComponents;
     }
 
+    private getBaseComponentPath(component) {
+        return component.basePath + (component.isCollection ? '-dxi' : '');
+    }
+
     private generateNestedOptions(config, metadata) {
         let normalizedMetadata = metadata
             .reduce((result, component) => {
@@ -295,7 +299,9 @@ export default class DXComponentMetadataGenerator {
                     result.push({
                         properties: component.properties,
                         className: component.baseClass,
-                        path: component.basePath
+                        path: this.getBaseComponentPath(component),
+                        baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
+                        basePath: '../../../core/nested-option'
                     });
                 }
 
@@ -312,7 +318,7 @@ export default class DXComponentMetadataGenerator {
                 if (component.baseClass) {
                     component.inputs = component.properties;
                     delete component.properties;
-                    component.basePath = './base/' + component.basePath;
+                    component.basePath = './base/' + this.getBaseComponentPath(component);
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = '../../core/nested-option';
