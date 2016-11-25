@@ -4,7 +4,7 @@
 
 ### :red_circle: If you are looking for the 16.1 branch, please follow the [link](https://github.com/DevExpress/devextreme-angular/tree/16.1)
 
-Project status: **CTP**
+Project status: **Beta**
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
 
