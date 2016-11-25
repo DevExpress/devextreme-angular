@@ -213,7 +213,7 @@ describe("metadata-generator", function() {
                                     'ExternalPropertyType'
                                 ]
                             },
-                            externalPropertyItems: { // DxoExternalProperty
+                            externalPropertyItems: { // DxiExternalPropertyItem
                                 IsCollection: true,
                                 SingularName: 'externalPropertyItem',
                                 ComplexTypes: [
