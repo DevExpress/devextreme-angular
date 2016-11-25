@@ -1,7 +1,3 @@
-/// <reference path="../../typings/globals/node/index.d.ts" />
-/// <reference path="../../typings/globals/dot/index.d.ts" />
-/// <reference path="../../typings/modules/mkdirp/index.d.ts" />
-
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');

@@ -1,9 +1,7 @@
-/// <reference path="../../typings/globals/node/index.d.ts" />
-
 import fs = require('fs');
 import path = require('path');
-let inflector = require('inflector-js');
 import logger from './logger';
+let inflector = require('inflector-js');
 
 export default class FacadeGenerator {
     private _encoding = 'utf8';

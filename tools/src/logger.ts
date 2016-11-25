@@ -1,6 +1,6 @@
-/// <reference path="../../typings/globals/node/index.d.ts" />
+import yargs = require('yargs');
 
-let argv = require('yargs')
+let argv = yargs
     .default('verbose', false)
     .argv;
 

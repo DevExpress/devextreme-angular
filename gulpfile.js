@@ -35,7 +35,7 @@ gulp.task('build.tools', function() {
 
     return gulp.src(config.srcFilesPattern)
         .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsc))
+        .pipe(typescript(config.tsConfigPath))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(config.distPath));
 });
@@ -108,11 +108,7 @@ gulp.task('npm.content.package', ['npm.clean'], function() {
     var config = buildConfig.npm;
 
     return gulp.src(config.package)
-        .pipe(mergeJson('package.json', function(parsedJson, file) {
-            if (parsedJson.scripts)
-                delete parsedJson.scripts;
-            return parsedJson;
-        }))
+        .pipe(mergeJson('package.json'))
         .pipe(gulp.dest(config.distPath));
 });
 

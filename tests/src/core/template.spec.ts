@@ -1,6 +1,3 @@
-/// <reference path="../../../typings/globals/jasmine/index.d.ts" />
-/// <reference path="../../../typings/globals/jquery/index.d.ts" />
-
 import $ = require('jquery');
 
 import {

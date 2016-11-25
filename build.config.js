@@ -45,16 +45,7 @@ module.exports = {
                 }
             }
         },
-        tsc: {
-            "target": "ES5",
-            "module": "commonjs",
-            "moduleResolution": "node",
-            "emitDecoratorMetadata": true,
-            "experimentalDecorators": true,
-            "sourceMap": true,
-            "removeComments": true,
-            "declaration": true
-        },
+        tsConfigPath: "tools/src/tsconfig.json",
         tests: {
             srcFilesPattern: 'tools/spec/tests/*.spec.js'
         }
