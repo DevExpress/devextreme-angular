@@ -270,7 +270,7 @@ describe("metadata-generator", function() {
 
         it("should generate matadata", function() {
             expect(Object.keys(metas).length).toBe(15);
-            
+
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxAnotherComplexWidget).not.toBe(undefined);
             expect(metas.DxoProperty).not.toBe(undefined);
