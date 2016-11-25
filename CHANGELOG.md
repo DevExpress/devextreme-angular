@@ -1,7 +1,12 @@
-## Unreleased
+## 16.2.2-beta.1 (2016-11-25)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/5?closed=1)
 
 ### Breaking changes
 
+- Our npm package has been renamed from devextreme-angular2 to [devextreme-angular](https://www.npmjs.com/package/devextreme-angular).
 - The DxTemplate directive now uses template names instead of template option names. For example, for the DxList widget, use `*dxTemplate="let data of 'item'"` instead of `*dxTemplate="let data of 'itemTemplate'"`.
 
 ## 16.2.1-alpha.3 (2016-11-11)
@@ -10,7 +15,6 @@
 
 - Fix an issue in Plunker when jszip was used
 - Fix a DataGrid issue in Mozila FF
-
 
 ## 16.2.1-alpha.2 (2016-11-09)
 
