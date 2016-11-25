@@ -1,5 +1,4 @@
 import {
-    AfterViewInit,
     ElementRef,
     NgZone,
     QueryList
@@ -17,7 +16,7 @@ import {
 
 const startupEvents = ['onInitialized', 'onContentReady', 'onToolbarPreparing'];
 
-export abstract class DxComponentBase implements INestedOptionContainer, ICollectionNestedOptionContainer {
+export abstract class DxComponent implements INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     templates: DxTemplateDirective[];
@@ -100,13 +99,7 @@ export abstract class DxComponentBase implements INestedOptionContainer, ICollec
     }
 }
 
-export abstract class DxComponent extends DxComponentBase implements AfterViewInit {
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
-    }
-}
-
-export abstract class DxComponentExtension extends DxComponentBase {
+export abstract class DxComponentExtension extends DxComponent {
     createInstance(element: any) {
         this._createWidget(element);
     }

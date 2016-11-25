@@ -6,6 +6,10 @@
 <# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
+<# var implementedInterfaces = []; #>
+<# !it.isExtension && implementedInterfaces.push('AfterViewInit'); #>
+<# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
+
 import {
     Component,
     NgModule,
@@ -13,7 +17,8 @@ import {
     EventEmitter,
     NgZone,
     Input,
-    Output<#? it.isEditor #>,
+    Output<#? !it.isExtension #>,
+    AfterViewInit<#?#><#? it.isEditor #>,
     ContentChild,
     Directive,
     forwardRef,
@@ -56,12 +61,12 @@ import { WatcherHelper } from '../core/watcher-helper';
         IterableDifferHelper<#?#>
     ]
 })
-export class <#= it.className #>Component extends <#= baseClass #><#? collectionProperties.length #> implements OnChanges, DoCheck<#?#> {
+export class <#= it.className #>Component extends <#= baseClass #> <#? implementedInterfaces.length #>implements <#= implementedInterfaces.join(', ') #> <#?#>{
     instance: <#= it.className #>;
-
 <#? it.isEditor #>
     @ContentChild(DxValidatorComponent)
     validator: DxValidatorComponent;<#?#>
+
     <#~ it.properties :prop:i #>@Input()
     get <#= prop.name #>(): any {
         return this._getOption('<#= prop.name #>');
@@ -115,6 +120,10 @@ export class <#= it.className #>Component extends <#= baseClass #><#? collection
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
         this._watcherHelper.checkWatchers();
+    }<#?#>
+<#? !it.isExtension #>
+    ngAfterViewInit() {
+        this._createWidget(this.element.nativeElement);
     }<#?#>
 }
 

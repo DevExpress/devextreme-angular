@@ -1,3 +1,5 @@
+<#? it.inputs #>/* tslint:disable:use-input-property-decorator */
+<#?#>
 import {
     Component,
     NgModule,
@@ -14,11 +16,14 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
 <#~ it.collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './<#= component.path #>';
 <#~#>
 
-@Component(<#? !it.hasSimpleBaseClass #>Object.assign(<#?#>{
+@Component({
     selector: '<#= it.selector #>',
     template: '<#? it.hasTemplate #><ng-content></ng-content><#?#>',
-    providers: [NestedOptionHost]
-}<#? !it.hasSimpleBaseClass #>, <#= it.baseClass #>.metaData)<#?#>)
+    providers: [NestedOptionHost]<#? it.inputs #>,
+    inputs: [<#~ it.inputs :input:i #>
+        '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
+    ]<#?#>
+})
 export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
