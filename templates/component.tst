@@ -123,7 +123,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }<#?#>
 <#? !it.isExtension #>
     ngAfterViewInit() {
-        super.ngAfterViewInit();
+        this._createWidget(this.element.nativeElement);
     }<#?#>
 }
 
