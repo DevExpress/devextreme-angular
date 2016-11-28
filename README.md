@@ -364,6 +364,28 @@ export class AppComponent {
 }
 ```
 
+To configure options that can accept a configuration object or an array of configuration objects, use `dxi-` prefixed components.
+The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/16_1/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the Chart widget: 
+
+```html
+<dx-chart [dataSource]="data">
+    <dxi-serie valueField="value" argumentField="argument"></dxi-serie>
+    <dxi-value-axis>
+        <dxo-label format="millions"></dxo-label>
+    </dxi-value-axis>
+</dx-chart>
+```
+
+```js
+@Component({
+    selector: 'my-app',
+    templateUrl: 'app/app.component.html'
+})
+export class AppComponent {
+    data = ...;
+}
+```
+
 It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
 [structural directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) such as ngFor. Note that
 the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
