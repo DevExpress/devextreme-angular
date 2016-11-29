@@ -31,7 +31,6 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
 
     protected _getOption(name: string): any {
         if (this.instance) {
-            debugger;
             return this.instance.option(this._getOptionPath() + name);
         } else {
             return this._initialOptions[name];
