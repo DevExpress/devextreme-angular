@@ -51,7 +51,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
         super(_element);
 
         this._pnoh.setNestedOption(this);
-        this._noh.setHost(this, this._baseOptionPath);
+        this._noh.setHost(this, this._getOptionPath());
     }
 }
 
