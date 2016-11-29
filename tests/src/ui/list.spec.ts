@@ -13,7 +13,8 @@ import DxList from 'devextreme/ui/list';
 
 import {
     DxListModule,
-    DxListComponent
+    DxListComponent,
+    DxTemplateModule
 } from '../../../dist';
 
 @Component({
@@ -34,7 +35,7 @@ describe('DxList', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxListModule]
+                imports: [DxListModule, DxTemplateModule]
             });
     });
 
@@ -276,4 +277,22 @@ describe('DxList', () => {
         instance.option.calls.reset();
     }));
 
+    it('should be able to set option "template" for each item', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dxi-item [template]="'testTemplate'"></dxi-item>
+
+                        <div *dxTemplate="let item of 'testTemplate'">testTemplate</div>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+        expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('testTemplate');
+    }));
 });
