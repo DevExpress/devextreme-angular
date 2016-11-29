@@ -8,6 +8,7 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     protected _host: INestedOptionContainer;
     protected _hostOptionPath: string;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
+    protected _initialOptions = {};
 
     protected _getFullOptionPath(optionPath) {
         let element: any = this,
@@ -25,7 +26,7 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     }
 
     protected _initInitialOptions() {
-        this._host[this._optionPath] = {};
+        this._host[this._optionPath] = this._initialOptions;
     }
 
     protected _getOption(name: string): any {
@@ -45,14 +46,9 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         }
     }
 
-    protected get _initialOptions() {
-        return this._host[this._optionPath];
-    }
-
     protected abstract get _optionPath(): string;
 
     constructor(private _element: ElementRef) {
-        this.template = this.template.bind(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
     }
 
@@ -62,7 +58,7 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         this._initInitialOptions();
     }
 
-    template(item: any, index, container) {
+    _template(item: any, index, container) {
         return container.append(this._element.nativeElement);
     }
 
@@ -71,7 +67,7 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     }
 
     get instance() {
-        return this._host.instance;
+        return this._host && this._host.instance;
     }
 
 }
@@ -105,7 +101,6 @@ export interface ICollectionNestedOption {
 
 export abstract class CollectionNestedOption extends NestedOption implements ICollectionNestedOption {
     private _index: number;
-    private _initialValue: Object;
 
     protected _getOptionPath() {
         let _optionPath: string = this._optionPath + '[' + this.index + ']';
@@ -113,18 +108,8 @@ export abstract class CollectionNestedOption extends NestedOption implements ICo
         return this._getFullOptionPath(_optionPath);
     }
 
-    protected _initInitialOptions() {
-        this._initialValue = {
-            template: this.template
-        };
-    }
-
-    protected get _initialOptions() {
-        return this._initialValue;
-    }
-
     get value() {
-        return this._initialValue;
+        return this._initialOptions;
     }
 
     get index() {

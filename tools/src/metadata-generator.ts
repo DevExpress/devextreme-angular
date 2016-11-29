@@ -211,10 +211,6 @@ export default class DXComponentMetadataGenerator {
 
         for (let optName in nestedOptions) {
             let optionMetadata = nestedOptions[optName];
-            if (optName === 'template' && option.Options[optName].IsTemplate) {
-                continue;
-            };
-
             let property: any = {
                 name: optName
             };
