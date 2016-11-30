@@ -212,11 +212,11 @@ The 'item' and 'group' names are default template names for the 'itemTemplate' a
 ### Widgets with transcluded content
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
-[DxResizable](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxResizable/), 
-[DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/), 
-[DxValidationGroup](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxValidationGroup/).
+[DxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), 
+[DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/), 
+[DxValidationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidationGroup/).
 For instance, we can set the content for 
-the [DxScrollView](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxScrollView/) widget as shown below: 
+the [DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/) widget as shown below: 
 
 ```html
 <dx-scroll-view>
@@ -261,7 +261,7 @@ export class AppComponent implements OnInit {
 
 ### Using DevExtreme validation features 
 
-You can use the [built-in validators](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
+You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
 validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
 
 
@@ -314,7 +314,7 @@ export class AppComponent {
 ### Advanced DevExtreme Widget options configuration
 
 You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
-The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/16_1/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
+The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
 
 ```html
 <dx-tree-map [dataSource]="treeData">
@@ -339,7 +339,7 @@ export class AppComponent {
 ```
 
 You can also use `dxi-` ('i' is a contraction of 'item') prefixed components to configure complex collection options for widgets. 
-The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the DataGrid widget: 
+The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the DataGrid widget: 
 
 ```html
 <dx-data-grid [dataSource]="data">
@@ -365,7 +365,7 @@ export class AppComponent {
 ```
 
 To configure options that can accept a configuration object or an array of configuration objects, use `dxi-` prefixed components.
-The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/16_1/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the Chart widget: 
+The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the Chart widget: 
 
 ```html
 <dx-chart [dataSource]="data">
@@ -388,7 +388,7 @@ export class AppComponent {
 
 It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
 [structural directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) such as ngFor. Note that
-the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
+the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
 section of a corresponding widget documentation reference.
 
 ```html
@@ -425,7 +425,7 @@ export class AppComponent {
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
 'instance' property. In the example below, the
-[refresh](https://js.devexpress.com/Documentation/16_1/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
+[refresh](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
 
 
