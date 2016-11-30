@@ -88,7 +88,7 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
         super(element);
 
         this._pnoh.setNestedOption(this);
-        this._noh.setHost(this, this._getOptionPath());
+        this._noh.setHost(this, this._getOptionPath.bind(this));
     }
 }
 

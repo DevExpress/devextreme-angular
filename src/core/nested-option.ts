@@ -4,29 +4,16 @@ export interface INestedOptionContainer {
     instance: any;
 }
 
+export interface OptionPathGetter { (): string; }
+
 export abstract class NestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
     protected _host: INestedOptionContainer;
-    protected _hostOptionPath: string;
+    protected _hostOptionPath: OptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
 
-    protected _getFullOptionPath(optionPath) {
-        let element: any = this,
-            fullPath: string = optionPath;
-
-        while (element && element._pnoh && element._pnoh._optionPath !== '') {
-            element = element._pnoh._host;
-            fullPath = element._getOptionPath() + fullPath;
-        }
-        return fullPath + '.';
-    }
-
     protected _getOptionPath() {
-        return this._getFullOptionPath(this._optionPath);
-    }
-
-    protected _initInitialOptions() {
-        this._host[this._optionPath] = this._initialOptions;
+        return this._hostOptionPath() + this._optionPath + '.';
     }
 
     protected _getOption(name: string): any {
@@ -51,10 +38,10 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
     }
 
-    setHost(host: INestedOptionContainer, optionPath: string) {
+    setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
-        this._initInitialOptions();
+        this._host[this._optionPath] = this._initialOptions;
     }
 
     _template(item: any, index, container) {
@@ -102,9 +89,7 @@ export abstract class CollectionNestedOption extends NestedOption implements ICo
     private _index: number;
 
     protected _getOptionPath() {
-        let _optionPath: string = this._optionPath + '[' + this.index + ']';
-
-        return this._getFullOptionPath(_optionPath);
+        return this._hostOptionPath() + this._optionPath + '[' + this.index + ']' + '.';
     }
 
     get value() {
@@ -122,16 +107,14 @@ export abstract class CollectionNestedOption extends NestedOption implements ICo
 
 export class NestedOptionHost {
     private _host: INestedOptionContainer;
-    private _optionPath: string;
-    private _nestedOptions: NestedOption[] = [];
+    private _optionPath: OptionPathGetter;
 
-    setHost(_host: INestedOptionContainer, optionPath?: string) {
-        this._host = _host;
-        this._optionPath = optionPath || '';
+    setHost(host: INestedOptionContainer, optionPath?: OptionPathGetter) {
+        this._host = host;
+        this._optionPath = optionPath || (() => '');
     }
 
     setNestedOption(nestedOption: NestedOption) {
-        this._nestedOptions.push(nestedOption);
         nestedOption.setHost(this._host, this._optionPath);
     }
 }
