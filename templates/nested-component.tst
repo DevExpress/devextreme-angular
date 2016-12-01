@@ -47,13 +47,13 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
     }
 <#~#>
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, _element: ElementRef) {
-        super(_element);
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, element: ElementRef) {
+        super(element);
 <#? it.hasTemplate #>
         this.template = this._template.bind(this);
 <#?#>
         this._pnoh.setNestedOption(this);
-        this._noh.setHost(this, this._baseOptionPath);
+        this._noh.setHost(this, this._getOptionPath.bind(this));
     }
 }
 

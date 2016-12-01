@@ -6,6 +6,7 @@ import {
     NgZone,
     Input,
     Output,
+    ContentChildren,
     QueryList,
     Host,
     SkipSelf,
@@ -25,6 +26,7 @@ import {
 
 import {
     NestedOption,
+    CollectionNestedOption,
     NestedOptionHost
 } from '../../../dist/core/nested-option';
 
@@ -36,44 +38,6 @@ let DxTestWidget = DxButton['inherit']({
         this.element()[0].classList.add('dx-test-widget');
     }
 });
-
-@Component({
-    selector: 'dx-test-widget',
-    template: '',
-    providers: [DxTemplateHost, NestedOptionHost, WatcherHelper]
-})
-export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
-    @Input()
-    get testOption(): any {
-        return this._getOption('testOption');
-    }
-    set testOption(value: any) {
-        this._setOption('testOption', value);
-    };
-
-    @Output() onOptionChanged = new EventEmitter<any>();
-    @Output() testOptionChange = new EventEmitter<any>();
-
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost,
-        _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
-
-        this._events = [
-            { subscribe: 'optionChanged', emit: 'onOptionChanged' },
-            { emit: 'testOptionChange' }
-        ];
-
-        this._noh.setHost(this);
-    }
-
-    protected _createInstance(element, options) {
-        return new DxTestWidget(element, options);
-    }
-
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
-    }
-}
 
 
 @Component({
@@ -103,6 +67,87 @@ export class DxoTestOptionComponent extends NestedOption {
 }
 
 @Component({
+    selector: 'dxi-test-collection-option',
+    template: '',
+    providers: [NestedOptionHost]
+})
+export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
+    @Input()
+    get testOption() {
+        return this._getOption('testOption');
+    }
+    set testOption(value: any) {
+        this._setOption('testOption', value);
+    }
+
+    protected get _optionPath() {
+        return 'testCollectionOption';
+    }
+
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, element: ElementRef) {
+        super(element);
+
+        this._pnoh.setNestedOption(this);
+        this._noh.setHost(this, this._getOptionPath.bind(this));
+    }
+}
+
+@Component({
+    selector: 'dx-test-widget',
+    template: '',
+    providers: [DxTemplateHost, NestedOptionHost, WatcherHelper]
+})
+export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
+    @Input()
+    get testOption(): any {
+        return this._getOption('testOption');
+    }
+    set testOption(value: any) {
+        this._setOption('testOption', value);
+    };
+    @Input()
+    get testCollectionOption(): any {
+        return this._getOption('testCollectionOption');
+    }
+    set testCollectionOption(value: any) {
+        this._setOption('testCollectionOption', value);
+    };
+
+    @ContentChildren(DxiTestCollectionOptionComponent)
+    get testCollectionOptionChildren(): QueryList<DxiTestCollectionOptionComponent> {
+        return this._getOption('testCollectionOption');
+    }
+    set testCollectionOptionChildren(value) {
+        this.setChildren('testCollectionOption', value);
+    }
+
+    @Output() onOptionChanged = new EventEmitter<any>();
+    @Output() testOptionChange = new EventEmitter<any>();
+    @Output() testCollectionOptionChange = new EventEmitter<any>();
+
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost,
+        _watcherHelper: WatcherHelper) {
+        super(elementRef, ngZone, templateHost, _watcherHelper);
+
+        this._events = [
+            { subscribe: 'optionChanged', emit: 'onOptionChanged' },
+            { emit: 'testOptionChange' },
+            { emit: 'testCollectionOptionChange' }
+        ];
+
+        this._noh.setHost(this);
+    }
+
+    protected _createInstance(element, options) {
+        return new DxTestWidget(element, options);
+    }
+
+    ngAfterViewInit() {
+        this._createWidget(this.element.nativeElement);
+    }
+}
+
+@Component({
     selector: 'test-container-component',
     template: ''
 })
@@ -117,7 +162,12 @@ describe('DevExtreme Angular 2 widget', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
-                declarations: [TestContainerComponent, DxTestWidgetComponent, DxoTestOptionComponent]
+                declarations: [
+                    TestContainerComponent,
+                    DxTestWidgetComponent,
+                    DxoTestOptionComponent,
+                    DxiTestCollectionOptionComponent
+                ]
             });
     });
 
@@ -157,6 +207,33 @@ describe('DevExtreme Angular 2 widget', () => {
         fixture.detectChanges();
 
         expect(instance.option('testOption')).toEqual({ testNestedOption: 'text' });
+    }));
+
+    it('nested option should update their nested options', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget>
+                        <dxi-test-collection-option>
+                            <dxo-test-option [testNestedOption]="testOption">
+                            </dxo-test-option>
+                        </dxi-test-collection-option>
+                    </dx-test-widget>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        expect(instance.option('testCollectionOption')[0].testOption).toEqual({ testNestedOption: undefined });
+
+        testComponent.testOption = 'text';
+        fixture.detectChanges();
+
+        expect(instance.option('testCollectionOption')[0].testOption).toEqual({ testNestedOption: 'text' });
     }));
 
   });
