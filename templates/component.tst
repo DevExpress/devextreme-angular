@@ -41,6 +41,7 @@ import {
 
 import { <#= baseClass #> } from '../core/dx.component';
 import { DxTemplateHost } from '../core/dx.template-host';
+import { DxTemplateModule } from '../core/dx.template';
 import { NestedOptionHost } from '../core/nested-option';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
@@ -157,6 +158,7 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
 @NgModule({
   imports: [<#~ it.nestedComponents :component:i #>
     <#= component.className #>Module,<#~#>
+    DxTemplateModule
   ],
   declarations: [
     <#= it.className #>Component<#? it.isEditor #>,
@@ -164,8 +166,9 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
   ],
   exports: [
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
-    <#= component.className #>Module<#~#><#? it.isEditor #>,
-    <#= it.className #>ValueAccessorDirective<#?#>
+    <#= component.className #>Module<#~#>,<#? it.isEditor #>
+    <#= it.className #>ValueAccessorDirective,<#?#>
+    DxTemplateModule
   ],
 })
 export class <#= it.className #>Module { }

@@ -11,8 +11,7 @@ import DxSelectBox from 'devextreme/ui/select_box';
 
 import {
     DxSelectBoxModule,
-    DxTextBoxModule,
-    DxTemplateModule
+    DxTextBoxModule
 } from '../../../dist';
 
 @Component({
@@ -28,7 +27,7 @@ describe('DxSelectBox', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxSelectBoxModule, DxTextBoxModule, DxTemplateModule]
+                imports: [DxSelectBoxModule, DxTextBoxModule]
             });
     });
 

@@ -13,8 +13,7 @@ import DxList from 'devextreme/ui/list';
 
 import {
     DxListModule,
-    DxListComponent,
-    DxTemplateModule
+    DxListComponent
 } from '../../../dist';
 
 @Component({
@@ -35,7 +34,7 @@ describe('DxList', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxListModule, DxTemplateModule]
+                imports: [DxListModule]
             });
     });
 
