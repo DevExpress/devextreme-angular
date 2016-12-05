@@ -162,7 +162,7 @@ gulp.task('npm.license-headers', ['npm.content', 'npm.sources', 'npm.modules'], 
         ''
         ].join('\n');
 
-    return gulp.src([path.join(npmConfig.distPath, '/**/*.js'), path.join(npmConfig.distPath, '/**/*.ts')])
+    return gulp.src([path.join(npmConfig.distPath, '/**/*.{js,ts}')])
         .pipe(header(banner, data ))
         .pipe(gulp.dest(npmConfig.distPath))
 });
