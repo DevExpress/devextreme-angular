@@ -15,6 +15,7 @@ var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var buildConfig = require('./build.config');
+var header = require('gulp-header');
 
 //------------Main------------
 
@@ -135,7 +136,40 @@ gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
-gulp.task('npm.pack', ['npm.content', 'npm.sources', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
+gulp.task('npm.license-headers', ['npm.content', 'npm.sources', 'npm.modules'], function() {
+    var npmConfig = buildConfig.npm,
+        pkg = require('./package.json'),
+        now = new Date(),
+        data = {
+            path: path,
+            baseDir: path.join(__dirname, npmConfig.distPath),
+            pkg: pkg,
+            date: now.toDateString(),
+            year: now.getFullYear()
+        };
+
+    var banner = [
+        '/**',
+        ' * <%= pkg.name %> (<%= path.relative(baseDir, file.path) %>)',
+        ' * Version: <%= pkg.version %>',
+        ' * Build date: <%= date %>',
+        ' *',
+        ' * Copyright (c) 2012 - <%= year %> Developer Express Inc. ALL RIGHTS RESERVED',
+        ' *',
+        ' * This software may be modified and distributed under the terms',
+        ' * of the MIT license.  See the LICENSE file for details.',
+        ' */',
+        ''
+        ].join('\n');
+
+    return gulp.src([path.join(npmConfig.distPath, '/**/*.js'), path.join(npmConfig.distPath, '/**/*.ts')])
+        .pipe(header(banner, data ))
+        .pipe(gulp.dest(npmConfig.distPath))
+});
+
+
+
+gulp.task('npm.pack', ['npm.license-headers'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Examples------------
