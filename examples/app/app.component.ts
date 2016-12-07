@@ -120,7 +120,6 @@ export class AppComponent implements OnInit {
     demoItems: string[];
     popupVisible = false;
     chartSeriesTypes = ['bar', 'line', 'spline'];
-    chartSeriesType = this.chartSeriesTypes[0];
     oranges: Orange[];
     customers: Customer[];
     appointments: Appointment[];

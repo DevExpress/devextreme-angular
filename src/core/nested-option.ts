@@ -55,7 +55,6 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     get instance() {
         return this._host && this._host.instance;
     }
-
 }
 
 export interface ICollectionNestedOptionContainer {

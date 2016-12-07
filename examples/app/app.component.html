@@ -63,8 +63,6 @@
 
     <dx-number-box placeholder="NumberBox" [showSpinButtons]="true" [(value)]="numberValue"></dx-number-box>
 
-    <dx-date-box placeholder="DateBox" [(value)]="demoDate"></dx-date-box>
-
     <dx-progress-bar [(value)]="numberValue"></dx-progress-bar>
 
     <dx-slider [(value)]="numberValue"></dx-slider>
@@ -83,7 +81,9 @@
 
     <dx-color-box placeholder="ColorBox"></dx-color-box>
 
-    <dx-calendar></dx-calendar>
+    <dx-date-box [(value)]="dateValue"></dx-date-box>
+
+    <dx-calendar [(value)]="dateValue"></dx-calendar>
 
     <h2>Custom Templates</h2>
 
@@ -230,7 +230,7 @@
 <dx-tab-panel [height]="260" [selectedIndex]="0">
     <dxi-item title="Home" icon="home" [template]="'customTemplate'">
     </dxi-item>
-    <dxi-item class="tabpanel-item" title="About" icon="info" [badge]="badge">
+    <dxi-item class="tabpanel-item" title="About" icon="info">
         <h3>About</h3>
         <p>Content of the About tab</p>
     </dxi-item>
@@ -243,9 +243,9 @@
 
 <h2>dxChart</h2>
 
-<dx-select-box
+<dx-select-box #serieType
     [items]="chartSeriesTypes"
-    [(value)]="chartSeriesType"
+    [value]="chartSeriesTypes[0]"
     [width]="200"></dx-select-box>
 
 <dx-chart
@@ -257,7 +257,7 @@
         name="My oranges"></dxi-serie>    
     <dxo-common-series-settings
         color="#ffa500"
-        [type]="chartSeriesType"></dxo-common-series-settings>
+        [type]="serieType.value"></dxo-common-series-settings>
     <dxo-size
         [height]="300"></dxo-size>
 </dx-chart>
