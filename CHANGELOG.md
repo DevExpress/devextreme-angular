@@ -1,3 +1,9 @@
+## Unreleased
+
+### Breaking changes
+
+- In our npm package, `devextreme` dependency has been moved to `peerDependencies`. Now it should be installed manually. See [README.md](https://github.com/DevExpress/devextreme-angular#adding-devexteme-widgets-to-an-angular-2-application) for more details.
+
 ## 16.2.2-beta.1 (2016-11-25)
 
 ### Bug Fixes
