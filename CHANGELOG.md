@@ -1,4 +1,8 @@
-## Unreleased
+## 16.2.2-beta.2 (2016-12-07)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/6?closed=1)
 
 ### Breaking changes
 
