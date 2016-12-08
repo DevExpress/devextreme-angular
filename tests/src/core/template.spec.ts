@@ -21,7 +21,6 @@ import {
     DxComponent,
     DxTemplateHost,
     DxTemplateModule,
-    RenderData,
     WatcherHelper
 } from '../../../dist';
 
@@ -110,39 +109,6 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
         expect(templatesHash['templateName']).not.toBeUndefined();
         expect(typeof templatesHash['templateName'].render).toBe('function');
-
-    }));
-
-    it('should implement the TemplateBase interface', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-            <dx-test-widget>
-                <div *dxTemplate="let d of 'templateName'">Template content</div>
-            </dx-test-widget>
-           `}
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let instance = getWidget(fixture),
-            templatesHash = instance.option('integrationOptions.templates'),
-            template = templatesHash['templateName'],
-            renderData: RenderData = {
-                model: {},
-                itemIndex: 0,
-                container: $('<div>')
-            };
-
-        let renderResult = template.render(renderData)[0];
-        expect(renderResult.innerHTML).toBe('Template content');
-
-        expect(template.owner()).toBe(instance);
-
-        expect(template.source() instanceof $).toBe(true);
-
-        template.dispose();
-        expect(template.owner()).toBeNull();
 
     }));
 
