@@ -106,7 +106,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture),
-            templatesHash = instance.option('_templates');
+            templatesHash = instance.option('integrationOptions.templates');
 
         expect(templatesHash['templateName']).not.toBeUndefined();
         expect(typeof templatesHash['templateName'].render).toBe('function');
@@ -126,7 +126,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture),
-            templatesHash = instance.option('_templates'),
+            templatesHash = instance.option('integrationOptions.templates'),
             template = templatesHash['templateName'],
             renderData: RenderData = {
                 model: {},
@@ -161,7 +161,7 @@ describe('DevExtreme Angular 2 widget\'s template', () => {
 
         let testComponent = fixture.componentInstance,
             innerComponent = testComponent.innerWidgets.first,
-            templatesHash = innerComponent.instance.option('_templates'),
+            templatesHash = innerComponent.instance.option('integrationOptions.templates'),
             template = innerComponent.testTemplate,
             $container = $('<div>');
 
