@@ -1,3 +1,11 @@
+## Unreleased
+
+### Breaking changes
+
+- The following complex nested options were renamed:
+  - `dxi-serie` to `dxi-series`
+  - `dxi-categorie` to `dxi-category`
+
 ## 16.2.2-beta.2 (2016-12-07)
 
 ### Bug Fixes
