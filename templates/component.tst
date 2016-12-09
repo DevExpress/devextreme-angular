@@ -39,9 +39,9 @@ import {
     NG_VALUE_ACCESSOR
 } from '@angular/forms';<#?#>
 
-import { <#= baseClass #> } from '../core/dx.component';
-import { DxTemplateHost } from '../core/dx.template-host';
-import { DxTemplateModule } from '../core/dx.template';
+import { <#= baseClass #> } from '../core/component';
+import { DxTemplateHost } from '../core/template-host';
+import { DxTemplateModule } from '../core/template';
 import { NestedOptionHost } from '../core/nested-option';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
