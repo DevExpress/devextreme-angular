@@ -169,6 +169,15 @@ export class AppComponent implements OnInit {
     callNumber(number) {
         alert(number + ' is being called...');
     }
+    toggleFormConsrolsState(e) {
+        if (e.value) {
+            this.emailControl.disable();
+            this.passwordControl.disable();
+        } else {
+            this.emailControl.enable();
+            this.passwordControl.enable();
+        }
+    }
     onSubmit() {
         this.form.updateValueAndValidity();
         console.log('submitted');

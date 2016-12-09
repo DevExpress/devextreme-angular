@@ -22,10 +22,12 @@
             <label for="email">Email</label>
             <dx-text-box formControlName="emailControl" [(ngModel)]="email" [isValid]="emailControl.valid || emailControl.pristine" [validationError]="{ message: 'Enter correct email' }"></dx-text-box>
 
-            <label for="email">Password</label>
+            <label for="password">Password</label>
             <dx-text-box formControlName="passwordControl" [(ngModel)]="password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
 
         </div>
+        <label>Toggle form constrols state: </label>
+        <dx-switch (onValueChanged)="toggleFormConsrolsState($event)"></dx-switch><br/>
         <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>
     </form>
 
