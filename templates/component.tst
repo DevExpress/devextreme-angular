@@ -6,7 +6,7 @@
 <# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
-<# var implementedInterfaces = []; #>
+<# var implementedInterfaces = ['OnDestroy']; #>
 <# !it.isExtension && implementedInterfaces.push('AfterViewInit'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
@@ -17,7 +17,8 @@ import {
     EventEmitter,
     NgZone,
     Input,
-    Output<#? !it.isExtension #>,
+    Output,
+    OnDestroy<#? !it.isExtension #>,
     AfterViewInit<#?#><#? it.isEditor #>,
     ContentChild,
     Directive,
@@ -112,6 +113,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
             this.validator.createInstance(element);
         }
         return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
+    }
+
+    ngOnDestroy() {
+        this._destroyWidget();
     }
 <#? collectionProperties.length #>
     ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>

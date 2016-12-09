@@ -85,6 +85,11 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
         this.instance = this._createInstance(element, this._initialOptions);
         this._initEvents();
     }
+    protected _destroyWidget() {
+        if (this.instance) {
+            this.instance._dispose();
+        }
+    }
     constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
         this._initialOptions = {};
         this.templates = [];
