@@ -42,7 +42,7 @@ We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/q
 Once the application is ready and works install the devextreme-angular npm package as follows:
 
 ```
-npm install --save devextreme-angular@16.2-unstable
+npm install --save devextreme@16.2-unstable devextreme-angular@16.2-unstable
 ```
 
 Modify the references in the index.html file as follows:

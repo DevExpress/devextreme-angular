@@ -1,6 +1,6 @@
 {
   "name": "devextreme-angular",
-  "version": "16.2.2-beta.1",
+  "version": "16.2.2-beta.2",
   "description": "Angular 2 UI and visualization components based on DevExtreme widgets",
   "repository": {
     "type": "git",
@@ -16,22 +16,25 @@
   "author": "Developer Express Inc.",
   "license": "MIT",
   "dependencies": {
-    "@angular/common": "^2.0.0",
-    "@angular/compiler": "^2.0.0",
+    "jquery": "^2.0.0 || ^3.0.0"
+  },
+  "peerDependencies": {
+    "devextreme": "16.2-unstable",
+    "zone.js": "^0.6.25",
     "@angular/core": "^2.0.0",
+    "@angular/common": "^2.0.0"
+  },
+  "devDependencies": {
+    "devextreme": "16.2-unstable",
+    "jquery": "^2.0.0 || ^3.0.0",
+    "zone.js": "^0.6.25",
+    "@angular/core": "^2.0.0",
+    "@angular/common": "^2.0.0",
+    "@angular/compiler": "^2.0.0 - 2.2.4",
     "@angular/forms": "^2.0.0",
     "@angular/http": "^2.0.0",
     "@angular/platform-browser": "^2.0.0",
     "@angular/platform-browser-dynamic": "^2.0.0",
-    "angular-in-memory-web-api": "~0.1.5",
-    "core-js": "^2.4.1",
-    "devextreme": "16.2-beta.1",
-    "jquery": "^2.0.0 || ^3.0.0",
-    "rxjs": "5.0.0-beta.12",
-    "systemjs": "0.19.39",
-    "zone.js": "^0.6.25"
-  },
-  "devDependencies": {
     "@angular/compiler-cli": "^2.0.0",
     "@types/dot": "^1.0.29",
     "@types/jasmine": "^2.5.38",
@@ -44,6 +47,7 @@
     "dot": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-copy": "0.0.2",
+    "gulp-header": "^1.8.8",
     "gulp-jasmine": "^2.3.0",
     "gulp-merge-json": "^0.6.0",
     "gulp-rename": "^1.2.2",
@@ -71,11 +75,14 @@
     "run-sequence": "^1.2.2",
     "tslint": "^3.10.2",
     "typescript": "^2.0.3",
-    "yargs": "^6.0.0"
+    "yargs": "^6.0.0",
+    "systemjs": "0.19.39",
+    "rxjs": "5.0.0-beta.12",
+    "core-js": "^2.4.1"
   },
   "main": "./src/index.ts",
   "keywords": [
-    "angularjs",
+    "angular",
     "angular2",
     "devextreme",
     "devexpress"

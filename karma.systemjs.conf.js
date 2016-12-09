@@ -30,8 +30,7 @@
       'jszip': 'npm:jszip/dist/jszip.min.js',
 
       // other libraries
-      'rxjs': 'npm:rxjs',
-      'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
+      'rxjs': 'npm:rxjs'
     },
     packages: {
       app: {
@@ -39,10 +38,6 @@
         defaultExtension: 'js'
       },
       rxjs: {
-        defaultExtension: 'js'
-      },
-      'angular2-in-memory-web-api': {
-        main: './index.js',
         defaultExtension: 'js'
       },
       'dist': {
