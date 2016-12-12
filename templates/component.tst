@@ -92,7 +92,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#~#>
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost,
-            private _watcherHelper: WatcherHelper<#? collectionProperties.length #>,
+            <#? collectionProperties.length #>private <#?#>_watcherHelper: WatcherHelper<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
