@@ -44,7 +44,8 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         this._host[this._optionPath] = this._initialOptions;
     }
 
-    _template(item: any, index, container) {
+    _template(...args) {
+        let container = args[2];
         return container.append(this._element.nativeElement);
     }
 
