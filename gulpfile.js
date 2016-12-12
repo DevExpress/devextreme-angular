@@ -15,6 +15,7 @@ var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var buildConfig = require('./build.config');
+var header = require('gulp-header');
 
 //------------Main------------
 
@@ -84,16 +85,65 @@ gulp.task('generate.facades', ['generate.moduleFacades'], function () {
     facadeGenerator.generate(buildConfig.tools.facadeGenerator);
 });
 
-gulp.task('clean.components', function () {
-    var outputFolderPath = buildConfig.components.outputPath;
+gulp.task('build.license-headers', function() {
+    var config = buildConfig.components,
+        pkg = require('./package.json'),
+        now = new Date(),
+        data = {
+            pkg: pkg,
+            date: now.toDateString(),
+            year: now.getFullYear()
+        };
 
-    return del([outputFolderPath]);
+    var banner = [
+        '/*!',
+        ' * <%= pkg.name %>',
+        ' * Version: <%= pkg.version %>',
+        ' * Build date: <%= date %>',
+        ' *',
+        ' * Copyright (c) 2012 - <%= year %> Developer Express Inc. ALL RIGHTS RESERVED',
+        ' *',
+        ' * This software may be modified and distributed under the terms',
+        ' * of the MIT license. See the LICENSE file in the root of the project for details.',
+        ' *',
+        ' * https://github.com/DevExpress/devextreme-angular',
+        ' */',
+        '\n' // This new line is necessary to keep the header after TS compilation
+        ].join('\n');
+
+    return gulp.src(path.join(config.outputPath, config.srcFilesPattern))
+        .pipe(header(banner, data))
+        .pipe(gulp.dest(config.outputPath));
 });
 
-gulp.task('build.components',
-    ['clean.components', 'generate.components', 'generate.facades'],
-    shell.task(['ngc -p ' + buildConfig.components.tsConfigPath ])
-);
+gulp.task('clean.dist', function () {
+    return del([buildConfig.components.outputPath]);
+});
+
+gulp.task('build.ngc', function(done) {
+    var config = buildConfig.components,
+        buildPath = path.join(config.outputPath, 'tsconfig.json'),
+        task = shell.task(['ngc -p ' + buildPath ]);
+    
+    task(done);
+});
+
+gulp.task('build.copy-sources', ['clean.dist'], function() {
+    var config = buildConfig.components;
+
+    return gulp.src([path.join(config.sourcePath, '**/*.*')])
+        .pipe(gulp.dest(config.outputPath));
+
+});
+
+gulp.task('build.components', ['generate.facades'], function(done) {
+    runSequence(
+        'build.copy-sources',
+        'build.license-headers',
+        'build.ngc',
+        done
+    );
+});
 
 
 //------------npm------------
@@ -119,23 +169,15 @@ gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
         .pipe(gulp.dest(config.distPath));
 });
 
-gulp.task('npm.sources', ['npm.clean', 'build.components'], function() {
-    var npmConfig = buildConfig.npm,
-        cmpConfig = buildConfig.components;
-
-    return gulp.src(cmpConfig.srcFilesPattern)
-        .pipe(gulp.dest(path.join(npmConfig.distPath, npmConfig.sourcesTargetFolder)));
-});
-
 gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src(cmpConfig.outputPath + '/**/*')
+    return gulp.src([path.join(cmpConfig.outputPath, '**/*.{js,d.ts,js.map,metadata.json}')])
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
-gulp.task('npm.pack', ['npm.content', 'npm.sources', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
+gulp.task('npm.pack', ['npm.content', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Examples------------
@@ -176,17 +218,17 @@ gulp.task('build.tests', ['build.components', 'clean.tests'], function() {
         .pipe(gulp.dest(config.testsPath));
 });
 
-gulp.task('watch.spec', function(){
+gulp.task('watch.spec', function() {
     gulp.watch(buildConfig.components.tsTestSrc, ['build.tests']);
 });
 
-gulp.task('test.components', ['build.tests'], function(done){
+gulp.task('test.components', ['build.tests'], function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
     }, done).start();
 });
 
-gulp.task('test.components.debug', ['build.tests'], function(done){
+gulp.task('test.components.debug', ['build.tests'], function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js',
         browsers: [ 'Chrome' ],
@@ -194,7 +236,7 @@ gulp.task('test.components.debug', ['build.tests'], function(done){
     }, done).start();
 });
 
-gulp.task('test.tools', ['build.tools'], function(done){
+gulp.task('test.tools', ['build.tools'], function(done) {
     var config = buildConfig.tools.tests;
 
     return gulp.src(config.srcFilesPattern)
@@ -213,14 +255,14 @@ gulp.task('test.tools', ['build.tools'], function(done){
         }));
 });
 
-gulp.task('test', function(done){
+gulp.task('test', function(done) {
     runSequence(
         ['test.tools', 'test.components'],
         'lint',
         done);
 });
 
-gulp.task('watch.test', function(done){
+gulp.task('watch.test', function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
     }, done).start();
@@ -229,16 +271,17 @@ gulp.task('watch.test', function(done){
 
 //------------TSLint------------
 
-gulp.task('lint', function(){
-    return gulp.src(buildConfig.components.srcFilesPattern
+gulp.task('lint', function() {
+    return gulp.src([path.join(buildConfig.components.sourcePath, buildConfig.components.srcFilesPattern)]
             .concat(buildConfig.components.tsTestSrc)
             .concat(buildConfig.examples.srcFilesPattern)
             .concat(buildConfig.tools.srcFilesPattern)
         )
         .pipe(tslint({
+            formatter: 'prose',
             tslint: require('tslint').default,
             rulesDirectory: null,
             configuration: 'tslint.json'
         }))
-        .pipe(tslint.report('prose'));
+        .pipe(tslint.report());
 });

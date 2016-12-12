@@ -40,7 +40,7 @@ module.exports = {
                         './src/ui'
                     ],
                     additionalImports: {
-                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/dx.template\''
+                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/template\''
                     }
                 }
             }
@@ -51,12 +51,12 @@ module.exports = {
         }
     },
     components: {
-        srcFilesPattern: ['src/**/*.ts'],
-        tsConfigPath: 'src/tsconfig.json',
+        srcFilesPattern: '**/*.ts',
         tsTestSrc: ['tests/src/**/*.spec.ts'],
         testsPath: 'tests/dist',
-        bundleName: bundleName,
-        outputPath: 'dist'
+        sourcePath: 'src',
+        outputPath: 'dist',
+        bundleName: bundleName
     },
     examples: {
         srcFilesPattern: ['examples/**/*.ts', '!examples/**/*.d.ts'],
@@ -80,7 +80,7 @@ module.exports = {
     npm: {
         distPath: "npm/dist",
         sourcesTargetFolder: "ts",
-        content: [ "LICENSE", "npm/README.md" ],
+        content: [ "LICENSE", "README.md" ],
         package: [ "package.json", "npm/package.json" ]
     }
 };
