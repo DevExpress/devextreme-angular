@@ -3,7 +3,6 @@
 import {
     Directive,
     NgModule,
-    EmbeddedViewRef,
     TemplateRef,
     ViewContainerRef,
     Input
@@ -30,13 +29,13 @@ export class DxTemplateDirective {
     set dxTemplateOf(value) {
         this.name = value;
     };
-
-    childView: EmbeddedViewRef<any>;
     name: string;
-    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, private templateHost: DxTemplateHost) {
+
+    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, templateHost: DxTemplateHost) {
         templateHost.setTemplate(this);
     }
-    private _renderCore(renderData: RenderData) {
+
+    render(renderData: RenderData) {
         let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { '$implicit': renderData.model });
         if (renderData.container) {
             renderData.container.append(childView.rootNodes);
@@ -47,21 +46,6 @@ export class DxTemplateDirective {
         // =========== /WORKAROUND =============
         return $(childView.rootNodes)
             .addClass(DX_TEMPLATE_WRAPPER_CLASS);
-    }
-    render(renderData: RenderData) {
-        return this._renderCore(renderData);
-    }
-    dispose() {
-        this.templateHost = null;
-    }
-    owner() {
-        if (this.templateHost) {
-            return this.templateHost.host.instance;
-        }
-        return null;
-    }
-    source() {
-        return $();
     }
 }
 
