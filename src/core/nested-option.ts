@@ -44,7 +44,8 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         this._host[this._optionPath] = this._initialOptions;
     }
 
-    _template(item: any, index, container) {
+    _template(...args) {
+        let container = args[2];
         return container.append(this._element.nativeElement);
     }
 
@@ -72,8 +73,8 @@ export class CollectionNestedOptionContainerImpl implements ICollectionNestedOpt
         }
         if (this._activatedQueries[propertyName]) {
             let widgetItems = items.map((item, index) => {
-                item.index = index;
-                return item.value;
+                item._index = index;
+                return item._value;
             });
             this._setOption(propertyName, widgetItems);
         }
@@ -81,27 +82,19 @@ export class CollectionNestedOptionContainerImpl implements ICollectionNestedOpt
 }
 
 export interface ICollectionNestedOption {
-    index: number;
-    value: Object;
+    _index: number;
+    _value: Object;
 }
 
 export abstract class CollectionNestedOption extends NestedOption implements ICollectionNestedOption {
-    private _index: number;
+    _index: number;
 
     protected _getOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '[' + this.index + ']' + '.';
+        return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
     }
 
-    get value() {
+    get _value() {
         return this._initialOptions;
-    }
-
-    get index() {
-        return this._index;
-    }
-
-    set index(value) {
-        this._index = value;
     }
 }
 
