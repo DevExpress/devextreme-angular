@@ -2,19 +2,36 @@
 
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets
 
-### :red_circle: If you are looking for the 16.1 branch, please follow the [link](https://github.com/DevExpress/devextreme-angular/tree/16.1)
-
-Project status: **Beta**
+Project status: **RC**
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
 
-## Getting started
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Running local examples](#running-examples)
+  * [Starting a new application](#create-application)
+* [Usage Samples](#usage-samples)
+  * [Static option value](#static-option)
+  * [Event handling](#event-handling)
+  * [One-way option binding](#one-way-binding)
+  * [Two-way option binding](#two-way-binding)
+  * [Custom templates](#custom-templates)
+  * [Widgets with transcluded content](#widgets-with-transcluded-content)
+  * [Angular 2 forms](#angular-forms)
+  * [Using DevExtreme validation features](#devextreme-validation-features)
+  * [Advanced DevExtreme widget options configuration](#configuration-components)
+  * [Accessing a DevExtreme widget instance](#accessing-widget-instance)
+* [API Reference](#api-reference)
+* [License](#license)
+* [Support & Feedback](#support-feedback)
+
+## <a name="getting-started"></a>Getting Started
 
 You can start either with [running examples](#running-examples) or with [creating a new Angular 2 application](#create-application).
 
-Also we have a simple application on [Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview).
+Also we have a simple application on [Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview), so you can check it out without installing anything.
 
-### Prerequisites
+### <a name="prerequisites"></a>Prerequisites
 
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
 required and essential to Angular 2 development.
@@ -25,132 +42,35 @@ required to build the project and run tests.
 
 ### <a name="running-examples"></a>Running examples
 
-Install the required node packages and run an http server:
+```bash
+# clone our repo
+# --depth 1 removes all but one .git commit history
+git clone --depth 1 https://github.com/DevExpress/devextreme-angular.git
 
-```
+# change directory to our repo
+cd devextreme-angular
+
+# install the repo with npm
 npm install
+
+# start the web-server
 npm start
+
 ```
 
 Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) in the opened browser window. Explore the **examples** folder of this repository for the examples source code.
 
 ### <a name="create-application"></a>Adding DevExteme widgets to an Angular 2 application
 
-We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
-[original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
+* [Using SystemJS]()
+<!---* [Using Webpack]()
+* [Using Angular CLI]()
+* [Using Ionic 2 CLI]()
+* [Using ASP.Net Core Visual Studio Template]()-->
 
-Once the application is ready and works install the devextreme-angular npm package as follows:
+## <a name="usage-samples"></a>Usage Samples
 
-```
-npm install --save devextreme@16.2-unstable devextreme-angular@16.2-unstable
-```
-
-Modify the references in the index.html file as follows:
-
-```html
-<link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.common.css" />
-<link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.light.css" />
-
-<!-- Polyfill(s) for older browsers -->
-<script src="node_modules/core-js/client/shim.min.js"></script>
-
-<script src="node_modules/zone.js/dist/zone.js"></script>
-<script src="node_modules/reflect-metadata/Reflect.js"></script>
-<script src="node_modules/systemjs/dist/system.src.js"></script>
-
-<script src="systemjs.config.js"></script>
-```
-
-Make sure your html document has DOCTYPE specified:
-
-```html
-<!DOCTYPE html>
-<html>
-  ...
-```
-
-Modify the 'systemjs.config.js' file as follows:
-
-```js
-paths: {
-    // paths serve as alias
-    'npm:': '../node_modules/'
-},
-map: {
-    // our app is within the app folder
-    app: 'app',
-    // angular bundles
-    '@angular/core': 'npm:@angular/core/bundles/core.umd.js',
-    '@angular/common': 'npm:@angular/common/bundles/common.umd.js',
-    '@angular/compiler': 'npm:@angular/compiler/bundles/compiler.umd.js',
-    '@angular/platform-browser': 'npm:@angular/platform-browser/bundles/platform-browser.umd.js',
-    '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
-    '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
-    '@angular/router': 'npm:@angular/router/bundles/router.umd.js',
-    '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
-    // devextreme & devextreme deps
-    'devextreme': 'npm:devextreme',                   // <== add this line
-    'jquery': 'npm:jquery/dist/jquery.min.js',        // <== add this line
-    'jszip': 'npm:jszip/dist/jszip.min.js',           // <== add this line
-    'devextreme-angular': 'npm:devextreme-angular', // <== add this line
-    // other libraries
-    'rxjs': 'npm:rxjs',
-    'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
-},
-packages: {
-    'app':                        { main: 'main.js',  defaultExtension: 'js' },
-    'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
-    'devextreme-angular':        { main: 'index.js', defaultExtension: 'js' }, // <== add this line
-    'devextreme':                 { defaultExtension: 'js' }                    // <== add this line
-}
-```
-
-Add the required DevExtreme modules to the **/app/app.module.ts** file and add them to the imports section of the application module:
-
-```js
-import { DevExtremeModule } from 'devextreme-angular';
-
-@NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        DevExtremeModule
-    ],
-    bootstrap: [AppComponent],
-})
-export class AppModule {}
-```
-
-Now you can use the widget within the component's template.
-
-```js
-@Component({
-    selector: 'my-app',
-    template: '<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>'
-})
-export class AppComponent {
-    helloWorld() {
-        alert('Hello world!');
-    }
-}
-```
-
-Run the application:
-
-```
-npm start
-```
-
-## API Reference
-
-DevExtreme Angular 2 components mirror
-[DevExtreme JavaScript API](http://js.devexpress.com/Documentation/ApiReference/) but use
-Angular 2 syntax for specifying widget options, subscribing to events and custom templates declaration.
-
-## Usage Samples
-
-### Static option value
+### <a name="static-option"></a>Static option value
 
 To specify a widget's option statically
 (the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/?version=15_2#text)
@@ -160,7 +80,7 @@ option of dxButton):
 <dx-button text="Simple button"></dx-button>
 ```
 
-### Event handling
+### <a name="event-handling"></a>Event handling
 
 To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Events/?version=15_2#click) event:
 
@@ -168,7 +88,7 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 <dx-button (onClick)="handler()"></dx-button>
 ```
 
-### One-way option binding
+### <a name="one-way-binding"></a>One-way option binding
 
 If we want changes to the value of ‘bindingProperty’ of the host component to propagate to the
 [value](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/Configuration/?version=15_2#value) of the dxTextBox widget,
@@ -178,7 +98,7 @@ a one-way binding approach is used:
 <dx-text-box [value]="bindingProperty"></dx-text-box>
 ```
 
-### Two-way option binding
+### <a name="two-way-binding"></a>Two-way option binding
 
 In addition to the one-way binding, we can also perform two-way binding, which propagates changes from the bindingProperty to the widget
 or vice versa from the widget to the bindingProperty:
@@ -187,7 +107,7 @@ or vice versa from the widget to the bindingProperty:
 <dx-text-box [(value)]="bindingProperty"></dx-text-box>
 ```
 
-### Custom Templates
+### <a name="custom-templates"></a>Custom templates
 
 In case you want to customize the rendering of a DevExtreme widget, we support custom templates. For instance, we can specify
 the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/?version=15_2#itemTemplate)
@@ -209,7 +129,7 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
-### Widgets with transcluded content
+### <a name="widgets-with-transcluded-content"></a>Widgets with transcluded content
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
 [DxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), 
@@ -224,7 +144,7 @@ the [DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widge
 </dx-scroll-view>
 ```
 
-### Angular 2 Forms
+### <a name="angular-forms"></a>Angular 2 forms
 
 The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'formControlName' directive, which are necessary for the
 [Angular 2 forms](https://angular.io/docs/ts/latest/guide/forms.html) features.
@@ -259,7 +179,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-### Using DevExtreme validation features 
+### <a name="devextreme-validation-features"></a>Using DevExtreme validation features 
 
 You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
 validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
@@ -311,7 +231,7 @@ export class AppComponent {
 ```
 
 
-### Advanced DevExtreme Widget options configuration
+### <a name="configuration-components"></a>Configuration components
 
 You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
 The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
@@ -421,7 +341,7 @@ export class AppComponent {
 }
 ```
 
-### Accessing a DevExtreme Widget Instance
+### <a name="accessing-widget-instance"></a>Accessing a DevExtreme widget instance
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
 'instance' property. In the example below, the
@@ -448,7 +368,13 @@ export class AppComponent implements OnChanges {
 }
 ```
 
-## License
+## <a name="api-reference"></a>API Reference
+
+DevExtreme Angular 2 components mirror
+[DevExtreme JavaScript API](http://js.devexpress.com/Documentation/ApiReference/) but use
+Angular 2 syntax for specifying widget options, subscribing to events and custom templates declaration.
+
+## <a name="license"></a>License
 
 Familiarize yourself with the
 [DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).
@@ -456,7 +382,7 @@ Familiarize yourself with the
 
 **DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
 
-## Support & Feedback
+## <a name="support-feedback"></a>Support & Feedback
 
 * For general Angular 2 topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
 * For questions regarding DevExtreme libraries and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center)
