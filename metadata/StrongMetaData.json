@@ -9558,7 +9558,8 @@
         "value": {
           "PrimitiveTypes": [
             "double"
-          ]
+          ],
+          "Description": "The current widget value."
         },
         "max": {
           "PrimitiveTypes": [
@@ -19889,12 +19890,16 @@
           }
         },
         "subvalueIndicator": {
-          "Description": "Specifies the appearance options of subvalue indicators.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of subvalue indicators."
         },
         "valueIndicator": {
-          "Description": "Specifies the appearance options of the value indicator.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of the value indicator."
         }
       }
     },
@@ -20841,12 +20846,16 @@
           }
         },
         "subvalueIndicator": {
-          "Description": "Specifies the appearance options of subvalue indicators.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of subvalue indicators."
         },
         "valueIndicator": {
-          "Description": "Specifies the appearance options of the value indicator.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of the value indicator."
         }
       }
     },
@@ -24172,11 +24181,12 @@
               "Description": "Indicates whether or not animation is enabled."
             },
             "callSelectedRangeChanged": {
-              "EnumName": "SelectedRangeChangedCallMode",
+              "EnumName": "ValueChangedCallMode",
               "Description": "Specifies when to call the onSelectedRangeChanged function."
             },
             "callValueChanged": {
-              "EnumName": "SelectedRangeChangedCallMode"
+              "EnumName": "ValueChangedCallMode",
+              "Description": "Specifies when to call the onValueChanged function."
             },
             "manualRangeSelectionEnabled": {
               "PrimitiveTypes": [
@@ -24374,7 +24384,8 @@
         },
         "onValueChanged": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the valueChanged event."
         },
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
@@ -25099,7 +25110,8 @@
             "any"
           ],
           "IsCollection": true,
-          "SingularName": "value"
+          "SingularName": "value",
+          "Description": "The selected range, initial or current."
         }
       }
     },
@@ -34115,7 +34127,7 @@
         }
       ]
     },
-    "SelectedRangeChangedCallMode": {
+    "ValueChangedCallMode": {
       "Items": [
         {
           "Name": "onMoving"

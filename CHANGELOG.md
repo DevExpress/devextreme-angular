@@ -1,4 +1,8 @@
-## Unreleased
+## 16.2.3-rc.1 (2016-12-12)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/7?closed=1)
 
 ### Breaking changes
 
