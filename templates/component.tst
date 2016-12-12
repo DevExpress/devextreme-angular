@@ -93,7 +93,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost,
             private _watcherHelper: WatcherHelper<#? collectionProperties.length #>,
-            private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
+            private _idh: IterableDifferHelper<#?#>, optionHost: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
 
@@ -103,7 +103,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         ];<#? collectionProperties.length #>
 
         this._idh.setHost(this);<#?#>
-        this._noh.setHost(this);
+        optionHost.setHost(this);
     }
 
     protected _createInstance(element, options) {
