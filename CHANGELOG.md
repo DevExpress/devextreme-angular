@@ -1,3 +1,11 @@
+## Unreleased
+
+### Breaking changes
+
+- The `devextreme/core/dx.template` module was renamed to `devextreme/core/template`. Also, it is not required to import this module (as demonstrated below) within your application because this module is already included into all DevExtreme components requiring it.
+
+  `import { DxTemplateDirective } from 'devextreme/core/dx.template';`
+
 ## 16.2.2-beta.2 (2016-12-07)
 
 ### Bug Fixes
