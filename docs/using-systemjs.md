@@ -88,7 +88,7 @@ import { DxButtonModule } from 'devextreme-angular';
 })
 export class AppModule {}
 ```
-Note, you can import the **DevExtremeModule** module to include all the DevExtreme widgets at once.  
+Note, you can import the **DevExtremeModule** module to include all the DevExtreme components at once.  
 
 Now you can use a DevExteme component within the main component's template.
 

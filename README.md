@@ -8,7 +8,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Running local examples](#running-examples)
+  * [Running the local examples](#running-examples)
   * [Starting a new application](#create-application)
 * [Usage Samples](#usage-samples)
   * [Static option value](#static-option)
@@ -62,9 +62,9 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 
 ### <a name="create-application"></a>Adding DevExteme widgets to an Angular 2 application
 
-* [Using SystemJS]()
+* [Using SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
+* [Using Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
 <!---* [Using Webpack]()
-* [Using Angular CLI]()
 * [Using Ionic 2 CLI]()
 * [Using ASP.Net Core Visual Studio Template]()-->
 
