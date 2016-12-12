@@ -67,11 +67,11 @@ describe('DxTextBox value accessor', () => {
         fixture.componentInstance.formControl.disable();
         fixture.detectChanges();
 
-        expect(instance.option("disabled")).toBe(true);
+        expect(instance.option('disabled')).toBe(true);
 
         fixture.componentInstance.formControl.enable();
         fixture.detectChanges();
 
-        expect(instance.option("disabled")).toBe(false);
+        expect(instance.option('disabled')).toBe(false);
     }));
 });
