@@ -30,7 +30,7 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
             this.templates.forEach(template => {
                 initialTemplates[template.name] = template;
             });
-            this._initialOptions._templates = initialTemplates;
+            this._initialOptions.integrationOptions.templates = initialTemplates;
         }
     }
     private _initOptions() {
@@ -41,7 +41,7 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
             };
         });
 
-        this._initialOptions.watchMethod = this.watcherHelper.getWatchMethod();
+        this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     private _initEvents() {
         this._events.forEach(event => {
@@ -80,6 +80,7 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
+        this._initialOptions.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
         this.instance = this._createInstance(element, this._initialOptions);
