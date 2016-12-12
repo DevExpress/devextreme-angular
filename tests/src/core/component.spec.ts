@@ -7,7 +7,8 @@ import {
     Input,
     Output,
     QueryList,
-    AfterViewInit
+    AfterViewInit,
+    OnDestroy
 } from '@angular/core';
 
 import {
@@ -35,7 +36,7 @@ let DxTestWidget = DxButton['inherit']({
     template: '',
     providers: [DxTemplateHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
+export class DxTestWidgetComponent extends DxComponent implements AfterViewInit, OnDestroy {
     @Input()
     get testOption(): any {
         return this._getOption('testOption');
@@ -46,6 +47,7 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
 
     @Output() onOptionChanged = new EventEmitter<any>();
     @Output() onInitialized = new EventEmitter<any>();
+    @Output() onDisposing = new EventEmitter<any>();
     @Output() onContentReady = new EventEmitter<any>();
     @Output() testOptionChange = new EventEmitter<any>();
 
@@ -55,6 +57,7 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
             { subscribe: 'initialized', emit: 'onInitialized' },
+            { subscribe: 'disposing', emit: 'onDisposing' },
             { subscribe: 'contentReady', emit: 'onContentReady' },
             { emit: 'testOptionChange' }
         ];
@@ -67,6 +70,10 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
     ngAfterViewInit() {
         this._createWidget(this.element.nativeElement);
     }
+
+    ngOnDestroy() {
+        this._destroyWidget();
+    }
 }
 
 @Component({
@@ -74,6 +81,7 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
     template: ''
 })
 export class TestContainerComponent {
+    visible: boolean = true;
     testOption: string;
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
     testMethod() {
@@ -109,6 +117,23 @@ describe('DevExtreme Angular 2 widget', () => {
 
         expect(element.classList).toContain('dx-test-widget');
 
+    }));
+
+    it('should be disposed', async(() => {
+        let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget *ngIf="visible" (onDisposing)="testMethod()"></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.componentInstance.visible = false;
+        fixture.detectChanges();
+
+        expect(testSpy).toHaveBeenCalledTimes(1);
     }));
 
     it('should set testOption value to insatnce', async(() => {

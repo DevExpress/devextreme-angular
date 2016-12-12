@@ -45,7 +45,8 @@ export class DxTemplateDirective {
         childView['detectChanges']();
         // =========== /WORKAROUND =============
         return $(childView.rootNodes)
-            .addClass(DX_TEMPLATE_WRAPPER_CLASS);
+            .addClass(DX_TEMPLATE_WRAPPER_CLASS)
+            .on('dxremove', () => childView.destroy());
     }
 }
 

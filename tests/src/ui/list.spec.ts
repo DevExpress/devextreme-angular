@@ -1,7 +1,8 @@
 import {
     Component,
     ViewChildren,
-    QueryList
+    QueryList,
+    OnDestroy
 } from '@angular/core';
 
 import {
@@ -294,4 +295,43 @@ describe('DxList', () => {
         let instance = getWidget(fixture);
         expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('testTemplate');
     }));
+
+
+    it('should destroy all components inside template', () => {
+        let destroyed = false;
+        @Component({
+            selector: 'destroyable-component',
+            template: ''
+        })
+        class DestroyableComponent implements OnDestroy {
+            ngOnDestroy() {
+                destroyed = true;
+            }
+        }
+
+        TestBed.configureTestingModule({
+            declarations: [DestroyableComponent, TestContainerComponent],
+            imports: [DxListModule]
+        });
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list [items]="items">
+                        <div *dxTemplate="let item of 'item'">
+                            <destroyable-component></destroyable-component>
+                        </div>
+                    </dx-list>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.componentInstance.items = [];
+        fixture.detectChanges();
+
+        expect(destroyed).toBe(true);
+    });
 });
