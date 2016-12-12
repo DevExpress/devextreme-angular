@@ -4,8 +4,8 @@ import {
     QueryList
 } from '@angular/core';
 
-import { DxTemplateDirective } from './dx.template';
-import { DxTemplateHost } from './dx.template-host';
+import { DxTemplateDirective } from './template';
+import { DxTemplateHost } from './template-host';
 import { WatcherHelper } from './watcher-helper';
 import {
     INestedOptionContainer,

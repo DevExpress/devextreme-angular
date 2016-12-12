@@ -40,9 +40,9 @@ import {
     NG_VALUE_ACCESSOR
 } from '@angular/forms';<#?#>
 
-import { <#= baseClass #> } from '../core/dx.component';
-import { DxTemplateHost } from '../core/dx.template-host';
-import { DxTemplateModule } from '../core/dx.template';
+import { <#= baseClass #> } from '../core/component';
+import { DxTemplateHost } from '../core/template-host';
+import { DxTemplateModule } from '../core/template';
 import { NestedOptionHost } from '../core/nested-option';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
@@ -93,8 +93,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#~#>
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost,
-            private _watcherHelper: WatcherHelper<#? collectionProperties.length #>,
-            private _idh: IterableDifferHelper<#?#>, private _noh: NestedOptionHost) {
+            <#? collectionProperties.length #>private <#?#>_watcherHelper: WatcherHelper<#? collectionProperties.length #>,
+            private _idh: IterableDifferHelper<#?#>, optionHost: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
 
@@ -104,7 +104,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         ];<#? collectionProperties.length #>
 
         this._idh.setHost(this);<#?#>
-        this._noh.setHost(this);
+        optionHost.setHost(this);
     }
 
     protected _createInstance(element, options) {

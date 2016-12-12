@@ -272,15 +272,16 @@ gulp.task('watch.test', function(done) {
 //------------TSLint------------
 
 gulp.task('lint', function() {
-    return gulp.src(buildConfig.components.srcFilesPattern
+    return gulp.src([path.join(buildConfig.components.sourcePath, buildConfig.components.srcFilesPattern)]
             .concat(buildConfig.components.tsTestSrc)
             .concat(buildConfig.examples.srcFilesPattern)
             .concat(buildConfig.tools.srcFilesPattern)
         )
         .pipe(tslint({
+            formatter: 'prose',
             tslint: require('tslint').default,
             rulesDirectory: null,
             configuration: 'tslint.json'
         }))
-        .pipe(tslint.report('prose'));
+        .pipe(tslint.report());
 });

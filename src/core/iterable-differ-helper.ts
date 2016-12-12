@@ -9,7 +9,7 @@ import {
 
 import {
     DxComponent
-} from './dx.component';
+} from './component';
 
 @Injectable()
 export class IterableDifferHelper {
