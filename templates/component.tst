@@ -149,7 +149,7 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
     writeValue(value: any): void {
         this.host.value = value;
     }
-    <#? it.widgetName !== "dxRangeSelector" #>
+<#? it.widgetName !== "dxRangeSelector" #>
     setDisabledState(isDisabled: boolean): void {
         this.host.disabled = isDisabled;
     }<#?#>
