@@ -9,7 +9,7 @@ import {
     Input
 } from '@angular/core';
 
-import { DxTemplateHost } from './dx.template-host';
+import { DxTemplateHost } from './template-host';
 
 declare function require(params: any): any;
 let $ = require('jquery');
