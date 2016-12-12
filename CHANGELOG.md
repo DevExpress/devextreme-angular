@@ -2,6 +2,9 @@
 
 ### Breaking changes
 
+- The following complex nested options were renamed:
+  - `dxi-serie` to `dxi-series`
+  - `dxi-categorie` to `dxi-category`
 - The `devextreme-angular/core/dx.template` module was renamed to `devextreme-angular/core/template`. Also, it is not required to import this module (as demonstrated below) within your application because this module is already included into all DevExtreme components requiring it.
 
   `import { DxTemplateModule } from 'devextreme-angular/core/dx.template';`

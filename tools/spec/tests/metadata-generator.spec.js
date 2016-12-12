@@ -48,7 +48,7 @@ describe("metadata-generator", function() {
                     },
                     dxEditorWidget: {
                         Options: {
-                            value: {}
+                            onValueChanged: {}
                         },
                         Module: 'test_widget'
                     },

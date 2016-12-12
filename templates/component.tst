@@ -154,6 +154,10 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
     writeValue(value: any): void {
         this.host.value = value;
     }
+<#? it.widgetName !== "dxRangeSelector" #>
+    setDisabledState(isDisabled: boolean): void {
+        this.host.disabled = isDisabled;
+    }<#?#>
 
     registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
     registerOnTouched(fn: () => void): void { this.onTouched = fn; }
