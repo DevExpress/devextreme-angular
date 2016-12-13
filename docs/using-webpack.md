@@ -39,5 +39,3 @@ Go to your main .ts file and import the stylesheets as follows:
 import 'devextreme/dist/css/dx.common.css';
 import 'devextreme/dist/css/dx.light.css';
 ```
-
-

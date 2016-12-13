@@ -31,4 +31,3 @@ Go to **angular-cli.json** and add references to the necessary DevExtreme css fi
 ... 
 } 
 ```
-
