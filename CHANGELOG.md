@@ -1,3 +1,9 @@
+## 16.2.3-rc.2 (2016-12-13)
+
+### Bug Fixes
+
+- Resolve AoT compilation issue
+
 ## 16.2.3-rc.1 (2016-12-12)
 
 ### Bug Fixes
