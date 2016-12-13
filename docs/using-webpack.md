@@ -1,4 +1,4 @@
-# Using the DevExtreme Angular 2 Integration With Webpack
+# Using the DevExtreme Angular 2 Integration with Webpack
 
 ## Create a new Application ##
 

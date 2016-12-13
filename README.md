@@ -192,7 +192,7 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
-### <a name="components-with-transcluded-content"></a>Components With Transcluded Content ###
+### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
 [DxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), 
@@ -444,7 +444,7 @@ DevExtreme Angular 2 components mirror
 
 ## <a name="bundle-optimization"></a>Bundle Size Optimization ##
 
-### Bundlers With Tree Shaking Support ###
+### Bundlers with Tree Shaking Support ###
 
 *Tree shaking* can greatly reduce the downloaded size of the application by removing unused portions of both source and library code. There are a number of
 bundlers with tree shaking support, such as Webpack 2, Rollup, SystemJS Bundler, etc. Due to specifics of the tree shaking algorithm, your project typescript sources should
@@ -461,7 +461,7 @@ import { DxButtonModule } from 'devextreme-angular';
 
 Note, AOT Compilation also decreases a bundle size by precompiling your HTML templates. So, the markup and the template compiler are not included into the final bundle.
 
-### Bundlers Without Tree Shaking Support  ###
+### Bundlers without Tree Shaking Support  ###
 
 If you are not going to configure tree shaking, you can optimize your bundle size by using imports from specific modules, not from the main 'devextreme-angular' module. You can do this
 as follows:
