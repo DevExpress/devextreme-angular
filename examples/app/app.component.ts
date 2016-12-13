@@ -1,3 +1,5 @@
+/* tslint:disable:component-selector */
+
 import {
     Component,
     OnInit,
@@ -27,8 +29,6 @@ import{
 import{
     DxPopoverComponent
 } from '../../dist';
-
-declare let $: any;
 
 @Component({
     selector: 'my-app',

@@ -1,5 +1,8 @@
+/* tslint:disable:component-selector */
+
 import {
     Component,
+    OnInit
 } from '@angular/core';
 
 import {
@@ -30,7 +33,7 @@ import {
         </form>
     `
 })
-class TestContainerComponent {
+class TestContainerComponent implements OnInit {
     form: FormGroup;
     formControl: AbstractControl;
 

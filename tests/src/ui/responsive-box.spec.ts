@@ -1,3 +1,5 @@
+/* tslint:disable:component-selector */
+
 import {
     Component,
     ViewChildren,

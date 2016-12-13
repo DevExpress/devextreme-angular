@@ -16,6 +16,7 @@ var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
+var fs = require('fs');
 
 //------------Main------------
 
@@ -136,11 +137,20 @@ gulp.task('build.copy-sources', ['clean.dist'], function() {
 
 });
 
+gulp.task('build.checkMetadata', function(done) {
+    if(fs.existsSync(path.resolve(buildConfig.components.outputPath, 'index.metadata.json'))) {
+        done();
+    } else {
+        done("Metadata not generated!");
+    }
+});
+
 gulp.task('build.components', ['generate.facades'], function(done) {
     runSequence(
         'build.copy-sources',
         'build.license-headers',
         'build.ngc',
+        'build.checkMetadata',
         done
     );
 });
