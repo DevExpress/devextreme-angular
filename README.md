@@ -449,8 +449,9 @@ DevExtreme Angular 2 components mirror
 *Tree shaking* can greatly reduce the downloaded size of the application by removing unused portions of both source and library code. There are a number of
 bundlers with tree shaking support, such as Webpack 2, Rollup, SystemJS Bundler, etc. Due to specifics of the tree shaking algorithm, your project typescript sources should
 be prepared accordingly to make tree shaking available. This preparations are [performed by the Angular Compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking).
-You can follow one of the existing guides to configure tree shaking with your bundler ([Angular AOT Compilation Guide](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking), 
-[Webpack 2](http://blog.rangle.io/optimize-your-angular2-application-with-tree-shaking/), [Rollup](http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/)). 
+You can follow one of the existing guides to configure tree shaking with your bundler ([Webpack 2](http://blog.rangle.io/optimize-your-angular2-application-with-tree-shaking/),
+[Angular CLI](https://github.com/angular/angular-cli#bundling), 
+[Rollup](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking)).
 
 To make it work with DevExtreme Angular 2 package, you just need to import only the modules required in your application, not the whole DevExtremeModule. For instance,
 you can import only DxButtonModule as follows:
