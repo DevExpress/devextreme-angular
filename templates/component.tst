@@ -1,7 +1,4 @@
-<#? it.isEditor #>
-/* tslint:disable:directive-selector-name */
-/* tslint:disable:directive-selector-type */
-<#?#>
+<#? it.isEditor #>/* tslint:disable:directive-selector */<#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
 <# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
