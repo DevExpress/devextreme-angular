@@ -1,16 +1,18 @@
-# Using the DevExtreme Angular 2 components with the SystemJS module loader
+# Using the DevExtreme Angular 2 Components with SystemJS
 
 **:red_circle: This is not the perfect arrangement for your application. It is not designed for production. 
 It exists primarily to get you started quickly with learning and prototyping in Angular and DevExtreme.**
 
+## Create a new Application ##
+
 We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
 [original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
 
-Once the application is ready and works install the devextreme-angular npm package as follows:
+## Add DevExtreme ##
 
-```bash
-npm install --save devextreme@16.2 devextreme-angular@16.2
-```
+Follow the [installation](https://github.com/DevExpress/devextreme-angular#installation) section in our Readme.
+
+## <a name="configuration"></a>Reference DevExtreme Stylesheets ##
 
 Modify the references in the index.html file as follows:
 
@@ -35,6 +37,8 @@ Make sure your html document has DOCTYPE specified:
 <html>
   ...
 ```
+
+## Configure SystemJS ##
 
 Modify the 'systemjs.config.js' file as follows:
 
@@ -71,41 +75,4 @@ packages: {
     'devextreme-angular':         { main: 'index.js', defaultExtension: 'js' }, // <== add this line
     'devextreme':                 { defaultExtension: 'js' }                    // <== add this line
 }
-```
-
-Add the required DevExtreme modules to the **/app/app.module.ts** file and add them to the imports section of the application module:
-
-```js
-import { DxButtonModule } from 'devextreme-angular';
-
-@NgModule({
-    declarations: [AppComponent],
-    imports: [
-        BrowserModule,
-        DxButtonModule
-    ],
-    bootstrap: [AppComponent],
-})
-export class AppModule {}
-```
-Note, you can import the **DevExtremeModule** module to include all the DevExtreme components at once.  
-
-Now you can use a DevExteme component within the main component's template.
-
-```js
-@Component({
-    selector: 'my-app',
-    template: '<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>'
-})
-export class AppComponent {
-    helloWorld() {
-        alert('Hello world!');
-    }
-}
-```
-
-Run the application:
-
-```bash
-npm start
 ```

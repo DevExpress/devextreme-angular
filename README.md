@@ -1,37 +1,44 @@
 [![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
-# Angular 2 UI and Visualization Components Based on DevExtreme Widgets
+# Angular 2 UI and Visualization Components Based on DevExtreme Widgets #
 
-Project status: **RC**
+Project status: **Release candidate**
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
 
-* [Getting Started](#getting-started)
+* [Getting started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Running the local examples](#running-examples)
+  * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
-* [Usage Samples](#usage-samples)
+  * [Running the local examples](#running-examples)
+* [Usage samples](#usage-samples)
   * [Static option value](#static-option)
   * [Event handling](#event-handling)
   * [One-way option binding](#one-way-binding)
   * [Two-way option binding](#two-way-binding)
   * [Custom templates](#custom-templates)
-  * [Widgets with transcluded content](#widgets-with-transcluded-content)
+  * [Components with transcluded content](#components-with-transcluded-content)
   * [Angular 2 forms](#angular-forms)
   * [Using DevExtreme validation features](#devextreme-validation-features)
-  * [Advanced DevExtreme widget options configuration](#configuration-components)
+  * [Configuration components](#configuration-components)
   * [Accessing a DevExtreme widget instance](#accessing-widget-instance)
-* [API Reference](#api-reference)
+* [Demos](#demos)
+* [API reference](#api-reference)
+* [Bundle size optimization](#bundle-optimization)
+* [Server-side rendering](#server-side-rendering)
 * [License](#license)
-* [Support & Feedback](#support-feedback)
+* [Support & feedback](#support-feedback)
 
-## <a name="getting-started"></a>Getting Started
+## <a name="getting-started"></a>Getting Started ##
 
-You can start either with [running examples](#running-examples) or with [creating a new Angular 2 application](#create-application).
+You have the following options to start:
 
-Also we have a simple application on [Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview), so you can check it out without installing anything.
+* [Play around with our Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview) without installing anything
+* [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app) 
+* [Creating a new Angular 2 application](#create-application) and install DevExtreme
+* [Run the local examples](#running-examples)
 
-### <a name="prerequisites"></a>Prerequisites
+### <a name="prerequisites"></a>Prerequisites ###
 
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
 required and essential to Angular 2 development.
@@ -39,8 +46,72 @@ required and essential to Angular 2 development.
 <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" title="Installing Gulp">Gulp</a> is
 required to build the project and run tests.
 
+### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular 2 Application ###
 
-### <a name="running-examples"></a>Running examples
+#### <a name="installation"></a>Install DevExtreme ####
+
+Install the **devextreme** and **devextreme-angular** npm packages:
+
+```bash
+npm install --save devextreme@16.2 devextreme-angular@16.2-rc
+```
+
+#### <a name="import-modules"></a>Import DevExtreme Modules ####
+
+Go to your main .ts file (usually *src/app.module.ts*) and import the required modules to your app:
+
+```js
+...
+import { DxButtonModule } from 'devextreme-angular'; 
+ 
+@NgModule({ 
+    ... 
+    imports: [ 
+        ... 
+        DxButtonModule, 
+        ... 
+    ] 
+})
+export class AppModule {}
+```
+
+Note, you can import the **DevExtremeModule** module to include all the DevExtreme components at once, but it might affect the final bundle size and startup time.
+Check the [bundle optimization](#bundle-optimization) section for more info.
+
+#### Use DevExtreme Components  ####
+
+Now you can use a DevExteme component in your application:
+
+```js
+@Component({
+    selector: 'my-app',
+    template: '<dx-button text="Press me" (onClick)="helloWorld()"></dx-button>'
+})
+export class AppComponent {
+    helloWorld() {
+        alert('Hello world!');
+    }
+}
+```
+
+#### <a name="additional-configuration"></a>Additional Configuration ####
+
+The further configuration steps depend on which build tool, bundler or module loader you are using. Please choose the one you need:
+
+* [Configuring SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md#configuration)
+* [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
+* [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
+
+
+### <a name="create-application"></a>Create a new Angular 2 Application ###
+
+Depending on your requirements you can choose one of the following ways to start: 
+
+* [Start with SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
+* [Start with Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
+* [Start with Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md)
+
+### <a name="running-examples"></a>Running the Local Examples ###
 
 ```bash
 # clone our repo
@@ -60,17 +131,9 @@ npm start
 
 Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) in the opened browser window. Explore the **examples** folder of this repository for the examples source code.
 
-### <a name="create-application"></a>Adding DevExteme widgets to an Angular 2 application
+## <a name="usage-samples"></a>Usage Samples ##
 
-* [Using SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
-* [Using Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
-<!---* [Using Webpack]()
-* [Using Ionic 2 CLI]()
-* [Using ASP.Net Core Visual Studio Template]()-->
-
-## <a name="usage-samples"></a>Usage Samples
-
-### <a name="static-option"></a>Static option value
+### <a name="static-option"></a>Static Option Value ###
 
 To specify a widget's option statically
 (the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/?version=15_2#text)
@@ -80,7 +143,7 @@ option of dxButton):
 <dx-button text="Simple button"></dx-button>
 ```
 
-### <a name="event-handling"></a>Event handling
+### <a name="event-handling"></a>Event Handling ###
 
 To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Events/?version=15_2#click) event:
 
@@ -88,7 +151,7 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 <dx-button (onClick)="handler()"></dx-button>
 ```
 
-### <a name="one-way-binding"></a>One-way option binding
+### <a name="one-way-binding"></a>One-way Option Binding ###
 
 If we want changes to the value of ‘bindingProperty’ of the host component to propagate to the
 [value](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/Configuration/?version=15_2#value) of the dxTextBox widget,
@@ -98,7 +161,7 @@ a one-way binding approach is used:
 <dx-text-box [value]="bindingProperty"></dx-text-box>
 ```
 
-### <a name="two-way-binding"></a>Two-way option binding
+### <a name="two-way-binding"></a>Two-way Option Binding ###
 
 In addition to the one-way binding, we can also perform two-way binding, which propagates changes from the bindingProperty to the widget
 or vice versa from the widget to the bindingProperty:
@@ -107,7 +170,7 @@ or vice versa from the widget to the bindingProperty:
 <dx-text-box [(value)]="bindingProperty"></dx-text-box>
 ```
 
-### <a name="custom-templates"></a>Custom templates
+### <a name="custom-templates"></a>Custom Templates ###
 
 In case you want to customize the rendering of a DevExtreme widget, we support custom templates. For instance, we can specify
 the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/?version=15_2#itemTemplate)
@@ -129,7 +192,7 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
-### <a name="widgets-with-transcluded-content"></a>Widgets with transcluded content
+### <a name="components-with-transcluded-content"></a>Components With Transcluded Content ###
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
 [DxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), 
@@ -144,7 +207,7 @@ the [DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widge
 </dx-scroll-view>
 ```
 
-### <a name="angular-forms"></a>Angular 2 forms
+### <a name="angular-forms"></a>Angular 2 Forms ###
 
 The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'formControlName' directive, which are necessary for the
 [Angular 2 forms](https://angular.io/docs/ts/latest/guide/forms.html) features.
@@ -179,7 +242,7 @@ export class AppComponent implements OnInit {
 }
 ```
 
-### <a name="devextreme-validation-features"></a>Using DevExtreme validation features 
+### <a name="devextreme-validation-features"></a>Using DevExtreme Validation Features ###
 
 You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
 validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
@@ -231,7 +294,7 @@ export class AppComponent {
 ```
 
 
-### <a name="configuration-components"></a>Configuration components
+### <a name="configuration-components"></a>Configuration Components ###
 
 You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
 The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
@@ -341,7 +404,7 @@ export class AppComponent {
 }
 ```
 
-### <a name="accessing-widget-instance"></a>Accessing a DevExtreme widget instance
+### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
 'instance' property. In the example below, the
@@ -368,13 +431,51 @@ export class AppComponent implements OnChanges {
 }
 ```
 
-## <a name="api-reference"></a>API Reference
+## <a name="demos"></a>Demos ##
+
+* [GolfClub real-world application](https://devexpress.github.io/golfclub/) ([sources](https://github.com/DevExpress/golfclub))
+* [Lots of feature-based examples](https://js.devexpress.com/Demos/WidgetsGallery/Demo/Data_Grid/LocalDataSource/Angular/Light/)
+
+## <a name="api-reference"></a>API Reference ##
 
 DevExtreme Angular 2 components mirror
 [DevExtreme JavaScript API](http://js.devexpress.com/Documentation/ApiReference/) but use
-Angular 2 syntax for specifying widget options, subscribing to events and custom templates declaration.
+[Angular 2 syntax](#usage-samples) for specifying widget options, subscribing to events and custom templates declaration.
 
-## <a name="license"></a>License
+## <a name="bundle-optimization"></a>Bundle Size Optimization ##
+
+### Bundlers With Tree Shaking Support ###
+
+*Tree shaking* can greatly reduce the downloaded size of the application by removing unused portions of both source and library code. There are a number of
+bundlers with tree shaking support, such as Webpack 2, Rollup, SystemJS Bundler, etc. Due to specifics of the tree shaking algorithm, your project typescript sources should
+be prepared accordingly to make tree shaking available. This preparations are [performed by the Angular Compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking).
+You can follow one of the existing guides to configure tree shaking with your bundler ([Angular AOT Compilation Guide](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking), 
+[Webpack 2](http://blog.rangle.io/optimize-your-angular2-application-with-tree-shaking/), [Rollup](http://blog.mgechev.com/2016/06/26/tree-shaking-angular2-production-build-rollup-javascript/)). 
+
+To make it work with DevExtreme Angular 2 package, you just need to import only the modules required in your application, not the whole DevExtremeModule. For instance,
+you can import only DxButtonModule as follows:
+
+```js
+import { DxButtonModule } from 'devextreme-angular';
+```
+
+Note, AOT Compilation also decreases a bundle size by precompiling your HTML templates. So, the markup and the template compiler are not included into the final bundle.
+
+### Bundlers Without Tree Shaking Support  ###
+
+If you are not going to configure tree shaking, you can optimize your bundle size by using imports from specific modules, not from the main 'devextreme-angular' module. You can do this
+as follows:
+
+```js
+import { DxButtonModule } from 'devextreme-angular/ui/button';
+```
+
+## <a name="server-side-rendering"></a>Server-side Rendering ##
+
+Currently, DevExtreme components **do not support** server side rendering (check [this issue](https://github.com/DevExpress/devextreme-angular/issues/46)). 
+So, you are required to switch this feature off.
+
+## <a name="license"></a>License ##
 
 Familiarize yourself with the
 [DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).
@@ -382,7 +483,7 @@ Familiarize yourself with the
 
 **DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
 
-## <a name="support-feedback"></a>Support & Feedback
+## <a name="support-feedback"></a>Support & Feedback ##
 
 * For general Angular 2 topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
 * For questions regarding DevExtreme libraries and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center)
