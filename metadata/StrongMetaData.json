@@ -9905,6 +9905,14 @@
           "EnumName": "ValidationMessageMode",
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
         },
+        "value": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "value",
+          "Description": "The current slider value."
+        },
         "max": {
           "PrimitiveTypes": [
             "double"
@@ -17091,7 +17099,7 @@
                 "date"
               ],
               "IsCollection": true,
-              "SingularName": "categorie",
+              "SingularName": "category",
               "Description": "Specifies the order of categories on an axis of the \"discrete\" type."
             },
             "constantLines": {
@@ -18260,7 +18268,7 @@
             "ChartSeries"
           ],
           "IsCollection": true,
-          "SingularName": "serie",
+          "SingularName": "series",
           "Description": "Specifies options for Chart widget series."
         },
         "seriesSelectionMode": {
@@ -18702,7 +18710,7 @@
                 "date"
               ],
               "IsCollection": true,
-              "SingularName": "categorie",
+              "SingularName": "category",
               "Description": "Specifies the order of categories on an axis of the \"discrete\" type."
             },
             "constantLines": {
@@ -19882,12 +19890,16 @@
           }
         },
         "subvalueIndicator": {
-          "Description": "Specifies the appearance options of subvalue indicators.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of subvalue indicators."
         },
         "valueIndicator": {
-          "Description": "Specifies the appearance options of the value indicator.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of the value indicator."
         }
       }
     },
@@ -20834,12 +20846,16 @@
           }
         },
         "subvalueIndicator": {
-          "Description": "Specifies the appearance options of subvalue indicators.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of subvalue indicators."
         },
         "valueIndicator": {
-          "Description": "Specifies the appearance options of the value indicator.",
-          "Options": {}
+          "ComplexTypes": [
+            "GaugeIndicator"
+          ],
+          "Description": "Specifies the appearance options of the value indicator."
         }
       }
     },
@@ -21598,7 +21614,7 @@
             "PieChartSeries"
           ],
           "IsCollection": true,
-          "SingularName": "serie",
+          "SingularName": "series",
           "Description": "Specifies options for the series of the PieChart widget."
         },
         "startAngle": {
@@ -22632,7 +22648,7 @@
                 "date"
               ],
               "IsCollection": true,
-              "SingularName": "categorie",
+              "SingularName": "category",
               "Description": "Specifies the order in which arguments (categories) are arranged on the discrete argument axis."
             },
             "constantLines": {
@@ -23248,7 +23264,7 @@
             "PolarChartSeries"
           ],
           "IsCollection": true,
-          "SingularName": "serie",
+          "SingularName": "series",
           "Description": "Specifies options for PolarChart widget series."
         },
         "seriesSelectionMode": {
@@ -23566,7 +23582,7 @@
                 "date"
               ],
               "IsCollection": true,
-              "SingularName": "categorie",
+              "SingularName": "category",
               "Description": "Specifies the order in which discrete values are arranged on the value axis."
             },
             "constantLines": {
@@ -24165,8 +24181,12 @@
               "Description": "Indicates whether or not animation is enabled."
             },
             "callSelectedRangeChanged": {
-              "EnumName": "SelectedRangeChangedCallMode",
+              "EnumName": "ValueChangedCallMode",
               "Description": "Specifies when to call the onSelectedRangeChanged function."
+            },
+            "callValueChanged": {
+              "EnumName": "ValueChangedCallMode",
+              "Description": "Specifies when to call the onValueChanged function."
             },
             "manualRangeSelectionEnabled": {
               "PrimitiveTypes": [
@@ -24255,7 +24275,7 @@
                 "ChartSeries"
               ],
               "IsCollection": true,
-              "SingularName": "serie",
+              "SingularName": "series",
               "Description": "An object defining the chart’s series."
             },
             "seriesTemplate": {
@@ -24362,6 +24382,11 @@
           "IsEvent": true,
           "Description": "A handler for the selectedRangeChanged event."
         },
+        "onValueChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the valueChanged event."
+        },
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
           "Options": {
@@ -24372,7 +24397,7 @@
                 "date"
               ],
               "IsCollection": true,
-              "SingularName": "categorie",
+              "SingularName": "category",
               "Description": "Specifies the order of arguments on a discrete scale."
             },
             "endValue": {
@@ -25079,6 +25104,14 @@
               "Description": "Indicates whether or not the slider markers are visible."
             }
           }
+        },
+        "value": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "value",
+          "Description": "The selected range, initial or current."
         }
       }
     },
@@ -26116,7 +26149,7 @@
           "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to flat data sources only."
         },
         "resolveLabelOverflow": {
-          "EnumName": "TreeMapLabelOverflowResolution",
+          "EnumName": "TreeMapResolveLabelOverflow",
           "Description": "Decides whether those labels that overflow their tile/group should be hidden or truncated with ellipsis."
         },
         "selectionMode": {
@@ -27954,15 +27987,15 @@
           }
         },
         "collision": {
-          "EnumName": "PositionXYCollisionResolution",
+          "EnumName": "PositionResolveCollisionXY",
           "Description": "Specifies how to move the widget if it overflows the screen.",
           "Options": {
             "x": {
-              "EnumName": "PositionCollisionResolution",
+              "EnumName": "PositionResolveCollision",
               "Description": "Specifies the horizontal collision handler."
             },
             "y": {
-              "EnumName": "PositionCollisionResolution",
+              "EnumName": "PositionResolveCollision",
               "Description": "Specifies the vertical collision handler."
             }
           }
@@ -32279,7 +32312,7 @@
         }
       ]
     },
-    "PositionCollisionResolution": {
+    "PositionResolveCollision": {
       "Items": [
         {
           "Name": "fit"
@@ -32298,7 +32331,7 @@
         "flipfit": "flipFit"
       }
     },
-    "PositionXYCollisionResolution": {
+    "PositionResolveCollisionXY": {
       "Items": [
         {
           "Name": "fit"
@@ -32425,6 +32458,9 @@
         },
         {
           "Name": "step-start"
+        },
+        {
+          "Name": "swing"
         }
       ]
     },
@@ -32850,7 +32886,10 @@
         {
           "Name": "time"
         }
-      ]
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
     },
     "TextBoxMode": {
       "Items": [
@@ -34088,7 +34127,7 @@
         }
       ]
     },
-    "SelectedRangeChangedCallMode": {
+    "ValueChangedCallMode": {
       "Items": [
         {
           "Name": "onMoving"
@@ -34439,7 +34478,7 @@
         }
       ]
     },
-    "TreeMapLabelOverflowResolution": {
+    "TreeMapResolveLabelOverflow": {
       "Items": [
         {
           "Name": "ellipsis"

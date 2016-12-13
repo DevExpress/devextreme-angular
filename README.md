@@ -352,7 +352,7 @@ The following example demonstrates how to configure the [valueAxis](https://js.d
 
 ```html
 <dx-chart [dataSource]="data">
-    <dxi-serie valueField="value" argumentField="argument"></dxi-serie>
+    <dxi-series valueField="value" argumentField="argument"></dxi-series>
     <dxi-value-axis>
         <dxo-label format="millions"></dxo-label>
     </dxi-value-axis>

@@ -1,12 +1,9 @@
-<#? it.isEditor #>
-/* tslint:disable:directive-selector-name */
-/* tslint:disable:directive-selector-type */
-<#?#>
+<#? it.isEditor #>/* tslint:disable:directive-selector */<#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
 <# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
-<# var implementedInterfaces = []; #>
+<# var implementedInterfaces = ['OnDestroy']; #>
 <# !it.isExtension && implementedInterfaces.push('AfterViewInit'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
@@ -17,7 +14,8 @@ import {
     EventEmitter,
     NgZone,
     Input,
-    Output<#? !it.isExtension #>,
+    Output,
+    OnDestroy<#? !it.isExtension #>,
     AfterViewInit<#?#><#? it.isEditor #>,
     ContentChild,
     Directive,
@@ -113,6 +111,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         }
         return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
     }
+
+    ngOnDestroy() {
+        this._destroyWidget();
+    }
 <#? collectionProperties.length #>
     ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
         this._idh.setup('<#= prop #>', changes);<#~#>
@@ -149,6 +151,10 @@ export class <#= it.className #>ValueAccessorDirective implements ControlValueAc
     writeValue(value: any): void {
         this.host.value = value;
     }
+<#? it.widgetName !== "dxRangeSelector" #>
+    setDisabledState(isDisabled: boolean): void {
+        this.host.disabled = isDisabled;
+    }<#?#>
 
     registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
     registerOnTouched(fn: () => void): void { this.onTouched = fn; }

@@ -1,3 +1,5 @@
+/* tslint:disable:component-selector */
+
 import {
     Component,
     OnInit,
@@ -27,8 +29,6 @@ import{
 import{
     DxPopoverComponent
 } from '../../dist';
-
-declare let $: any;
 
 @Component({
     selector: 'my-app',
@@ -168,6 +168,15 @@ export class AppComponent implements OnInit {
     }
     callNumber(number) {
         alert(number + ' is being called...');
+    }
+    toggleFormConsrolsState(e) {
+        if (e.value) {
+            this.emailControl.disable();
+            this.passwordControl.disable();
+        } else {
+            this.emailControl.enable();
+            this.passwordControl.enable();
+        }
     }
     onSubmit() {
         this.form.updateValueAndValidity();

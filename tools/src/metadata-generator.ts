@@ -70,7 +70,7 @@ export default class DXComponentMetadataGenerator {
                 events = [],
                 changeEvents = [],
                 properties = [],
-                isEditor = Object.keys(widget.Options).indexOf('value') !== -1;
+                isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
