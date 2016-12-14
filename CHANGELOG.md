@@ -1,8 +1,14 @@
+## 16.2.3-rc.3 (2016-12-14)
+
+### Bug Fixes
+
+- Resolve AoT compilation issue (after the Angular 2.3.0 release)
+
 ## 16.2.3-rc.2 (2016-12-13)
 
 ### Bug Fixes
 
-- Resolve AoT compilation issue
+- Resolve AoT compilation issue (after the TypeScript 2.1.4 release)
 
 ## 16.2.3-rc.1 (2016-12-12)
 
@@ -51,14 +57,14 @@
 
 ### Features
 
-- Introduce configuration components ([#5](https://github.com/DevExpress/devextreme-angular/issues/5)). 
+- Introduce configuration components ([#5](https://github.com/DevExpress/devextreme-angular/issues/5)).
 [See examples](https://github.com/DevExpress/devextreme-angular#advanced-devextreme-widget-options-configuration).
 
 ### Bug Fixes
 
 - Fix the 'dx-validator' component ([#30](https://github.com/DevExpress/devextreme-angular/issues/30))
 - Fix the component property change propagation to the corresponding widget option ([#6](https://github.com/DevExpress/devextreme-angular/issues/6))
-- Fix the 'dxTemplate' directive issues ([#4](https://github.com/DevExpress/devextreme-angular/issues/4) and [#106](https://github.com/DevExpress/devextreme-angular/issues/106))  
+- Fix the 'dxTemplate' directive issues ([#4](https://github.com/DevExpress/devextreme-angular/issues/4) and [#106](https://github.com/DevExpress/devextreme-angular/issues/106))
 - Fix the 2-way data binding to DevExtreme collection widgets, dxDataGrid and dxForm ([#36](https://github.com/DevExpress/devextreme-angular/issues/36))
 
 ## 16.2.1-alpha.1 (2016-10-20)
