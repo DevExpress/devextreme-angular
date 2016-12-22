@@ -101,6 +101,7 @@ The further configuration steps depend on which build tool, bundler or module lo
 * [Configuring SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md#configuration)
 * [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
 * [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
+* [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
 
 
 ### <a name="create-application"></a>Create a new Angular 2 Application ###
@@ -110,6 +111,7 @@ Depending on your requirements you can choose one of the following ways to start
 * [Start with SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
 * [Start with Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
 * [Start with Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md)
+* [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
 
 ### <a name="running-examples"></a>Running the Local Examples ###
 
