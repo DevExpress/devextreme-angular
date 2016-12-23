@@ -252,19 +252,20 @@ describe("metadata-generator", function() {
                     .filter(args => args[0] === path).length;
             };
 
-            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "complex-widget.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "another-complex-widget.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "nested.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "nested-item-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item-dxi.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item-with-template-dxi.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "widget-reference.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "external-property-item-dxi.json"))).toBe(1);
         });
 
