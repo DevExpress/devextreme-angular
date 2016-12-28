@@ -12,7 +12,7 @@ function trimDx(value: string) {
 }
 
 function trimPrefix(prefix: string, value: string) {
-    if(value.indexOf(prefix) === 0) {
+    if (value.indexOf(prefix) === 0) {
         return value.substr(prefix.length);
     }
     return value;
@@ -157,11 +157,10 @@ export default class DXComponentMetadataGenerator {
                 typeName = trimPrefix('dx', typeName);
             }
         }
-        
+
         if (!externalObject) {
             console.warn('WARN: missed complex type: ' + typeName);
-        }
-        else {
+        } else {
             return {
                 Options: externalObject.Options,
                 typeName: typeName
@@ -189,7 +188,8 @@ export default class DXComponentMetadataGenerator {
             if (option.ComplexTypes.length === 1) {
                 let externalObjectInfo = this.getExternalObjectInfo(metadata, option.ComplexTypes[0]);
                 if (externalObjectInfo) {
-                    result[0].baseClass = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + externalObjectInfo.typeName;
+                    result[0].baseClass =
+                        (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + externalObjectInfo.typeName;
                     result[0].basePath = inflector.dasherize(inflector.underscore(externalObjectInfo.typeName));
                 }
             }

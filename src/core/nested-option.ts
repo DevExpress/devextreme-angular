@@ -35,7 +35,7 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     protected abstract get _optionPath(): string;
 
     constructor(private _element: ElementRef) {
-        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
+        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this), this._filterItems.bind(this));
     }
 
     setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
@@ -45,12 +45,16 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
     }
 
     _template(...args) {
-        let container = args[2];
+        let container = args[2] || args[1] || args[0];
         return container.append(this._element.nativeElement);
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         return this._collectionContainerImpl.setChildren(propertyName, items);
+    }
+
+    _filterItems(items: QueryList<NestedOption>) {
+        return items.filter((item) => { return item !== this; });
     }
 
     get instance() {
@@ -65,13 +69,16 @@ export interface ICollectionNestedOptionContainer {
 
 export class CollectionNestedOptionContainerImpl implements ICollectionNestedOptionContainer {
     private _activatedQueries = {};
-    constructor(private _setOption: Function) {
+    constructor(private _setOption: Function, private _filterItems?: Function) {
     }
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         if (items.length) {
             this._activatedQueries[propertyName] = true;
         }
         if (this._activatedQueries[propertyName]) {
+            if (this._filterItems) {
+                items = this._filterItems(items);
+            }
             let widgetItems = items.map((item, index) => {
                 item._index = index;
                 return item._value;
@@ -90,7 +97,10 @@ export abstract class CollectionNestedOption extends NestedOption implements ICo
     _index: number;
 
     protected _getOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
+        if (this._index !== undefined) {
+            return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
+        }
+        return '';
     }
 
     get _value() {

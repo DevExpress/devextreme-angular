@@ -8,13 +8,14 @@ import {
     SkipSelf<#? it.properties #>,
     Input<#?#><#? it.collectionNestedComponents.length #>,
     ContentChildren,
+    forwardRef,
     QueryList<#?#>
 } from '@angular/core';
 
 import { NestedOptionHost } from '../../core/nested-option';
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
-<#~ it.collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './<#= component.path #>';
-<#~#>
+<#~ it.collectionNestedComponents :component:i #><#? component.className !== it.className #>import { <#= component.className #>Component } from './<#= component.path #>';
+<#?#><#~#>
 
 @Component({
     selector: '<#= it.selector #>',
@@ -38,7 +39,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
     }
 
 <#~ it.collectionNestedComponents :component:i #>
-    @ContentChildren(<#= component.className #>Component)
+    @ContentChildren(forwardRef(() => <#= component.className #>Component))
     get <#= component.propertyName #>Children(): QueryList<<#= component.className #>Component> {
         return this._getOption('<#= component.propertyName #>');
     }

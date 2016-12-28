@@ -2515,7 +2515,7 @@
             },
             "formItem": {
               "ComplexTypes": [
-                "dxFormSimpleItem"
+                "FormSimpleItem"
               ],
               "Description": "The form item configuration object. Used only when the editing mode is \"form\"."
             },
@@ -4816,8 +4816,11 @@
           "Description": "An object providing data for the form."
         },
         "items": {
-          "PrimitiveTypes": [
-            "any"
+          "ComplexTypes": [
+            "FormEmptyItem",
+            "FormGroupItem",
+            "FormSimpleItem",
+            "FormTabbedItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -17107,24 +17110,66 @@
               "SingularName": "constantLine",
               "Description": "Declares a collection of constant lines belonging to the argument axis.",
               "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of constant lines."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies the dash style of constant lines."
+                },
                 "label": {
                   "Description": "Configures the constant line label.",
                   "Options": {
-                    "horizontalAlignment": {
-                      "EnumName": "HorizontalAlignment",
-                      "Description": "Aligns constant line labels in the horizontal direction."
+                    "font": {
+                      "ComplexTypes": [
+                        "VizFont"
+                      ],
+                      "Description": "Specifies font options for constant line labels."
                     },
-                    "verticalAlignment": {
-                      "EnumName": "VerticalAlignment",
-                      "Description": "Aligns constant line labels in the vertical direction."
+                    "position": {
+                      "EnumName": "RelativePosition",
+                      "Description": "Specifies the position of constant line labels on the chart plot."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Makes constant line labels visible."
+                    },
+                    "horizontalAlignment": {
+                      "EnumName": "HorizontalAlignment"
                     },
                     "text": {
                       "PrimitiveTypes": [
                         "string"
                       ],
                       "Description": "Specifies the text of a constant line label. By default, equals to the value of the constant line."
+                    },
+                    "verticalAlignment": {
+                      "EnumName": "VerticalAlignment"
                     }
                   }
+                },
+                "paddingLeftRight": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Generates a pixel-measured empty space between the left/right side of a constant line and the constant line label."
+                },
+                "paddingTopBottom": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Generates a pixel-measured empty space between the top/bottom side of a constant line and the constant line label."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of constant lines in pixels."
                 },
                 "value": {
                   "PrimitiveTypes": [
@@ -18718,24 +18763,66 @@
               "SingularName": "constantLine",
               "Description": "Declares a collection of constant lines belonging to the value axis.",
               "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color of constant lines."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies the dash style of constant lines."
+                },
                 "label": {
                   "Description": "Configures the constant line label.",
                   "Options": {
-                    "horizontalAlignment": {
-                      "EnumName": "HorizontalAlignment",
-                      "Description": "Aligns constant line labels in the horizontal direction."
+                    "font": {
+                      "ComplexTypes": [
+                        "VizFont"
+                      ],
+                      "Description": "Specifies font options for constant line labels."
                     },
-                    "verticalAlignment": {
-                      "EnumName": "VerticalAlignment",
-                      "Description": "Aligns constant line labels in the vertical direction."
+                    "position": {
+                      "EnumName": "RelativePosition",
+                      "Description": "Specifies the position of constant line labels on the chart plot."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Makes constant line labels visible."
+                    },
+                    "horizontalAlignment": {
+                      "EnumName": "HorizontalAlignment"
                     },
                     "text": {
                       "PrimitiveTypes": [
                         "string"
                       ],
                       "Description": "Specifies the text of a constant line label. By default, equals to the value of the constant line."
+                    },
+                    "verticalAlignment": {
+                      "EnumName": "VerticalAlignment"
                     }
                   }
+                },
+                "paddingLeftRight": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Generates a pixel-measured empty space between the left/right side of a constant line and the constant line label."
+                },
+                "paddingTopBottom": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Generates a pixel-measured empty space between the top/bottom side of a constant line and the constant line label."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of constant lines in pixels."
                 },
                 "value": {
                   "PrimitiveTypes": [
@@ -24181,8 +24268,9 @@
               "Description": "Indicates whether or not animation is enabled."
             },
             "callSelectedRangeChanged": {
+              "IsDeprecated": true,
               "EnumName": "ValueChangedCallMode",
-              "Description": "Specifies when to call the onSelectedRangeChanged function."
+              "Description": "Use the callValueChanged option instead."
             },
             "callValueChanged": {
               "EnumName": "ValueChangedCallMode",
@@ -24378,9 +24466,10 @@
           }
         },
         "onSelectedRangeChanged": {
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectedRangeChanged event."
+          "Description": "Use the onValueChanged option instead."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -24930,7 +25019,7 @@
           }
         },
         "selectedRange": {
-          "Description": "Specifies the range to be selected when displaying the RangeSelector.",
+          "Description": "Use the value option instead.",
           "Options": {
             "endValue": {
               "PrimitiveTypes": [
@@ -28390,6 +28479,323 @@
         "type": {
           "EnumName": "GaugeIndicatorType",
           "Description": "Specifies the type of subvalue indicators."
+        }
+      }
+    },
+    "FormEmptyItem": {
+      "Options": {
+        "colSpan": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "itemType": {
+          "EnumName": "FormItemType"
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        }
+      }
+    },
+    "FormGroupItem": {
+      "Options": {
+        "alignItemLabels": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "colCount": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        },
+        "colCountByScreen": {
+          "Options": {
+            "lg": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "The count of columns for a large screen size."
+            },
+            "md": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "The count of columns for a middle-sized screen."
+            },
+            "sm": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "The count of columns for a small-sized screen."
+            },
+            "xs": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "The count of columns for an extra small-sized screen."
+            }
+          }
+        },
+        "colSpan": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "items": {
+          "ComplexTypes": [
+            "FormEmptyItem",
+            "FormGroupItem",
+            "FormSimpleItem",
+            "FormTabbedItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item"
+        },
+        "itemType": {
+          "EnumName": "FormItemType"
+        },
+        "template": {
+          "IsTemplate": true
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        }
+      }
+    },
+    "FormSimpleItem": {
+      "Options": {
+        "colSpan": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "editorOptions": {
+          "PrimitiveTypes": [
+            "any"
+          ]
+        },
+        "editorType": {
+          "EnumName": "FormItemEditorType"
+        },
+        "helpText": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "isRequired": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "itemType": {
+          "EnumName": "FormItemType"
+        },
+        "label": {
+          "Options": {
+            "alignment": {
+              "EnumName": "HorizontalAlignment"
+            },
+            "location": {
+              "EnumName": "FormLabelLocation"
+            },
+            "showColon": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            }
+          }
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "template": {
+          "IsTemplate": true
+        },
+        "validationRules": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationRule"
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        }
+      }
+    },
+    "FormTabbedItem": {
+      "Options": {
+        "colSpan": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "itemType": {
+          "EnumName": "FormItemType"
+        },
+        "tabPanelOptions": {
+          "ComplexTypes": [
+            "dxTabPanelOptions"
+          ]
+        },
+        "tabs": {
+          "IsCollection": true,
+          "SingularName": "tab",
+          "Options": {
+            "alignItemLabels": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            },
+            "badge": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "colCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ]
+            },
+            "colCountByScreen": {
+              "Options": {
+                "lg": {
+                  "PrimitiveTypes": [
+                    "int32"
+                  ],
+                  "Description": "The count of columns for a large screen size."
+                },
+                "md": {
+                  "PrimitiveTypes": [
+                    "int32"
+                  ],
+                  "Description": "The count of columns for a middle-sized screen."
+                },
+                "sm": {
+                  "PrimitiveTypes": [
+                    "int32"
+                  ],
+                  "Description": "The count of columns for a small-sized screen."
+                },
+                "xs": {
+                  "PrimitiveTypes": [
+                    "int32"
+                  ],
+                  "Description": "The count of columns for an extra small-sized screen."
+                }
+              }
+            },
+            "disabled": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            },
+            "icon": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "items": {
+              "ComplexTypes": [
+                "FormEmptyItem",
+                "FormGroupItem",
+                "FormSimpleItem",
+                "FormTabbedItem"
+              ],
+              "IsCollection": true,
+              "SingularName": "item"
+            },
+            "tabTemplate": {
+              "IsTemplate": true
+            },
+            "template": {
+              "IsTemplate": true
+            },
+            "title": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            }
+          }
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ]
         }
       }
     },
@@ -33460,6 +33866,84 @@
           "Name": "top"
         }
       ]
+    },
+    "FormItemType": {
+      "Items": [
+        {
+          "Name": "empty"
+        },
+        {
+          "Name": "group"
+        },
+        {
+          "Name": "simple"
+        },
+        {
+          "Name": "tabbed"
+        }
+      ]
+    },
+    "FormItemEditorType": {
+      "Items": [
+        {
+          "Name": "dxAutocomplete"
+        },
+        {
+          "Name": "dxCalendar"
+        },
+        {
+          "Name": "dxCheckBox"
+        },
+        {
+          "Name": "dxColorBox"
+        },
+        {
+          "Name": "dxDateBox"
+        },
+        {
+          "Name": "dxLookup"
+        },
+        {
+          "Name": "dxNumberBox"
+        },
+        {
+          "Name": "dxRadioGroup"
+        },
+        {
+          "Name": "dxSelectBox"
+        },
+        {
+          "Name": "dxSlider"
+        },
+        {
+          "Name": "dxSwitch"
+        },
+        {
+          "Name": "dxTagBox"
+        },
+        {
+          "Name": "dxTextArea"
+        },
+        {
+          "Name": "dxTextBox"
+        }
+      ],
+      "Renamings": {
+        "dxAutocomplete": "Autocomplete",
+        "dxCalendar": "Calendar",
+        "dxCheckBox": "CheckBox",
+        "dxColorBox": "ColorBox",
+        "dxDateBox": "DateBox",
+        "dxLookup": "Lookup",
+        "dxNumberBox": "NumberBox",
+        "dxRadioGroup": "RadioGroup",
+        "dxSelectBox": "SelectBox",
+        "dxSlider": "Slider",
+        "dxSwitch": "Switch",
+        "dxTagBox": "TagBox",
+        "dxTextArea": "TextArea",
+        "dxTextBox": "TextBox"
+      }
     },
     "VizTheme": {
       "Items": [
