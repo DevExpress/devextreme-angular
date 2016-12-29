@@ -169,7 +169,7 @@ export class AppComponent implements OnInit {
     callNumber(number) {
         alert(number + ' is being called...');
     }
-    toggleFormConsrolsState(e) {
+    toggleFormControlsState(e) {
         if (e.value) {
             this.emailControl.disable();
             this.passwordControl.disable();
