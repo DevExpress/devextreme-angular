@@ -406,6 +406,11 @@ export class AppComponent {
 }
 ```
 
+Angular has a built-in `template` directive. To make Angular use the `template` input variable of the `dxo-master-detail` component you need to use square braces:
+```html
+<dxo-master-detail [enabled]="!sessionSelectionOnly" [template]="'masterDetail'"></dxo-master-detail>
+```
+
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
