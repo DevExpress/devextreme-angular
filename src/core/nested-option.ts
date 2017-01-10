@@ -6,42 +6,38 @@ export interface INestedOptionContainer {
 
 export interface OptionPathGetter { (): string; }
 
-export abstract class NestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
+export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
     protected _host: INestedOptionContainer;
     protected _hostOptionPath: OptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
 
-    protected _getOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '.';
+    protected abstract get _optionPath(): string;
+    protected abstract _fullOptionPath(): string;
+
+    constructor(private _element: ElementRef) {
+        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
     }
 
     protected _getOption(name: string): any {
-        if (this.instance) {
-            return this.instance.option(this._getOptionPath() + name);
+        if (this.isLinked) {
+            return this.instance.option(this._fullOptionPath() + name);
         } else {
             return this._initialOptions[name];
         }
     }
 
     protected _setOption(name: string, value: any) {
-        if (this.instance) {
-            this.instance.option(this._getOptionPath() + name, value);
+        if (this.isLinked) {
+            this.instance.option(this._fullOptionPath() + name, value);
         } else {
             this._initialOptions[name] = value;
         }
     }
 
-    protected abstract get _optionPath(): string;
-
-    constructor(private _element: ElementRef) {
-        this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
-    }
-
     setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
-        this._host[this._optionPath] = this._initialOptions;
     }
 
     _template(...args) {
@@ -57,6 +53,9 @@ export abstract class NestedOption implements INestedOptionContainer, ICollectio
         return this._host && this._host.instance;
     }
 
+    get isLinked() {
+        return !!this.instance;
+    }
 }
 
 export interface ICollectionNestedOptionContainer {
@@ -65,8 +64,7 @@ export interface ICollectionNestedOptionContainer {
 
 export class CollectionNestedOptionContainerImpl implements ICollectionNestedOptionContainer {
     private _activatedQueries = {};
-    constructor(private _setOption: Function) {
-    }
+    constructor(private _setOption: Function) {}
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         if (items.length) {
             this._activatedQueries[propertyName] = true;
@@ -81,20 +79,36 @@ export class CollectionNestedOptionContainerImpl implements ICollectionNestedOpt
     }
 }
 
+export abstract class NestedOption extends BaseNestedOption {
+    setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
+        super.setHost(host, optionPath);
+
+        this._host[this._optionPath] = this._initialOptions;
+    }
+
+    protected _fullOptionPath() {
+        return this._hostOptionPath() + this._optionPath + '.';
+    }
+}
+
 export interface ICollectionNestedOption {
     _index: number;
     _value: Object;
 }
 
-export abstract class CollectionNestedOption extends NestedOption implements ICollectionNestedOption {
+export abstract class CollectionNestedOption extends BaseNestedOption implements ICollectionNestedOption {
     _index: number;
 
-    protected _getOptionPath() {
+    protected _fullOptionPath() {
         return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
     }
 
     get _value() {
         return this._initialOptions;
+    }
+
+    get isLinked() {
+        return this._index !== undefined && !!this.instance;
     }
 }
 
@@ -107,7 +121,7 @@ export class NestedOptionHost {
         this._optionPath = optionPath || (() => '');
     }
 
-    setNestedOption(nestedOption: NestedOption) {
+    setNestedOption(nestedOption: BaseNestedOption) {
         nestedOption.setHost(this._host, this._optionPath);
     }
 }
