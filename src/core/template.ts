@@ -46,7 +46,11 @@ export class DxTemplateDirective {
         // =========== /WORKAROUND =============
         return $(childView.rootNodes)
             .addClass(DX_TEMPLATE_WRAPPER_CLASS)
-            .on('dxremove', () => childView.destroy());
+            .on('dxremove', (e) => {
+                if (!e._angularIntegration) {
+                    childView.destroy();
+                }
+            });
     }
 }
 
