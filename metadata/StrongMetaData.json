@@ -2652,8 +2652,15 @@
               "Description": "In a boolean column, replaces all true items with a specified text."
             },
             "validationRules": {
-              "PrimitiveTypes": [
-                "any"
+              "ComplexTypes": [
+                "CompareRule",
+                "CustomRule",
+                "EmailRule",
+                "NumericRule",
+                "PatternRule",
+                "RangeRule",
+                "RequiredRule",
+                "StringLengthRule"
               ],
               "IsCollection": true,
               "SingularName": "validationRule",
@@ -15004,8 +15011,15 @@
           "Description": "Specifies the validation group the editor will be related to."
         },
         "validationRules": {
-          "PrimitiveTypes": [
-            "any"
+          "ComplexTypes": [
+            "CompareRule",
+            "CustomRule",
+            "EmailRule",
+            "NumericRule",
+            "PatternRule",
+            "RangeRule",
+            "RequiredRule",
+            "StringLengthRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -17140,7 +17154,8 @@
                       "Description": "Makes constant line labels visible."
                     },
                     "horizontalAlignment": {
-                      "EnumName": "HorizontalAlignment"
+                      "EnumName": "HorizontalAlignment",
+                      "Description": "Aligns constant line labels in the horizontal direction."
                     },
                     "text": {
                       "PrimitiveTypes": [
@@ -17149,7 +17164,8 @@
                       "Description": "Specifies the text of a constant line label. By default, equals to the value of the constant line."
                     },
                     "verticalAlignment": {
-                      "EnumName": "VerticalAlignment"
+                      "EnumName": "VerticalAlignment",
+                      "Description": "Aligns constant line labels in the vertical direction."
                     }
                   }
                 },
@@ -18793,7 +18809,8 @@
                       "Description": "Makes constant line labels visible."
                     },
                     "horizontalAlignment": {
-                      "EnumName": "HorizontalAlignment"
+                      "EnumName": "HorizontalAlignment",
+                      "Description": "Aligns constant line labels in the horizontal direction."
                     },
                     "text": {
                       "PrimitiveTypes": [
@@ -18802,7 +18819,8 @@
                       "Description": "Specifies the text of a constant line label. By default, equals to the value of the constant line."
                     },
                     "verticalAlignment": {
-                      "EnumName": "VerticalAlignment"
+                      "EnumName": "VerticalAlignment",
+                      "Description": "Aligns constant line labels in the vertical direction."
                     }
                   }
                 },
@@ -28483,55 +28501,67 @@
       }
     },
     "FormEmptyItem": {
+      "Description": "This article describes configuration options of an empty form item.",
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the number of columns spanned by the item."
         },
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the form item."
         },
         "itemType": {
-          "EnumName": "FormItemType"
+          "EnumName": "FormItemType",
+          "Description": "Specifies the type of the current item."
         },
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the form item name."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether or not the current form item is visible."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
       }
     },
     "FormGroupItem": {
+      "Description": "This article describes configuration options of a group form item.",
       "Options": {
         "alignItemLabels": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether or not all group item labels are aligned."
         },
         "caption": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the group caption."
         },
         "colCount": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "The count of columns in the group layout."
         },
         "colCountByScreen": {
+          "Description": "Specifies dependency between the screen factor and the count of columns in the group layout.",
           "Options": {
             "lg": {
               "PrimitiveTypes": [
@@ -28562,12 +28592,14 @@
         "colSpan": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the number of columns spanned by the item."
         },
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the form item."
         },
         "items": {
           "ComplexTypes": [
@@ -28577,156 +28609,198 @@
             "FormTabbedItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of form items displayed within the group."
         },
         "itemType": {
-          "EnumName": "FormItemType"
+          "EnumName": "FormItemType",
+          "Description": "Specifies the type of the current item."
         },
         "template": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "A template to be used for rendering a group item."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether or not the current form item is visible."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
       }
     },
     "FormSimpleItem": {
+      "Description": "This article describes configuration options of a simple form item.",
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the number of columns spanned by the item."
         },
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the form item."
         },
         "dataField": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the path to the formData object field bound to the current form item."
         },
         "editorOptions": {
           "PrimitiveTypes": [
             "any"
-          ]
+          ],
+          "Description": "Specifies configuration options for the editor widget of the current form item."
         },
         "editorType": {
-          "EnumName": "FormItemEditorType"
+          "EnumName": "FormItemEditorType",
+          "Description": "Specifies which editor widget is used to display and edit the form item value."
         },
         "helpText": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the help text displayed for the current form item."
         },
         "isRequired": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether the current form item is required."
         },
         "itemType": {
-          "EnumName": "FormItemType"
+          "EnumName": "FormItemType",
+          "Description": "Specifies the type of the current item."
         },
         "label": {
+          "Description": "Specifies options for the form item label.",
           "Options": {
             "alignment": {
-              "EnumName": "HorizontalAlignment"
+              "EnumName": "HorizontalAlignment",
+              "Description": "Specifies the label horizontal alignment."
             },
             "location": {
-              "EnumName": "FormLabelLocation"
+              "EnumName": "FormLabelLocation",
+              "Description": "Specifies the location of a label against the editor."
             },
             "showColon": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not a colon is displayed at the end of the current label."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the label text."
             },
             "visible": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not the label is visible."
             }
           }
         },
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the form item name."
         },
         "template": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "A template to be used for rendering the form item."
         },
         "validationRules": {
-          "PrimitiveTypes": [
-            "any"
+          "ComplexTypes": [
+            "CompareRule",
+            "CustomRule",
+            "EmailRule",
+            "NumericRule",
+            "PatternRule",
+            "RangeRule",
+            "RequiredRule",
+            "StringLengthRule"
           ],
           "IsCollection": true,
-          "SingularName": "validationRule"
+          "SingularName": "validationRule",
+          "Description": "An array of validation rules to be checked for the form item editor."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether or not the current form item is visible."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
       }
     },
     "FormTabbedItem": {
+      "Description": "This article describes configuration options of a tabbed form item.",
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the number of columns spanned by the item."
         },
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the form item."
         },
         "itemType": {
-          "EnumName": "FormItemType"
+          "EnumName": "FormItemType",
+          "Description": "Specifies the type of the current item."
         },
         "tabPanelOptions": {
           "ComplexTypes": [
             "dxTabPanelOptions"
-          ]
+          ],
+          "Description": "Holds a configuration object for the TabPanel widget used to display the current form item."
         },
         "tabs": {
           "IsCollection": true,
           "SingularName": "tab",
+          "Description": "An array of tab configuration objects.",
           "Options": {
             "alignItemLabels": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not labels of items displayed within the current tab are aligned."
             },
             "badge": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies a badge text for the tab."
             },
             "colCount": {
               "PrimitiveTypes": [
                 "int32"
-              ]
+              ],
+              "Description": "The count of columns in the tab layout."
             },
             "colCountByScreen": {
+              "Description": "Specifies dependency between the screen factor and the count of columns in the tab layout.",
               "Options": {
                 "lg": {
                   "PrimitiveTypes": [
@@ -28757,12 +28831,14 @@
             "disabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "A Boolean value specifying whether or not the tab can respond to user interaction."
             },
             "icon": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the icon to be displayed on the tab."
             },
             "items": {
               "ComplexTypes": [
@@ -28772,30 +28848,36 @@
                 "FormTabbedItem"
               ],
               "IsCollection": true,
-              "SingularName": "item"
+              "SingularName": "item",
+              "Description": "Holds an array of form items displayed within the tab."
             },
             "tabTemplate": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering the tab."
             },
             "template": {
-              "IsTemplate": true
+              "IsTemplate": true,
+              "Description": "The template to be used for rendering the tab content."
             },
             "title": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the tab title."
             }
           }
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether or not the current form item is visible."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
       }
     },
