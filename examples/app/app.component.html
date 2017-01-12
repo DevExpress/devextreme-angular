@@ -26,8 +26,8 @@
             <dx-text-box formControlName="passwordControl" [(ngModel)]="angularFormData.password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
 
         </div>
-        <label>Toggle form constrols state: </label>
-        <dx-switch (onValueChanged)="toggleFormConsrolsState($event)"></dx-switch><br/>
+        <label>Toggle form controls state: </label>
+        <dx-switch (onValueChanged)="toggleFormControlsState($event)"></dx-switch><br/>
         <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>
         <span>email: '{{angularFormData.email}}', password: '{{angularFormData.password}}'</span>
     </form>

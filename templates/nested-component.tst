@@ -54,7 +54,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
         this.template = this._template.bind(this);
 <#?#>
         parentOptionHost.setNestedOption(this);
-        optionHost.setHost(this, this._getOptionPath.bind(this));
+        optionHost.setHost(this, this._fullOptionPath.bind(this));
     }
 }
 

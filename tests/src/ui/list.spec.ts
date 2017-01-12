@@ -206,6 +206,33 @@ describe('DxList', () => {
         expect(instance.element().find('.dx-item-content').eq(1).text()).toBe('2');
     }));
 
+    it('should be able to replace items by ng-for', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dxi-item *ngFor="let item of items" [badge]="10">{{item}}</dxi-item>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent),
+            testComponent = fixture.componentInstance;
+
+        testComponent.items = [1, 2];
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        testComponent.items = [3, 4];
+        fixture.detectChanges();
+
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().find('.dx-item-content').length).toBe(2);
+        expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('3');
+        expect(instance.element().find('.dx-item-content').eq(1).text()).toBe('4');
+    }));
+
     it('should be able to clear items rendered with *ngFor', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {

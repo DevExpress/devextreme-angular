@@ -406,6 +406,11 @@ export class AppComponent {
 }
 ```
 
+Angular has a built-in `template` directive. To define the `template` property of the configuration component (for example, `dxo-master-detail`), use the following code:
+```html
+<dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
+```
+
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
