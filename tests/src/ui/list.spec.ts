@@ -325,6 +325,23 @@ describe('DxList', () => {
         expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('testTemplate');
     }));
 
+    it('should be able to define item without template', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dxi-item text="TestText"></dxi-item>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+        expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('TestText');
+    }));
+
 
     it('should destroy all components inside template', () => {
         let destroyed = false;

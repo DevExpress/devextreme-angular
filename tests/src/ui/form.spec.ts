@@ -50,8 +50,7 @@ describe('DxForm', () => {
             set: {
                 template: `
                     <dx-form id="form" [formData]="formData">
-                        <dxi-item dataField="name" editorType="dxTextBox" [template]="null">
-                        </dxi-item>
+                        <dxi-item dataField="name" editorType="dxTextBox"></dxi-item>
                     </dx-form>
                 `
             }
@@ -68,12 +67,10 @@ describe('DxForm', () => {
             set: {
                 template: `
                     <dx-form id="form" [formData]="formData">
-                        <dxi-item caption="Root Group" itemType="group" [template]="null">
-                            <dxi-item dataField="name" editorType="dxTextBox" [template]="null">
-                            </dxi-item>
-                            <dxi-item caption="Inner Group" itemType="group" [template]="null">
-                                <dxi-item dataField="name" editorType="dxTextBox" [template]="null">
-                                </dxi-item>
+                        <dxi-item caption="Root Group" itemType="group">
+                            <dxi-item dataField="name" editorType="dxTextBox"></dxi-item>
+                            <dxi-item caption="Inner Group" itemType="group">
+                                <dxi-item dataField="name" editorType="dxTextBox"></dxi-item>
                             </dxi-item>
                         </dxi-item>
                     </dx-form>

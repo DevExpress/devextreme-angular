@@ -15,7 +15,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     protected abstract get _optionPath(): string;
     protected abstract _fullOptionPath(): string;
 
-    constructor(private _element: ElementRef) {
+    constructor() {
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this), this._filterItems.bind(this));
     }
 
@@ -38,11 +38,6 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
-    }
-
-    _template(...args) {
-        let container = args[2] || args[1] || args[0];
-        return container.append(this._element.nativeElement);
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
@@ -119,6 +114,34 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
     get isLinked() {
         return this._index !== undefined && !!this.instance;
     }
+}
+
+export interface OptionWithTemplate extends BaseNestedOption {
+    template: any;
+}
+export function extractTemplate(option: OptionWithTemplate, element: ElementRef) {
+    if (!option.template === undefined || !element.nativeElement.hasChildNodes()) {
+        return;
+    }
+
+    let childNodes = [].slice.call(element.nativeElement.childNodes);
+    let userContent = childNodes.filter((n) => {
+        if (n.tagName) {
+            let tagNamePrefix = n.tagName.toLowerCase().substr(0, 3);
+            return !(tagNamePrefix === 'dxi' || tagNamePrefix === 'dxo');
+        } else {
+            return n.textContent.replace(/\s/g, '').length;
+        }
+    });
+    if (!userContent.length) {
+        return;
+    }
+
+    option.template = {
+        render: (options) => {
+            return options.container.append(element.nativeElement);
+        }
+    };
 }
 
 export class NestedOptionHost {
