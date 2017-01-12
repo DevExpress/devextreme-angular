@@ -99,12 +99,10 @@ import{
 export class AppComponent implements OnInit {
     @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
     text = 'Initial text';
-    angularFormData = { email: '', password: '' };
+    formData = { email: '', password: '' };
     emailControl: AbstractControl;
     passwordControl: AbstractControl;
     form: FormGroup;
-    dxFormControlsData = { email: '', password: '' };
-    dxFormData = { email: '', password: '' };
     boolValue: boolean;
     numberValue: number;
     dateValue: Date;

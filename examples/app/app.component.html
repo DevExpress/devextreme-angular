@@ -20,16 +20,15 @@
         <div class="form-group">
 
             <label for="email">Email</label>
-            <dx-text-box formControlName="emailControl" [(ngModel)]="angularFormData.email" [isValid]="emailControl.valid || emailControl.pristine" [validationError]="{ message: 'Enter correct email' }"></dx-text-box>
+            <dx-text-box formControlName="emailControl" [(ngModel)]="formData.email" [isValid]="emailControl.valid || emailControl.pristine" [validationError]="{ message: 'Enter correct email' }"></dx-text-box>
 
             <label for="password">Password</label>
-            <dx-text-box formControlName="passwordControl" [(ngModel)]="angularFormData.password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
+            <dx-text-box formControlName="passwordControl" [(ngModel)]="formData.password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
 
         </div>
         <label>Toggle form controls state: </label>
         <dx-switch (onValueChanged)="toggleFormControlsState($event)"></dx-switch><br/>
         <dx-button text="Submit" (onClick)="onSubmit()"></dx-button>
-        <span>email: '{{angularFormData.email}}', password: '{{angularFormData.password}}'</span>
     </form>
 
     <h2>DevExtreme validation features</h2>
@@ -37,7 +36,7 @@
         <div class="form-group">
 
             <label>Email</label>
-            <dx-text-box [(value)]="dxFormControlsData.email">
+            <dx-text-box [(value)]="formData.email">
                 <dx-validator>
                     <dxi-validation-rule type="required" message="Email is required."></dxi-validation-rule>
                     <dxi-validation-rule type="email" message="Email is invalid."></dxi-validation-rule>
@@ -45,7 +44,7 @@
             </dx-text-box>
 
             <label>Password</label>
-            <dx-text-box [(value)]="dxFormControlsData.password" mode="password">
+            <dx-text-box [(value)]="formData.password" mode="password">
                 <dx-validator>
                     <dxi-validation-rule type="required" message="Password is required."></dxi-validation-rule>
                 </dx-validator>
@@ -55,31 +54,27 @@
 
         </div>
         <dx-button (onClick)="validate($event)" text="Submit"></dx-button>
-        <span>email: '{{dxFormControlsData.email}}', password: '{{dxFormControlsData.password}}'</span>
     </dx-validation-group>
 
     <h2>dxForm</h2>
     <dx-form
         #dxForm
-        [formData]="dxFormData"
+        [formData]="formData"
         labelLocation="top">
         <dxi-item 
             dataField="email"
-            editorType="dxTextBox"
-            [template]="null">
+            editorType="dxTextBox">
             <dxi-validation-rule type="required" message="Email is required."></dxi-validation-rule>
             <dxi-validation-rule type="email" message="Email is invalid."></dxi-validation-rule>
         </dxi-item>
         <dxi-item 
             dataField="password"
             editorType="dxTextBox"
-            [editorOptions]="{ mode: 'password' }"
-            [template]="null">
+            [editorOptions]="{ mode: 'password' }">
             <dxi-validation-rule type="required" message="Password is required."></dxi-validation-rule>
         </dxi-item>
     </dx-form>
     <dx-button (onClick)="dxForm.instance.validate()" text="Submit"></dx-button>
-    <span>email: '{{dxFormData.email}}', password: '{{dxFormData.password}}'</span>
 
     <h2>Editor Widgets</h2>
 
