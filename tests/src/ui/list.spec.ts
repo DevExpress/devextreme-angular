@@ -15,6 +15,7 @@ import {
 import DxList from 'devextreme/ui/list';
 
 import {
+    DxButtonModule,
     DxListModule,
     DxListComponent
 } from '../../../dist';
@@ -343,7 +344,7 @@ describe('DxList', () => {
     }));
 
 
-    it('should destroy all components inside template', () => {
+    it('should destroy angular components inside template', () => {
         let destroyed = false;
         @Component({
             selector: 'destroyable-component',
@@ -379,5 +380,77 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         expect(destroyed).toBe(true);
+    });
+
+    it('should destroy devextreme components inside template', () => {
+        @Component({
+            selector: 'test-container-component',
+            template: ''
+        })
+        class TestContainerComponent {
+            items = [0];
+            buttonDestroyed = false;
+            listVisible = true;
+        }
+
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [DxButtonModule, DxListModule]
+        });
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list *ngIf="listVisible" [items]="items">
+                        <div *dxTemplate="let item of 'item'">
+                            <dx-button text="Test" (onDisposing)="buttonDestroyed = true"></dx-button>
+                        </div>
+                    </dx-list>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.componentInstance.listVisible = false;
+        fixture.detectChanges();
+
+        expect(fixture.componentInstance.buttonDestroyed).toBe(true);
+    });
+
+    it('should destroy devextreme components in template root correctly', () => {
+        @Component({
+            selector: 'test-container-component',
+            template: ''
+        })
+        class TestContainerComponent {
+            items = [0];
+            buttonDestroyed = false;
+            listVisible = true;
+        }
+
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [DxButtonModule, DxListModule]
+        });
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list *ngIf="listVisible" [items]="items">
+                        <dx-button text="Test" (onDisposing)="buttonDestroyed = true" *dxTemplate="let item of 'item'"></dx-button>
+                    </dx-list>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.componentInstance.listVisible = false;
+        fixture.detectChanges();
+
+        expect(fixture.componentInstance.buttonDestroyed).toBe(true);
     });
 });
