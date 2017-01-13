@@ -99,19 +99,9 @@ import{
 export class AppComponent implements OnInit {
     @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
     text = 'Initial text';
-    email: string;
+    formData = { email: '', password: '' };
     emailControl: AbstractControl;
-    password: string;
     passwordControl: AbstractControl;
-    dxValidationRules = {
-        email: [
-            { type: 'required', message: 'Email is required.' },
-            { type: 'email', message: 'Email is invalid.' }
-        ],
-        password: [
-            { type: 'required', message: 'Email is required.' }
-        ]
-    };
     form: FormGroup;
     boolValue: boolean;
     numberValue: number;

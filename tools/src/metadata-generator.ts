@@ -12,7 +12,10 @@ function trimDx(value: string) {
 }
 
 function trimPrefix(prefix: string, value: string) {
-    return value.substr(prefix.length);
+    if (value.indexOf(prefix) === 0) {
+        return value.substr(prefix.length);
+    }
+    return value;
 }
 
 export interface IObjectStore {
@@ -143,37 +146,54 @@ export default class DXComponentMetadataGenerator {
         this.generateNestedOptions(config, allNestedComponents);
     }
 
+    private getExternalObjectInfo(metadata, typeName) {
+        let externalObject = metadata.ExtraObjects[typeName];
+
+        if (!externalObject) {
+            const postfix = 'Options';
+            if (typeName.endsWith(postfix)) {
+                let widgetName = typeName.substr(0, typeName.length - postfix.length);
+                externalObject = metadata.Widgets[widgetName];
+                typeName = trimPrefix('dx', typeName);
+            }
+        }
+
+        if (!externalObject) {
+            console.warn('WARN: missed complex type: ' + typeName);
+        } else {
+            return {
+                Options: externalObject.Options,
+                typeName: typeName
+            };
+        }
+    }
+
     private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
         if (option.Options) {
             return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
-        } else if (option.ComplexTypes && option.ComplexTypes.length === 1) {
+        } else if (option.ComplexTypes && option.ComplexTypes.length > 0) {
             if (complexTypes.indexOf(complexTypes[complexTypes.length - 1]) !== complexTypes.length - 1) {
                 return;
             }
+            let result = [];
+            option.ComplexTypes.forEach(complexType => {
+                let externalObjectInfo = this.getExternalObjectInfo(metadata, complexType);
+                if (externalObjectInfo) {
+                    let nestedOptions = externalObjectInfo.Options,
+                        nestedComplexTypes = complexTypes.concat(externalObjectInfo.typeName);
 
-            let complexType = option.ComplexTypes[0];
-            let externalObject = metadata.ExtraObjects[complexType];
-
-            if (!externalObject) {
-                const postfix = 'Options';
-                if (complexType.endsWith(postfix)) {
-                    let widgetName = complexType.substr(0, complexType.length - postfix.length);
-                    externalObject = metadata.Widgets[widgetName];
-                    complexType = trimPrefix('dx', complexType);
+                    result.push.apply(result, this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option));
+                }
+            });
+            if (option.ComplexTypes.length === 1) {
+                let externalObjectInfo = this.getExternalObjectInfo(metadata, option.ComplexTypes[0]);
+                if (externalObjectInfo) {
+                    result[0].baseClass =
+                        (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + externalObjectInfo.typeName;
+                    result[0].basePath = inflector.dasherize(inflector.underscore(externalObjectInfo.typeName));
                 }
             }
-
-            if (externalObject) {
-                let nestedOptions = externalObject.Options;
-                let nestedComplexTypes = complexTypes.concat(complexType);
-
-                let components = this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option);
-                components[0].baseClass = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + complexType;
-                components[0].basePath = inflector.dasherize(inflector.underscore(complexType));
-                return components;
-            } else {
-                logger('WARN: missed complex type: ' + complexType);
-            }
+            return result;
         }
     }
 

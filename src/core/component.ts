@@ -71,7 +71,7 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     protected _destroyWidget() {
         if (this.instance) {
-            this.instance._dispose();
+            this.instance.element().triggerHandler({ type: 'dxremove', _angularIntegration: true });
         }
     }
     constructor(protected element: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {

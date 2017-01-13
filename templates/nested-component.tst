@@ -3,18 +3,20 @@
 import {
     Component,
     NgModule,
-    Host,
+    Host,<#? it.hasTemplate #>
     ElementRef,
+    AfterViewInit,<#?#>
     SkipSelf<#? it.properties #>,
     Input<#?#><#? it.collectionNestedComponents.length #>,
     ContentChildren,
+    forwardRef,
     QueryList<#?#>
 } from '@angular/core';
 
-import { NestedOptionHost } from '../../core/nested-option';
+import { NestedOptionHost<#? it.hasTemplate #>, extractTemplate<#?#> } from '../../core/nested-option';
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
-<#~ it.collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './<#= component.path #>';
-<#~#>
+<#~ it.collectionNestedComponents :component:i #><#? component.className !== it.className #>import { <#= component.className #>Component } from './<#= component.path #>';
+<#?#><#~#>
 
 @Component({
     selector: '<#= it.selector #>',
@@ -24,7 +26,7 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
     ]<#?#>
 })
-export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.properties :prop:i #>
+export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit<#?#> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
@@ -38,7 +40,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
     }
 
 <#~ it.collectionNestedComponents :component:i #>
-    @ContentChildren(<#= component.className #>Component)
+    @ContentChildren(forwardRef(() => <#= component.className #>Component))
     get <#= component.propertyName #>Children(): QueryList<<#= component.className #>Component> {
         return this._getOption('<#= component.propertyName #>');
     }
@@ -47,14 +49,16 @@ export class <#= it.className #>Component extends <#= it.baseClass #> {<#~ it.pr
     }
 <#~#>
 
-    constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost, @Host() optionHost: NestedOptionHost, element: ElementRef) {
-        super(element);
-<#? it.hasTemplate #>
-        this.template = this._template.bind(this);
-<#?#>
+    constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost, @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>, private element: ElementRef<#?#>) {
+        super();
         parentOptionHost.setNestedOption(this);
-        optionHost.setHost(this, this._getOptionPath.bind(this));
+        optionHost.setHost(this, this._fullOptionPath.bind(this));
     }
+<#? it.hasTemplate #>
+    ngAfterViewInit() {
+        extractTemplate(this, this.element);
+    }
+<#?#>
 }
 
 @NgModule({
