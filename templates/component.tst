@@ -11,7 +11,6 @@ import {
     Component,
     NgModule,
     ElementRef,
-    EventEmitter,
     NgZone,
     Input,
     Output,
@@ -76,7 +75,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
     <#?#><#~#>
 
-    <#~ it.events :event:i #>@Output() <#= event.emit #> = new EventEmitter<any>();<#? i < it.events.length-1 #>
+    <#~ it.events :event:i #>@Output() <#= event.emit #>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
 <#~ collectionNestedComponents :component:i #>
@@ -95,10 +94,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
 
-        this._events = [
+        this._createEventEmitters([
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
             <#?#><#~#>
-        ];<#? collectionProperties.length #>
+        ]);<#? collectionProperties.length #>
 
         this._idh.setHost(this);<#?#>
         optionHost.setHost(this);

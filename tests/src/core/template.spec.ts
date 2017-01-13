@@ -54,10 +54,10 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
 
-        this._events = [
+        this._createEventEmitters([
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
             { subscribe: 'initialized', emit: 'onInitialized' }
-        ];
+        ]);
     }
 
     protected _createInstance(element, options) {

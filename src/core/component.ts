@@ -6,6 +6,7 @@ import {
 
 import { DxTemplateDirective } from './template';
 import { DxTemplateHost } from './template-host';
+import { EmitterHelper } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
 import {
     INestedOptionContainer,
@@ -14,11 +15,10 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-const startupEvents = ['onInitialized', 'onContentReady', 'onToolbarPreparing'];
-
 export abstract class DxComponent implements INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
+    eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
 
@@ -34,34 +34,18 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
         }
     }
     private _initOptions() {
-        startupEvents.forEach(eventName => {
-            this._initialOptions[eventName] = (e) => {
-                let emitter = this[eventName];
-                return emitter && emitter.emit(e);
-            };
-        });
-
+        this._initialOptions.eventsStrategy = this.eventHelper.strategy;
         this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
+    protected _createEventEmitters(events) {
+        events.forEach(event => {
+            this.eventHelper.createEmitter(event.emit, event.subscribe);
+        });
+    }
     private _initEvents() {
-        this._events.forEach(event => {
-            if (event.subscribe) {
-                this.instance.on(event.subscribe, e => {
-                    if (event.subscribe === 'optionChanged') {
-                        let changeEventName = e.name + 'Change';
-                        if (this[changeEventName]) {
-                            this[changeEventName].emit(e.value);
-                        }
-                        this[event.emit].emit(e);
-                    } else {
-                        if (this[event.emit]) {
-                            this.ngZone.run(() => {
-                                this[event.emit].emit(e);
-                            });
-                        }
-                    }
-                });
-            }
+        this.instance.on('optionChanged', e => {
+            let changeEventName = e.name + 'Change';
+            this.eventHelper.fireNgEvent(changeEventName, [e.value]);
         });
     }
     protected _getOption(name: string) {
@@ -80,7 +64,6 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        this._initialOptions.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
         this.instance = this._createInstance(element, this._initialOptions);
@@ -91,11 +74,12 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
             this.instance.element().triggerHandler({ type: 'dxremove', _angularIntegration: true });
         }
     }
-    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
-        this._initialOptions = {};
+    constructor(protected element: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
+        this._initialOptions = { integrationOptions: {} };
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
+        this.eventHelper = new EmitterHelper(ngZone, this);
     }
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
@@ -110,6 +94,5 @@ export abstract class DxComponentExtension extends DxComponent {
         this._createWidget(element);
     }
 }
-
 
 
