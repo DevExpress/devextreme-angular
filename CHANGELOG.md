@@ -1,9 +1,13 @@
-## Unreleased
+## 16.2.3-rc.4 (2017-01-13)
 
 ### Features
 
 - Dependencies updated
 - Update DevExtreme peer dependency to `16.2.4`
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/8?closed=1)
 
 ## 16.2.3-rc.3 (2016-12-14)
 
