@@ -2,7 +2,8 @@
 
 ### Features
 
-- update DevExtreme peer dependency to `16.2.4`.
+- Dependencies updated
+- Update DevExtreme peer dependency to `16.2.4`
 
 ## 16.2.3-rc.3 (2016-12-14)
 
