@@ -27,7 +27,7 @@ export class NgEventsStrategy {
 
     on(name, handler) {
         let eventSubscribers = this.subscribers[name] || [],
-            subsriber = this.getEmitter(name).subscribe(handler),
+            subsriber = this.getEmitter(name).subscribe(handler.bind(this.component.instance)),
             unsubscribe = subsriber.unsubscribe.bind(subsriber);
 
         eventSubscribers.push({ handler, unsubscribe });

@@ -313,5 +313,22 @@ describe('DevExtreme Angular 2 widget', () => {
         expect(spy).toHaveBeenCalledTimes(0);
     }));
 
+    it('should have correct context in events', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget></dx-test-widget>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        instance.on('optionChanged', function() {
+            expect(this).toBe(instance);
+        });
+        instance.option('testOption', 'new value');
+    }));
 
   });
