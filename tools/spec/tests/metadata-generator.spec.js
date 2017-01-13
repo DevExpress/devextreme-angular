@@ -252,19 +252,20 @@ describe("metadata-generator", function() {
                     .filter(args => args[0] === path).length;
             };
 
-            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "complex-widget.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "another-complex-widget.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "nested.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "nested-item-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item-dxi.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "collection-item-with-template-dxi.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "nested-external-property.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "base", "another-complex-widget-options.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "widget-reference.json"))).toBe(1);
-            expect(writeToPathCount(path.join("output-path", "nested", "base", "external-property-type-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
             expect(writeToPathCount(path.join("output-path", "nested", "external-property-item-dxi.json"))).toBe(1);
         });
 
@@ -380,6 +381,104 @@ describe("metadata-generator", function() {
             expect(collectionItemWithTemplate.hasTemplate).toBe(true);
         });
 
+    });
+
+    describe("collection of complex types", function() {
+
+        beforeEach(function() {
+            setupContext({
+                Widgets: {
+                    dxComplexWidget: {
+                        Options: {
+                            externalProperty: { // DxoExternalProperty
+                                ComplexTypes: [
+                                    'ExternalPropertyType',
+                                    'ExternalPropertyType2'
+                                ]
+                            },
+                            externalPropertyItems: { // DxiExternalPropertyItem
+                                IsCollection: true,
+                                SingularName: 'externalPropertyItem',
+                                ComplexTypes: [
+                                    'ExternalPropertyType',
+                                    'ExternalPropertyType2'
+                                ]
+                            }
+                        },
+                        Module: 'test_widget'
+                    }
+                },
+                ExtraObjects: {
+                    ExternalPropertyType: {
+                        Options: {
+                            property: {
+                                Options: {
+                                    nestedProperty1: {}
+                                }
+                            },
+                            property1: {
+                            }
+                        }
+                    },
+                    ExternalPropertyType2: {
+                        Options: {
+                            property: {
+                                Options: {
+                                    nestedProperty2: {}
+                                }
+                            },
+                            property2: {
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        it("should write generated data to a separate file for each widget", function() {
+            expect(store.write.calls.count()).toBe(4);
+
+            let writeToPathCount = (path) => {
+                return store.write.calls
+                    .allArgs()
+                    .filter(args => args[0] === path).length;
+            };
+
+            expect(writeToPathCount(path.join("output-path", "complex-widget.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "external-property-item-dxi.json"))).toBe(1);
+            expect(writeToPathCount(path.join("output-path", "nested", "property.json"))).toBe(1);
+        });
+
+        it("should generate matadata", function() {
+            expect(Object.keys(metas).length).toBe(4);
+
+            expect(metas.DxComplexWidget).not.toBe(undefined);
+            expect(metas.DxoExternalProperty).not.toBe(undefined);
+            expect(metas.DxiExternalPropertyItem).not.toBe(undefined);
+            expect(metas.DxoProperty).not.toBe(undefined);
+        });
+
+        it("should generate nested components with merged properties", function() {
+            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoExternalProperty');
+
+            expect(metas.DxoExternalProperty.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2']);
+            expect(metas.DxoExternalProperty.optionName).toBe('externalProperty');
+        });
+
+        it("should generate collection nested components with merged properties", function() {
+            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxiExternalPropertyItem');
+
+            expect(metas.DxiExternalPropertyItem.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2']);
+            expect(metas.DxiExternalPropertyItem.optionName).toBe('externalPropertyItems');
+        });
+
+        it("should generate nested components with merged properties of external types", function() {
+            expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
+
+            expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nestedProperty1', 'nestedProperty2']);
+            expect(metas.DxoProperty.optionName).toBe('property');
+        });
     });
 
 });
