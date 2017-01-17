@@ -331,4 +331,22 @@ describe('DevExtreme Angular 2 widget', () => {
         instance.option('testOption', 'new value');
     }));
 
+    it('should fire unknown subscribed events', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget></dx-test-widget>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        instance.on('unknownEvent', function() {
+            expect(this).toBe(instance);
+        });
+        instance.fireEvent('unknownEvent');
+    }));
+
   });

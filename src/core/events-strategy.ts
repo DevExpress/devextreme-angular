@@ -2,7 +2,6 @@ import { EventEmitter, NgZone } from '@angular/core';
 import { DxComponent } from './component';
 
 const dxToNgEventNames = {};
-const nullEmitter = new EventEmitter<any>();
 
 interface EventSubscriber {
     handler: any;
@@ -15,8 +14,7 @@ export class NgEventsStrategy {
     constructor(private ngZone: NgZone, private component: DxComponent) { }
 
     hasEvent(name: string) {
-        let emitter = this.getEmitter(name);
-        return emitter !== nullEmitter && emitter.observers.length;
+        return this.getEmitter(name).observers.length;
     }
 
     fireEvent(name, args) {
@@ -44,7 +42,11 @@ export class NgEventsStrategy {
     dispose() {}
 
     private getEmitter(eventName: string): EventEmitter<any> {
-        return this.component[dxToNgEventNames[eventName]] || nullEmitter;
+        let ngEventName = dxToNgEventNames[eventName];
+        if (!this.component[ngEventName]) {
+            this.component[ngEventName] = new EventEmitter();
+        }
+        return this.component[ngEventName];
     }
 }
 
