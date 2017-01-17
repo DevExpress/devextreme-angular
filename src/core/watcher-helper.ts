@@ -46,6 +46,10 @@ export class WatcherHelper {
     }
 
     private _checkObjectsFields(checkingFromObject: Object, checkingToObject: Object) {
+        if (!(checkingFromObject && checkingToObject)) {
+            return true;
+        }
+
         for (let field in checkingFromObject) {
             if (checkingFromObject[field] > checkingToObject[field] || checkingFromObject[field] < checkingToObject[field]) {
                 return true;
