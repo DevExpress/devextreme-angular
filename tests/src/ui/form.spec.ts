@@ -15,6 +15,7 @@ import DxForm from 'devextreme/ui/form';
 
 import {
     DxFormModule,
+    DxTagBoxModule,
     DxFormComponent
 } from '../../../dist';
 
@@ -35,7 +36,7 @@ describe('DxForm', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxFormModule]
+                imports: [DxFormModule, DxTagBoxModule]
             });
     });
 
@@ -84,4 +85,33 @@ describe('DxForm', () => {
         expect(instance.element().find('.dx-textbox').length).toBe(2);
     }));
 
+    it('should work with dxTagBox', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form 
+                        [formData]="{}"
+                        [items]="[{
+                            dataField: 'name', 
+                            editorType: 'dxTagBox', 
+                            editorOptions: { 
+                                dataSource: [{ value: 1, text: 'item 1' }, { value: 2, text: 'item 2' }, { value: 3, text: 'item 3' }],
+                                displayExpr: 'text',
+                                valueExpr: 'value'
+                            } 
+                        }]"></dx-form>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let tagBoxInstance = formInstance.getEditor('name');
+
+        tagBoxInstance.option('value', [2]);
+        fixture.detectChanges();
+
+        expect(formInstance.option('formData.name')).toEqual([2]);
+    }));
 });
