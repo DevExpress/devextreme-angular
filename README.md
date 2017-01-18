@@ -2,8 +2,6 @@
 
 # Angular 2 UI and Visualization Components Based on DevExtreme Widgets #
 
-Project status: **Release candidate**
-
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
 
 * [Getting started](#getting-started)
@@ -53,7 +51,7 @@ required to build the project and run tests.
 Install the **devextreme** and **devextreme-angular** npm packages:
 
 ```bash
-npm install --save devextreme@16.2 devextreme-angular@16.2-rc
+npm install --save devextreme devextreme-angular
 ```
 
 #### <a name="import-modules"></a>Import DevExtreme Modules ####

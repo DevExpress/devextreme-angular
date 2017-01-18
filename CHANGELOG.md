@@ -1,3 +1,7 @@
+## 16.2.4 (2017-01-18)
+
+### RTM version has been released!
+
 ## 16.2.4-rc.5 (2017-01-18)
 
 ### Breaking changes
