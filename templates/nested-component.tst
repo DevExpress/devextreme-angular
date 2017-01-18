@@ -21,6 +21,7 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.hasTemplate #><ng-content></ng-content><#?#>',
+    styles: ['<#? it.hasTemplate #>:host { display: block; }<#?#>'],
     providers: [NestedOptionHost]<#? it.inputs #>,
     inputs: [<#~ it.inputs :input:i #>
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>

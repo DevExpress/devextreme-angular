@@ -111,6 +111,24 @@ describe('DxList', () => {
         expect(instance.element().find('.dx-item-content').eq(1).text()).toBe('Item 2');
     }));
 
+    it('should have correct item template', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dxi-item>item</dxi-item>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+        expect(instance.element().find('.dx-item-content').html()).toBe('item');
+        expect(instance.element().find('.dx-item-content').css('display')).toBe('block');
+    }));
+
     it('should react to item option change', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {

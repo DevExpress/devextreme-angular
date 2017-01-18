@@ -1,3 +1,23 @@
+## Unreleased
+
+### Breaking changes
+
+- Item template defined in `dxi-item` and `dxTemplate` now works consistently.
+
+Previously, the result of the `dxi-item` in the DxList was rendered as follows:
+```html
+<div class="dx-item-content">
+    <dxi-item>...</dxi-item>
+</div>
+```
+
+Currently, this will be rendered as follows:
+```html
+<dxi-item class="dx-item-content">
+    ...
+</dxi-item>
+```
+
 ## 16.2.3-rc.4 (2017-01-13)
 
 ### Features
