@@ -39,17 +39,13 @@ export class WatcherHelper {
     }
 
     private _isDifferentValues(oldValue: any, newValue: any, deepCheck: boolean) {
-        if (deepCheck && newValue instanceof (Object)) {
+        if (deepCheck && newValue instanceof (Object) && oldValue instanceof (Object)) {
             return this._checkObjectsFields(newValue, oldValue);
         }
         return oldValue !== newValue;
     }
 
     private _checkObjectsFields(checkingFromObject: Object, checkingToObject: Object) {
-        if (!(checkingFromObject && checkingToObject)) {
-            return true;
-        }
-
         for (let field in checkingFromObject) {
             if (checkingFromObject[field] > checkingToObject[field] || checkingFromObject[field] < checkingToObject[field]) {
                 return true;
