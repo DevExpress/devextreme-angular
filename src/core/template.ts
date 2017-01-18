@@ -13,7 +13,7 @@ import { DxTemplateHost } from './template-host';
 declare function require(params: any): any;
 let $ = require('jquery');
 
-const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
+export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
 
 export class RenderData {
     model: any;

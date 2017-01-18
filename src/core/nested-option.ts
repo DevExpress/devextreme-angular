@@ -1,5 +1,10 @@
 import { QueryList, ElementRef } from '@angular/core';
 
+declare function require(params: any): any;
+let $ = require('jquery');
+
+import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
+
 export interface INestedOptionContainer {
     instance: any;
 }
@@ -138,8 +143,12 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
     }
 
     option.template = {
-        render: (options) => {
-            return options.container.append(element.nativeElement);
+        render: (renderData) => {
+            if (renderData.container) {
+                renderData.container.append(element.nativeElement);
+            }
+            return $(element.nativeElement)
+                .addClass(DX_TEMPLATE_WRAPPER_CLASS);
         }
     };
 }
