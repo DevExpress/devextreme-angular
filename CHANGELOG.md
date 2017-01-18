@@ -1,4 +1,4 @@
-## Unreleased
+## 16.2.4-rc.5 (2017-01-18)
 
 ### Breaking changes
 
@@ -17,6 +17,10 @@ Currently, this will be rendered as follows:
     ...
 </dxi-item>
 ```
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/9?closed=1)
 
 ## 16.2.3-rc.4 (2017-01-13)
 
