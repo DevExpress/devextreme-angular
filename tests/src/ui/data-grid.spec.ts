@@ -81,7 +81,7 @@ describe('DxDataGrid', () => {
         expect(testSpy).toHaveBeenCalledTimes(1);
     });
 
-    it('should fire onToolbarPreparing event', () => {
+    it('should accept recursive columns defined by nested components', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
