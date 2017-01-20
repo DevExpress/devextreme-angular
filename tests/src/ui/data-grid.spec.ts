@@ -68,7 +68,7 @@ describe('DxDataGrid', () => {
         }, 0);
     });
 
-     it('should fire onToolbarPreparing event', () => {
+    it('should fire onToolbarPreparing event', () => {
         let testSpy = spyOn(TestContainerComponent.prototype, 'testMethod');
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
@@ -79,5 +79,23 @@ describe('DxDataGrid', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(1);
+    });
+
+    it('should accept recursive columns defined by nested components', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                <dx-data-grid>
+                    <dxi-column caption="Test">
+                        <dxi-column dataField="Field"></dxi-column>
+                    </dxi-column>
+                </dx-data-grid>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        expect(fixture.componentInstance.innerWidgets.first.columns[0].columns).toContain({ dataField: 'Field' });
     });
 });

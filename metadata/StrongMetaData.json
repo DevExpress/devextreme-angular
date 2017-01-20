@@ -1126,7 +1126,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the button must submit an HTML form."
+          "Description": "Specifies whether or not the button must submit an HTML form."
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -1870,78 +1870,12 @@
           "Description": "Specifies the selection mode supported by the menu."
         },
         "items": {
+          "ComplexTypes": [
+            "ContextMenuItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Holds an array of menu items.",
-          "Options": {
-            "disabled": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the menu item is disabled."
-            },
-            "template": {
-              "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the text inserted into the item element."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the menu item is visible."
-            },
-            "beginGroup": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether a group separator is displayed over the item."
-            },
-            "closeMenuOnClick": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies if a menu is closed when a user clicks the item."
-            },
-            "icon": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "The name of an icon to be displayed on the menu item."
-            },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the icon field instead."
-            },
-            "items": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "item",
-              "Description": "Holds an array of menu items."
-            },
-            "selectable": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a user can select a menu item."
-            },
-            "selected": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the item is selected."
-            }
-          }
+          "Description": "Holds an array of menu items."
         },
         "disabledExpr": {
           "PrimitiveTypes": [
@@ -1988,7 +1922,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the CSS class associated with the menu."
+          "Description": "Specifies the name of the CSS class to be applied to the root menu level and all submenus."
         },
         "selectByClick": {
           "PrimitiveTypes": [
@@ -2085,7 +2019,7 @@
           "PrimitiveTypes": [
             "jquery"
           ],
-          "Description": "The target element associated with a popover."
+          "Description": "The target element associated with the context menu."
         },
         "position": {
           "ComplexTypes": [
@@ -2309,383 +2243,12 @@
           "Description": "Specifies whether or not the widget should hide columns in order to adapt to the screen or container size."
         },
         "columns": {
+          "ComplexTypes": [
+            "DataGridColumn"
+          ],
           "IsCollection": true,
           "SingularName": "column",
-          "Description": "An array of grid columns.",
-          "Options": {
-            "alignment": {
-              "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the content alignment within column cells."
-            },
-            "allowEditing": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether the values in a column can be edited at runtime. Setting this option makes sense only when editing is enabled for a grid."
-            },
-            "allowFiltering": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a column can be used for filtering grid records. Setting this option makes sense only when the filter row and column header filtering are visible."
-            },
-            "allowFixing": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the column can be anchored to a grid edge by end users. Setting this option makes sense only when the columnFixing | enabled option is set to true."
-            },
-            "allowGrouping": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether the user can group data by values of this column. Applies only when grouping is enabled."
-            },
-            "allowHeaderFiltering": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not to allow filtering by this column using its header."
-            },
-            "allowHiding": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a column can be hidden by a user. Setting this option makes sense only when the column chooser is visible."
-            },
-            "allowReordering": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a particular column can be used in column reordering. Setting this option makes sense only when the allowColumnReordering option is set to true."
-            },
-            "allowResizing": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a particular column can be resized by a user. Setting this option makes sense only when the allowColumnResizing option is true."
-            },
-            "allowSearch": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies if a column can be used for searching grid records. Setting this option makes sense only when the search panel is visible."
-            },
-            "allowSorting": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether grid records can be sorted by a specific column at runtime. Setting this option makes sense only when the sorting mode differs from none."
-            },
-            "autoExpandGroup": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether groups appear expanded or not when records are grouped by a specific column. Setting this option makes sense only when grouping is allowed for this column."
-            },
-            "calculateCellValue": {
-              "IsFunc": true,
-              "Description": "Specifies a callback function that returns a value to be displayed in a column cell."
-            },
-            "calculateDisplayValue": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies how to get a value to be displayed in a cell when it is not in an editing state."
-            },
-            "calculateFilterExpression": {
-              "IsFunc": true,
-              "Description": "Specifies a callback function that defines filters for customary calculated grid cells."
-            },
-            "calculateGroupValue": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies a field name or a function that returns a field name or a value to be used for grouping column cells."
-            },
-            "calculateSortValue": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies a field name or a function that returns a field name or a value to be used for sorting column cells."
-            },
-            "caption": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies a caption for a column."
-            },
-            "cellTemplate": {
-              "IsTemplate": true,
-              "Description": "Specifies a custom template for grid column cells."
-            },
-            "columns": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "column",
-              "Description": "An array of grid columns."
-            },
-            "cssClass": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies a CSS class to be applied to a column."
-            },
-            "customizeText": {
-              "IsFunc": true,
-              "Description": "Specifies a callback function that returns the text to be displayed in the cells of a column."
-            },
-            "dataField": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the field of a data source that provides data for a column."
-            },
-            "dataType": {
-              "EnumName": "GridColumnDataType",
-              "Description": "Specifies the required type of column values."
-            },
-            "editCellTemplate": {
-              "IsTemplate": true,
-              "Description": "Specifies a custom template for the cell of a grid column when it is in an editing state."
-            },
-            "editorOptions": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "Description": "Specifies configuration options for the editor widget of the current column."
-            },
-            "encodeHtml": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether HTML tags are displayed as plain text or applied to the values of the column."
-            },
-            "falseText": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "In a boolean column, replaces all false items with a specified text."
-            },
-            "filterOperations": {
-              "IsCollection": true,
-              "EnumName": "FilterOperations",
-              "SingularName": "filterOperation",
-              "Description": "Specifies the set of available filter operations."
-            },
-            "filterType": {
-              "EnumName": "FilterType",
-              "Description": "Specifies whether to include or exclude the records with the values selected in the column's header filter."
-            },
-            "filterValue": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "Description": "Specifies a filter value for a column."
-            },
-            "filterValues": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "filterValue",
-              "Description": "Specifies initial filter values for the column's header filter."
-            },
-            "fixed": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Indicates whether the column takes part in horizontal grid scrolling or is anchored to a grid edge."
-            },
-            "fixedPosition": {
-              "EnumName": "HorizontalEdge",
-              "Description": "Specifies the grid edge to which the column is anchored."
-            },
-            "format": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "ComplexTypes": [
-                "Format"
-              ],
-              "EnumName": "Format",
-              "Description": "Specifies a format for the values displayed in a column."
-            },
-            "formItem": {
-              "ComplexTypes": [
-                "FormSimpleItem"
-              ],
-              "Description": "The form item configuration object. Used only when the editing mode is \"form\"."
-            },
-            "groupCellTemplate": {
-              "IsTemplate": true,
-              "Description": "Specifies a custom template for the group cell of a grid column."
-            },
-            "groupIndex": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": "Specifies the index of a column when grid records are grouped by the values of this column."
-            },
-            "headerCellTemplate": {
-              "IsTemplate": true,
-              "Description": "Specifies a custom template for the header of a grid column."
-            },
-            "headerFilter": {
-              "Description": "Specifies column-level options for filtering using a column header filter.",
-              "Options": {
-                "dataSource": {
-                  "IsFunc": true,
-                  "IsDataSource": true,
-                  "Description": "Specifies the data source to be used for the header filter."
-                },
-                "groupInterval": {
-                  "PrimitiveTypes": [
-                    "double"
-                  ],
-                  "EnumName": "HeaderFilterGroupInterval",
-                  "Description": "Specifies how header filter values should be combined into groups."
-                }
-              }
-            },
-            "hidingPriority": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": "Specifies the order according to which grid columns must be concealed when the widget adapts to the screen or container size."
-            },
-            "isBand": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether the column bands other columns or not."
-            },
-            "lookup": {
-              "Description": "Specifies options of a lookup column.",
-              "Options": {
-                "allowClearing": {
-                  "PrimitiveTypes": [
-                    "bool"
-                  ],
-                  "Description": "Specifies whether or not a user can nullify values of a lookup column."
-                },
-                "dataSource": {
-                  "IsFunc": true,
-                  "IsDataSource": true,
-                  "Description": "Specifies the data source providing data for a lookup column."
-                },
-                "displayExpr": {
-                  "PrimitiveTypes": [
-                    "string"
-                  ],
-                  "Description": "Specifies the expression defining the data source field whose values must be displayed."
-                },
-                "valueExpr": {
-                  "PrimitiveTypes": [
-                    "string"
-                  ],
-                  "Description": "Specifies the expression defining the data source field whose values must be replaced."
-                }
-              }
-            },
-            "name": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the identifier of the column."
-            },
-            "ownerBand": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
-            },
-            "precision": {
-              "PrimitiveTypes": [
-                "double"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the format | precision option instead."
-            },
-            "selectedFilterOperation": {
-              "EnumName": "FilterOperations",
-              "Description": "Specifies the default filter operation of a column."
-            },
-            "setCellValue": {
-              "IsFunc": true,
-              "Description": "Specifies a callback function to be invoked after the cell value is edited by an end-user and before the new value is saved to the data source."
-            },
-            "showEditorAlways": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the column displays its values by using editors."
-            },
-            "showInColumnChooser": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not to display the header of a hidden column in the column chooser."
-            },
-            "showWhenGrouped": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not to display the column when grid records are grouped by it."
-            },
-            "sortIndex": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": "Specifies the index of a column when grid records are sorted by the values of this column."
-            },
-            "sortOrder": {
-              "EnumName": "SortOrder",
-              "Description": "Specifies the initial sort order of column values."
-            },
-            "trueText": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "In a boolean column, replaces all true items with a specified text."
-            },
-            "validationRules": {
-              "ComplexTypes": [
-                "CompareRule",
-                "CustomRule",
-                "EmailRule",
-                "NumericRule",
-                "PatternRule",
-                "RangeRule",
-                "RequiredRule",
-                "StringLengthRule"
-              ],
-              "IsCollection": true,
-              "SingularName": "validationRule",
-              "Description": "Specifies an array of validation rules to be checked when updating column cell values."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether a column is visible or not."
-            },
-            "visibleIndex": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": "Specifies the sequence number of the column in the grid."
-            },
-            "width": {
-              "PrimitiveTypes": [
-                "double",
-                "string"
-              ],
-              "Description": "Specifies a column width in pixels or percentages."
-            }
-          }
+          "Description": "An array of grid columns."
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -2947,67 +2510,67 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the 'between' operation."
+                  "Description": "A description of the 'between' operation."
                 },
                 "contains": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the 'contains' operation."
+                  "Description": "A description of the 'contains' operation."
                 },
                 "endsWith": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the 'endswith' operation."
+                  "Description": "A description of the 'endswith' operation."
                 },
                 "equal": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '=' operation."
+                  "Description": "A description of the '=' operation."
                 },
                 "greaterThan": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '>' operation."
+                  "Description": "A description of the '>' operation."
                 },
                 "greaterThanOrEqual": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '>=' operation."
+                  "Description": "A description of the '>=' operation."
                 },
                 "lessThan": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '<' operation."
+                  "Description": "A description of the '<' operation."
                 },
                 "lessThanOrEqual": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '<=' operation."
+                  "Description": "A description of the '<=' operation."
                 },
                 "notContains": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the 'notcontains' operation."
+                  "Description": "A description of the 'notcontains' operation."
                 },
                 "notEqual": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the '<>' operation."
+                  "Description": "A description of the '<>' operation."
                 },
                 "startsWith": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Description for the 'startswith' operation."
+                  "Description": "A description of the 'startswith' operation."
                 }
               }
             },
@@ -3473,7 +3036,7 @@
             "bool",
             "string"
           ],
-          "Description": "Specifies the operations that must be performed server side.",
+          "Description": "Specifies the operations that must be performed on the server side.",
           "Options": {
             "filtering": {
               "PrimitiveTypes": [
@@ -3491,7 +3054,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not paging by groups must be peformed on the server side."
+              "Description": "Specifies whether or not paging by groups must be performed on the server side."
             },
             "paging": {
               "PrimitiveTypes": [
@@ -4296,7 +3859,7 @@
             "Format"
           ],
           "EnumName": "Format",
-          "Description": "Specifies the date display format. Applies only if the pickerType option is 'native'"
+          "Description": "Specifies the date display format. Ignored if the pickerType option is 'native'"
         },
         "format": {
           "PrimitiveTypes": [
@@ -5335,10 +4898,6 @@
           "IsEvent": true,
           "Description": "A handler for the selectionChanged event."
         },
-        "selectAllMode": {
-          "EnumName": "SelectAllMode",
-          "Description": "Specifies the mode in which all items are selected."
-        },
         "selectedItemKeys": {
           "PrimitiveTypes": [
             "any"
@@ -5570,6 +5129,10 @@
             "bool"
           ],
           "Description": "A Boolean value specifying whether to enable or disable list scrolling."
+        },
+        "selectAllMode": {
+          "EnumName": "SelectAllMode",
+          "Description": "Specifies the mode in which all items are selected."
         },
         "showNextButton": {
           "PrimitiveTypes": [
@@ -6091,7 +5654,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "This option is deprecated, because the functionality controlled by it was not supposed to belong to the Lookup widget. Instead, we suggest that you use the SelectBox widget with the acceptCustomValue option set to true."
         },
         "onClosed": {
           "IsFunc": true,
@@ -6844,78 +6408,12 @@
           "Description": "Specifies the selection mode supported by the menu."
         },
         "items": {
+          "ComplexTypes": [
+            "MenuItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Holds an array of menu items.",
-          "Options": {
-            "disabled": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the menu item is disabled."
-            },
-            "template": {
-              "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the text inserted into the item element."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the menu item is visible."
-            },
-            "beginGroup": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether a group separator is displayed over the item."
-            },
-            "closeMenuOnClick": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies if a menu is closed when a user clicks the item."
-            },
-            "icon": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "The name of an icon to be displayed on the menu item."
-            },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the icon field instead."
-            },
-            "items": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "item",
-              "Description": "Holds an array of menu items."
-            },
-            "selectable": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a user can select a menu item."
-            },
-            "selected": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the item is selected."
-            }
-          }
+          "Description": "Holds an array of menu items."
         },
         "disabledExpr": {
           "PrimitiveTypes": [
@@ -6962,7 +6460,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the CSS class associated with the menu."
+          "Description": "Specifies the name of the CSS class to be applied to the root menu level and all submenus."
         },
         "selectByClick": {
           "PrimitiveTypes": [
@@ -7751,7 +7249,7 @@
         },
         "mode": {
           "EnumName": "NumberBoxMode",
-          "Description": "The \"mode\" attribute value of the actual HTML input element representing the widget."
+          "Description": "Specifies the value to be passed to the type attribute of the underlying `` element."
         },
         "showSpinButtons": {
           "PrimitiveTypes": [
@@ -8684,7 +8182,7 @@
       }
     },
     "dxPivotGridFieldChooser": {
-      "Description": "A complementary widget for PivotGrid that allows you to manage data displayed in the PivotGrid.",
+      "Description": "A complementary widget for the PivotGrid that allows you to manage data displayed in the PivotGrid.",
       "Module": "ui/pivot_grid_field_chooser",
       "Options": {
         "onDisposing": {
@@ -10268,31 +9766,31 @@
                   "PrimitiveTypes": [
                     "int32"
                   ],
-                  "Description": "Specifies the column component of the element location."
+                  "Description": "Specifies which column the element should occupy. Accepts an index from the cols array."
                 },
                 "colspan": {
                   "PrimitiveTypes": [
                     "int32"
                   ],
-                  "Description": "Specifies the width of the element in columns."
+                  "Description": "Specifies how many columns the element should span."
                 },
                 "row": {
                   "PrimitiveTypes": [
                     "int32"
                   ],
-                  "Description": "Specifies the row component of the element location."
+                  "Description": "Specifies which row the element should occupy. Accepts an index from the rows array."
                 },
                 "rowspan": {
                   "PrimitiveTypes": [
                     "int32"
                   ],
-                  "Description": "Specifies the height of the element in rows."
+                  "Description": "Specifies how many rows the element should span."
                 },
                 "screen": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "The screen factor or factors by which the current location is applied to the element."
+                  "Description": "Decides on which screens the current location settings should be applied to the element."
                 }
               }
             }
@@ -10319,7 +9817,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "The screen factor or factors by which the current column is used. If this field is not defined, the column is used by all screen factors."
+              "Description": "Decides on which screens the current column is rendered."
             }
           }
         },
@@ -10344,19 +9842,19 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "The screen factor or factors by which the current row is used. If this field is not defined, the row is used by all screen factors."
+              "Description": "Decides on which screens the current row is rendered."
             }
           }
         },
         "screenByWidth": {
           "IsFunc": true,
-          "Description": "Specifies the function returning the screen factor depending on the screen width."
+          "Description": "Specifies the function returning the size qualifier depending on the screen's width."
         },
         "singleColumnScreen": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the screen factor with which all elements are located in a single column."
+          "Description": "Decides on which screens all layout elements should be arranged in a single column."
         }
       }
     },
@@ -10792,7 +10290,7 @@
           "IsCollection": true,
           "EnumName": "SchedulerViewType",
           "SingularName": "view",
-          "Description": "Lists the views to be available within the scheduler's View Selector.",
+          "Description": "Configures individual views.",
           "Options": {
             "agendaDuration": {
               "PrimitiveTypes": [
@@ -13003,6 +12501,9 @@
           "IsEvent": true,
           "Description": "A handler for the selectAllValueChanged event."
         },
+        "selectAllMode": {
+          "EnumName": "SelectAllMode"
+        },
         "selectedItems": {
           "PrimitiveTypes": [
             "any"
@@ -13528,7 +13029,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the value option holds only characters entered by a user or prompt characters as well."
+          "Description": "Specifies whether the value should contain mask characters or not."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -14563,85 +14064,12 @@
           "Description": "Specifies item selection mode."
         },
         "items": {
+          "ComplexTypes": [
+            "TreeViewItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "An array of items displayed by the widget.",
-          "Options": {
-            "disabled": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a widget item must be displayed disabled."
-            },
-            "html": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies html code inserted into the widget item element."
-            },
-            "template": {
-              "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies text displayed for the widget item."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not a widget item must be displayed."
-            },
-            "expanded": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the tree view item is displayed expanded."
-            },
-            "hasItems": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the tree view item has children."
-            },
-            "icon": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "The name of an icon to be displayed on the tree view item."
-            },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the icon field instead."
-            },
-            "items": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "item",
-              "Description": "Holds an array of tree view items."
-            },
-            "parentId": {
-              "PrimitiveTypes": [
-                "double",
-                "string"
-              ],
-              "Description": "Holds the key of the parent item."
-            },
-            "selected": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": "Specifies whether or not the tree view item is displayed selected."
-            }
-          }
+          "Description": "An array of items displayed by the widget."
         },
         "disabledExpr": {
           "PrimitiveTypes": [
@@ -20576,11 +20004,11 @@
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of the range container on a vertically oriented LinearGauge widget."
+              "Description": "Specifies the orientation of the range container. Applies only if the geometry | orientation option is \"vertical\"."
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of a range container on a horizontally oriented LinearGauge widget."
+              "Description": "Specifies the orientation of the range container. Applies only if the geometry | orientation option is \"horizontal\"."
             },
             "width": {
               "PrimitiveTypes": [
@@ -20898,11 +20326,11 @@
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of scale ticks on a vertically oriented LinearGauge widget."
+              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry | orientation option is \"vertical\"."
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of scale ticks on a horizontally oriented LinearGauge widget."
+              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry | orientation option is \"horizontal\"."
             }
           }
         },
@@ -26106,6 +25534,11 @@
               ],
               "Description": "Specifies the height of the group headers in pixels."
             },
+            "hoverEnabled": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            },
             "hoverStyle": {
               "Description": "Specifies the appearance of groups in the hover state.",
               "Options": {
@@ -28390,7 +27823,7 @@
         },
         "horizontalOrientation": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator on a vertically oriented LinearGauge widget."
+          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry | orientation option is \"vertical\"."
         },
         "indentFromCenter": {
           "PrimitiveTypes": [
@@ -28486,7 +27919,7 @@
         },
         "verticalOrientation": {
           "EnumName": "VerticalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator on a horizontally oriented LinearGauge widget."
+          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry | orientation option is \"horizontal\"."
         },
         "width": {
           "PrimitiveTypes": [
@@ -28686,7 +28119,7 @@
           "Options": {
             "alignment": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the label horizontal alignment."
+              "Description": "Specifies the label's horizontal alignment."
             },
             "location": {
               "EnumName": "FormLabelLocation",
@@ -32692,6 +32125,606 @@
         "type": {
           "EnumName": "PolarChartSeriesType",
           "Description": "Sets the series type."
+        }
+      }
+    },
+    "DataGridColumn": {
+      "Description": "An array of grid columns.",
+      "Options": {
+        "alignment": {
+          "EnumName": "HorizontalAlignment",
+          "Description": "Specifies the content alignment within column cells."
+        },
+        "allowEditing": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the values in a column can be edited at runtime. Setting this option makes sense only when editing is enabled for a grid."
+        },
+        "allowFiltering": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a column can be used for filtering grid records. Setting this option makes sense only when the filter row and column header filtering are visible."
+        },
+        "allowFixing": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the column can be anchored to a grid edge by end users. Setting this option makes sense only when the columnFixing | enabled option is set to true."
+        },
+        "allowGrouping": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the user can group data by values of this column. Applies only when grouping is enabled."
+        },
+        "allowHeaderFiltering": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not to allow filtering by this column using its header."
+        },
+        "allowHiding": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a column can be hidden by a user. Setting this option makes sense only when the column chooser is visible."
+        },
+        "allowReordering": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a particular column can be used in column reordering. Setting this option makes sense only when the allowColumnReordering option is set to true."
+        },
+        "allowResizing": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a particular column can be resized by a user. Setting this option makes sense only when the allowColumnResizing option is true."
+        },
+        "allowSearch": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies if a column can be used for searching grid records. Setting this option makes sense only when the search panel is visible."
+        },
+        "allowSorting": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether grid records can be sorted by a specific column at runtime. Setting this option makes sense only when the sorting mode differs from none."
+        },
+        "autoExpandGroup": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether groups appear expanded or not when records are grouped by a specific column. Setting this option makes sense only when grouping is allowed for this column."
+        },
+        "calculateCellValue": {
+          "IsFunc": true,
+          "Description": "Specifies a callback function that returns a value to be displayed in a column cell."
+        },
+        "calculateDisplayValue": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to get a value to be displayed in a cell when it is not in an editing state."
+        },
+        "calculateFilterExpression": {
+          "IsFunc": true,
+          "Description": "Specifies a callback function that defines filters for customary calculated grid cells."
+        },
+        "calculateGroupValue": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a field name or a function that returns a field name or a value to be used for grouping column cells."
+        },
+        "calculateSortValue": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a field name or a function that returns a field name or a value to be used for sorting column cells."
+        },
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a caption for a column."
+        },
+        "cellTemplate": {
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for grid column cells."
+        },
+        "columns": {
+          "ComplexTypes": [
+            "DataGridColumn"
+          ],
+          "IsCollection": true,
+          "SingularName": "column",
+          "Description": "An array of grid columns."
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to a column."
+        },
+        "customizeText": {
+          "IsFunc": true,
+          "Description": "Specifies a callback function that returns the text to be displayed in the cells of a column."
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the field of a data source that provides data for a column."
+        },
+        "dataType": {
+          "EnumName": "GridColumnDataType",
+          "Description": "Specifies the required type of column values."
+        },
+        "editCellTemplate": {
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the cell of a grid column when it is in an editing state."
+        },
+        "editorOptions": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies configuration options for the editor widget of the current column."
+        },
+        "encodeHtml": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether HTML tags are displayed as plain text or applied to the values of the column."
+        },
+        "falseText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "In a boolean column, replaces all false items with a specified text."
+        },
+        "filterOperations": {
+          "IsCollection": true,
+          "EnumName": "FilterOperations",
+          "SingularName": "filterOperation",
+          "Description": "Specifies the set of available filter operations."
+        },
+        "filterType": {
+          "EnumName": "FilterType",
+          "Description": "Specifies whether to include or exclude the records with the values selected in the column's header filter."
+        },
+        "filterValue": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies a filter value for a column."
+        },
+        "filterValues": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "filterValue",
+          "Description": "Specifies initial filter values for the column's header filter."
+        },
+        "fixed": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Indicates whether the column takes part in horizontal grid scrolling or is anchored to a grid edge."
+        },
+        "fixedPosition": {
+          "EnumName": "HorizontalEdge",
+          "Description": "Specifies the grid edge to which the column is anchored."
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ComplexTypes": [
+            "Format"
+          ],
+          "EnumName": "Format",
+          "Description": "Specifies a format for the values displayed in a column."
+        },
+        "formItem": {
+          "ComplexTypes": [
+            "FormSimpleItem"
+          ],
+          "Description": "The form item configuration object. Used only when the editing mode is \"form\"."
+        },
+        "groupCellTemplate": {
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the group cell of a grid column."
+        },
+        "groupIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the index of a column when grid records are grouped by the values of this column."
+        },
+        "headerCellTemplate": {
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the header of a grid column."
+        },
+        "headerFilter": {
+          "Description": "Specifies column-level options for filtering using a column header filter.",
+          "Options": {
+            "dataSource": {
+              "IsFunc": true,
+              "IsDataSource": true,
+              "Description": "Specifies the data source to be used for the header filter."
+            },
+            "groupInterval": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "EnumName": "HeaderFilterGroupInterval",
+              "Description": "Specifies how header filter values should be combined into groups."
+            }
+          }
+        },
+        "hidingPriority": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the order according to which grid columns must be concealed when the widget adapts to the screen or container size."
+        },
+        "isBand": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the column bands other columns or not."
+        },
+        "lookup": {
+          "Description": "Specifies options of a lookup column.",
+          "Options": {
+            "allowClearing": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether or not a user can nullify values of a lookup column."
+            },
+            "dataSource": {
+              "IsFunc": true,
+              "IsDataSource": true,
+              "Description": "Specifies the data source providing data for a lookup column."
+            },
+            "displayExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the expression defining the data source field whose values must be displayed."
+            },
+            "valueExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the expression defining the data source field whose values must be replaced."
+            }
+          }
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the identifier of the column."
+        },
+        "ownerBand": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
+        },
+        "precision": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the format | precision option instead."
+        },
+        "selectedFilterOperation": {
+          "EnumName": "FilterOperations",
+          "Description": "Specifies the default filter operation of a column."
+        },
+        "setCellValue": {
+          "IsFunc": true,
+          "Description": "Specifies a callback function to be invoked after the cell value is edited by an end-user and before the new value is saved to the data source."
+        },
+        "showEditorAlways": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the column displays its values by using editors."
+        },
+        "showInColumnChooser": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not to display the header of a hidden column in the column chooser."
+        },
+        "showWhenGrouped": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not to display the column when grid records are grouped by it."
+        },
+        "sortIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the index of a column when grid records are sorted by the values of this column."
+        },
+        "sortOrder": {
+          "EnumName": "SortOrder",
+          "Description": "Specifies the initial sort order of column values."
+        },
+        "trueText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "In a boolean column, replaces all true items with a specified text."
+        },
+        "validationRules": {
+          "ComplexTypes": [
+            "CompareRule",
+            "CustomRule",
+            "EmailRule",
+            "NumericRule",
+            "PatternRule",
+            "RangeRule",
+            "RequiredRule",
+            "StringLengthRule"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationRule",
+          "Description": "Specifies an array of validation rules to be checked when updating column cell values."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether a column is visible or not."
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the sequence number of the column in the grid."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies a column width in pixels or percentages."
+        }
+      }
+    },
+    "MenuItem": {
+      "Description": "Holds an array of menu items.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the menu item is disabled."
+        },
+        "template": {
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text inserted into the item element."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the menu item is visible."
+        },
+        "beginGroup": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether a group separator is displayed over the item."
+        },
+        "closeMenuOnClick": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies if a menu is closed when a user clicks the item."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The name of an icon to be displayed on the menu item."
+        },
+        "iconSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the icon field instead."
+        },
+        "items": {
+          "ComplexTypes": [
+            "MenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
+        },
+        "selectable": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a user can select a menu item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the item is selected."
+        }
+      }
+    },
+    "ContextMenuItem": {
+      "Description": "Holds an array of menu items.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the menu item is disabled."
+        },
+        "template": {
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text inserted into the item element."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the menu item is visible."
+        },
+        "beginGroup": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether a group separator is displayed over the item."
+        },
+        "closeMenuOnClick": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies if a menu is closed when a user clicks the item."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The name of an icon to be displayed on the menu item."
+        },
+        "iconSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the icon field instead."
+        },
+        "items": {
+          "ComplexTypes": [
+            "ContextMenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
+        },
+        "selectable": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a user can select a menu item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the item is selected."
+        }
+      }
+    },
+    "TreeViewItem": {
+      "Description": "An array of items displayed by the widget.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed disabled."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "template": {
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        },
+        "expanded": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the tree view item is displayed expanded."
+        },
+        "hasItems": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the tree view item has children."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The name of an icon to be displayed on the tree view item."
+        },
+        "iconSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use the icon field instead."
+        },
+        "items": {
+          "ComplexTypes": [
+            "TreeViewItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Holds an array of tree view items."
+        },
+        "parentId": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Holds the key of the parent item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the tree view item is displayed selected."
         }
       }
     }
