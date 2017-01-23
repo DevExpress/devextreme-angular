@@ -10,24 +10,26 @@ Follow the [installation](https://github.com/DevExpress/devextreme-angular#insta
 
 ## <a name="configuration"></a>Configure Rollup for DevExtreme ##
 
-There is [a limitation](https://github.com/DevExpress/devextreme-angular/issues/283) in bundling with Rollup.
+There is [a limitation](https://github.com/DevExpress/devextreme-angular/issues/353) in bundling with Rollup.
 Make sure that you use [long paths](https://github.com/DevExpress/devextreme-angular/#bundlers-without-tree-shaking-support) for DevExtreme Angular modules.
 
 Ensure that the following plugins are included:
 
 ```js
-var nodeResolve = require('rollup-plugin-node-resolve');
-var commonjs = require('rollup-plugin-commonjs');
-var builtins = require('rollup-plugin-node-builtins');
-var globals = require('rollup-plugin-node-globals');
+import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import alias from 'rollup-plugin-alias';
 
-{
-    ....
+...
+
+export default {
+    ...
     plugins: [
-        nodeResolve({ jsnext: true, main: true, browser: true, preferBuiltins: true }),
-        commonjs(),
-        builtins(),
-        globals()
+        alias({
+            jszip: path.join(__dirname, './node_modules/jszip/dist/jszip.min.js')
+        }),
+        nodeResolve({ jsnext: true, module: true }),
+        commonjs()
     ]
     ...
 }
@@ -35,4 +37,32 @@ var globals = require('rollup-plugin-node-globals');
 
 ## Import DevExtreme Stylesheets ##
 
-Import the required [DevExtreme css files](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/). 
+Import the required [DevExtreme css files](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/).
+
+
+In order to create a single CSS bundle, you can use the `rollup-plugin-css-only` package. Import DevExtreme CSS files prior to widget modules as follows:
+
+```js
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+
+...
+```
+
+Ensure that the following plugin is included:
+
+```js
+import css from 'rollup-plugin-css-only';
+
+...
+
+export default {
+    ...
+    plugins: [
+        css({ output: 'dist/bundle.css' }),
+
+        ...
+    ]
+    ...
+}
+```
