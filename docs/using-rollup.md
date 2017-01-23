@@ -27,7 +27,7 @@ export default {
     plugins: [
         alias({
             jszip: path.join(__dirname, './node_modules/jszip/dist/jszip.min.js')
-        })
+        }),
         nodeResolve({ jsnext: true, module: true }),
         commonjs()
     ]
