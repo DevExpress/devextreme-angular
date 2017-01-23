@@ -20,8 +20,10 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 import alias from 'rollup-plugin-alias';
 
-{
-    ....
+...
+
+export default {
+    ...
     plugins: [
         alias({
             jszip: path.join(__dirname, './node_modules/jszip/dist/jszip.min.js')
@@ -35,4 +37,32 @@ import alias from 'rollup-plugin-alias';
 
 ## Import DevExtreme Stylesheets ##
 
-Import the required [DevExtreme css files](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/). 
+Import the required [DevExtreme css files](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/).
+
+
+In order to create a single CSS bundle, you can use the `rollup-plugin-css-only` package. Import DevExtreme CSS files prior to widget modules as follows:
+
+```js
+import 'devextreme/dist/css/dx.common.css';
+import 'devextreme/dist/css/dx.light.css';
+
+...
+```
+
+Ensure that the following plugin is included:
+
+```js
+import css from 'rollup-plugin-css-only';
+
+...
+
+export default {
+    ...
+    plugins: [
+        css({ output: 'dist/bundle.css' }),
+
+        ...
+    ]
+    ...
+}
+```
