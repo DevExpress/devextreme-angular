@@ -135,7 +135,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 
 ### <a name="static-option"></a>Static Option Value ###
 
-To specify a widget's option statically
+To specify a string widget's option statically
 (the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/?version=15_2#text)
 option of dxButton):
 
