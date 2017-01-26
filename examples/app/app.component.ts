@@ -55,7 +55,7 @@ import{
             display: block;
         }
         .resizable {
-            display: block; 
+            display: block;
             background-color: #ccc;
         }
         .tab-content {
@@ -114,6 +114,15 @@ export class AppComponent implements OnInit {
     customers: Customer[];
     appointments: Appointment[];
     resources: any[];
+    products = [
+        {
+            key: 'Notebook',
+            items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ]
+        }, {
+            key: 'Netbook',
+            items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ]
+        }
+    ];
     tabs = [
         {
             id: 0,
