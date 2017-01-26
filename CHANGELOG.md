@@ -1,3 +1,9 @@
+## 16.2.5-rc.1 (2017-01-26)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/11?closed=1)
+
 ## 16.2.4 (2017-01-18)
 
 ### RTM version has been released!
