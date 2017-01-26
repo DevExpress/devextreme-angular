@@ -83,7 +83,7 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
     template: ''
 })
 export class TestContainerComponent {
-    visible: boolean = true;
+    visible = true;
     testOption: string;
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
     testMethod() {
