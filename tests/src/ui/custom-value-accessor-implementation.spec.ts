@@ -28,13 +28,14 @@ import {
     template: `
         <form [formGroup]="form">
             <div class="form-group">
-                <dx-text-box formControlName="formControl"></dx-text-box>
+                <dx-text-box formControlName="formControl" [(ngModel)]="value"></dx-text-box>
             </div>
         </form>
     `
 })
 class TestContainerComponent implements OnInit {
     form: FormGroup;
+    value = '';
     formControl: AbstractControl;
 
     ngOnInit() {
@@ -76,5 +77,16 @@ describe('DxTextBox value accessor', () => {
         fixture.detectChanges();
 
         expect(instance.option('disabled')).toBe(false);
+    }));
+    it('should change the value', async(() => {
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        fixture.componentInstance.value = 'text';
+        fixture.detectChanges();
+
+        expect(instance.option('value')).toBe('text');
     }));
 });

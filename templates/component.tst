@@ -1,10 +1,10 @@
-<#? it.isEditor #>/* tslint:disable:directive-selector */<#?#>
 <# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
 <# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 <# var implementedInterfaces = ['OnDestroy']; #>
 <# !it.isExtension && implementedInterfaces.push('AfterViewInit'); #>
+<# it.isEditor && implementedInterfaces.push('ControlValueAccessor'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
 import {
@@ -17,7 +17,6 @@ import {
     OnDestroy<#? !it.isExtension #>,
     AfterViewInit<#?#><#? it.isEditor #>,
     ContentChild,
-    Directive,
     forwardRef,
     HostListener<#?#><#? collectionProperties.length #>,
     OnChanges,
@@ -48,13 +47,22 @@ import { WatcherHelper } from '../core/watcher-helper';
 <#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
 <#~#>
 
+<#? it.isEditor #>
+
+const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => <#= it.className #>Component),
+    multi: true
+};<#?#>
+
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
     styles: [ ' :host {  display: block; }'],<#?#>
     providers: [
         DxTemplateHost,
-        WatcherHelper,
+        WatcherHelper,<#? it.isEditor #>
+        CUSTOM_VALUE_ACCESSOR_PROVIDER,<#?#>
         NestedOptionHost<#? collectionProperties.length #>,
         IterableDifferHelper<#?#>
     ]
@@ -63,8 +71,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     instance: <#= it.className #>;
 <#? it.isEditor #>
     @ContentChild(DxValidatorComponent)
-    validator: DxValidatorComponent;<#?#>
-
+    validator: DxValidatorComponent;
+<#?#>
     <#~ it.properties :prop:i #>@Input()
     get <#= prop.name #>(): any {
         return this._getOption('<#= prop.name #>');
@@ -77,6 +85,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
     <#~ it.events :event:i #>@Output() <#= event.emit #>;<#? i < it.events.length-1 #>
     <#?#><#~#>
+
+<#? it.isEditor #>
+    @HostListener('valueChange', ['$event']) change(_) { }
+    touched = () => {};<#?#>
 
 <#~ collectionNestedComponents :component:i #>
     @ContentChildren(<#= component.className #>Component)
@@ -110,7 +122,18 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         }
         return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
     }
-
+<#? it.isEditor #>
+    writeValue(value: any): void {
+        this.value = value;
+    }
+<#? it.widgetName !== "dxRangeSelector" #>
+    setDisabledState(isDisabled: boolean): void {
+        this.disabled = isDisabled;
+    }
+<#?#>
+    registerOnChange(fn: (_: any) => void): void { this.change = fn; }
+    registerOnTouched(fn: () => void): void { this.touched = fn; }
+<#?#>
     ngOnDestroy() {
         this._destroyWidget();
     }
@@ -129,50 +152,17 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }<#?#>
 }
 
-<#? it.isEditor #>
-
-const CUSTOM_VALUE_ACCESSOR = {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => <#= it.className #>ValueAccessorDirective),
-    multi: true
-};
-
-@Directive({
-    selector: '<#= it.selector #>[formControlName],<#= it.selector #>[formControl],<#= it.selector #>[ngModel]',
-    providers: [CUSTOM_VALUE_ACCESSOR]
-})
-export class <#= it.className #>ValueAccessorDirective implements ControlValueAccessor {
-    @HostListener('valueChange', ['$event']) onChange(_) { }
-    onTouched = () => {};
-
-    constructor(private host: <#= it.className #>Component) { }
-
-    writeValue(value: any): void {
-        this.host.value = value;
-    }
-<#? it.widgetName !== "dxRangeSelector" #>
-    setDisabledState(isDisabled: boolean): void {
-        this.host.disabled = isDisabled;
-    }<#?#>
-
-    registerOnChange(fn: (_: any) => void): void { this.onChange = fn; }
-    registerOnTouched(fn: () => void): void { this.onTouched = fn; }
-}
-<#?#>
-
 @NgModule({
   imports: [<#~ it.nestedComponents :component:i #>
     <#= component.className #>Module,<#~#>
     DxTemplateModule
   ],
   declarations: [
-    <#= it.className #>Component<#? it.isEditor #>,
-    <#= it.className #>ValueAccessorDirective<#?#>
+    <#= it.className #>Component
   ],
   exports: [
     <#= it.className #>Component<#~ it.nestedComponents :component:i #>,
-    <#= component.className #>Module<#~#>,<#? it.isEditor #>
-    <#= it.className #>ValueAccessorDirective,<#?#>
+    <#= component.className #>Module<#~#>,
     DxTemplateModule
   ],
 })
