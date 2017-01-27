@@ -20,10 +20,21 @@
         <div class="form-group">
 
             <label for="email">Email</label>
-            <dx-text-box formControlName="emailControl" [(ngModel)]="formData.email" [isValid]="emailControl.valid || emailControl.pristine" [validationError]="{ message: 'Enter correct email' }"></dx-text-box>
+            <dx-text-box
+                formControlName="emailControl"
+                [(ngModel)]="formData.email"
+                [isValid]="emailControl.valid || emailControl.pristine"
+                [validationError]="{ message: 'Enter correct email' }">
+            </dx-text-box>
 
             <label for="password">Password</label>
-            <dx-text-box formControlName="passwordControl" [(ngModel)]="formData.password" mode="password" [isValid]="passwordControl.valid || passwordControl.pristine" [validationError]="{ message: 'Password should be greater that six symbols' }"></dx-text-box>
+            <dx-text-box
+                formControlName="passwordControl"
+                [(ngModel)]="formData.password"
+                mode="password"
+                [isValid]="passwordControl.valid || passwordControl.pristine"
+                [validationError]="{ message: 'Password should be greater that six symbols' }">
+            </dx-text-box>
 
         </div>
         <label>Toggle form controls state: </label>
@@ -61,13 +72,13 @@
         #dxForm
         [formData]="formData"
         labelLocation="top">
-        <dxi-item 
+        <dxi-item
             dataField="email"
             editorType="dxTextBox">
             <dxi-validation-rule type="required" message="Email is required."></dxi-validation-rule>
             <dxi-validation-rule type="email" message="Email is invalid."></dxi-validation-rule>
         </dxi-item>
-        <dxi-item 
+        <dxi-item
             dataField="password"
             editorType="dxTextBox"
             [editorOptions]="{ mode: 'password' }">
@@ -88,7 +99,7 @@
 
     <dx-text-area placeholder="TextArea" [(value)]="text" valueChangeEvent="keyup"></dx-text-area>
 
-    <dx-number-box placeholder="NumberBox" [showSpinButtons]="true" [(value)]="numberValue"></dx-number-box>
+    <dx-number-box placeholder="NumberBox" [showSpinButtons]="true" [(value)]="numberValue" [min]="0" [max]="100" ></dx-number-box>
 
     <dx-progress-bar [(value)]="numberValue"></dx-progress-bar>
 
@@ -116,7 +127,7 @@
 
     <h3>dxList</h3>
 
-    <dx-list [grouped]="true" [items]="[ { key: 'Notebook', items: [ 'Supernote JG867', 'Ultranote VP334', 'Meganote LS952' ] }, { key: 'Netbook', items: [ 'Supernet HY834', 'Ultranet KN354', 'Meganet ME830' ] } ]">
+    <dx-list [grouped]="true" [items]="products">
         <div *dxTemplate="let t of 'item'">
             {{t}}
             <dx-button class="float-right" text="Buy" (onClick)="buy(t)"></dx-button>
@@ -138,33 +149,33 @@
 
 <h2>dxPopover</h2>
 
-<dx-popover 
-    target="#popoverButton" 
-    width="300" 
-    position="top" 
-    showTitle="true" 
+<dx-popover
+    target="#popoverButton"
+    [width]="300"
+    position="top"
+    showTitle="true"
     title="Demo of dxPopover">
     <div *dxTemplate="let data of 'content'">
         <p>Hello from dxPopover</p>
     </div>
 </dx-popover>
-<dx-button 
-    id="popoverButton" 
-    text="Show Popover via method" 
+<dx-button
+    id="popoverButton"
+    text="Show Popover via method"
     (onClick)="showPopover()"
 ></dx-button><br/>
 
 <h2>dxResizable</h2>
 
-<dx-resizable 
+<dx-resizable
     class="resizable"
     handles="right bottom"
-    minHeight="100" 
-    minWidth="200" 
-    maxHeight="400" 
-    maxWidth="300" 
-    width="200" 
-    height="100">
+    [minHeight]="100"
+    [minWidth]="200"
+    [maxHeight]="400"
+    [maxWidth]="300"
+    [width]="200"
+    [height]="100">
     <p><b>Resize this element</b></p>
 </dx-resizable>
 
@@ -186,7 +197,7 @@
         <p>Quas reprehenderit eveniet ex dicta soluta atque, quae facilis itaque mollitia consequatur consectetur, minima? Aliquid quae inventore eius odit vero ipsam quisquam adipisci harum vitae ad quis, tempora reprehenderit quia.</p>
         <p>Labore, temporibus, doloremque? Voluptates aut voluptatum corporis eum, consectetur labore similique quisquam, velit officia soluta nesciunt numquam quo, nostrum. Molestias delectus facilis odio id quae eveniet molestiae nobis sed fugit!</p>
         <p>Corporis nam quidem error. Excepturi eos nemo quas at ullam nesciunt quae, ipsam ad ducimus esse voluptatum, vel, sed consectetur. Laboriosam non, ipsam eos, reiciendis fugiat earum facere temporibus voluptas!</p>
-        <p>Quos maiores, cumque nobis! Quisquam rem quidem, ex necessitatibus at ullam! Excepturi sit asperiores ad quibusdam, eum modi sed iusto perspiciatis vel officia hic nam perferendis ipsa saepe reiciendis non.</p>    
+        <p>Quos maiores, cumque nobis! Quisquam rem quidem, ex necessitatibus at ullam! Excepturi sit asperiores ad quibusdam, eum modi sed iusto perspiciatis vel officia hic nam perferendis ipsa saepe reiciendis non.</p>
     </div>
 </dx-scroll-view>
 
@@ -225,11 +236,11 @@
         <div class="tabpanel-item">
             <div>
                 <p>
-                    <b>{{company.City}}</b> 
+                    <b>{{company.City}}</b>
                     (<span>{{company.State}}</span>)
                 </p>
                 <p>
-                    <span>{{company.Zipcode}}</span> 
+                    <span>{{company.Zipcode}}</span>
                     <span>{{company.Address}}</span>
                 </p>
             </div>
@@ -241,8 +252,8 @@
                     Fax: <b>{{company.Fax}}</b>
                 </p>
                 <p>
-                    Website: 
-                    <a href="{{company.Website}}" 
+                    Website:
+                    <a href="{{company.Website}}"
                         target="_blank">
                         {{company.Website}}
                     </a>
@@ -291,26 +302,18 @@
 
 <h2>dxDataGrid</h2>
 
-<dx-data-grid
-    [columns]='[
-        "CompanyName", 
-        "City", 
-        "State", 
-        "Fax", 
-        { 
-            dataField: "Phone", 
-            cellTemplate: "phoneCellTemplate" 
-        }
-    ]'
-    [dataSource]='customers'
-    [paging]='{
-        pageSize: 10
-    }'
-    [pager]= '{
-        showPageSizeSelector: true,
-        allowedPageSizes: [5, 10, 20],
-        showInfo: true
-    }'>
+<dx-data-grid [dataSource]="customers">
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[5, 10, 20]"
+        [showInfo]="true">
+    </dxo-pager>
+    <dxi-column dataField="CompanyName"></dxi-column>
+    <dxi-column dataField="City"></dxi-column>
+    <dxi-column dataField="State"></dxi-column>
+    <dxi-column dataField="Fax"></dxi-column>
+    <dxi-column dataField="Phone" cellTemplate="phoneCellTemplate"></dxi-column>
     <div *dxTemplate="let cellData of 'phoneCellTemplate'">
         <dx-button (onClick)="callNumber(cellData.value)" [text]="cellData.text"></dx-button>
     </div>
@@ -318,7 +321,7 @@
 
 <h2>dxScheduler</h2>
 
-<dx-scheduler 
+<dx-scheduler
     style="height: 500px; display: block"
     [dataSource]="appointments"
     [currentDate]="currentDate"
@@ -327,8 +330,8 @@
     textExpr="Text"
     [views]="['agenda','month','week','workWeek','day']"
     currentView="week"
-    firstDayOfWeek="0"
-    startDayHour=8
-    endDayHour=19
+    [firstDayOfWeek]="0"
+    [startDayHour]="8"
+    [endDayHour]="19"
     [resources]="resources"
 ></dx-scheduler>
