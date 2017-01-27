@@ -10,7 +10,8 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Starting a new application](#create-application)
   * [Running the local examples](#running-examples)
 * [Usage samples](#usage-samples)
-  * [Static option value](#static-option)
+  * [Static string option value](#static-option)
+  * [Static non-string option value](#static-non-string-option)
   * [Event handling](#event-handling)
   * [One-way option binding](#one-way-binding)
   * [Two-way option binding](#two-way-binding)
@@ -133,19 +134,29 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 
 ## <a name="usage-samples"></a>Usage Samples ##
 
-### <a name="static-option"></a>Static Option Value ###
+### <a name="static-option"></a>Static String Option Value ###
 
 To specify a string widget's option statically
-(the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/?version=15_2#text)
+(the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/#text)
 option of dxButton):
 
 ```html
 <dx-button text="Simple button"></dx-button>
 ```
 
+### <a name="static-non-string-option"></a>Static Non-string Option Value ###
+
+To specify a non-string widget's option statically
+(the [disabled](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/#disabled)
+option of dxButton):
+
+```html
+<dx-button [disabled]="false"></dx-button>
+```
+
 ### <a name="event-handling"></a>Event Handling ###
 
-To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Events/?version=15_2#click) event:
+To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Events/#click) event:
 
 ```html
 <dx-button (onClick)="handler()"></dx-button>
@@ -154,7 +165,7 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 ### <a name="one-way-binding"></a>One-way Option Binding ###
 
 If we want changes to the value of ‘bindingProperty’ of the host component to propagate to the
-[value](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/Configuration/?version=15_2#value) of the dxTextBox widget,
+[value](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/Configuration/#value) of the dxTextBox widget,
 a one-way binding approach is used:
 
 ```html
@@ -173,8 +184,8 @@ or vice versa from the widget to the bindingProperty:
 ### <a name="custom-templates"></a>Custom Templates ###
 
 In case you want to customize the rendering of a DevExtreme widget, we support custom templates. For instance, we can specify
-the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/?version=15_2#itemTemplate)
-and [groupTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/?version=15_2#groupTemplate)
+the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
+and [groupTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate)
 of the dxList widget as follows:
 
 ```html
