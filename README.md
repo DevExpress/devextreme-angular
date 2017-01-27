@@ -10,7 +10,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Starting a new application](#create-application)
   * [Running the local examples](#running-examples)
 * [Usage samples](#usage-samples)
-  * [Static string option value](#static-string-option)
+  * [Static string option value](#static-option)
   * [Static non-string option value](#static-non-string-option)
   * [Event handling](#event-handling)
   * [One-way option binding](#one-way-binding)
@@ -134,7 +134,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 
 ## <a name="usage-samples"></a>Usage Samples ##
 
-### <a name="static-string-option"></a>Static String Option Value ###
+### <a name="static-option"></a>Static String Option Value ###
 
 To specify a string widget's option statically
 (the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/#text)
