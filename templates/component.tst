@@ -50,20 +50,20 @@ import { WatcherHelper } from '../core/watcher-helper';
 
 <#? it.isEditor #>
 
-const CUSTOM_VALUE_ACCESSOR = {
+const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => <#= it.className #>Component),
     multi: true
 };<#?#>
 
 @Component({
-    selector: '<#= it.selector #><#? it.isEditor #>, <#= it.selector #>[formControlName],<#= it.selector #>[formControl],<#= it.selector #>[ngModel]<#?#>',
+    selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
     styles: [ ' :host {  display: block; }'],<#?#>
     providers: [
         DxTemplateHost,
         WatcherHelper,<#? it.isEditor #>
-        CUSTOM_VALUE_ACCESSOR,<#?#>
+        CUSTOM_VALUE_ACCESSOR_PROVIDER,<#?#>
         NestedOptionHost<#? collectionProperties.length #>,
         IterableDifferHelper<#?#>
     ]
