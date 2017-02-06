@@ -101,6 +101,7 @@ The further configuration steps depend on which build tool, bundler or module lo
 * [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
 * [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
 * [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
+* [Configuring Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md#configuration)
 
 
 ### <a name="create-application"></a>Create a new Angular 2 Application ###
@@ -111,6 +112,7 @@ Depending on your requirements you can choose one of the following ways to start
 * [Start with Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
 * [Start with Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md)
 * [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
+* [Start with Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md)
 
 ### <a name="running-examples"></a>Running the Local Examples ###
 

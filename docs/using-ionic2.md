@@ -1,4 +1,4 @@
-# Add DevExtreme to Ionic 2 Application
+# Using the DevExtreme Angular 2 Integration with Ionic 2
 
 ## Create an Application
 
@@ -12,7 +12,7 @@ Once the application is created, install DevExtreme Angular 2 integration npm pa
 npm install --save devextreme devextreme-angular
 ```
 
-## Import DevExtreme Modules
+## <a name="configuration"></a>Configure Ionic 2 for DevExtreme
 
 To use DevExtreme within the Ionic 2 application, import the required separate modules or entire DevExtreme to this application within the "src\app\app.module.ts" file.
 
