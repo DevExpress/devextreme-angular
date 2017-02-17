@@ -55,6 +55,16 @@ Install the **devextreme** and **devextreme-angular** npm packages:
 npm install --save devextreme devextreme-angular
 ```
 
+#### <a name="additional-configuration"></a>Additional Configuration ####
+
+The further configuration steps depend on which build tool, bundler or module loader you are using. Please choose the one you need:
+
+* [Configuring SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md#configuration)
+* [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
+* [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
+* [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
+* [Configuring Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md#configuration)
+
 #### <a name="import-modules"></a>Import DevExtreme Modules ####
 
 Go to your main .ts file (usually *src/app.module.ts*) and import the required modules to your app:
@@ -92,17 +102,6 @@ export class AppComponent {
     }
 }
 ```
-
-#### <a name="additional-configuration"></a>Additional Configuration ####
-
-The further configuration steps depend on which build tool, bundler or module loader you are using. Please choose the one you need:
-
-* [Configuring SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md#configuration)
-* [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
-* [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
-* [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
-* [Configuring Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md#configuration)
-
 
 ### <a name="create-application"></a>Create a new Angular 2 Application ###
 
