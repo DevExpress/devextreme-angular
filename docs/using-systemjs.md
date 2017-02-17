@@ -63,10 +63,10 @@ map: {
     'devextreme': 'npm:devextreme',                   // <== add this line
     'jquery': 'npm:jquery/dist/jquery.min.js',        // <== add this line
     'jszip': 'npm:jszip/dist/jszip.min.js',           // <== add this line
-    'devextreme-angular': 'npm:devextreme-angular', // <== add this line
+    'devextreme-angular': 'npm:devextreme-angular',   // <== add this line
     // other libraries
     'rxjs': 'npm:rxjs',
-    'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
+    'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js'
 },
 packages: {
     'app':                        { defaultExtension: 'js' },
