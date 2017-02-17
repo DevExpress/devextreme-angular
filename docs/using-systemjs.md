@@ -17,6 +17,7 @@ Follow the [installation](https://github.com/DevExpress/devextreme-angular#insta
 Modify the references in the index.html file as follows:
 
 ```html
+<!-- DevExtreme stylesheets -->
 <link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.common.css" />
 <link rel="stylesheet" type="text/css" href="node_modules/devextreme/dist/css/dx.light.css" />
 
@@ -24,7 +25,6 @@ Modify the references in the index.html file as follows:
 <script src="node_modules/core-js/client/shim.min.js"></script>
 
 <script src="node_modules/zone.js/dist/zone.js"></script>
-<script src="node_modules/reflect-metadata/Reflect.js"></script>
 <script src="node_modules/systemjs/dist/system.src.js"></script>
 
 <script src="systemjs.config.js"></script>
@@ -45,7 +45,7 @@ Modify the 'systemjs.config.js' file as follows:
 ```js
 paths: {
     // paths serve as alias
-    'npm:': '../node_modules/'
+    'npm:': 'node_modules/'
 },
 map: {
     // our app is within the app folder
@@ -69,9 +69,8 @@ map: {
     'angular2-in-memory-web-api': 'npm:angular2-in-memory-web-api'
 },
 packages: {
-    'app':                        { main: 'main.js',  defaultExtension: 'js' },
+    'app':                        { defaultExtension: 'js' },
     'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     'devextreme-angular':         { main: 'index.js', defaultExtension: 'js' }, // <== add this line
     'devextreme':                 { defaultExtension: 'js' }                    // <== add this line
 }
