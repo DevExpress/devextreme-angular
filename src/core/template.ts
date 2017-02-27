@@ -5,7 +5,8 @@ import {
     NgModule,
     TemplateRef,
     ViewContainerRef,
-    Input
+    Input,
+    NgZone
 } from '@angular/core';
 
 import { DxTemplateHost } from './template-host';
@@ -31,7 +32,10 @@ export class DxTemplateDirective {
     };
     name: string;
 
-    constructor(private templateRef: TemplateRef<any>, private viewContainerRef: ViewContainerRef, templateHost: DxTemplateHost) {
+    constructor(private templateRef: TemplateRef<any>,
+        private viewContainerRef: ViewContainerRef,
+        templateHost: DxTemplateHost,
+        private ngZone: NgZone) {
         templateHost.setTemplate(this);
     }
 
@@ -42,7 +46,9 @@ export class DxTemplateDirective {
         }
         // =========== WORKAROUND =============
         // https://github.com/angular/angular/issues/12243
-        childView['detectChanges']();
+        this.ngZone.run(() => {
+            childView['detectChanges']();
+        });
         // =========== /WORKAROUND =============
         return $(childView.rootNodes)
             .addClass(DX_TEMPLATE_WRAPPER_CLASS)
