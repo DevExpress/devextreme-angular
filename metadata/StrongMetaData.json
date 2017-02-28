@@ -1,7 +1,7 @@
 {
   "Widgets": {
     "dxAccordion": {
-      "Description": "A widget that displays data source items on collapsible panels.",
+      "Description": "The Accordion widget contains several panels displayed one under another. These panels can be collapsed or expanded by an end user, which makes this widget very useful for presenting information in a limited amount of space.",
       "Module": "ui/accordion",
       "Options": {
         "onDisposing": {
@@ -267,7 +267,7 @@
       }
     },
     "dxActionSheet": {
-      "Description": "A widget consisting of a set of choices related to a certain task.",
+      "Description": "The ActionSheet widget is a sheet containing a set of buttons located one under the other. These buttons usually represent several choices relating to a single task.",
       "Module": "ui/action_sheet",
       "Options": {
         "onDisposing": {
@@ -456,8 +456,9 @@
       }
     },
     "dxAutocomplete": {
-      "Description": "A textbox widget that supports autocompletion.",
+      "Description": "The Autocomplete widget is a textbox that provides suggestions while a user types into it.",
       "Module": "ui/autocomplete",
+      "IsEditor": true,
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -624,7 +625,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -663,7 +664,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -829,7 +830,7 @@
       }
     },
     "dxBox": {
-      "Description": "A container widget used to arrange inner elements.",
+      "Description": "The Box widget allows you to arrange various elements within it. Separate and adaptive, the Box widget acts as a building block for the layout.",
       "Module": "ui/box",
       "Options": {
         "onDisposing": {
@@ -999,7 +1000,7 @@
       }
     },
     "dxButton": {
-      "Description": "A button widget.",
+      "Description": "The Button widget is a simple button that performs specified commands when a user clicks it.",
       "Module": "ui/button",
       "Options": {
         "onDisposing": {
@@ -1137,8 +1138,9 @@
       }
     },
     "dxCalendar": {
-      "Description": "A calendar widget.",
+      "Description": "The Calendar is a widget that displays a calendar and allows an end user to select the required date within a specified date range.",
       "Module": "ui/calendar",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1239,7 +1241,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1315,8 +1317,9 @@
       }
     },
     "dxCheckBox": {
-      "Description": "A check box widget.",
+      "Description": "The CheckBox is a small box, which when selected by the end user, shows that a particular feature has been enabled or a specific option has been chosen.",
       "Module": "ui/check_box",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1417,7 +1420,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1455,8 +1458,9 @@
       }
     },
     "dxColorBox": {
-      "Description": "A widget used to specify a color value.",
+      "Description": "The ColorBox is a widget that allows an end user to enter a color or pick it out from the drop-down editor.",
       "Module": "ui/color_box",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -1567,7 +1571,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -1606,7 +1610,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -1710,6 +1714,10 @@
           ],
           "Description": "Specifies whether or not the widget value includes the alpha channel component."
         },
+        "fieldTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering the widget input field."
+        },
         "keyStep": {
           "PrimitiveTypes": [
             "double"
@@ -1719,7 +1727,7 @@
       }
     },
     "dxContextMenu": {
-      "Description": "A context menu widget.",
+      "Description": "The ContextMenu widget displays a single- or multi-level context menu. An end user invokes this menu by a right click or a long press.",
       "Module": "ui/context_menu",
       "Options": {
         "onDisposing": {
@@ -2030,7 +2038,7 @@
       }
     },
     "dxDataGrid": {
-      "Description": "A data grid widget.",
+      "Description": "The DataGrid is a widget that represents data from a local or remote source in the form of a grid. This widget offers such basic features as sorting, grouping, filtering, as well as more advanced capabilities, like state storing, export to Excel, master-detail interface, and many others.",
       "Module": "ui/data_grid",
       "Options": {
         "onDisposing": {
@@ -3552,8 +3560,9 @@
       }
     },
     "dxDateBox": {
-      "Description": "A date box widget.",
+      "Description": "The DateBox is a widget that displays date and time in a specified format, and enables a user to pick or type in the required date/time value.",
       "Module": "ui/date_box",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -3632,6 +3641,11 @@
           ],
           "Description": "A Boolean value specifying whether or not the widget changes its state when being hovered by an end user."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event."
+        },
         "onFocusIn": {
           "IsFunc": true,
           "IsEvent": true,
@@ -3664,7 +3678,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -3705,7 +3719,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -3934,7 +3948,7 @@
       }
     },
     "dxDeferRendering": {
-      "Description": "A container for elements that must be rendered at a specified moment.",
+      "Description": "The DeferRendering is a widget that waits for its content to be ready before rendering it. While the content is getting ready, the DeferRendering displays a loading indicator.",
       "Module": "ui/defer_rendering",
       "Options": {
         "onRendered": {
@@ -3975,7 +3989,7 @@
       }
     },
     "dxFileUploader": {
-      "Description": "A widget used to select and upload a file or multiple files.",
+      "Description": "The FileUploader widget enables an end user to upload files to the server. An end user can select files in the file exlorer or drag and drop files to the FileUploader area on the page.",
       "Module": "ui/file_uploader",
       "Options": {
         "onDisposing": {
@@ -4230,7 +4244,7 @@
       }
     },
     "dxForm": {
-      "Description": "A form widget used to display and edit values of object fields.",
+      "Description": "The Form widget represents fields of a data object as a collection of label-editor pairs. These pairs can be arranged in several groups, tabs and columns.",
       "Module": "ui/form",
       "Options": {
         "onDisposing": {
@@ -4483,7 +4497,7 @@
       }
     },
     "dxGallery": {
-      "Description": "An image gallery widget.",
+      "Description": "The Gallery is a widget that displays a collection of images in a carousel. The widget is supplied with various navigation controls that allow a user to switch between images.",
       "Module": "ui/gallery",
       "Options": {
         "onDisposing": {
@@ -4735,7 +4749,7 @@
       }
     },
     "dxList": {
-      "Description": "A list widget.",
+      "Description": "The List is a widget that represents a collection of items in a scrollable list.",
       "Module": "ui/list",
       "Options": {
         "onDisposing": {
@@ -5159,7 +5173,7 @@
       }
     },
     "dxLoadIndicator": {
-      "Description": "The widget used to indicate the loading process.",
+      "Description": "The LoadIndicator is a UI element notifying the viewer that a process is in progress.",
       "Module": "ui/load_indicator",
       "Options": {
         "onDisposing": {
@@ -5224,7 +5238,7 @@
       }
     },
     "dxLoadPanel": {
-      "Description": "A widget used to indicate whether or not an element is loading.",
+      "Description": "The LoadPanel is an overlay widget notifying the viewer that loading is in progress.",
       "Module": "ui/load_panel",
       "Options": {
         "onDisposing": {
@@ -5423,8 +5437,9 @@
       }
     },
     "dxLookup": {
-      "Description": "A widget that allows a user to select predefined values from a lookup window.",
+      "Description": "The Lookup is a widget that allows an end user to search for an item in a collection shown in a drop-down menu.",
       "Module": "ui/lookup",
+      "IsEditor": true,
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -5580,7 +5595,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -5613,7 +5628,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -5952,7 +5967,7 @@
       }
     },
     "dxMap": {
-      "Description": "An interactive map widget.",
+      "Description": "The Map is an interactive widget that displays a geographic map with markers and routes.",
       "Module": "ui/map",
       "Options": {
         "onDisposing": {
@@ -6265,7 +6280,7 @@
       }
     },
     "dxMenu": {
-      "Description": "A menu widget.",
+      "Description": "The Menu widget is a panel with clickable items. A click on an item opens a drop-down menu, which can contain several submenus.",
       "Module": "ui/menu",
       "Options": {
         "onDisposing": {
@@ -6571,7 +6586,7 @@
       }
     },
     "dxMultiView": {
-      "Description": "A widget used to display a view and to switch between several views.",
+      "Description": "The MultiView is a widget that contains several views. An end user navigates through the views by swiping them in the horizontal direction.",
       "Module": "ui/multi_view",
       "Options": {
         "onDisposing": {
@@ -6775,7 +6790,7 @@
       }
     },
     "dxNavBar": {
-      "Description": "A widget that contains items used to navigate through application views.",
+      "Description": "The NavBar is a widget that navigates the application views.",
       "Module": "ui/nav_bar",
       "Options": {
         "onDisposing": {
@@ -7006,8 +7021,9 @@
       }
     },
     "dxNumberBox": {
-      "Description": "A textbox widget that enables a user to enter numeric values.",
+      "Description": "The NumberBox is a widget that displays a numeric value and allows a user to modify it by typing in a value, and incrementing or decrementing it using the keyboard or mouse.",
       "Module": "ui/number_box",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -7118,7 +7134,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -7157,7 +7173,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -7266,7 +7282,7 @@
       }
     },
     "dxPanorama": {
-      "Description": "A widget displaying the required content in a long horizontal canvas that extends beyond the frames of the screen.",
+      "Description": "The Panorama widget is a full-screen widget that allows you to arrange items on a long horizontal canvas split into several views. Each view contains several items, and an end user navigates the views with the swipe gesture. The Panorama is often used as a navigation map on the first page of an application.",
       "Module": "ui/panorama",
       "Options": {
         "onDisposing": {
@@ -7469,7 +7485,7 @@
       }
     },
     "dxPivot": {
-      "Description": "A widget that is similar to a traditional tab control, but optimized for the phone with simplified end-user interaction.",
+      "Description": "The Pivot provides a quick way to manage multiple views. It includes a collection of views and a navigation header. An end user switches the views by swiping them or by clicking their titles on the navigation header.",
       "Module": "ui/pivot",
       "Options": {
         "onDisposing": {
@@ -7655,7 +7671,7 @@
       }
     },
     "dxPivotGrid": {
-      "Description": "A data summarization widget for multi-dimensional data analysis and data mining.",
+      "Description": "The PivotGrid is a widget that allows you to display and analyze multi-dimensional data from a local storage or an OLAP cube.",
       "Module": "ui/pivot_grid",
       "Options": {
         "onDisposing": {
@@ -8330,7 +8346,7 @@
       }
     },
     "dxPopover": {
-      "Description": "A widget that displays the required content in a popup window.",
+      "Description": "The Popover is a widget that shows notifications within a box with an arrow pointing to a specified UI element.",
       "Module": "ui/popover",
       "Options": {
         "onDisposing": {
@@ -8647,7 +8663,7 @@
       }
     },
     "dxPopup": {
-      "Description": "A widget that displays required content in a popup window.",
+      "Description": "The Popup widget is a pop-up window overlaying the current view.",
       "Module": "ui/popup",
       "Options": {
         "onDisposing": {
@@ -8968,7 +8984,7 @@
       }
     },
     "dxProgressBar": {
-      "Description": "A widget used to indicate progress.",
+      "Description": "The ProgressBar is a widget that shows current progress.",
       "Module": "ui/progress_bar",
       "Options": {
         "onDisposing": {
@@ -9101,8 +9117,9 @@
       }
     },
     "dxRadioGroup": {
-      "Description": "A widget that enables a user to select one item within a list of items represented by radio buttons.",
+      "Description": "The RadioGroup is a widget that contains a set of radio buttons and allows an end user to make a single selection from the set.",
       "Module": "ui/radio_group",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9203,7 +9220,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -9294,8 +9311,9 @@
       }
     },
     "dxRangeSlider": {
-      "Description": "A widget that enables a user to select a range of numeric values.",
+      "Description": "The RangeSlider is a widget that allows an end user to choose a range of numeric values.",
       "Module": "ui/range_slider",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -9532,7 +9550,7 @@
       }
     },
     "dxResizable": {
-      "Description": "A widget that displays required content in a resizable element.",
+      "Description": "The Resizable widget enables its content to be resizable in the UI.",
       "IsTranscludedContent": true,
       "Module": "ui/resizable",
       "Options": {
@@ -9623,7 +9641,7 @@
       }
     },
     "dxResponsiveBox": {
-      "Description": "A widget used to build an adaptive markup that is dependent on screen resolution.",
+      "Description": "The ResponsiveBox widget allows you to create an application or a website with a layout adapted to different screen sizes.",
       "Module": "ui/responsive_box",
       "Options": {
         "onDisposing": {
@@ -9859,7 +9877,7 @@
       }
     },
     "dxScheduler": {
-      "Description": "A widget that displays scheduled data using different views and provides the capability to load, add and edit appointments.",
+      "Description": "The Scheduler is a widget that represents scheduled data and allows a user to manage and edit it.",
       "Module": "ui/scheduler",
       "Options": {
         "onDisposing": {
@@ -10361,7 +10379,7 @@
       }
     },
     "dxScrollView": {
-      "Description": "A widget used to display scrollable content.",
+      "Description": "The ScrollView is a widget that enables a user to scroll its content.",
       "IsTranscludedContent": true,
       "Module": "ui/scroll_view",
       "Options": {
@@ -10491,8 +10509,9 @@
       }
     },
     "dxSelectBox": {
-      "Description": "A widget that allows you to select an item in a dropdown list.",
+      "Description": "The SelectBox widget is an editor that allows an end user to select an item from a drop-down list.",
       "Module": "ui/select_box",
+      "IsEditor": true,
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -10658,7 +10677,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -10697,7 +10716,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -10909,7 +10928,7 @@
       }
     },
     "dxSlideOut": {
-      "Description": "The widget that allows you to slide-out the current view to reveal an item list.",
+      "Description": "The SlideOut widget is a classic slide-out menu paired with a view. An end user opens the menu by swiping away the view.",
       "Module": "ui/slide_out",
       "Options": {
         "onDisposing": {
@@ -11131,7 +11150,7 @@
       }
     },
     "dxSlideOutView": {
-      "Description": "The widget that allows you to slide-out the current view to reveal a custom menu.",
+      "Description": "The SlideOutView widget is a classic slide-out menu paired with a view.",
       "Module": "ui/slide_out_view",
       "Options": {
         "onDisposing": {
@@ -11232,8 +11251,9 @@
       }
     },
     "dxSlider": {
-      "Description": "A widget that allows a user to select a numeric value within a given range.",
+      "Description": "The Slider is a widget that allows an end user to set a numeric value on a continuous range of possible values.",
       "Module": "ui/slider",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11334,7 +11354,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -11450,8 +11470,9 @@
       }
     },
     "dxSwitch": {
-      "Description": "A switch widget.",
+      "Description": "The Switch is a widget that can be in two states: \"On\" and \"Off\".",
       "Module": "ui/switch",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -11552,7 +11573,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -11596,7 +11617,7 @@
       }
     },
     "dxTabPanel": {
-      "Description": "A widget used to display a view and to switch between several views by clicking the appropriate tabs.",
+      "Description": "The TabPanel is a widget consisting of the Tabs and MultiView widgets. It automatically synchronizes the selected tab with the currently displayed view and vice versa.",
       "Module": "ui/tab_panel",
       "Options": {
         "onDisposing": {
@@ -11866,7 +11887,7 @@
       }
     },
     "dxTabs": {
-      "Description": "A tab strip used to switch between pages.",
+      "Description": "The Tabs is a tab strip used to switch between pages or views. This widget is included in the TabPanel widget, but you can use the Tabs separately as well.",
       "Module": "ui/tabs",
       "Options": {
         "onDisposing": {
@@ -12109,8 +12130,9 @@
       }
     },
     "dxTagBox": {
-      "Description": "A widget that allows you to select multiple items from a dropdown list.",
+      "Description": "The TagBox widget is an editor that allows an end user to select multiple items from a drop-down list.",
       "Module": "ui/tag_box",
+      "IsEditor": true,
       "Options": {
         "dataSource": {
           "IsDataSource": true,
@@ -12276,7 +12298,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12317,7 +12339,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -12502,7 +12524,8 @@
           "Description": "A handler for the selectAllValueChanged event."
         },
         "selectAllMode": {
-          "EnumName": "SelectAllMode"
+          "EnumName": "SelectAllMode",
+          "Description": "Specifies the mode in which all items are selected."
         },
         "selectedItems": {
           "PrimitiveTypes": [
@@ -12526,8 +12549,9 @@
       }
     },
     "dxTextArea": {
-      "Description": "A widget used to display and edit multi-line text.",
+      "Description": "The TextArea is a widget that enables a user to enter and edit a multi-line text.",
       "Module": "ui/text_area",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -12638,7 +12662,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12677,7 +12701,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "onChange": {
           "IsFunc": true,
@@ -12778,8 +12802,9 @@
       }
     },
     "dxTextBox": {
-      "Description": "A single-line text box widget.",
+      "Description": "The TextBox is a widget that enables a user to enter and edit a single line of text.",
       "Module": "ui/text_box",
+      "IsEditor": true,
       "Options": {
         "onDisposing": {
           "IsFunc": true,
@@ -12890,7 +12915,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The value to be assigned to the name attribute of the underlying `` element."
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
         "onValueChanged": {
           "IsFunc": true,
@@ -12929,7 +12954,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the attributes to be passed on to the underlying `` element."
+          "Description": "Specifies the attributes to be passed on to the underlying HTML element."
         },
         "mask": {
           "PrimitiveTypes": [
@@ -13050,7 +13075,7 @@
       }
     },
     "dxTileView": {
-      "Description": "A widget displaying several blocks of data as tiles.",
+      "Description": "The TileView widget contains a collection of tiles. Tiles can store much more information than ordinary buttons, that is why they are very popular in apps designed for touch devices.",
       "Module": "ui/tile_view",
       "Options": {
         "onDisposing": {
@@ -13265,7 +13290,7 @@
       }
     },
     "dxToast": {
-      "Description": "The toast message widget.",
+      "Description": "The Toast is a widget that provides pop-up notifications.",
       "Module": "ui/toast",
       "Options": {
         "onDisposing": {
@@ -13489,7 +13514,7 @@
       }
     },
     "dxToolbar": {
-      "Description": "A toolbar widget.",
+      "Description": "The Toolbar is a widget containing items that usually manage screen content. Those items can be plain text or widgets.",
       "Module": "ui/toolbar",
       "Options": {
         "onDisposing": {
@@ -13674,7 +13699,7 @@
       }
     },
     "dxTooltip": {
-      "Description": "A tooltip widget.",
+      "Description": "The Tooltip widget displays a tooltip for a specified element on the page.",
       "Module": "ui/tooltip",
       "Options": {
         "onDisposing": {
@@ -13911,7 +13936,7 @@
       }
     },
     "dxTreeView": {
-      "Description": "A widget displaying specified data items as a tree.",
+      "Description": "The TreeView widget is a tree-like representation of textual data.",
       "Module": "ui/tree_view",
       "Options": {
         "onDisposing": {
@@ -14456,7 +14481,7 @@
       }
     },
     "dxBarGauge": {
-      "Description": "A circular bar widget.",
+      "Description": "The BarGauge widget contains several circular bars that each indicates a single value.",
       "Module": "viz/bar_gauge",
       "Options": {
         "onDisposing": {
@@ -14614,7 +14639,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -15032,12 +15057,14 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsDeprecated": true,
           "Description": "Use the title | subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
+              "IsDeprecated": true,
               "Description": "Use the title | subtitle | font option instead."
             },
             "text": {
@@ -15060,7 +15087,7 @@
       }
     },
     "dxBullet": {
-      "Description": "A bullet graph widget.",
+      "Description": "The Bullet widget is useful when you need to compare a single measure to a target value. The widget comprises a horizontal bar indicating the measure and a vertical line indicating the target value.",
       "Module": "viz/bullet",
       "Options": {
         "onDisposing": {
@@ -15148,7 +15175,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "size": {
           "Description": "Specifies the size of the widget in pixels.",
@@ -15396,7 +15423,7 @@
       }
     },
     "dxChart": {
-      "Description": "A widget providing charts of various types for web applications.",
+      "Description": "The Chart is a widget that visualizes data from a local or remote storage using a great variety of series types along with different interactive elements, such as tooltips, crosshair pointer, legend, etc.",
       "Module": "viz/chart",
       "Options": {
         "onDisposing": {
@@ -15554,7 +15581,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -18551,7 +18578,7 @@
       }
     },
     "dxCircularGauge": {
-      "Description": "A widget that represents a gauge with a circular scale.",
+      "Description": "The CircularGauge is a widget that indicates values on a circular numeric scale.",
       "Module": "viz/circular_gauge",
       "Options": {
         "onDisposing": {
@@ -18709,7 +18736,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -19191,6 +19218,7 @@
               }
             },
             "majorTick": {
+              "IsDeprecated": true,
               "Description": "Use the tick option instead.",
               "Options": {
                 "color": {
@@ -19374,12 +19402,14 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsDeprecated": true,
           "Description": "Use the title | subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
+              "IsDeprecated": true,
               "Description": "Use the title | subtitle | font option instead."
             },
             "text": {
@@ -19493,7 +19523,7 @@
       }
     },
     "dxLinearGauge": {
-      "Description": "A widget that represents a gauge with a linear scale.",
+      "Description": "The LinearGauge is a widget that indicates values on a linear numeric scale.",
       "Module": "viz/linear_gauge",
       "Options": {
         "onDisposing": {
@@ -19651,7 +19681,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -20151,6 +20181,7 @@
               }
             },
             "majorTick": {
+              "IsDeprecated": true,
               "Description": "Use the tick option instead.",
               "Options": {
                 "color": {
@@ -20338,12 +20369,14 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsDeprecated": true,
           "Description": "Use the title | subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
+              "IsDeprecated": true,
               "Description": "Use the title | subtitle | font option instead."
             },
             "text": {
@@ -20393,7 +20426,7 @@
       }
     },
     "dxPieChart": {
-      "Description": "A circular chart widget for web applications.",
+      "Description": "The PieChart is a widget that visualizes data as a circle divided into sectors that each represents a portion of the whole.",
       "Module": "viz/pie_chart",
       "Options": {
         "onDisposing": {
@@ -20551,7 +20584,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -21129,6 +21162,12 @@
           ],
           "Description": "Specifies the fraction of the inner radius relative to the total radius in the series of the 'doughnut' type. The value should be between 0 and 1."
         },
+        "minDiameter": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the minimum diameter of the pie."
+        },
         "onLegendClick": {
           "IsFunc": true,
           "IsEvent": true,
@@ -21163,7 +21202,7 @@
       }
     },
     "dxPolarChart": {
-      "Description": "A chart widget displaying data in a polar coordinate system.",
+      "Description": "The PolarChart is a widget that visualizes data in a polar coordinate system.",
       "Module": "viz/polar_chart",
       "Options": {
         "onDisposing": {
@@ -21321,7 +21360,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -23393,7 +23432,7 @@
       }
     },
     "dxRangeSelector": {
-      "Description": "A widget that allows end users to select a range of values on a scale.",
+      "Description": "The RangeSelector is a widget that allows a user to select a range of values on a scale.",
       "Module": "viz/range_selector",
       "Options": {
         "onDisposing": {
@@ -23551,7 +23590,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -23997,6 +24036,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
+              "IsDeprecated": true,
               "EnumName": "VizTimeInterval",
               "Description": "Use the tickInterval option instead.",
               "Options": {
@@ -24465,6 +24505,7 @@
           }
         },
         "selectedRange": {
+          "IsDeprecated": true,
           "Description": "Use the value option instead.",
           "Options": {
             "endValue": {
@@ -24595,6 +24636,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
+              "IsDeprecated": true,
               "Description": "Use the placeholderHeight and indent options instead.",
               "Options": {
                 "height": {
@@ -24651,7 +24693,7 @@
       }
     },
     "dxSparkline": {
-      "Description": "A sparkline widget.",
+      "Description": "The Sparkline widget is a compact chart that contains only one series. Owing to their size, sparklines occupy very little space and can be easily collected in a table or embedded straight in text.",
       "Module": "viz/sparkline",
       "Options": {
         "onDisposing": {
@@ -24739,7 +24781,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "size": {
           "Description": "Specifies the size of the widget in pixels.",
@@ -25059,7 +25101,7 @@
       }
     },
     "dxTreeMap": {
-      "Description": "A widget for displaying hierarchical data by using nested rectangles.",
+      "Description": "The TreeMap is a widget that displays hierarchical data by using nested rectangles.",
       "Module": "viz/tree_map",
       "Options": {
         "onDisposing": {
@@ -25188,7 +25230,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -25537,7 +25579,8 @@
             "hoverEnabled": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether groups change their style when a user pauses on them."
             },
             "hoverStyle": {
               "Description": "Specifies the appearance of groups in the hover state.",
@@ -25618,7 +25661,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether tiles and groups change their style in the hover state."
+          "Description": "Specifies whether tiles and groups change their style when a user pauses on them."
         },
         "idField": {
           "PrimitiveTypes": [
@@ -25806,7 +25849,7 @@
       }
     },
     "dxVectorMap": {
-      "Description": "A vector map widget.",
+      "Description": "The VectorMap is a widget that visualize geographical locations. This widget represents a geographical map that contains areas and markers. Areas embody continents and countries. Markers flag specific points on the map, for example, towns, cities or capitals.",
       "Module": "viz/vector_map",
       "Options": {
         "onDisposing": {
@@ -25935,7 +25978,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Notifies a widget that it is embedded into an HTML page that uses a path modifier."
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a path modifying tag."
         },
         "redrawOnResize": {
           "PrimitiveTypes": [
@@ -26182,6 +26225,7 @@
           }
         },
         "areaSettings": {
+          "IsDeprecated": true,
           "Description": "Use the \"area\" type element of the layers array.",
           "Options": {
             "borderColor": {
@@ -26255,6 +26299,7 @@
               "Description": "Use the layers | hoverEnabled option instead."
             },
             "label": {
+              "IsDeprecated": true,
               "Description": "Use the layers | label option instead.",
               "Options": {
                 "dataField": {
@@ -26275,6 +26320,7 @@
                   "ComplexTypes": [
                     "VizFont"
                   ],
+                  "IsDeprecated": true,
                   "Description": "Use the layers | label | font option instead."
                 }
               }
@@ -26795,6 +26841,7 @@
             "string"
           ],
           "IsCollection": true,
+          "IsDeprecated": true,
           "SingularName": "marker",
           "Description": "Use the layers | dataSource option instead.",
           "Options": {
@@ -26847,6 +26894,7 @@
           }
         },
         "markerSettings": {
+          "IsDeprecated": true,
           "Description": "Use the \"marker\" type element of the layers array.",
           "Options": {
             "borderColor": {
@@ -26920,6 +26968,7 @@
               "Description": "Use the layers | hoverEnabled option instead."
             },
             "label": {
+              "IsDeprecated": true,
               "Description": "Use the layers | label option instead.",
               "Options": {
                 "enabled": {
@@ -26933,6 +26982,7 @@
                   "ComplexTypes": [
                     "VizFont"
                   ],
+                  "IsDeprecated": true,
                   "Description": "Use the layers | label | font option instead."
                 }
               }
@@ -32141,6 +32191,11 @@
           ],
           "Description": "Specifies whether the values in a column can be edited at runtime. Setting this option makes sense only when editing is enabled for a grid."
         },
+        "allowExporting": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
         "allowFiltering": {
           "PrimitiveTypes": [
             "bool"
@@ -32263,7 +32318,7 @@
         },
         "dataType": {
           "EnumName": "GridColumnDataType",
-          "Description": "Specifies the required type of column values."
+          "Description": "Casts column values to a specified data type."
         },
         "editCellTemplate": {
           "IsTemplate": true,
