@@ -11,14 +11,16 @@ interface EventSubscriber {
 export class NgEventsStrategy {
     private subscribers: { [key: string]: EventSubscriber[] } = {};
 
-    constructor(private component: DxComponent) { }
+    constructor(private component: DxComponent, private ngZone: NgZone) { }
 
     hasEvent(name: string) {
         return this.getEmitter(name).observers.length;
     }
 
     fireEvent(name, args) {
-        this.getEmitter(name).next(args && args[0]);
+        this.ngZone.run(() => {
+            this.getEmitter(name).next(args && args[0]);
+        });
     }
 
     on(name, handler) {
@@ -51,15 +53,13 @@ export class NgEventsStrategy {
 export class EmitterHelper {
     strategy: NgEventsStrategy;
 
-    constructor(private ngZone: NgZone, private component: DxComponent) {
-        this.strategy = new NgEventsStrategy(component);
+    constructor(ngZone: NgZone, private component: DxComponent) {
+        this.strategy = new NgEventsStrategy(component, ngZone);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
         let emitter = this.component[eventName];
         if (emitter) {
-            this.ngZone.run(() => {
-                emitter.next(eventArgs && eventArgs[0]);
-            });
+            emitter.next(eventArgs && eventArgs[0]);
         }
     }
     createEmitter(ngEventName: string, dxEventName: string) {
