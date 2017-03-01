@@ -1,3 +1,16 @@
+## 16.2.5
+
+### Features
+
+- Added the "Add DevExtreme to Ionic 2 Application" guide ([119fab1](https://github.com/DevExpress/devextreme-angular/commit/119fab133fac6ea0fb4ca11fc16265aa66d4caed))
+- Improved and updated documentation ([9ea5c92](https://github.com/DevExpress/devextreme-angular/commit/9ea5c92f0ff9622ddb28a1204fed393294d8aa9c), [2dcb8ee](https://github.com/DevExpress/devextreme-angular/commit/2dcb8ee0fea8bb93a5a18378944966f51af6a236))
+- `@angular/forms` added to `peerDependencies` ([b26a3b9](https://github.com/DevExpress/devextreme-angular/commit/b26a3b99701d7f1037cb1759ee3683a8125db62c))
+- Improved integration with NgZone ([4c2ae38](https://github.com/DevExpress/devextreme-angular/commit/4c2ae387f262f54f722900c8a49b0118ad320fdd))
+
+### Code Refactoring
+
+- Refactored `CustomValueAccessor` implementation ([b69d7a0](https://github.com/DevExpress/devextreme-angular/commit/b69d7a0121eba8201a2a687bcf216c50f708efc5))
+
 ## 16.2.5-rc.1 (2017-01-26)
 
 ### Bug Fixes
