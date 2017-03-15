@@ -206,12 +206,12 @@ The 'item' and 'group' names are default template names for the 'itemTemplate' a
 
 ### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
-In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup: 
-[DxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), 
-[DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/), 
-[DxValidationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidationGroup/).
-For instance, we can set the content for 
-the [DxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/) widget as shown below: 
+In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup:
+[dxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/),
+[dxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/),
+[dxValidationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidationGroup/).
+For instance, we can set the content for
+the [dxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/) widget as shown below:
 
 ```html
 <dx-scroll-view>
@@ -309,7 +309,7 @@ export class AppComponent {
 ### <a name="configuration-components"></a>Configuration Components ###
 
 You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
-The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the TreeMap widget: 
+The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the dxTreeMap widget:
 
 ```html
 <dx-tree-map [dataSource]="treeData">
@@ -333,8 +333,8 @@ export class AppComponent {
 }
 ```
 
-You can also use `dxi-` ('i' is a contraction of 'item') prefixed components to configure complex collection options for widgets. 
-The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the DataGrid widget: 
+You can also use `dxi-` ('i' is a contraction of 'item') prefixed components to configure complex collection options for widgets.
+The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the dxDataGrid widget:
 
 ```html
 <dx-data-grid [dataSource]="data">
@@ -360,7 +360,7 @@ export class AppComponent {
 ```
 
 To configure options that can accept a configuration object or an array of configuration objects, use `dxi-` prefixed components.
-The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the Chart widget: 
+The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the dxChart widget:
 
 ```html
 <dx-chart [dataSource]="data">
