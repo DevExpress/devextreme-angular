@@ -13,7 +13,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Static string option value](#static-option)
   * [Static non-string option value](#static-non-string-option)
   * [Event handling](#event-handling)
-  * [Callback method](#callback-method)
+  * [Callback functions](#callback-functions)
   * [One-way option binding](#one-way-binding)
   * [Two-way option binding](#two-way-binding)
   * [Custom templates](#custom-templates)
@@ -164,10 +164,10 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 <dx-button (onClick)="handler()"></dx-button>
 ```
 
-### <a name="callback-method"></a>Callback method ###
+### <a name="callback-functions"></a>Callback Functions ###
 
-To specify a callback method as widget's option ([layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
-option of dxVectorMap).
+To assign a callback function to a widget option (for example, to the [layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
+option of dxVectorMap), use the following syntax.
 
 ```html
 <dx-vector-map>
@@ -179,8 +179,7 @@ option of dxVectorMap).
 </dx-vector-map>
 ```
 
-Be careful: the callback method will lost the context of the component, so if method use a context-dependent functionality we can
-bind the context to this method in a constructor explicitly.
+Note that callback functions are executed _outside_ the context of the component. But if the context is important, you can explicitly bind it to the callback function in the constructor.
 
 ```js
 constructor() {
