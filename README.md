@@ -166,8 +166,8 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 
 ### <a name="callback-functions"></a>Callback Functions ###
 
-To assign a callback function to a widget option (for example, to the [layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
-option of dxVectorMap), use the following syntax.
+To specify a widget's option using a callback function (the [layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
+option of dxVectorMap):
 
 ```html
 <dx-vector-map>
@@ -179,7 +179,7 @@ option of dxVectorMap), use the following syntax.
 </dx-vector-map>
 ```
 
-Note that callback functions are executed _outside_ the context of the component. But if the context is important, you can explicitly bind it to the callback function in the constructor.
+Note that callback functions are executed _outside_ the context of the component, but if the context is important, you can explicitly bind it to the callback function in the constructor.
 
 ```js
 constructor() {
