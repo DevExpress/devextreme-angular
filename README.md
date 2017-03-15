@@ -13,6 +13,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Static string option value](#static-option)
   * [Static non-string option value](#static-non-string-option)
   * [Event handling](#event-handling)
+  * [Callback functions](#callback-functions)
   * [One-way option binding](#one-way-binding)
   * [Two-way option binding](#two-way-binding)
   * [Custom templates](#custom-templates)
@@ -161,6 +162,34 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 
 ```html
 <dx-button (onClick)="handler()"></dx-button>
+```
+
+### <a name="callback-functions"></a>Callback Functions ###
+
+To specify a widget's option using a callback function (the [layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
+option of dxVectorMap):
+
+```html
+<dx-vector-map>
+    ...
+    <dxi-layer
+        ...
+        [customize]="customizeLayers">
+    </dxi-layer>
+</dx-vector-map>
+```
+
+Note that callback functions are executed _outside_ the context of the component, but if the context is important, you can explicitly bind it to the callback function in the constructor.
+
+```js
+constructor() {
+    this.customizeLayers = this.customizeLayers.bind(this);
+}
+
+customizeLayers(elements) {
+    let country = this.myCountry;
+    ...
+}
 ```
 
 ### <a name="one-way-binding"></a>One-way Option Binding ###
