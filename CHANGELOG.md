@@ -2,7 +2,7 @@
 
 ### Features
 
-- We support Angular 4.0.0-rc.3
+- We support Angular 4.0.0-rc.3 ([#386](https://github.com/DevExpress/devextreme-angular/issues/386)).
 
 ## 16.2.5
 
