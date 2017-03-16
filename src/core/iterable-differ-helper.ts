@@ -26,7 +26,7 @@ export class IterableDifferHelper {
             if (value && Array.isArray(value)) {
                 if (!this._propertyDiffers[prop]) {
                     try {
-                        this._propertyDiffers[prop] = this._differs.find(value).create(null, null);
+                        this._propertyDiffers[prop] = this._differs.find(value).create(null);
                     } catch (e) { }
                 }
             } else {
