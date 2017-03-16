@@ -1,3 +1,9 @@
+## Unreleased
+
+### Features
+
+- We support Angular 4.0.0-rc.3
+
 ## 16.2.5
 
 ### Features
