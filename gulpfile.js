@@ -24,9 +24,7 @@ gulp.task('build', [
     'build.tools',
     'build.components',
     'build.examples'
-    ], function(done) {
-        runSequence('build.tests', done);
-    }
+    ]
 );
 
 gulp.task('default', ['build']);
@@ -234,10 +232,10 @@ gulp.task('watch.spec', function() {
     gulp.watch(buildConfig.components.tsTestSrc, ['build.tests']);
 });
 
-gulp.task('test.components', function(done) {
+gulp.task('test.components', function() {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
-    }, done).start();
+    }).start();
 });
 
 gulp.task('test.components.debug', function(done) {
@@ -267,16 +265,15 @@ gulp.task('test.tools', function(done) {
         }));
 });
 
-gulp.task('test.run', function(done) {
-    runSequence(
-        ['test.tools', 'test.components'],
-        'lint',
-        done);
-});
+gulp.task('run.tests', [
+    'test.tools',
+    'test.components',
+    'lint']
+);
 
 gulp.task('test', function(done) {
     runSequence(
-        'build', 'test.run',
+        'build', 'build.tests', 'run.tests',
         done);
 });
 
