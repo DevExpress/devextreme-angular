@@ -232,10 +232,10 @@ gulp.task('watch.spec', function() {
     gulp.watch(buildConfig.components.tsTestSrc, ['build.tests']);
 });
 
-gulp.task('test.components', function() {
+gulp.task('test.components', function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
-    }).start();
+    }, done).start();
 });
 
 gulp.task('test.components.debug', function(done) {
