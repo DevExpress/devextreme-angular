@@ -265,11 +265,12 @@ gulp.task('test.tools', function(done) {
         }));
 });
 
-gulp.task('run.tests', [
-    'test.tools',
-    'test.components',
-    'lint']
-);
+gulp.task('run.tests', function(done) {
+    runSequence(
+        ['test.tools', 'test.components'],
+        'lint',
+        done);
+});
 
 gulp.task('test', function(done) {
     runSequence(
