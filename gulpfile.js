@@ -217,7 +217,7 @@ gulp.task('clean.tests', function () {
     return del([outputFolderPath]);
 });
 
-gulp.task('build.tests', ['build.components', 'clean.tests'], function() {
+gulp.task('build.tests', ['clean.tests'], function() {
     var config = buildConfig.components,
         testConfig = buildConfig.tests;
 
@@ -232,13 +232,13 @@ gulp.task('watch.spec', function() {
     gulp.watch(buildConfig.components.tsTestSrc, ['build.tests']);
 });
 
-gulp.task('test.components', ['build.tests'], function(done) {
+gulp.task('test.components', function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
     }, done).start();
 });
 
-gulp.task('test.components.debug', ['build.tests'], function(done) {
+gulp.task('test.components.debug', function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js',
         browsers: [ 'Chrome' ],
@@ -246,7 +246,7 @@ gulp.task('test.components.debug', ['build.tests'], function(done) {
     }, done).start();
 });
 
-gulp.task('test.tools', ['build.tools'], function(done) {
+gulp.task('test.tools', function(done) {
     var config = buildConfig.tools.tests;
 
     return gulp.src(config.srcFilesPattern)
@@ -265,10 +265,16 @@ gulp.task('test.tools', ['build.tools'], function(done) {
         }));
 });
 
-gulp.task('test', function(done) {
+gulp.task('run.tests', function(done) {
     runSequence(
         ['test.tools', 'test.components'],
         'lint',
+        done);
+});
+
+gulp.task('test', function(done) {
+    runSequence(
+        'build', 'build.tests', 'run.tests',
         done);
 });
 

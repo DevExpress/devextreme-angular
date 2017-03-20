@@ -116,6 +116,12 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     protected _createInstance(element, options) {
+        // =========== WORKAROUND =============
+        // https://github.com/angular/angular/issues/15143
+        if (element.firstChild && element.firstChild.nodeType === Node.COMMENT_NODE) {
+            element.removeChild(element.firstChild);
+        }
+        // =========== /WORKAROUND =============
         <#? it.isEditor #>let widget = new <#= it.className #>(element, options);
         if (this.validator) {
             this.validator.createInstance(element);

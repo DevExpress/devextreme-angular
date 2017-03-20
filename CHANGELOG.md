@@ -1,3 +1,9 @@
+## Unreleased
+
+### Features
+
+- Support for Angular 4 RC has been provided ([#386](https://github.com/DevExpress/devextreme-angular/issues/386)).
+
 ## 16.2.5
 
 ### Features

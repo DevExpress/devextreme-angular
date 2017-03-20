@@ -1,10 +1,7 @@
 import {
     Injectable,
     SimpleChanges,
-    IterableDiffers,
-    IterableDiffer,
-    ChangeDetectorRef,
-    DefaultIterableDiffer
+    IterableDiffers
 } from '@angular/core';
 
 import {
@@ -15,9 +12,9 @@ import {
 export class IterableDifferHelper {
 
     private _host: DxComponent;
-    private _propertyDiffers: { [id: string]: IterableDiffer; } = {};
+    private _propertyDiffers: { [id: string]: any; } = {};
 
-    constructor(private _differs: IterableDiffers, private _cdr: ChangeDetectorRef) { }
+    constructor(private _differs: IterableDiffers) { }
 
     setHost(host: DxComponent) {
         this._host = host;
@@ -29,7 +26,7 @@ export class IterableDifferHelper {
             if (value && Array.isArray(value)) {
                 if (!this._propertyDiffers[prop]) {
                     try {
-                        this._propertyDiffers[prop] = this._differs.find(value).create(this._cdr, null);
+                        this._propertyDiffers[prop] = this._differs.find(value).create(null);
                     } catch (e) { }
                 }
             } else {
@@ -40,7 +37,7 @@ export class IterableDifferHelper {
 
     doCheck(prop: string) {
         if (this._propertyDiffers[prop]) {
-            const changes = <DefaultIterableDiffer>this._propertyDiffers[prop].diff(this._host[prop]);
+            const changes = this._propertyDiffers[prop].diff(this._host[prop]);
             if (changes && this._host.instance) {
                 this._host.instance.option(prop, this._host[prop]);
             }
