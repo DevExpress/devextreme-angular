@@ -166,7 +166,7 @@ To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiRefer
 
 ### <a name="callback-functions"></a>Callback Functions ###
 
-To specify a widget's option using a callback function (the [layer.customize](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
+To specify a widget's option using a callback function (the [layer.customize](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxVectorMap/Configuration/layers/#customize)
 option of dxVectorMap):
 
 ```html
