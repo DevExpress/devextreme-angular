@@ -34,7 +34,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 You have the following options to start:
 
 * [Play around with our Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview) without installing anything
-* [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app) 
+* [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app)
 * [Creating a new Angular 2 application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
 
@@ -72,15 +72,15 @@ Go to your main .ts file (usually *src/app.module.ts*) and import the required m
 
 ```js
 ...
-import { DxButtonModule } from 'devextreme-angular'; 
- 
-@NgModule({ 
-    ... 
-    imports: [ 
-        ... 
-        DxButtonModule, 
-        ... 
-    ] 
+import { DxButtonModule } from 'devextreme-angular';
+
+@NgModule({
+    ...
+    imports: [
+        ...
+        DxButtonModule,
+        ...
+    ]
 })
 export class AppModule {}
 ```
@@ -106,7 +106,7 @@ export class AppComponent {
 
 ### <a name="create-application"></a>Create a new Angular 2 Application ###
 
-Depending on your requirements you can choose one of the following ways to start: 
+Depending on your requirements you can choose one of the following ways to start:
 
 * [Start with SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
 * [Start with Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
@@ -285,7 +285,7 @@ export class AppComponent implements OnInit {
 
 ### <a name="devextreme-validation-features"></a>Using DevExtreme Validation Features ###
 
-You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
+You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/),
 validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
 
 
@@ -410,9 +410,9 @@ export class AppComponent {
 }
 ```
 
-It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
+It is possible to specify an item template inside the `dxi-` prefixed components and use Angular
 [structural directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) such as ngFor. Note that
-the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
+the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Default_Item_Template/)
 section of a corresponding widget documentation reference.
 
 ```html
@@ -496,7 +496,7 @@ DevExtreme Angular 2 components mirror
 bundlers with tree shaking support, such as Webpack 2, Rollup, SystemJS Bundler, etc. Due to specifics of the tree shaking algorithm, your project typescript sources should
 be prepared accordingly to make tree shaking available. This preparations are [performed by the Angular Compiler](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking).
 You can follow one of the existing guides to configure tree shaking with your bundler ([Webpack 2](http://blog.rangle.io/optimize-your-angular2-application-with-tree-shaking/),
-[Angular CLI](https://github.com/angular/angular-cli#bundling), 
+[Angular CLI](https://github.com/angular/angular-cli#bundling),
 [Rollup](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking)).
 
 To make it work with DevExtreme Angular 2 package, you just need to import only the modules required in your application, not the whole DevExtremeModule. For instance,
@@ -519,7 +519,7 @@ import { DxButtonModule } from 'devextreme-angular/ui/button';
 
 ## <a name="server-side-rendering"></a>Server-side Rendering ##
 
-Currently, DevExtreme components **do not support** server side rendering (check [this issue](https://github.com/DevExpress/devextreme-angular/issues/46)). 
+Currently, DevExtreme components **do not support** server side rendering (check [this issue](https://github.com/DevExpress/devextreme-angular/issues/46)).
 So, you are required to switch this feature off.
 
 ## <a name="license"></a>License ##
