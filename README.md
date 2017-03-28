@@ -139,7 +139,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 ### <a name="static-option"></a>Static String Option Value ###
 
 To specify a string widget's option statically
-(the [text](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/#text)
+(the [text](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxButton/Configuration/#text)
 option of dxButton):
 
 ```html
@@ -149,7 +149,7 @@ option of dxButton):
 ### <a name="static-non-string-option"></a>Static Non-string Option Value ###
 
 To specify a non-string widget's option statically
-(the [disabled](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Configuration/#disabled)
+(the [disabled](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxButton/Configuration/#disabled)
 option of dxButton):
 
 ```html
@@ -158,7 +158,7 @@ option of dxButton):
 
 ### <a name="event-handling"></a>Event Handling ###
 
-To bind the dxButton’s [click](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/Events/#click) event:
+To bind the dxButton’s [click](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxButton/Events/#click) event:
 
 ```html
 <dx-button (onClick)="handler()"></dx-button>
@@ -195,7 +195,7 @@ customizeLayers(elements) {
 ### <a name="one-way-binding"></a>One-way Option Binding ###
 
 If we want changes to the value of ‘bindingProperty’ of the host component to propagate to the
-[value](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxTextBox/Configuration/#value) of the dxTextBox widget,
+[value](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxTextBox/Configuration/#value) of the dxTextBox widget,
 a one-way binding approach is used:
 
 ```html
@@ -214,8 +214,8 @@ or vice versa from the widget to the bindingProperty:
 ### <a name="custom-templates"></a>Custom Templates ###
 
 In case you want to customize the rendering of a DevExtreme widget, we support custom templates. For instance, we can specify
-the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
-and [groupTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate)
+the [itemTemplate](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
+and [groupTemplate](http://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate)
 of the dxList widget as follows:
 
 ```html
@@ -236,11 +236,11 @@ The 'item' and 'group' names are default template names for the 'itemTemplate' a
 ### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup:
-[dxResizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/),
-[dxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/),
-[dxValidationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidationGroup/).
+[dxResizable](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxResizable/),
+[dxScrollView](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxScrollView/),
+[dxValidationGroup](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxValidationGroup/).
 For instance, we can set the content for
-the [dxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/) widget as shown below:
+the [dxScrollView](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxScrollView/) widget as shown below:
 
 ```html
 <dx-scroll-view>
@@ -285,7 +285,7 @@ export class AppComponent implements OnInit {
 
 ### <a name="devextreme-validation-features"></a>Using DevExtreme Validation Features ###
 
-You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/), 
+You can use the [built-in validators](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxValidator/Validation_Rules/),
 validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
 
 
@@ -338,7 +338,7 @@ export class AppComponent {
 ### <a name="configuration-components"></a>Configuration Components ###
 
 You can use `dxo-` ('o' is a contraction of 'option') prefixed components to configure complex nested options for widgets.
-The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the dxTreeMap widget:
+The following example demonstrates how to configure the [tooltip](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxTreeMap/Configuration/tooltip/) option of the dxTreeMap widget:
 
 ```html
 <dx-tree-map [dataSource]="treeData">
@@ -363,7 +363,7 @@ export class AppComponent {
 ```
 
 You can also use `dxi-` ('i' is a contraction of 'item') prefixed components to configure complex collection options for widgets.
-The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the dxDataGrid widget:
+The following example demonstrates how to configure the [columns](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/) option of the dxDataGrid widget:
 
 ```html
 <dx-data-grid [dataSource]="data">
@@ -389,7 +389,7 @@ export class AppComponent {
 ```
 
 To configure options that can accept a configuration object or an array of configuration objects, use `dxi-` prefixed components.
-The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the dxChart widget:
+The following example demonstrates how to configure the [valueAxis](https://js.devexpress.com/Documentation/16_2/ApiReference/Data_Visualization_Widgets/dxChart/Configuration/valueAxis/) option of the dxChart widget:
 
 ```html
 <dx-chart [dataSource]="data">
@@ -410,9 +410,9 @@ export class AppComponent {
 }
 ```
 
-It is possible to specify an item template inside the `dxi-` prefixed components and use Angular 
+It is possible to specify an item template inside the `dxi-` prefixed components and use Angular
 [structural directives](https://angular.io/docs/ts/latest/guide/structural-directives.html) such as ngFor. Note that
-the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Default_Item_Template/) 
+the available item properties are described in the [Default Item Template](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxList/Default_Item_Template/)
 section of a corresponding widget documentation reference.
 
 ```html
@@ -454,7 +454,7 @@ Angular has a built-in `template` directive. To define the `template` property o
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
 'instance' property. In the example below, the
-[refresh](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
+[refresh](https://js.devexpress.com/Documentation/16_2/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
 
 
@@ -485,7 +485,7 @@ export class AppComponent implements OnChanges {
 ## <a name="api-reference"></a>API Reference ##
 
 DevExtreme Angular 2 components mirror
-[DevExtreme JavaScript API](http://js.devexpress.com/Documentation/ApiReference/) but use
+[DevExtreme JavaScript API](http://js.devexpress.com/Documentation/16_2/ApiReference/) but use
 [Angular 2 syntax](#usage-samples) for specifying widget options, subscribing to events and custom templates declaration.
 
 ## <a name="bundle-optimization"></a>Bundle Size Optimization ##
