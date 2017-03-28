@@ -21,6 +21,7 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
+    changedOptions = {};
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -44,9 +45,18 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     private _initEvents() {
         this.instance.on('optionChanged', e => {
-            let changeEventName = e.name + 'Change';
-            this.eventHelper.fireNgEvent(changeEventName, [e.value]);
+            this.changedOptions[e.name] = e.value;
+            this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
         });
+    }
+    _shouldOptionChange(name: string, value: any) {
+        if (this.changedOptions.hasOwnProperty(name)) {
+            const prevValue = this.changedOptions[name];
+            delete this.changedOptions[name];
+
+            return value !== prevValue;
+        }
+        return true;
     }
     protected _getOption(name: string) {
         if (this.instance) {
@@ -57,10 +67,15 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     protected _setOption(name: string, value: any) {
         if (this.instance) {
-            this.instance.option(name, value);
+            this.updateOption(name, value);
         } else {
             this._initialOptions[name] = value;
         }
+    }
+    protected updateOption(name: string, value: any) {
+        if (this._shouldOptionChange(name, value)) {
+            this.instance.option(name, value);
+        };
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
