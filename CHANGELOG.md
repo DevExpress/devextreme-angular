@@ -1,10 +1,14 @@
-## 16.2.6-rc.1
+## 16.2.6 (2017-03-29)
+
+- Release a stable version with Angular 4 support
+
+## 16.2.6-rc.1 (2017-03-24)
 
 ### Features
 
 - Support for Angular 4 RC has been provided ([#386](https://github.com/DevExpress/devextreme-angular/issues/386)).
 
-## 16.2.5
+## 16.2.5 (2017-03-01)
 
 ### Features
 
