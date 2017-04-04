@@ -145,6 +145,15 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
         this._watcherHelper.checkWatchers();
+    }
+
+    _updateOption(name: string, value: any) {
+        if (Array.isArray(value)) {
+            this._idh.setupSingle(name, value);
+            this._idh.getChanges(name, value);
+        }
+
+        super._updateOption(name, value);
     }<#?#>
 <#? !it.isExtension #>
     ngAfterViewInit() {

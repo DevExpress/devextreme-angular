@@ -317,7 +317,8 @@ describe('DxList', () => {
         testComponent.complexItems[0].text = 'Changed';
         fixture.detectChanges();
 
-        expect(instance.option).toHaveBeenCalledTimes(0);
+        expect(instance.option).toHaveBeenCalledTimes(1);
+        expect(instance.option.calls.allArgs().length).toBe(1);
         expect(instance.option('items').length).toBe(2);
         expect(instance.element().find('.dx-item-content').length).toBe(2);
         expect(instance.element().find('.dx-item-content').eq(0).text()).toBe('Changed');
