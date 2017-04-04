@@ -67,12 +67,12 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
     }
     protected _setOption(name: string, value: any) {
         if (this.instance) {
-            this.updateOption(name, value);
+            this._updateOption(name, value);
         } else {
             this._initialOptions[name] = value;
         }
     }
-    protected updateOption(name: string, value: any) {
+    protected _updateOption(name: string, value: any) {
         if (this._shouldOptionChange(name, value)) {
             this.instance.option(name, value);
         };

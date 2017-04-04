@@ -147,13 +147,13 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._watcherHelper.checkWatchers();
     }
 
-    updateOption(name: string, value: any) {
+    _updateOption(name: string, value: any) {
         if (Array.isArray(value)) {
             this._idh.setupSingle(name, value);
             this._idh.getChanges(name, value);
         }
 
-        super.updateOption(name, value);
+        super._updateOption(name, value);
     }<#?#>
 <#? !it.isExtension #>
     ngAfterViewInit() {
