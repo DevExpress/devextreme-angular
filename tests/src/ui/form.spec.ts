@@ -121,15 +121,16 @@ describe('DxForm', () => {
             set: {
                 template: `
                     <dx-form [formData]="formData">
-                        <dxi-item dataField="date"></dxi-item>
                     </dx-form>
                 `
             }
         });
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
-        
-        this.formData.date = new Date(2017, 0, 1);
+
+        fixture.componentInstance.formData.date = new Date(2017, 0, 1);
+        fixture.detectChanges();
+
         let formInstance = getWidget(fixture);
         let dateBoxInstance = formInstance.getEditor('date');
 
