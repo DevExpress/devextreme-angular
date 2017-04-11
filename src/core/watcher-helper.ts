@@ -39,7 +39,8 @@ export class WatcherHelper {
     }
 
     private _isDifferentValues(oldValue: any, newValue: any, deepCheck: boolean) {
-        if (deepCheck && newValue instanceof (Object) && oldValue instanceof (Object)) {
+        if (deepCheck && newValue instanceof (Object) && oldValue instanceof (Object) &&
+            !(oldValue instanceof Date && newValue instanceof Date)) {
             return this._checkObjectsFields(newValue, oldValue);
         }
         return oldValue !== newValue;
