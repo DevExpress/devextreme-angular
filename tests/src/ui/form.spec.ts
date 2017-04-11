@@ -25,7 +25,8 @@ import {
 })
 class TestContainerComponent {
     formData = {
-        name: 'Unknown'
+        name: 'Unknown',
+        date: new Date()
     };
     @ViewChildren(DxFormComponent) innerWidgets: QueryList<DxFormComponent>;
 }
@@ -113,5 +114,26 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         expect(formInstance.option('formData.name')).toEqual([2]);
+    }));
+
+    it('should change the value of dxDateBox', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form [formData]="formData">
+                    </dx-form>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.componentInstance.formData.date = new Date(2017, 0, 1);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let dateBoxInstance = formInstance.getEditor('date');
+
+        expect(dateBoxInstance.option('value')).toEqual(new Date(2017, 0, 1));
     }));
 });
