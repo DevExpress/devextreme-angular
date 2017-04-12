@@ -15,6 +15,8 @@ import {
     DxDataGridComponent
 } from '../../../dist';
 
+import DxDataGrid from 'devextreme/ui/data_grid';
+
 @Component({
     selector: 'test-container-component',
     template: ''
@@ -97,5 +99,49 @@ describe('DxDataGrid', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
         expect(fixture.componentInstance.innerWidgets.first.columns[0].columns).toContain({ dataField: 'Field' });
+    });
+
+    it('should destroy devextreme components in template correctly', () => {
+        @Component({
+            selector: 'test-container-component',
+            template: ''
+        })
+        class TestGridComponent {
+            isDestroyed = false;
+
+            onCellPrepared(args) {
+                new DxDataGrid(args.cellElement, {
+                    onDisposing: () => {
+                        this.isDestroyed = true;
+                    }
+                });
+            }
+        }
+
+        TestBed.configureTestingModule({
+            declarations: [TestGridComponent],
+            imports: [DxDataGridModule]
+        });
+
+        TestBed.overrideComponent(TestGridComponent, {
+            set: {
+                template: `
+                    <dx-data-grid [dataSource]="[{ text: 1 }]" (onCellPrepared)="onCellPrepared($event)">
+                    </dx-data-grid>
+                `
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        let fixture = TestBed.createComponent(TestGridComponent);
+        fixture.detectChanges();
+        jasmine.clock().tick(101);
+
+        fixture.destroy();
+
+        expect(fixture.componentInstance.isDestroyed).toBe(true);
+        jasmine.clock().uninstall();
     });
 });
