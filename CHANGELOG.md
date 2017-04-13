@@ -3,6 +3,7 @@
 ### Features
 
 - DevExtreme dependency has been updated to the 17.1 preview
+- Fix watcher for values of the date type ([8a8355b](https://github.com/DevExpress/devextreme-angular/commit/8a8355bbcf833a01f494effe7d8c7f7ad452f523))
 
 ### Bug Fixes
 
