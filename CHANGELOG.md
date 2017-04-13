@@ -1,3 +1,15 @@
+## 17.1.2-beta.1 (2017-04-13)
+
+### Features
+
+- DevExtreme dependency has been updated to the 17.1 preview
+
+### Bug Fixes
+
+- Fix disposing nested components in dxDataGrid
+- Fix firing onValueChanged event several times on change value option
+- Fix watcher for values of the date type ([8a8355b](https://github.com/DevExpress/devextreme-angular/commit/8a8355bbcf833a01f494effe7d8c7f7ad452f523))
+
 ## 16.2.6 (2017-03-29)
 
 - Release a stable version with Angular 4 support
