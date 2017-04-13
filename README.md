@@ -233,53 +233,14 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
-### <a name="import-data-stores"></a>Import Data Stores ###
+### <a name="data-layer"></a>Data Layer ###
 
 The DevExtreme framework includes a data layer, which is a set of complementary components that enable you to read and write data.
-For More details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/Guide/Data_Layer/Data_Layer/).
-The following example demonstrates how you can import ArrayStore for providing access to an in-memory array.
+For more details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/Guide/Data_Layer/Data_Layer/).
 
-```js
-...
-import { ArrayStore} from 'devextreme/data/array_store';
-...
+### <a name="devextreme-utils"></a>DevExtreme Utils ###
 
-constructor(service: Service) {
-    this.data = new ArrayStore({
-       data: service.getArray(),
-       key: “ID”
-    });
-}
-```
-
-### <a name="import-devextreme-utils"></a>Import DevExtreme Utils ###
-
-The DevExtreme provides [utils](https://js.devexpress.com/Documentation/ApiReference/Common/utils/) that can be used in different application parts such as widgets and data.
-The following examples demonstrate how you can import dialog and config utils.
-
-```js
-import {Component} from '@angular/core';
-import dialog from 'devextreme/ui/dialog';
-import config from 'devextreme/core/config';
-
-@Component({
-    selector: 'my-app',
-    template: `
-       <dx-button text="buttonText" (onClick)="showDialog()"></dx-button>
-       <dx-date-box dateSerializationFormat="yyyy-MM-ddTHH:mm:ssx"></dx-date-box>
-    `
-})
-export class App {
-    constructor() {
-        config({
-            forceIsoDateParsing: true
-        });
-    }
-    showDialog() {
-        dialog.alert("text", "title");
-    }
-}
-```
+The DevExtreme provides utils that can be used in different application parts such as widgets and data. For more details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/ApiReference/Common/utils/).
 
 ### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
