@@ -233,6 +233,54 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
+### <a name="import-data-stores"></a>Import Data Stores ###
+
+The DevExtreme framework includes a data layer, which is a set of complementary components that enable you to read and write data.
+For More details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/Guide/Data_Layer/Data_Layer/).
+The following example demonstrates how you can import ArrayStore for providing access to an in-memory array.
+
+```js
+...
+import { ArrayStore} from 'devextreme/data/array_store';
+...
+
+constructor(service: Service) {
+    this.data = new ArrayStore({
+       data: service.getArray(),
+       key: “ID”
+    });
+}
+```
+
+### <a name="import-devextreme-utils"></a>Import DevExtreme Utils ###
+
+The DevExtreme provides [utils](https://js.devexpress.com/Documentation/ApiReference/Common/utils/) that can be used in different application parts such as widgets and data.
+The following examples demonstrate how you can import dialog and config utils.
+
+```js
+import {Component} from '@angular/core';
+import dialog from 'devextreme/ui/dialog';
+import config from 'devextreme/core/config';
+
+@Component({
+    selector: 'my-app',
+    template: `
+       <dx-button text="buttonText" (onClick)="showDialog()"></dx-button>
+       <dx-date-box dateSerializationFormat="yyyy-MM-ddTHH:mm:ssx"></dx-date-box>
+    `
+})
+export class App {
+    constructor() {
+        config({
+            forceIsoDateParsing: true
+        });
+    }
+    showDialog() {
+        dialog.alert("text", "title");
+    }
+}
+```
+
 ### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
 In addition to using dxTemplate, it is possible to put the content of the following widgets directly into the markup:
@@ -450,6 +498,9 @@ Angular has a built-in `template` directive. To define the `template` property o
 <dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
 ```
 
+Note that some options with an object type are not implemented as nested components - for example, 
+[editorOtions of dxDataGrid](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/#editorOptions), [editorOtions of dxForm](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#editorOptions), [the widget option of dxToolbar](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxToolbar/Default_Item_Template/#options).
+
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
@@ -475,6 +526,31 @@ export class AppComponent implements OnChanges {
         this.dataGrid.instance.refresh();
     }
 }
+```
+
+To access a DevExtreme widget instance in markup, you can use [template reference variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars).
+The following example demonstrates how you can get a dxSelectBox value in the template.
+
+```html
+<dx-select-box #selectbox [items]="items"></dx-select-box>
+{{selectbox.value}}
+```
+
+### <a name="angular-change-detection"></a>Angular Change Detection ###
+
+By default, in Angular, options changes are checked on each user action.
+If you bind a widget option to this function, it should return a static object.
+Otherwise, Angular considers that the option is constantly changed after each user action.
+Alternatively, you can change the default behavior and set the [ChangeDetectionStrategy](https://angular.io/docs/ts/latest/api/core/index/ChangeDetectionStrategy-enum.html) component option to "OnPush".
+
+```js
+import {Component, ChangeDetectionStrategy} from '@angular/core';
+
+@Component({
+    selector: 'my-app',
+    ....
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
 ```
 
 ## <a name="demos"></a>Demos ##
