@@ -4,6 +4,11 @@
 
 - DevExtreme dependency has been updated to the 17.1 preview
 
+### Bug Fixes
+
+- Fix disposing nested components in dxDataGrid
+- Fix firing onValueChanged event several times on change value option
+
 ## 16.2.6 (2017-03-29)
 
 - Release a stable version with Angular 4 support
