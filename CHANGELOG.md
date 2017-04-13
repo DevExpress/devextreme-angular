@@ -1,3 +1,9 @@
+## 17.1.2-beta.1 (2017-04-13)
+
+### Features
+
+- DevExtreme dependency has been updated to the 17.1 preview
+
 ## 16.2.6 (2017-03-29)
 
 - Release a stable version with Angular 4 support
