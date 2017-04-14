@@ -17,11 +17,14 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [One-way option binding](#one-way-binding)
   * [Two-way option binding](#two-way-binding)
   * [Custom templates](#custom-templates)
+  * [Data layer](#data-layer)
+  * [DevExtreme utils](#devextreme-utils)
   * [Components with transcluded content](#components-with-transcluded-content)
   * [Angular 2 forms](#angular-forms)
   * [Using DevExtreme validation features](#devextreme-validation-features)
   * [Configuration components](#configuration-components)
   * [Accessing a DevExtreme widget instance](#accessing-widget-instance)
+  * [Angular change detection](#angular-change-detection)
 * [Demos](#demos)
 * [API reference](#api-reference)
 * [Bundle size optimization](#bundle-optimization)
@@ -232,6 +235,15 @@ The local 'itemData' and 'groupData' variables (that are declared via the 'let' 
 render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
+
+### <a name="data-layer"></a>Data Layer ###
+
+The DevExtreme framework includes a data layer, which is a set of complementary components that enable you to read and write data.
+For more details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/Guide/Data_Layer/Data_Layer/).
+
+### <a name="devextreme-utils"></a>DevExtreme Utils ###
+
+The DevExtreme provides utils that can be used in different application parts such as widgets and data. For more details please refer to [the documentation on the official website](https://js.devexpress.com/Documentation/ApiReference/Common/utils/).
 
 ### <a name="components-with-transcluded-content"></a>Components with Transcluded Content ###
 
@@ -450,6 +462,9 @@ Angular has a built-in `template` directive. To define the `template` property o
 <dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
 ```
 
+Note that some options with an object type are not implemented as nested components - for example, 
+[editorOtions of dxDataGrid](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/#editorOptions), [editorOtions of dxForm](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#editorOptions), [the widget option of dxToolbar](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxToolbar/Default_Item_Template/#options).
+
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
 You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
@@ -475,6 +490,31 @@ export class AppComponent implements OnChanges {
         this.dataGrid.instance.refresh();
     }
 }
+```
+
+To access a DevExtreme widget instance in markup, you can use [template reference variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars).
+The following example demonstrates how you can get a dxSelectBox value in the template.
+
+```html
+<dx-select-box #selectbox [items]="items"></dx-select-box>
+{{selectbox.value}}
+```
+
+### <a name="angular-change-detection"></a>Angular Change Detection ###
+
+By default, in Angular, options changes are checked on each user action.
+If you bind a widget option to this function, it should return a static object.
+Otherwise, Angular considers that the option is constantly changed after each user action.
+Alternatively, you can change the default behavior and set the [ChangeDetectionStrategy](https://angular.io/docs/ts/latest/api/core/index/ChangeDetectionStrategy-enum.html) component option to "OnPush".
+
+```js
+import {Component, ChangeDetectionStrategy} from '@angular/core';
+
+@Component({
+    selector: 'my-app',
+    ....
+    changeDetection: ChangeDetectionStrategy.OnPush
+})
 ```
 
 ## <a name="demos"></a>Demos ##
