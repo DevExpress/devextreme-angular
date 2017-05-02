@@ -135,7 +135,7 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
             let tagNamePrefix = n.tagName.toLowerCase().substr(0, 3);
             return !(tagNamePrefix === 'dxi' || tagNamePrefix === 'dxo');
         } else {
-            return n.textContent.replace(/\s/g, '').length;
+            return n.nodeName !== '#comment' && n.textContent.replace(/\s/g, '').length;
         }
     });
     if (!userContent.length) {
