@@ -1,3 +1,9 @@
+## Unreleased
+
+### Bug Fixes
+
+- Fixed validation of custom editors
+
 ## 17.1.2-beta.1 (2017-04-13)
 
 ### Features
