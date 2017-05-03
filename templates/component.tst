@@ -3,7 +3,8 @@
 <# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
 
 <# var implementedInterfaces = ['OnDestroy']; #>
-<# !it.isExtension && implementedInterfaces.push('AfterViewInit'); #>
+
+<# it.isEditor && implementedInterfaces.push('AfterContentInit'); #>
 <# it.isEditor && implementedInterfaces.push('ControlValueAccessor'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
@@ -14,8 +15,8 @@ import {
     NgZone,
     Input,
     Output,
-    OnDestroy<#? !it.isExtension #>,
-    AfterViewInit<#?#><#? it.isEditor #>,
+    OnDestroy<#? it.isEditor #>,
+    AfterContentInit,
     ContentChild,
     forwardRef,
     HostListener<#?#><#? collectionProperties.length #>,
@@ -155,9 +156,11 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
         super._updateOption(name, value);
     }<#?#>
-<#? !it.isExtension #>
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
+<#? it.isEditor #>
+    ngAfterContentInit() {
+        if (this.validator) {
+            this.validator.renderOnViewInit = false;
+        }
     }<#?#>
 }
 

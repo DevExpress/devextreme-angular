@@ -2,18 +2,18 @@
 
 import {
     Component,
+    ViewChild
 } from '@angular/core';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
-
-import DxTextBox from 'devextreme/ui/text_box';
 
 import {
     DxTextBoxModule,
-    DxValidatorModule
+    DxTextBoxComponent,
+    DxValidatorModule,
+    DxValidatorComponent
 } from '../../../dist';
 
 @Component({
@@ -21,6 +21,9 @@ import {
     template: ''
 })
 class TestContainerComponent {
+    @ViewChild(DxTextBoxComponent) textBox: DxTextBoxComponent;
+    @ViewChild(DxValidatorComponent) validator: DxValidatorComponent;
+
     text = 'Some text';
     validationRules = [
         {
@@ -28,6 +31,15 @@ class TestContainerComponent {
             message: 'Report number is required.'
         }
     ];
+    isValid = true;
+    testAdapter = {
+        getValue: () => {
+            return this.text;
+        },
+        applyValidationResults: (result: any) => {
+            this.isValid = result.isValid;
+        }
+    };
 }
 
 
@@ -41,13 +53,8 @@ describe('DxValidator', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-textbox') || fixture.nativeElement;
-        return DxTextBox['getInstance'](widgetElement);
-    }
-
     // spec
-    it('should work with dx-validator', async(() => {
+    it('should work with dx-validator', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -60,8 +67,8 @@ describe('DxValidator', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
+        let testComponent = fixture.componentInstance;
+        let instance: any = testComponent.textBox.instance;
 
         fixture.detectChanges();
         expect(instance.element().is('.dx-invalid')).toBe(false);
@@ -73,5 +80,34 @@ describe('DxValidator', () => {
         testComponent.text = 'Some text';
         fixture.detectChanges();
         expect(instance.element().is('.dx-invalid')).toBe(false);
-    }));
+    });
+
+    it('should work with custom editor', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <input [value]="text"/>
+                    <dx-validator [validationRules]="validationRules" [adapter]="testAdapter"></dx-validator>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance;
+
+        testComponent.validator.instance.validate();
+        expect(testComponent.isValid).toBe(true);
+
+        testComponent.text = '';
+        fixture.detectChanges();
+        testComponent.validator.instance.validate();
+        expect(testComponent.isValid).toBe(false);
+
+        testComponent.text = 'Some text';
+        fixture.detectChanges();
+        testComponent.validator.instance.validate();
+        expect(testComponent.isValid).toBe(true);
+    });
 });
