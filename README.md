@@ -565,7 +565,7 @@ So, you are required to switch this feature off.
 ## <a name="license"></a>License ##
 
 Familiarize yourself with the
-[DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).
+[DevExtreme License](https://js.devexpress.com/Licensing/).
 [Free trial is available!](http://js.devexpress.com/Buy/)
 
 **DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
