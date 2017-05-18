@@ -36,7 +36,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -90,13 +90,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -302,7 +302,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -548,7 +548,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -607,13 +607,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -755,7 +755,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "onClosed": {
           "IsFunc": true,
@@ -1484,7 +1485,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -1514,7 +1515,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -1990,7 +1991,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -2039,13 +2040,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -2129,7 +2130,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -2178,13 +2179,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -3155,19 +3156,22 @@
                   "Options": {
                     "mode": {
                       "IsDeprecated": true,
-                      "EnumName": "OverlappingBehavior"
+                      "EnumName": "OverlappingBehavior",
+                      "Description": "Instead, use the overlappingBehavior option directly."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the staggeringSpacing option instead."
                     }
                   }
                 },
@@ -3894,19 +3898,22 @@
                   "Options": {
                     "mode": {
                       "IsDeprecated": true,
-                      "EnumName": "OverlappingBehavior"
+                      "EnumName": "OverlappingBehavior",
+                      "Description": "Instead, use the overlappingBehavior option directly."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the staggeringSpacing option instead."
                     }
                   }
                 },
@@ -4846,19 +4853,22 @@
                   "Options": {
                     "mode": {
                       "IsDeprecated": true,
-                      "EnumName": "OverlappingBehavior"
+                      "EnumName": "OverlappingBehavior",
+                      "Description": "Instead, use the overlappingBehavior option directly."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Use the staggeringSpacing option instead."
                     }
                   }
                 },
@@ -5517,7 +5527,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -5566,13 +5576,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -6221,17 +6231,19 @@
                 },
                 "overlappingBehavior": {
                   "EnumName": "ScaleLabelOverlappingBehavior",
-                  "Description": "Specifies the overlap resolving options to be applied to scale labels.",
+                  "Description": "Decides how to arrange scale labels when there is not enough space to keep all of them.",
                   "Options": {
                     "useAutoArrangement": {
                       "PrimitiveTypes": [
                         "bool"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Instead, use the overlappingBehavior option directly."
                     },
                     "hideFirstOrLast": {
                       "IsDeprecated": true,
-                      "EnumName": "GaugeOverlappingBehavior"
+                      "EnumName": "GaugeOverlappingBehavior",
+                      "Description": "Use the scale | label | hideFirstOrLast option instead."
                     }
                   }
                 },
@@ -6255,7 +6267,8 @@
                   "Description": "Specifies whether or not scale labels are visible on the gauge."
                 },
                 "hideFirstOrLast": {
-                  "EnumName": "GaugeOverlappingBehavior"
+                  "EnumName": "GaugeOverlappingBehavior",
+                  "Description": "Specifies which label to hide in case of overlapping."
                 },
                 "indentFromTick": {
                   "PrimitiveTypes": [
@@ -6311,7 +6324,7 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior | useAutoArrangement option instead."
+                  "Description": "Use the overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -6551,7 +6564,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -6610,13 +6623,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -6738,7 +6751,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "onClosed": {
           "IsFunc": true,
@@ -6822,7 +6836,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -6876,7 +6890,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -7133,7 +7147,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -7187,13 +7201,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "allowColumnReordering": {
           "PrimitiveTypes": [
@@ -7363,7 +7377,7 @@
               "ComplexTypes": [
                 "dxFormOptions"
               ],
-              "Description": "Configures the form. Only used if editing | mode is \"form\" or \"popup\"."
+              "Description": "Configures the form. Used only if editing | mode is \"form\" or \"popup\"."
             },
             "mode": {
               "EnumName": "GridEditMode",
@@ -7373,7 +7387,7 @@
               "ComplexTypes": [
                 "dxPopupOptions"
               ],
-              "Description": "Configures the popup. Only used if editing | mode is \"popup\"."
+              "Description": "Configures the popup. Used only if editing | mode is \"popup\"."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -7789,38 +7803,39 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not grid rows must be shaded in a different way."
+          "Description": "Specifies whether rows should be shaded differently."
         },
         "scrolling": {
+          "Description": "Configures scrolling.",
           "Options": {
             "preloadEnabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not a grid must preload pages adjacent to the current page when using virtual scrolling."
+              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling | mode is \"virtual\"."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the scrolling by content is enabled."
+              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if native scrolling is disabled."
             },
             "scrollByThumb": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the scrollbar thumb scrolling enabled."
+              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if native scrolling is disabled."
             },
             "showScrollbar": {
               "EnumName": "ShowScrollbarMode",
-              "Description": "Specifies the scrollbar display policy."
+              "Description": "Specifies when to show the scrollbar."
             },
             "useNative": {
               "PrimitiveTypes": [
                 "bool",
                 "string"
               ],
-              "Description": "Specifies whether or not the widget uses native scrolling."
+              "Description": "Specifies whether the widget should use native or simulated scrolling."
             },
             "mode": {
               "EnumName": "GridScrollingMode",
@@ -7829,30 +7844,31 @@
           }
         },
         "searchPanel": {
-          "Description": "Specifies options of the search panel.",
+          "Description": "Configures the search panel.",
           "Options": {
             "highlightCaseSensitive": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Notifies the widget whether search is case-sensitive to ensure proper highlightning of search results. Applies only if highlightSearchText is true."
             },
             "highlightSearchText": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not search strings in the located grid records should be highlighted."
+              "Description": "Specifies whether found substrings should be highlighted."
             },
             "placeholder": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies text displayed by the search panel when no search string was typed."
+              "Description": "Specifies a placeholder for the search panel."
             },
             "searchVisibleColumnsOnly": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether to search all columns or only visible ones."
+              "Description": "Specifies whether the widget should search against all columns or only visible ones."
             },
             "text": {
               "PrimitiveTypes": [
@@ -7880,15 +7896,16 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of the records that must appear initially selected."
+          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection | deferred is false."
         },
         "selection": {
+          "Description": "Configures runtime selection.",
           "Options": {
             "allowSelectAll": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether the user can select all grid records at once."
+              "Description": "Specifies whether a user can select all rows at once."
             },
             "mode": {
               "EnumName": "SelectionMode",
@@ -7897,13 +7914,16 @@
             "deferred": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Makes selection deferred."
             },
             "selectAllMode": {
-              "EnumName": "SelectAllMode"
+              "EnumName": "SelectAllMode",
+              "Description": "Specifies the mode in which all the records are selected. Applies only if selection | allowSelectAll is true."
             },
             "showCheckBoxesMode": {
-              "EnumName": "GridSelectionShowCheckBoxesMode"
+              "EnumName": "GridSelectionShowCheckBoxesMode",
+              "Description": "Specifies when to display checkboxes in rows. Applies only if selection | mode is \"multiple\"."
             }
           }
         },
@@ -7911,28 +7931,28 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the outer borders of the grid are visible or not."
+          "Description": "Specifies whether the outer borders of the widget are visible."
         },
         "showColumnHeaders": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether column headers are visible or not."
+          "Description": "Specifies whether column headers are visible."
         },
         "showColumnLines": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not vertical lines separating one grid column from another are visible."
+          "Description": "Specifies whether vertical lines that separate one column from another are visible."
         },
         "showRowLines": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not horizontal lines separating one grid row from another are visible."
+          "Description": "Specifies whether horizontal lines that separate one row from another are visible."
         },
         "sorting": {
-          "Description": "Specifies options of runtime sorting.",
+          "Description": "Configures runtime sorting.",
           "Options": {
             "ascendingText": {
               "PrimitiveTypes": [
@@ -7944,7 +7964,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies text for the context menu item that resets sorting settings for a column."
+              "Description": "Specifies text for the context menu item that clears sorting settings for a column."
             },
             "descendingText": {
               "PrimitiveTypes": [
@@ -7954,7 +7974,7 @@
             },
             "mode": {
               "EnumName": "GridSortingMode",
-              "Description": "Specifies the runtime sorting mode."
+              "Description": "Specifies the sorting mode."
             }
           }
         },
@@ -8358,7 +8378,8 @@
         "selectionFilter": {
           "PrimitiveTypes": [
             "any"
-          ]
+          ],
+          "Description": "Specifies filters for the rows that must be selected initially. Applies only if selection | deferred is true."
         },
         "sortByGroupSummaryInfo": {
           "IsCollection": true,
@@ -8677,7 +8698,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -8741,13 +8762,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -8901,7 +8922,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
@@ -9165,7 +9187,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -9224,13 +9246,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -9350,7 +9372,8 @@
         "acceptCustomValue": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether the widget allows a user to enter a custom value."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -9359,7 +9382,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "onClosed": {
           "IsFunc": true,
@@ -9380,6 +9404,12 @@
         "contentTemplate": {
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down content."
+        },
+        "dropDownOptions": {
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
         }
       }
     },
@@ -9475,7 +9505,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -9524,13 +9554,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -9730,7 +9760,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -9784,13 +9814,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "alignItemLabels": {
           "PrimitiveTypes": [
@@ -9983,7 +10013,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -10031,13 +10061,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -10817,17 +10847,19 @@
                 },
                 "overlappingBehavior": {
                   "EnumName": "ScaleLabelOverlappingBehavior",
-                  "Description": "Specifies the overlap resolving options to be applied to scale labels.",
+                  "Description": "Decides how to arrange scale labels when there is not enough space to keep all of them.",
                   "Options": {
                     "useAutoArrangement": {
                       "PrimitiveTypes": [
                         "bool"
                       ],
-                      "IsDeprecated": true
+                      "IsDeprecated": true,
+                      "Description": "Instead, use the overlappingBehavior option directly."
                     },
                     "hideFirstOrLast": {
                       "IsDeprecated": true,
-                      "EnumName": "GaugeOverlappingBehavior"
+                      "EnumName": "GaugeOverlappingBehavior",
+                      "Description": "This functionality is deprecated as redundant."
                     }
                   }
                 },
@@ -10904,7 +10936,7 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior | useAutoArrangement option instead."
+                  "Description": "Use the overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -11139,7 +11171,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -11193,13 +11225,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -11563,7 +11595,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -11582,7 +11614,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "indicatorSrc": {
           "PrimitiveTypes": [
@@ -11627,7 +11659,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -11883,7 +11915,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -11932,13 +11964,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -12021,7 +12053,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
@@ -12360,7 +12393,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -12409,13 +12442,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "autoAdjust": {
           "PrimitiveTypes": [
@@ -12673,7 +12706,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -12727,13 +12760,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -12979,7 +13012,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -13033,13 +13066,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -13183,7 +13216,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -13231,13 +13264,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -13415,7 +13448,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -13474,13 +13507,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -13675,7 +13708,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -13723,7 +13756,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -14675,7 +14708,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -14717,7 +14750,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -14861,7 +14894,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -14897,13 +14930,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "allowExpandAll": {
           "PrimitiveTypes": [
@@ -15231,11 +15264,11 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether to display the Total rows."
+          "Description": "Specifies whether to display the Total rows. Applies only if rowHeaderLayout is \"standard\"."
         },
         "showTotalsPrior": {
           "EnumName": "PivotGridTotalsDisplayMode",
-          "Description": "Specifies where to show the total rows or columns."
+          "Description": "Specifies where to show the total rows or columns. Applies only if rowHeaderLayout is \"standard\"."
         },
         "stateStoring": {
           "Description": "A configuration object specifying options related to state storing.",
@@ -15280,6 +15313,11 @@
                 "string"
               ],
               "Description": "The string to display as a Collapse All context menu item."
+            },
+            "dataNotAvailable": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "expandAll": {
               "PrimitiveTypes": [
@@ -15388,7 +15426,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -15442,13 +15480,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -16510,7 +16548,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies a coefficient for dividing the argument axis."
+              "Description": "Specifies the minimum distance between two neighboring major ticks in pixels. Applies only to the axes of the \"continuous\" and \"logarithmic\" types."
             },
             "categories": {
               "PrimitiveTypes": [
@@ -17766,7 +17804,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -18083,7 +18121,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -18131,7 +18169,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -18404,7 +18442,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -18435,7 +18473,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -18538,7 +18576,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -18587,13 +18625,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -19270,7 +19308,8 @@
                   "Description": "Specifies a format for the text displayed in scale labels."
                 },
                 "overlappingBehavior": {
-                  "EnumName": "ScaleLabelOverlappingBehavior"
+                  "EnumName": "ScaleLabelOverlappingBehavior",
+                  "Description": "Decides how to arrange scale labels when there is not enough space to keep all of them."
                 },
                 "precision": {
                   "PrimitiveTypes": [
@@ -19763,7 +19802,8 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the overlappingBehavior option instead."
             },
             "valueType": {
               "EnumName": "ChartDataType",
@@ -19996,7 +20036,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -20045,13 +20085,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -20235,7 +20275,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -20327,7 +20367,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -20357,7 +20397,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -20563,7 +20603,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -20605,13 +20645,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "allDayExpr": {
           "PrimitiveTypes": [
@@ -21076,7 +21116,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -21261,7 +21301,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -21320,13 +21360,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -21465,7 +21505,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+          "Description": "Specifies whether the widget allows a user to enter a custom value. Requires the onCustomItemCreating handler implementation."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -21474,7 +21514,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
@@ -21591,7 +21632,7 @@
         "onCustomItemCreating": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the customItemCreating event."
+          "Description": "A handler for the customItemCreating event. Executed when a user adds a custom item. Requires acceptCustomValue to be set to true."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -21637,7 +21678,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -21679,7 +21720,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -21729,8 +21770,7 @@
         "selectedIndex": {
           "PrimitiveTypes": [
             "int32"
-          ],
-          "Description": "The index of the currently selected widget item."
+          ]
         },
         "selectedItem": {
           "PrimitiveTypes": [
@@ -21859,7 +21899,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -21896,7 +21936,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "contentTemplate": {
           "IsTemplate": true,
@@ -21961,7 +22001,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -22010,13 +22050,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -22588,7 +22628,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -22637,13 +22677,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -22734,7 +22774,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -22788,13 +22828,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -23004,7 +23044,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -23052,13 +23092,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -23303,7 +23343,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -23362,13 +23402,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -23476,7 +23516,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+          "Description": "Specifies whether the widget allows a user to enter a custom value. Requires the onCustomItemCreating handler implementation."
         },
         "applyValueMode": {
           "EnumName": "EditorApplyValueMode",
@@ -23489,7 +23529,8 @@
           "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
         },
         "dropDownButtonTemplate": {
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
         },
         "fieldEditEnabled": {
           "PrimitiveTypes": [
@@ -23593,7 +23634,7 @@
         "onCustomItemCreating": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the customItemCreating event."
+          "Description": "A handler for the customItemCreating event. Executed when a user adds a custom item. Requires acceptCustomValue to be set to true."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -23680,7 +23721,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -23739,13 +23780,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -23933,7 +23974,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -23992,13 +24033,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -24205,7 +24246,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -24259,13 +24300,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -24420,7 +24461,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -24462,7 +24503,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -24644,7 +24685,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -24680,7 +24721,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -24829,7 +24870,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -25031,6 +25072,7 @@
       }
     },
     "dxTreeList": {
+      "Description": "The TreeList is a widget that represents data from a local or remote source in the form of a multi-column tree view. This widget offers such features as sorting, filtering, editing, selection, etc.",
       "Module": "ui/tree_list",
       "Options": {
         "onDisposing": {
@@ -25065,7 +25107,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -25112,19 +25154,20 @@
         },
         "onContentReady": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready."
         },
         "tabIndex": {
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "allowColumnReordering": {
           "PrimitiveTypes": [
@@ -25256,7 +25299,8 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "Configures columns."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -25269,6 +25313,7 @@
           "Description": "Specifies the serialization format for date-time values."
         },
         "editing": {
+          "Description": "Configures editing.",
           "Options": {
             "allowAdding": {
               "PrimitiveTypes": [
@@ -25292,7 +25337,7 @@
               "ComplexTypes": [
                 "dxFormOptions"
               ],
-              "Description": "Configures the form. Only used if editing | mode is \"form\" or \"popup\"."
+              "Description": "Configures the form. Used only if editing | mode is \"form\" or \"popup\"."
             },
             "mode": {
               "EnumName": "GridEditMode",
@@ -25302,9 +25347,10 @@
               "ComplexTypes": [
                 "dxPopupOptions"
               ],
-              "Description": "Configures the popup. Only used if editing | mode is \"popup\"."
+              "Description": "Configures the popup. Used only if editing | mode is \"popup\"."
             },
             "texts": {
+              "Description": "Contains options that specify texts for editing-related UI elements.",
               "Options": {
                 "addRow": {
                   "PrimitiveTypes": [
@@ -25375,7 +25421,8 @@
                 "addRowToNode": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Specifies text for the button that adds a new nested row. Applies if the editing | mode is \"batch\" or \"cell\"."
                 }
               }
             }
@@ -25698,69 +25745,72 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not grid rows must be shaded in a different way."
+          "Description": "Specifies whether rows should be shaded differently."
         },
         "scrolling": {
+          "Description": "Configures scrolling.",
           "Options": {
             "preloadEnabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not a grid must preload pages adjacent to the current page when using virtual scrolling."
+              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling | mode is \"virtual\"."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the scrolling by content is enabled."
+              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if native scrolling is disabled."
             },
             "scrollByThumb": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the scrollbar thumb scrolling enabled."
+              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if native scrolling is disabled."
             },
             "showScrollbar": {
               "EnumName": "ShowScrollbarMode",
-              "Description": "Specifies the scrollbar display policy."
+              "Description": "Specifies when to show the scrollbar."
             },
             "useNative": {
               "PrimitiveTypes": [
                 "bool",
                 "string"
               ],
-              "Description": "Specifies whether or not the widget uses native scrolling."
+              "Description": "Specifies whether the widget should use native or simulated scrolling."
             },
             "mode": {
-              "EnumName": "TreeListScrollingMode"
+              "EnumName": "TreeListScrollingMode",
+              "Description": "Specifies the scrolling mode."
             }
           }
         },
         "searchPanel": {
-          "Description": "Specifies options of the search panel.",
+          "Description": "Configures the search panel.",
           "Options": {
             "highlightCaseSensitive": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Notifies the widget whether search is case-sensitive to ensure proper highlightning of search results. Applies only if highlightSearchText is true."
             },
             "highlightSearchText": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not search strings in the located grid records should be highlighted."
+              "Description": "Specifies whether found substrings should be highlighted."
             },
             "placeholder": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies text displayed by the search panel when no search string was typed."
+              "Description": "Specifies a placeholder for the search panel."
             },
             "searchVisibleColumnsOnly": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether to search all columns or only visible ones."
+              "Description": "Specifies whether the widget should search against all columns or only visible ones."
             },
             "text": {
               "PrimitiveTypes": [
@@ -25788,15 +25838,16 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of the records that must appear initially selected."
+          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection | deferred is false."
         },
         "selection": {
+          "Description": "Configures runtime selection.",
           "Options": {
             "allowSelectAll": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether the user can select all grid records at once."
+              "Description": "Specifies whether a user can select all rows at once."
             },
             "mode": {
               "EnumName": "SelectionMode",
@@ -25808,28 +25859,28 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the outer borders of the grid are visible or not."
+          "Description": "Specifies whether the outer borders of the widget are visible."
         },
         "showColumnHeaders": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether column headers are visible or not."
+          "Description": "Specifies whether column headers are visible."
         },
         "showColumnLines": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not vertical lines separating one grid column from another are visible."
+          "Description": "Specifies whether vertical lines that separate one column from another are visible."
         },
         "showRowLines": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not horizontal lines separating one grid row from another are visible."
+          "Description": "Specifies whether horizontal lines that separate one row from another are visible."
         },
         "sorting": {
-          "Description": "Specifies options of runtime sorting.",
+          "Description": "Configures runtime sorting.",
           "Options": {
             "ascendingText": {
               "PrimitiveTypes": [
@@ -25841,7 +25892,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies text for the context menu item that resets sorting settings for a column."
+              "Description": "Specifies text for the context menu item that clears sorting settings for a column."
             },
             "descendingText": {
               "PrimitiveTypes": [
@@ -25851,7 +25902,7 @@
             },
             "mode": {
               "EnumName": "GridSortingMode",
-              "Description": "Specifies the runtime sorting mode."
+              "Description": "Specifies the sorting mode."
             }
           }
         },
@@ -25870,85 +25921,104 @@
         "autoExpandAll": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether all rows are expanded initially."
         },
         "customizeColumns": {
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Customizes columns after they are created."
         },
         "dataStructure": {
-          "EnumName": "TreeListDataStructure"
+          "EnumName": "TreeListDataStructure",
+          "Description": "Notifies the widget of your data structure."
         },
         "expandedRowKeys": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
-          "SingularName": "expandedRowKey"
+          "SingularName": "expandedRowKey",
+          "Description": "Specifies keys of the initially expanded rows."
         },
         "expandNodesOnFiltering": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether nodes appear expanded or collapsed after filtering is applied."
         },
         "hasItemsExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies which data field defines whether the node has children."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies which data field contains nested items. Set this option when your data has a hierarchical structure."
         },
         "keyExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies which data field provides keys for nodes."
         },
         "onCellClick": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the cellClick event. Executed after a user clicks a cell."
         },
         "onCellHoverChanged": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the cellHoverChanged event. Executed after the pointer enters or leaves a cell."
         },
         "onCellPrepared": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the cellPrepared event. Executed after the widget creates a cell."
         },
         "onContextMenuPreparing": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the contextMenuPreparing event. Executed before a context menu is rendered."
         },
         "onEditingStart": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for editingStart. Executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the editorPrepared event. Executed after an editor is created."
         },
         "onEditorPreparing": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the editorPreparing event. Executed before an editor is created."
         },
         "onNodesInitialized": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the nodesInitialized event. Executed after all nodes in the widget are initialized."
         },
         "onRowClick": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the rowClick event. Executed when a user clicks a row."
         },
         "onRowPrepared": {
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A handler for the rowPrepared event. Executed after the widget creates a row."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies which data field provides parent keys."
         },
         "remoteOperations": {
           "PrimitiveTypes": [
@@ -25979,7 +26049,8 @@
         "rootValue": {
           "PrimitiveTypes": [
             "any"
-          ]
+          ],
+          "Description": "Specifies the root node's identifier. Applies if dataStructure is 'plain'."
         }
       }
     },
@@ -26550,7 +26621,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the data source field that provides IDs for items. Applies to flat data sources only."
+          "Description": "Specifies the name of the data source field that provides IDs for items. Applies to plain data sources only."
         },
         "interactWithGroup": {
           "PrimitiveTypes": [
@@ -26612,7 +26683,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to flat data sources only."
+          "Description": "Specifies the name of the data source field that provides parent IDs for items. Applies to plain data sources only."
         },
         "resolveLabelOverflow": {
           "EnumName": "TreeMapResolveLabelOverflow",
@@ -26767,7 +26838,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the current component supports a right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "width": {
           "PrimitiveTypes": [
@@ -26821,13 +26892,13 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the widget tab index."
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not the widget is visible."
+          "Description": "Specifies whether the widget is visible."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -29490,7 +29561,8 @@
             "showValues": {
               "PrimitiveTypes": [
                 "bool"
-              ]
+              ],
+              "Description": "Specifies whether or not to display summary values. Applies only to the fields whose area is \"data\". Inherits the value of showTotals by default."
             },
             "sortBy": {
               "EnumName": "PivotGridSortBy",
@@ -33608,17 +33680,11 @@
           ],
           "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing | allowUpdating option."
         },
-        "allowExporting": {
-          "PrimitiveTypes": [
-            "bool"
-          ],
-          "Description": "Specifies whether data from this column should be exported."
-        },
         "allowFiltering": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible or headerFilter | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible, headerFilter | visible or searchPanel | visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
@@ -33782,7 +33848,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Only used if editing | mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item produced by this column in the editing state. Used only if editing | mode is \"form\" or \"popup\"."
         },
         "headerCellTemplate": {
           "IsTemplate": true,
@@ -33809,7 +33875,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size. Applies only if columnHidingEnabled is true."
+          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size."
         },
         "isBand": {
           "PrimitiveTypes": [
@@ -33933,6 +33999,12 @@
           ],
           "Description": "Specifies the width of the column in pixels or percentages."
         },
+        "allowExporting": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether data from this column should be exported."
+        },
         "allowGrouping": {
           "PrimitiveTypes": [
             "bool"
@@ -33985,6 +34057,7 @@
       }
     },
     "TreeListColumn": {
+      "Description": "Configures columns.",
       "Options": {
         "alignment": {
           "EnumName": "HorizontalAlignment",
@@ -33996,17 +34069,11 @@
           ],
           "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing | allowUpdating option."
         },
-        "allowExporting": {
-          "PrimitiveTypes": [
-            "bool"
-          ],
-          "Description": "Specifies whether data from this column should be exported."
-        },
         "allowFiltering": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible or headerFilter | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible, headerFilter | visible or searchPanel | visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
@@ -34170,7 +34237,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Only used if editing | mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item produced by this column in the editing state. Used only if editing | mode is \"form\" or \"popup\"."
         },
         "headerCellTemplate": {
           "IsTemplate": true,
@@ -34197,7 +34264,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size. Applies only if columnHidingEnabled is true."
+          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size."
         },
         "isBand": {
           "PrimitiveTypes": [
@@ -34326,7 +34393,8 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "Configures columns."
         }
       }
     },
