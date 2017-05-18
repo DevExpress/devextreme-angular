@@ -34,9 +34,21 @@ export class NgEventsStrategy {
 
     off(name, handler) {
         let eventSubscribers = this.subscribers[name] || [];
-        eventSubscribers
-            .filter(i => !handler || i.handler === handler)
-            .forEach(i => i.unsubscribe());
+
+        if (handler) {
+            eventSubscribers.some((subscriber, i) => {
+                if (subscriber.handler === handler) {
+                    subscriber.unsubscribe();
+                    eventSubscribers.splice(i, 1);
+                    return true;
+                }
+            });
+        } else {
+            eventSubscribers.forEach(subscriber => {
+                subscriber.unsubscribe();
+            });
+            eventSubscribers.splice(0, eventSubscribers.length);
+        }
     }
 
     dispose() {}
