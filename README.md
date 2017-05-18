@@ -36,7 +36,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 You have the following options to start:
 
-* [Play around with our Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview) without installing anything
+* [Play around with our Plunker](http://plnkr.co/edit/XuAPDd?p=preview) without installing anything
 * [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app)
 * [Creating a new Angular 2 application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
