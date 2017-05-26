@@ -4,6 +4,16 @@
 
 - Fixed validation of custom editors
 
+## 17.1.3 (2017-05-15)
+
+### Features
+
+- DevExtreme dependency has been updated to the 17.1 release
+
+### Bug Fixes
+
+- Fix case when item validation rule uses ngIf directive ([#440](https://github.com/DevExpress/devextreme-angular/issues/440))
+
 ## 17.1.2-beta.1 (2017-04-13)
 
 ### Features

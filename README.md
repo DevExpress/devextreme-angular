@@ -36,7 +36,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 You have the following options to start:
 
-* [Play around with our Plunker](http://plnkr.co/edit/tpl:3MUrYspAm1RfHLSrc6CP?p=preview) without installing anything
+* [Play around with our Plunker](http://plnkr.co/edit/XuAPDd?p=preview) without installing anything
 * [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app)
 * [Creating a new Angular 2 application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
@@ -565,7 +565,7 @@ So, you are required to switch this feature off.
 ## <a name="license"></a>License ##
 
 Familiarize yourself with the
-[DevExtreme Commercial License](https://www.devexpress.com/Support/EULAs/DevExtreme.xml).
+[DevExtreme License](https://js.devexpress.com/Licensing/).
 [Free trial is available!](http://js.devexpress.com/Buy/)
 
 **DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
