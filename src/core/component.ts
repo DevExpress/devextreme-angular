@@ -1,7 +1,8 @@
 import {
     ElementRef,
     NgZone,
-    QueryList
+    QueryList,
+    AfterViewInit
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -15,13 +16,14 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements INestedOptionContainer, ICollectionNestedOptionContainer {
+export abstract class DxComponent implements AfterViewInit, INestedOptionContainer, ICollectionNestedOptionContainer {
     private _initialOptions: any;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
     changedOptions = {};
+    renderOnViewInit = true;
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -97,6 +99,11 @@ export abstract class DxComponent implements INestedOptionContainer, ICollection
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(ngZone, this);
+    }
+    ngAfterViewInit() {
+        if (this.renderOnViewInit) {
+            this._createWidget(this.element.nativeElement);
+        }
     }
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
