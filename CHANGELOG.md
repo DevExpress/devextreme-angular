@@ -1,3 +1,9 @@
+## Unreleased
+
+### Bug Fixes
+
+- Fixed validation of custom editors
+
 ## 16.2.6 (2017-03-29)
 
 - Release a stable version with Angular 4 support
