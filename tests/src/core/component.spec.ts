@@ -91,7 +91,7 @@ export class TestContainerComponent {
 }
 
 
-describe('DevExtreme Angular 2 widget', () => {
+describe('DevExtreme Angular widget', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule(

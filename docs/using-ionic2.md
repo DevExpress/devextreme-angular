@@ -1,12 +1,12 @@
-# Using the DevExtreme Angular 2 Integration with Ionic 2
+# Using the DevExtreme Angular Integration with Ionic 2
 
 ## Create an Application
 
 Create an Ionic 2 application as described in the [Ionic 2 Tutorial](http://ionicframework.com/docs/v2/getting-started/tutorial/).
 
-## Install DevExtreme Angular 2 Integration
+## Install DevExtreme Angular Integration
 
-Once the application is created, install DevExtreme Angular 2 integration npm package. Run the following command in the command prompt.
+Once the application is created, install DevExtreme Angular integration npm package. Run the following command in the command prompt.
 
 ```
 npm install --save devextreme devextreme-angular
@@ -80,7 +80,7 @@ After you have performed all steps described above, you can use DevExtreme contr
 . . .
 ```
 
-For more information on working with DevExtreme controls in Angular 2 approach, refer to the [DevExtreme-Angular library description](https://github.com/DevExpress/devextreme-angular).
+For more information on working with DevExtreme controls in Angular approach, refer to the [DevExtreme-Angular library description](https://github.com/DevExpress/devextreme-angular).
 
 ## Run the Application
 
