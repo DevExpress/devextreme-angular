@@ -53,7 +53,7 @@ export class TestContainerComponent {
 }
 
 
-describe('DevExtreme Angular 2 component extension', () => {
+describe('DevExtreme Angular component extension', () => {
 
     beforeEach(() => {
         TestBed.configureTestingModule(

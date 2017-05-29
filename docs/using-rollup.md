@@ -1,4 +1,4 @@
-# Using the DevExtreme Angular 2 Integration with Rollup
+# Using the DevExtreme Angular Integration with Rollup
 
 ## Create a new Application ##
 

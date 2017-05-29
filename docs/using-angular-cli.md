@@ -1,4 +1,4 @@
-# Using the DevExtreme Angular 2 Components with Angular CLI
+# Using the DevExtreme Angular Components with Angular CLI
 
 ## Create a new Application ##
 

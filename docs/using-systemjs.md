@@ -1,11 +1,11 @@
-# Using the DevExtreme Angular 2 Components with SystemJS
+# Using the DevExtreme Angular Components with SystemJS
 
 **:red_circle: This is not the perfect arrangement for your application. It is not designed for production. 
 It exists primarily to get you started quickly with learning and prototyping in Angular and DevExtreme.**
 
 ## Create a new Application ##
 
-We will use [Angular 2 quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
+We will use [Angular quick-start tutorial](https://angular.io/docs/ts/latest/quickstart.html) as a base project for this guide. Please follow the
 [original tutorial steps](https://github.com/angular/quickstart/blob/master/README.md) to bootstrap the application.
 
 ## Add DevExtreme ##
