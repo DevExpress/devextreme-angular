@@ -1,8 +1,8 @@
 [![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
-# Angular 2 UI and Visualization Components Based on DevExtreme Widgets #
+# Angular UI and Visualization Components Based on DevExtreme Widgets #
 
-This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular 2](https://angular.io/) applications.
+This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular](https://angular.io/) applications.
 
 * [Getting started](#getting-started)
   * [Prerequisites](#prerequisites)
@@ -20,7 +20,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Data layer](#data-layer)
   * [DevExtreme utils](#devextreme-utils)
   * [Components with transcluded content](#components-with-transcluded-content)
-  * [Angular 2 forms](#angular-forms)
+  * [Angular forms](#angular-forms)
   * [Using DevExtreme validation features](#devextreme-validation-features)
   * [Configuration components](#configuration-components)
   * [Accessing a DevExtreme widget instance](#accessing-widget-instance)
@@ -37,19 +37,19 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 You have the following options to start:
 
 * [Play around with our Plunker](http://plnkr.co/edit/XuAPDd?p=preview) without installing anything
-* [Add DevExtreme to your existing Angular 2 application](#add-to-existing-app)
-* [Creating a new Angular 2 application](#create-application) and install DevExtreme
+* [Add DevExtreme to your existing Angular application](#add-to-existing-app)
+* [Creating a new Angular application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
-required and essential to Angular 2 development.
+required and essential to Angular development.
 
 <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank" title="Installing Gulp">Gulp</a> is
 required to build the project and run tests.
 
-### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular 2 Application ###
+### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular Application ###
 
 #### <a name="installation"></a>Install DevExtreme ####
 
@@ -107,7 +107,7 @@ export class AppComponent {
 }
 ```
 
-### <a name="create-application"></a>Create a new Angular 2 Application ###
+### <a name="create-application"></a>Create a new Angular Application ###
 
 Depending on your requirements you can choose one of the following ways to start:
 
@@ -260,10 +260,10 @@ the [dxScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widge
 </dx-scroll-view>
 ```
 
-### <a name="angular-forms"></a>Angular 2 Forms ###
+### <a name="angular-forms"></a>Angular Forms ###
 
-The DevExtreme Angular 2 editors support the 'ngModel' binding as well as the 'formControlName' directive, which are necessary for the
-[Angular 2 forms](https://angular.io/docs/ts/latest/guide/forms.html) features.
+The DevExtreme Angular editors support the 'ngModel' binding as well as the 'formControlName' directive, which are necessary for the
+[Angular forms](https://angular.io/docs/ts/latest/guide/forms.html) features.
 
 ```html
 <form [formGroup]="form">
@@ -298,7 +298,7 @@ export class AppComponent implements OnInit {
 ### <a name="devextreme-validation-features"></a>Using DevExtreme Validation Features ###
 
 You can use the [built-in validators](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/),
-validation summary and other DevExtreme validation features with Angular 2 DevExtreme editors.
+validation summary and other DevExtreme validation features with Angular DevExtreme editors.
 
 
 ```html
@@ -467,7 +467,7 @@ Note that some options with an object type are not implemented as nested compone
 
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
-You can access a DevExtreme widget instance by using the Angular 2 component query syntax and the component's
+You can access a DevExtreme widget instance by using the Angular component query syntax and the component's
 'instance' property. In the example below, the
 [refresh](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
@@ -524,9 +524,9 @@ import {Component, ChangeDetectionStrategy} from '@angular/core';
 
 ## <a name="api-reference"></a>API Reference ##
 
-DevExtreme Angular 2 components mirror
+DevExtreme Angular components mirror
 [DevExtreme JavaScript API](http://js.devexpress.com/Documentation/ApiReference/) but use
-[Angular 2 syntax](#usage-samples) for specifying widget options, subscribing to events and custom templates declaration.
+[Angular syntax](#usage-samples) for specifying widget options, subscribing to events and custom templates declaration.
 
 ## <a name="bundle-optimization"></a>Bundle Size Optimization ##
 
@@ -539,7 +539,7 @@ You can follow one of the existing guides to configure tree shaking with your bu
 [Angular CLI](https://github.com/angular/angular-cli#bundling),
 [Rollup](https://angular.io/docs/ts/latest/cookbook/aot-compiler.html#!#tree-shaking)).
 
-To make it work with DevExtreme Angular 2 package, you just need to import only the modules required in your application, not the whole DevExtremeModule. For instance,
+To make it work with DevExtreme Angular package, you just need to import only the modules required in your application, not the whole DevExtremeModule. For instance,
 you can import only DxButtonModule as follows:
 
 ```js
@@ -568,10 +568,10 @@ Familiarize yourself with the
 [DevExtreme License](https://js.devexpress.com/Licensing/).
 [Free trial is available!](http://js.devexpress.com/Buy/)
 
-**DevExtreme Angular 2 components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
+**DevExtreme Angular components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
 
 ## <a name="support-feedback"></a>Support & Feedback ##
 
-* For general Angular 2 topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
+* For general Angular topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
 * For questions regarding DevExtreme libraries and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center)
-* For DevExtreme Angular 2 integration bugs, questions and suggestions, use the [GitHub issue tracker](https://github.com/DevExpress/devextreme-angular/issues)
+* For DevExtreme Angular integration bugs, questions and suggestions, use the [GitHub issue tracker](https://github.com/DevExpress/devextreme-angular/issues)
