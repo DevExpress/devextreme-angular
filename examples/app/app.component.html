@@ -23,7 +23,7 @@
             <dx-text-box
                 formControlName="emailControl"
                 [(ngModel)]="formData.email"
-                [isValid]="emailControl.valid || emailControl.pristine"
+                [isValid]="!emailControl.invalid || emailControl.pristine"
                 [validationError]="{ message: 'Enter correct email' }">
             </dx-text-box>
 
@@ -32,7 +32,7 @@
                 formControlName="passwordControl"
                 [(ngModel)]="formData.password"
                 mode="password"
-                [isValid]="passwordControl.valid || passwordControl.pristine"
+                [isValid]="!passwordControl.invalid || passwordControl.pristine"
                 [validationError]="{ message: 'Password should be greater that six symbols' }">
             </dx-text-box>
 
