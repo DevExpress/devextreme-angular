@@ -12,7 +12,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -84,7 +84,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -278,7 +278,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -332,7 +332,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -524,7 +524,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -855,7 +855,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -1399,6 +1399,9 @@
           "Description": "A handler for the tooltipShown event."
         },
         "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -1461,7 +1464,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -1509,7 +1512,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -1588,6 +1591,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
+              "EnumName": "Mode",
               "Description": "Specifies the base size of an item element along the main direction."
             },
             "box": {
@@ -1600,7 +1604,6 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "EnumName": "Mode",
               "Description": "Specifies the ratio value used to count the item element size along the main direction."
             }
           }
@@ -1631,7 +1634,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -1967,7 +1970,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -2106,7 +2109,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -2290,7 +2293,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -3002,6 +3005,9 @@
           "Description": "A handler for the tooltipShown event."
         },
         "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -5503,7 +5509,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -5643,7 +5649,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -6111,6 +6117,9 @@
               "Description": "Specifies the offset of the range container from an invisible scale line in pixels."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -6540,7 +6549,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -6740,6 +6749,12 @@
           "IsReadonly": true,
           "Description": "The read-only option that holds the text displayed by the widget input element."
         },
+        "acceptCustomValue": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget allows an end-user to enter a custom value."
+        },
         "applyValueMode": {
           "EnumName": "EditorApplyValueMode",
           "Description": "Specifies the way an end-user applies the selected value."
@@ -6812,7 +6827,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -6884,7 +6899,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -6984,7 +6999,7 @@
           "Description": "Specifies the name of the data source item field whose value defines whether or not the corresponding widget items is selected."
         },
         "animation": {
-          "Description": "An object that defines the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -7123,7 +7138,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -7195,7 +7210,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -7322,7 +7337,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the widget should hide columns in order to adapt to the screen or container size."
+          "Description": "Specifies whether the widget should hide columns to adapt to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
         "columnMinWidth": {
           "PrimitiveTypes": [
@@ -7792,7 +7807,7 @@
         "onSelectionChanged": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Executed after a row has been selected or selection has been cleared."
+          "Description": "A handler for the selectionChanged event. Executed after selecting a row or clearing its selection."
         },
         "onToolbarPreparing": {
           "IsFunc": true,
@@ -8178,6 +8193,13 @@
             }
           }
         },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "keyExpr"
+        },
         "masterDetail": {
           "Description": "Allows you to build a master-detail interface in the grid.",
           "Options": {
@@ -8376,9 +8398,7 @@
           "Description": "Specifies a custom template for grid rows."
         },
         "selectionFilter": {
-          "PrimitiveTypes": [
-            "any"
-          ],
+          "IsFilterExpr": true,
           "Description": "Specifies filters for the rows that must be selected initially. Applies only if selection | deferred is true."
         },
         "sortByGroupSummaryInfo": {
@@ -8674,7 +8694,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -8746,7 +8766,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onFocusIn": {
           "IsFunc": true,
@@ -9163,7 +9183,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -9367,7 +9387,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies after which DOM events the widget updates the value."
         },
         "acceptCustomValue": {
           "PrimitiveTypes": [
@@ -9424,7 +9444,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -9481,7 +9501,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -9597,7 +9617,7 @@
           ],
           "IsCollection": true,
           "SingularName": "value",
-          "Description": "A read-only option that holds a File instance representing the selected file."
+          "Description": "Specifies a File instance representing the selected file. Read-only when uploadMode is \"useForm\"."
         },
         "accept": {
           "PrimitiveTypes": [
@@ -9736,7 +9756,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -9808,7 +9828,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -9989,7 +10009,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -10055,7 +10075,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -10241,7 +10261,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -10709,6 +10729,9 @@
               "Description": "Specifies the offset of the range container from an invisible scale line in pixels."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -11147,7 +11170,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -11219,7 +11242,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -11277,7 +11300,7 @@
         "onItemDeleting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the itemDeleting event."
+          "Description": "A handler for the itemDeleting event. Executed before an item is deleted from the data source."
         },
         "onItemHold": {
           "IsFunc": true,
@@ -11571,7 +11594,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -11636,7 +11659,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -11688,7 +11711,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11697,7 +11720,7 @@
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "animation": {
-          "Description": "An object defining the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -11891,7 +11914,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -12170,7 +12193,7 @@
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
         },
         "animation": {
-          "Description": "An object that defines widget animation options.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -12369,7 +12392,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -12682,7 +12705,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -12754,7 +12777,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -12846,7 +12869,7 @@
           "Description": "Specifies the name of the data source item field whose value defines whether or not the corresponding widget items is selected."
         },
         "animation": {
-          "Description": "An object that defines the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -12988,7 +13011,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -13060,7 +13083,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -13087,6 +13110,12 @@
         "itemTemplate": {
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
+        },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
         },
         "onItemClick": {
           "IsFunc": true,
@@ -13192,7 +13221,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -13258,7 +13287,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -13424,7 +13453,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -13662,13 +13691,19 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not to show spin buttons."
+          "Description": "Specifies whether to show the buttons that change the value by a step."
         },
         "step": {
           "PrimitiveTypes": [
             "double"
           ],
           "Description": "Specifies by which value the widget value changes when a spin button is clicked."
+        },
+        "useLargeSpinButtons": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether to use touch friendly spin buttons. Applies only if showSpinButtons is true."
         }
       }
     },
@@ -13684,7 +13719,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -13750,7 +13785,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -13887,7 +13922,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -14585,6 +14620,9 @@
           "Description": "A handler for the tooltipShown event."
         },
         "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -14684,7 +14722,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -14744,7 +14782,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -14870,7 +14908,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -14924,7 +14962,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -15317,7 +15355,8 @@
             "dataNotAvailable": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies text displayed in a cell when its data is unavailable for some reason."
             },
             "expandAll": {
               "PrimitiveTypes": [
@@ -15402,7 +15441,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -15474,7 +15513,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -15550,7 +15589,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -16254,6 +16293,9 @@
           "Description": "A handler for the tooltipShown event."
         },
         "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -17780,7 +17822,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -17834,7 +17876,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -17843,7 +17885,7 @@
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "animation": {
-          "Description": "An object defining the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -18097,7 +18139,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -18163,7 +18205,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -18178,7 +18220,7 @@
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "animation": {
-          "Description": "An object defining the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -18418,7 +18460,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -18552,7 +18594,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -18745,7 +18787,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -19140,6 +19182,9 @@
               "Description": "Forces the widget to treat negative values as zeroes. Applies to stacked-like series only."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -20012,7 +20057,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -20251,7 +20296,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -20343,7 +20388,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -20391,7 +20436,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -20514,6 +20559,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
+              "EnumName": "Mode",
               "Description": "The base width of the column."
             },
             "ratio": {
@@ -20539,6 +20585,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
+              "EnumName": "Mode",
               "Description": "The base height of the row."
             },
             "ratio": {
@@ -20579,7 +20626,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -20949,7 +20996,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Indicates whether or not resources of this kind have priority in the color identification of the appointments that have resources of different kinds assigned."
+              "Description": "Specifies whether appointments are colored like this resource kind."
             },
             "valueExpr": {
               "PrimitiveTypes": [
@@ -21092,7 +21139,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -21277,7 +21324,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -21654,7 +21701,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -21714,7 +21761,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -21770,7 +21817,8 @@
         "selectedIndex": {
           "PrimitiveTypes": [
             "int32"
-          ]
+          ],
+          "Description": "The index number of the currently selected item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
@@ -21875,7 +21923,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -21977,7 +22025,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -22195,7 +22243,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -22604,7 +22652,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -22750,7 +22798,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -22822,7 +22870,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -22849,6 +22897,12 @@
         "itemTemplate": {
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
+        },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
         },
         "onItemClick": {
           "IsFunc": true,
@@ -23020,7 +23074,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -23086,7 +23140,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -23319,7 +23373,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -23697,7 +23751,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -23950,7 +24004,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -24222,7 +24276,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -24294,7 +24348,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -24437,7 +24491,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -24497,7 +24551,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -24512,7 +24566,7 @@
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "animation": {
-          "Description": "An object defining the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -24661,7 +24715,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -24715,7 +24769,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -24846,7 +24900,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -24900,7 +24954,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -24909,7 +24963,7 @@
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "animation": {
-          "Description": "An object defining the animation options of the widget.",
+          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
               "ComplexTypes": [
@@ -25083,7 +25137,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -25282,7 +25336,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the widget should hide columns in order to adapt to the screen or container size."
+          "Description": "Specifies whether the widget should hide columns to adapt to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
         "columnMinWidth": {
           "PrimitiveTypes": [
@@ -25734,7 +25788,7 @@
         "onSelectionChanged": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Executed after a row has been selected or selection has been cleared."
+          "Description": "A handler for the selectionChanged event. Executed after selecting a row or clearing its selection."
         },
         "onToolbarPreparing": {
           "IsFunc": true,
@@ -26066,7 +26120,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -26475,6 +26529,9 @@
               "Description": "Specifies whether or not all tiles in a group must be colored uniformly. Applies only if the type option is \"discrete\"."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -26814,7 +26871,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -26886,7 +26943,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -27125,7 +27182,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -27166,7 +27223,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -27188,7 +27245,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "itemTemplate": {
           "IsTemplate": true,
@@ -27255,7 +27312,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -27295,7 +27352,7 @@
             },
             "focus": {
               "IsFunc": true,
-              "Description": "A function that sets focus to the validated editors when the ValidationSummary is focused."
+              "Description": "A function that sets focus to a validated editor when the corresponding ValidationSummary item is focused."
             },
             "getValue": {
               "IsFunc": true,
@@ -27359,7 +27416,7 @@
         "onInitialized": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initialized event. Executed when the widget is initialized."
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -27825,6 +27882,9 @@
               }
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "IsDeprecated": true,
               "EnumName": "VizPalette",
@@ -28074,6 +28134,9 @@
               "Description": "Specifies the layer opacity (from 0 to 1)."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -28508,6 +28571,9 @@
               "Description": "Use the layers | opacity option instead."
             },
             "palette": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "IsDeprecated": true,
               "EnumName": "VizPalette",
@@ -28781,6 +28847,9 @@
           "Description": "Specifies the distance between the indicator and the invisible scale line."
         },
         "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -28872,6 +28941,7 @@
     },
     "CompareRule": {
       "Description": "A validation rule that demands that a validated editor has a value that is equal to a specified expression.",
+      "IsCollection": true,
       "Options": {
         "comparisonTarget": {
           "IsFunc": true,
@@ -28894,15 +28964,14 @@
           "Description": "Indicates whether or not the rule should be always checked for the target value or only when the target value changes."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
     },
     "CustomRule": {
       "Description": "A validation rule with custom validation logic.",
+      "IsCollection": true,
       "Options": {
         "message": {
           "PrimitiveTypes": [
@@ -28917,9 +28986,7 @@
           "Description": "Indicates whether the rule should be always checked for the target value or only when the target value changes."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         },
         "validationCallback": {
@@ -28930,6 +28997,7 @@
     },
     "FormEmptyItem": {
       "Description": "This article describes configuration options of an empty form item.",
+      "IsCollection": true,
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
@@ -28969,6 +29037,7 @@
     },
     "FormGroupItem": {
       "Description": "This article describes configuration options of a group form item.",
+      "IsCollection": true,
       "Options": {
         "alignItemLabels": {
           "PrimitiveTypes": [
@@ -29064,6 +29133,7 @@
     },
     "FormSimpleItem": {
       "Description": "This article describes configuration options of a simple form item.",
+      "IsCollection": true,
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
@@ -29181,6 +29251,7 @@
     },
     "FormTabbedItem": {
       "Description": "This article describes configuration options of a tabbed form item.",
+      "IsCollection": true,
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
@@ -29311,6 +29382,7 @@
     },
     "EmailRule": {
       "Description": "A validation rule that demands that the validated field match the Email pattern.",
+      "IsCollection": true,
       "Options": {
         "message": {
           "PrimitiveTypes": [
@@ -29319,9 +29391,7 @@
           "Description": "Specifies the message that is shown for end-users if the current rule is broken."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
@@ -29341,7 +29411,7 @@
         },
         "parser": {
           "IsFunc": true,
-          "Description": "Parses string values into numeric or date-time values."
+          "Description": "Parses string values into numeric or date-time values. Always used with formatter."
         },
         "precision": {
           "PrimitiveTypes": [
@@ -29357,6 +29427,7 @@
     },
     "NumericRule": {
       "Description": "A validation rule that demands that the validated field has a numeric value.",
+      "IsCollection": true,
       "Options": {
         "message": {
           "PrimitiveTypes": [
@@ -29365,15 +29436,14 @@
           "Description": "Specifies the message that is shown for end-users if the current rule is broken."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
     },
     "PatternRule": {
       "Description": "A validation rule that demands that the validated field match a specified pattern.",
+      "IsCollection": true,
       "Options": {
         "message": {
           "PrimitiveTypes": [
@@ -29389,15 +29459,14 @@
           "Description": "Specifies the regular expression that the validated value must match."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
     },
     "PivotGridDataSource": {
       "Description": "An object that provides access to data for the PivotGrid widget.",
+      "Module": "ui/pivot_grid/data_source",
       "Options": {
         "fields": {
           "IsCollection": true,
@@ -29620,9 +29689,7 @@
           }
         },
         "filter": {
-          "PrimitiveTypes": [
-            "any"
-          ],
+          "IsFilterExpr": true,
           "Description": "Specifies data filtering conditions. Cannot be used for the XmlaStore store type."
         },
         "onChanged": {
@@ -29776,6 +29843,7 @@
     },
     "RangeRule": {
       "Description": "A validation rule that demands the target value be within the specified value range (including the range's end points).",
+      "IsCollection": true,
       "Options": {
         "max": {
           "PrimitiveTypes": [
@@ -29804,15 +29872,14 @@
           "Description": "Indicates whether the rule should be always checked for the target value or only when the target value changes."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
     },
     "RequiredRule": {
       "Description": "A validation rule that demands that a validated field has a value.",
+      "IsCollection": true,
       "Options": {
         "message": {
           "PrimitiveTypes": [
@@ -29827,15 +29894,14 @@
           "Description": "Indicates whether to remove the Space characters from the validated value."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
     },
     "StringLengthRule": {
       "Description": "A validation rule that demands the target value length be within the specified value range (including the range's end points).",
+      "IsCollection": true,
       "Options": {
         "max": {
           "PrimitiveTypes": [
@@ -29862,9 +29928,7 @@
           "Description": "Indicates whether or not to remove the Space characters from the validated value."
         },
         "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
+          "EnumName": "ValidationRuleType",
           "Description": "Specifies the type of the current rule."
         }
       }
@@ -31854,6 +31918,7 @@
     },
     "ChartSeries": {
       "Description": "Specifies options for Chart widget series.",
+      "IsCollection": true,
       "Options": {
         "argumentField": {
           "PrimitiveTypes": [
@@ -32628,6 +32693,7 @@
     },
     "PieChartSeries": {
       "Description": "Specifies options for the series of the PieChart widget.",
+      "IsCollection": true,
       "Options": {
         "argumentField": {
           "PrimitiveTypes": [
@@ -33035,6 +33101,7 @@
     },
     "PolarChartSeries": {
       "Description": "Specifies options for PolarChart widget series.",
+      "IsCollection": true,
       "Options": {
         "argumentField": {
           "PrimitiveTypes": [
@@ -33669,6 +33736,7 @@
     },
     "DataGridColumn": {
       "Description": "An array of grid columns.",
+      "IsCollection": true,
       "Options": {
         "alignment": {
           "EnumName": "HorizontalAlignment",
@@ -33684,7 +33752,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible, headerFilter | visible or searchPanel | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
@@ -33720,7 +33788,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true."
+          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true. Inherits the value of the allowFiltering option by default."
         },
         "allowSorting": {
           "PrimitiveTypes": [
@@ -33740,7 +33808,7 @@
         },
         "calculateFilterExpression": {
           "IsFunc": true,
-          "Description": "Calculates filters when the column contains custom data."
+          "Description": "Specifies the column's custom filtering rules."
         },
         "calculateSortValue": {
           "PrimitiveTypes": [
@@ -33828,11 +33896,11 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Fixes the column. Applies only if columnFixing | enabled is true."
+          "Description": "Fixes the column."
         },
         "fixedPosition": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columnFixing | enabled and columns] | [fixed are true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns] | [fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -33875,7 +33943,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size."
+          "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
         "isBand": {
           "PrimitiveTypes": [
@@ -33947,7 +34015,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the column chooser should contain the column header when the column is hidden."
+          "Description": "Specifies whether the column chooser can contain the column header."
         },
         "sortIndex": {
           "PrimitiveTypes": [
@@ -33997,7 +34065,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the column in pixels or percentages."
+          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
         },
         "allowExporting": {
           "PrimitiveTypes": [
@@ -34058,6 +34126,7 @@
     },
     "TreeListColumn": {
       "Description": "Configures columns.",
+      "IsCollection": true,
       "Options": {
         "alignment": {
           "EnumName": "HorizontalAlignment",
@@ -34073,7 +34142,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible, headerFilter | visible or searchPanel | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
@@ -34109,7 +34178,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true."
+          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true. Inherits the value of the allowFiltering option by default."
         },
         "allowSorting": {
           "PrimitiveTypes": [
@@ -34129,7 +34198,7 @@
         },
         "calculateFilterExpression": {
           "IsFunc": true,
-          "Description": "Calculates filters when the column contains custom data."
+          "Description": "Specifies the column's custom filtering rules."
         },
         "calculateSortValue": {
           "PrimitiveTypes": [
@@ -34217,11 +34286,11 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Fixes the column. Applies only if columnFixing | enabled is true."
+          "Description": "Fixes the column."
         },
         "fixedPosition": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columnFixing | enabled and columns] | [fixed are true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns] | [fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -34264,7 +34333,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "Specifies the order according to which columns must be concealed when the widget adapts to the screen or container size."
+          "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
         "isBand": {
           "PrimitiveTypes": [
@@ -34336,7 +34405,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the column chooser should contain the column header when the column is hidden."
+          "Description": "Specifies whether the column chooser can contain the column header."
         },
         "sortIndex": {
           "PrimitiveTypes": [
@@ -34386,7 +34455,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the column in pixels or percentages."
+          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
         },
         "columns": {
           "ComplexTypes": [
@@ -34400,6 +34469,7 @@
     },
     "MenuItem": {
       "Description": "Holds an array of menu items.",
+      "IsCollection": true,
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
@@ -34472,6 +34542,7 @@
     },
     "ContextMenuItem": {
       "Description": "Holds an array of menu items.",
+      "IsCollection": true,
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
@@ -34544,6 +34615,7 @@
     },
     "TreeViewItem": {
       "Description": "An array of items displayed by the widget.",
+      "IsCollection": true,
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
@@ -35939,6 +36011,9 @@
           "Name": "dxDateBox"
         },
         {
+          "Name": "dxDropDownBox"
+        },
+        {
           "Name": "dxLookup"
         },
         {
@@ -35972,6 +36047,7 @@
         "dxCheckBox": "CheckBox",
         "dxColorBox": "ColorBox",
         "dxDateBox": "DateBox",
+        "dxDropDownBox": "DropDownBox",
         "dxLookup": "Lookup",
         "dxNumberBox": "NumberBox",
         "dxRadioGroup": "RadioGroup",
@@ -37170,6 +37246,34 @@
         },
         {
           "Name": "SVG"
+        }
+      ]
+    },
+    "ValidationRuleType": {
+      "Items": [
+        {
+          "Name": "required"
+        },
+        {
+          "Name": "numeric"
+        },
+        {
+          "Name": "range"
+        },
+        {
+          "Name": "stringLength"
+        },
+        {
+          "Name": "custom"
+        },
+        {
+          "Name": "compare"
+        },
+        {
+          "Name": "pattern"
+        },
+        {
+          "Name": "email"
         }
       ]
     }
