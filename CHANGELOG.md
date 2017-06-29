@@ -1,6 +1,8 @@
-## Unreleased
+## 17.1.4 (2017-06-29)
 
 ### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/16?closed=1)
 
 - Fixed validation of custom editors
 
