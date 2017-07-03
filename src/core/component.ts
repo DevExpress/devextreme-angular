@@ -90,8 +90,8 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
             that.events[e.name + 'Change'] = [e.value];
         };
 
-        this._initialOptions.onInitialized = function(e) {
-            e.component.on('optionChanged', that.optionChangeHandler.bind(that));
+        this._initialOptions.onInitializing = function() {
+            this.on('optionChanged', that.optionChangeHandler.bind(that));
         };
         this.instance = this._createInstance(element, this._initialOptions);
 
