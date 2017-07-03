@@ -24,8 +24,6 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
     instance: any;
     changedOptions = {};
     renderOnViewInit = true;
-    events = {};
-    ProcessEvent: Function;
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -46,10 +44,6 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
         events.forEach(event => {
             this.eventHelper.createEmitter(event.emit, event.subscribe);
         });
-    }
-    private optionChangeHandler(e) {
-        this.changedOptions[e.name] = e.value;
-        this.ProcessEvent(e);
     }
     _shouldOptionChange(name: string, value: any) {
         if (this.changedOptions.hasOwnProperty(name)) {
@@ -82,29 +76,32 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
         let that = this;
+        let events = {};
 
         this._initTemplates();
         this._initOptions();
 
-        this.ProcessEvent = function(e) {
-            that.events[e.name + 'Change'] = [e.value];
+        let optionChangeHandler = function(e) {
+            events[e.name + 'Change'] = [e.value];
         };
 
         this._initialOptions.onInitializing = function() {
-            this.on('optionChanged', that.optionChangeHandler.bind(that));
+            this.on('optionChanged', optionChangeHandler);
         };
         this.instance = this._createInstance(element, this._initialOptions);
 
-        this.ProcessEvent = function(e) {
+        this.instance.off('optionChanged', optionChangeHandler);
+        this.instance.on('optionChanged', function(e){
+            that.changedOptions[e.name] = e.value;
             that.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
-        };
+        });
 
         let subsriber = this.ngZone.onStable.subscribe(() => {
             subsriber.unsubscribe();
 
             that.ngZone.run(() => {
-                for (let key in that.events) {
-                    that.eventHelper.fireNgEvent(key, that.events[key]);
+                for (let key in events) {
+                    that.eventHelper.fireNgEvent(key, events[key]);
                 }
             });
         });
