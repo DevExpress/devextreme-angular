@@ -30,6 +30,7 @@ let DxTestWidget = DxButton['inherit']({
     _render() {
         this.callBase();
         this.element()[0].classList.add('dx-test-widget');
+        this.option('testCalculatedOption', 'changed');
     }
 });
 
@@ -46,12 +47,20 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
     set testOption(value: any) {
         this._setOption('testOption', value);
     };
+    @Input()
+    get testCalculatedOption(): any {
+        return this._getOption('testCalculatedOption');
+    }
+    set testCalculatedOption(value: any) {
+        this._setOption('testCalculatedOption', value);
+    };
 
     @Output() onOptionChanged = new EventEmitter<any>();
     @Output() onInitialized = new EventEmitter<any>();
     @Output() onDisposing = new EventEmitter<any>();
     @Output() onContentReady = new EventEmitter<any>();
     @Output() testOptionChange = new EventEmitter<any>();
+    @Output() testCalculatedOptionChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
@@ -61,7 +70,8 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
             { subscribe: 'initialized', emit: 'onInitialized' },
             { subscribe: 'disposing', emit: 'onDisposing' },
             { subscribe: 'contentReady', emit: 'onContentReady' },
-            { emit: 'testOptionChange' }
+            { emit: 'testOptionChange' },
+            { emit: 'testCalculatedOptionChange' }
         ]);
     }
 
@@ -85,6 +95,8 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
 export class TestContainerComponent {
     visible = true;
     testOption: string;
+    testCalculatedOption = 'initial';
+
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
     testMethod() {
     }
@@ -347,6 +359,20 @@ describe('DevExtreme Angular widget', () => {
             expect(this).toBe(instance);
         });
         instance.fireEvent('unknownEvent');
+    }));
+
+    it('should detect option changes when option was changed on DX widget creation (T527596)', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [(testCalculatedOption)]="testCalculatedOption"></dx-test-widget>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        expect(getWidget(fixture).option('testCalculatedOption')).toBe('changed');
+        expect(fixture.componentInstance.testCalculatedOption).toBe('changed');
     }));
 
   });
