@@ -75,7 +75,6 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        let that = this;
         let events = [];
 
         this._initTemplates();
@@ -91,17 +90,17 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
         this.instance = this._createInstance(element, this._initialOptions);
 
         this.instance.off('optionChanged', optionChangeHandler);
-        this.instance.on('optionChanged', function(e){
-            that.changedOptions[e.name] = e.value;
-            that.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
+        this.instance.on('optionChanged', (e) => {
+            this.changedOptions[e.name] = e.value;
+            this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
         });
 
         let subsriber = this.ngZone.onStable.subscribe(() => {
             subsriber.unsubscribe();
 
-            that.ngZone.run(() => {
+            this.ngZone.run(() => {
                 events.forEach(name => {
-                    that.eventHelper.fireNgEvent(name + 'Change', [that[name]]);
+                    this.eventHelper.fireNgEvent(name + 'Change', [this[name]]);
                 });
             });
         });
