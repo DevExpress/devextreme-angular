@@ -63,7 +63,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 }
 
 export interface ICollectionNestedOptionContainer {
-    setChildren<T>(propertyName: string, items: QueryList<T>);
+    setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>);
 }
 
 export class CollectionNestedOptionContainerImpl implements ICollectionNestedOptionContainer {
