@@ -2130,6 +2130,15 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
+        "disabledDates": {
+          "PrimitiveTypes": [
+            "date"
+          ],
+          "IsCollection": true,
+          "IsFunc": true,
+          "SingularName": "disabledDate",
+          "Description": ""
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -6799,7 +6808,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the current value displayed by the widget."
+          "Description": "Specifies the currently selected value."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -8758,6 +8767,15 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
+        "disabledDates": {
+          "PrimitiveTypes": [
+            "date"
+          ],
+          "IsCollection": true,
+          "IsFunc": true,
+          "SingularName": "disabledDate",
+          "Description": ""
+        },
         "displayFormat": {
           "PrimitiveTypes": [
             "string"
@@ -9125,6 +9143,7 @@
     "dxDropDownBox": {
       "Description": "The DropDownBox widget consists of a text field, which displays the current value, and a drop-down field, which can contain any UI element.",
       "Module": "ui/drop_down_box",
+      "IsEditor": true,
       "Options": {
         "acceptCustomValue": {
           "PrimitiveTypes": [
@@ -9185,6 +9204,10 @@
             "any"
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "fieldTemplate": {
+          "IsTemplate": true,
+          "Description": ""
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -9406,7 +9429,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "The currently selected value in the widget."
+          "Description": "Specifies the currently selected value."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -12354,7 +12377,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "The currently selected value in the widget."
+          "Description": "Specifies the currently selected value."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -18749,7 +18772,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "The currently specified value."
+          "Description": "Specifies the currently selected value."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -21088,9 +21111,29 @@
               "SingularName": "group",
               "Description": "The resource kinds by which appointments are grouped."
             },
+            "intervalCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": ""
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "resourceCellTemplate": {
               "IsTemplate": true,
               "Description": "The template to be used for rendering resource headers."
+            },
+            "startDate": {
+              "PrimitiveTypes": [
+                "date",
+                "double",
+                "string"
+              ],
+              "Description": ""
             },
             "startDayHour": {
               "PrimitiveTypes": [
@@ -21658,7 +21701,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "The currently selected value in the widget."
+          "Description": "Specifies the currently selected value."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -23470,6 +23513,12 @@
           "IsTemplate": true,
           "Description": "The template to be used for rendering items."
         },
+        "maxDisplayedTags": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the limit on displayed tags. On exceeding it, the widget replaces all tags with a single multi-tag that displays the number of selected items."
+        },
         "minSearchLength": {
           "PrimitiveTypes": [
             "int32"
@@ -23563,6 +23612,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the keyUp event."
+        },
+        "onMultiTagPreparing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the multiTagPreparing event. Executed before the multi-tag is rendered."
         },
         "onOpened": {
           "IsFunc": true,
@@ -23668,6 +23722,12 @@
             "bool"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
+        },
+        "showMultiTagOnly": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the multi-tag is shown without ordinary tags."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -26020,6 +26080,12 @@
             "mode": {
               "EnumName": "SelectionMode",
               "Description": "Specifies the selection mode."
+            },
+            "recursive": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": ""
             }
           }
         },
@@ -35643,8 +35709,14 @@
         },
         {
           "Name": "object"
+        },
+        {
+          "Name": "datetime"
         }
-      ]
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
     },
     "SortOrder": {
       "Items": [
@@ -35903,6 +35975,9 @@
         },
         {
           "Name": "value"
+        },
+        {
+          "Name": "none"
         }
       ]
     },

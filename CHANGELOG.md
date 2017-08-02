@@ -1,3 +1,7 @@
+## 17.1.5
+
+- Release a stable version of `devextreme-angular`
+
 ## 17.1.5-rc.1 (2017-07-27)
 
 ### Bug Fixes
