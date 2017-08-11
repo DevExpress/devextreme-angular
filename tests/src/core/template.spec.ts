@@ -82,9 +82,7 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
         super(elementRef, ngZone, templateHost, _watcherHelper);
     }
 
-    protected _createInstance() {
-        return this;
-    }
+    protected _createInstance() {}
 
     ngAfterViewInit() {
         this.templates[0].render({
