@@ -179,8 +179,8 @@ describe('DevExtreme Angular widget\'s template', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let element = fixture.nativeElement.querySelector('dx-test').querySelector('div');
-        expect(element.outerText).toBe('index: 5');
+        let element = fixture.nativeElement.querySelector('div');
+        expect(element.textContent).toBe('index: 5');
     }));
 
 });
