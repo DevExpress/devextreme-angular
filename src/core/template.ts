@@ -18,7 +18,7 @@ export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
 
 export class RenderData {
     model: any;
-    itemIndex: number;
+    index: number;
     container: any;
 }
 
@@ -40,7 +40,10 @@ export class DxTemplateDirective {
     }
 
     render(renderData: RenderData) {
-        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, { '$implicit': renderData.model });
+        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, {
+            '$implicit': renderData.model,
+            index: renderData.index
+        });
         if (renderData.container) {
             renderData.container.append(childView.rootNodes);
         }
