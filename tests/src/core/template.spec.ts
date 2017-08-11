@@ -23,6 +23,7 @@ import {
     DxComponent,
     DxTemplateHost,
     DxTemplateModule,
+    DxTemplateDirective,
     WatcherHelper
 } from '../../../dist';
 
@@ -70,8 +71,32 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
 }
 
 @Component({
+    selector: 'dx-test',
+    template: '',
+    providers: [DxTemplateHost, WatcherHelper]
+})
+export class DxTestComponent extends DxComponent implements AfterViewInit {
+    templates: DxTemplateDirective[];
+
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
+        super(elementRef, ngZone, templateHost, _watcherHelper);
+    }
+
+    protected _createInstance() {}
+
+    ngAfterViewInit() {
+        this.templates[0].render({
+            model: {},
+            container: $(this.element.nativeElement),
+            index: 5
+        });
+    }
+}
+
+@Component({
     selector: 'test-container-component',
-    template: ''
+    template: '',
+    providers: [DxTemplateHost]
 })
 export class TestContainerComponent {
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
@@ -83,7 +108,7 @@ describe('DevExtreme Angular widget\'s template', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
-                declarations: [TestContainerComponent, DxTestWidgetComponent],
+                declarations: [TestContainerComponent, DxTestWidgetComponent, DxTestComponent],
                 imports: [DxTemplateModule]
             });
     });
@@ -139,6 +164,23 @@ describe('DevExtreme Angular widget\'s template', () => {
         fixture.detectChanges();
         expect($container.children().eq(0).hasClass('dx-template-wrapper')).toBe(true);
 
+    }));
+
+
+    it('should have item index', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+            <dx-test> 
+                <div *dxTemplate="let d of 'templateName'; let i = index">index: {{i}}</div>
+            </dx-test>
+           `}
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let element = fixture.nativeElement.querySelector('div');
+        expect(element.textContent).toBe('index: 5');
     }));
 
 });
