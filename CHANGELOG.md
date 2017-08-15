@@ -2,7 +2,7 @@
 
 ### Features
 
-- Added an `index` to the context object of the `dxTemplate` directive for collection widgets ([#523](https://github.com/DevExpress/devextreme-angular/commit/7f0c72b5e02960b4b4e89e5c4fb64be0cb8adbe0))
+- An `index` has been added to the context object of the `dxTemplate` directive for collection widgets ([#523](https://github.com/DevExpress/devextreme-angular/commit/7f0c72b5e02960b4b4e89e5c4fb64be0cb8adbe0))
 
 ## 17.1.5
 
