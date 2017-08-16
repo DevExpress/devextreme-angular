@@ -229,6 +229,7 @@ describe('DevExtreme Angular widget', () => {
             instance = getWidget(fixture);
 
         testComponent.testOption = 'Changed 2';
+        fixture.detectChanges();
         expect(instance.option('testOption')).toBe('Changed 2');
 
     }));
