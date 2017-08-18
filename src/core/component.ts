@@ -2,7 +2,8 @@ import {
     ElementRef,
     NgZone,
     QueryList,
-    AfterViewInit
+    AfterViewInit,
+    AfterContentChecked
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -16,8 +17,8 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit, INestedOptionContainer, ICollectionNestedOptionContainer {
-    private _initialOptions: any;
+export abstract class DxComponent implements AfterViewInit, AfterContentChecked, INestedOptionContainer, ICollectionNestedOptionContainer {
+    private _optionToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
@@ -33,12 +34,12 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
             this.templates.forEach(template => {
                 initialTemplates[template.name] = template;
             });
-            this._initialOptions.integrationOptions.templates = initialTemplates;
+            this._optionToUpdate.integrationOptions.templates = initialTemplates;
         }
     }
     private _initOptions() {
-        this._initialOptions.eventsStrategy = this.eventHelper.strategy;
-        this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
+        this._optionToUpdate.eventsStrategy = this.eventHelper.strategy;
+        this._optionToUpdate.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     protected _createEventEmitters(events) {
         events.forEach(event => {
@@ -55,28 +56,20 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
         return true;
     }
     protected _getOption(name: string) {
-        if (this.instance) {
-            return this.instance.option(name);
-        } else {
-            return this._initialOptions[name];
-        }
+        return this.instance ?
+            this.instance.option(name) :
+            this._optionToUpdate[name];
     }
     protected _setOption(name: string, value: any) {
-        if (this.instance) {
-            this._updateOption(name, value);
-        } else {
-            this._initialOptions[name] = value;
-        }
-    }
-    protected _updateOption(name: string, value: any) {
         if (this._shouldOptionChange(name, value)) {
-            this.instance.option(name, value);
+            this._optionToUpdate[name] = value;
         };
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
         let events = [];
 
+        this._optionToUpdate.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
 
@@ -84,10 +77,11 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
             events.push(e.name);
         };
 
-        this._initialOptions.onInitializing = function() {
+        this._optionToUpdate.onInitializing = function() {
             this.on('optionChanged', optionChangeHandler);
         };
-        this.instance = this._createInstance(element, this._initialOptions);
+        this.instance = this._createInstance(element, this._optionToUpdate);
+        this._optionToUpdate = {};
 
         this.instance.off('optionChanged', optionChangeHandler);
         this.instance.on('optionChanged', (e) => {
@@ -113,11 +107,16 @@ export abstract class DxComponent implements AfterViewInit, INestedOptionContain
         }
     }
     constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
-        this._initialOptions = { integrationOptions: {} };
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(this.ngZone, this);
+    }
+    ngAfterContentChecked() {
+        if (this.instance && Object.keys(this._optionToUpdate).length) {
+            this.instance.option(this._optionToUpdate);
+            this._optionToUpdate = {};
+        }
     }
     ngAfterViewInit() {
         if (this.renderOnViewInit) {
