@@ -5,7 +5,7 @@ let $ = require('jquery');
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 
-let VISIBILITY_CHANGE_SELECTOR = '.dx-visibility-change-handler';
+const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 
 export interface INestedOptionContainer {
     instance: any;
@@ -145,8 +145,12 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
     }
 
     function triggerShownEvent($element) {
-        let changeHandlers = $element.filter(VISIBILITY_CHANGE_SELECTOR).
-            add($element.find(VISIBILITY_CHANGE_SELECTOR));
+        let changeHandlers = $element.find('.' + VISIBILITY_CHANGE_SELECTOR);
+
+        if ($element.hasClass(VISIBILITY_CHANGE_SELECTOR)) {
+            changeHandlers.push($element);
+        }
+
 
         for (let i = 0; i < changeHandlers.length; i++) {
             $(changeHandlers[i]).triggerHandler('dxshown');
@@ -155,16 +159,16 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
 
     option.template = {
         render: (renderData) => {
-            let $result = $(element.nativeElement)
-                .addClass(DX_TEMPLATE_WRAPPER_CLASS);
+            let $result = $(element.nativeElement).addClass(DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let resultInContainer = renderData.container.get(0).contains($result.get(0));
+                let container = renderData.container.get(0);
+                let resultInContainer = container.contains(element.nativeElement);
 
                 renderData.container.append(element.nativeElement);
 
                 if (!resultInContainer) {
-                    let resultInBody = document.body.contains(renderData.container.get(0));
+                    let resultInBody = document.body.contains(container);
 
                     if (resultInBody) {
                         triggerShownEvent($result);
