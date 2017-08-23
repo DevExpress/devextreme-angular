@@ -145,12 +145,13 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
     }
 
     function triggerShownEvent($element) {
-        let changeHandlers = $element.find('.' + VISIBILITY_CHANGE_SELECTOR);
+        let changeHandlers = $();
 
         if ($element.hasClass(VISIBILITY_CHANGE_SELECTOR)) {
-            changeHandlers.push($element);
+            changeHandlers = $element;
         }
 
+        changeHandlers = changeHandlers.add($element.find('.' + VISIBILITY_CHANGE_SELECTOR));
 
         for (let i = 0; i < changeHandlers.length; i++) {
             $(changeHandlers[i]).triggerHandler('dxshown');
