@@ -5,6 +5,8 @@ let $ = require('jquery');
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 
+const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
+
 export interface INestedOptionContainer {
     instance: any;
 }
@@ -142,13 +144,40 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
         return;
     }
 
+    function triggerShownEvent($element) {
+        let changeHandlers = $();
+
+        if ($element.hasClass(VISIBILITY_CHANGE_SELECTOR)) {
+            changeHandlers = $element;
+        }
+
+        changeHandlers = changeHandlers.add($element.find('.' + VISIBILITY_CHANGE_SELECTOR));
+
+        for (let i = 0; i < changeHandlers.length; i++) {
+            $(changeHandlers[i]).triggerHandler('dxshown');
+        }
+    }
+
     option.template = {
         render: (renderData) => {
+            let $result = $(element.nativeElement).addClass(DX_TEMPLATE_WRAPPER_CLASS);
+
             if (renderData.container) {
+                let container = renderData.container.get(0);
+                let resultInContainer = container.contains(element.nativeElement);
+
                 renderData.container.append(element.nativeElement);
+
+                if (!resultInContainer) {
+                    let resultInBody = document.body.contains(container);
+
+                    if (resultInBody) {
+                        triggerShownEvent($result);
+                    }
+                }
             }
-            return $(element.nativeElement)
-                .addClass(DX_TEMPLATE_WRAPPER_CLASS);
+
+            return $result;
         }
     };
 }
