@@ -149,14 +149,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     _setOption(name: string, value: any) {
-        let changes;
+        let isSetupped = this._idh.setupSingle(name, value);
+        let isChanged = this._idh.getChanges(name, value) !== null;
 
-        if (Array.isArray(value)) {
-            this._idh.setupSingle(name, value);
-            changes = this._idh.getChanges(name, value);
-        }
-
-        if (changes !== null) {
+        if (isSetupped || isChanged) {
             super._setOption(name, value);
         }
     }<#?#>

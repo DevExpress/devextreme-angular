@@ -25,6 +25,7 @@ import {
     template: ''
 })
 class TestContainerComponent {
+    emptyItems = undefined;
     items = [1];
     complexItems = [{ text: 'Item 1' }];
     defaultTemplateItems = [{ text: 'test', disabled: false }];
@@ -108,6 +109,27 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         expect(instance.option).toHaveBeenCalledTimes(1);
+        instance.option.calls.reset();
+    }));
+
+    it('should react if the initial value is assigned to the collection', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-list [items]="emptyItems"></dx-list>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        spyOn(instance, 'option').and.callThrough();
+
+        testComponent.emptyItems = [];
+        fixture.detectChanges();
+
+        expect(instance.option.calls.count()).toBeGreaterThan(1);
         instance.option.calls.reset();
     }));
 

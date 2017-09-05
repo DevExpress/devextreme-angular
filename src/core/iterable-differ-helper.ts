@@ -32,11 +32,14 @@ export class IterableDifferHelper {
             if (!this._propertyDiffers[prop]) {
                 try {
                     this._propertyDiffers[prop] = this._differs.find(value).create(null);
+                    return true;
                 } catch (e) { }
             }
         } else {
             delete this._propertyDiffers[prop];
         }
+
+        return false;
     }
 
     getChanges(prop: string, value: any) {
