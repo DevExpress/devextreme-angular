@@ -467,7 +467,7 @@ Note that some options with an object type are not implemented as nested compone
 
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
-You can access a DevExtreme widget instance using the `@ViewChild` or `@ViewChildren` decorator (depending on the number of instances on the page) and the component's
+You can access a DevExtreme widget instance using the `@ViewChild` or `@ViewChildren` decorator (depending on whether you are getting just one or several instances of one widget) and the component's
 'instance' property. Both decorators accept a component name or a [template reference variable](https://angular.io/guide/template-syntax#template-reference-variables--var-). In the example below, the
 [refresh](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
@@ -493,8 +493,7 @@ export class AppComponent implements OnChanges {
 }
 ```
 
-To access a DevExtreme widget instance in markup, you can the same template reference variables.
-The following example demonstrates how you can get a dxSelectBox value in the template.
+To access a DevExtreme widget instance in markup, you can use the same template reference variables. The following example demonstrates how you can get a dxSelectBox value in the template.
 
 ```html
 <dx-select-box #selectbox [items]="items"></dx-select-box>
