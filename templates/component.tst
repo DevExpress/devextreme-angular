@@ -149,16 +149,12 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     _setOption(name: string, value: any) {
-        let changes;
-
         if (Array.isArray(value)) {
             this._idh.setupSingle(name, value);
-            changes = this._idh.getChanges(name, value);
+            this._idh.getChanges(name, value);
         }
 
-        if (changes !== null) {
-            super._setOption(name, value);
-        }
+        super._setOption(name, value);
     }<#?#>
 <#? it.isEditor #>
     ngAfterContentInit() {
