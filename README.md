@@ -467,11 +467,10 @@ Note that some options with an object type are not implemented as nested compone
 
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
 
-You can access a DevExtreme widget instance by using the Angular component query syntax and the component's
-'instance' property. In the example below, the
+You can access a DevExtreme widget instance using the `@ViewChild` or `@ViewChildren` decorator (depending on the number of instances on the page) and the component's
+'instance' property. Both decorators accept a component name or a [template reference variable](https://angular.io/guide/template-syntax#template-reference-variables--var-). In the example below, the
 [refresh](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Methods/#refresh)
 method of the dxDataGrid is called:
-
 
 ```js
 import { Component, ViewChild } from '@angular/core';
@@ -480,19 +479,21 @@ import { DxDataGridComponent } from "devextreme-angular";
 @Component({
     selector: 'my-app',
     template: `
-        <dx-data-grid [dataSource]="dataSource"></dx-data-grid>
+        <dx-data-grid #targetDataGrid [dataSource]="dataSource"></dx-data-grid>
         <dx-button text="Refresh data" (onClick)="refresh()"></dx-button>
     `
 })
 export class AppComponent implements OnChanges {
     @ViewChild(DxDataGridComponent) dataGrid:DxDataGridComponent
+    // or
+    // @ViewChild("targetDataGrid") dataGrid: DxDataGridComponent
     refresh() {
         this.dataGrid.instance.refresh();
     }
 }
 ```
 
-To access a DevExtreme widget instance in markup, you can use [template reference variables](https://angular.io/docs/ts/latest/guide/template-syntax.html#!#ref-vars).
+To access a DevExtreme widget instance in markup, you can the same template reference variables.
 The following example demonstrates how you can get a dxSelectBox value in the template.
 
 ```html
