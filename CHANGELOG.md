@@ -1,4 +1,8 @@
-## Unreleased
+## 17.1.6
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/20?closed=1)
 
 ### Features
 
