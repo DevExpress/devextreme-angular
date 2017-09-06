@@ -61,7 +61,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -137,11 +137,11 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering Accordion items."
+          "Description": "Specifies a custom template for an item."
         },
         "itemTitleTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering an item title."
+          "Description": "Specifies a custom template for an item title."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -262,7 +262,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -297,7 +297,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -357,7 +357,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onCancelClick": {
           "IsFunc": true,
@@ -451,7 +451,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -538,7 +538,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -601,7 +601,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "maxItemCount": {
           "PrimitiveTypes": [
@@ -840,7 +840,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -930,7 +930,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -1003,7 +1003,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the label | format | precision option instead."
+              "Description": "Use the label.format.precision option instead."
             },
             "visible": {
               "PrimitiveTypes": [
@@ -1182,21 +1182,21 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the title | subtitle option instead.",
+          "Description": "Use the title.subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | font option instead."
+              "Description": "Use the title.subtitle.font option instead."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | text option instead."
+              "Description": "Use the title.subtitle.text option instead."
             }
           }
         },
@@ -1398,7 +1398,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -1490,7 +1490,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hoverStateEnabled": {
           "PrimitiveTypes": [
@@ -1560,7 +1560,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -1619,7 +1619,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -1901,7 +1901,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -1998,7 +1998,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -2093,7 +2093,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -2130,15 +2130,6 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
-        "disabledDates": {
-          "PrimitiveTypes": [
-            "date"
-          ],
-          "IsCollection": true,
-          "IsFunc": true,
-          "SingularName": "disabledDate",
-          "Description": ""
-        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -2160,7 +2151,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -2283,7 +2274,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         },
         "zoomLevel": {
           "EnumName": "CalendarZoomLevel",
@@ -2637,7 +2628,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the argumentAxis | label | format | precision option instead."
+                  "Description": "Use the argumentAxis.label.format.precision option instead."
                 },
                 "rotationAngle": {
                   "PrimitiveTypes": [
@@ -3492,7 +3483,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the bottom border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the bottom border of the pane. Applies only when the border.visible option is true."
                 },
                 "color": {
                   "PrimitiveTypes": [
@@ -3508,7 +3499,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the left border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the left border of the pane. Applies only when the border.visible option is true."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
@@ -3520,13 +3511,13 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the right border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the right border of the pane. Applies only when the border.visible option is true."
                 },
                 "top": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the top border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the top border of the pane. Applies only when the border.visible option is true."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -3625,7 +3616,7 @@
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the crosshair | horizontalLine | label | format | precision option instead."
+                      "Description": "Use the crosshair.horizontalLine.label.format.precision option instead."
                     },
                     "visible": {
                       "PrimitiveTypes": [
@@ -3689,7 +3680,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the crosshair | label | format | precision option instead."
+                  "Description": "Use the crosshair.label.format.precision option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -3755,7 +3746,7 @@
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the crosshair | verticalLine | label | format | precision option instead."
+                      "Description": "Use the crosshair.verticalLine.label.format.precision option instead."
                     },
                     "visible": {
                       "PrimitiveTypes": [
@@ -3877,7 +3868,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -4267,7 +4258,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the bottom border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the bottom border of the pane. Applies only when the border.visible option is true."
                 },
                 "color": {
                   "PrimitiveTypes": [
@@ -4283,7 +4274,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the left border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the left border of the pane. Applies only when the border.visible option is true."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
@@ -4295,13 +4286,13 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the right border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the right border of the pane. Applies only when the border.visible option is true."
                 },
                 "top": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Shows/hides the top border of the pane. Applies only when the border | visible option is true."
+                  "Description": "Shows/hides the top border of the pane. Applies only when the border.visible option is true."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -4558,7 +4549,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | argumentFormat | precision option instead."
+              "Description": "Use the tooltip.argumentFormat.precision option instead."
             },
             "arrowLength": {
               "PrimitiveTypes": [
@@ -4664,14 +4655,14 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | percentPrecision option instead."
+              "Description": "Use the tooltip.format.percentPrecision option instead."
             },
             "precision": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -5005,7 +4996,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the valueAxis | label | format | precision option instead."
+                  "Description": "Use the valueAxis.label.format.precision option instead."
                 },
                 "rotationAngle": {
                   "PrimitiveTypes": [
@@ -5546,7 +5537,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -5643,7 +5634,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -5715,7 +5706,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -5959,28 +5950,28 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "label": {
               "Description": "Specifies common options for scale labels.",
@@ -6022,7 +6013,7 @@
                     "hideFirstOrLast": {
                       "IsDeprecated": true,
                       "EnumName": "GaugeOverlappingBehavior",
-                      "Description": "Use the scale | label | hideFirstOrLast option instead."
+                      "Description": "Use the scale.label.hideFirstOrLast option instead."
                     },
                     "useAutoArrangement": {
                       "PrimitiveTypes": [
@@ -6038,7 +6029,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | label | format | precision option instead."
+                  "Description": "Use the scale.label.format.precision option instead."
                 },
                 "useRangeColors": {
                   "PrimitiveTypes": [
@@ -6063,7 +6054,7 @@
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | color option instead."
+                  "Description": "Use the tick.color option instead."
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
@@ -6072,14 +6063,14 @@
                   "IsCollection": true,
                   "IsDeprecated": true,
                   "SingularName": "customTickValue",
-                  "Description": "Use the scale | customTicks option instead."
+                  "Description": "Use the scale.customTicks option instead."
                 },
                 "length": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | length option instead."
+                  "Description": "Use the tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -6093,7 +6084,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | tickInterval option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "useTicksAutoArrangement": {
                   "PrimitiveTypes": [
@@ -6107,14 +6098,14 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | visible option instead."
+                  "Description": "Use the tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | width option instead."
+                  "Description": "Use the tick.width option instead."
                 }
               }
             },
@@ -6134,7 +6125,7 @@
                   "IsCollection": true,
                   "IsDeprecated": true,
                   "SingularName": "customTickValue",
-                  "Description": "Use the scale | customMinorTicks option instead."
+                  "Description": "Use the scale.customMinorTicks option instead."
                 },
                 "length": {
                   "PrimitiveTypes": [
@@ -6160,7 +6151,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | minorTickInterval option instead."
+                  "Description": "Use the scale.minorTickInterval option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -6257,21 +6248,21 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the title | subtitle option instead.",
+          "Description": "Use the title.subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | font option instead."
+              "Description": "Use the title.subtitle.font option instead."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | text option instead."
+              "Description": "Use the title.subtitle.text option instead."
             }
           }
         },
@@ -6487,7 +6478,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -6634,7 +6625,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -6821,7 +6812,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -6909,7 +6900,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -6939,7 +6930,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -7132,7 +7123,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -7346,7 +7337,7 @@
               "ComplexTypes": [
                 "dxFormOptions"
               ],
-              "Description": "Configures the form. Used only if editing | mode is \"form\" or \"popup\"."
+              "Description": "Configures the form. Used only if editing.mode is \"form\" or \"popup\"."
             },
             "insertEnabled": {
               "PrimitiveTypes": [
@@ -7362,7 +7353,7 @@
               "ComplexTypes": [
                 "dxPopupOptions"
               ],
-              "Description": "Configures the popup. Used only if editing | mode is \"popup\"."
+              "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
             },
             "removeEnabled": {
               "PrimitiveTypes": [
@@ -7377,19 +7368,19 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Add\" button. Applies only if editing | allowAdding is true."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Add\" button. Applies only if editing.allowAdding is true."
                 },
                 "cancelAllChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the \"Discard\" button. Applies only if editing | mode is \"batch\"."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the \"Discard\" button. Applies only if editing.mode is \"batch\"."
                 },
                 "cancelRowChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a button that cancels changes in a row. Applies only if editing | allowUpdating is true and editing | mode is \"row\"."
+                  "Description": "Specifies text for a button that cancels changes in a row. Applies only if editing.allowUpdating is true and editing.mode is \"row\"."
                 },
                 "confirmDeleteMessage": {
                   "PrimitiveTypes": [
@@ -7419,7 +7410,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Save\" button. Applies only if editing | mode is \"batch\"."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Save\" button. Applies only if editing.mode is \"batch\"."
                 },
                 "saveRowChanges": {
                   "PrimitiveTypes": [
@@ -7431,13 +7422,13 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for buttons that recover deleted rows. Applies only if allowDeleting is true and editing | mode is \"batch\"."
+                  "Description": "Specifies text for buttons that recover deleted rows. Applies only if allowDeleting is true and editing.mode is \"batch\"."
                 },
                 "validationCancelChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing | mode is \"cell\" and data validation is enabled."
+                  "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing.mode is \"cell\" and data validation is enabled."
                 }
               }
             }
@@ -7468,7 +7459,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the client-side export feature."
+              "Description": "Enables the client-side exporting feature."
             },
             "excelFilterEnabled": {
               "PrimitiveTypes": [
@@ -7814,7 +7805,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -8215,23 +8206,23 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling | mode is \"virtual\"."
+              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if native scrolling is disabled."
+              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if useNative is false."
             },
             "scrollByThumb": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if native scrolling is disabled."
+              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if useNative is false."
             },
             "showScrollbar": {
               "EnumName": "ShowScrollbarMode",
-              "Description": "Specifies when to show the scrollbar."
+              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -8295,7 +8286,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection | deferred is false."
+          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -8318,17 +8309,17 @@
             },
             "selectAllMode": {
               "EnumName": "SelectAllMode",
-              "Description": "Specifies the mode in which all the records are selected. Applies only if selection | allowSelectAll is true."
+              "Description": "Specifies the mode in which all the records are selected. Applies only if selection.allowSelectAll is true."
             },
             "showCheckBoxesMode": {
               "EnumName": "GridSelectionShowCheckBoxesMode",
-              "Description": "Specifies when to display checkboxes in rows. Applies only if selection | mode is \"multiple\"."
+              "Description": "Specifies when to display checkboxes in rows. Applies only if selection.mode is \"multiple\"."
             }
           }
         },
         "selectionFilter": {
           "IsFilterExpr": true,
-          "Description": "Specifies filters for the rows that must be selected initially. Applies only if selection | deferred is true."
+          "Description": "Specifies filters for the rows that must be selected initially. Applies only if selection.deferred is true."
         },
         "showBorders": {
           "PrimitiveTypes": [
@@ -8371,7 +8362,8 @@
             },
             "summaryItem": {
               "PrimitiveTypes": [
-                "string"
+                "string",
+                "int32"
               ],
               "Description": "Specifies the group summary item whose values must be used to sort groups."
             }
@@ -8484,7 +8476,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the valueFormat | precision option instead."
+                  "Description": "Use the valueFormat.precision option instead."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -8627,7 +8619,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the valueFormat | precision option instead."
+                  "Description": "Use the valueFormat.precision option instead."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -8682,7 +8674,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         },
         "wordWrapEnabled": {
           "PrimitiveTypes": [
@@ -8767,15 +8759,6 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
-        "disabledDates": {
-          "PrimitiveTypes": [
-            "date"
-          ],
-          "IsCollection": true,
-          "IsFunc": true,
-          "SingularName": "disabledDate",
-          "Description": ""
-        },
         "displayFormat": {
           "PrimitiveTypes": [
             "string"
@@ -8825,7 +8808,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9095,7 +9078,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -9205,10 +9188,6 @@
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
         },
-        "fieldTemplate": {
-          "IsTemplate": true,
-          "Description": ""
-        },
         "focusStateEnabled": {
           "PrimitiveTypes": [
             "bool"
@@ -9220,7 +9199,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9454,7 +9433,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -9571,7 +9550,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9765,7 +9744,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -9866,7 +9845,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9941,7 +9920,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not all editors on the form are read-only."
+          "Description": "Specifies whether all editors on the form are read-only. Applies only to non-templated items."
         },
         "requiredMark": {
           "PrimitiveTypes": [
@@ -10018,7 +9997,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -10071,7 +10050,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -10146,7 +10125,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -10264,7 +10243,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         },
         "wrapAround": {
           "PrimitiveTypes": [
@@ -10342,7 +10321,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -10486,7 +10465,7 @@
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of the range container. Applies only if the geometry | orientation option is \"vertical\"."
+              "Description": "Specifies the orientation of the range container. Applies only if the geometry.orientation option is \"vertical\"."
             },
             "offset": {
               "PrimitiveTypes": [
@@ -10530,7 +10509,7 @@
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of the range container. Applies only if the geometry | orientation option is \"horizontal\"."
+              "Description": "Specifies the orientation of the range container. Applies only if the geometry.orientation option is \"horizontal\"."
             },
             "width": {
               "PrimitiveTypes": [
@@ -10596,32 +10575,32 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale | label | overlappingBehavior | hideFirstOrLast option instead."
+              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
-              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry | orientation option is \"vertical\"."
+              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry.orientation option is \"vertical\"."
             },
             "label": {
               "Description": "Specifies common options for scale labels.",
@@ -10675,7 +10654,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | label | format | precision option instead."
+                  "Description": "Use the scale.label.format.precision option instead."
                 },
                 "useRangeColors": {
                   "PrimitiveTypes": [
@@ -10700,7 +10679,7 @@
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | color option instead."
+                  "Description": "Use the tick.color option instead."
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
@@ -10709,14 +10688,14 @@
                   "IsCollection": true,
                   "IsDeprecated": true,
                   "SingularName": "customTickValue",
-                  "Description": "Use the scale | customTicks option instead."
+                  "Description": "Use the scale.customTicks option instead."
                 },
                 "length": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | length option instead."
+                  "Description": "Use the tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -10730,7 +10709,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | tickInterval option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "useTicksAutoArrangement": {
                   "PrimitiveTypes": [
@@ -10744,14 +10723,14 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | visible option instead."
+                  "Description": "Use the tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick | width option instead."
+                  "Description": "Use the tick.width option instead."
                 }
               }
             },
@@ -10771,7 +10750,7 @@
                   "IsCollection": true,
                   "IsDeprecated": true,
                   "SingularName": "customTickValue",
-                  "Description": "Use the scale | customMinorTicks option instead."
+                  "Description": "Use the scale.customMinorTicks option instead."
                 },
                 "length": {
                   "PrimitiveTypes": [
@@ -10797,7 +10776,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | minorTickInterval option instead."
+                  "Description": "Use the scale.minorTickInterval option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -10868,7 +10847,7 @@
             },
             "verticalOrientation": {
               "EnumName": "VerticalAlignment",
-              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry | orientation option is \"horizontal\"."
+              "Description": "Specifies the orientation of scale ticks. Applies only if the geometry.orientation option is \"horizontal\"."
             }
           }
         },
@@ -10894,21 +10873,21 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the title | subtitle option instead.",
+          "Description": "Use the title.subtitle option instead.",
           "Options": {
             "font": {
               "ComplexTypes": [
                 "VizFont"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | font option instead."
+              "Description": "Use the title.subtitle.font option instead."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the title | subtitle | text option instead."
+              "Description": "Use the title.subtitle.text option instead."
             }
           }
         },
@@ -11124,7 +11103,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -11259,14 +11238,14 @@
         },
         "groupTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering item groups."
+          "Description": "The template to be used for rendering item groups. Specifies a custom template for a group caption."
         },
         "height": {
           "PrimitiveTypes": [
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -11351,7 +11330,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -11603,7 +11582,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -11622,7 +11601,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -11668,7 +11647,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -11867,7 +11846,7 @@
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "The width of the widget."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -12014,14 +11993,14 @@
         },
         "groupTemplate": {
           "IsTemplate": true,
-          "Description": "The name of the template used to display a group header."
+          "Description": "Specifies a custom template for a group caption."
         },
         "height": {
           "PrimitiveTypes": [
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -12084,7 +12063,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "minSearchLength": {
           "PrimitiveTypes": [
@@ -12402,7 +12381,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -12479,7 +12458,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -12709,7 +12688,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget."
+          "Description": "Specifies the widget's width."
         },
         "zoom": {
           "PrimitiveTypes": [
@@ -12739,7 +12718,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not adaptive widget rendering is enabled on a small screen."
+          "Description": "Specifies whether adaptive widget rendering is enabled on small screens. Applies only if the orientation is \"horizontal\"."
         },
         "animation": {
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
@@ -12803,7 +12782,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hideSubmenuOnMouseLeave": {
           "PrimitiveTypes": [
@@ -12839,7 +12818,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -13021,7 +13000,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -13080,7 +13059,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -13131,7 +13110,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -13231,7 +13210,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -13272,7 +13251,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -13348,7 +13327,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -13462,7 +13441,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -13512,7 +13491,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -13729,7 +13708,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -13793,7 +13772,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -13850,7 +13829,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -13932,7 +13911,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -14054,7 +14033,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -14576,7 +14555,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | argumentFormat | precision option instead."
+              "Description": "Use the tooltip.argumentFormat.precision option instead."
             },
             "arrowLength": {
               "PrimitiveTypes": [
@@ -14678,14 +14657,14 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | percentPrecision option instead."
+              "Description": "Use the tooltip.format.percentPrecision option instead."
             },
             "precision": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -14771,7 +14750,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -14826,17 +14805,17 @@
             },
             "titleTemplate": {
               "IsTemplate": true,
-              "Description": "A template to be used for rendering the item title."
+              "Description": "A template used for rendering the item title."
             }
           }
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "itemTitleTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering an item title."
+          "Description": "Specifies a custom template for an item title."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -14918,7 +14897,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -15138,7 +15117,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hideEmptySummaryCells": {
           "PrimitiveTypes": [
@@ -15439,7 +15418,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         },
         "wordWrapEnabled": {
           "PrimitiveTypes": [
@@ -15593,7 +15572,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -15866,7 +15845,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the argumentAxis | label | format | precision option instead."
+                  "Description": "Use the argumentAxis.label.format.precision option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -16573,7 +16552,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -17097,7 +17076,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | argumentFormat | precision option instead."
+              "Description": "Use the tooltip.argumentFormat.precision option instead."
             },
             "arrowLength": {
               "PrimitiveTypes": [
@@ -17199,14 +17178,14 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | percentPrecision option instead."
+              "Description": "Use the tooltip.format.percentPrecision option instead."
             },
             "precision": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -17461,7 +17440,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the valueAxis | label | format | precision option instead."
+                  "Description": "Use the valueAxis.label.format.precision option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -17899,7 +17878,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hideEvent": {
           "PrimitiveTypes": [
@@ -18143,7 +18122,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -18489,7 +18468,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -18597,7 +18576,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -18651,7 +18630,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -18708,7 +18687,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "layout": {
           "EnumName": "Orientation",
@@ -18791,7 +18770,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -19067,7 +19046,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -19274,7 +19253,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the scale | label | format | precision option instead."
+                  "Description": "Use the scale.label.format.precision option instead."
                 },
                 "topIndent": {
                   "PrimitiveTypes": [
@@ -19309,49 +19288,49 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | days option instead."
+                  "Description": "Use the tickInterval.days option instead."
                 },
                 "hours": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | hours option instead."
+                  "Description": "Use the tickInterval.hours option instead."
                 },
                 "milliseconds": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | milliseconds option instead."
+                  "Description": "Use the tickInterval.milliseconds option instead."
                 },
                 "minutes": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | minutes option instead."
+                  "Description": "Use the tickInterval.minutes option instead."
                 },
                 "months": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | months option instead."
+                  "Description": "Use the tickInterval.months option instead."
                 },
                 "seconds": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | seconds option instead."
+                  "Description": "Use the tickInterval.seconds option instead."
                 },
                 "years": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval | years option instead."
+                  "Description": "Use the tickInterval.years option instead."
                 }
               }
             },
@@ -19656,7 +19635,7 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the minorTick | visible option instead."
+              "Description": "Use the minorTick.visible option instead."
             },
             "startValue": {
               "PrimitiveTypes": [
@@ -19954,7 +19933,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the sliderMarker | format | precision option instead."
+              "Description": "Use the sliderMarker.format.precision option instead."
             },
             "visible": {
               "PrimitiveTypes": [
@@ -20116,7 +20095,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -20299,7 +20278,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -20325,7 +20304,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "maxHeight": {
           "PrimitiveTypes": [
@@ -20392,7 +20371,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -20447,7 +20426,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hoverStateEnabled": {
           "PrimitiveTypes": [
@@ -20535,7 +20514,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -20630,7 +20609,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -20797,7 +20776,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -21073,7 +21052,7 @@
             },
             "appointmentTemplate": {
               "IsTemplate": true,
-              "Description": "The template to be used for rendering appointments."
+              "Description": "Specifies a custom template for an appointment."
             },
             "appointmentTooltipTemplate": {
               "IsTemplate": true,
@@ -21111,29 +21090,9 @@
               "SingularName": "group",
               "Description": "The resource kinds by which appointments are grouped."
             },
-            "intervalCount": {
-              "PrimitiveTypes": [
-                "int32"
-              ],
-              "Description": ""
-            },
-            "name": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": ""
-            },
             "resourceCellTemplate": {
               "IsTemplate": true,
               "Description": "The template to be used for rendering resource headers."
-            },
-            "startDate": {
-              "PrimitiveTypes": [
-                "date",
-                "double",
-                "string"
-              ],
-              "Description": ""
             },
             "startDayHour": {
               "PrimitiveTypes": [
@@ -21162,7 +21121,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -21198,7 +21157,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -21292,7 +21251,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -21394,7 +21353,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -21457,7 +21416,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "maxLength": {
           "PrimitiveTypes": [
@@ -21726,7 +21685,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -21765,7 +21724,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -21826,7 +21785,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "menuGrouped": {
           "PrimitiveTypes": [
@@ -21836,7 +21795,7 @@
         },
         "menuGroupTemplate": {
           "IsTemplate": true,
-          "Description": "The name of the template used to display a group header."
+          "Description": "Specifies a custom template for a group caption."
         },
         "menuItemTemplate": {
           "IsTemplate": true,
@@ -21948,7 +21907,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -21983,7 +21942,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -22049,7 +22008,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -22093,7 +22052,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -22268,7 +22227,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -22606,7 +22565,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -22720,7 +22679,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -22823,7 +22782,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -22882,7 +22841,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -22962,11 +22921,11 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "itemTitleTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering an item title."
+          "Description": "Specifies a custom template for an item title."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -23099,7 +23058,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -23140,7 +23099,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -23216,7 +23175,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -23342,7 +23301,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -23442,7 +23401,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hideSelectedItems": {
           "PrimitiveTypes": [
@@ -23511,13 +23470,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
-        },
-        "maxDisplayedTags": {
-          "PrimitiveTypes": [
-            "int32"
-          ],
-          "Description": "Specifies the limit on displayed tags. On exceeding it, the widget replaces all tags with a single multi-tag that displays the number of selected items."
+          "Description": "Specifies a custom template for an item."
         },
         "minSearchLength": {
           "PrimitiveTypes": [
@@ -23612,11 +23565,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the keyUp event."
-        },
-        "onMultiTagPreparing": {
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A handler for the multiTagPreparing event. Executed before the multi-tag is rendered."
         },
         "onOpened": {
           "IsFunc": true,
@@ -23723,12 +23671,6 @@
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
         },
-        "showMultiTagOnly": {
-          "PrimitiveTypes": [
-            "bool"
-          ],
-          "Description": "Specifies whether the multi-tag is shown without ordinary tags."
-        },
         "showSelectionControls": {
           "PrimitiveTypes": [
             "bool"
@@ -23743,7 +23685,7 @@
         },
         "tagTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering tags."
+          "Description": "Specifies a custom template for a tag."
         },
         "text": {
           "PrimitiveTypes": [
@@ -23793,7 +23735,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -23849,7 +23791,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -24046,7 +23988,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -24096,7 +24038,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -24319,7 +24261,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -24382,7 +24324,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -24457,7 +24399,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -24534,7 +24476,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -24787,7 +24729,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -24870,11 +24812,11 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "menuItemTemplate": {
           "IsTemplate": true,
-          "Description": "The template used to render menu items."
+          "Description": "The template used to render menu items. Specifies a custom template for a menu item."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -24943,7 +24885,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -25016,7 +24958,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hideEvent": {
           "PrimitiveTypes": [
@@ -25180,7 +25122,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -25388,7 +25330,7 @@
               "ComplexTypes": [
                 "dxFormOptions"
               ],
-              "Description": "Configures the form. Used only if editing | mode is \"form\" or \"popup\"."
+              "Description": "Configures the form. Used only if editing.mode is \"form\" or \"popup\"."
             },
             "mode": {
               "EnumName": "GridEditMode",
@@ -25398,7 +25340,7 @@
               "ComplexTypes": [
                 "dxPopupOptions"
               ],
-              "Description": "Configures the popup. Used only if editing | mode is \"popup\"."
+              "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -25407,25 +25349,25 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Add\" button. Applies only if editing | allowAdding is true."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Add\" button. Applies only if editing.allowAdding is true."
                 },
                 "addRowToNode": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for the button that adds a new nested row. Applies if the editing | mode is \"batch\" or \"cell\"."
+                  "Description": "Specifies text for the button that adds a new nested row. Applies if the editing.mode is \"batch\" or \"cell\"."
                 },
                 "cancelAllChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the \"Discard\" button. Applies only if editing | mode is \"batch\"."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the \"Discard\" button. Applies only if editing.mode is \"batch\"."
                 },
                 "cancelRowChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a button that cancels changes in a row. Applies only if editing | allowUpdating is true and editing | mode is \"row\"."
+                  "Description": "Specifies text for a button that cancels changes in a row. Applies only if editing.allowUpdating is true and editing.mode is \"row\"."
                 },
                 "confirmDeleteMessage": {
                   "PrimitiveTypes": [
@@ -25455,7 +25397,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Save\" button. Applies only if editing | mode is \"batch\"."
+                  "Description": "Specifies text for a hint that appears when a user pauses on the global \"Save\" button. Applies only if editing.mode is \"batch\"."
                 },
                 "saveRowChanges": {
                   "PrimitiveTypes": [
@@ -25467,13 +25409,13 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for buttons that recover deleted rows. Applies only if allowDeleting is true and editing | mode is \"batch\"."
+                  "Description": "Specifies text for buttons that recover deleted rows. Applies only if allowDeleting is true and editing.mode is \"batch\"."
                 },
                 "validationCancelChanges": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing | mode is \"cell\" and data validation is enabled."
+                  "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing.mode is \"cell\" and data validation is enabled."
                 }
               }
             }
@@ -25690,7 +25632,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -25986,23 +25928,23 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling | mode is \"virtual\"."
+              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if native scrolling is disabled."
+              "Description": "Specifies whether a user can scroll the content with a swipe gesture. Applies only if useNative is false."
             },
             "scrollByThumb": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if native scrolling is disabled."
+              "Description": "Specifies whether a user can scroll the content with the scrollbar. Applies only if useNative is false."
             },
             "showScrollbar": {
               "EnumName": "ShowScrollbarMode",
-              "Description": "Specifies when to show the scrollbar."
+              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -26066,7 +26008,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection | deferred is false."
+          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -26080,12 +26022,6 @@
             "mode": {
               "EnumName": "SelectionMode",
               "Description": "Specifies the selection mode."
-            },
-            "recursive": {
-              "PrimitiveTypes": [
-                "bool"
-              ],
-              "Description": ""
             }
           }
         },
@@ -26163,7 +26099,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         },
         "wordWrapEnabled": {
           "PrimitiveTypes": [
@@ -26268,7 +26204,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -26871,7 +26807,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tooltip | format | precision option instead."
+              "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
               "Description": "Specifies the appearance of the tooltip's shadow.",
@@ -27017,7 +26953,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -27052,7 +26988,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -27229,7 +27165,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -27249,7 +27185,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -27271,7 +27207,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -27328,7 +27264,7 @@
         },
         "itemTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering items."
+          "Description": "Specifies a custom template for an item."
         },
         "onContentReady": {
           "IsFunc": true,
@@ -27410,7 +27346,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the height of the widget container."
+          "Description": "Specifies the widget's height."
         },
         "name": {
           "PrimitiveTypes": [
@@ -27464,7 +27400,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the width of the widget container."
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -27481,28 +27417,28 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | borderColor option instead."
+              "Description": "Use the layers.borderColor option instead."
             },
             "borderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | borderWidth option instead."
+              "Description": "Use the layers.borderWidth option instead."
             },
             "color": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | color option instead."
+              "Description": "Use the layers.color option instead."
             },
             "colorGroupingField": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | colorGroupingField option instead."
+              "Description": "Use the layers.colorGroupingField option instead."
             },
             "colorGroups": {
               "PrimitiveTypes": [
@@ -27511,65 +27447,65 @@
               "IsCollection": true,
               "IsDeprecated": true,
               "SingularName": "colorGroup",
-              "Description": "Use the layers | colorGroups option instead."
+              "Description": "Use the layers.colorGroups option instead."
             },
             "customize": {
               "IsDeprecated": true,
               "IsFunc": true,
-              "Description": "Use the layers | customize option instead."
+              "Description": "Use the layers.customize option instead."
             },
             "hoveredBorderColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredBorderColor option instead."
+              "Description": "Use the layers.hoveredBorderColor option instead."
             },
             "hoveredBorderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredBorderWidth option instead."
+              "Description": "Use the layers.hoveredBorderWidth option instead."
             },
             "hoveredColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredColor option instead."
+              "Description": "Use the layers.hoveredColor option instead."
             },
             "hoverEnabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoverEnabled option instead."
+              "Description": "Use the layers.hoverEnabled option instead."
             },
             "label": {
               "IsDeprecated": true,
-              "Description": "Use the layers | label option instead.",
+              "Description": "Use the layers.label option instead.",
               "Options": {
                 "dataField": {
                   "PrimitiveTypes": [
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the layers | label | dataField option instead."
+                  "Description": "Use the layers.label.dataField option instead."
                 },
                 "enabled": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the layers | label | enabled option instead."
+                  "Description": "Use the layers.label.enabled option instead."
                 },
                 "font": {
                   "ComplexTypes": [
                     "VizFont"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the layers | label | font option instead."
+                  "Description": "Use the layers.label.font option instead."
                 }
               }
             },
@@ -27581,40 +27517,40 @@
               "IsDeprecated": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
-              "Description": "Use the layers | palette option instead."
+              "Description": "Use the layers.palette option instead."
             },
             "paletteSize": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | paletteSize option instead."
+              "Description": "Use the layers.paletteSize option instead."
             },
             "selectedBorderColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedBorderColor option instead."
+              "Description": "Use the layers.selectedBorderColor option instead."
             },
             "selectedBorderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedBorderWidth option instead."
+              "Description": "Use the layers.selectedBorderWidth option instead."
             },
             "selectedColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedColor option instead."
+              "Description": "Use the layers.selectedColor option instead."
             },
             "selectionMode": {
               "IsDeprecated": true,
               "EnumName": "SelectionMode",
-              "Description": "Use the layers | selectionMode option instead."
+              "Description": "Use the layers.selectionMode option instead."
             }
           }
         },
@@ -27731,7 +27667,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Enables the printing feature in the widget. Applies only if the export | enabled option is true."
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -28164,7 +28100,7 @@
           "IsCollection": true,
           "IsDeprecated": true,
           "SingularName": "mapData",
-          "Description": "Use the layers | dataSource option instead."
+          "Description": "Use the layers.dataSource option instead."
         },
         "markers": {
           "PrimitiveTypes": [
@@ -28173,14 +28109,14 @@
           "IsCollection": true,
           "IsDeprecated": true,
           "SingularName": "marker",
-          "Description": "Use the layers | dataSource option instead.",
+          "Description": "Use the layers.dataSource option instead.",
           "Options": {
             "attributes": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsDeprecated": true,
-              "Description": "Specify attributes in the \"properties\" field of a GeoJSON feature. The GeoJSON object is passed to the layers | dataSource option."
+              "Description": "Specify attributes in the \"properties\" field of a GeoJSON feature. The GeoJSON object is passed to the layers.dataSource option."
             },
             "coordinates": {
               "PrimitiveTypes": [
@@ -28189,28 +28125,28 @@
               "IsCollection": true,
               "IsDeprecated": true,
               "SingularName": "coordinate",
-              "Description": "Specify coordinates in the \"geometry.coordinates\" field of a GeoJSON feature. The GeoJSON object is passed to the layers | dataSource option."
+              "Description": "Specify coordinates in the \"geometry.coordinates\" field of a GeoJSON feature. The GeoJSON object is passed to the layers.dataSource option."
             },
             "text": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Specify text as one of the GeoJSON attributes (the GeoJSON object is passed to the layers | dataSource option) and reference it using the layers | label | dataField option."
+              "Description": "Specify text as one of the GeoJSON attributes (the GeoJSON object is passed to the layers.dataSource option) and reference it using the layers.label.dataField option."
             },
             "url": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | dataField option instead."
+              "Description": "Use the layers.dataField option instead."
             },
             "value": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Specify the value as one of the GeoJSON attributes (the GeoJSON object is passed to the layers | dataSource option) and reference it using the layers | dataField option."
+              "Description": "Specify the value as one of the GeoJSON attributes (the GeoJSON object is passed to the layers.dataSource option) and reference it using the layers.dataField option."
             },
             "values": {
               "PrimitiveTypes": [
@@ -28219,7 +28155,7 @@
               "IsCollection": true,
               "IsDeprecated": true,
               "SingularName": "value",
-              "Description": "Specify the values as one of the GeoJSON attributes (the GeoJSON object is passed to the layers | dataSource option) and reference it using the layers | dataField option."
+              "Description": "Specify the values as one of the GeoJSON attributes (the GeoJSON object is passed to the layers.dataSource option) and reference it using the layers.dataField option."
             }
           }
         },
@@ -28232,28 +28168,28 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | borderColor option instead."
+              "Description": "Use the layers.borderColor option instead."
             },
             "borderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | borderWidth option instead."
+              "Description": "Use the layers.borderWidth option instead."
             },
             "color": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | color option instead."
+              "Description": "Use the layers.color option instead."
             },
             "colorGroupingField": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | colorGroupingField option instead."
+              "Description": "Use the layers.colorGroupingField option instead."
             },
             "colorGroups": {
               "PrimitiveTypes": [
@@ -28262,58 +28198,58 @@
               "IsCollection": true,
               "IsDeprecated": true,
               "SingularName": "colorGroup",
-              "Description": "Use the layers | colorGroups option instead."
+              "Description": "Use the layers.colorGroups option instead."
             },
             "customize": {
               "IsDeprecated": true,
               "IsFunc": true,
-              "Description": "Use the layers | customize option instead."
+              "Description": "Use the layers.customize option instead."
             },
             "hoveredBorderColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredBorderColor option instead."
+              "Description": "Use the layers.hoveredBorderColor option instead."
             },
             "hoveredBorderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredBorderWidth option instead."
+              "Description": "Use the layers.hoveredBorderWidth option instead."
             },
             "hoveredColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoveredColor option instead."
+              "Description": "Use the layers.hoveredColor option instead."
             },
             "hoverEnabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | hoverEnabled option instead."
+              "Description": "Use the layers.hoverEnabled option instead."
             },
             "label": {
               "IsDeprecated": true,
-              "Description": "Use the layers | label option instead.",
+              "Description": "Use the layers.label option instead.",
               "Options": {
                 "enabled": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the layers | label | enabled option instead."
+                  "Description": "Use the layers.label.enabled option instead."
                 },
                 "font": {
                   "ComplexTypes": [
                     "VizFont"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the layers | label | font option instead."
+                  "Description": "Use the layers.label.font option instead."
                 }
               }
             },
@@ -28322,21 +28258,21 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | maxSize option instead."
+              "Description": "Use the layers.maxSize option instead."
             },
             "minSize": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | minSize option instead."
+              "Description": "Use the layers.minSize option instead."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | opacity option instead."
+              "Description": "Use the layers.opacity option instead."
             },
             "palette": {
               "PrimitiveTypes": [
@@ -28346,47 +28282,47 @@
               "IsDeprecated": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
-              "Description": "Use the layers | palette option instead."
+              "Description": "Use the layers.palette option instead."
             },
             "selectedBorderColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedBorderColor option instead."
+              "Description": "Use the layers.selectedBorderColor option instead."
             },
             "selectedBorderWidth": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedBorderWidth option instead."
+              "Description": "Use the layers.selectedBorderWidth option instead."
             },
             "selectedColor": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | selectedColor option instead."
+              "Description": "Use the layers.selectedColor option instead."
             },
             "selectionMode": {
               "IsDeprecated": true,
               "EnumName": "SelectionMode",
-              "Description": "Use the layers | selectionMode option instead."
+              "Description": "Use the layers.selectionMode option instead."
             },
             "size": {
               "PrimitiveTypes": [
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | size option instead."
+              "Description": "Use the layers.size option instead."
             },
             "sizeGroupingField": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the layers | sizeGroupingField option instead."
+              "Description": "Use the layers.sizeGroupingField option instead."
             },
             "sizeGroups": {
               "PrimitiveTypes": [
@@ -28395,12 +28331,12 @@
               "IsCollection": true,
               "IsDeprecated": true,
               "SingularName": "sizeGroup",
-              "Description": "Use the layers | sizeGroups option instead."
+              "Description": "Use the layers.sizeGroups option instead."
             },
             "type": {
               "IsDeprecated": true,
               "EnumName": "VectorMapMarkerType",
-              "Description": "Use the layers | elementType option instead."
+              "Description": "Use the layers.elementType option instead."
             }
           }
         },
@@ -29098,7 +29034,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -29146,7 +29082,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Makes the connectors visible. Applies only if label | visible is set to true."
+                  "Description": "Makes the connectors visible. Applies only if label.visible is set to true."
                 },
                 "width": {
                   "PrimitiveTypes": [
@@ -29187,7 +29123,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | percentPrecision instead."
+              "Description": "Use the series.label.format.percentPrecision instead."
             },
             "position": {
               "EnumName": "RelativePosition",
@@ -29198,7 +29134,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -29945,7 +29881,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -29993,7 +29929,7 @@
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Makes the connectors visible. Applies only if label | visible is set to true."
+                  "Description": "Makes the connectors visible. Applies only if label.visible is set to true."
                 },
                 "width": {
                   "PrimitiveTypes": [
@@ -30034,7 +29970,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | percentPrecision instead."
+              "Description": "Use the series.label.format.percentPrecision instead."
             },
             "position": {
               "EnumName": "RelativePosition",
@@ -30045,7 +29981,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -30677,7 +30613,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing | allowUpdating option."
+          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing.allowUpdating option."
         },
         "allowExporting": {
           "PrimitiveTypes": [
@@ -30689,13 +30625,13 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow.visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing | enabled is true."
+          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing.enabled is true."
         },
         "allowGrouping": {
           "PrimitiveTypes": [
@@ -30707,13 +30643,13 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter | visible is true. By default, inherits the value of the allowFiltering option."
+          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter.visible is true. By default, inherits the value of the allowFiltering option."
         },
         "allowHiding": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser | enabled is true."
+          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser.enabled is true."
         },
         "allowReordering": {
           "PrimitiveTypes": [
@@ -30731,13 +30667,13 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true. Inherits the value of the allowFiltering option by default."
+          "Description": "Specifies whether this column can be searched. Applies only if searchPanel.visible is true. Inherits the value of the allowFiltering option by default."
         },
         "allowSorting": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting | mode differs from \"none\"."
+          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting.mode differs from \"none\"."
         },
         "autoExpandGroup": {
           "PrimitiveTypes": [
@@ -30835,11 +30771,11 @@
           "IsCollection": true,
           "EnumName": "FilterOperations",
           "SingularName": "filterOperation",
-          "Description": "Specifies a set of available filter operations. Applies only if filterRow | visible and allowFiltering are true."
+          "Description": "Specifies a set of available filter operations. Applies only if filterRow.visible and allowFiltering are true."
         },
         "filterType": {
           "EnumName": "FilterType",
-          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter | visible and allowHeaderFiltering are true."
+          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter.visible and allowHeaderFiltering are true."
         },
         "filterValue": {
           "PrimitiveTypes": [
@@ -30863,7 +30799,7 @@
         },
         "fixedPosition": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns] | [fixed is true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -30879,7 +30815,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing | mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
         },
         "groupCellTemplate": {
           "IsTemplate": true,
@@ -30975,7 +30911,7 @@
             "double"
           ],
           "IsDeprecated": true,
-          "Description": "Use the format | precision option instead."
+          "Description": "Use the format.precision option instead."
         },
         "selectedFilterOperation": {
           "EnumName": "FilterOperations",
@@ -31008,6 +30944,10 @@
             "int32"
           ],
           "Description": "Specifies the index according to which columns participate in sorting."
+        },
+        "sortingMethod": {
+          "IsFunc": true,
+          "Description": ""
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -31514,7 +31454,7 @@
         },
         "horizontalOrientation": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry | orientation option is \"vertical\"."
+          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry.orientation option is \"vertical\"."
         },
         "indentFromCenter": {
           "PrimitiveTypes": [
@@ -31607,7 +31547,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the text | format | precision option instead."
+              "Description": "Use the text.format.precision option instead."
             }
           }
         },
@@ -31616,7 +31556,7 @@
         },
         "verticalOrientation": {
           "EnumName": "VerticalEdge",
-          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry | orientation option is \"horizontal\"."
+          "Description": "Specifies the orientation of the rangeBar indicator. Applies only if the geometry.orientation option is \"horizontal\"."
         },
         "width": {
           "PrimitiveTypes": [
@@ -31878,7 +31818,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -31961,7 +31901,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | percentPrecision instead."
+              "Description": "Use the series.label.format.percentPrecision instead."
             },
             "position": {
               "EnumName": "PieChartLabelPosition",
@@ -31972,7 +31912,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "radialOffset": {
               "PrimitiveTypes": [
@@ -32274,7 +32214,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -32357,7 +32297,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | percentPrecision instead."
+              "Description": "Use the series.label.format.percentPrecision instead."
             },
             "position": {
               "EnumName": "PieChartLabelPosition",
@@ -32368,7 +32308,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "radialOffset": {
               "PrimitiveTypes": [
@@ -32682,7 +32622,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the format | precision option instead."
+              "Description": "Use the format.precision option instead."
             },
             "runningTotal": {
               "EnumName": "PivotGridRunningTotalMode",
@@ -32984,7 +32924,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -33071,7 +33011,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -33625,7 +33565,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | argumentFormat | precision instead."
+              "Description": "Use the series.label.argumentFormat.precision instead."
             },
             "backgroundColor": {
               "PrimitiveTypes": [
@@ -33712,7 +33652,7 @@
                 "double"
               ],
               "IsDeprecated": true,
-              "Description": "Use the series | label | format | precision option instead."
+              "Description": "Use the series.label.format.precision option instead."
             },
             "rotationAngle": {
               "PrimitiveTypes": [
@@ -34309,31 +34249,31 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing | allowUpdating option."
+          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing.allowUpdating option."
         },
         "allowFiltering": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow | visible is true."
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow.visible is true."
         },
         "allowFixing": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing | enabled is true."
+          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing.enabled is true."
         },
         "allowHeaderFiltering": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter | visible is true. By default, inherits the value of the allowFiltering option."
+          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter.visible is true. By default, inherits the value of the allowFiltering option."
         },
         "allowHiding": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser | enabled is true."
+          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser.enabled is true."
         },
         "allowReordering": {
           "PrimitiveTypes": [
@@ -34351,13 +34291,13 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether this column can be searched. Applies only if searchPanel | visible is true. Inherits the value of the allowFiltering option by default."
+          "Description": "Specifies whether this column can be searched. Applies only if searchPanel.visible is true. Inherits the value of the allowFiltering option by default."
         },
         "allowSorting": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting | mode differs from \"none\"."
+          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting.mode differs from \"none\"."
         },
         "calculateCellValue": {
           "IsFunc": true,
@@ -34443,11 +34383,11 @@
           "IsCollection": true,
           "EnumName": "FilterOperations",
           "SingularName": "filterOperation",
-          "Description": "Specifies a set of available filter operations. Applies only if filterRow | visible and allowFiltering are true."
+          "Description": "Specifies a set of available filter operations. Applies only if filterRow.visible and allowFiltering are true."
         },
         "filterType": {
           "EnumName": "FilterType",
-          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter | visible and allowHeaderFiltering are true."
+          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter.visible and allowHeaderFiltering are true."
         },
         "filterValue": {
           "PrimitiveTypes": [
@@ -34471,7 +34411,7 @@
         },
         "fixedPosition": {
           "EnumName": "HorizontalEdge",
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns] | [fixed is true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -34487,7 +34427,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing | mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
         },
         "headerCellTemplate": {
           "IsTemplate": true,
@@ -34593,6 +34533,10 @@
             "int32"
           ],
           "Description": "Specifies the index according to which columns participate in sorting."
+        },
+        "sortingMethod": {
+          "IsFunc": true,
+          "Description": ""
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -35709,14 +35653,8 @@
         },
         {
           "Name": "object"
-        },
-        {
-          "Name": "datetime"
         }
-      ],
-      "Renamings": {
-        "datetime": "DateTime"
-      }
+      ]
     },
     "SortOrder": {
       "Items": [
@@ -35975,9 +35913,6 @@
         },
         {
           "Name": "value"
-        },
-        {
-          "Name": "none"
         }
       ]
     },
