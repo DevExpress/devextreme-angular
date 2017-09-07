@@ -149,10 +149,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     _setOption(name: string, value: any) {
-        let isSetupped = this._idh.setupSingle(name, value);
+        let isSetup = this._idh.setupSingle(name, value);
         let isChanged = this._idh.getChanges(name, value) !== null;
 
-        if (isSetupped || isChanged) {
+        if (isSetup || isChanged) {
             super._setOption(name, value);
         }
     }<#?#>
