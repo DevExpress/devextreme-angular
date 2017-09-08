@@ -34,6 +34,8 @@ let DxTestWidget = DxButton['inherit']({
     }
 });
 
+let onStableCallCount: number;
+
 @Component({
     selector: 'dx-test-widget',
     template: '',
@@ -73,6 +75,11 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
             { emit: 'testOptionChange' },
             { emit: 'testCalculatedOptionChange' }
         ]);
+
+        onStableCallCount = 0;
+        ngZone.onStable.subscribe(() => {
+            onStableCallCount++;
+        });
     }
 
     protected _createInstance(element, options) {
@@ -374,6 +381,20 @@ describe('DevExtreme Angular widget', () => {
 
         expect(getWidget(fixture).option('testCalculatedOption')).toBe('changed');
         expect(fixture.componentInstance.testCalculatedOption).toBe('changed');
+    }));
+
+    it('ngZone onStable should not called recursively (T551347)', async(() => {
+        debugger;
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget></dx-test-widget>'
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        expect(onStableCallCount).toBe(2);
     }));
 
   });

@@ -92,7 +92,7 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
         let subsriber = this.ngZone.onStable.subscribe(() => {
             subsriber.unsubscribe();
 
-            this.ngZone.run(() => {
+            this.ngZone.runOutsideAngular(() => {
                 events.forEach(name => {
                     this.eventHelper.fireNgEvent(name + 'Change', [this[name]]);
                 });
