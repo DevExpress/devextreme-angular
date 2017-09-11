@@ -384,7 +384,6 @@ describe('DevExtreme Angular widget', () => {
     }));
 
     it('ngZone onStable should not called recursively (T551347)', async(() => {
-        debugger;
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget></dx-test-widget>'
