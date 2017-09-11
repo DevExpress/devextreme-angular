@@ -1,4 +1,10 @@
-## 17.1.6
+## 17.1.7-rc.1 (2017-09-11)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/21?closed=1)
+
+## 17.1.6 (2017-09-06)
 
 ### Bug Fixes
 
@@ -8,7 +14,7 @@
 
 - An `index` has been added to the context object of the `dxTemplate` directive for collection widgets ([#523](https://github.com/DevExpress/devextreme-angular/commit/7f0c72b5e02960b4b4e89e5c4fb64be0cb8adbe0))
 
-## 17.1.5
+## 17.1.5 (2017-08-02)
 
 - Release a stable version of `devextreme-angular`
 
