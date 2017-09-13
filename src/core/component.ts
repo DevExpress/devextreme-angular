@@ -67,14 +67,12 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        let events = [];
-
         this._optionToUpdate.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
 
-        let optionChangeHandler = function(e) {
-            events.push(e.name);
+        let optionChangeHandler = (e) => {
+            this.eventHelper.rememberEvent(e.name);
         };
 
         this._optionToUpdate.onInitializing = function() {
@@ -87,16 +85,6 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
         this.instance.on('optionChanged', (e) => {
             this.changedOptions[e.name] = e.value;
             this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
-        });
-
-        let subsriber = this.ngZone.onStable.subscribe(() => {
-            subsriber.unsubscribe();
-
-            this.ngZone.runOutsideAngular(() => {
-                events.forEach(name => {
-                    this.eventHelper.fireNgEvent(name + 'Change', [this[name]]);
-                });
-            });
         });
     }
     protected _destroyWidget() {

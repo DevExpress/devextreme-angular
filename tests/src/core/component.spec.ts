@@ -15,7 +15,8 @@ import {
 
 import {
     TestBed,
-    async
+    async,
+    ComponentFixtureAutoDetect
 } from '@angular/core/testing';
 
 import {
@@ -33,8 +34,6 @@ let DxTestWidget = DxButton['inherit']({
         this.option('testCalculatedOption', 'changed');
     }
 });
-
-let onStableCallCount: number;
 
 @Component({
     selector: 'dx-test-widget',
@@ -75,11 +74,6 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
             { emit: 'testOptionChange' },
             { emit: 'testCalculatedOptionChange' }
         ]);
-
-        onStableCallCount = 0;
-        ngZone.onStable.subscribe(() => {
-            onStableCallCount++;
-        });
     }
 
     protected _createInstance(element, options) {
@@ -103,8 +97,16 @@ export class TestContainerComponent {
     visible = true;
     testOption: string;
     testCalculatedOption = 'initial';
+    onStableCallCount = 0;
 
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
+
+    constructor(ngZone: NgZone) {
+        ngZone.onStable.subscribe(() => {
+            this.onStableCallCount++;
+        });
+    }
+
     testMethod() {
     }
 }
@@ -370,30 +372,54 @@ describe('DevExtreme Angular widget', () => {
     }));
 
     it('should detect option changes when option was changed on DX widget creation (T527596)', async(() => {
+        TestBed.configureTestingModule(
+        {
+            declarations: [ TestContainerComponent, DxTestWidgetComponent ],
+            providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }]
+        });
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: '<dx-test-widget [(testCalculatedOption)]="testCalculatedOption"></dx-test-widget>'
+                template: `
+                    <dx-test-widget [(testCalculatedOption)]="testCalculatedOption"></dx-test-widget>
+                    <div id="test">{{testCalculatedOption}}</div>
+                `
             }
         });
 
         let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
+        let testComponent = fixture.componentInstance.innerWidgets.first;
 
         expect(getWidget(fixture).option('testCalculatedOption')).toBe('changed');
         expect(fixture.componentInstance.testCalculatedOption).toBe('changed');
+        expect(document.getElementById('test').innerText).toBe('changed');
+
+        testComponent._destroyWidget = function() {};
     }));
 
     it('ngZone onStable should not called recursively (T551347)', async(() => {
+        TestBed.configureTestingModule(
+        {
+            declarations: [ TestContainerComponent, DxTestWidgetComponent ],
+            providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }]
+        });
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: '<dx-test-widget></dx-test-widget>'
+                template: `
+                    <dx-test-widget></dx-test-widget>
+                    <dx-test-widget></dx-test-widget>
+                    <dx-test-widget></dx-test-widget>
+                `
             }
         });
 
         let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
+        let innerWidgets = fixture.componentInstance.innerWidgets;
 
-        expect(onStableCallCount).toBe(2);
+        expect(fixture.componentInstance.onStableCallCount).toBe(2);
+
+        innerWidgets.forEach(function(widget) {
+            widget._destroyWidget = function() {};
+        });
     }));
 
   });
