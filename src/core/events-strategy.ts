@@ -3,13 +3,13 @@ import { DxComponent } from './component';
 
 const dxToNgEventNames = {};
 
-interface EventSubscriber {
+interface EventSubscription {
     handler: any;
     unsubscribe: () => void;
 }
 
 export class NgEventsStrategy {
-    private subscribers: { [key: string]: EventSubscriber[] } = {};
+    private subscriptions: { [key: string]: EventSubscription[] } = {};
 
     constructor(private component: DxComponent, private ngZone: NgZone) { }
 
@@ -24,30 +24,30 @@ export class NgEventsStrategy {
     }
 
     on(name, handler) {
-        let eventSubscribers = this.subscribers[name] || [],
-            subsriber = this.getEmitter(name).subscribe(handler.bind(this.component.instance)),
-            unsubscribe = subsriber.unsubscribe.bind(subsriber);
+        let eventSubscriptions = this.subscriptions[name] || [],
+            subcription = this.getEmitter(name).subscribe(handler.bind(this.component.instance)),
+            unsubscribe = subcription.unsubscribe.bind(subcription);
 
-        eventSubscribers.push({ handler, unsubscribe });
-        this.subscribers[name] = eventSubscribers;
+        eventSubscriptions.push({ handler, unsubscribe });
+        this.subscriptions[name] = eventSubscriptions;
     }
 
     off(name, handler) {
-        let eventSubscribers = this.subscribers[name] || [];
+        let eventSubscriptions = this.subscriptions[name] || [];
 
         if (handler) {
-            eventSubscribers.some((subscriber, i) => {
-                if (subscriber.handler === handler) {
-                    subscriber.unsubscribe();
-                    eventSubscribers.splice(i, 1);
+            eventSubscriptions.some((subscription, i) => {
+                if (subscription.handler === handler) {
+                    subscription.unsubscribe();
+                    eventSubscriptions.splice(i, 1);
                     return true;
                 }
             });
         } else {
-            eventSubscribers.forEach(subscriber => {
-                subscriber.unsubscribe();
+            eventSubscriptions.forEach(subscription => {
+                subscription.unsubscribe();
             });
-            eventSubscribers.splice(0, eventSubscribers.length);
+            eventSubscriptions.splice(0, eventSubscriptions.length);
         }
     }
 
@@ -68,16 +68,16 @@ interface RememberedEvent {
 }
 
 let events: RememberedEvent[] = [];
-let onStableSubscriber: EventSubscriber = null;
+let onStableSubscription: EventSubscription = null;
 
-let createOnStableSubscriber = function(ngZone: NgZone, fireNgEvent: Function) {
-    if (onStableSubscriber) {
+let createOnStableSubscription = function(ngZone: NgZone, fireNgEvent: Function) {
+    if (onStableSubscription) {
         return;
     }
 
-    onStableSubscriber = ngZone.onStable.subscribe(function() {
-        onStableSubscriber.unsubscribe();
-        onStableSubscriber = null;
+    onStableSubscription = ngZone.onStable.subscribe(function() {
+        onStableSubscription.unsubscribe();
+        onStableSubscription = null;
 
         ngZone.run(() => {
             events.forEach(event => {
@@ -96,7 +96,7 @@ export class EmitterHelper {
 
     constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
-        createOnStableSubscriber(ngZone, this.fireNgEvent);
+        createOnStableSubscription(ngZone, this.fireNgEvent);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
         let emitter = this.component[eventName];
