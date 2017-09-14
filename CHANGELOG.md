@@ -1,3 +1,8 @@
+## 17.2.1-beta.1 (2017-09-15)
+
+- update angular version to 5.0.0-beta.7
+- update typescript version to 2.4.2
+
 ## 17.1.7-rc.1 (2017-09-11)
 
 ### Bug Fixes
