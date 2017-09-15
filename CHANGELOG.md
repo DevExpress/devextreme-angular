@@ -1,7 +1,10 @@
 ## 17.2.1-beta.1 (2017-09-15)
 
-- Update angular version to 5.0.0-beta.7
-- Update typescript version to 2.4.2
+### Features
+
+- Update Angular version to 5.0.0-beta.7
+- Update `typescript` version to 2.4.2
+- Update `devextreme` version to 17.2.1-pre
 
 ## 17.1.7-rc.1 (2017-09-11)
 
