@@ -1079,27 +1079,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -1152,10 +1152,10 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -1202,13 +1202,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -1267,7 +1267,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -1287,7 +1287,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -1302,38 +1302,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -1341,13 +1341,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -1363,7 +1363,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -1373,25 +1373,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -1401,37 +1401,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -1439,7 +1439,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -1682,27 +1682,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -1734,7 +1734,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "showTarget": {
           "PrimitiveTypes": [
@@ -1749,7 +1749,7 @@
           "Description": "Specifies whether or not to show the line indicating zero on the invisible scale."
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -1791,7 +1791,7 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "tooltip": {
           "Description": "Configures the tooltip.",
@@ -1800,38 +1800,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -1839,13 +1839,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -1861,7 +1861,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -1871,7 +1871,7 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "horizontalAlignment": {
               "IsDeprecated": true,
@@ -1882,19 +1882,19 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -1904,37 +1904,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -1947,7 +1947,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -2129,6 +2129,15 @@
             "bool"
           ],
           "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "disabledDates": {
+          "PrimitiveTypes": [
+            "date"
+          ],
+          "IsCollection": true,
+          "IsFunc": true,
+          "SingularName": "disabledDate",
+          "Description": "Specifies dates to be disabled."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -4144,27 +4153,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -4346,7 +4355,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "scrollBar": {
           "Description": "Specifies the settings of the scroll bar.",
@@ -4419,7 +4428,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -4443,13 +4452,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -4503,7 +4512,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -4523,7 +4532,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -4555,38 +4564,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -4594,13 +4603,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -4616,7 +4625,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -4626,7 +4635,7 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "location": {
               "EnumName": "ChartTooltipLocation",
@@ -4636,19 +4645,19 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "percentPrecision": {
               "PrimitiveTypes": [
@@ -4665,37 +4674,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -4709,7 +4718,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -5799,27 +5808,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -5918,7 +5927,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "scale": {
           "Description": "Specifies a gauge's scale options.",
@@ -6227,7 +6236,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -6282,13 +6291,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -6347,7 +6356,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -6367,7 +6376,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -6382,38 +6391,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -6421,13 +6430,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -6443,7 +6452,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -6453,25 +6462,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -6481,37 +6490,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -6519,7 +6528,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -8759,6 +8768,15 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
+        "disabledDates": {
+          "PrimitiveTypes": [
+            "date"
+          ],
+          "IsCollection": true,
+          "IsFunc": true,
+          "SingularName": "disabledDate",
+          "Description": "Specifies dates to be disabled. Applies only if pickerType is \"calendar\"."
+        },
         "displayFormat": {
           "PrimitiveTypes": [
             "string"
@@ -9187,6 +9205,10 @@
             "any"
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "fieldTemplate": {
+          "IsTemplate": true,
+          "Description": "The template to be used for rendering the widget's text field."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -10001,6 +10023,959 @@
         }
       }
     },
+    "dxFunnel": {
+      "Description": "",
+      "Module": "viz/funnel",
+      "Options": {
+        "adaptiveLayout": {
+          "Description": "Specifies adaptive layout options.",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the widget's height small enough for the layout to begin adapting."
+            },
+            "keepLabels": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether item labels should be kept when the layout is adapting."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the widget's width small enough for the layout to begin adapting."
+            }
+          }
+        },
+        "algorithm": {
+          "EnumName": "FunnelAlgorithm",
+          "Description": "Specifies the algorithm for building the funnel."
+        },
+        "argumentField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides arguments for funnel items. The argument identifies a funnel item and represents it on the legend."
+        },
+        "colorField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides colors for funnel items. If this field is absent, the palette provides the colors."
+        },
+        "dataSource": {
+          "IsDataSource": true,
+          "Description": ""
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "export": {
+          "Description": "Configures the exporting and printing features.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Enables the client-side exporting in the widget."
+            },
+            "fileName": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
+            },
+            "formats": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsCollection": true,
+              "SingularName": "format",
+              "Description": "Specifies a set of formats available for exporting into."
+            },
+            "printingEnabled": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
+            },
+            "proxyUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+            }
+          }
+        },
+        "hoverEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether funnel items change their style when a user pauses on them."
+        },
+        "inverted": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Turns the funnel upside down."
+        },
+        "item": {
+          "Description": "",
+          "Options": {
+            "border": {
+              "Description": "Configures a funnel item's border.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors a funnel item's border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Makes a funnel item's border visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Sets the width of a funnel item's border in pixels."
+                }
+              }
+            },
+            "hoverStyle": {
+              "Description": "Configures a funnel item's appearance when a user presses the item or hovers the mouse pointer over it.",
+              "Options": {
+                "border": {
+                  "Description": "Configures a funnel item's border appearance when a user presses the item or hovers the mouse pointer over it.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Colors a funnel item's border when a user presses the item or hovers the mouse pointer over it."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Shows a funnel item's border when a user presses the item or hovers the mouse pointer over it."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Thickens a funnel item's border when a user presses the item or hovers the mouse pointer over it."
+                    }
+                  }
+                },
+                "hatching": {
+                  "Description": "Applies hatching to a funnel item when a user presses the item or hovers the mouse pointer over it.",
+                  "Options": {
+                    "direction": {
+                      "EnumName": "HatchingDirection",
+                      "Description": "Specifies hatching line direction."
+                    },
+                    "opacity": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the transparency of hatching lines."
+                    },
+                    "step": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the distance between two side-by-side hatching lines in pixels."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies hatching lines' width in pixels."
+                    }
+                  }
+                }
+              }
+            },
+            "selectionStyle": {
+              "Description": "Configures a funnel item's appearance when a user selects it.",
+              "Options": {
+                "border": {
+                  "Description": "Configures a funnel item's border appearance when a user selects this item.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Colors the selected funnel item's border."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "bool"
+                      ],
+                      "Description": "Shows the selected funnel item's border."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Thickens the selected funnel item's border."
+                    }
+                  }
+                },
+                "hatching": {
+                  "Description": "Applies hatching to a selected funnel item.",
+                  "Options": {
+                    "direction": {
+                      "EnumName": "HatchingDirection",
+                      "Description": "Specifies hatching line direction."
+                    },
+                    "opacity": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies hatching line transparency."
+                    },
+                    "step": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies the distance between two side-by-side hatching lines in pixels."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "double"
+                      ],
+                      "Description": "Specifies hatching line width in pixels."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "label": {
+          "Description": "Configures funnel item labels.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the labels' background. Inherits the funnel item's color by default."
+            },
+            "border": {
+              "Description": "Configures the label borders.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the label borders."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Sets the label border dash style."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Shows the label borders."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the label border width."
+                }
+              }
+            },
+            "connector": {
+              "Description": "Configures label connectors.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors label connectors."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the transparency of label connectors."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Shows label connectors."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the label connector width in pixels."
+                }
+              }
+            },
+            "customizeText": {
+              "IsFunc": true,
+              "Description": "Customizes labels' text."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies labels' font options."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Formats the item value before displaying it in the label."
+            },
+            "horizontalAlignment": {
+              "EnumName": "HorizontalEdge",
+              "Description": "Specifies labels' position in relation to the funnel items."
+            },
+            "horizontalOffset": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Moves labels from their initial positions."
+            },
+            "position": {
+              "EnumName": "FunnelLabelPosition",
+              "Description": "Specifies whether to display labels inside or outside funnel items or arrange them in columns."
+            },
+            "showForZeroValues": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether to show labels for items with zero value."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Controls the labels' visibility."
+            }
+          }
+        },
+        "legend": {
+          "Description": "Configures the legend.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the legend's background."
+            },
+            "border": {
+              "Description": "Configures the legend's border.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the legend's border."
+                },
+                "cornerRadius": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Makes all the legend's corners rounded."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Sets a dash style for the legend's border."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the transparency of the legend's border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Shows the legend's border."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the legend's border in pixels."
+                }
+              }
+            },
+            "columnCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "Arranges legend items into several columns."
+            },
+            "columnItemSpacing": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies an empty space between item columns in pixels."
+            },
+            "customizeHint": {
+              "IsFunc": true,
+              "Description": "Specifies the hint that appears when a user hovers the mouse pointer over a legend item."
+            },
+            "customizeText": {
+              "IsFunc": true,
+              "Description": "Customizes the text displayed by legend items."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies the legend items' font options."
+            },
+            "horizontalAlignment": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Along with verticalAlignment, specifies the legend's position."
+            },
+            "itemsAlignment": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Aligns items in the last column or row (depending on the legend's orientation). Applies when legend items are not divided into columns or rows equally."
+            },
+            "itemTextPosition": {
+              "EnumName": "Position",
+              "Description": "Specifies the text's position relative to the marker in a legend item."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates an empty space, measured in pixels, around the legend.",
+              "Options": {
+                "bottom": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the legend's bottom margin in pixels."
+                },
+                "left": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the legend's left margin in pixels."
+                },
+                "right": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the legend's right margin in pixels."
+                },
+                "top": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the legend's bottom margin in pixels."
+                }
+              }
+            },
+            "markerSize": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "orientation": {
+              "EnumName": "Orientation",
+              "Description": "Arranges legend items vertically (in a column) or horizontally (in a row). The default value is \"horizontal\" if the legend.horizontalAlignment is \"center\". Otherwise, it is \"vertical\"."
+            },
+            "paddingLeftRight": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between the legend's left/right border and its items."
+            },
+            "paddingTopBottom": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between the legend's top/bottom border and its items."
+            },
+            "rowCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "Arranges legend items in several rows."
+            },
+            "rowItemSpacing": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies an empty space between item rows in pixels."
+            },
+            "verticalAlignment": {
+              "EnumName": "VerticalEdge",
+              "Description": "Along with horizontalAlignment, specifies the legend's position."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies the legend's visibility."
+            }
+          }
+        },
+        "loadingIndicator": {
+          "Description": "Configures the loading indicator.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the background of the loading indicator."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the loading indicator."
+            },
+            "show": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether to show the loading indicator or not."
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the text to be displayed by the loading indicator."
+            }
+          }
+        },
+        "margin": {
+          "Description": "Generates space around the widget.",
+          "Options": {
+            "bottom": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the bottom margin of the widget in pixels."
+            },
+            "left": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the left margin of the widget in pixels."
+            },
+            "right": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the right margin of the widget in pixels."
+            },
+            "top": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the top margin of the widget in pixels."
+            }
+          }
+        },
+        "neckHeight": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the ratio between the height of the neck and that of the whole funnel. Accepts values from 0 to 1. Applies only if the algorithm is \"dynamicHeight\"."
+        },
+        "neckWidth": {
+          "PrimitiveTypes": [
+            "double"
+          ],
+          "Description": "Specifies the ratio between the width of the neck and that of the whole funnel. Accepts values from 0 to 1. Applies only if the algorithm is \"dynamicHeight\"."
+        },
+        "onDisposing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the disposing event. Executed when the widget is removed from the DOM using the remove(), empty(), or html() jQuery methods only."
+        },
+        "onDrawn": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+        },
+        "onExported": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
+        },
+        "onExporting": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
+        },
+        "onFileSaving": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
+        },
+        "onHoverChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the hoverChanged event. Executed after a funnel item's hover state is changed in the UI or programmatically."
+        },
+        "onIncidentOccurred": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
+        },
+        "onInitialized": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
+        },
+        "onItemClick": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the itemClick event. Executed when a user clicks a funnel item."
+        },
+        "onLegendClick": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the legendClick event. Executed when a user clicks a legend item."
+        },
+        "onOptionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
+        },
+        "onSelectionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the selectionChanged event. Executed after a funnel item's selection state is changed in the UI or programmatically."
+        },
+        "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "EnumName": "VizPalette",
+          "SingularName": "palette",
+          "Description": "Sets the palette to be used for colorizing funnel items."
+        },
+        "pathModified": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a tag modifying the path."
+        },
+        "redrawOnResize": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether to redraw the widget when the size of the parent browser window changes or a mobile device rotates."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "selectionMode": {
+          "EnumName": "SelectionMode",
+          "Description": "Specifies whether a single or multiple funnel items can be in the selected state at a time. Assigning \"none\" disables the selection feature."
+        },
+        "size": {
+          "Description": "Specifies the widget's size in pixels.",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the widget in pixels."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the widget in pixels."
+            }
+          }
+        },
+        "sortData": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether to sort funnel items."
+        },
+        "theme": {
+          "EnumName": "VizTheme",
+          "Description": "Sets the name of the theme the widget uses."
+        },
+        "title": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Configures the widget's title.",
+          "Options": {
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the title."
+            },
+            "horizontalAlignment": {
+              "EnumName": "HorizontalAlignment",
+              "Description": "Specifies the title's alignment in a horizontal direction."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates space around the title.",
+              "Options": {
+                "bottom": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the bottom margin of the title."
+                },
+                "left": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the left margin of the title."
+                },
+                "right": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the right margin of the title."
+                },
+                "top": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the top margin of the title."
+                }
+              }
+            },
+            "placeholderSize": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the minimum height that the title occupies."
+            },
+            "subtitle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Configures the widget's subtitle.",
+              "Options": {
+                "font": {
+                  "ComplexTypes": [
+                    "VizFont"
+                  ],
+                  "Description": "Specifies font options for the subtitle."
+                },
+                "text": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies text for the subtitle."
+                }
+              }
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the title's text."
+            },
+            "verticalAlignment": {
+              "EnumName": "VerticalEdge",
+              "Description": "Specifies the title's alignment in a vertical direction."
+            }
+          }
+        },
+        "tooltip": {
+          "Description": "Configures tooltips - small pop-up rectangles that display information about a data-visualizing widget element being pressed or hovered over with the mouse pointer.",
+          "Options": {
+            "arrowLength": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
+            },
+            "border": {
+              "Description": "Configures a tooltip's border.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors a tooltip's border."
+                },
+                "dashStyle": {
+                  "EnumName": "DashStyle",
+                  "Description": "Specifies the dash style of a tooltip's border."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the transparency of a tooltip's border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Specifies whether a tooltip's border is visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of a tooltip's border in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors all tooltips."
+            },
+            "container": {
+              "PrimitiveTypes": [
+                "jquery"
+              ],
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
+            },
+            "customizeTooltip": {
+              "IsFunc": true,
+              "Description": "Customizes a specific tooltip's appearance."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Enables tooltips."
+            },
+            "font": {
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies tooltips' font options."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "EnumName": "Format",
+              "Description": "Specifies the format of the value a tooltip displays."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies tooltips' transparency."
+            },
+            "paddingLeftRight": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
+            },
+            "paddingTopBottom": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
+            },
+            "precision": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "IsDeprecated": true,
+              "Description": "Use the tooltip.format.precision option instead."
+            },
+            "shadow": {
+              "Description": "Configures a tooltip's shadow.",
+              "Options": {
+                "blur": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors a tooltip's shadow."
+                },
+                "offsetX": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
+                },
+                "offsetY": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the transparency of a tooltip's shadow."
+                }
+              }
+            },
+            "zIndex": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "Specifies a tooltip's z-index."
+            }
+          }
+        },
+        "valueField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides values for funnel items. The value defines a funnel item's area."
+        }
+      }
+    },
     "dxGallery": {
       "Description": "The Gallery is a widget that displays a collection of images in a carousel. The widget is supplied with various navigation controls that allow a user to switch between images.",
       "Module": "ui/gallery",
@@ -10406,27 +11381,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -10543,7 +11518,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "scale": {
           "Description": "Specifies the gauge's scale options.",
@@ -10852,7 +11827,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -10907,13 +11882,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -10972,7 +11947,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -10992,7 +11967,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -11007,38 +11982,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -11046,13 +12021,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -11068,7 +12043,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -11078,25 +12053,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -11106,37 +12081,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -11144,7 +12119,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -14294,27 +15269,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -14389,7 +15364,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "segmentsDirection": {
           "EnumName": "PieChartSegmentsDirection",
@@ -14419,7 +15394,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -14449,13 +15424,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -14509,7 +15484,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -14529,7 +15504,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -14561,38 +15536,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -14600,13 +15575,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -14622,7 +15597,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -14632,25 +15607,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "percentPrecision": {
               "PrimitiveTypes": [
@@ -14667,37 +15642,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -14705,7 +15680,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -16812,27 +17787,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -16922,7 +17897,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "series": {
           "ComplexTypes": [
@@ -16952,7 +17927,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -16970,13 +17945,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -17030,7 +18005,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -17050,7 +18025,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -17082,38 +18057,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -17121,13 +18096,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -17143,7 +18118,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -17153,25 +18128,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "percentPrecision": {
               "PrimitiveTypes": [
@@ -17188,37 +18163,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -17232,7 +18207,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -19139,27 +20114,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -19198,7 +20173,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
@@ -19794,7 +20769,7 @@
           }
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -19945,13 +20920,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -20005,7 +20980,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -20025,7 +21000,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -20659,7 +21634,7 @@
         },
         "currentView": {
           "EnumName": "SchedulerViewType",
-          "Description": "Specifies the view used in the scheduler by default."
+          "Description": "Specifies the currently displayed view. Accepts the view's name or type."
         },
         "dataCellTemplate": {
           "IsTemplate": true,
@@ -21090,9 +22065,36 @@
               "SingularName": "group",
               "Description": "The resource kinds by which appointments are grouped."
             },
+            "intervalCount": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "Description": "Multiplies the default view interval. Applies to all view types except \"agenda\"."
+            },
+            "maxAppointmentsPerCell": {
+              "PrimitiveTypes": [
+                "int32"
+              ],
+              "EnumName": "MaxAppointmentsPerCell",
+              "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "A custom name for the view. This name goes to the view switcher."
+            },
             "resourceCellTemplate": {
               "IsTemplate": true,
               "Description": "The template to be used for rendering resource headers."
+            },
+            "startDate": {
+              "PrimitiveTypes": [
+                "date",
+                "double",
+                "string"
+              ],
+              "Description": "Specifies the date from which to start counting the view interval. Applies to all view types except \"agenda\"."
             },
             "startDayHour": {
               "PrimitiveTypes": [
@@ -22354,27 +23356,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -22422,7 +23424,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "showFirstLast": {
           "PrimitiveTypes": [
@@ -22437,7 +23439,7 @@
           "Description": "Specifies whether or not to indicate both the minimum and maximum values on a sparkline."
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -22455,7 +23457,7 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "tooltip": {
           "Description": "Configures the tooltip.",
@@ -22464,38 +23466,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -22503,13 +23505,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -22525,7 +23527,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -22535,7 +23537,7 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "horizontalAlignment": {
               "IsDeprecated": true,
@@ -22546,19 +23548,19 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -22568,37 +23570,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -22611,7 +23613,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -23472,6 +24474,12 @@
           "IsTemplate": true,
           "Description": "Specifies a custom template for an item."
         },
+        "maxDisplayedTags": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the limit on displayed tags. On exceeding it, the widget replaces all tags with a single multi-tag that displays the number of selected items."
+        },
         "minSearchLength": {
           "PrimitiveTypes": [
             "int32"
@@ -23565,6 +24573,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the keyUp event."
+        },
+        "onMultiTagPreparing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the multiTagPreparing event. Executed before the multi-tag is rendered."
         },
         "onOpened": {
           "IsFunc": true,
@@ -23670,6 +24683,12 @@
             "bool"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
+        },
+        "showMultiTagOnly": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the multi-tag is shown without ordinary tags."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -24202,6 +25221,10 @@
             "bool"
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
+        },
+        "showMaskMode": {
+          "EnumName": "ShowMaskMode",
+          "Description": "Specifies when the widget shows the mask. Applies only if useMaskedValue is true."
         },
         "spellcheck": {
           "PrimitiveTypes": [
@@ -26022,6 +27045,12 @@
             "mode": {
               "EnumName": "SelectionMode",
               "Description": "Specifies the selection mode."
+            },
+            "recursive": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether selection is recursive."
             }
           }
         },
@@ -26407,7 +27436,7 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onDrill": {
           "IsFunc": true,
@@ -26417,17 +27446,17 @@
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onHoverChanged": {
           "IsFunc": true,
@@ -26437,7 +27466,7 @@
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -26490,14 +27519,14 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "selectionMode": {
           "EnumName": "SelectionMode",
           "Description": "Specifies whether a single or multiple nodes can be in the selected state simultaneously."
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -26515,7 +27544,7 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "tile": {
           "Description": "Configures tiles.",
@@ -26622,7 +27651,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -26676,7 +27705,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -26696,7 +27725,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -26705,44 +27734,44 @@
           }
         },
         "tooltip": {
-          "Description": "Configures tooltips.",
+          "Description": "Configures tooltips - small pop-up rectangles that display information about a data-visualizing widget element being pressed or hovered over with the mouse pointer.",
           "Options": {
             "arrowLength": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -26750,13 +27779,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -26772,7 +27801,7 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "format": {
               "PrimitiveTypes": [
@@ -26782,25 +27811,25 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies the format of the value displayed by a tooltip."
+              "Description": "Specifies the format of the value a tooltip displays."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "precision": {
               "PrimitiveTypes": [
@@ -26810,37 +27839,37 @@
               "Description": "Use the tooltip.format.precision option instead."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -26848,7 +27877,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -28376,27 +29405,27 @@
         "onDrawn": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event."
+          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
         },
         "onExported": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A handler for the exported event. Executed after data from the widget is exported."
         },
         "onExporting": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A handler for the exporting event. Executed before data from the widget is exported."
         },
         "onFileSaving": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A handler for the fileSaving event. Executed before a file with exported data is saved on the user's local storage."
         },
         "onIncidentOccurred": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the incidentOccurred event."
+          "Description": "A handler for the incidentOccurred event. Executed when an error or warning appears in the widget."
         },
         "onInitialized": {
           "IsFunc": true,
@@ -28468,10 +29497,10 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the widget supports right-to-left representation."
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "size": {
-          "Description": "Specifies the size of the widget in pixels.",
+          "Description": "Specifies the widget's size in pixels.",
           "Options": {
             "height": {
               "PrimitiveTypes": [
@@ -28489,13 +29518,13 @@
         },
         "theme": {
           "EnumName": "VizTheme",
-          "Description": "Sets the name of the theme to be used in the widget."
+          "Description": "Sets the name of the theme the widget uses."
         },
         "title": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget title.",
+          "Description": "Configures the widget's title.",
           "Options": {
             "font": {
               "ComplexTypes": [
@@ -28549,7 +29578,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the widget subtitle.",
+              "Description": "Configures the widget's subtitle.",
               "Options": {
                 "font": {
                   "ComplexTypes": [
@@ -28569,7 +29598,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the title text."
+              "Description": "Specifies the title's text."
             },
             "verticalAlignment": {
               "EnumName": "VerticalEdge",
@@ -28584,38 +29613,38 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the length of the tooltip's arrow in pixels."
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
             },
             "border": {
-              "Description": "Specifies the appearance of the tooltip's border.",
+              "Description": "Configures a tooltip's border.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's border."
+                  "Description": "Colors a tooltip's border."
                 },
                 "dashStyle": {
                   "EnumName": "DashStyle",
-                  "Description": "Specifies the dash style of the tooltip's border."
+                  "Description": "Specifies the dash style of a tooltip's border."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's border."
+                  "Description": "Specifies the transparency of a tooltip's border."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
-                  "Description": "Specifies whether the tooltip's border is visible or not."
+                  "Description": "Specifies whether a tooltip's border is visible."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the width of the tooltip's border in pixels."
+                  "Description": "Specifies the width of a tooltip's border in pixels."
                 }
               }
             },
@@ -28623,13 +29652,13 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the color of tooltips."
+              "Description": "Colors all tooltips."
             },
             "container": {
               "PrimitiveTypes": [
                 "jquery"
               ],
-              "Description": "Specifies the container to draw tooltips inside of it."
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
             "customizeTooltip": {
               "IsFunc": true,
@@ -28645,58 +29674,58 @@
               "ComplexTypes": [
                 "VizFont"
               ],
-              "Description": "Specifies the font of the text displayed by a tooltip."
+              "Description": "Specifies tooltips' font options."
             },
             "opacity": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the opacity of tooltips."
+              "Description": "Specifies tooltips' transparency."
             },
             "paddingLeftRight": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space on the left and the right of the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
             },
             "paddingTopBottom": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Generates space above and below the text displayed by a tooltip."
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
             },
             "shadow": {
-              "Description": "Specifies the appearance of the tooltip's shadow.",
+              "Description": "Configures a tooltip's shadow.",
               "Options": {
                 "blur": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the blur distance of the tooltip's shadow."
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
                 },
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the color of the tooltip's shadow."
+                  "Description": "Colors a tooltip's shadow."
                 },
                 "offsetX": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the horizontal offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "offsetY": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the vertical offset of the tooltip's shadow relative to the tooltip itself measured in pixels."
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specifies the opacity of the tooltip's shadow."
+                  "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
             },
@@ -28704,7 +29733,7 @@
               "PrimitiveTypes": [
                 "int32"
               ],
-              "Description": "Specifies the z-index of tooltips."
+              "Description": "Specifies a tooltip's z-index."
             }
           }
         },
@@ -30947,7 +31976,7 @@
         },
         "sortingMethod": {
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -34536,7 +35565,7 @@
         },
         "sortingMethod": {
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -35590,6 +36619,16 @@
         }
       ]
     },
+    "MaxAppointmentsPerCell": {
+      "Items": [
+        {
+          "Name": "auto"
+        },
+        {
+          "Name": "unlimited"
+        }
+      ]
+    },
     "FirstDayOfWeek": {
       "Items": [
         {
@@ -35653,8 +36692,14 @@
         },
         {
           "Name": "object"
+        },
+        {
+          "Name": "datetime"
         }
-      ]
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
     },
     "SortOrder": {
       "Items": [
@@ -35913,6 +36958,9 @@
         },
         {
           "Name": "value"
+        },
+        {
+          "Name": "none"
         }
       ]
     },
@@ -36789,6 +37837,19 @@
         }
       ]
     },
+    "FunnelLabelPosition": {
+      "Items": [
+        {
+          "Name": "columns"
+        },
+        {
+          "Name": "inside"
+        },
+        {
+          "Name": "outside"
+        }
+      ]
+    },
     "SmallValuesGroupingMode": {
       "Items": [
         {
@@ -37072,6 +38133,16 @@
         }
       ]
     },
+    "ShowMaskMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "onFocus"
+        }
+      ]
+    },
     "GridColumnChooserMode": {
       "Items": [
         {
@@ -37281,6 +38352,16 @@
         },
         {
           "Name": "email"
+        }
+      ]
+    },
+    "FunnelAlgorithm": {
+      "Items": [
+        {
+          "Name": "dynamicHeight"
+        },
+        {
+          "Name": "dynamicSlope"
         }
       ]
     }
