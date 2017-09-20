@@ -1,6 +1,7 @@
 /* tslint:disable:component-selector */
 
 import {
+    VERSION,
     Component,
     ViewChildren,
     QueryList,
@@ -517,6 +518,8 @@ describe('DxList', () => {
     });
 
     it('should use item template to render/rerender an item with a template (T532675)', async(() => {
+        const ngTemplateName = Number(VERSION.major) >= 4 ? 'ng-template' : 'template';
+
         TestBed.configureTestingModule({
             declarations: [TestContainerComponent],
             imports: [DxButtonModule, DxListModule]
@@ -530,9 +533,9 @@ describe('DxList', () => {
                             <dx-button *dxTemplate></dx-button>
                         </dxi-item>
                         <dxi-item>
-                            <ng-template dxTemplate>
+                            <${ngTemplateName} dxTemplate>
                                 <dx-button></dx-button>
-                            </ng-template>
+                            </${ngTemplateName}>
                         </dxi-item>
                     </dx-list>
                 `
