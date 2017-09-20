@@ -530,9 +530,9 @@ describe('DxList', () => {
                             <dx-button *dxTemplate></dx-button>
                         </dxi-item>
                         <dxi-item>
-                            <template dxTemplate>
+                            <ng-template dxTemplate>
                                 <dx-button></dx-button>
-                            </template>
+                            </ng-template>
                         </dxi-item>
                     </dx-list>
                 `
