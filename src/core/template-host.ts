@@ -1,7 +1,7 @@
 import { DxTemplateDirective } from './template';
 
 export interface IDxTemplateHost {
-    setTemplate(DxTemplateDirective);
+    setTemplate(template: DxTemplateDirective);
 };
 
 export class DxTemplateHost {
