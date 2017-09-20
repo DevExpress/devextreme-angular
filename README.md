@@ -471,10 +471,10 @@ Note, in some scenarios an item content can be rerendered by it's host component
         </div>
     </dxi-item>
     <dxi-item>
-        <template dxTemplate>
+        <ng-template dxTemplate>
             <dx-button text="First Child"></dx-button>
             <dx-button text="Second Child"></dx-button>
-        </template>
+        </ng-template>
     </dxi-item>
 </dx-list>
 ```
