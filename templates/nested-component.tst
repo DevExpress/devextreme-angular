@@ -13,7 +13,9 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
-import { NestedOptionHost<#? it.hasTemplate #>, extractTemplate<#?#> } from '../../core/nested-option';
+import { NestedOptionHost<#? it.hasTemplate #>, extractTemplate<#?#> } from '../../core/nested-option';<#? it.hasTemplate #>
+import { DxTemplateDirective } from '../../core/template';
+import { IDxTemplateHost, DxTemplateHost } from '../../core/template-host';<#?#>
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
 <#~ it.collectionNestedComponents :component:i #><#? component.className !== it.className #>import { <#= component.className #>Component } from './<#= component.path #>';
 <#?#><#~#>
@@ -22,12 +24,12 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
     selector: '<#= it.selector #>',
     template: '<#? it.hasTemplate #><ng-content></ng-content><#?#>',
     styles: ['<#? it.hasTemplate #>:host { display: block; }<#?#>'],
-    providers: [NestedOptionHost]<#? it.inputs #>,
+    providers: [NestedOptionHost<#? it.hasTemplate #>, DxTemplateHost<#?#>]<#? it.inputs #>,
     inputs: [<#~ it.inputs :input:i #>
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
     ]<#?#>
 })
-export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit<#?#> {<#~ it.properties :prop:i #>
+export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit, IDxTemplateHost<#?#> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>() {
         return this._getOption('<#= prop.name #>');
@@ -49,13 +51,19 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this.setChildren('<#= component.propertyName #>', value);
     }
 <#~#>
-
-    constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost, @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>, private element: ElementRef<#?#>) {
+    constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost,
+            @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>,
+            @Host() templateHost: DxTemplateHost,
+            private element: ElementRef<#?#>) {
         super();
         parentOptionHost.setNestedOption(this);
-        optionHost.setHost(this, this._fullOptionPath.bind(this));
+        optionHost.setHost(this, this._fullOptionPath.bind(this));<#? it.hasTemplate #>
+        templateHost.setHost(this);<#?#>
     }
 <#? it.hasTemplate #>
+    setTemplate(template: DxTemplateDirective) {
+        this.template = template;
+    }
     ngAfterViewInit() {
         extractTemplate(this, this.element);
     }

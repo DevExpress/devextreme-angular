@@ -457,6 +457,28 @@ export class AppComponent {
 }
 ```
 
+Note, in some scenarios an item content can be rerendered by it's host component. To keep the item child components alive they should be declared as a single template via the `dxTemplate` structural directive. There are several alternatives depending on the item content:
+
+```html
+<dx-list>
+    <dxi-item>
+        <dx-button text="One Child" *dxTemplate></dx-button>
+    </dxi-item>
+    <dxi-item>
+        <div *dxTemplate>
+            <dx-button text="First Child"></dx-button>
+            <dx-button text="Second Child"></dx-button>
+        </div>
+    </dxi-item>
+    <dxi-item>
+        <template dxTemplate>
+            <dx-button text="First Child"></dx-button>
+            <dx-button text="Second Child"></dx-button>
+        </template>
+    </dxi-item>
+</dx-list>
+```
+
 Angular has a built-in `template` directive. To define the `template` property of the configuration component (for example, `dxo-master-detail`), use the following code:
 ```html
 <dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
