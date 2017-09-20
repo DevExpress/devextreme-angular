@@ -17,7 +17,8 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit, AfterContentChecked, INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
+export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
+        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _optionToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
