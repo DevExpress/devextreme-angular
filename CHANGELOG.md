@@ -6,6 +6,12 @@
 - Update `typescript` version to 2.4.2
 - Update `devextreme` version to 17.2.1-pre
 
+## 17.1.7-rc.2 (2017-09-25)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/22?closed=1)
+
 ## 17.1.7-rc.1 (2017-09-11)
 
 ### Bug Fixes
@@ -59,6 +65,18 @@
 - Fix disposing nested components in dxDataGrid
 - Fix firing onValueChanged event several times on change value option
 - Fix watcher for values of the date type ([8a8355b](https://github.com/DevExpress/devextreme-angular/commit/8a8355bbcf833a01f494effe7d8c7f7ad452f523))
+
+## 16.2.8 (2017-06-29)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/17?closed=1)
+
+## 16.2.7 (2017-06-07)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/15?closed=1)
 
 ## 16.2.6 (2017-03-29)
 
