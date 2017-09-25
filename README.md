@@ -457,24 +457,14 @@ export class AppComponent {
 }
 ```
 
-Note, in some scenarios an item content can be rerendered by it's host component. To keep the item child components alive they should be declared as a single template via the `dxTemplate` structural directive. There are several alternatives depending on the item content:
+If your item template contains some *nested* components, declare it using the parameterless `dxTemplate` structural directive as follows:
 
 ```html
 <dx-list>
     <dxi-item>
-        <dx-button text="One Child" *dxTemplate></dx-button>
-    </dxi-item>
-    <dxi-item>
         <div *dxTemplate>
-            <dx-button text="First Child"></dx-button>
-            <dx-button text="Second Child"></dx-button>
+            <dx-button text="I'm a nested child component"></dx-button>
         </div>
-    </dxi-item>
-    <dxi-item>
-        <ng-template dxTemplate>
-            <dx-button text="First Child"></dx-button>
-            <dx-button text="Second Child"></dx-button>
-        </ng-template>
     </dxi-item>
 </dx-list>
 ```
