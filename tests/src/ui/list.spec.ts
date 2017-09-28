@@ -1,6 +1,7 @@
 /* tslint:disable:component-selector */
 
 import {
+    VERSION,
     Component,
     ViewChildren,
     QueryList,
@@ -515,4 +516,43 @@ describe('DxList', () => {
 
         expect(fixture.componentInstance.buttonDestroyed).toBe(true);
     });
+
+    it('should use item template to render/rerender an item with a template (T532675)', async(() => {
+        const ngTemplateName = Number(VERSION.major) >= 4 ? 'ng-template' : 'template';
+
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [DxButtonModule, DxListModule]
+        });
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list>
+                        <dxi-item>
+                            <dx-button *dxTemplate></dx-button>
+                        </dxi-item>
+                        <dxi-item>
+                            <${ngTemplateName} dxTemplate>
+                                <dx-button></dx-button>
+                            </${ngTemplateName}>
+                        </dxi-item>
+                    </dx-list>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+        expect(instance.element().find('.dx-button').eq(0).dxButton('instance')).not.toBeUndefined();
+        expect(instance.element().find('.dx-button').eq(1).dxButton('instance')).not.toBeUndefined();
+
+        instance.repaint();
+        fixture.detectChanges();
+        expect(instance.element().find('.dx-button').eq(0).dxButton('instance')).not.toBeUndefined();
+        expect(instance.element().find('.dx-button').eq(1).dxButton('instance')).not.toBeUndefined();
+    }));
+
 });

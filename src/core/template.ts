@@ -23,7 +23,7 @@ export class RenderData {
 }
 
 @Directive({
-    selector: '[dxTemplate][dxTemplateOf]'
+    selector: '[dxTemplate]'
 })
 export class DxTemplateDirective {
     @Input()
