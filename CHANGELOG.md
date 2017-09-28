@@ -1,3 +1,10 @@
+
+## 17.1.7-rc.2 (2017-09-25)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/22?closed=1)
+
 ## 17.2.1-beta.1 (2017-09-15)
 
 ### Features
@@ -37,6 +44,18 @@
 ### Bug Fixes
 
 [Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/16?closed=1)
+
+## 16.2.8 (2017-06-29)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/17?closed=1)
+
+## 16.2.7 (2017-06-07)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/15?closed=1)
 
 ## 17.1.3 (2017-05-15)
 
