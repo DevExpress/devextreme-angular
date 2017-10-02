@@ -457,6 +457,18 @@ export class AppComponent {
 }
 ```
 
+If your item template contains some *nested* components, declare it using the parameterless `dxTemplate` structural directive as follows:
+
+```html
+<dx-list>
+    <dxi-item>
+        <div *dxTemplate>
+            <dx-button text="I'm a nested child component"></dx-button>
+        </div>
+    </dxi-item>
+</dx-list>
+```
+
 Angular has a built-in `template` directive. To define the `template` property of the configuration component (for example, `dxo-master-detail`), use the following code:
 ```html
 <dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>

@@ -3,13 +3,13 @@ import { DxComponent } from './component';
 
 const dxToNgEventNames = {};
 
-interface EventSubscription {
+interface IEventSubscription {
     handler: any;
     unsubscribe: () => void;
 }
 
 export class NgEventsStrategy {
-    private subscriptions: { [key: string]: EventSubscription[] } = {};
+    private subscriptions: { [key: string]: IEventSubscription[] } = {};
 
     constructor(private component: DxComponent, private ngZone: NgZone) { }
 
@@ -62,13 +62,13 @@ export class NgEventsStrategy {
     }
 }
 
-interface RememberedEvent {
+interface IRememberedEvent {
     name: string;
     context: EmitterHelper;
 }
 
-let events: RememberedEvent[] = [];
-let onStableSubscription: EventSubscription = null;
+let events: IRememberedEvent[] = [];
+let onStableSubscription: IEventSubscription = null;
 
 let createOnStableSubscription = function(ngZone: NgZone, fireNgEvent: Function) {
     if (onStableSubscription) {

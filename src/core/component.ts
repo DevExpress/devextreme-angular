@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
-import { DxTemplateHost } from './template-host';
+import { IDxTemplateHost, DxTemplateHost } from './template-host';
 import { EmitterHelper } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
 import {
@@ -17,7 +17,8 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit, AfterContentChecked, INestedOptionContainer, ICollectionNestedOptionContainer {
+export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
+        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _optionToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;

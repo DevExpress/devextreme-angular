@@ -11,11 +11,11 @@ export interface INestedOptionContainer {
     instance: any;
 }
 
-export interface OptionPathGetter { (): string; }
+export interface IOptionPathGetter { (): string; }
 
 export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
     protected _host: INestedOptionContainer;
-    protected _hostOptionPath: OptionPathGetter;
+    protected _hostOptionPath: IOptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
 
@@ -42,7 +42,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         }
     }
 
-    setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
+    setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
     }
@@ -91,7 +91,7 @@ export class CollectionNestedOptionContainerImpl implements ICollectionNestedOpt
 }
 
 export abstract class NestedOption extends BaseNestedOption {
-    setHost(host: INestedOptionContainer, optionPath: OptionPathGetter) {
+    setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         super.setHost(host, optionPath);
 
         this._host[this._optionPath] = this._initialOptions;
@@ -123,10 +123,10 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
     }
 }
 
-export interface OptionWithTemplate extends BaseNestedOption {
+export interface IOptionWithTemplate extends BaseNestedOption {
     template: any;
 }
-export function extractTemplate(option: OptionWithTemplate, element: ElementRef) {
+export function extractTemplate(option: IOptionWithTemplate, element: ElementRef) {
     if (!option.template === undefined || !element.nativeElement.hasChildNodes()) {
         return;
     }
@@ -184,9 +184,9 @@ export function extractTemplate(option: OptionWithTemplate, element: ElementRef)
 
 export class NestedOptionHost {
     private _host: INestedOptionContainer;
-    private _optionPath: OptionPathGetter;
+    private _optionPath: IOptionPathGetter;
 
-    setHost(host: INestedOptionContainer, optionPath?: OptionPathGetter) {
+    setHost(host: INestedOptionContainer, optionPath?: IOptionPathGetter) {
         this._host = host;
         this._optionPath = optionPath || (() => '');
     }
