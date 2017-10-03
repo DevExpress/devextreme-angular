@@ -61,11 +61,11 @@ export abstract class DxComponent implements AfterViewInit,
             this._initialOptions[name];
     }
     protected _setOption(name: string, value: any) {
-        if (this.instance) {		
-            this._updateOption(name, value);		
-        } else {		
-            this._initialOptions[name] = value;		
-        }		
+        if (this.instance) {
+            this._updateOption(name, value);
+        } else {
+            this._initialOptions[name] = value;
+        }
     }
     protected _updateOption(name: string, value: any) {
         if (this._shouldOptionChange(name, value)) {
@@ -125,5 +125,3 @@ export abstract class DxComponentExtension extends DxComponent {
         this._createWidget(element);
     }
 }
-
-
