@@ -148,12 +148,12 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._watcherHelper.checkWatchers();
     }
 
-    _setOption(name: string, value: any) {
+    _updateOption(name: string, value: any) {
         let isSetup = this._idh.setupSingle(name, value);
         let isChanged = this._idh.getChanges(name, value) !== null;
 
         if (isSetup || isChanged) {
-            super._setOption(name, value);
+            super._updateOption(name, value);
         }
     }<#?#>
 <#? it.isEditor #>
