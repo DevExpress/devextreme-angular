@@ -2574,7 +2574,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -3206,7 +3206,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -4942,7 +4942,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -8313,7 +8313,7 @@
             },
             "showCheckBoxesMode": {
               "EnumName": "GridSelectionShowCheckBoxesMode",
-              "Description": "Specifies when to display checkboxes in rows. Applies only if selection.mode is \"multiple\"."
+              "Description": "Specifies when to display check boxes in rows. Applies only if selection.mode is \"multiple\"."
             }
           }
         },
@@ -21330,7 +21330,7 @@
         },
         "fieldTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field."
+          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -23378,7 +23378,7 @@
         },
         "fieldTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field."
+          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -30947,7 +30947,7 @@
         },
         "sortingMethod": {
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -34536,7 +34536,7 @@
         },
         "sortingMethod": {
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
         },
         "sortOrder": {
           "EnumName": "SortOrder",
@@ -37196,6 +37196,15 @@
         },
         {
           "Name": "String"
+        },
+        {
+          "Name": "Boolean"
+        },
+        {
+          "Name": "Single"
+        },
+        {
+          "Name": "Decimal"
         }
       ]
     },
