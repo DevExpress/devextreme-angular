@@ -2,8 +2,7 @@ import {
     ElementRef,
     NgZone,
     QueryList,
-    AfterViewInit,
-    AfterContentChecked
+    AfterViewInit
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -17,9 +16,9 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
+export abstract class DxComponent implements AfterViewInit,
         INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
-    private _optionToUpdate: any = {};
+    private _initialOptions: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
@@ -35,12 +34,12 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
             this.templates.forEach(template => {
                 initialTemplates[template.name] = template;
             });
-            this._optionToUpdate.integrationOptions.templates = initialTemplates;
+            this._initialOptions.integrationOptions.templates = initialTemplates;
         }
     }
     private _initOptions() {
-        this._optionToUpdate.eventsStrategy = this.eventHelper.strategy;
-        this._optionToUpdate.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
+        this._initialOptions.eventsStrategy = this.eventHelper.strategy;
+        this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     protected _createEventEmitters(events) {
         events.forEach(event => {
@@ -59,16 +58,23 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
     protected _getOption(name: string) {
         return this.instance ?
             this.instance.option(name) :
-            this._optionToUpdate[name];
+            this._initialOptions[name];
     }
     protected _setOption(name: string, value: any) {
+        if (this.instance) {
+            this._updateOption(name, value);
+        } else {
+            this._initialOptions[name] = value;
+        }
+    }
+    protected _updateOption(name: string, value: any) {
         if (this._shouldOptionChange(name, value)) {
-            this._optionToUpdate[name] = value;
+            this.instance.option(name, value);
         };
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        this._optionToUpdate.integrationOptions = {};
+        this._initialOptions.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
 
@@ -76,11 +82,11 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
             this.eventHelper.rememberEvent(e.name);
         };
 
-        this._optionToUpdate.onInitializing = function() {
+        this._initialOptions.onInitializing = function() {
             this.on('optionChanged', optionChangeHandler);
         };
-        this.instance = this._createInstance(element, this._optionToUpdate);
-        this._optionToUpdate = {};
+        this.instance = this._createInstance(element, this._initialOptions);
+        this._initialOptions = {};
 
         this.instance.off('optionChanged', optionChangeHandler);
         this.instance.on('optionChanged', (e) => {
@@ -101,12 +107,6 @@ export abstract class DxComponent implements AfterViewInit, AfterContentChecked,
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(this.ngZone, this);
     }
-    ngAfterContentChecked() {
-        if (this.instance && Object.keys(this._optionToUpdate).length) {
-            this.instance.option(this._optionToUpdate);
-            this._optionToUpdate = {};
-        }
-    }
     ngAfterViewInit() {
         if (this.renderOnViewInit) {
             this._createWidget(this.element.nativeElement);
@@ -125,5 +125,3 @@ export abstract class DxComponentExtension extends DxComponent {
         this._createWidget(element);
     }
 }
-
-
