@@ -44,13 +44,14 @@ DevExtreme style sheets are stored in the "node-modules\devextreme\dist\css" fol
 Add the following item to the "copy" configuration.
 
 ```
-module.exports = {
-    . . .
-    copyStyleSheets: {
-        src: ['{{ROOT}}/node_modules/devextreme/dist/css/**/*'],
-        dest: '{{WWW}}/assets/css'
-    }
-}
+var copy = require('@ionic/app-scripts/config/copy.config.js');
+
+copy.copyStyleSheets = {
+  src: ['{{ROOT}}/node_modules/devextreme/dist/css/**/*'],
+  dest: '{{WWW}}/assets/css'
+};
+
+module.exports = copy;
 ```
 
 Reference the created config within the package.json file by adding the "config" section.
