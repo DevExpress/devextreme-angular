@@ -2583,7 +2583,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -3215,7 +3215,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -4951,7 +4951,7 @@
                 },
                 "displayMode": {
                   "EnumName": "ChartLabelDisplayMode",
-                  "Description": "Allows you to rotate or stagger axis labels."
+                  "Description": "Allows you to rotate or stagger axis labels. Applies to the horizontal axis only."
                 },
                 "font": {
                   "ComplexTypes": [
@@ -6928,8 +6928,7 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "SingularName": "item"
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -7185,6 +7184,12 @@
         "columnChooser": {
           "Description": "Configures the column chooser.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the column chooser."
+            },
             "emptyPanelText": {
               "PrimitiveTypes": [
                 "string"
@@ -7282,8 +7287,7 @@
             "DataGridColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column",
-          "Description": "An array of grid columns."
+          "SingularName": "column"
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -7766,6 +7770,12 @@
         "headerFilter": {
           "Description": "Configures the header filter feature.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
             "height": {
               "PrimitiveTypes": [
                 "double"
@@ -8322,7 +8332,7 @@
             },
             "showCheckBoxesMode": {
               "EnumName": "GridSelectionShowCheckBoxesMode",
-              "Description": "Specifies when to display checkboxes in rows. Applies only if selection.mode is \"multiple\"."
+              "Description": "Specifies when to display check boxes in rows. Applies only if selection.mode is \"multiple\"."
             }
           }
         },
@@ -10068,7 +10078,7 @@
         },
         "dataSource": {
           "IsDataSource": true,
-          "Description": ""
+          "Description": "Specifies the widget's data origin."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -12494,6 +12504,36 @@
           ],
           "Description": "A Boolean value specifying whether to enable or disable list scrolling."
         },
+        "searchEditorOptions": {
+          "ComplexTypes": [
+            "dxTextBoxOptions"
+          ],
+          "Description": "Configures the search panel."
+        },
+        "searchEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether searching is enabled."
+        },
+        "searchExpr": {
+          "PrimitiveTypes": [
+            "getter"
+          ],
+          "IsCollection": true,
+          "SingularName": "searchExpr",
+          "Description": "Specifies a data object's field name or an expression whose value is compared to the search string."
+        },
+        "searchMode": {
+          "EnumName": "CollectionSearchMode",
+          "Description": "Specifies whether the widget finds entries that contain your search string or entries that only start with it."
+        },
+        "searchValue": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the current search string."
+        },
         "selectAllMode": {
           "EnumName": "SelectAllMode",
           "Description": "Specifies the mode in which all items are selected."
@@ -13782,8 +13822,7 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "SingularName": "item"
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -15952,6 +15991,12 @@
         "fieldChooser": {
           "Description": "The Field Chooser configuration options.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the field chooser."
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
@@ -16084,6 +16129,52 @@
                 "bool"
               ],
               "Description": "Shows/hides the field panel."
+            }
+          }
+        },
+        "headerFilter": {
+          "Description": "Configures the header filter feature.",
+          "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "texts": {
+              "Description": "Configures the texts of the popup menu's elements.",
+              "Options": {
+                "cancel": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the text of the button that closes the popup menu without applying a filter."
+                },
+                "emptyValue": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the name of the item that represents empty values in the popup menu."
+                },
+                "ok": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the text of the button that applies a filter."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the popup menu containing filtering values."
             }
           }
         },
@@ -16419,6 +16510,12 @@
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
         },
+        "allowSearch": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether searching is enabled in the field chooser."
+        },
         "dataSource": {
           "IsDataSource": true,
           "Description": "The data source of a PivotGrid widget."
@@ -16440,6 +16537,52 @@
             "bool"
           ],
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "headerFilter": {
+          "Description": "Configures the header filter feature.",
+          "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "texts": {
+              "Description": "Configures the texts of the popup menu's elements.",
+              "Options": {
+                "cancel": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the text of the button that closes the popup menu without applying a filter."
+                },
+                "emptyValue": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the name of the item that represents empty values in the popup menu."
+                },
+                "ok": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the text of the button that applies a filter."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the popup menu containing filtering values."
+            }
+          }
         },
         "height": {
           "PrimitiveTypes": [
@@ -21094,10 +21237,10 @@
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "Specifies the size of a step by which a slider handle is moved when a user uses the Page up or Page down keyboard shortcuts."
+          "Description": "Specifies the step by which a handle moves when a user presses Page Up or Page Down."
         },
         "label": {
-          "Description": "Specifies options for labels displayed at the min and max values.",
+          "Description": "Configures the labels displayed at the min and max values.",
           "Options": {
             "format": {
               "PrimitiveTypes": [
@@ -21111,13 +21254,13 @@
             },
             "position": {
               "EnumName": "VerticalEdge",
-              "Description": "Specifies whether labels are located over or under the scale."
+              "Description": "Specifies whether labels are over or under the scale."
             },
             "visible": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not slider labels are visible."
+              "Description": "Specifies whether slider labels are visible."
             }
           }
         },
@@ -21169,7 +21312,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not to highlight a range selected within the widget."
+          "Description": "Specifies whether to highlight the selected range."
         },
         "start": {
           "PrimitiveTypes": [
@@ -21187,7 +21330,7 @@
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "The slider step size."
+          "Description": "Specifies the step by which the widget's value changes when a user drags a handler."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -21196,13 +21339,13 @@
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "tooltip": {
-          "Description": "Specifies options for the slider tooltip.",
+          "Description": "Configures a tooltip.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the tooltip is enabled."
+              "Description": "Specifies whether a tooltip is enabled."
             },
             "format": {
               "PrimitiveTypes": [
@@ -21212,15 +21355,15 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies format for the tooltip."
+              "Description": "Specifies a tooltip's format."
             },
             "position": {
               "EnumName": "VerticalEdge",
-              "Description": "Specifies whether the tooltip is located over or under the slider."
+              "Description": "Specifies whether a tooltip is over or under the slider."
             },
             "showMode": {
               "EnumName": "SliderTooltipShowMode",
-              "Description": "Specifies whether the widget always shows a tooltip or only when a pointer is over the slider."
+              "Description": "Specifies when the widget shows a tooltip."
             }
           }
         },
@@ -21240,7 +21383,7 @@
           ],
           "IsCollection": true,
           "SingularName": "value",
-          "Description": "The current slider value."
+          "Description": "Specifies the currently selected value."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -21773,6 +21916,13 @@
           ],
           "Description": "The latest date the widget allows you to select."
         },
+        "maxAppointmentsPerCell": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "EnumName": "MaxAppointmentsPerCell",
+          "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
+        },
         "min": {
           "PrimitiveTypes": [
             "date",
@@ -21961,11 +22111,22 @@
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
+        "shadeUntilCurrentTime": {
+          "PrimitiveTypes": [
+            "bool"
+          ]
+        },
         "showAllDayPanel": {
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the \"All-day\" panel is visible."
+          "Description": "Specifies the \"All-day\" panel's visibility. Setting this option to false hides the panel along with the all-day appointments."
+        },
+        "showCurrentTimeIndicator": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": ""
         },
         "startDateExpr": {
           "PrimitiveTypes": [
@@ -22332,7 +22493,7 @@
         },
         "fieldTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field."
+          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -23078,10 +23239,10 @@
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "Specifies the size of a step by which a slider handle is moved when a user uses the Page up or Page down keyboard shortcuts."
+          "Description": "Specifies the step by which a handle moves when a user presses Page Up or Page Down."
         },
         "label": {
-          "Description": "Specifies options for labels displayed at the min and max values.",
+          "Description": "Configures the labels displayed at the min and max values.",
           "Options": {
             "format": {
               "PrimitiveTypes": [
@@ -23095,13 +23256,13 @@
             },
             "position": {
               "EnumName": "VerticalEdge",
-              "Description": "Specifies whether labels are located over or under the scale."
+              "Description": "Specifies whether labels are over or under the scale."
             },
             "visible": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not slider labels are visible."
+              "Description": "Specifies whether slider labels are visible."
             }
           }
         },
@@ -23159,13 +23320,13 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not to highlight a range selected within the widget."
+          "Description": "Specifies whether to highlight the selected range."
         },
         "step": {
           "PrimitiveTypes": [
             "double"
           ],
-          "Description": "The slider step size."
+          "Description": "Specifies the step by which the widget's value changes when a user drags a handler."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -23174,13 +23335,13 @@
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "tooltip": {
-          "Description": "Specifies options for the slider tooltip.",
+          "Description": "Configures a tooltip.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not the tooltip is enabled."
+              "Description": "Specifies whether a tooltip is enabled."
             },
             "format": {
               "PrimitiveTypes": [
@@ -23190,15 +23351,15 @@
                 "Format"
               ],
               "EnumName": "Format",
-              "Description": "Specifies format for the tooltip."
+              "Description": "Specifies a tooltip's format."
             },
             "position": {
               "EnumName": "VerticalEdge",
-              "Description": "Specifies whether the tooltip is located over or under the slider."
+              "Description": "Specifies whether a tooltip is over or under the slider."
             },
             "showMode": {
               "EnumName": "SliderTooltipShowMode",
-              "Description": "Specifies whether the widget always shows a tooltip or only when a pointer is over the slider."
+              "Description": "Specifies when the widget shows a tooltip."
             }
           }
         },
@@ -24380,7 +24541,7 @@
         },
         "fieldTemplate": {
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field."
+          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -24988,7 +25149,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the current value displayed by the widget."
+          "Description": "Specifies a value the widget displays."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -25265,7 +25426,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the current value displayed by the widget."
+          "Description": "Specifies a value the widget displays."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -26204,6 +26365,12 @@
         "columnChooser": {
           "Description": "Configures the column chooser.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the column chooser."
+            },
             "emptyPanelText": {
               "PrimitiveTypes": [
                 "string"
@@ -26301,8 +26468,7 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column",
-          "Description": "Configures columns."
+          "SingularName": "column"
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -26607,6 +26773,12 @@
         "headerFilter": {
           "Description": "Configures the header filter feature.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
             "height": {
               "PrimitiveTypes": [
                 "double"
@@ -28119,11 +28291,35 @@
           "EnumName": "ScrollDirection",
           "Description": "A string value specifying available scrolling directions."
         },
+        "searchEditorOptions": {
+          "ComplexTypes": [
+            "dxTextBoxOptions"
+          ],
+          "Description": "Configures the search panel."
+        },
+        "searchEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether searching is enabled."
+        },
+        "searchExpr": {
+          "PrimitiveTypes": [
+            "getter"
+          ],
+          "IsCollection": true,
+          "SingularName": "searchExpr",
+          "Description": "Specifies a data object's field name or an expression whose value is compared to the search string."
+        },
+        "searchMode": {
+          "EnumName": "CollectionSearchMode",
+          "Description": "Specifies whether the widget finds entries that contain your search string or entries that only start with it."
+        },
         "searchValue": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the current value used to filter tree view items."
+          "Description": "Specifies the current search string."
         },
         "selectAllEnabled": {
           "PrimitiveTypes": [
@@ -28360,6 +28556,8 @@
               "PrimitiveTypes": [
                 "any"
               ],
+              "IsCollection": true,
+              "SingularName": "validationRequestsCallback",
               "Description": "The jQuery.Callbacks() object that is fired when the specified value should be validated."
             }
           }
@@ -31571,8 +31769,7 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "SingularName": "item"
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -31863,6 +32060,12 @@
         "headerFilter": {
           "Description": "Specifies data settings for the header filter.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
             "dataSource": {
               "IsFunc": true,
               "IsDataSource": true,
@@ -31874,6 +32077,18 @@
               ],
               "EnumName": "HeaderFilterGroupInterval",
               "Description": "Specifies how the header filter combines values into groups."
+            },
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the popup menu containing filtering values."
             }
           }
         },
@@ -32635,8 +32850,7 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "SingularName": "item"
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -33601,7 +33815,7 @@
             },
             "filterType": {
               "EnumName": "FilterType",
-              "Description": "The filter type for the current field."
+              "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
             },
             "filterValues": {
               "PrimitiveTypes": [
@@ -33609,7 +33823,7 @@
               ],
               "IsCollection": true,
               "SingularName": "filterValue",
-              "Description": "The filter values for the current field."
+              "Description": "Specifies by which values the field is filtered."
             },
             "format": {
               "PrimitiveTypes": [
@@ -33639,6 +33853,29 @@
                 "string"
               ],
               "Description": "The name of the group to which the field belongs."
+            },
+            "headerFilter": {
+              "Description": "Configures the header filter feature.",
+              "Options": {
+                "allowSearch": {
+                  "PrimitiveTypes": [
+                    "bool"
+                  ],
+                  "Description": "Specifies whether searching is enabled in the header filter."
+                },
+                "height": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the height of the popup menu containing filtering values."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "double"
+                  ],
+                  "Description": "Specifies the width of the popup menu containing filtering values."
+                }
+              }
             },
             "isMeasure": {
               "PrimitiveTypes": [
@@ -35465,6 +35702,12 @@
         "headerFilter": {
           "Description": "Specifies data settings for the header filter.",
           "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
             "dataSource": {
               "IsFunc": true,
               "IsDataSource": true,
@@ -35476,6 +35719,18 @@
               ],
               "EnumName": "HeaderFilterGroupInterval",
               "Description": "Specifies how the header filter combines values into groups."
+            },
+            "height": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "double"
+              ],
+              "Description": "Specifies the width of the popup menu containing filtering values."
             }
           }
         },
@@ -36054,6 +36309,19 @@
         }
       ]
     },
+    "CollectionSearchMode": {
+      "Items": [
+        {
+          "Name": "contains"
+        },
+        {
+          "Name": "startswith"
+        }
+      ],
+      "Renamings": {
+        "startswith": "startsWith"
+      }
+    },
     "DropDownSearchMode": {
       "Items": [
         {
@@ -36165,9 +36433,6 @@
           "Name": "dxDateBox"
         },
         {
-          "Name": "dxDropDownMenu"
-        },
-        {
           "Name": "dxMenu"
         },
         {
@@ -36185,7 +36450,6 @@
         "dxButton": "Button",
         "dxCheckBox": "CheckBox",
         "dxDateBox": "DateBox",
-        "dxDropDownMenu": "DropDownMenu",
         "dxMenu": "Menu",
         "dxSelectBox": "SelectBox",
         "dxTabs": "Tabs",
@@ -38267,6 +38531,15 @@
         },
         {
           "Name": "String"
+        },
+        {
+          "Name": "Boolean"
+        },
+        {
+          "Name": "Single"
+        },
+        {
+          "Name": "Decimal"
         }
       ]
     },
