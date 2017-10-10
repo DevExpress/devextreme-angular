@@ -1,3 +1,13 @@
+## 17.2.1-beta.2 (2017-10-10)
+
+### Features
+
+- Update Angular version to 5.0.0-rc.1
+- Update `devextreme` version to 17.2.1-pre-17273
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/25?closed=1)
 
 ## 17.1.7-rc.2 (2017-09-25)
 
