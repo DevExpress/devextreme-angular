@@ -58,7 +58,7 @@ module.exports = function(config) {
 
         autoWatch: true,
 
-        browsers: ['PhantomJS'],
+        browsers: ['ChromeHeadless'],
 
         reporters: [
             'progress',
