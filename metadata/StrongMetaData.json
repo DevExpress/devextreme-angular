@@ -82,8 +82,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -236,12 +239,18 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -321,8 +330,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -571,6 +583,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -759,6 +774,9 @@
         },
         "searchExpr": {
           "PrimitiveTypes": [
+            "getter"
+          ],
+          "ItemPrimitiveTypes": [
             "getter"
           ],
           "IsCollection": true,
@@ -1131,6 +1149,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -1451,6 +1472,9 @@
         },
         "values": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "double"
           ],
           "IsCollection": true,
@@ -1511,8 +1535,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -2393,6 +2420,9 @@
               "Description": "Specifies the color of the axis line."
             },
             "constantLines": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "constantLine",
               "Description": "Declares a collection of constant lines belonging to the argument axis.",
@@ -2858,6 +2888,9 @@
               "Description": "Rounds off date-time values to the nearest tick interval. Applies only to the axes of the \"continuous\" type containing date-time values."
             },
             "strips": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "strip",
               "Description": "Declares a collection of strips belonging to the argument axis.",
@@ -4253,12 +4286,18 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
           "Description": "Sets the name of the palette to be used in the chart. Alternatively, an array of colors can be set as a custom palette to be used within this chart."
         },
         "panes": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "pane",
           "Description": "Declares a collection of panes.",
@@ -4411,6 +4450,9 @@
         },
         "series": {
           "ComplexTypes": [
+            "ChartSeries"
+          ],
+          "ItemComplexTypes": [
             "ChartSeries"
           ],
           "IsCollection": true,
@@ -4738,6 +4780,9 @@
           "Description": "Specifies whether or not to filter the series points depending on their quantity."
         },
         "valueAxis": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "valueAxis",
           "Description": "Configures the value axis.",
@@ -4765,6 +4810,9 @@
               "Description": "Specifies the color of the axis line."
             },
             "constantLines": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "constantLine",
               "Description": "Declares a collection of constant lines belonging to the value axis.",
@@ -5250,6 +5298,9 @@
               "Description": "Specifies whether or not to show zero on the value axis."
             },
             "strips": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "strip",
               "Description": "Declares a collection of strips belonging to the value axis.",
@@ -5888,12 +5939,18 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
               "Description": "Sets the name of the palette or an array of colors to be used for coloring the gauge range container."
             },
             "ranges": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "range",
               "Description": "An array of objects representing ranges contained in the range container.",
@@ -6076,6 +6133,9 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
+                    "any"
+                  ],
+                  "ItemPrimitiveTypes": [
                     "double"
                   ],
                   "IsCollection": true,
@@ -6138,6 +6198,9 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
+                    "any"
+                  ],
+                  "ItemPrimitiveTypes": [
                     "double"
                   ],
                   "IsCollection": true,
@@ -6936,6 +6999,9 @@
           "ComplexTypes": [
             "ContextMenuItem"
           ],
+          "ItemComplexTypes": [
+            "ContextMenuItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "Holds an array of menu items."
@@ -7047,6 +7113,9 @@
         },
         "selectedItems": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -7294,6 +7363,9 @@
         },
         "columns": {
           "ComplexTypes": [
+            "DataGridColumn"
+          ],
+          "ItemComplexTypes": [
             "DataGridColumn"
           ],
           "IsCollection": true,
@@ -7853,6 +7925,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "keyExpr",
           "Description": "Specifies which data field provides keys for data items. Applies only if data is a simple array."
@@ -8314,6 +8389,9 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
           "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
@@ -8376,6 +8454,9 @@
           "Description": "Specifies whether horizontal lines that separate one row from another are visible."
         },
         "sortByGroupSummaryInfo": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "sortByGroupSummaryInfo",
           "Description": "Allows you to sort groups according to the values of group summary items.",
@@ -8469,6 +8550,9 @@
               "Description": "Allows you to use a custom aggregate function to calculate the value of a summary item."
             },
             "groupItems": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "groupItem",
               "Description": "Specifies items of the group summary.",
@@ -8608,6 +8692,9 @@
               }
             },
             "totalItems": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "totalItem",
               "Description": "Specifies items of the total summary.",
@@ -9143,9 +9230,12 @@
         },
         "renderWhen": {
           "PrimitiveTypes": [
-            "any",
             "bool"
           ],
+          "ItemPrimitiveTypes": [
+            "void"
+          ],
+          "IsPromise": true,
           "Description": "Specifies the jQuery.Promise or boolean value, which when resolved, forces widget content to render."
         },
         "showLoadIndicator": {
@@ -9269,6 +9359,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -9484,6 +9577,9 @@
       "Description": "[note]This widget is deprecated. Instead of it, use the built-in client-side exporting. For further information, refer to the export option of a particular widget.",
       "Options": {
         "exportFormat": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "ExportFormat",
           "SingularName": "exportFormat",
@@ -9766,6 +9862,9 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "value",
           "Description": "Specifies a File instance representing the selected file. Read-only when uploadMode is \"useForm\"."
@@ -9908,6 +10007,12 @@
             "FormGroupItem",
             "FormSimpleItem",
             "FormTabbedItem"
+          ],
+          "ItemComplexTypes": [
+            "FormSimpleItem",
+            "FormGroupItem",
+            "FormTabbedItem",
+            "FormEmptyItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -10120,6 +10225,9 @@
             },
             "formats": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "string"
               ],
               "IsCollection": true,
@@ -10701,6 +10809,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -11079,8 +11190,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -11476,12 +11590,18 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
               "Description": "Sets the name of the palette or an array of colors to be used for coloring the gauge range container."
             },
             "ranges": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "range",
               "Description": "An array of objects representing ranges contained in the range container.",
@@ -11682,6 +11802,9 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
+                    "any"
+                  ],
+                  "ItemPrimitiveTypes": [
                     "double"
                   ],
                   "IsCollection": true,
@@ -11744,6 +11867,9 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
+                    "any"
+                  ],
+                  "ItemPrimitiveTypes": [
                     "double"
                   ],
                   "IsCollection": true,
@@ -12275,8 +12401,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -12341,6 +12470,9 @@
           "Description": "Specifies which data field provides keys for widget items."
         },
         "menuItems": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "menuItem",
           "Description": "Specifies the array of items for a context menu called for a list item.",
@@ -12537,6 +12669,9 @@
           "PrimitiveTypes": [
             "getter"
           ],
+          "ItemPrimitiveTypes": [
+            "getter"
+          ],
           "IsCollection": true,
           "SingularName": "searchExpr",
           "Description": "Specifies a data object's field name or an expression whose value is compared to the search string."
@@ -12559,12 +12694,18 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -13059,6 +13200,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -13275,6 +13419,9 @@
           "PrimitiveTypes": [
             "getter"
           ],
+          "ItemPrimitiveTypes": [
+            "getter"
+          ],
           "IsCollection": true,
           "SingularName": "searchExpr",
           "Description": "Specifies the name of a data source item field or an expression whose value is compared to the search criterion."
@@ -13443,6 +13590,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "center",
           "Description": "An object, a string, or an array specifying the location displayed at the center of the widget.",
@@ -13537,6 +13687,9 @@
           "Description": "A URL pointing to the custom icon to be used for map markers."
         },
         "markers": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "marker",
           "Description": "An array of markers displayed on a map.",
@@ -13550,6 +13703,9 @@
             "location": {
               "PrimitiveTypes": [
                 "string"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
               ],
               "IsCollection": true,
               "SingularName": "location",
@@ -13646,6 +13802,9 @@
           "Description": "The name of the current map data provider."
         },
         "routes": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "route",
           "Description": "An array of routes shown on the map.",
@@ -13657,6 +13816,9 @@
               "Description": "Specifies the color of the line displaying the route."
             },
             "locations": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "location",
               "Description": "Contains an array of objects making up the route.",
@@ -13836,6 +13998,9 @@
         },
         "items": {
           "ComplexTypes": [
+            "MenuItem"
+          ],
+          "ItemComplexTypes": [
             "MenuItem"
           ],
           "IsCollection": true,
@@ -14112,8 +14277,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -14307,8 +14475,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -14446,15 +14617,21 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any",
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
+            "string",
             "double",
-            "string"
+            "any"
           ],
           "IsCollection": true,
           "SingularName": "selectedItem",
@@ -14833,8 +15010,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -15403,6 +15583,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -15440,6 +15623,9 @@
         },
         "series": {
           "ComplexTypes": [
+            "PieChartSeries"
+          ],
+          "ItemComplexTypes": [
             "PieChartSeries"
           ],
           "IsCollection": true,
@@ -15814,8 +16000,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -16813,6 +17002,9 @@
               "Description": "Specifies the color of the line that represents an axis."
             },
             "constantLines": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "constantLine",
               "Description": "Defines an array of the argument axis constant lines.",
@@ -17175,6 +17367,9 @@
               "Description": "Specifies the angle in arc degrees to which the argument axis should be rotated. The positive values rotate the axis clockwise."
             },
             "strips": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "strip",
               "Description": "Specifies options for argument axis strips.",
@@ -18043,6 +18238,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "VizPalette",
           "SingularName": "palette",
@@ -18076,6 +18274,9 @@
         },
         "series": {
           "ComplexTypes": [
+            "PolarChartSeries"
+          ],
+          "ItemComplexTypes": [
             "PolarChartSeries"
           ],
           "IsCollection": true,
@@ -18418,6 +18619,9 @@
               "Description": "Specifies the color of the line that represents an axis."
             },
             "constantLines": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "constantLine",
               "Description": "Defines an array of the value axis constant lines.",
@@ -18770,6 +18974,9 @@
               "Description": "Specifies whether or not to indicate a zero value on the value axis."
             },
             "strips": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "strip",
               "Description": "Specifies options for value axis strips.",
@@ -18982,6 +19189,9 @@
         },
         "buttons": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -19209,6 +19419,9 @@
           "Description": "A template to be used for rendering the widget title."
         },
         "toolbarItems": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "toolbarItem",
           "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
@@ -19305,6 +19518,9 @@
         },
         "buttons": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -19530,6 +19746,9 @@
           "Description": "A template to be used for rendering the widget title."
         },
         "toolbarItems": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "toolbarItem",
           "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
@@ -19801,6 +20020,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -20064,6 +20286,9 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -20071,6 +20296,9 @@
             },
             "series": {
               "ComplexTypes": [
+                "ChartSeries"
+              ],
+              "ItemComplexTypes": [
                 "ChartSeries"
               ],
               "IsCollection": true,
@@ -21185,9 +21413,12 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "date",
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "double",
-            "string"
+            "string",
+            "date"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -21413,6 +21644,9 @@
         },
         "value": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "double"
           ],
           "IsCollection": true,
@@ -21532,6 +21766,9 @@
       "Module": "ui/responsive_box",
       "Options": {
         "cols": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "col",
           "Description": "Specifies the collection of columns for the grid used to position layout elements.",
@@ -21593,8 +21830,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -21613,6 +21853,9 @@
               "Description": "Specifies html code inserted into the widget item element."
             },
             "location": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsCollection": true,
               "SingularName": "location",
               "Description": "Specifies the item location and size against the widget grid.",
@@ -21712,6 +21955,9 @@
           "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
         },
         "rows": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "row",
           "Description": "Specifies the collection of rows for the grid used to position layout elements.",
@@ -22076,6 +22322,9 @@
           "Description": "The template to be used for rendering resource headers."
         },
         "resources": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "resource",
           "Description": "Specifies an array of resources available in the scheduler.",
@@ -22213,6 +22462,9 @@
           "Description": "Specifies whether a user can switch views using tabs or a drop-down menu."
         },
         "views": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "SchedulerViewType",
           "SingularName": "view",
@@ -22581,6 +22833,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -22789,6 +23044,9 @@
           "PrimitiveTypes": [
             "getter"
           ],
+          "ItemPrimitiveTypes": [
+            "getter"
+          ],
           "IsCollection": true,
           "SingularName": "searchExpr",
           "Description": "Specifies the name of a data source item field or an expression whose value is compared to the search criterion."
@@ -22946,8 +23204,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -24066,8 +24327,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -24327,8 +24591,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -24472,15 +24739,21 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any",
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
+            "string",
             "double",
-            "string"
+            "any"
           ],
           "IsCollection": true,
           "SingularName": "selectedItem",
@@ -24646,6 +24919,9 @@
           "Description": "Specifies whether the editor's value is valid."
         },
         "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -24855,6 +25131,9 @@
           "PrimitiveTypes": [
             "getter"
           ],
+          "ItemPrimitiveTypes": [
+            "getter"
+          ],
           "IsCollection": true,
           "SingularName": "searchExpr",
           "Description": "Specifies the name of a data source item field or an expression whose value is compared to the search criterion."
@@ -24875,9 +25154,12 @@
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any",
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
+            "string",
             "double",
-            "string"
+            "any"
           ],
           "IsCollection": true,
           "IsReadonly": true,
@@ -24937,9 +25219,12 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "any",
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
+            "string",
             "double",
-            "string"
+            "any"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -25588,8 +25873,11 @@
           "Description": "Specifies the distance in pixels between adjacent tiles."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -25990,8 +26278,11 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -26155,6 +26446,9 @@
         },
         "buttons": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -26526,6 +26820,9 @@
           "ComplexTypes": [
             "TreeListColumn"
           ],
+          "ItemComplexTypes": [
+            "TreeListColumn"
+          ],
           "IsCollection": true,
           "SingularName": "column",
           "Description": "Configures columns."
@@ -26684,6 +26981,9 @@
         },
         "expandedRowKeys": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -27261,6 +27561,9 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
           "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
@@ -27403,6 +27706,9 @@
             },
             "palette": {
               "PrimitiveTypes": [
+                "string"
+              ],
+              "ItemPrimitiveTypes": [
                 "string"
               ],
               "IsCollection": true,
@@ -28238,6 +28544,9 @@
           "ComplexTypes": [
             "TreeViewItem"
           ],
+          "ItemComplexTypes": [
+            "TreeViewItem"
+          ],
           "IsCollection": true,
           "SingularName": "item"
         },
@@ -28365,6 +28674,9 @@
         },
         "searchExpr": {
           "PrimitiveTypes": [
+            "getter"
+          ],
+          "ItemPrimitiveTypes": [
             "getter"
           ],
           "IsCollection": true,
@@ -28513,8 +28825,11 @@
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
         "items": {
-          "PrimitiveTypes": [
+          "ItemPrimitiveTypes": [
             "string"
+          ],
+          "ItemComplexTypes": [
+            "CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -28681,6 +28996,16 @@
             "RequiredRule",
             "StringLengthRule"
           ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
+          ],
           "IsCollection": true,
           "SingularName": "validationRule",
           "Description": "An array of validation rules to be checked for the editor with which the dxValidator object is associated."
@@ -28732,6 +29057,9 @@
             },
             "colorGroups": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "double"
               ],
               "IsCollection": true,
@@ -28801,6 +29129,9 @@
             },
             "palette": {
               "PrimitiveTypes": [
+                "string"
+              ],
+              "ItemPrimitiveTypes": [
                 "string"
               ],
               "IsCollection": true,
@@ -28968,6 +29299,9 @@
           }
         },
         "layers": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "layer",
           "Description": "Specifies options for VectorMap widget layers.",
@@ -29102,6 +29436,9 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "EnumName": "VizPalette",
               "SingularName": "palette",
@@ -29162,6 +29499,9 @@
           }
         },
         "legends": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "legend",
           "Description": "Configures map legends.",
@@ -29387,6 +29727,9 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "IsDeprecated": true,
           "SingularName": "mapData",
@@ -29395,6 +29738,9 @@
         "markers": {
           "PrimitiveTypes": [
             "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "any"
           ],
           "IsCollection": true,
           "IsDeprecated": true,
@@ -29410,6 +29756,9 @@
             },
             "coordinates": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "any"
               ],
               "IsCollection": true,
@@ -29440,6 +29789,9 @@
             },
             "values": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "any"
               ],
               "IsCollection": true,
@@ -29483,6 +29835,9 @@
             },
             "colorGroups": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "double"
               ],
               "IsCollection": true,
@@ -29568,6 +29923,9 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
               "IsCollection": true,
               "IsDeprecated": true,
               "EnumName": "VizPalette",
@@ -29616,6 +29974,9 @@
             },
             "sizeGroups": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "any"
               ],
               "IsCollection": true,
@@ -31831,6 +32192,9 @@
           "ComplexTypes": [
             "ContextMenuItem"
           ],
+          "ItemComplexTypes": [
+            "ContextMenuItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "Holds an array of menu items."
@@ -32011,6 +32375,9 @@
           "ComplexTypes": [
             "DataGridColumn"
           ],
+          "ItemComplexTypes": [
+            "DataGridColumn"
+          ],
           "IsCollection": true,
           "SingularName": "column",
           "Description": "An array of grid columns."
@@ -32058,6 +32425,9 @@
           "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
         },
         "filterOperations": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "FilterOperations",
           "SingularName": "filterOperation",
@@ -32075,6 +32445,9 @@
         },
         "filterValues": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -32278,6 +32651,16 @@
             "RequiredRule",
             "StringLengthRule"
           ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
+          ],
           "IsCollection": true,
           "SingularName": "validationRule",
           "Description": "Specifies validation rules to be checked on updating cell values."
@@ -32458,6 +32841,12 @@
             "FormSimpleItem",
             "FormTabbedItem"
           ],
+          "ItemComplexTypes": [
+            "FormSimpleItem",
+            "FormGroupItem",
+            "FormTabbedItem",
+            "FormEmptyItem"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "Holds an array of form items displayed within the group."
@@ -32584,6 +32973,16 @@
             "RequiredRule",
             "StringLengthRule"
           ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
+          ],
           "IsCollection": true,
           "SingularName": "validationRule",
           "Description": "An array of validation rules to be checked for the form item editor."
@@ -32629,6 +33028,9 @@
           "Description": "Holds a configuration object for the TabPanel widget used to display the current form item."
         },
         "tabs": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "tab",
           "Description": "An array of tab configuration objects.",
@@ -32698,6 +33100,12 @@
                 "FormGroupItem",
                 "FormSimpleItem",
                 "FormTabbedItem"
+              ],
+              "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem"
               ],
               "IsCollection": true,
               "SingularName": "item",
@@ -32784,6 +33192,9 @@
         },
         "palette": {
           "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
             "string"
           ],
           "IsCollection": true,
@@ -32911,6 +33322,9 @@
         },
         "items": {
           "ComplexTypes": [
+            "MenuItem"
+          ],
+          "ItemComplexTypes": [
             "MenuItem"
           ],
           "IsCollection": true,
@@ -33794,6 +34208,9 @@
       "Module": "ui/pivot_grid/data_source",
       "Options": {
         "fields": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
           "IsCollection": true,
           "SingularName": "field",
           "Description": "An array of pivot grid fields.",
@@ -33884,6 +34301,9 @@
             },
             "filterValues": {
               "PrimitiveTypes": [
+                "any"
+              ],
+              "ItemPrimitiveTypes": [
                 "any"
               ],
               "IsCollection": true,
@@ -35664,6 +36084,9 @@
           "ComplexTypes": [
             "TreeListColumn"
           ],
+          "ItemComplexTypes": [
+            "TreeListColumn"
+          ],
           "IsCollection": true,
           "SingularName": "column",
           "Description": "Configures columns."
@@ -35711,6 +36134,9 @@
           "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
         },
         "filterOperations": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "EnumName": "FilterOperations",
           "SingularName": "filterOperation",
@@ -35728,6 +36154,9 @@
         },
         "filterValues": {
           "PrimitiveTypes": [
+            "any"
+          ],
+          "ItemPrimitiveTypes": [
             "any"
           ],
           "IsCollection": true,
@@ -35908,6 +36337,16 @@
             "RequiredRule",
             "StringLengthRule"
           ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
+          ],
           "IsCollection": true,
           "SingularName": "validationRule",
           "Description": "Specifies validation rules to be checked on updating cell values."
@@ -35976,6 +36415,9 @@
         },
         "items": {
           "ComplexTypes": [
+            "TreeViewItem"
+          ],
+          "ItemComplexTypes": [
             "TreeViewItem"
           ],
           "IsCollection": true,
