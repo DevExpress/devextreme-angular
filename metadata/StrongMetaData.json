@@ -82,6 +82,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -219,7 +222,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index number of the currently selected item."
         },
@@ -247,7 +250,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -318,6 +321,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -605,7 +611,7 @@
         },
         "maxItemCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the maximum count of items displayed by the widget."
         },
@@ -617,7 +623,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -790,7 +796,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -1437,7 +1443,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -1445,7 +1451,7 @@
         },
         "values": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -1505,6 +1511,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -1945,7 +1954,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -2052,7 +2061,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -2250,7 +2259,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -2348,7 +2357,7 @@
             },
             "maxPointCountSupported": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many series points the widget should have before the animation will be disabled."
             }
@@ -2753,7 +2762,7 @@
             },
             "minorTickCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many minor ticks to place between two neighboring major ticks."
             },
@@ -3937,7 +3946,7 @@
             },
             "columnCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many columns it takes to arrange legend items."
             },
@@ -4037,7 +4046,7 @@
             },
             "rowCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many rows it takes to arrange legend items."
             },
@@ -4716,7 +4725,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -5121,7 +5130,7 @@
             },
             "minorTickCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many minor ticks to place between two neighboring major ticks."
             },
@@ -5606,7 +5615,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -6067,7 +6076,7 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
-                    "any"
+                    "double"
                   ],
                   "IsCollection": true,
                   "IsDeprecated": true,
@@ -6129,7 +6138,7 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
-                    "any"
+                    "double"
                   ],
                   "IsCollection": true,
                   "IsDeprecated": true,
@@ -6526,7 +6535,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -6783,7 +6792,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -6928,7 +6937,8 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -7110,7 +7120,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -7287,7 +7297,8 @@
             "DataGridColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "An array of grid columns."
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -8141,13 +8152,13 @@
             },
             "pageIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies the grid page that should be displayed by default."
             },
             "pageSize": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies the size of grid pages."
             }
@@ -8672,7 +8683,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -9042,7 +9053,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -9415,7 +9426,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -9703,7 +9714,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -9810,7 +9821,7 @@
         },
         "colCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "EnumName": "Mode",
           "Description": "The count of columns in the form layout."
@@ -9820,25 +9831,25 @@
           "Options": {
             "lg": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a large screen size."
             },
             "md": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a middle-sized screen."
             },
             "sm": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a small-sized screen."
             },
             "xs": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for an extra small-sized screen."
             }
@@ -10008,7 +10019,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -10109,7 +10120,7 @@
             },
             "formats": {
               "PrimitiveTypes": [
-                "any"
+                "string"
               ],
               "IsCollection": true,
               "SingularName": "format",
@@ -10442,7 +10453,7 @@
             },
             "columnCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Arranges legend items into several columns."
             },
@@ -10534,7 +10545,7 @@
             },
             "rowCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Arranges legend items in several rows."
             },
@@ -10972,7 +10983,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -11068,6 +11079,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -11171,7 +11185,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently active gallery item."
         },
@@ -11213,7 +11227,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -11668,7 +11682,7 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
-                    "any"
+                    "double"
                   ],
                   "IsCollection": true,
                   "IsDeprecated": true,
@@ -11730,7 +11744,7 @@
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
-                    "any"
+                    "double"
                   ],
                   "IsCollection": true,
                   "IsDeprecated": true,
@@ -12127,7 +12141,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -12261,6 +12275,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -12576,7 +12593,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -13082,7 +13099,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -13324,7 +13341,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -13684,7 +13701,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -13822,7 +13839,8 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -13999,7 +14017,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -14094,6 +14112,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -14191,7 +14212,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently displayed item."
         },
@@ -14209,7 +14230,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -14286,6 +14307,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -14408,7 +14432,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently selected widget item."
         },
@@ -14428,7 +14452,9 @@
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any"
+            "any",
+            "double",
+            "string"
           ],
           "IsCollection": true,
           "SingularName": "selectedItem",
@@ -14440,7 +14466,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -14672,7 +14698,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -14807,6 +14833,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -14898,7 +14927,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently active panorama item."
         },
@@ -14980,7 +15009,7 @@
             },
             "maxPointCountSupported": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many series points the widget should have before the animation will be disabled."
             }
@@ -15113,7 +15142,7 @@
             },
             "columnCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many columns it takes to arrange legend items."
             },
@@ -15209,7 +15238,7 @@
             },
             "rowCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many rows it takes to arrange legend items."
             },
@@ -15717,7 +15746,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -15785,6 +15814,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -15884,7 +15916,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently active pivot item."
         },
@@ -16391,7 +16423,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -16640,7 +16672,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -16745,7 +16777,7 @@
             },
             "maxPointCountSupported": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many series points the widget should have before the animation will be disabled."
             }
@@ -17045,7 +17077,7 @@
             },
             "minorTickCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies the number of minor ticks between two neighboring major ticks."
             },
@@ -17730,7 +17762,7 @@
             },
             "columnCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many columns it takes to arrange legend items."
             },
@@ -17826,7 +17858,7 @@
             },
             "rowCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many rows it takes to arrange legend items."
             },
@@ -18348,7 +18380,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -18646,7 +18678,7 @@
             },
             "minorTickCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies the number of minor ticks between two neighboring major ticks."
             },
@@ -19483,7 +19515,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -19851,7 +19883,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -20600,7 +20632,7 @@
             },
             "minorTickCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies the number of minor ticks between neighboring major ticks."
             },
@@ -21153,7 +21185,9 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "any"
+            "date",
+            "double",
+            "string"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -21334,7 +21368,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -21379,7 +21413,7 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "any"
+            "double"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -21559,6 +21593,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -21588,7 +21625,7 @@
                 },
                 "colspan": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "Specifies how many columns the element should span."
                 },
@@ -21600,7 +21637,7 @@
                 },
                 "rowspan": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "Specifies how many rows the element should span."
                 },
@@ -21918,7 +21955,7 @@
         },
         "maxAppointmentsPerCell": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "EnumName": "MaxAppointmentsPerCell",
           "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
@@ -22114,7 +22151,8 @@
         "shadeUntilCurrentTime": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether to apply shading to cover the timetable up to the current time."
         },
         "showAllDayPanel": {
           "PrimitiveTypes": [
@@ -22126,7 +22164,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": ""
+          "Description": "Specifies the current date-time indicator's visibility."
         },
         "startDateExpr": {
           "PrimitiveTypes": [
@@ -22148,7 +22186,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -22228,13 +22266,13 @@
             },
             "intervalCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Multiplies the default view interval. Applies to all view types except \"agenda\"."
             },
             "maxAppointmentsPerCell": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "EnumName": "MaxAppointmentsPerCell",
               "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
@@ -22589,7 +22627,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -22798,7 +22836,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -22908,6 +22946,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -23043,7 +23084,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index number of the currently selected item."
         },
@@ -23330,7 +23371,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -23772,7 +23813,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -23914,7 +23955,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -24025,6 +24066,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -24182,7 +24226,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently displayed item."
         },
@@ -24206,7 +24250,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -24283,6 +24327,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -24411,7 +24458,7 @@
         },
         "selectedIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The index of the currently selected widget item."
         },
@@ -24431,7 +24478,9 @@
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any"
+            "any",
+            "double",
+            "string"
           ],
           "IsCollection": true,
           "SingularName": "selectedItem",
@@ -24449,7 +24498,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -24643,7 +24692,7 @@
         },
         "minSearchLength": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The minimum number of characters that must be entered into the text box to begin a search."
         },
@@ -24826,7 +24875,9 @@
         },
         "selectedItems": {
           "PrimitiveTypes": [
-            "any"
+            "any",
+            "double",
+            "string"
           ],
           "IsCollection": true,
           "IsReadonly": true,
@@ -24859,7 +24910,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -24886,7 +24937,9 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "any"
+            "any",
+            "double",
+            "string"
           ],
           "IsCollection": true,
           "SingularName": "value",
@@ -25124,7 +25177,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -25395,7 +25448,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -25535,6 +25588,9 @@
           "Description": "Specifies the distance in pixels between adjacent tiles."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -25645,7 +25701,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -25865,7 +25921,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -25934,6 +25990,9 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -26468,7 +26527,8 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "Configures columns."
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -27279,7 +27339,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -28047,7 +28107,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -28369,7 +28429,7 @@
         },
         "tabIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
@@ -28453,6 +28513,9 @@
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
         "items": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "IsCollection": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
@@ -28669,7 +28732,7 @@
             },
             "colorGroups": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "IsDeprecated": true,
@@ -29150,7 +29213,7 @@
             },
             "columnCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many columns must be taken to arrange legend items."
             },
@@ -29252,7 +29315,7 @@
             },
             "rowCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many rows must be taken to arrange legend items."
             },
@@ -29420,7 +29483,7 @@
             },
             "colorGroups": {
               "PrimitiveTypes": [
-                "any"
+                "double"
               ],
               "IsCollection": true,
               "IsDeprecated": true,
@@ -29929,7 +29992,7 @@
             },
             "zIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies a tooltip's z-index."
             }
@@ -30403,7 +30466,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies a limit for the number of point labels."
         },
@@ -31244,7 +31307,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies a limit for the number of point labels."
         },
@@ -31769,7 +31832,8 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -32049,7 +32113,7 @@
         },
         "groupIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the index of a column when grid records are grouped by the values of this column."
         },
@@ -32094,7 +32158,7 @@
         },
         "hidingPriority": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
@@ -32185,7 +32249,7 @@
         },
         "sortIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the index according to which columns participate in sorting."
         },
@@ -32226,7 +32290,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the position of the column regarding other columns in the resulting widget."
         },
@@ -32290,7 +32354,7 @@
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of columns spanned by the item."
         },
@@ -32318,7 +32382,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
@@ -32342,7 +32406,7 @@
         },
         "colCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "The count of columns in the group layout."
         },
@@ -32351,25 +32415,25 @@
           "Options": {
             "lg": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a large screen size."
             },
             "md": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a middle-sized screen."
             },
             "sm": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for a small-sized screen."
             },
             "xs": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns for an extra small-sized screen."
             }
@@ -32377,7 +32441,7 @@
         },
         "colSpan": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of columns spanned by the item."
         },
@@ -32414,7 +32478,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
@@ -32426,7 +32490,7 @@
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of columns spanned by the item."
         },
@@ -32532,7 +32596,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
@@ -32544,7 +32608,7 @@
       "Options": {
         "colSpan": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the number of columns spanned by the item."
         },
@@ -32583,7 +32647,7 @@
             },
             "colCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The count of columns in the tab layout."
             },
@@ -32592,25 +32656,25 @@
               "Options": {
                 "lg": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "The count of columns for a large screen size."
                 },
                 "md": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "The count of columns for a middle-sized screen."
                 },
                 "sm": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "The count of columns for a small-sized screen."
                 },
                 "xs": {
                   "PrimitiveTypes": [
-                    "int32"
+                    "double"
                   ],
                   "Description": "The count of columns for an extra small-sized screen."
                 }
@@ -32663,7 +32727,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
         }
@@ -32850,7 +32914,8 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -33179,7 +33244,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
         },
@@ -33284,7 +33349,7 @@
             },
             "topCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many segments must not be grouped."
             }
@@ -33575,7 +33640,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
         },
@@ -33686,7 +33751,7 @@
             },
             "topCount": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Specifies how many segments must not be grouped."
             }
@@ -33769,7 +33834,7 @@
             },
             "areaIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "Index among the other fields displayed within the same area."
             },
@@ -33837,7 +33902,7 @@
             },
             "groupIndex": {
               "PrimitiveTypes": [
-                "int32"
+                "double"
               ],
               "Description": "The index of the field within a group."
             },
@@ -34307,7 +34372,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
         },
@@ -34942,7 +35007,7 @@
         },
         "maxLabelCount": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies how many points are acceptable to be in a series to display all labels for these points. Otherwise, the labels will not be displayed."
         },
@@ -35736,7 +35801,7 @@
         },
         "hidingPriority": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
         },
@@ -35814,7 +35879,7 @@
         },
         "sortIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the index according to which columns participate in sorting."
         },
@@ -35855,7 +35920,7 @@
         },
         "visibleIndex": {
           "PrimitiveTypes": [
-            "int32"
+            "double"
           ],
           "Description": "Specifies the position of the column regarding other columns in the resulting widget."
         },
