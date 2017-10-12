@@ -169,14 +169,15 @@ export default class DXComponentMetadataGenerator {
     }
 
     private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
+        var optionComplexTypes = option[option.IsCollection ? "ItemComplexTypes" : "ComplexTypes"];
         if (option.Options) {
             return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
-        } else if (option.ComplexTypes && option.ComplexTypes.length > 0) {
+        } else if (optionComplexTypes && optionComplexTypes.length > 0) {
             if (complexTypes.indexOf(complexTypes[complexTypes.length - 1]) !== complexTypes.length - 1) {
                 return;
             }
             let result = [];
-            option.ComplexTypes.forEach(complexType => {
+            optionComplexTypes.forEach(complexType => {
                 let externalObjectInfo = this.getExternalObjectInfo(metadata, complexType);
                 if (externalObjectInfo) {
                     let nestedOptions = externalObjectInfo.Options,
@@ -185,8 +186,8 @@ export default class DXComponentMetadataGenerator {
                     result.push.apply(result, this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option));
                 }
             });
-            if (option.ComplexTypes.length === 1) {
-                let externalObjectInfo = this.getExternalObjectInfo(metadata, option.ComplexTypes[0]);
+            if (optionComplexTypes.length === 1) {
+                let externalObjectInfo = this.getExternalObjectInfo(metadata, optionComplexTypes[0]);
                 if (externalObjectInfo) {
                     result[0].baseClass =
                         (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX) + externalObjectInfo.typeName;
