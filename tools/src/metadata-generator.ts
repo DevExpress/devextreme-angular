@@ -86,9 +86,17 @@ export default class DXComponentMetadataGenerator {
                         subscribe: eventName
                     });
                 } else {
+                    let type;
+
+                    if (option.PrimitiveTypes) {
+                        type = option.PrimitiveTypes.join('|');
+                    } else {
+                        type = 'any';
+                    }
+
                     let property: any = {
                         name: optionName,
-                        type: 'any'
+                        type: type
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {

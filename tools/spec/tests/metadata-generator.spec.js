@@ -42,7 +42,17 @@ describe("metadata-generator", function() {
                             testTemplate: {
                                 IsTemplate: true,
                             },
-                            testProperty: { }
+                            testProperty: {
+                                PrimitiveTypes: [
+                                    "boolean"
+                                ]
+                            },
+                            multitypeTestProperty: {
+                                PrimitiveTypes: [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         },
                         Module: 'test_widget'
                     },
@@ -114,14 +124,16 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.events).toEqual([
                 { emit: 'onTestEvent', subscribe: 'testEvent' },
                 { emit: 'testTemplateChange' },
-                { emit: 'testPropertyChange' }
+                { emit: 'testPropertyChange' },
+                { emit: 'multitypeTestPropertyChange' }
             ]);
         });
 
         it("should generate proper properties", function() {
             expect(metas.DxTestWidget.properties).toEqual([
                 { name: 'testTemplate', type: 'any' },
-                { name: 'testProperty', type: 'any' }
+                { name: 'testProperty', type: 'boolean' },
+                { name: 'multitypeTestProperty', type: 'string|number' }
             ]);
         });
 
