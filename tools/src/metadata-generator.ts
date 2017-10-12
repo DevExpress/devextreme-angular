@@ -177,7 +177,7 @@ export default class DXComponentMetadataGenerator {
     }
 
     private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
-        var optionComplexTypes = option[option.IsCollection ? "ItemComplexTypes" : "ComplexTypes"];
+        let optionComplexTypes = option[option.IsCollection ? 'ItemComplexTypes' : 'ComplexTypes'];
         if (option.Options) {
             return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
         } else if (optionComplexTypes && optionComplexTypes.length > 0) {
@@ -226,7 +226,7 @@ export default class DXComponentMetadataGenerator {
 
         let complexOptionMetadata: any = {
             className: inflector.camelize(underscoreSelector),
-            selector:  selector,
+            selector: selector,
             optionName: optionName,
             properties: [],
             path: path,
