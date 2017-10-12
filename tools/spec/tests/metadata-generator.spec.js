@@ -216,7 +216,7 @@ describe("metadata-generator", function() {
                             externalPropertyItems: { // DxiExternalPropertyItem
                                 IsCollection: true,
                                 SingularName: 'externalPropertyItem',
-                                ComplexTypes: [
+                                ItemComplexTypes: [
                                     'ExternalPropertyType'
                                 ]
                             },
@@ -399,7 +399,7 @@ describe("metadata-generator", function() {
                             externalPropertyItems: { // DxiExternalPropertyItem
                                 IsCollection: true,
                                 SingularName: 'externalPropertyItem',
-                                ComplexTypes: [
+                                ItemComplexTypes: [
                                     'ExternalPropertyType',
                                     'ExternalPropertyType2'
                                 ]
