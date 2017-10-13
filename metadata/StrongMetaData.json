@@ -83,9 +83,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -325,9 +323,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -1002,10 +998,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for bar labels."
@@ -1388,10 +1385,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -1527,9 +1525,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -1544,7 +1540,7 @@
               "Description": "Specifies the base size of an item element along the main direction."
             },
             "box": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.ui.dxBoxOptions"
               ],
               "Description": "Holds a Box configuration object for the item."
@@ -1892,10 +1888,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -2623,10 +2620,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies the format of the arguments displayed by axis labels."
@@ -3645,10 +3643,11 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
+                        "DevExpress.ui.format",
                         "string"
                       ],
                       "ComplexTypes": [
-                        "DevExpress.ui.format"
+                        "Format"
                       ],
                       "EnumName": "Format",
                       "Description": "Formats the point value before it will be displayed in the crosshair label."
@@ -3709,10 +3708,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Formats the point value/argument before it will be displayed in the crosshair label."
@@ -3775,10 +3775,11 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
+                        "DevExpress.ui.format",
                         "string"
                       ],
                       "ComplexTypes": [
-                        "DevExpress.ui.format"
+                        "Format"
                       ],
                       "EnumName": "Format",
                       "Description": "Formats the point argument before it will be displayed in the crosshair label."
@@ -4587,10 +4588,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
@@ -4671,10 +4673,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -5009,10 +5012,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies the format of the values displayed by axis labels."
@@ -6054,10 +6058,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
@@ -6513,10 +6518,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -6902,14 +6908,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -7067,8 +7079,11 @@
           "Description": "A handler for the shown event."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
         },
@@ -7412,7 +7427,7 @@
               "IsDeprecated": true
             },
             "form": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.ui.dxFormOptions"
               ],
               "Description": "Configures the form. Used only if editing.mode is \"form\" or \"popup\"."
@@ -7428,7 +7443,7 @@
               "Description": "Specifies how a user edits data."
             },
             "popup": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.ui.dxPopupOptions"
               ],
               "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
@@ -8595,10 +8610,11 @@
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the summary item value."
@@ -8735,10 +8751,11 @@
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the summary item value."
@@ -8866,10 +8883,11 @@
         },
         "displayFormat": {
           "PrimitiveTypes": [
+            "DevExpress.ui.format",
             "string"
           ],
           "ComplexTypes": [
-            "DevExpress.ui.format"
+            "Format"
           ],
           "EnumName": "Format",
           "Description": "Specifies the date display format. Ignored if the pickerType option is 'native'"
@@ -9192,8 +9210,11 @@
       "Module": "ui/defer_rendering",
       "Options": {
         "animation": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.animationConfig"
+          ],
+          "ComplexTypes": [
+            "AnimationConfig"
           ],
           "Description": "Specifies the animation to be used to show the rendered content."
         },
@@ -9285,7 +9306,7 @@
           "Description": "Specifies a custom template for the drop-down button."
         },
         "dropDownOptions": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.dxPopupOptions"
           ],
           "Description": "Configures the drop-down field which holds the content."
@@ -9978,11 +9999,17 @@
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
         "items": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.FormSimpleItem",
             "DevExpress.ui.FormGroupItem",
             "DevExpress.ui.FormTabbedItem",
             "DevExpress.ui.FormEmptyItem"
+          ],
+          "ItemComplexTypes": [
+            "FormSimpleItem",
+            "FormGroupItem",
+            "FormTabbedItem",
+            "FormEmptyItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -10442,10 +10469,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Formats the item value before displaying it in the label."
@@ -10991,10 +11019,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -11158,9 +11187,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -11703,10 +11730,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
@@ -12158,10 +12186,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -12363,9 +12392,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -12615,7 +12642,7 @@
           "Description": "A Boolean value specifying whether to enable or disable list scrolling."
         },
         "searchEditorOptions": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.dxTextBoxOptions"
           ],
           "Description": "Configures the search panel."
@@ -12787,14 +12814,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -12929,8 +12962,11 @@
           "Description": "A handler for the shown event."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
         },
@@ -12999,14 +13035,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -13329,8 +13371,11 @@
           "Description": "The width of the widget popup element."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
         },
@@ -13873,14 +13918,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -14233,9 +14284,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -14431,9 +14480,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -14960,9 +15007,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -15720,10 +15765,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
@@ -15804,10 +15850,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -15950,9 +15997,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -17113,10 +17158,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
@@ -18363,10 +18409,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments of the chart's series points."
@@ -18447,10 +18494,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -18720,10 +18768,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed by axis labels."
@@ -19123,14 +19172,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -19292,8 +19347,11 @@
           "Description": "A handler for the titleRendered event."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
@@ -19449,14 +19507,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -19631,8 +19695,11 @@
           "Description": "A handler for the titleRendered event."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
         },
@@ -20557,10 +20624,11 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
+                    "DevExpress.ui.format",
                     "string"
                   ],
                   "ComplexTypes": [
-                    "DevExpress.ui.format"
+                    "Format"
                   ],
                   "EnumName": "Format",
                   "Description": "Specifies a format for the text displayed in scale labels."
@@ -20667,10 +20735,11 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
+                        "DevExpress.ui.format",
                         "string"
                       ],
                       "ComplexTypes": [
-                        "DevExpress.ui.format"
+                        "Format"
                       ],
                       "EnumName": "Format",
                       "Description": "Specifies a format for the text displayed in scale markers."
@@ -21175,10 +21244,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed in slider markers."
@@ -21449,10 +21519,11 @@
           "Options": {
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for labels."
@@ -21554,10 +21625,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a tooltip's format."
@@ -21768,9 +21840,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -23142,9 +23212,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -23485,10 +23553,11 @@
           "Options": {
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for labels."
@@ -23584,10 +23653,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a tooltip's format."
@@ -23931,10 +24001,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -24265,9 +24336,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -24529,9 +24598,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -25799,9 +25866,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -25947,14 +26012,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -26107,10 +26178,11 @@
         },
         "position": {
           "PrimitiveTypes": [
+            "DevExpress.animation.positionConfig",
             "string"
           ],
           "ComplexTypes": [
-            "DevExpress.animation.positionConfig"
+            "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
         },
@@ -26204,9 +26276,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -26356,14 +26426,20 @@
           "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
           "Options": {
             "hide": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being hidden."
             },
             "show": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.animation.animationConfig"
+              ],
+              "ComplexTypes": [
+                "AnimationConfig"
               ],
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
@@ -26520,8 +26596,11 @@
           "Description": "A handler for the shown event."
         },
         "position": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.animation.positionConfig"
+          ],
+          "ComplexTypes": [
+            "PositionConfig"
           ],
           "EnumName": "Position",
           "Description": "An object defining widget positioning options."
@@ -26795,7 +26874,7 @@
               "Description": "Specifies whether a user can update rows."
             },
             "form": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.ui.dxFormOptions"
               ],
               "Description": "Configures the form. Used only if editing.mode is \"form\" or \"popup\"."
@@ -26805,7 +26884,7 @@
               "Description": "Specifies how a user edits data."
             },
             "popup": {
-              "ComplexTypes": [
+              "PrimitiveTypes": [
                 "DevExpress.ui.dxPopupOptions"
               ],
               "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
@@ -28259,10 +28338,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies the format of the value a tooltip displays."
@@ -28577,7 +28657,7 @@
           "Description": "A string value specifying available scrolling directions."
         },
         "searchEditorOptions": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.dxTextBoxOptions"
           ],
           "Description": "Configures the search panel."
@@ -28742,9 +28822,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "ItemComplexTypes": [
+            "string",
             "DevExpress.ui.CollectionWidgetItemTemplate"
           ],
           "IsCollection": true,
@@ -28902,7 +28980,7 @@
           "Description": "Specifies the validation group the editor will be related to."
         },
         "validationRules": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
             "DevExpress.ui.NumericRule",
             "DevExpress.ui.RangeRule",
@@ -28911,6 +28989,16 @@
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
             "DevExpress.ui.EmailRule"
+          ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -30563,10 +30651,11 @@
             },
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Formats the point argument before it will be displayed in the point label."
@@ -30646,10 +30735,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Formats the point value before it will be displayed in the point label."
@@ -31410,10 +31500,11 @@
             },
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Formats the point argument before it will be displayed in the point label."
@@ -31493,10 +31584,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Formats the point value before it will be displayed in the point label."
@@ -32354,17 +32446,21 @@
         },
         "format": {
           "PrimitiveTypes": [
+            "DevExpress.ui.format",
             "string"
           ],
           "ComplexTypes": [
-            "DevExpress.ui.format"
+            "Format"
           ],
           "EnumName": "Format",
           "Description": "Specifies a format for the values displayed in the column."
         },
         "formItem": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.FormSimpleItem"
+          ],
+          "ComplexTypes": [
+            "FormSimpleItem"
           ],
           "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
         },
@@ -32529,7 +32625,7 @@
           "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
         },
         "validationRules": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
             "DevExpress.ui.NumericRule",
             "DevExpress.ui.RangeRule",
@@ -32538,6 +32634,16 @@
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
             "DevExpress.ui.EmailRule"
+          ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -32713,11 +32819,17 @@
           "Description": "Specifies a CSS class to be applied to the form item."
         },
         "items": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.FormSimpleItem",
             "DevExpress.ui.FormGroupItem",
             "DevExpress.ui.FormTabbedItem",
             "DevExpress.ui.FormEmptyItem"
+          ],
+          "ItemComplexTypes": [
+            "FormSimpleItem",
+            "FormGroupItem",
+            "FormTabbedItem",
+            "FormEmptyItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -32835,7 +32947,7 @@
           "Description": "A template to be used for rendering the form item."
         },
         "validationRules": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
             "DevExpress.ui.NumericRule",
             "DevExpress.ui.RangeRule",
@@ -32844,6 +32956,16 @@
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
             "DevExpress.ui.EmailRule"
+          ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -32884,7 +33006,7 @@
           "Description": "Specifies the type of the current item."
         },
         "tabPanelOptions": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.dxTabPanelOptions"
           ],
           "Description": "Holds a configuration object for the TabPanel widget used to display the current form item."
@@ -32957,11 +33079,17 @@
               "Description": "Specifies the icon to be displayed on the tab."
             },
             "items": {
-              "ItemComplexTypes": [
+              "ItemPrimitiveTypes": [
                 "DevExpress.ui.FormSimpleItem",
                 "DevExpress.ui.FormGroupItem",
                 "DevExpress.ui.FormTabbedItem",
                 "DevExpress.ui.FormEmptyItem"
+              ],
+              "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem"
               ],
               "IsCollection": true,
               "SingularName": "item",
@@ -33103,10 +33231,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed in an indicator."
@@ -33383,10 +33512,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
@@ -33466,10 +33596,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
@@ -33779,10 +33910,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
@@ -33862,10 +33994,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
@@ -34165,10 +34298,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a display format for field values."
@@ -34515,10 +34649,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
@@ -34598,10 +34733,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
@@ -35156,10 +35292,11 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for arguments displayed by point labels."
@@ -35239,10 +35376,11 @@
             },
             "format": {
               "PrimitiveTypes": [
+                "DevExpress.ui.format",
                 "string"
               ],
               "ComplexTypes": [
-                "DevExpress.ui.format"
+                "Format"
               ],
               "EnumName": "Format",
               "Description": "Specifies a format for the text displayed by point labels."
@@ -36025,17 +36163,21 @@
         },
         "format": {
           "PrimitiveTypes": [
+            "DevExpress.ui.format",
             "string"
           ],
           "ComplexTypes": [
-            "DevExpress.ui.format"
+            "Format"
           ],
           "EnumName": "Format",
           "Description": "Specifies a format for the values displayed in the column."
         },
         "formItem": {
-          "ComplexTypes": [
+          "PrimitiveTypes": [
             "DevExpress.ui.FormSimpleItem"
+          ],
+          "ComplexTypes": [
+            "FormSimpleItem"
           ],
           "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
         },
@@ -36177,7 +36319,7 @@
           "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
         },
         "validationRules": {
-          "ItemComplexTypes": [
+          "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
             "DevExpress.ui.NumericRule",
             "DevExpress.ui.RangeRule",
@@ -36186,6 +36328,16 @@
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
             "DevExpress.ui.EmailRule"
+          ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
