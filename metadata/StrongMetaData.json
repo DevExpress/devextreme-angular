@@ -9508,6 +9508,18 @@
       "Description": "The DeferRendering is a widget that waits for its content to be ready before rendering it. While the content is getting ready, the DeferRendering displays a loading indicator.",
       "Module": "ui/defer_rendering",
       "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
         "animation": {
           "PrimitiveTypes": [
             "DevExpress.animation.animationConfig"
@@ -9516,6 +9528,59 @@
             "AnimationConfig"
           ],
           "Description": "Specifies the animation to be used to show the rendered content."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onDisposing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the disposing event. Executed when the widget is removed from the DOM using the remove(), empty(), or html() jQuery methods only."
+        },
+        "onInitialized": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
         },
         "onRendered": {
           "IsFunc": true,
@@ -9537,6 +9602,12 @@
           "IsPromise": true,
           "Description": "Specifies the jQuery.Promise or boolean value, which when resolved, forces widget content to render."
         },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
         "showLoadIndicator": {
           "PrimitiveTypes": [
             "boolean"
@@ -9548,6 +9619,26 @@
             "string"
           ],
           "Description": "Specifies a jQuery selector of items that should be rendered using a staggered animation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -10183,6 +10274,214 @@
             "any"
           ],
           "IsDeprecated": true
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
+    "dxFilterBuilder": {
+      "Description": "",
+      "Module": "ui/filterbuilder",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "allowHierarchicalFields": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "fields": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFilterBuilderField"
+          ],
+          "IsCollection": true,
+          "SingularName": "field"
+        },
+        "filterOperationDescriptions": {
+          "Options": {
+            "contains": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "endsWith": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "equal": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "greaterThan": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "greaterThanOrEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "isBlank": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "isNotBlank": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "lessThan": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "lessThanOrEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "notContains": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "notEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "startsWith": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            }
+          }
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "groupOperationDescriptions": {
+          "Options": {
+            "and": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "notAnd": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "notOr": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "or": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            }
+          }
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onDisposing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the disposing event. Executed when the widget is removed from the DOM using the remove(), empty(), or html() jQuery methods only."
+        },
+        "onEditorPrepared": {
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onEditorPreparing": {
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onInitialized": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "value": {
+          "IsFilterExpr": true
         },
         "visible": {
           "PrimitiveTypes": [
@@ -15135,6 +15434,12 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "displayFormat": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "elementAttr": {
           "PrimitiveTypes": [
