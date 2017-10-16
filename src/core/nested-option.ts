@@ -163,7 +163,7 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
             result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let container = renderData.container;
+                let container = renderData.container.get ? renderData.container.get(0) : renderData.container;
                 let resultInContainer = container.contains(element.nativeElement);
 
                 container.appendChild(element.nativeElement);
