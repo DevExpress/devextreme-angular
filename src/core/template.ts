@@ -42,8 +42,11 @@ export class DxTemplateDirective {
             '$implicit': renderData.model,
             index: renderData.index
         });
+        let container = renderData.container.get ? renderData.container.get(0) : renderData.container;
         if (renderData.container) {
-            renderData.container.append(childView.rootNodes);
+            childView.rootNodes.forEach((element) => {
+                container.appendChild(element);
+            });
         }
         // =========== WORKAROUND =============
         // https://github.com/angular/angular/issues/12243

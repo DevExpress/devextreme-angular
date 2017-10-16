@@ -163,21 +163,21 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
             result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let container = renderData.container.get(0);
+                let container = renderData.container;
                 let resultInContainer = container.contains(element.nativeElement);
 
-                renderData.container.append(element.nativeElement);
+                container.appendChild(element.nativeElement);
 
                 if (!resultInContainer) {
                     let resultInBody = document.body.contains(container);
 
                     if (resultInBody) {
-                        triggerShownEvent($result);
+                        triggerShownEvent(result);
                     }
                 }
             }
 
-            return $result;
+            return result;
         }
     };
 }

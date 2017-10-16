@@ -33,8 +33,6 @@ import {
     extractTemplate
 } from '../../../dist/core/nested-option';
 
-let $ = require('jquery');
-
 import * as events from 'devextreme/events';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
@@ -135,7 +133,9 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
             this.shownEventFired = true;
         }.bind(this));
 
-        this.template.render({ container: $('dx-test-widget') });
+        this.template.render({
+            container: document.querySelector('dx-test-widget')
+        });
     }
 }
 

@@ -56,6 +56,6 @@ describe('DxSelectBox', () => {
 
         let instance = getWidget(fixture);
 
-        expect(instance.element().find('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 });

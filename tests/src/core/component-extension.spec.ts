@@ -23,7 +23,7 @@ import DxButton from 'devextreme/ui/button';
 let DxTestExtension = DxButton['inherit']({
     _render() {
         this.callBase();
-        this.element()[0].classList.add('dx-test-extension');
+        this.element().classList.add('dx-test-extension');
     }
 });
 

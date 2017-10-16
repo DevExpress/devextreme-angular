@@ -30,7 +30,7 @@ import DxButton from 'devextreme/ui/button';
 let DxTestWidget = DxButton['inherit']({
     _render() {
         this.callBase();
-        this.element()[0].classList.add('dx-test-widget');
+        this.element().classList.add('dx-test-widget');
         this.option('testCalculatedOption', 'changed');
     }
 });
@@ -136,7 +136,7 @@ describe('DevExtreme Angular widget', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let element = getWidget(fixture).element().get(0);
+        let element = getWidget(fixture).element();
 
         expect(element.classList).toContain('dx-test-widget');
 
