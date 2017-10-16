@@ -10,9 +10,7 @@ import {
 } from '@angular/core';
 
 import { DxTemplateHost } from './template-host';
-
-declare function require(params: any): any;
-let $ = require('jquery');
+import * as events from 'devextreme/events';
 
 export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
 
@@ -53,13 +51,19 @@ export class DxTemplateDirective {
             childView['detectChanges']();
         });
         // =========== /WORKAROUND =============
-        return $(childView.rootNodes)
-            .addClass(DX_TEMPLATE_WRAPPER_CLASS)
-            .one('dxremove', (e) => {
+        childView.rootNodes.forEach((element) => {
+            if (element.classList) {
+                element.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
+            }
+
+            events.one(element, 'dxremove', (e) => {
                 if (!e._angularIntegration) {
                     childView.destroy();
                 }
             });
+        });
+
+        return childView.rootNodes;
     }
 }
 

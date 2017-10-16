@@ -1,9 +1,8 @@
 import { QueryList, ElementRef } from '@angular/core';
 
-declare function require(params: any): any;
-let $ = require('jquery');
-
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
+
+import * as events from 'devextreme/events';
 
 const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 
@@ -126,6 +125,20 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
 export interface IOptionWithTemplate extends BaseNestedOption {
     template: any;
 }
+
+let triggerShownEvent = function(element) {
+    let changeHandlers = [];
+    if (element.classList.contains(VISIBILITY_CHANGE_SELECTOR)) {
+        changeHandlers.push(element);
+    }
+
+    changeHandlers.push.apply(changeHandlers, element.querySelectorAll('.' + VISIBILITY_CHANGE_SELECTOR));
+
+    for (let i = 0; i < changeHandlers.length; i++) {
+        events.triggerHandler(changeHandlers[i], 'dxshown');
+    }
+};
+
 export function extractTemplate(option: IOptionWithTemplate, element: ElementRef) {
     if (!option.template === undefined || !element.nativeElement.hasChildNodes()) {
         return;
@@ -144,23 +157,10 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         return;
     }
 
-    function triggerShownEvent($element) {
-        let changeHandlers = $();
-
-        if ($element.hasClass(VISIBILITY_CHANGE_SELECTOR)) {
-            changeHandlers = $element;
-        }
-
-        changeHandlers = changeHandlers.add($element.find('.' + VISIBILITY_CHANGE_SELECTOR));
-
-        for (let i = 0; i < changeHandlers.length; i++) {
-            $(changeHandlers[i]).triggerHandler('dxshown');
-        }
-    }
-
     option.template = {
         render: (renderData) => {
-            let $result = $(element.nativeElement).addClass(DX_TEMPLATE_WRAPPER_CLASS);
+            let result = element.nativeElement;
+            result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
                 let container = renderData.container.get(0);

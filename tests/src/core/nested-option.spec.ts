@@ -35,6 +35,8 @@ import {
 
 let $ = require('jquery');
 
+import * as events from 'devextreme/events';
+
 // TODO: Try to replace dxButton to Widget ('require' required)
 import DxButton from 'devextreme/ui/button';
 let DxTestWidget = DxButton['inherit']({
@@ -124,12 +126,12 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
     }
 
     ngAfterViewInit() {
-        let $element = $(this.element.nativeElement);
+        let element = this.element.nativeElement;
 
         extractTemplate(this, this.element);
 
-        $element.addClass('dx-visibility-change-handler');
-        $element.on('dxshown', function() {
+        element.classList.add('dx-visibility-change-handler');
+        events.on(element, 'dxshown', function() {
             this.shownEventFired = true;
         }.bind(this));
 

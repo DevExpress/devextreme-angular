@@ -9,6 +9,7 @@ import { DxTemplateDirective } from './template';
 import { IDxTemplateHost, DxTemplateHost } from './template-host';
 import { EmitterHelper } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
+import * as events from 'devextreme/events';
 import {
     INestedOptionContainer,
     ICollectionNestedOption,
@@ -99,7 +100,8 @@ export abstract class DxComponent implements AfterViewInit,
     protected _destroyWidget() {
         if (this.instance) {
             let element = this.instance.element();
-            element.triggerHandler({ type: 'dxremove', _angularIntegration: true });
+            events.triggerHandler(element, { type: 'dxremove', _angularIntegration: true });
+            this.instance.dispose();
             element.remove();
         }
     }
