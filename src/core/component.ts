@@ -17,8 +17,6 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-import 'devextreme/integration/jquery';
-
 export abstract class DxComponent implements AfterViewInit,
         INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _initialOptions: any = {};
