@@ -137,6 +137,14 @@ npm start
 
 Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) in the opened browser window. Explore the **examples** folder of this repository for the examples source code.
 
+### <a name="jquery integration"></a>Include jQuery integration ###
+DevExtreme has got rid of jQuery dependence since version 17.2. It means that our widgets work without jQuery elements.
+If you still need to use jQuery, you can include the jQuery integration as described below:
+
+```js
+import 'devextreme/integration/jquery';
+```
+
 ## <a name="usage-samples"></a>Usage Samples ##
 
 ### <a name="static-option"></a>Static String Option Value ###
