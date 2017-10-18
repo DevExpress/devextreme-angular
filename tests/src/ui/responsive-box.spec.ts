@@ -74,11 +74,11 @@ describe('DxResponsiveBox', () => {
         let instance = getWidget(fixture);
         fixture.detectChanges();
 
-        expect(instance.option('items')[0].location.length).toBe(1);
-        expect(instance.option('items')[0].location[0].row).toBe(0);
-        expect(instance.option('items')[0].location[0].col).toBe(0);
-        expect(instance.option('items')[0].location[0].colspan).toBe(1);
-        expect(instance.option('items')[0].location[0].screen).toBe('lg');
+        expect(instance['option']('items')[0].location.length).toBe(1);
+        expect(instance['option']('items')[0].location[0].row).toBe(0);
+        expect(instance['option']('items')[0].location[0].col).toBe(0);
+        expect(instance['option']('items')[0].location[0].colspan).toBe(1);
+        expect(instance['option']('items')[0].location[0].screen).toBe('lg');
     }));
 
 });

@@ -56,8 +56,8 @@ describe('DxToolbar', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance.option('items')[0].items).toBe(undefined);
-        expect(instance.element().querySelector('.dx-toolbar-item').textContent).toBe('Item1');
+        expect(instance['option']('items')[0].items).toBe(undefined);
+        expect(instance['element']().querySelector('.dx-toolbar-item').textContent).toBe('Item1');
     }));
 
 });
