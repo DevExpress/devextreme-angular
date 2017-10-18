@@ -23,4 +23,5 @@ build:
     - shippable_retry npm install --unsafe-perm
     - gulp test
     - shippable_retry npm install @angular/core@^4.0.0 @angular/common@^4.0.0 @angular/forms@^4.0.0 @angular/compiler@^4.0.0 @angular/platform-browser@^4.0.0 @angular/platform-browser-dynamic@^4.0.0 --unsafe-perm
+    - gulp build.tests
     - gulp run.tests
