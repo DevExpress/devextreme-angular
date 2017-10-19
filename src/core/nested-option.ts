@@ -1,6 +1,7 @@
 import { QueryList, ElementRef } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
+import { Utils } from './utils';
 
 import * as events from 'devextreme/events';
 
@@ -133,7 +134,7 @@ let triggerShownEvent = function(element) {
     if (element.classList) {
         containsSelector = element.classList.contains(VISIBILITY_CHANGE_SELECTOR);
     } else {
-        containsSelector = element.className.indexOf(VISIBILITY_CHANGE_SELECTOR) !== -1;
+        containsSelector = element.className.split(' ').indexOf(VISIBILITY_CHANGE_SELECTOR) >= 0;
     }
 
     if (containsSelector) {
@@ -170,14 +171,10 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         render: (renderData) => {
             let result = element.nativeElement;
 
-            if (result.classList) {
-                result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
-            } else {
-                result.className = result.className ? result.className + " " + DX_TEMPLATE_WRAPPER_CLASS : DX_TEMPLATE_WRAPPER_CLASS;
-            }
+            Utils.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let container = renderData.container.get ? renderData.container.get(0) : renderData.container;
+                let container = Utils.getElement(renderData.container);
                 let resultInContainer = container.contains(element.nativeElement);
 
                 container.appendChild(element.nativeElement);
