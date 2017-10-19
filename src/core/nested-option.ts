@@ -1,7 +1,7 @@
 import { QueryList, ElementRef } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import { Utils } from './utils';
+import utils = require('./utils');
 
 import * as events from 'devextreme/events';
 
@@ -128,19 +128,11 @@ export interface IOptionWithTemplate extends BaseNestedOption {
 }
 
 let triggerShownEvent = function(element) {
-    let changeHandlers = [],
-        containsSelector = false;
+    let changeHandlers = [];
 
-    if (element.classList) {
-        containsSelector = element.classList.contains(VISIBILITY_CHANGE_SELECTOR);
-    } else {
-        containsSelector = element.className.split(' ').indexOf(VISIBILITY_CHANGE_SELECTOR) >= 0;
-    }
-
-    if (containsSelector) {
+    if (utils.hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
         changeHandlers.push(element);
     }
-
 
     changeHandlers.push.apply(changeHandlers, element.querySelectorAll('.' + VISIBILITY_CHANGE_SELECTOR));
 
@@ -171,10 +163,10 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         render: (renderData) => {
             let result = element.nativeElement;
 
-            Utils.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
+            utils.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let container = Utils.getElement(renderData.container);
+                let container = utils.getElement(renderData.container);
                 let resultInContainer = container.contains(element.nativeElement);
 
                 container.appendChild(element.nativeElement);
