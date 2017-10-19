@@ -90,10 +90,19 @@ export default class DXComponentMetadataGenerator {
                     let type;
 
                     if (option.PrimitiveTypes) {
-                        type = option.PrimitiveTypes.join('|');
-                    } else if (option.ItemPrimitiveTypes) {
-                        type = option.ItemPrimitiveTypes.join('|') || 'any';
-                    } else {
+                        type = option.PrimitiveTypes.join('|\n');
+                    }
+
+                    if (option.ItemPrimitiveTypes) {
+                        let arrayType = 'Array<' + option.ItemPrimitiveTypes.join('|\n') + '>';
+                        if (type) {
+                            type += '|\n' + arrayType;
+                        } else {
+                            type = arrayType;
+                        }
+                    }
+
+                    if (!type) {
                         type = 'any';
                     }
 

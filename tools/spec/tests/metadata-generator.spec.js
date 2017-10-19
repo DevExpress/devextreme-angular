@@ -188,6 +188,16 @@ describe("metadata-generator", function() {
                                     "string",
                                     "DevExpress.ui.ComplexType"
                                 ]
+                            },
+                            dataSourceProperty: {
+                                IsDataSource: true,
+                                PrimitiveTypes: [
+                                    "DevExpress.ui.DataSource",                                    
+                                    "DevExpress.ui.DataSourceConfig"
+                                ],
+                                ItemPrimitiveTypes: [
+                                    "any"
+                                ]
                             }
                         },
                         Module: 'typed_widget'
@@ -203,10 +213,11 @@ describe("metadata-generator", function() {
         it("should generate proper typed properties", function() {
             expect(metas.DxTypedWidget.properties).toEqual([
                 { name: 'simpleTypedProperty', type: 'boolean' },
-                { name: 'multitypeProperty', type: 'string|number' },
+                { name: 'multitypeProperty', type: 'string|\nnumber' },
                 { name: 'complexTypedProperty', type: 'DevExpress.ui.ComplexType' },
-                { name: 'collectionTypedProperty', type: 'string', isCollection: true },
-                { name: 'collectionComplexTypedProperty', type: 'string|DevExpress.ui.ComplexType', isCollection: true }
+                { name: 'collectionTypedProperty', type: 'Array<string>', isCollection: true },
+                { name: 'collectionComplexTypedProperty', type: 'Array<string|\nDevExpress.ui.ComplexType>', isCollection: true },
+                { name: 'dataSourceProperty', type: 'DevExpress.ui.DataSource|\nDevExpress.ui.DataSourceConfig|\nArray<any>', isCollection: true }
             ]);
         });
 
