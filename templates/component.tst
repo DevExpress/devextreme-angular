@@ -75,10 +75,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     validator: DxValidatorComponent;
 <#?#>
     <#~ it.properties :prop:i #>@Input()
-    get <#= prop.name #>(): <#= prop.type #> {
+    get <#= prop.name #>(): <#? prop.isCollection #>Array<<#?#><#= prop.type #><#? prop.isCollection #>><#?#> {
         return this._getOption('<#= prop.name #>');
     }
-    set <#= prop.name #>(value: <#= prop.type #>) {
+    set <#= prop.name #>(value: <#? prop.isCollection #>Array<<#?#><#= prop.type #><#? prop.isCollection #>><#?#>) {
         this._setOption('<#= prop.name #>', value);
     }<#? i < it.properties.length-1 #>
 

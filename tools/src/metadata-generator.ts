@@ -90,6 +90,8 @@ export default class DXComponentMetadataGenerator {
 
                     if (option.PrimitiveTypes) {
                         type = option.PrimitiveTypes.join('|');
+                    } else if (option.ItemPrimitiveTypes) {
+                        type = option.ItemPrimitiveTypes.join('|') || 'any';
                     } else {
                         type = 'any';
                     }
