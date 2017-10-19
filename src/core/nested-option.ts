@@ -127,10 +127,19 @@ export interface IOptionWithTemplate extends BaseNestedOption {
 }
 
 let triggerShownEvent = function(element) {
-    let changeHandlers = [];
-    if (element.classList.contains(VISIBILITY_CHANGE_SELECTOR)) {
+    let changeHandlers = [],
+        containsSelector = false;
+
+    if (element.classList) {
+        containsSelector = element.classList.contains(VISIBILITY_CHANGE_SELECTOR);
+    } else {
+        containsSelector = element.className.indexOf(VISIBILITY_CHANGE_SELECTOR) !== -1;
+    }
+
+    if (containsSelector) {
         changeHandlers.push(element);
     }
+
 
     changeHandlers.push.apply(changeHandlers, element.querySelectorAll('.' + VISIBILITY_CHANGE_SELECTOR));
 
@@ -160,7 +169,12 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
     option.template = {
         render: (renderData) => {
             let result = element.nativeElement;
-            result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
+
+            if (result.classList) {
+                result.classList.add(DX_TEMPLATE_WRAPPER_CLASS);
+            } else {
+                result.className = result.className ? result.className + " " + DX_TEMPLATE_WRAPPER_CLASS : DX_TEMPLATE_WRAPPER_CLASS;
+            }
 
             if (renderData.container) {
                 let container = renderData.container.get ? renderData.container.get(0) : renderData.container;
