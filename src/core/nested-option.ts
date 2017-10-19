@@ -1,7 +1,7 @@
 import { QueryList, ElementRef } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import utils = require('./utils');
+import { addClass, hasClass, getElement } from './utils';
 
 import * as events from 'devextreme/events';
 
@@ -130,7 +130,7 @@ export interface IOptionWithTemplate extends BaseNestedOption {
 let triggerShownEvent = function(element) {
     let changeHandlers = [];
 
-    if (utils.hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
+    if (hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
         changeHandlers.push(element);
     }
 
@@ -163,10 +163,10 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         render: (renderData) => {
             let result = element.nativeElement;
 
-            utils.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
+            addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
-                let container = utils.getElement(renderData.container);
+                let container = getElement(renderData.container);
                 let resultInContainer = container.contains(element.nativeElement);
 
                 container.appendChild(element.nativeElement);

@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 
 import { DxTemplateHost } from './template-host';
-import utils = require('./utils');
+import { addClass, getElement } from './utils';
 import * as events from 'devextreme/events';
 
 export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
@@ -43,7 +43,7 @@ export class DxTemplateDirective {
             '$implicit': renderData.model,
             index: renderData.index
         });
-        let container = utils.getElement(renderData.container);
+        let container = getElement(renderData.container);
         if (renderData.container) {
             childView.rootNodes.forEach((element) => {
                 container.appendChild(element);
@@ -56,7 +56,7 @@ export class DxTemplateDirective {
         });
         // =========== /WORKAROUND =============
         childView.rootNodes.forEach((element) => {
-            utils.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+            addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
 
             events.one(element, 'dxremove', (e) => {
                 if (!e._angularIntegration) {
