@@ -38,7 +38,7 @@ describe('DxToolbar', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-toolbar') || fixture.nativeElement;
-        return DxToolbar['getInstance'](widgetElement);
+        return DxToolbar['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -56,8 +56,8 @@ describe('DxToolbar', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['option']('items')[0].items).toBe(undefined);
-        expect(instance['element']().querySelector('.dx-toolbar-item').textContent).toBe('Item1');
+        expect(instance.option('items')[0].items).toBe(undefined);
+        expect(instance.element().querySelector('.dx-toolbar-item').textContent).toBe('Item1');
     }));
 
 });

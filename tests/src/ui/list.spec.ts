@@ -47,7 +47,7 @@ describe('DxList', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-list') || fixture.nativeElement;
-        return DxList['getInstance'](widgetElement);
+        return DxList['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -68,8 +68,8 @@ describe('DxList', () => {
         testComponent.items.push(2);
         fixture.detectChanges();
 
-        expect(instance['option']).toHaveBeenCalledWith('items', [1, 2]);
-        instance['option'].calls.reset();
+        expect(instance.option).toHaveBeenCalledWith('items', [1, 2]);
+        instance.option.calls.reset();
     }));
 
     it('should not react if the same value is assigned to the collection', async(() => {
@@ -89,8 +89,8 @@ describe('DxList', () => {
         testComponent.items = testComponent.items;
         fixture.detectChanges();
 
-        expect(instance['option']).toHaveBeenCalledTimes(1);
-        instance['option'].calls.reset();
+        expect(instance.option).toHaveBeenCalledTimes(1);
+        instance.option.calls.reset();
     }));
 
     it('should not react if the identicaly value is assigned to the collection', async(() => {
@@ -110,8 +110,8 @@ describe('DxList', () => {
         testComponent.items = testComponent.items.slice(0);
         fixture.detectChanges();
 
-        expect(instance['option']).toHaveBeenCalledTimes(1);
-        instance['option'].calls.reset();
+        expect(instance.option).toHaveBeenCalledTimes(1);
+        instance.option.calls.reset();
     }));
 
     it('should react if the initial value is assigned to the collection', async(() => {
@@ -131,8 +131,8 @@ describe('DxList', () => {
         testComponent.emptyItems = [];
         fixture.detectChanges();
 
-        expect(instance['option'].calls.count()).toBeGreaterThan(1);
-        instance['option'].calls.reset();
+        expect(instance.option.calls.count()).toBeGreaterThan(1);
+        instance.option.calls.reset();
     }));
 
     it('should be able to accept items as a static nested components list', async(() => {
@@ -150,10 +150,10 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
-        expect(instance['element']().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
+        expect(instance.element().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
     }));
 
     it('should have correct item template', async(() => {
@@ -170,7 +170,7 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        let element = instance['element']().querySelector('.dx-item-content');
+        let element = instance.element().querySelector('.dx-item-content');
         expect(element.innerHTML).toBe('item');
         expect(window.getComputedStyle(element).display).toBe('block');
     }));
@@ -190,7 +190,7 @@ describe('DxList', () => {
         testComponent.defaultTemplateItems[0].disabled = true;
         fixture.detectChanges();
 
-        let listItems = instance['element']().querySelectorAll('.dx-list-item');
+        let listItems = instance.element().querySelectorAll('.dx-list-item');
         let listItemHasDisabledClass = listItems[0].classList.contains('dx-state-disabled');
 
         expect(listItems.length).toEqual(1);
@@ -212,9 +212,9 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(1);
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(1);
     }));
 
     it('nested component property bindings work', async(() => {
@@ -234,12 +234,12 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        expect(instance['element']().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(0);
+        expect(instance.element().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(0);
 
         testComponent.disabled = true;
         fixture.detectChanges();
 
-        expect(instance['element']().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item.dx-state-disabled').length).toBe(1);
     }));
 
     it('should be able to accept items as an *ngFor components list', async(() => {
@@ -258,17 +258,17 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        expect(instance['option']('items').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
+        expect(instance.option('items').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
 
         testComponent.items.push(2);
         fixture.detectChanges();
 
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
-        expect(instance['element']().querySelectorAll('.dx-item-content')[1].textContent).toBe('2');
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
+        expect(instance.element().querySelectorAll('.dx-item-content')[1].textContent).toBe('2');
     }));
 
     it('should be able to replace items by ng-for', async(() => {
@@ -292,10 +292,10 @@ describe('DxList', () => {
         testComponent.items = [3, 4];
         fixture.detectChanges();
 
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('3');
-        expect(instance['element']().querySelectorAll('.dx-item-content')[1].textContent).toBe('4');
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('3');
+        expect(instance.element().querySelectorAll('.dx-item-content')[1].textContent).toBe('4');
     }));
 
     it('should be able to clear items rendered with *ngFor', async(() => {
@@ -314,16 +314,16 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        expect(instance['option']('items').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
+        expect(instance.option('items').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('1');
 
         testComponent.items.pop();
         expect(testComponent.items.length).toBe(0);
         fixture.detectChanges();
 
-        expect(instance['option']('items').length).toBe(0);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(0);
+        expect(instance.option('items').length).toBe(0);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(0);
     }));
 
     it('should respond to items changes rendered with ngFor', async(() => {
@@ -342,34 +342,34 @@ describe('DxList', () => {
         let testComponent = fixture.componentInstance,
             instance = getWidget(fixture);
 
-        expect(instance['option']('items').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(1);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
+        expect(instance.option('items').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
 
         spyOn(instance, 'option').and.callThrough();
         fixture.detectChanges();
-        expect(instance['option']).not.toHaveBeenCalled;
+        expect(instance.option).not.toHaveBeenCalled;
 
         testComponent.complexItems.push({ text: 'Item 2' });
         fixture.detectChanges();
 
-        expect(instance['option']).toHaveBeenCalled;
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
-        expect(instance['element']().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
+        expect(instance.option).toHaveBeenCalled;
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('Item 1');
+        expect(instance.element().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
 
-        instance['option'].calls.reset();
+        instance.option.calls.reset();
         testComponent.complexItems[0].text = 'Changed';
         fixture.detectChanges();
 
-        expect(instance['option']).toHaveBeenCalledTimes(1);
-        expect(instance['option'].calls.allArgs().length).toBe(1);
-        expect(instance['option']('items').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content').length).toBe(2);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('Changed');
-        expect(instance['element']().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
-        instance['option'].calls.reset();
+        expect(instance.option).toHaveBeenCalledTimes(1);
+        expect(instance.option.calls.allArgs().length).toBe(1);
+        expect(instance.option('items').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('Changed');
+        expect(instance.element().querySelectorAll('.dx-item-content')[1].textContent).toBe('Item 2');
+        instance.option.calls.reset();
     }));
 
     it('should be able to set option "template" for each item', async(() => {
@@ -388,7 +388,7 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('testTemplate');
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('testTemplate');
     }));
 
     it('should be able to define item without template', async(() => {
@@ -405,7 +405,7 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['element']().querySelectorAll('.dx-item-content')[0].textContent).toBe('TestText');
+        expect(instance.element().querySelectorAll('.dx-item-content')[0].textContent).toBe('TestText');
     }));
 
 
@@ -548,13 +548,13 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        let elements = instance['element']().querySelectorAll('.dx-button');
+        let elements = instance.element().querySelectorAll('.dx-button');
         expect(DxButton['getInstance'](elements[0])).not.toBeUndefined();
         expect(DxButton['getInstance'](elements[1])).not.toBeUndefined();
 
-        instance['repaint']();
+        instance.repaint();
         fixture.detectChanges();
-        elements = instance['element']().querySelectorAll('.dx-button');
+        elements = instance.element().querySelectorAll('.dx-button');
         expect(DxButton['getInstance'](elements[0])).not.toBeUndefined();
         expect(DxButton['getInstance'](elements[1])).not.toBeUndefined();
     }));

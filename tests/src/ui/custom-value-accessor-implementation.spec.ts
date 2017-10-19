@@ -58,7 +58,7 @@ describe('DxTextBox value accessor', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-textbox') || fixture.nativeElement;
-        return DxTextBox['getInstance'](widgetElement);
+        return DxTextBox['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -71,12 +71,12 @@ describe('DxTextBox value accessor', () => {
         fixture.componentInstance.formControl.disable();
         fixture.detectChanges();
 
-        expect(instance['option']('disabled')).toBe(true);
+        expect(instance.option('disabled')).toBe(true);
 
         fixture.componentInstance.formControl.enable();
         fixture.detectChanges();
 
-        expect(instance['option']('disabled')).toBe(false);
+        expect(instance.option('disabled')).toBe(false);
     }));
     it('should change the value', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
@@ -87,6 +87,6 @@ describe('DxTextBox value accessor', () => {
         fixture.componentInstance.value = 'text';
         fixture.detectChanges();
 
-        expect(instance['option']('value')).toBe('text');
+        expect(instance.option('value')).toBe('text');
     }));
 });

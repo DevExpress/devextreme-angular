@@ -43,7 +43,7 @@ describe('DxForm', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-form') || fixture.nativeElement;
-        return DxForm['getInstance'](widgetElement);
+        return DxForm['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -61,7 +61,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['element']().querySelectorAll('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 
     it('should be able to accept items recursively', async(() => {
@@ -83,7 +83,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['element']().querySelectorAll('.dx-textbox').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(2);
     }));
 
     it('should be able to accept items via nested dxi components with comment from ngIf directive (#440)', async(() => {
@@ -106,7 +106,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance['element']().querySelectorAll('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 
     it('should work with dxTagBox', async(() => {
@@ -131,12 +131,12 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let formInstance = getWidget(fixture);
-        let tagBoxInstance = formInstance['getEditor']('name');
+        let tagBoxInstance = formInstance.getEditor('name');
 
         tagBoxInstance.option('value', [2]);
         fixture.detectChanges();
 
-        expect(formInstance['option']('formData.name')).toEqual([2]);
+        expect(formInstance.option('formData.name')).toEqual([2]);
     }));
 
     it('should change the value of dxDateBox', async(() => {
@@ -155,7 +155,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let formInstance = getWidget(fixture);
-        let dateBoxInstance = formInstance['getEditor']('date');
+        let dateBoxInstance = formInstance.getEditor('date');
 
         expect(dateBoxInstance.option('value')).toEqual(new Date(2017, 0, 1));
     }));

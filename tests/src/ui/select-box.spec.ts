@@ -35,7 +35,7 @@ describe('DxSelectBox', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-selectbox') || fixture.nativeElement;
-        return DxSelectBox['getInstance'](widgetElement);
+        return DxSelectBox['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -56,6 +56,6 @@ describe('DxSelectBox', () => {
 
         let instance = getWidget(fixture);
 
-        expect(instance['element']().querySelectorAll('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 });
