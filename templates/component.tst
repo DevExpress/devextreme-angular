@@ -27,6 +27,9 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
+<#? it.isDevExpressRequired #>
+import DevExpress from 'devextreme/bundles/dx.all';<#?#>
+
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
 import { DxValidatorComponent } from './validator';

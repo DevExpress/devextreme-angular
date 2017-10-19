@@ -73,7 +73,8 @@ export default class DXComponentMetadataGenerator {
                 events = [],
                 changeEvents = [],
                 properties = [],
-                isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1;
+                isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1,
+                isDevExpressRequired = false;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
@@ -94,6 +95,10 @@ export default class DXComponentMetadataGenerator {
                         type = option.ItemPrimitiveTypes.join('|') || 'any';
                     } else {
                         type = 'any';
+                    }
+
+                    if (type.indexOf('.') > -1) {
+                        isDevExpressRequired = true;
                     }
 
                     let property: any = {
@@ -144,6 +149,7 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
+                isDevExpressRequired: isDevExpressRequired,
                 nestedComponents: widgetNestedComponents
             };
 
