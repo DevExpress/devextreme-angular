@@ -41,7 +41,7 @@ describe('DxResponsiveBox', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-responsivebox') || fixture.nativeElement;
-        return DxResponsiveBox['getInstance'](widgetElement);
+        return DxResponsiveBox['getInstance'](widgetElement) as any;
     }
 
     // spec

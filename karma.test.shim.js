@@ -32,11 +32,6 @@ System.import('karma.systemjs.conf.js')
             browserTesting.platformBrowserDynamicTesting());
   })
   .then(function() {
-    return System.import('jquery').then(function($) {
-      $.noConflict(true); 
-    });
-  })
-  .then(function() {
     return Promise.all(
       allSpecFiles.map(function (moduleName) {
         return System.import(moduleName);

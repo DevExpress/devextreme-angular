@@ -18,7 +18,6 @@
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
       // devextreme & devextreme deps
       'devextreme': 'npm:devextreme',
-      'jquery': 'npm:jquery/dist/jquery.min.js',
       'jszip': 'npm:jszip/dist/jszip.min.js',
       '../../dist': '../../dist',
       // other libraries

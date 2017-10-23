@@ -1,5 +1,7 @@
 [![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
+### If you are looking for the 17.1 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular/tree/17.1).
+
 # Angular UI and Visualization Components Based on DevExtreme Widgets #
 
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular](https://angular.io/) applications.
@@ -136,6 +138,13 @@ npm start
 ```
 
 Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) in the opened browser window. Explore the **examples** folder of this repository for the examples source code.
+
+### <a name="jquery integration"></a>Include jQuery integration ###
+Starting with version 17.2, DevExtreme doesn't depend on jQuery. It means that our widgets work without jQuery elements. If you need to use jQuery, you can include the jQuery integration as described below:
+
+```js
+import 'devextreme/integration/jquery';
+```
 
 ## <a name="usage-samples"></a>Usage Samples ##
 

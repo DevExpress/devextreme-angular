@@ -58,7 +58,7 @@ describe('DxTextBox value accessor', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-textbox') || fixture.nativeElement;
-        return DxTextBox['getInstance'](widgetElement);
+        return DxTextBox['getInstance'](widgetElement) as any;
     }
 
     // spec
