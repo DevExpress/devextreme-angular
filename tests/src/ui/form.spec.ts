@@ -43,7 +43,7 @@ describe('DxForm', () => {
 
     function getWidget(fixture) {
         let widgetElement = fixture.nativeElement.querySelector('.dx-form') || fixture.nativeElement;
-        return DxForm['getInstance'](widgetElement);
+        return DxForm['getInstance'](widgetElement) as any;
     }
 
     // spec
@@ -61,7 +61,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance.element().find('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 
     it('should be able to accept items recursively', async(() => {
@@ -83,7 +83,7 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance.element().find('.dx-textbox').length).toBe(2);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(2);
     }));
 
     it('should be able to accept items via nested dxi components with comment from ngIf directive (#440)', async(() => {
@@ -92,9 +92,9 @@ describe('DxForm', () => {
                 template: `
                     <dx-form id="form" [formData]="formData">
                         <dxi-item dataField="name" editorType="dxTextBox">
-                            <dxi-validation-rule 
-                                *ngIf="true" 
-                                type="required" 
+                            <dxi-validation-rule
+                                *ngIf="true"
+                                type="required"
                                 message="item is required."
                             ></dxi-validation-rule>
                         </dxi-item>
@@ -106,23 +106,23 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         let instance = getWidget(fixture);
-        expect(instance.element().find('.dx-textbox').length).toBe(1);
+        expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
 
     it('should work with dxTagBox', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-                    <dx-form 
+                    <dx-form
                         [formData]="{}"
                         [items]="[{
-                            dataField: 'name', 
-                            editorType: 'dxTagBox', 
-                            editorOptions: { 
+                            dataField: 'name',
+                            editorType: 'dxTagBox',
+                            editorOptions: {
                                 dataSource: [{ value: 1, text: 'item 1' }, { value: 2, text: 'item 2' }, { value: 3, text: 'item 3' }],
                                 displayExpr: 'text',
                                 valueExpr: 'value'
-                            } 
+                            }
                         }]"></dx-form>
                 `
             }

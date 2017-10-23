@@ -1,7 +1,5 @@
 /* tslint:disable:component-selector */
 
-import $ = require('jquery');
-
 import {
     Component,
     ElementRef,
@@ -31,7 +29,7 @@ import {
 import DxButton from 'devextreme/ui/button';
 let DxTestWidget = DxButton['inherit']({
     _render() {
-        this.element()[0].classList.add('dx-test-widget');
+        this.element().classList.add('dx-test-widget');
     }
 });
 
@@ -87,7 +85,7 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
     ngAfterViewInit() {
         this.templates[0].render({
             model: {},
-            container: $(this.element.nativeElement),
+            container: this.element.nativeElement,
             index: 5
         });
     }
@@ -156,13 +154,14 @@ describe('DevExtreme Angular widget\'s template', () => {
             innerComponent = testComponent.innerWidgets.first,
             templatesHash = innerComponent.instance.option('integrationOptions.templates'),
             template = innerComponent.testTemplate,
-            $container = $('<div>');
+            container = document.createElement('div');
 
         expect(template).not.toBeUndefined;
 
-        templatesHash[template].render({ container: $container });
+        templatesHash[template].render({ container: container });
         fixture.detectChanges();
-        expect($container.children().eq(0).hasClass('dx-template-wrapper')).toBe(true);
+
+        expect(container.children[0].classList.contains('dx-template-wrapper')).toBe(true);
 
     }));
 
@@ -171,7 +170,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-            <dx-test> 
+            <dx-test>
                 <div *dxTemplate="let d of 'templateName'; let i = index">index: {{i}}</div>
             </dx-test>
            `}

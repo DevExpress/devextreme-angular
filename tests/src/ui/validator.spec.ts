@@ -71,15 +71,15 @@ describe('DxValidator', () => {
         let instance: any = testComponent.textBox.instance;
 
         fixture.detectChanges();
-        expect(instance.element().is('.dx-invalid')).toBe(false);
+        expect(instance.element().classList.contains('dx-invalid')).toBe(false);
 
         testComponent.text = '';
         fixture.detectChanges();
-        expect(instance.element().is('.dx-invalid')).toBe(true);
+        expect(instance.element().classList.contains('dx-invalid')).toBe(true);
 
         testComponent.text = 'Some text';
         fixture.detectChanges();
-        expect(instance.element().is('.dx-invalid')).toBe(false);
+        expect(instance.element().classList.contains('dx-invalid')).toBe(false);
     });
 
     it('should work with custom editor', () => {

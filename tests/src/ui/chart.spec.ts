@@ -45,6 +45,6 @@ describe('DxChart', () => {
              chart = outerComponent.chart,
              element: any = chart.instance.element();
 
-        expect(element.css('display')).toBe('block');
+        expect(window.getComputedStyle(element).display).toBe('block');
     });
 });

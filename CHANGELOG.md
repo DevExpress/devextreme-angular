@@ -1,8 +1,12 @@
+## Unreleased
+
+### Breaking changes
+- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). You can include jQuery integration into your application to use jQuery. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
+
 ## 17.2.1-beta.2 (2017-10-10)
 
 ### Features
 
-- Update Angular version to 5.0.0-rc.1
 - Update `devextreme` version to 17.2.1-pre-17273
 
 ### Bug Fixes
@@ -19,7 +23,6 @@
 
 ### Features
 
-- Update Angular version to 5.0.0-beta.7
 - Update `typescript` version to 2.4.2
 - Update `devextreme` version to 17.2.1-pre
 

@@ -33,14 +33,14 @@ import {
     extractTemplate
 } from '../../../dist/core/nested-option';
 
-let $ = require('jquery');
+import * as events from 'devextreme/events';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
 import DxButton from 'devextreme/ui/button';
 let DxTestWidget = DxButton['inherit']({
     _render() {
         this.callBase();
-        this.element()[0].classList.add('dx-test-widget');
+        this.element().classList.add('dx-test-widget');
     }
 });
 
@@ -124,16 +124,18 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
     }
 
     ngAfterViewInit() {
-        let $element = $(this.element.nativeElement);
+        let element = this.element.nativeElement;
 
         extractTemplate(this, this.element);
 
-        $element.addClass('dx-visibility-change-handler');
-        $element.on('dxshown', function() {
+        element.classList.add('dx-visibility-change-handler');
+        events.on(element, 'dxshown', function() {
             this.shownEventFired = true;
         }.bind(this));
 
-        this.template.render({ container: $('dx-test-widget') });
+        this.template.render({
+            container: document.querySelector('dx-test-widget')
+        });
     }
 }
 

@@ -28,7 +28,6 @@ module.exports = function(config) {
             { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.+(js|js.map)', included: false, watched: false },
 
             // DevExtreme & DevExtreme Deps
-            { pattern: 'node_modules/jquery/dist/jquery.min.js', included: false, watched: false },
             { pattern: 'node_modules/jszip/dist/jszip.min.js', included: false, watched: false },
             { pattern: 'node_modules/devextreme/**/*.js', included: false, watched: false },
 
