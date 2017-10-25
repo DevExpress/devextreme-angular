@@ -13,6 +13,9 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
+<#? it.isDevExpressRequired #>
+import DevExpress from 'devextreme/bundles/dx.all';<#?#>
+
 import { NestedOptionHost<#? it.hasTemplate #>, extractTemplate<#?#> } from '../../core/nested-option';<#? it.hasTemplate #>
 import { DxTemplateDirective } from '../../core/template';
 import { IDxTemplateHost, DxTemplateHost } from '../../core/template-host';<#?#>
@@ -31,10 +34,10 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
 })
 export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit, IDxTemplateHost<#?#> {<#~ it.properties :prop:i #>
     @Input()
-    get <#= prop.name #>() {
+    get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
     }
-    set <#= prop.name #>(value: any) {
+    set <#= prop.name #>(value: <#= prop.type #>) {
         this._setOption('<#= prop.name #>', value);
     }
 <#~#>

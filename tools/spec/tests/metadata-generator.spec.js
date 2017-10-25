@@ -112,9 +112,9 @@ describe("metadata-generator", function() {
 
         it("should generate proper events", function() {
             expect(metas.DxTestWidget.events).toEqual([
-                { emit: 'onTestEvent', subscribe: 'testEvent' },
-                { emit: 'testTemplateChange' },
-                { emit: 'testPropertyChange' }
+                { emit: 'onTestEvent', subscribe: 'testEvent', type: 'EventEmitter<any>' },
+                { emit: 'testTemplateChange', type: 'EventEmitter<any>' },
+                { emit: 'testPropertyChange', type: 'EventEmitter<any>' }
             ]);
         });
 
@@ -160,6 +160,9 @@ describe("metadata-generator", function() {
                 Widgets: {
                     dxTypedWidget: {
                         Options: {
+                            onTestEvent: {
+                                IsEvent: true,
+                            },
                             simpleTypedProperty: {
                                 PrimitiveTypes: [
                                     "boolean"
@@ -192,7 +195,7 @@ describe("metadata-generator", function() {
                             dataSourceProperty: {
                                 IsDataSource: true,
                                 PrimitiveTypes: [
-                                    "DevExpress.ui.DataSource",                                    
+                                    "DevExpress.ui.DataSource",
                                     "DevExpress.ui.DataSourceConfig"
                                 ],
                                 ItemPrimitiveTypes: [
@@ -218,6 +221,18 @@ describe("metadata-generator", function() {
                 { name: 'collectionTypedProperty', type: 'Array<string>', isCollection: true },
                 { name: 'collectionComplexTypedProperty', type: 'Array<string|\nDevExpress.ui.ComplexType>', isCollection: true },
                 { name: 'dataSourceProperty', type: 'DevExpress.ui.DataSource|\nDevExpress.ui.DataSourceConfig|\nArray<any>', isCollection: true }
+            ]);
+        });
+
+        it("should generate proper typed events", function() {
+            expect(metas.DxTypedWidget.events).toEqual([
+                { emit: 'onTestEvent', subscribe: 'testEvent', type: 'EventEmitter<any>' },
+                { emit: 'simpleTypedPropertyChange', type:'EventEmitter<boolean>' },
+                { emit: 'multitypePropertyChange', type:'EventEmitter<string|\nnumber>' },
+                { emit: 'complexTypedPropertyChange', type:'EventEmitter<DevExpress.ui.ComplexType>' },
+                { emit: 'collectionTypedPropertyChange', type:'EventEmitter<Array<string>>' },
+                { emit: 'collectionComplexTypedPropertyChange', type:'EventEmitter<Array<string|\nDevExpress.ui.ComplexType>>' },
+                { emit: 'dataSourcePropertyChange', type:'EventEmitter<DevExpress.ui.DataSource|\nDevExpress.ui.DataSourceConfig|\nArray<any>>' }
             ]);
         });
 
@@ -554,4 +569,208 @@ describe("metadata-generator", function() {
             });
         });
 
+    
+    describe("typed complex components", function() {
+        
+        beforeEach(function() {
+            setupContext({
+                Widgets: {
+                    dxComplexWidget: {
+                        Options: {
+                            property: { // DxoProperty
+                                Options: {
+                                    nested: { // DxoNested
+                                        Options: {
+                                            deep: {
+                                                PrimitiveTypes: [
+                                                    "boolean",
+                                                    "DevExpress.ui.ComplexType"
+                                                ],                    
+                                                ComplexTypes: [
+                                                    'ExternalPropertyType'
+                                                ]
+                                            }
+                                        },
+                                        PrimitiveTypes: [
+                                            "string",
+                                            "DevExpress.ui.ComplexType"
+                                        ],                    
+                                        ComplexTypes: [
+                                            'ExternalPropertyType'
+                                        ]
+                                    },
+                                    nestedItems: { // DxiNestedItem
+                                        Options: {
+                                            deep: {
+                                                PrimitiveTypes: [
+                                                    "string"
+                                                ]
+                                            }
+                                        },
+                                        ItemPrimitiveTypes: [
+                                            "string",
+                                            "DevExpress.ui.ComplexType"
+                                        ],
+                                        IsCollection: true,
+                                        SingularName: "nestedItem"
+                                    }
+                                },
+                                PrimitiveTypes: [
+                                    "string"
+                                ],                    
+                                ComplexTypes: [
+                                    'ExternalPropertyType'
+                                ]
+                            },
+                            collectionItem: { // DxoItem
+                                Options: {
+                                    nested: {}
+                                },
+                                PrimitiveTypes: [
+                                    "string"
+                                ]
+                            },
+                            collectionItems: { // DxiItem
+                                Options: {
+                                    nested: {}
+                                },
+                                IsCollection: true,
+                                SingularName: "collectionItem",
+                                ItemPrimitiveTypes: [
+                                    "string"
+                                ]
+                            }
+
+                        },
+                        Module: 'test_widget'
+                    }
+                },                    
+                ExtraObjects: {
+                    ExternalPropertyType: { // DxoExternalPropertyType
+                        Options: {
+                            nestedExternalProperty: { // DxoNestedExternalProperty
+                                PrimitiveTypes: [
+                                  'DevExpress.ui.ComplexType'  
+                                ],
+                                ComplexTypes: [
+                                    'ExternalPropertyType'
+                                ]
+                            }
+                        }
+                    }
+                }
+            });
+        });
+                    
+        it("should generate matadata", function() {
+            expect(Object.keys(metas).length).toBe(9);
+
+            expect(metas.DxComplexWidget).not.toBe(undefined);
+            expect(metas.DxoExternalPropertyType).not.toBe(undefined);
+            expect(metas.DxoNestedExternalProperty).not.toBe(undefined);
+            expect(metas.DxoDeep).not.toBe(undefined);
+            expect(metas.DxoProperty).not.toBe(undefined);
+            expect(metas.DxoNested).not.toBe(undefined);
+            expect(metas.DxiNestedItem).not.toBe(undefined);
+            expect(metas.DxiCollectionItem).not.toBe(undefined);
+            expect(metas.DxoCollectionItem).not.toBe(undefined);
+        });
+
+        it("should generate proper typed properties", function() {
+            expect(metas.DxoProperty.properties).toEqual([
+                { name: 'nested', type: 'string|\nDevExpress.ui.ComplexType' },
+                { name: 'nestedItems', type: 'Array<string|\nDevExpress.ui.ComplexType>', isCollection: true }
+            ]);
+        });
+
+        it("should detect the DevExpress namespace import necessary", function() {
+            expect(metas.DxoProperty.isDevExpressRequired).toBe(true);
+            expect(metas.DxoNested.isDevExpressRequired).toBe(true);
+            expect(metas.DxiNestedItem.isDevExpressRequired).toBe(false);
+            expect(metas.DxiCollectionItem.isDevExpressRequired).toBe(false);
+            expect(metas.DxoCollectionItem.isDevExpressRequired).toBe(false);
+            
+            expect(metas.DxoExternalPropertyType.isDevExpressRequired).toBe(true);
+            expect(metas.DxoNestedExternalProperty.isDevExpressRequired).toBe(false);
+            expect(metas.DxoDeep.isDevExpressRequired).toBe(false);
+        });
+    });
+
+
+    describe("collection of complex types", function() {
+
+        beforeEach(function() {
+            setupContext({
+                Widgets: {
+                    dxComplexWidget: {
+                        Options: {
+                            externalProperty: { // DxoExternalProperty
+                                ComplexTypes: [
+                                    'ExternalPropertyType',
+                                    'ExternalPropertyType2'
+                                ]
+                            },
+                            externalPropertyItems: { // DxiExternalPropertyItem
+                                IsCollection: true,
+                                SingularName: 'externalPropertyItem',
+                                ItemComplexTypes: [
+                                    'ExternalPropertyType',
+                                    'ExternalPropertyType2'
+                                ]
+                            }
+                        },
+                        Module: 'test_widget'
+                    }
+                },
+                ExtraObjects: {
+                    ExternalPropertyType: {
+                        Options: {
+                            property: {
+                                Options: {
+                                    nestedProperty1: {}
+                                },
+                                PrimitiveTypes: [
+                                    'string'
+                                ]
+                            },
+                            property1: {
+                            }
+                        }
+                    },
+                    ExternalPropertyType2: {
+                        Options: {
+                            property: {
+                                Options: {
+                                    nestedProperty2: {}
+                                },
+                                PrimitiveTypes: [
+                                    'boolean',
+                                    'DevExpress.ui.dxComplexType'
+                                ]
+                            },
+                            property2: {
+                            }
+                        }
+                    }
+                }
+            });
+        });
+
+        it("should generate matadata", function() {
+            expect(Object.keys(metas).length).toBe(4);
+
+            expect(metas.DxComplexWidget).not.toBe(undefined);
+            expect(metas.DxoExternalProperty).not.toBe(undefined);
+            expect(metas.DxiExternalPropertyItem).not.toBe(undefined);
+            expect(metas.DxoProperty).not.toBe(undefined);
+        });
+
+        it("should generate nested components with merged types of repetitive properties", function() {
+            expect(metas.DxoExternalProperty.properties.map(p => p.type)).toEqual(['string|\nboolean|\nDevExpress.ui.dxComplexType', 'any', 'any']);
+        });
+        
+        it("should generate nested components with merged isDevExpressRequired", function() {
+            expect(metas.DxoExternalProperty.isDevExpressRequired).toBe(true);
+        });
+    });
 });

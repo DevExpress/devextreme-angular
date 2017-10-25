@@ -15,7 +15,8 @@ import {
     NgZone,
     Input,
     Output,
-    OnDestroy<#? it.isEditor #>,
+    OnDestroy,
+    EventEmitter<#? it.isEditor #>,
     AfterContentInit,
     ContentChild,
     forwardRef,
@@ -87,7 +88,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
     <#?#><#~#>
 
-    <#~ it.events :event:i #>@Output() <#= event.emit #>;<#? i < it.events.length-1 #>
+    <#~ it.events :event:i #>@Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
     <#?#><#~#>
 
 <#? it.isEditor #>
