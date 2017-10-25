@@ -2122,7 +2122,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -6928,7 +6928,8 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -7287,7 +7288,8 @@
             "DataGridColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "An array of grid columns."
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -7305,7 +7307,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8764,7 +8766,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -9114,11 +9116,75 @@
       "Description": "The DeferRendering is a widget that waits for its content to be ready before rendering it. While the content is getting ready, the DeferRendering displays a loading indicator.",
       "Module": "ui/defer_rendering",
       "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
         "animation": {
           "ComplexTypes": [
             "AnimationConfig"
           ],
           "Description": "Specifies the animation to be used to show the rendered content."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onDisposing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the disposing event. Executed when the widget is removed from the DOM using the remove(), empty(), or html() jQuery methods only."
+        },
+        "onInitialized": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
         },
         "onRendered": {
           "IsFunc": true,
@@ -9135,7 +9201,13 @@
             "any",
             "bool"
           ],
-          "Description": "Specifies the jQuery.Promise or boolean value, which when resolved, forces widget content to render."
+          "Description": "Specifies when the widget content is rendered."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
         },
         "showLoadIndicator": {
           "PrimitiveTypes": [
@@ -9148,6 +9220,25 @@
             "string"
           ],
           "Description": "Specifies a jQuery selector of items that should be rendered using a staggered animation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -9764,6 +9855,235 @@
             "any"
           ],
           "IsDeprecated": true
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
+    "dxFilterBuilder": {
+      "Description": "",
+      "Module": "ui/filter_builder",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "allowHierarchicalFields": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": ""
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "fields": {
+          "ComplexTypes": [
+            "FilterBuilderField"
+          ],
+          "IsCollection": true,
+          "SingularName": "field",
+          "Description": ""
+        },
+        "filterOperationDescriptions": {
+          "Description": "",
+          "Options": {
+            "contains": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "endsWith": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "equal": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "greaterThan": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "greaterThanOrEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "isBlank": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "isNotBlank": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "lessThan": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "lessThanOrEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "notContains": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "notEqual": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "startsWith": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            }
+          }
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "groupOperationDescriptions": {
+          "Description": "",
+          "Options": {
+            "and": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "notAnd": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "notOr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "or": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            }
+          }
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onDisposing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the disposing event. Executed when the widget is removed from the DOM using the remove(), empty(), or html() jQuery methods only."
+        },
+        "onEditorPrepared": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": ""
+        },
+        "onEditorPreparing": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": ""
+        },
+        "onInitialized": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the initialized event. Executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "value": {
+          "IsFilterExpr": true,
+          "Description": ""
         },
         "visible": {
           "PrimitiveTypes": [
@@ -13084,7 +13404,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -13822,7 +14142,8 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -14499,6 +14820,12 @@
             "bool"
           ],
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "height": {
           "PrimitiveTypes": [
@@ -15929,7 +16256,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Allows an end-user to change filtering options."
+          "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
         },
         "allowSorting": {
           "PrimitiveTypes": [
@@ -21795,7 +22122,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies the date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "descriptionExpr": {
           "PrimitiveTypes": [
@@ -22114,7 +22441,8 @@
         "shadeUntilCurrentTime": {
           "PrimitiveTypes": [
             "bool"
-          ]
+          ],
+          "Description": "Specifies whether to apply shading to cover the timetable up to the current time."
         },
         "showAllDayPanel": {
           "PrimitiveTypes": [
@@ -22126,7 +22454,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": ""
+          "Description": "Specifies the current date-time indicator's visibility."
         },
         "startDateExpr": {
           "PrimitiveTypes": [
@@ -22591,7 +22919,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -24645,7 +24973,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "multiline": {
           "PrimitiveTypes": [
@@ -26468,7 +26796,8 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
-          "SingularName": "column"
+          "SingularName": "column",
+          "Description": "Configures columns."
         },
         "customizeColumns": {
           "IsFunc": true,
@@ -26486,7 +26815,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31769,7 +32098,8 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -32255,6 +32585,91 @@
         }
       }
     },
+    "FilterBuilderField": {
+      "Description": "",
+      "IsCollection": true,
+      "Options": {
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "customizeText": {
+          "IsFunc": true,
+          "Description": ""
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "dataType": {
+          "EnumName": "FilterBuilderFieldDataType",
+          "Description": ""
+        },
+        "editorTemplate": {
+          "IsTemplate": true,
+          "Description": ""
+        },
+        "falseText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "filterOperations": {
+          "IsCollection": true,
+          "EnumName": "FilterBuilderFieldFilterOperations",
+          "SingularName": "filterOperation",
+          "Description": ""
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ComplexTypes": [
+            "Format"
+          ],
+          "EnumName": "Format",
+          "Description": ""
+        },
+        "lookup": {
+          "Description": "",
+          "Options": {
+            "allowClearing": {
+              "PrimitiveTypes": [
+                "bool"
+              ],
+              "Description": ""
+            },
+            "dataSource": {
+              "IsDataSource": true,
+              "Description": ""
+            },
+            "displayExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "valueExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            }
+          }
+        },
+        "trueText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        }
+      }
+    },
     "Format": {
       "Description": "Formats values.",
       "Options": {
@@ -32280,7 +32695,7 @@
         },
         "type": {
           "EnumName": "Format",
-          "Description": "Specifies a predefined format."
+          "Description": "Specifies a predefined format. Does not apply if you have specified the formatter function."
         }
       }
     },
@@ -32850,7 +33265,8 @@
             "MenuItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -33749,7 +34165,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Allows an end-user to change filtering options."
+              "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
             },
             "allowSorting": {
               "PrimitiveTypes": [
@@ -33815,7 +34231,7 @@
             },
             "filterType": {
               "EnumName": "FilterType",
-              "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
+              "Description": "Specifies whether a user can change the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
             },
             "filterValues": {
               "PrimitiveTypes": [
@@ -36290,6 +36706,60 @@
         "endswith": "endsWith"
       }
     },
+    "FilterBuilderFieldFilterOperations": {
+      "Items": [
+        {
+          "Name": "="
+        },
+        {
+          "Name": "<>"
+        },
+        {
+          "Name": "<"
+        },
+        {
+          "Name": "<="
+        },
+        {
+          "Name": ">"
+        },
+        {
+          "Name": ">="
+        },
+        {
+          "Name": "contains"
+        },
+        {
+          "Name": "endswith"
+        },
+        {
+          "Name": "isblank"
+        },
+        {
+          "Name": "isnotblank"
+        },
+        {
+          "Name": "notcontains"
+        },
+        {
+          "Name": "startswith"
+        }
+      ],
+      "Renamings": {
+        "=": "equal",
+        ">": "greaterThan",
+        "<": "lessThan",
+        ">=": "greaterThanOrEqual",
+        "<=": "lessThanOrEqual",
+        "<>": "notEqual",
+        "notcontains": "notContains",
+        "contains": "contains",
+        "startswith": "startsWith",
+        "endswith": "endsWith",
+        "isblank": "isBlank",
+        "isnotblank": "isNotBlank"
+      }
+    },
     "ButtonType": {
       "Items": [
         {
@@ -36941,6 +37411,31 @@
       ]
     },
     "GridColumnDataType": {
+      "Items": [
+        {
+          "Name": "string"
+        },
+        {
+          "Name": "number"
+        },
+        {
+          "Name": "date"
+        },
+        {
+          "Name": "boolean"
+        },
+        {
+          "Name": "object"
+        },
+        {
+          "Name": "datetime"
+        }
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
+    },
+    "FilterBuilderFieldDataType": {
       "Items": [
         {
           "Name": "string"
