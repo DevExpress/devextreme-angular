@@ -195,29 +195,13 @@ export default class DXComponentMetadataGenerator {
     }
 
     private mergeArrayTypes(array1, array2) {
-        let result = array1.slice(0);
-        array2.forEach(type => {
-            if (result.indexOf(type) === -1) {
-                result.push(type);
-            }
-        });
-
-        return result;
+        let newTypes = array2.filter(type => array2.indexOf(type) === -1);
+        return [].concat(array1, newTypes);
     }
 
     private detectComplexTypes(types) {
-        let result = false;
-
-        types.forEach(type => {
-            if (type.indexOf('.') > -1) {
-                result = true;
-                return;
-            }
-        });
-
-        return result;
+        return types.some(type => type.indexOf('.') > -1);
     }
-
 
     private getExternalObjectInfo(metadata, typeName) {
         let externalObject = metadata.ExtraObjects[typeName];
