@@ -89,15 +89,15 @@ export default class DXComponentMetadataGenerator {
                         type: 'EventEmitter<any>'
                     });
                 } else {
-                    let type = this.getType(option);
+                    let typesDescription = this.getTypesDescription(option);
+                    let finalizedType = this.getType(typesDescription);
 
-                    if (type.indexOf('.') > -1) {
-                        isDevExpressRequired = true;
-                    }
+                    isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
 
                     let property: any = {
                         name: optionName,
-                        type: type,
+                        type: finalizedType,
+                        typesDescription: typesDescription
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -108,7 +108,7 @@ export default class DXComponentMetadataGenerator {
 
                     changeEvents.push({
                         emit: optionName + 'Change',
-                        type: 'EventEmitter<' + type + '>'
+                        type: 'EventEmitter<' + finalizedType + '>'
                     });
 
                     let components = this.generateComplexOptionByType(metadata, option, optionName, []);
@@ -157,30 +157,67 @@ export default class DXComponentMetadataGenerator {
         this.generateNestedOptions(config, allNestedComponents);
     }
 
-    private getType(optionMetadata) {
-        let type;
-
-        if (optionMetadata.PrimitiveTypes) {
-            type = optionMetadata.PrimitiveTypes.join(TYPES_SEPORATOR);
-        }
+    private getTypesDescription(optionMetadata) {
+        let primitiveTypes = optionMetadata.PrimitiveTypes || [];
+        let arrayTypes = [];
+        let isDevExpressRequired = false;
 
         if (optionMetadata.ItemPrimitiveTypes) {
-            let wrapperName = optionMetadata.IsPromise ? 'Promise' : 'Array';
-            let arrayType = wrapperName + '<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>';
-
-            if (type) {
-                type += TYPES_SEPORATOR + arrayType;
+            if (optionMetadata.IsPromise) {
+                primitiveTypes.push('Promise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>');
             } else {
-                type = arrayType;
+                arrayTypes = arrayTypes.concat(optionMetadata.ItemPrimitiveTypes);
             }
         }
 
-        if (!type) {
-            type = 'any';
+        isDevExpressRequired = this.detectComplexTypes(primitiveTypes) || this.detectComplexTypes(arrayTypes);
+
+        return {
+            primitiveTypes: primitiveTypes,
+            arrayTypes: arrayTypes,
+            isDevExpressRequired: isDevExpressRequired
+        };
+    }
+
+    private getType(typesDescription) {
+        let primitiveTypes = typesDescription.primitiveTypes.slice(0);
+        let result = 'any';
+
+        if (typesDescription.arrayTypes.length) {
+            primitiveTypes.push('Array<' + typesDescription.arrayTypes.join(TYPES_SEPORATOR) + '>');
         }
 
-        return type;
+        if (primitiveTypes.length) {
+            result = primitiveTypes.join(TYPES_SEPORATOR);
+        }
+
+        return result;
     }
+
+    private mergeArrayTypes(array1, array2) {
+        let result = array1.slice(0);
+        array2.forEach(type => {
+            if (result.indexOf(type) === -1) {
+                result.push(type);
+            }
+        });
+
+        return result;
+    }
+
+    private detectComplexTypes(types) {
+        let result = false;
+
+        types.forEach(type => {
+            if (type.indexOf('.') > -1) {
+                result = true;
+                return;
+            }
+        });
+
+        return result;
+    }
+
 
     private getExternalObjectInfo(metadata, typeName) {
         let externalObject = metadata.ExtraObjects[typeName];
@@ -269,15 +306,14 @@ export default class DXComponentMetadataGenerator {
 
         for (let optName in nestedOptions) {
             let optionMetadata = nestedOptions[optName];
-            let type = this.getType(optionMetadata);
+            let typesDescription = this.getTypesDescription(optionMetadata);
 
-            if (type.indexOf('.') > -1) {
-                isDevExpressRequired = true;
-            }
+            isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
 
             let property: any = {
                 name: optName,
-                type: type
+                type: this.getType(typesDescription),
+                typesDescription: typesDescription
             };
 
             if (optionMetadata.IsCollection) {
@@ -332,7 +368,17 @@ export default class DXComponentMetadataGenerator {
                                 properties.push(property);
                             } else {
                                 let existingProperty = properties.filter(p => p.name === property.name)[0];
-                                existingProperty.type += TYPES_SEPORATOR + property.type;
+                                let typesDescription = existingProperty.typesDescription;
+
+                                typesDescription.primitiveTypes = this.mergeArrayTypes(
+                                    typesDescription.primitiveTypes,
+                                    property.typesDescription.primitiveTypes);
+
+                                typesDescription.arrayTypes = this.mergeArrayTypes(
+                                    typesDescription.arrayTypes,
+                                    property.typesDescription.arrayTypes);
+
+                                existingProperty.type = this.getType(typesDescription);
                             }
 
                             return properties;
