@@ -2532,7 +2532,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8410,7 +8410,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -10043,7 +10043,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -10576,7 +10576,7 @@
             "void"
           ],
           "IsPromise": true,
-          "Description": "Specifies the jQuery.Promise or boolean value, which when resolved, forces widget content to render."
+          "Description": "Specifies when the widget content is rendered."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -11629,113 +11629,6 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
-        }
-      }
-    },
-    "dxFilterBuilderField": {
-      "Description": "",
-      "Options": {
-        "caption": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
-        "customizeText": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": ""
-        },
-        "dataField": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
-        "dataType": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
-        "falseText": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
-        "filterOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "IsCollection": true,
-          "SingularName": "filterOperation",
-          "Description": ""
-        },
-        "format": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.format",
-            "string"
-          ],
-          "ComplexTypes": [
-            "Format"
-          ],
-          "Description": ""
-        },
-        "lookup": {
-          "Description": "",
-          "Options": {
-            "allowClearing": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": ""
-            },
-            "dataSource": {
-              "PrimitiveTypes": [
-                "DevExpress.data.DataSourceOptions"
-              ],
-              "ItemPrimitiveTypes": [
-                "any"
-              ],
-              "IsDataSource": true,
-              "Description": ""
-            },
-            "displayExpr": {
-              "PrimitiveTypes": [
-                "Function",
-                "string"
-              ],
-              "IsFunc": true,
-              "Description": ""
-            },
-            "valueExpr": {
-              "PrimitiveTypes": [
-                "Function",
-                "string"
-              ],
-              "IsFunc": true,
-              "Description": ""
-            }
-          }
-        },
-        "trueText": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
-        "valueEditorTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": ""
         }
       }
     },
@@ -15537,7 +15430,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -17258,12 +17151,6 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
-        "displayFormat": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": ""
-        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -17275,6 +17162,12 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "height": {
           "PrimitiveTypes": [
@@ -19005,7 +18898,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Allows an end-user to change filtering options."
+          "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
         },
         "allowSorting": {
           "PrimitiveTypes": [
@@ -25649,7 +25542,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies the date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "descriptionExpr": {
           "PrimitiveTypes": [
@@ -25662,6 +25555,13 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "dropDownAppointmentTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": ""
         },
         "editing": {
           "PrimitiveTypes": [
@@ -26156,6 +26056,13 @@
               "IsTemplate": true,
               "Description": "The template to be used for rendering date scale items."
             },
+            "dropDownAppointmentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": ""
+            },
             "endDayHour": {
               "PrimitiveTypes": [
                 "number"
@@ -26612,7 +26519,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -29086,7 +28993,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "multiline": {
           "PrimitiveTypes": [
@@ -31354,7 +31261,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -39654,7 +39561,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows an end-user to change filtering options."
+              "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
             },
             "allowSorting": {
               "PrimitiveTypes": [
@@ -39735,7 +39642,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
+              "Description": "Specifies whether a user can change the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
             },
             "filterValues": {
               "ItemPrimitiveTypes": [
