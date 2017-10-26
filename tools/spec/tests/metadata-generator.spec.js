@@ -4,6 +4,8 @@ describe("metadata-generator", function() {
     var path = require('path');
     var Generator = require('../../dist/metadata-generator').default;
 
+    const TYPES_SEPORATOR = '|\n        ';
+
     var testConfig = {
         sourceMetadataFilePath: "source-path",
         outputFolderPath: "output-path",
@@ -216,11 +218,11 @@ describe("metadata-generator", function() {
         it("should generate proper typed properties", function() {
             expect(metas.DxTypedWidget.properties).toEqual([
                 { name: 'simpleTypedProperty', type: 'boolean' },
-                { name: 'multitypeProperty', type: 'string|\nnumber' },
+                { name: 'multitypeProperty', type: 'string' + TYPES_SEPORATOR + 'number' },
                 { name: 'complexTypedProperty', type: 'DevExpress.ui.ComplexType' },
                 { name: 'collectionTypedProperty', type: 'Array<string>', isCollection: true },
-                { name: 'collectionComplexTypedProperty', type: 'Array<string|\nDevExpress.ui.ComplexType>', isCollection: true },
-                { name: 'dataSourceProperty', type: 'DevExpress.ui.DataSource|\nDevExpress.ui.DataSourceConfig|\nArray<any>', isCollection: true }
+                { name: 'collectionComplexTypedProperty', type: 'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>', isCollection: true },
+                { name: 'dataSourceProperty', type: 'DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>', isCollection: true }
             ]);
         });
 
@@ -228,11 +230,11 @@ describe("metadata-generator", function() {
             expect(metas.DxTypedWidget.events).toEqual([
                 { emit: 'onTestEvent', subscribe: 'testEvent', type: 'EventEmitter<any>' },
                 { emit: 'simpleTypedPropertyChange', type:'EventEmitter<boolean>' },
-                { emit: 'multitypePropertyChange', type:'EventEmitter<string|\nnumber>' },
+                { emit: 'multitypePropertyChange', type:'EventEmitter<string' + TYPES_SEPORATOR + 'number>' },
                 { emit: 'complexTypedPropertyChange', type:'EventEmitter<DevExpress.ui.ComplexType>' },
                 { emit: 'collectionTypedPropertyChange', type:'EventEmitter<Array<string>>' },
-                { emit: 'collectionComplexTypedPropertyChange', type:'EventEmitter<Array<string|\nDevExpress.ui.ComplexType>>' },
-                { emit: 'dataSourcePropertyChange', type:'EventEmitter<DevExpress.ui.DataSource|\nDevExpress.ui.DataSourceConfig|\nArray<any>>' }
+                { emit: 'collectionComplexTypedPropertyChange', type:'EventEmitter<Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>>' },
+                { emit: 'dataSourcePropertyChange', type:'EventEmitter<DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>>' }
             ]);
         });
 
@@ -678,8 +680,8 @@ describe("metadata-generator", function() {
 
         it("should generate proper typed properties", function() {
             expect(metas.DxoProperty.properties).toEqual([
-                { name: 'nested', type: 'string|\nDevExpress.ui.ComplexType' },
-                { name: 'nestedItems', type: 'Array<string|\nDevExpress.ui.ComplexType>', isCollection: true }
+                { name: 'nested', type: 'string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType' },
+                { name: 'nestedItems', type: 'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>', isCollection: true }
             ]);
         });
 
@@ -766,7 +768,7 @@ describe("metadata-generator", function() {
         });
 
         it("should generate nested components with merged types of repetitive properties", function() {
-            expect(metas.DxoExternalProperty.properties.map(p => p.type)).toEqual(['string|\nboolean|\nDevExpress.ui.dxComplexType', 'any', 'any']);
+            expect(metas.DxoExternalProperty.properties.map(p => p.type)).toEqual(['string' + TYPES_SEPORATOR + 'boolean' + TYPES_SEPORATOR + 'DevExpress.ui.dxComplexType', 'any', 'any']);
         });
         
         it("should generate nested components with merged isDevExpressRequired", function() {

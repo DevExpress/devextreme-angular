@@ -6,6 +6,7 @@ let inflector = require('inflector-js');
 
 const OPTION_COMPONENT_PREFIX = 'Dxo';
 const ITEM_COMPONENT_PREFIX = 'Dxi';
+const TYPES_SEPORATOR = '|\n        ';
 
 function trimDx(value: string) {
     return trimPrefix('dx-', value);
@@ -160,15 +161,15 @@ export default class DXComponentMetadataGenerator {
         let type;
 
         if (optionMetadata.PrimitiveTypes) {
-            type = optionMetadata.PrimitiveTypes.join('|\n');
+            type = optionMetadata.PrimitiveTypes.join(TYPES_SEPORATOR);
         }
 
         if (optionMetadata.ItemPrimitiveTypes) {
             let wrapperName = optionMetadata.IsPromise ? 'Promise' : 'Array';
-            let arrayType = wrapperName + '<' + optionMetadata.ItemPrimitiveTypes.join('|\n') + '>';
+            let arrayType = wrapperName + '<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>';
 
             if (type) {
-                type += '|\n' + arrayType;
+                type += TYPES_SEPORATOR + arrayType;
             } else {
                 type = arrayType;
             }
@@ -331,7 +332,7 @@ export default class DXComponentMetadataGenerator {
                                 properties.push(property);
                             } else {
                                 let existingProperty = properties.filter(p => p.name === property.name)[0];
-                                existingProperty.type += '|\n' + property.type;
+                                existingProperty.type += TYPES_SEPORATOR + property.type;
                             }
 
                             return properties;
