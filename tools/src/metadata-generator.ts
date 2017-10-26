@@ -195,7 +195,7 @@ export default class DXComponentMetadataGenerator {
     }
 
     private mergeArrayTypes(array1, array2) {
-        let newTypes = array2.filter(type => array2.indexOf(type) === -1);
+        let newTypes = array2.filter(type => array1.indexOf(type) === -1);
         return [].concat(array1, newTypes);
     }
 
