@@ -175,9 +175,9 @@ export default class DXComponentMetadataGenerator {
         isDevExpressRequired = this.detectComplexTypes(primitiveTypes) || this.detectComplexTypes(arrayTypes);
 
         return {
-            primitiveTypes: primitiveTypes,
-            arrayTypes: arrayTypes,
-            isDevExpressRequired: isDevExpressRequired
+            primitiveTypes,
+            arrayTypes,
+            isDevExpressRequired
         };
     }
 
