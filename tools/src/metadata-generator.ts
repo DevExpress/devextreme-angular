@@ -164,7 +164,9 @@ export default class DXComponentMetadataGenerator {
 
         if (optionMetadata.ItemPrimitiveTypes) {
             if (optionMetadata.IsPromise) {
-                primitiveTypes.push('Promise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>');
+                primitiveTypes.push(
+                    'Promise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) +
+                    '> & JQueryPromise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>');
             } else {
                 arrayTypes = arrayTypes.concat(optionMetadata.ItemPrimitiveTypes);
             }

@@ -206,6 +206,20 @@ describe("metadata-generator", function() {
                             }
                         },
                         Module: 'typed_widget'
+                    },
+                    dxWidgetWithPromise: {
+                        Options: {
+                            optionWithPromise: {
+                                IsPromise: true,
+                                PrimitiveTypes: [
+                                    'boolean'
+                                ],                                
+                                ItemPrimitiveTypes: [
+                                    'void'
+                                ]
+                            }
+                        },
+                        Module: 'test_widget'
                     }
                 }
             });
@@ -213,6 +227,7 @@ describe("metadata-generator", function() {
 
         it("should generate matadata", function() {
             expect(metas.DxTypedWidget).not.toBe(undefined);
+            expect(metas.DxWidgetWithPromise).not.toBe(undefined);
         });
 
         it("should generate proper typed properties", function() {
@@ -223,6 +238,10 @@ describe("metadata-generator", function() {
                 'Array<string>',
                 'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>',
                 'DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>'
+            ]);
+            expect(metas.DxWidgetWithPromise.properties.map(p => p.type)).toEqual([
+                'boolean' + TYPES_SEPORATOR +
+                'Promise<void> & JQueryPromise<void>'
             ]);
         });
 
