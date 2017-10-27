@@ -6,7 +6,7 @@ module.exports = {
         distPath: 'tools/dist',
         metadataGenerator: {
             importFrom: './tools/dist/metadata-generator',
-            sourceMetadataFilePath: './metadata/StrongMetaData.json',
+            sourceMetadataFilePath: './metadata/NGMetaData.json',
             outputFolderPath: './metadata/generated',
             nestedPathPart: 'nested',
             basePathPart: 'base'
