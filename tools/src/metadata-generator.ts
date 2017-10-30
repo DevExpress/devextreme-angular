@@ -27,13 +27,13 @@ export interface IObjectStore {
 export class FSObjectStore implements IObjectStore {
     private _encoding = 'utf8';
     read(filePath) {
-        logger('Read from file: ' + filePath);
+        logger(`Read from file: ${filePath}`);
         let dataString = fs.readFileSync(filePath, this._encoding);
         logger('Parse data');
         return JSON.parse(dataString);
     }
     write(filePath, data) {
-        logger('Write data to file ' + filePath);
+        logger(`Write data to file ${filePath}`);
         let dataString = JSON.stringify(data, null, 4);
         fs.writeFileSync(filePath, dataString, { encoding: this._encoding });
     }
@@ -59,11 +59,11 @@ export default class DXComponentMetadataGenerator {
                 nestedComponents = [];
 
             if (!widget.Module) {
-                logger('Skipping metadata for ' + widgetName);
+                logger(`Skipping metadata for ${widgetName}`);
                 continue;
             }
 
-            logger('Generate metadata for ' + widgetName);
+            logger(`Generate metadata for ${widgetName}`);
 
             let isTranscludedContent = widget.IsTranscludedContent,
                 isViz = widget.Module.indexOf('viz') === 0,
@@ -107,8 +107,8 @@ export default class DXComponentMetadataGenerator {
                     properties.push(property);
 
                     changeEvents.push({
-                        emit: optionName + 'Change',
-                        type: 'EventEmitter<' + finalizedType + '>'
+                        emit: `${optionName}Change`,
+                        type: `EventEmitter<${finalizedType}>`
                     });
 
                     let components = this.generateComplexOptionByType(metadata, option, optionName, []);
@@ -164,9 +164,8 @@ export default class DXComponentMetadataGenerator {
 
         if (optionMetadata.ItemPrimitiveTypes) {
             if (optionMetadata.IsPromise) {
-                primitiveTypes.push(
-                    'Promise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) +
-                    '> & JQueryPromise<' + optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR) + '>');
+                let promiseType = optionMetadata.ItemPrimitiveTypes.join(TYPES_SEPORATOR);
+                primitiveTypes.push(`Promise<${promiseType}> & JQueryPromise<${promiseType}>`);
             } else {
                 arrayTypes = arrayTypes.concat(optionMetadata.ItemPrimitiveTypes);
             }
@@ -175,9 +174,9 @@ export default class DXComponentMetadataGenerator {
         isDevExpressRequired = this.detectComplexTypes(primitiveTypes) || this.detectComplexTypes(arrayTypes);
 
         return {
-            primitiveTypes: primitiveTypes,
-            arrayTypes: arrayTypes,
-            isDevExpressRequired: isDevExpressRequired
+            primitiveTypes,
+            arrayTypes,
+            isDevExpressRequired
         };
     }
 
@@ -186,7 +185,7 @@ export default class DXComponentMetadataGenerator {
         let result = 'any';
 
         if (typesDescription.arrayTypes.length) {
-            primitiveTypes.push('Array<' + typesDescription.arrayTypes.join(TYPES_SEPORATOR) + '>');
+            primitiveTypes.push(`Array<${typesDescription.arrayTypes.join(TYPES_SEPORATOR)}>`);
         }
 
         if (primitiveTypes.length) {
@@ -218,7 +217,7 @@ export default class DXComponentMetadataGenerator {
         }
 
         if (!externalObject) {
-            console.warn('WARN: missed complex type: ' + typeName);
+            console.warn(`WARN: missed complex type: ${typeName}`);
         } else {
             return {
                 Options: externalObject.Options,
@@ -417,7 +416,7 @@ export default class DXComponentMetadataGenerator {
                     component.inputs = component.properties;
                     delete component.properties;
                     component.isDevExpressRequired = false;
-                    component.basePath = './base/' + this.getBaseComponentPath(component);
+                    component.basePath = `./base/${this.getBaseComponentPath(component)}`;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = '../../core/nested-option';
