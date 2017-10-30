@@ -1,4 +1,4 @@
-## Unreleased
+## 17.2.1-beta.4 (2017-10-31)
 
 ### Breaking changes
 - TypeScript declarations have become strict, which can cause a build failure. Use correct types to prevent this.
