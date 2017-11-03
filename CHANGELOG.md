@@ -1,3 +1,9 @@
+## 17.2.2-beta.1 (2017-11-03)
+
+### Features
+
+- DevExtreme dependency has been updated to the 17.2.2-pre-beta
+
 ## 17.2.1-beta.4 (2017-10-31)
 
 ### Breaking changes

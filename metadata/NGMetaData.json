@@ -540,6 +540,7 @@
         },
         "target": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery"
           ],
           "Description": "Specifies the element the action sheet popover points at."
@@ -1626,6 +1627,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -2221,6 +2223,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -2802,6 +2805,12 @@
         "argumentAxis": {
           "Description": "Configures the argument axis.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
             "argumentType": {
               "PrimitiveTypes": [
                 "string"
@@ -2813,6 +2822,55 @@
                 "number"
               ],
               "Description": "Specifies the minimum distance between two neighboring major ticks in pixels. Applies only to the axes of the \"continuous\" and \"logarithmic\" types."
+            },
+            "breaks": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.viz.ScaleBreak"
+              ],
+              "IsCollection": true,
+              "SingularName": "break",
+              "Description": "Declares a scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
+              "Options": {
+                "endValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the startValue option, limits the scale break."
+                },
+                "startValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the endValue option, limits the scale break."
+                }
+              }
+            },
+            "breakStyle": {
+              "Description": "Configures the scale breaks' appearance.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' color."
+                },
+                "line": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' line style."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the scale breaks' width in pixels."
+                }
+              }
             },
             "categories": {
               "ItemPrimitiveTypes": [
@@ -3001,6 +3059,12 @@
               ],
               "Description": "Specifies whether ticks and grid lines should cross axis labels or lie between them. Applies only to the axes of the \"discrete\" type."
             },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
+            },
             "grid": {
               "Description": "Configures the grid.",
               "Options": {
@@ -3029,6 +3093,16 @@
                   "Description": "Specifies the width of grid lines in pixels."
                 }
               }
+            },
+            "holidays": {
+              "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "holiday",
+              "Description": "Days to be excluded from the axis when workdaysOnly is true."
             },
             "hoverMode": {
               "PrimitiveTypes": [
@@ -3341,7 +3415,18 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Rounds off date-time values to the nearest tick interval. Applies only to the axes of the \"continuous\" type containing date-time values."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
+            },
+            "singleWorkdays": {
+              "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "singleWorkday",
+              "Description": "Days to be included in the axis when workdaysOnly is true."
             },
             "strips": {
               "ItemPrimitiveTypes": [
@@ -3612,6 +3697,20 @@
                 "number"
               ],
               "Description": "Specifies the width of the axis line in pixels."
+            },
+            "workdaysOnly": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Leaves only workdays on the axis: the work week days plus single workdays minus holidays. Applies only if the axis' argumentType is \"datetime\"."
+            },
+            "workWeek": {
+              "ItemPrimitiveTypes": [
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "workWeek",
+              "Description": "Specifies which days are workdays. The array can contain values from 0 (Sunday) to 6 (Saturday). Applies only if workdaysOnly is true."
             }
           }
         },
@@ -3624,6 +3723,35 @@
         "commonAxisSettings": {
           "Description": "Defines common settings for both the argument and value axis in a chart.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
+            "breakStyle": {
+              "Description": "Configures the scale breaks' appearance.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' color."
+                },
+                "line": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' line style."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the scale breaks' width in pixels."
+                }
+              }
+            },
             "color": {
               "PrimitiveTypes": [
                 "string"
@@ -3696,6 +3824,12 @@
                 "string"
               ],
               "Description": "Specifies whether ticks and grid lines should cross axis labels or lie between them. Applies only to the axes of the \"discrete\" type."
+            },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
             },
             "grid": {
               "Description": "Configures the grid.",
@@ -3903,7 +4037,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Rounds off date-time values to the nearest tick interval. Applies only to the axes of the \"continuous\" type containing date-time values."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "stripStyle": {
               "Description": "Configures the appearance of strips.",
@@ -5339,6 +5474,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -5476,11 +5612,72 @@
           "SingularName": "valueAxis",
           "Description": "Configures the value axis.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
+            "autoBreaksEnabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\". Does not apply to a multi-axis chart."
+            },
             "axisDivisionFactor": {
               "PrimitiveTypes": [
                 "number"
               ],
               "Description": "Specifies the minimum distance between two neighboring major ticks in pixels. Applies only to the axes of the \"continuous\" and \"logarithmic\" types."
+            },
+            "breaks": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.viz.ScaleBreak"
+              ],
+              "IsCollection": true,
+              "SingularName": "break",
+              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\". Does not apply to a multi-axis chart.",
+              "Options": {
+                "endValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the startValue option, limits the scale break."
+                },
+                "startValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the endValue option, limits the scale break."
+                }
+              }
+            },
+            "breakStyle": {
+              "Description": "Configures the scale breaks' appearance.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' color."
+                },
+                "line": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' line style."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the scale breaks' width in pixels."
+                }
+              }
             },
             "categories": {
               "ItemPrimitiveTypes": [
@@ -5669,6 +5866,12 @@
               ],
               "Description": "Specifies whether ticks and grid lines should cross axis labels or lie between them. Applies only to the axes of the \"discrete\" type."
             },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
+            },
             "grid": {
               "Description": "Configures the grid.",
               "Options": {
@@ -5827,6 +6030,12 @@
                 "string"
               ],
               "Description": "Coupled with the min option, focuses the widget on a specific chart segment. Applies only to the axes of the \"continuous\" and \"logarithmic\" type."
+            },
+            "maxAutoBreakCount": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Sets a limit on auto-calculated scale breaks. Custom scale breaks are not counted."
             },
             "maxValueMargin": {
               "PrimitiveTypes": [
@@ -6021,7 +6230,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Rounds off date-time values to the nearest tick interval. Applies only to the axes of the \"continuous\" type containing date-time values."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "showZero": {
               "PrimitiveTypes": [
@@ -6809,6 +7019,12 @@
         "scale": {
           "Description": "Specifies a gauge's scale options.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the scale. When false, the scale contains integer values only."
+            },
             "customMinorTicks": {
               "ItemPrimitiveTypes": [
                 "number"
@@ -7347,6 +7563,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -8194,6 +8411,7 @@
         },
         "target": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery"
           ],
           "Description": "The target element associated with the context menu."
@@ -11394,7 +11612,7 @@
       }
     },
     "dxFilterBuilder": {
-      "Description": "",
+      "Description": "The FilterBuilder widget allows a user to build complex filter expressions with an unlimited number of filter conditions, combined by logical operations using the UI.",
       "Module": "ui/filter_builder",
       "Options": {
         "accessKey": {
@@ -11413,7 +11631,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether the widget can display hierarchical data fields."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11431,84 +11649,87 @@
           "ItemPrimitiveTypes": [
             "DevExpress.ui.dxFilterBuilderField"
           ],
+          "ItemComplexTypes": [
+            "FilterBuilderField"
+          ],
           "IsCollection": true,
           "SingularName": "field",
-          "Description": ""
+          "Description": "Configures fields."
         },
         "filterOperationDescriptions": {
-          "Description": "",
+          "Description": "Specifies filter operation descriptions.",
           "Options": {
             "contains": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"contains\" operation's description."
             },
             "endsWith": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"endswith\" operation's description."
             },
             "equal": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"=\" operation's description."
             },
             "greaterThan": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \">\" operation's description."
             },
             "greaterThanOrEqual": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \">=\" operation's description."
             },
             "isBlank": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"isblank\" operation's description."
             },
             "isNotBlank": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"isnotblank\" operation's description."
             },
             "lessThan": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"<\" operation's description."
             },
             "lessThanOrEqual": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"<=\" operation's description."
             },
             "notContains": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"notcontains\" operation's description."
             },
             "notEqual": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"<>\" operation's description."
             },
             "startsWith": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"startswith\" operation's description."
             }
           }
         },
@@ -11519,31 +11740,31 @@
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
         },
         "groupOperationDescriptions": {
-          "Description": "",
+          "Description": "Specifies group operation descriptions.",
           "Options": {
             "and": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"and\" operation's description."
             },
             "notAnd": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"notand\" operation's description."
             },
             "notOr": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"notor\" operation's description."
             },
             "or": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"or\" operation's description."
             }
           }
         },
@@ -11582,7 +11803,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": ""
+          "Description": "A handler for the editorPrepared event. Executed after an editor is created."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -11590,7 +11811,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": ""
+          "Description": "A handler for the editorPreparing event. Executed before an editor is created."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -11607,6 +11828,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
+        },
+        "onValueChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the valueChanged event. Executed after the widget's value is changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -11625,7 +11854,7 @@
             "any"
           ],
           "IsFilterExpr": true,
-          "Description": ""
+          "Description": "Specifies the current filter expression."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11934,7 +12163,7 @@
       }
     },
     "dxFunnel": {
-      "Description": "",
+      "Description": "The Funnel is a widget that visualizes a value at different stages. It helps assess value changes throughout these stages and identify potential issues. The Funnel widget conveys information using different interactive elements (tooltips, labels, legend) and enables you to create not only a funnel, but also a pyramid chart.",
       "Module": "viz/funnel",
       "Options": {
         "adaptiveLayout": {
@@ -12052,7 +12281,7 @@
           "Description": "Turns the funnel upside down."
         },
         "item": {
-          "Description": "",
+          "Description": "Configures funnel items' appearance.",
           "Options": {
             "border": {
               "Description": "Configures a funnel item's border.",
@@ -12886,6 +13115,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -13644,6 +13874,12 @@
         "scale": {
           "Description": "Specifies the gauge's scale options.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the scale. When false, the scale contains integer values only."
+            },
             "customMinorTicks": {
               "ItemPrimitiveTypes": [
                 "number"
@@ -14182,6 +14418,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -14756,6 +14993,9 @@
         "searchEditorOptions": {
           "PrimitiveTypes": [
             "DevExpress.ui.dxTextBoxOptions"
+          ],
+          "ComplexTypes": [
+            "dxTextBoxOptions"
           ],
           "Description": "Configures the search panel."
         },
@@ -15847,7 +16087,7 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "any"
+            "number"
           ],
           "IsCollection": true,
           "SingularName": "center",
@@ -15963,7 +16203,7 @@
                 "string"
               ],
               "ItemPrimitiveTypes": [
-                "any"
+                "number"
               ],
               "IsCollection": true,
               "SingularName": "location",
@@ -17177,9 +17417,13 @@
         },
         "format": {
           "PrimitiveTypes": [
+            "DevExpress.ui.format",
             "string"
           ],
-          "Description": ""
+          "ComplexTypes": [
+            "Format"
+          ],
+          "Description": "Specifies the value's display format and controls the user input according to it."
         },
         "height": {
           "PrimitiveTypes": [
@@ -18531,6 +18775,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -19826,6 +20071,12 @@
         "argumentAxis": {
           "Description": "Specifies argument axis options for the PolarChart widget.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
             "argumentType": {
               "PrimitiveTypes": [
                 "string"
@@ -19964,6 +20215,12 @@
                 "string"
               ],
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
+            },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
             },
             "firstPointOnStartAngle": {
               "PrimitiveTypes": [
@@ -20236,7 +20493,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Indicates whether or not to set ticks/grid lines of a continuous axis of the 'date-time' type at the beginning of each date-time interval."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "startAngle": {
               "PrimitiveTypes": [
@@ -20442,6 +20700,12 @@
         "commonAxisSettings": {
           "Description": "An object defining the configuration options that are common for all axes of the PolarChart widget.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
             "color": {
               "PrimitiveTypes": [
                 "string"
@@ -20496,6 +20760,12 @@
                 "string"
               ],
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
+            },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
             },
             "grid": {
               "Description": "An object defining the configuration options for the grid lines of an axis in the PolarChart widget.",
@@ -20638,7 +20908,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Indicates whether or not to set ticks/grid lines of a continuous axis of the 'date-time' type at the beginning of each date-time interval."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "stripStyle": {
               "Description": "An object defining configuration options for strip style.",
@@ -21513,6 +21784,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -21639,6 +21911,12 @@
         "valueAxis": {
           "Description": "Specifies value axis options for the PolarChart widget.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the axis. When false, the axis contains integer values only."
+            },
             "axisDivisionFactor": {
               "PrimitiveTypes": [
                 "number"
@@ -21771,6 +22049,12 @@
                 "string"
               ],
               "Description": "Specifies whether ticks/grid lines of a discrete axis are located between labels or cross the labels."
+            },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the axis to start and end on ticks."
             },
             "grid": {
               "Description": "An object defining the configuration options for the grid lines of an axis in the PolarChart widget.",
@@ -22031,7 +22315,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Indicates whether or not to set ticks/grid lines of a continuous axis of the 'date-time' type at the beginning of each date-time interval."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "showZero": {
               "PrimitiveTypes": [
@@ -22528,6 +22813,7 @@
         },
         "target": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery"
           ],
           "Description": "The target element associated with a popover."
@@ -23917,6 +24203,61 @@
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
           "Options": {
+            "allowDecimals": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to allow decimal values on the scale. When false, the scale contains integer values only."
+            },
+            "breaks": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.viz.ScaleBreak"
+              ],
+              "IsCollection": true,
+              "SingularName": "break",
+              "Description": "Declares a scale break collection. Applies only if the scale's type is \"continuous\" or \"logarithmic\".",
+              "Options": {
+                "endValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the startValue option, limits the scale break."
+                },
+                "startValue": {
+                  "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                  ],
+                  "Description": "Along with the endValue option, limits the scale break."
+                }
+              }
+            },
+            "breakStyle": {
+              "Description": "Configures the scale breaks' appearance.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' color."
+                },
+                "line": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the scale breaks' line style."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the scale breaks' width in pixels."
+                }
+              }
+            },
             "categories": {
               "ItemPrimitiveTypes": [
                 "number",
@@ -23927,6 +24268,12 @@
               "SingularName": "category",
               "Description": "Specifies the order of arguments on a discrete scale."
             },
+            "endOnTick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to force the scale to start and end on ticks."
+            },
             "endValue": {
               "PrimitiveTypes": [
                 "Date",
@@ -23934,6 +24281,16 @@
                 "string"
               ],
               "Description": "Specifies the scale's end value."
+            },
+            "holidays": {
+              "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "holiday",
+              "Description": "Days to be excluded from the scale when workdaysOnly is true."
             },
             "label": {
               "Description": "Specifies common options for scale labels.",
@@ -24347,7 +24704,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Indicates whether or not to set ticks of a date-time scale at the beginning of each date-time interval."
+              "IsDeprecated": true,
+              "Description": "This functionality is deprecated as redundant."
             },
             "showCustomBoundaryTicks": {
               "PrimitiveTypes": [
@@ -24361,6 +24719,16 @@
               ],
               "IsDeprecated": true,
               "Description": "Use the minorTick.visible option instead."
+            },
+            "singleWorkdays": {
+              "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "singleWorkday",
+              "Description": "Days to be included in the scale when workdaysOnly is true."
             },
             "startValue": {
               "PrimitiveTypes": [
@@ -24474,6 +24842,20 @@
                 "string"
               ],
               "Description": "Specifies the type of values on the scale."
+            },
+            "workdaysOnly": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Leaves only workdays on the scale: the work week days plus single workdays minus holidays. Applies only if the scale's valueType is \"datetime\"."
+            },
+            "workWeek": {
+              "ItemPrimitiveTypes": [
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "workWeek",
+              "Description": "Specifies which days are workdays. The array can contain values from 0 (Sunday) to 6 (Saturday). Applies only if workdaysOnly is true."
             }
           }
         },
@@ -25573,7 +25955,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": ""
+          "Description": "The template to be used for rendering appointments in the appointment collector's drop-down menu."
         },
         "editing": {
           "PrimitiveTypes": [
@@ -26073,7 +26455,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": ""
+              "Description": "The template to be used for rendering appointments in the appointment collector's drop-down menu."
             },
             "endDayHour": {
               "PrimitiveTypes": [
@@ -27844,6 +28226,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -31049,6 +31432,7 @@
         },
         "target": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery"
           ],
           "Description": "The target element associated with a popover."
@@ -32957,6 +33341,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -33386,6 +33771,9 @@
           "PrimitiveTypes": [
             "DevExpress.ui.dxTextBoxOptions"
           ],
+          "ComplexTypes": [
+            "dxTextBoxOptions"
+          ],
           "Description": "Configures the search panel."
         },
         "searchEnabled": {
@@ -33719,7 +34107,7 @@
               ],
               "IsCollection": true,
               "SingularName": "validationRequestsCallback",
-              "Description": "The jQuery.Callbacks() object that is fired when the specified value should be validated."
+              "Description": "Callbacks to be executed on the value validation."
             }
           }
         },
@@ -34613,7 +35001,7 @@
             },
             "coordinates": {
               "ItemPrimitiveTypes": [
-                "any"
+                "number"
               ],
               "IsCollection": true,
               "IsDeprecated": true,
@@ -34643,7 +35031,7 @@
             },
             "values": {
               "ItemPrimitiveTypes": [
-                "any"
+                "number"
               ],
               "IsCollection": true,
               "IsDeprecated": true,
@@ -34829,7 +35217,7 @@
             },
             "sizeGroups": {
               "ItemPrimitiveTypes": [
-                "any"
+                "number"
               ],
               "IsCollection": true,
               "IsDeprecated": true,
@@ -35203,6 +35591,7 @@
             },
             "container": {
               "PrimitiveTypes": [
+                "Element",
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
@@ -37878,6 +38267,98 @@
         }
       }
     },
+    "FilterBuilderField": {
+      "Options": {
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "customizeText": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "dataType": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "editorTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
+        },
+        "falseText": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "filterOperations": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "filterOperation"
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.format",
+            "string"
+          ],
+          "ComplexTypes": [
+            "Format"
+          ]
+        },
+        "lookup": {
+          "Options": {
+            "allowClearing": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true
+            },
+            "displayExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true
+            },
+            "valueExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true
+            }
+          }
+        },
+        "trueText": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        }
+      }
+    },
     "FormEmptyItem": {
       "Description": "This article describes configuration options of an empty form item.",
       "Options": {
@@ -38187,6 +38668,9 @@
         "tabPanelOptions": {
           "PrimitiveTypes": [
             "DevExpress.ui.dxTabPanelOptions"
+          ],
+          "ComplexTypes": [
+            "dxTabPanelOptions"
           ],
           "Description": "Holds a configuration object for the TabPanel widget used to display the current form item."
         },
@@ -41316,6 +41800,7 @@
         },
         "boundary": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery",
             "Window"
           ],
@@ -41383,6 +41868,7 @@
         },
         "of": {
           "PrimitiveTypes": [
+            "Element",
             "JQuery",
             "Window"
           ],
