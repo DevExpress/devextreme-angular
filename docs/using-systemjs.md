@@ -61,7 +61,6 @@ map: {
     '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
     // devextreme & devextreme deps
     'devextreme': 'npm:devextreme',                   // <== add this line
-    'jquery': 'npm:jquery/dist/jquery.min.js',        // <== add this line
     'jszip': 'npm:jszip/dist/jszip.min.js',           // <== add this line
     'devextreme-angular': 'npm:devextreme-angular',   // <== add this line
     // other libraries

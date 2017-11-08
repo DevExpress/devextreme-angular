@@ -33,7 +33,6 @@ export default {
             include: [
                 './node_modules/rxjs/**',
                 './node_modules/jszip/**',
-                './node_modules/jquery/**',
                 './node_modules/devextreme/**',
                 './node_modules/devextreme-angular/**'
             ]
