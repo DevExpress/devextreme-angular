@@ -1,6 +1,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
+import merge = require('deepmerge');
 import logger from './logger';
 let inflector = require('inflector-js');
 
@@ -46,9 +47,13 @@ export default class DXComponentMetadataGenerator {
         }
     }
     generate(config) {
-        let metadata = this._store.read(config.sourceMetadataFilePath),
-            widgetsMetadata = metadata['Widgets'],
-            allNestedComponents = [];
+        // TODO: Remove deprecatedMetadata in 18.1.
+        let sourceMetadata = this._store.read(config.sourceMetadataFilePath);
+        let deprecatedMetadata = this._store.read(config.deprecatedMetadataFilePath);
+        let metadata = merge(sourceMetadata, deprecatedMetadata);
+
+        let widgetsMetadata = metadata['Widgets'];
+        let allNestedComponents = [];
 
         mkdirp.sync(config.outputFolderPath);
         mkdirp.sync(path.join(config.outputFolderPath, config.nestedPathPart));
@@ -120,18 +125,14 @@ export default class DXComponentMetadataGenerator {
             let widgetNestedComponents = nestedComponents
                 .reduce((result, component) => {
                     if (result.filter(c => c.className === component.className).length === 0) {
-                        // Note: this condition needs because we have deprecated dxo-data-source nested component.
-                        // Remove this condition and dxo-data-source component in 18.1 from NgMetaData generator.
-                        if (widget.Module !== 'ui/pivot_grid_field_chooser' || component.className !== 'DxoDataSource') {
-                            result.push({
-                                path: component.path,
-                                propertyName: component.propertyName,
-                                className: component.className,
-                                isCollection: component.isCollection,
-                                hasTemplate: component.hasTemplate,
-                                root: properties.filter(p => p.name === component.propertyName).length === 1 ? true : undefined
-                            });
-                        }
+                        result.push({
+                            path: component.path,
+                            propertyName: component.propertyName,
+                            className: component.className,
+                            isCollection: component.isCollection,
+                            hasTemplate: component.hasTemplate,
+                            root: properties.filter(p => p.name === component.propertyName).length === 1 ? true : undefined
+                        });
                     }
 
                     return result;
