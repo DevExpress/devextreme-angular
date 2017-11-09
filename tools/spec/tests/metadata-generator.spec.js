@@ -25,8 +25,6 @@ describe("metadata-generator", function() {
                     return metadata;
                 } else if(filePath === "deprecated-path") {
                     return deprecatedData || {};
-                } else {
-                    return {};
                 }
             }),
             write: jasmine.createSpy()
@@ -780,11 +778,16 @@ describe("metadata-generator", function() {
                 Widgets: {
                     dxTestWidget: {
                         Options: {
-                            simpleTypedProperty: {
+                            secondTestProperty: {
                                 PrimitiveTypes: [
-                                    "DeprecatedType"
+                                    "number"
                                 ]
                             },
+                            typedTestProperty: {
+                                ComplexTypes: [
+                                    "DeprecatedType"
+                                ]
+                            }
                         }
                     },
                     dxEditorWidget: {
@@ -795,17 +798,22 @@ describe("metadata-generator", function() {
                     },
                 },
                 ExtraObjects: {
-                    DeprecatedType: {}
+                    DeprecatedType: {
+                        Options: {
+                            simpleOption: true
+                        },
+                        Module: 'test_widget'
+                    }
                 }
             });
         });
 
         it("should merge source metadata with deprecated data", function() {
-            expect(metas.DxTestWidget.properties.map(p => p.type)).toEqual([
-                'boolean',
-                'DeprecatedType'
-            ]);
+            expect(metas.DxTestWidget.properties.length).toBe(3);
+            expect(metas.DxTestWidget.nestedComponents.map(c => c.className)).toContain('DxoTypedTestProperty');
+            expect(metas.DxoTypedTestProperty).not.toBe(undefined);
             expect(metas.DxEditorWidget).not.toBe(undefined);
+            expect(metas.DxoDeprecatedType).not.toBe(undefined);
         });
     });
 });

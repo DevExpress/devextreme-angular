@@ -10,6 +10,7 @@ Previously, you could use `dxo-data-source` component as nested component for wi
       ...
     ></dxo-data-source>
 </dx-data-grid>
+```
 
 Currently, this will be used like simple property:
 ```html
