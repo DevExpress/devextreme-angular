@@ -61,7 +61,11 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         super();
         parentOptionHost.setNestedOption(this);
         optionHost.setHost(this, this._fullOptionPath.bind(this));<#? it.hasTemplate #>
-        templateHost.setHost(this);<#?#>
+        templateHost.setHost(this);<#?#><#? it.optionName === 'dataSource' #>
+        console.warn('The nested \'<#= it.selector #>\' component is deprecated in 17.2. ' +
+            'Use the \'<#= it.optionName #>\' option instead. ' +
+            'See:\nhttps://github.com/DevExpress/devextreme-angular/blob/master/CHANGELOG.md#next-release'
+        );<#?#>
     }
 <#? it.hasTemplate #>
     setTemplate(template: DxTemplateDirective) {
