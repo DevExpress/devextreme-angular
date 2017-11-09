@@ -39,18 +39,19 @@ Add the imported modules to application imports:
 
 ## Copy DevExtreme Stylesheets
 
-DevExtreme style sheets are stored in the "node-modules\devextreme\dist\css" folder. You should copy them to the "www\assets\css" folder. You can do it manually, or use [ionic build tools](https://ionicframework.com/docs/v2/resources/app-scripts/) to copy style sheets during the build process. In the second case, copy the "copy.config.js" file from the [Ionic repository](https://github.com/driftyco/ionic-app-scripts/blob/master/config/copy.config.js) to the application root folder.
+DevExtreme style sheets are stored in the "node-modules\devextreme\dist\css" folder. You should copy them to the "www\assets\css" folder. You can do it manually, or use [ionic build tools](https://ionicframework.com/docs/v2/resources/app-scripts/) to copy style sheets during the build process. In the second case, create a new file "copy.config.js" in the application root folder.
 
 Add the following item to the "copy" configuration.
 
 ```
-module.exports = {
-    . . .
-    copyStyleSheets: {
-        src: ['{{ROOT}}/node_modules/devextreme/dist/css/**/*'],
-        dest: '{{WWW}}/assets/css'
-    }
-}
+var copy = require('@ionic/app-scripts/config/copy.config.js');
+
+copy.copyStyleSheets = {
+  src: ['{{ROOT}}/node_modules/devextreme/dist/css/**/*'],
+  dest: '{{WWW}}/assets/css'
+};
+
+module.exports = copy;
 ```
 
 Reference the created config within the package.json file by adding the "config" section.
