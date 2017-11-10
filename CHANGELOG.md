@@ -1,3 +1,24 @@
+## <a name="next-release"></a>Next Release
+
+### Deprecations
+- The `dxo-data-source` nested component is deprecated. Use the `dataSource` option instead.
+
+Previously, you could use `dxo-data-source` component as nested component for widgets:
+```html
+<dx-data-grid>
+    <dxo-data-source
+      ...
+    ></dxo-data-source>
+</dx-data-grid>
+```
+
+Currently, this will be used like simple property:
+```html
+<dx-data-grid
+  [dataSource]='...'
+></dx-data-grid>
+```
+
 ## 17.2.2-beta.1 (2017-11-03)
 
 ### Features

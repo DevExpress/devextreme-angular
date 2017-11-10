@@ -1,6 +1,7 @@
 import fs = require('fs');
 import path = require('path');
 import mkdirp = require('mkdirp');
+import merge = require('deepmerge');
 import logger from './logger';
 let inflector = require('inflector-js');
 
@@ -46,9 +47,13 @@ export default class DXComponentMetadataGenerator {
         }
     }
     generate(config) {
-        let metadata = this._store.read(config.sourceMetadataFilePath),
-            widgetsMetadata = metadata['Widgets'],
-            allNestedComponents = [];
+        // TODO: Remove deprecatedMetadata in 18.1.
+        let sourceMetadata = this._store.read(config.sourceMetadataFilePath);
+        let deprecatedMetadata = this._store.read(config.deprecatedMetadataFilePath);
+        let metadata = merge(sourceMetadata, deprecatedMetadata);
+
+        let widgetsMetadata = metadata['Widgets'];
+        let allNestedComponents = [];
 
         mkdirp.sync(config.outputFolderPath);
         mkdirp.sync(path.join(config.outputFolderPath, config.nestedPathPart));

@@ -8,6 +8,7 @@ describe("metadata-generator", function() {
 
     var testConfig = {
         sourceMetadataFilePath: "source-path",
+        deprecatedMetadataFilePath: "deprecated-path",
         outputFolderPath: "output-path",
         nestedPathPart: 'nested',
         basePathPart: 'base'
@@ -17,9 +18,15 @@ describe("metadata-generator", function() {
         generator,
         metas;
 
-    var setupContext = function(metadata) {
+    var setupContext = function(metadata, deprecatedData) {
         store = {
-            read: jasmine.createSpy().and.returnValue(metadata),
+            read: jasmine.createSpy().and.callFake(function(filePath) {
+                if(filePath === "source-path") {
+                    return metadata;
+                } else if(filePath === "deprecated-path") {
+                    return deprecatedData || {};
+                }
+            }),
             write: jasmine.createSpy()
         };
         generator = new Generator(store);
@@ -748,6 +755,65 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalPropertyType.isDevExpressRequired).toBe(true);
             expect(metas.DxoNestedExternalProperty.isDevExpressRequired).toBe(false);
             expect(metas.DxoDeep.isDevExpressRequired).toBe(false);
+        });
+    });
+    
+    describe("deprecated components", function() {
+        
+        beforeEach(function() {
+            setupContext({
+                Widgets: {
+                    dxTestWidget: {
+                        Options: {
+                            testProperty: {
+                                PrimitiveTypes: [
+                                    'boolean'
+                                ]
+                            }
+                        },
+                        Module: 'test_widget'
+                    },
+                }
+            }, {
+                Widgets: {
+                    dxTestWidget: {
+                        Options: {
+                            secondTestProperty: {
+                                PrimitiveTypes: [
+                                    "number"
+                                ]
+                            },
+                            typedTestProperty: {
+                                ComplexTypes: [
+                                    "DeprecatedType"
+                                ]
+                            }
+                        }
+                    },
+                    dxEditorWidget: {
+                        Options: {
+                            onValueChanged: {}
+                        },
+                        Module: 'test_widget'
+                    },
+                },
+                ExtraObjects: {
+                    DeprecatedType: {
+                        Options: {
+                            simpleOption: true
+                        },
+                        Module: 'test_widget'
+                    }
+                }
+            });
+        });
+
+        it("should merge source metadata with deprecated data", function() {
+            expect(metas.DxTestWidget.properties.length).toBe(3);
+            expect(metas.DxTestWidget.nestedComponents.map(c => c.className)).toContain('DxoTypedTestProperty');
+            expect(metas.DxoTypedTestProperty).not.toBe(undefined);
+            expect(metas.DxEditorWidget).not.toBe(undefined);
+            expect(metas.DxoDeprecatedType).not.toBe(undefined);
         });
     });
 });
