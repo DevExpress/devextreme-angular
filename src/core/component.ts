@@ -10,6 +10,7 @@ import { IDxTemplateHost, DxTemplateHost } from './template-host';
 import { EmitterHelper } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
 import * as events from 'devextreme/events';
+import { removeElement } from './utils';
 import {
     INestedOptionContainer,
     ICollectionNestedOption,
@@ -100,7 +101,7 @@ export abstract class DxComponent implements AfterViewInit,
             let element = this.instance.element();
             events.triggerHandler(element, { type: 'dxremove', _angularIntegration: true });
             this.instance.dispose();
-            element.remove();
+            removeElement(element);
         }
     }
     constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
