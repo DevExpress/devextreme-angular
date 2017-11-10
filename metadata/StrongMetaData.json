@@ -2122,7 +2122,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -7292,7 +7292,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8745,7 +8745,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for a date-time value."
+          "Description": "Specifies the date-time value serialization format. Use it only if you do not specify the value at design time."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -12069,7 +12069,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -14915,7 +14915,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Allows an end-user to change filtering options."
+          "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
         },
         "allowSorting": {
           "PrimitiveTypes": [
@@ -20677,7 +20677,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies the date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "descriptionExpr": {
           "PrimitiveTypes": [
@@ -20990,7 +20990,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether or not the \"All-day\" panel is visible."
+          "Description": "Specifies the \"All-day\" panel's visibility. Setting this option to false hides the panel along with the all-day appointments."
         },
         "startDateExpr": {
           "PrimitiveTypes": [
@@ -21428,7 +21428,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "name": {
           "PrimitiveTypes": [
@@ -23476,7 +23476,7 @@
           "PrimitiveTypes": [
             "int32"
           ],
-          "Description": "The minimum number of characters that must be entered into the text box to begin a search."
+          "Description": "The minimum number of characters that must be entered into the text box to begin a search. Applies only if searchEnabled is true."
         },
         "multiline": {
           "PrimitiveTypes": [
@@ -25297,7 +25297,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the serialization format for date-time values."
+          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31036,7 +31036,7 @@
         },
         "type": {
           "EnumName": "Format",
-          "Description": "Specifies a predefined format."
+          "Description": "Specifies a predefined format. Does not apply if you have specified the formatter function."
         }
       }
     },
@@ -32506,7 +32506,7 @@
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Allows an end-user to change filtering options."
+              "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
             },
             "allowSorting": {
               "PrimitiveTypes": [
@@ -32572,7 +32572,7 @@
             },
             "filterType": {
               "EnumName": "FilterType",
-              "Description": "The filter type for the current field."
+              "Description": "Specifies whether a user can change the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
             },
             "filterValues": {
               "PrimitiveTypes": [
@@ -32580,7 +32580,7 @@
               ],
               "IsCollection": true,
               "SingularName": "filterValue",
-              "Description": "The filter values for the current field."
+              "Description": "Specifies by which values the field is filtered."
             },
             "format": {
               "PrimitiveTypes": [
