@@ -35,7 +35,7 @@ describe("metadata-generator", function() {
         store.write.calls.allArgs().forEach(function(args) {
             var metaData = args[1];
             metas[metaData.className] = metaData;
-        })
+        });
     };
 
     describe("simple components", function() {
@@ -47,12 +47,16 @@ describe("metadata-generator", function() {
                         Options: {
                             onTestEvent: {
                                 IsEvent: true,
+                                Description: 'onTestEvent description'
                             },
                             testTemplate: {
                                 IsTemplate: true,
                             },
-                            testProperty: {}
+                            testProperty: {
+                                Description: 'testProperty description'
+                            }
                         },
+                        Description: 'widget description',
                         Module: 'test_widget'
                     },
                     dxEditorWidget: {
@@ -118,19 +122,53 @@ describe("metadata-generator", function() {
         it("should generate proper widget name", function() {
             expect(metas.DxTestWidget.widgetName).toBe("dxTestWidget");
         });
+        
+        it("should generate proper widget name", function() {
+            expect(metas.DxTestWidget.description).toBe('widget description');
+        });
 
-        it("should generate proper events", function() {
-            expect(metas.DxTestWidget.events).toEqual([
-                { emit: 'onTestEvent', subscribe: 'testEvent', type: 'EventEmitter<any>' },
-                { emit: 'testTemplateChange', type: 'EventEmitter<any>' },
-                { emit: 'testPropertyChange', type: 'EventEmitter<any>' }
-            ]);
+        it("should generate proper events emit field", function() {
+            expect(metas.DxTestWidget.events
+                .map(p => p.emit)).toEqual([
+                    'onTestEvent',
+                    'testTemplateChange',
+                    'testPropertyChange'
+                ]
+            );
+        });
+        
+        it("should generate proper events subscribe field", function() {
+            expect(metas.DxTestWidget.events
+                .filter(p => p.subscribe !== undefined)
+                .map(p => p.subscribe))
+            .toEqual(['testEvent']);
+        });
+                
+        it("should generate proper events description field", function() {
+            expect(metas.DxTestWidget.events
+                .filter(p => p.emit === 'onTestEvent')
+                .map(p => p.description))
+            .toEqual(['onTestEvent description']);
+        });
+        
+                
+        it("should generate proper events description field", function() {
+            expect(metas.DxTestWidget.events
+                .filter(p => p.emit !== "onTestEvent" && p.description !== undefined).length)
+            .toEqual(2);
         });
 
         it("should generate proper properties", function() {
             expect(metas.DxTestWidget.properties.map(p => p.type)).toEqual([
                 'any',
                 'any'
+            ]);
+        });
+        
+        it("should generate proper properties", function() {
+            expect(metas.DxTestWidget.properties.map(p => p.description)).toEqual([
+                undefined,
+                'testProperty description'
             ]);
         });
 
@@ -253,14 +291,14 @@ describe("metadata-generator", function() {
         });
 
         it("should generate proper typed events", function() {
-            expect(metas.DxTypedWidget.events).toEqual([
-                { emit: 'onTestEvent', subscribe: 'testEvent', type: 'EventEmitter<any>' },
-                { emit: 'simpleTypedPropertyChange', type:'EventEmitter<boolean>' },
-                { emit: 'multitypePropertyChange', type:'EventEmitter<string' + TYPES_SEPORATOR + 'number>' },
-                { emit: 'complexTypedPropertyChange', type:'EventEmitter<DevExpress.ui.ComplexType>' },
-                { emit: 'collectionTypedPropertyChange', type:'EventEmitter<Array<string>>' },
-                { emit: 'collectionComplexTypedPropertyChange', type:'EventEmitter<Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>>' },
-                { emit: 'dataSourcePropertyChange', type:'EventEmitter<DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>>' }
+            expect(metas.DxTypedWidget.events.map(p => p.type)).toEqual([
+                'EventEmitter<any>',
+                'EventEmitter<boolean>',
+                'EventEmitter<string' + TYPES_SEPORATOR + 'number>',
+                'EventEmitter<DevExpress.ui.ComplexType>',
+                'EventEmitter<Array<string>>',
+                'EventEmitter<Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>>',
+                'EventEmitter<DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>>'
             ]);
         });
 
