@@ -89,4 +89,17 @@ describe('DxTextBox value accessor', () => {
 
         expect(instance.option('value')).toBe('text');
     }));
+    it('should change touched option', async(() => {
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        expect(fixture.componentInstance.formControl.touched).toBe(false);
+
+        instance.focus();
+        instance.blur();
+
+        expect(fixture.componentInstance.formControl.touched).toBe(true);
+    }));
 });

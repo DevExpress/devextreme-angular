@@ -93,7 +93,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#? it.isEditor #>
     @HostListener('valueChange', ['$event']) change(_) { }
-    touched = () => {};<#?#>
+    @HostListener('onFocusOut', ['$event']) touched = () => {};<#?#>
 
 <#~ collectionNestedComponents :component:i #>
     @ContentChildren(<#= component.className #>Component)
