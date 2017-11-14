@@ -123,7 +123,7 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.widgetName).toBe("dxTestWidget");
         });
         
-        it("should generate proper widget name", function() {
+        it("should generate proper widget description", function() {
             expect(metas.DxTestWidget.description).toBe('widget description');
         });
 
@@ -165,7 +165,7 @@ describe("metadata-generator", function() {
             ]);
         });
         
-        it("should generate proper properties", function() {
+        it("should generate proper properties description", function() {
             expect(metas.DxTestWidget.properties.map(p => p.description)).toEqual([
                 undefined,
                 'testProperty description'
