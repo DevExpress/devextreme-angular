@@ -116,7 +116,7 @@ export default class DXComponentMetadataGenerator {
                     changeEvents.push({
                         emit: `${optionName}Change`,
                         type: `EventEmitter<${finalizedType}>`,
-                        description: 'EventEmitter of the change event handler for ' + optionName + ' option.'
+                        description: 'A handler for the ${optionName}Change event.'
                     });
 
                     let components = this.generateComplexOptionByType(metadata, option, optionName, []);
