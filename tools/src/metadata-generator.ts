@@ -91,6 +91,7 @@ export default class DXComponentMetadataGenerator {
                     events.push({
                         emit: optionName,
                         subscribe: eventName,
+                        description: option.Description,
                         type: 'EventEmitter<any>'
                     });
                 } else {
@@ -102,7 +103,8 @@ export default class DXComponentMetadataGenerator {
                     let property: any = {
                         name: optionName,
                         type: finalizedType,
-                        typesDescription: typesDescription
+                        typesDescription: typesDescription,
+                        description: option.Description
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -113,7 +115,8 @@ export default class DXComponentMetadataGenerator {
 
                     changeEvents.push({
                         emit: `${optionName}Change`,
-                        type: `EventEmitter<${finalizedType}>`
+                        type: `EventEmitter<${finalizedType}>`,
+                        description: 'A handler for the ${optionName}Change event.'
                     });
 
                     let components = this.generateComplexOptionByType(metadata, option, optionName, []);
@@ -150,6 +153,7 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
                 isDevExpressRequired: isDevExpressRequired,
+                description: widget.Description,
                 nestedComponents: widgetNestedComponents
             };
 

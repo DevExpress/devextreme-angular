@@ -60,6 +60,9 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     multi: true
 };<#?#>
 
+/**
+ * <#= it.description #>
+ */
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
@@ -78,7 +81,11 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     @ContentChild(DxValidatorComponent)
     validator: DxValidatorComponent;
 <#?#>
-    <#~ it.properties :prop:i #>@Input()
+<#~ it.properties :prop:i #>
+    /**
+     * <#= prop.description #>
+     */
+    @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
     }
@@ -86,10 +93,13 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._setOption('<#= prop.name #>', value);
     }<#? i < it.properties.length-1 #>
 
-    <#?#><#~#>
-
-    <#~ it.events :event:i #>@Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
-    <#?#><#~#>
+<#?#><#~#>
+<#~ it.events :event:i #>
+    /**
+     * <#= event.description #>
+     */
+    @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
+<#?#><#~#>
 
 <#? it.isEditor #>
     @HostListener('valueChange', ['$event']) change(_) { }
