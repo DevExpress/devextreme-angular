@@ -1,3 +1,8 @@
+## 17.1.9-beta.1(1017-11-16)
+
+### Features
+- Update Angular peer dependency
+
 ## 17.1.7 (2017-10-04)
 
 ### Bug Fixes
