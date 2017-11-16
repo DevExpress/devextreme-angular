@@ -1,4 +1,8 @@
-## <a name="next-release"></a>Next Release
+## <a name="17.2.3"></a>17.2.3 (2017-11-16)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/26?closed=1)
 
 ### Deprecations
 - The `dxo-data-source` nested component is deprecated. Use the `dataSource` option instead.

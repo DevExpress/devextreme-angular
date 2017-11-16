@@ -1218,7 +1218,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for bar labels."
+              "Description": "Formats a value before it is displayed in a label. Accepts only numeric formats."
             },
             "indent": {
               "PrimitiveTypes": [
@@ -1662,7 +1662,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -2258,7 +2258,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "horizontalAlignment": {
               "PrimitiveTypes": [
@@ -3102,7 +3102,7 @@
               ],
               "IsCollection": true,
               "SingularName": "holiday",
-              "Description": "Days to be excluded from the axis when workdaysOnly is true."
+              "Description": "Dates to be excluded from the axis when workdaysOnly is true."
             },
             "hoverMode": {
               "PrimitiveTypes": [
@@ -3162,7 +3162,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies the format of the arguments displayed by axis labels."
+                  "Description": "Formats a value before it is displayed in an axis label."
                 },
                 "indentFromAxis": {
                   "PrimitiveTypes": [
@@ -3426,7 +3426,7 @@
               ],
               "IsCollection": true,
               "SingularName": "singleWorkday",
-              "Description": "Days to be included in the axis when workdaysOnly is true."
+              "Description": "Dates to be included on the axis when workdaysOnly is true."
             },
             "strips": {
               "ItemPrimitiveTypes": [
@@ -4315,7 +4315,7 @@
                       "ComplexTypes": [
                         "Format"
                       ],
-                      "Description": "Formats the point value before it will be displayed in the crosshair label."
+                      "Description": "Formats a point value before it is displayed in the crosshair label."
                     },
                     "precision": {
                       "PrimitiveTypes": [
@@ -4385,7 +4385,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Formats the point value/argument before it will be displayed in the crosshair label."
+                  "Description": "Formats a point value/argument before it is displayed in the crosshair label."
                 },
                 "precision": {
                   "PrimitiveTypes": [
@@ -4459,7 +4459,7 @@
                       "ComplexTypes": [
                         "Format"
                       ],
-                      "Description": "Formats the point argument before it will be displayed in the crosshair label."
+                      "Description": "Formats the point argument before it is displayed in the crosshair label."
                     },
                     "precision": {
                       "PrimitiveTypes": [
@@ -5509,7 +5509,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "location": {
               "PrimitiveTypes": [
@@ -5953,7 +5953,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies the format of the values displayed by axis labels."
+                  "Description": "Formats a value before it is displayed in an axis label."
                 },
                 "indentFromAxis": {
                   "PrimitiveTypes": [
@@ -7102,7 +7102,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the text displayed in scale labels."
+                  "Description": "Formats a value before it is displayed in a scale label. Accepts only numeric formats."
                 },
                 "hideFirstOrLast": {
                   "PrimitiveTypes": [
@@ -7598,7 +7598,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -8353,7 +8353,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -8794,7 +8794,7 @@
           "Description": "Indicates whether to show the error row."
         },
         "export": {
-          "Description": "Configures client-side export.",
+          "Description": "Configures client-side exporting.",
           "Options": {
             "allowExportSelectedData": {
               "PrimitiveTypes": [
@@ -8806,7 +8806,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables the client-side exporting feature."
+              "Description": "Enables the client-side exporting."
             },
             "excelFilterEnabled": {
               "PrimitiveTypes": [
@@ -8830,7 +8830,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             },
             "texts": {
               "Description": "Contains options that specify texts for the export-related commands and hints.",
@@ -10019,7 +10019,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the summary item value."
+                  "Description": "Specifies a summary item value's display format."
                 }
               }
             },
@@ -10166,7 +10166,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the summary item value."
+                  "Description": "Specifies a summary item value's display format."
                 }
               }
             }
@@ -13150,7 +13150,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -13963,7 +13963,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the text displayed in scale labels."
+                  "Description": "Formats a value before it is displayed in a scale label. Accepts only numeric formats."
                 },
                 "indentFromTick": {
                   "PrimitiveTypes": [
@@ -14453,7 +14453,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -18810,7 +18810,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -19199,13 +19199,13 @@
           "Description": "Specifies the attributes to be attached to the widget's root element."
         },
         "export": {
-          "Description": "Configures client-side export.",
+          "Description": "Configures client-side exporting.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables client-side export."
+              "Description": "Enables client-side exporting."
             },
             "fileName": {
               "PrimitiveTypes": [
@@ -19217,7 +19217,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable export in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
             }
           }
         },
@@ -20297,7 +20297,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the text displayed by axis labels."
+                  "Description": "Formats a value before it is displayed in an axis label."
                 },
                 "indentFromAxis": {
                   "PrimitiveTypes": [
@@ -21813,7 +21813,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -22119,7 +22119,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the text displayed by axis labels."
+                  "Description": "Formats a value before it is displayed in an axis label."
                 },
                 "indentFromAxis": {
                   "PrimitiveTypes": [
@@ -22615,7 +22615,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The time span after which the popover is hidden."
+              "Description": "The delay in milliseconds after which the widget is hidden."
             },
             "name": {
               "PrimitiveTypes": [
@@ -22789,7 +22789,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -24313,7 +24313,7 @@
                   "ComplexTypes": [
                     "Format"
                   ],
-                  "Description": "Specifies a format for the text displayed in scale labels."
+                  "Description": "Formats a value before it is displayed in a scale label."
                 },
                 "overlappingBehavior": {
                   "PrimitiveTypes": [
@@ -24428,7 +24428,7 @@
                       "ComplexTypes": [
                         "Format"
                       ],
-                      "Description": "Specifies a format for the text displayed in scale markers."
+                      "Description": "Formats a value before it is displayed in a scale marker."
                     }
                   }
                 },
@@ -24971,7 +24971,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed in slider markers."
+              "Description": "Formats a value before it is displayed in a slider marker."
             },
             "invalidRangeColor": {
               "PrimitiveTypes": [
@@ -25259,7 +25259,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for labels."
+              "Description": "Formats a value before it is displayed in a label."
             },
             "position": {
               "PrimitiveTypes": [
@@ -25378,7 +25378,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a tooltip's format."
+              "Description": "Specifies a tooltip's display format."
             },
             "position": {
               "PrimitiveTypes": [
@@ -26054,6 +26054,12 @@
             "any"
           ],
           "IsDeprecated": true
+        },
+        "indicatorUpdateInterval": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the time interval between when the date-time indicator changes its position, in milliseconds."
         },
         "max": {
           "PrimitiveTypes": [
@@ -27736,7 +27742,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for labels."
+              "Description": "Formats a value before it is displayed in a label."
             },
             "position": {
               "PrimitiveTypes": [
@@ -27849,7 +27855,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a tooltip's format."
+              "Description": "Specifies a tooltip's display format."
             },
             "position": {
               "PrimitiveTypes": [
@@ -28255,7 +28261,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "horizontalAlignment": {
               "PrimitiveTypes": [
@@ -31254,7 +31260,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The time span after which the popover is hidden."
+              "Description": "The delay in milliseconds after which the widget is hidden."
             },
             "name": {
               "PrimitiveTypes": [
@@ -31414,7 +31420,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -33370,7 +33376,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies the format of the value a tooltip displays."
+              "Description": "Formats a value before it is displayed it in a tooltip."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -34201,7 +34207,7 @@
       }
     },
     "dxVectorMap": {
-      "Description": "The VectorMap is a widget that visualize geographical locations. This widget represents a geographical map that contains areas and markers. Areas embody continents and countries. Markers flag specific points on the map, for example, towns, cities or capitals.",
+      "Description": "The VectorMap is a widget that visualizes geographical locations. This widget represents a geographical map that contains areas and markers. Areas embody continents and countries. Markers flag specific points on the map, for example, towns, cities or capitals.",
       "Module": "viz/vector_map",
       "Options": {
         "areaSettings": {
@@ -38012,7 +38018,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies a format for the values displayed in the column."
+          "Description": "Formats a value before it is displayed in a column cell."
         },
         "formItem": {
           "PrimitiveTypes": [
@@ -38998,7 +39004,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed in an indicator."
+              "Description": "Formats a value before it is displayed in an indicator. Accepts only numeric formats."
             },
             "indent": {
               "PrimitiveTypes": [
@@ -39396,7 +39402,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed by point labels."
+              "Description": "Formats a value before it is displayed in a point label."
             },
             "percentPrecision": {
               "PrimitiveTypes": [
@@ -39824,7 +39830,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed by point labels."
+              "Description": "Formats a value before it is displayed in a point label."
             },
             "percentPrecision": {
               "PrimitiveTypes": [
@@ -40298,7 +40304,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed by point labels."
+              "Description": "Formats a value before it is displayed in a point label."
             },
             "position": {
               "PrimitiveTypes": [
@@ -40990,7 +40996,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for the text displayed by point labels."
+              "Description": "Formats a value before it is displayed in a point label."
             },
             "position": {
               "PrimitiveTypes": [
@@ -41859,7 +41865,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies a format for the values displayed in the column."
+          "Description": "Formats a value before it is displayed in a column cell."
         },
         "formItem": {
           "PrimitiveTypes": [
