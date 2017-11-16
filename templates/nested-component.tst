@@ -65,7 +65,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         if ((console) && (console.warn)) {
             console.warn('The nested \'<#= it.selector #>\' component is deprecated in 17.2. ' +
                 'Use the \'<#= it.optionName #>\' option instead. ' +
-                'See:\nhttps://github.com/DevExpress/devextreme-angular/blob/master/CHANGELOG.md#next-release'
+                'See:\nhttps://github.com/DevExpress/devextreme-angular/blob/master/CHANGELOG.md#17.2.3'
             );
         }<#?#>
     }
