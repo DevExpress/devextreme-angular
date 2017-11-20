@@ -581,5 +581,6 @@ describe('DxList', () => {
         item.click();
 
         expect(onChangesSpy.calls.count()).toBe(0);
+        fixture.autoDetectChanges(false);
     });
 });
