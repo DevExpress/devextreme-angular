@@ -107,6 +107,9 @@ export default class DXComponentMetadataGenerator {
             }
 
             let allEvents = events.concat(changeEvents);
+            if (isEditor) {
+                allEvents.push({emit: `onBlur`, type: `EventEmitter<any>`});
+            }
             let widgetNestedComponents = nestedComponents
                 .reduce((result, component) => {
                     if (result.filter(c => c.className === component.className).length === 0) {
