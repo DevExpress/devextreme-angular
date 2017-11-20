@@ -140,11 +140,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     registerOnTouched(fn: () => void): void { this.touched = fn; }
 
     _createWidget(element: any) {
-        let instance = this._createInstance(element, {})
-        instance.on('focusOut', (e) => {
+        super._createWidget(element);
+        this.instance.on('focusOut', (e) => {
             this.eventHelper.fireNgEvent('onBlur', [e]);
         });
-        super._createWidget(element);
     }
 <#?#>
     ngOnDestroy() {
