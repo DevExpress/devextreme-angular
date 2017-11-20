@@ -16,6 +16,7 @@ import {
     Input,
     Output,
     OnDestroy,
+    Injector,
     EventEmitter<#? it.isEditor #>,
     AfterContentInit,
     ContentChild,
@@ -43,6 +44,7 @@ import {
 import { <#= baseClass #> } from '../core/component';
 import { DxTemplateHost } from '../core/template-host';
 import { DxTemplateModule } from '../core/template';
+import { EventsRegistrator } from '../core/events-strategy';
 import { NestedOptionHost } from '../core/nested-option';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
@@ -115,11 +117,12 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 <#~#>
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost,
+    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, injector: Injector,
             <#? collectionProperties.length #>private <#?#>_watcherHelper: WatcherHelper<#? collectionProperties.length #>,
             private _idh: IterableDifferHelper<#?#>, optionHost: NestedOptionHost) {
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
+        injector.get(EventsRegistrator);
 
         this._createEventEmitters([
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
@@ -191,5 +194,6 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     <#= component.className #>Module<#~#>,
     DxTemplateModule
   ],
+  providers: [EventsRegistrator]
 })
 export class <#= it.className #>Module { }
