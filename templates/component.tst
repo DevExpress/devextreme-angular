@@ -103,7 +103,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#? it.isEditor #>
     @HostListener('valueChange', ['$event']) change(_) { }
-    touched = () => {};<#?#>
+    @HostListener('onBlur', ['$event']) touched = () => {};<#?#>
 
 <#~ collectionNestedComponents :component:i #>
     @ContentChildren(<#= component.className #>Component)
@@ -148,6 +148,13 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#?#>
     registerOnChange(fn: (_: any) => void): void { this.change = fn; }
     registerOnTouched(fn: () => void): void { this.touched = fn; }
+
+    _createWidget(element: any) {
+        super._createWidget(element);
+        this.instance.on('focusOut', (e) => {
+            this.eventHelper.fireNgEvent('onBlur', [e]);
+        });
+    }
 <#?#>
     ngOnDestroy() {
         this._destroyWidget();
