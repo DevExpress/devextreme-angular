@@ -95,6 +95,9 @@ export abstract class DxComponent implements AfterViewInit,
             this.changedOptions[e.name] = e.value;
             this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
         });
+        this.instance.on('focusOut', (e) => {
+            this.eventHelper.fireNgEvent('onBlur', [e]);
+        });
     }
     protected _destroyWidget() {
         if (this.instance) {
