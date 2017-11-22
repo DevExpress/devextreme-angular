@@ -387,13 +387,12 @@ describe('DevExtreme Angular widget', () => {
         });
 
         let fixture = TestBed.createComponent(TestContainerComponent);
-        let testComponent = fixture.componentInstance.innerWidgets.first;
 
         expect(getWidget(fixture).option('testCalculatedOption')).toBe('changed');
         expect(fixture.componentInstance.testCalculatedOption).toBe('changed');
         expect(document.getElementById('test').innerText).toBe('changed');
 
-        testComponent._destroyWidget = function() {};
+        fixture.autoDetectChanges(false);
     }));
 
     it('ngZone onStable should not called recursively (T551347)', async(() => {
@@ -413,13 +412,10 @@ describe('DevExtreme Angular widget', () => {
         });
 
         let fixture = TestBed.createComponent(TestContainerComponent);
-        let innerWidgets = fixture.componentInstance.innerWidgets;
 
         expect(fixture.componentInstance.onStableCallCount).toBe(2);
 
-        innerWidgets.forEach(function(widget) {
-            widget._destroyWidget = function() {};
-        });
+        fixture.autoDetectChanges(false);
     }));
 
   });
