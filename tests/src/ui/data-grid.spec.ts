@@ -36,6 +36,7 @@ class TestContainerComponent {
         { dataField: 'boolean' },
         { dataField: 'number' }
     ];
+    dataSourceWithUndefined = [{ obj: { field: undefined }}];
 
     @ViewChildren(DxDataGridComponent) innerWidgets: QueryList<DxDataGridComponent>;
 
@@ -68,6 +69,39 @@ describe('DxDataGrid', () => {
 
             done();
         }, 0);
+    });
+
+    it('should react to item option change from undefined', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                <dx-data-grid 
+                    [columns]="['obj.field']" 
+                    [dataSource]="dataSourceWithUndefined">
+                </dx-data-grid>`
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        jasmine.clock().tick(101);
+
+        let testComponent = fixture.componentInstance;
+
+        testComponent.dataSourceWithUndefined[0].obj.field = true;
+        fixture.detectChanges();
+
+        let cells = fixture.nativeElement.querySelectorAll('.dx-data-row td');
+        let firstCellContent = cells[0].innerText;
+
+        expect(cells.length).toEqual(1);
+        expect(firstCellContent).toBe('true');
+
+        jasmine.clock().uninstall();
     });
 
     it('should fire onToolbarPreparing event', () => {

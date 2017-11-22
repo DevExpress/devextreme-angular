@@ -39,18 +39,30 @@ export class WatcherHelper {
     }
 
     private _isDifferentValues(oldValue: any, newValue: any, deepCheck: boolean) {
-        let isObjectValues = newValue instanceof Object && oldValue instanceof Object,
-            isDateValues = oldValue instanceof Date && newValue instanceof Date;
+        let comparableNewValue = this._toComparable(newValue);
+        let comparableOldValue = this._toComparable(oldValue);
+        let isObjectValues = comparableNewValue instanceof Object && comparableOldValue instanceof Object;
 
-        if (deepCheck && isObjectValues && !isDateValues) {
+        if (deepCheck && isObjectValues) {
             return this._checkObjectsFields(newValue, oldValue);
         }
-        return oldValue !== newValue;
+        return comparableNewValue !== comparableOldValue;
+    }
+
+    private _toComparable(value) {
+        if (value instanceof Date) {
+            return value.getTime();
+        }
+
+        return value;
     }
 
     private _checkObjectsFields(checkingFromObject: Object, checkingToObject: Object) {
         for (let field in checkingFromObject) {
-            if (checkingFromObject[field] > checkingToObject[field] || checkingFromObject[field] < checkingToObject[field]) {
+            let oldValue = this._toComparable(checkingFromObject[field]);
+            let newValue = this._toComparable(checkingToObject[field]);
+
+            if (newValue !== oldValue) {
                 return true;
             }
         }
