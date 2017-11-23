@@ -72,9 +72,7 @@ describe('DxTabPanel', () => {
 
         let component: TestContainerComponent = fixture.componentInstance;
         component.tabPanel.visible = false;
-        fixture.detectChanges();
 
-        let instance: any = component.tabPanel.instance;
-        expect(instance.option('visible')).toBe(false);
+        expect(fixture.detectChanges.bind(fixture)).not.toThrow();
     });
 });
