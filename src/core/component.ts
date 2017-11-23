@@ -22,7 +22,7 @@ import {
 
 export abstract class DxComponent implements AfterViewInit, DoCheck, AfterContentChecked,
         INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
-    private _optionToUpdate: any = {};
+    private _optionsToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
@@ -38,12 +38,12 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
             this.templates.forEach(template => {
                 initialTemplates[template.name] = template;
             });
-            this._optionToUpdate.integrationOptions.templates = initialTemplates;
+            this._optionsToUpdate.integrationOptions.templates = initialTemplates;
         }
     }
     private _initOptions() {
-        this._optionToUpdate.eventsStrategy = this.eventHelper.strategy;
-        this._optionToUpdate.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
+        this._optionsToUpdate.eventsStrategy = this.eventHelper.strategy;
+        this._optionsToUpdate.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     protected _createEventEmitters(events) {
         events.forEach(event => {
@@ -62,7 +62,7 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
     protected _getOption(name: string) {
         return this.instance ?
             this.instance.option(name) :
-            this._optionToUpdate[name];
+            this._optionsToUpdate[name];
     }
     protected _setOption(name: string, value: any) {
         if (this._shouldOptionChange(name, value)) {
@@ -70,11 +70,11 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
         };
     }
     public updateOption(name: string, value: any) {
-        this._optionToUpdate[name] = value;
+        this._optionsToUpdate[name] = value;
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        this._optionToUpdate.integrationOptions = {};
+        this._optionsToUpdate.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
 
@@ -82,11 +82,11 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
             this.eventHelper.rememberEvent(e.name);
         };
 
-        this._optionToUpdate.onInitializing = function() {
+        this._optionsToUpdate.onInitializing = function() {
             this.on('optionChanged', optionChangeHandler);
         };
-        this.instance = this._createInstance(element, this._optionToUpdate);
-        this._optionToUpdate = {};
+        this.instance = this._createInstance(element, this._optionsToUpdate);
+        this._optionsToUpdate = {};
 
         this.instance.off('optionChanged', optionChangeHandler);
         this.instance.on('optionChanged', (e) => {
@@ -120,9 +120,9 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
         this.applyOptions();
     }
     applyOptions() {
-        if (this.instance && Object.keys(this._optionToUpdate).length) {
-            this.instance.option(this._optionToUpdate);
-            this._optionToUpdate = {};
+        if (this.instance && Object.keys(this._optionsToUpdate).length) {
+            this.instance.option(this._optionsToUpdate);
+            this._optionsToUpdate = {};
         }
     }
     setTemplate(template: DxTemplateDirective) {
