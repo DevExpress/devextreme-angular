@@ -52,6 +52,7 @@ export class IterableDifferHelper {
         if (this._propertyDiffers[prop]) {
             const changes = this.getChanges(prop, this._host[prop]);
             if (changes && this._host.instance) {
+                this._host.lockWidgetUpdate();
                 this._host.instance.option(prop, this._host[prop]);
             }
         }

@@ -2,7 +2,8 @@ import {
     ElementRef,
     NgZone,
     QueryList,
-    AfterViewInit
+    AfterViewInit,
+    AfterViewChecked
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -19,7 +20,7 @@ import {
 } from './nested-option';
 
 export abstract class DxComponent implements AfterViewInit,
-        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
+        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost, AfterViewChecked {
     private _initialOptions: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
@@ -27,6 +28,7 @@ export abstract class DxComponent implements AfterViewInit,
     instance: any;
     changedOptions = {};
     renderOnViewInit = true;
+    widgetUpdateLocked = false;
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -69,7 +71,14 @@ export abstract class DxComponent implements AfterViewInit,
             this._initialOptions[name] = value;
         }
     }
+    lockWidgetUpdate() {
+        if (!this.widgetUpdateLocked) {
+            this.instance.beginUpdate();
+            this.widgetUpdateLocked = true;
+        }
+    }
     protected _updateOption(name: string, value: any) {
+        this.lockWidgetUpdate();
         if (this._shouldOptionChange(name, value)) {
             this.instance.option(name, value);
         };
@@ -109,6 +118,12 @@ export abstract class DxComponent implements AfterViewInit,
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(this.ngZone, this);
+    }
+    ngAfterViewChecked() {
+        if (this.widgetUpdateLocked) {
+            this.widgetUpdateLocked = false;
+            this.instance.endUpdate();
+        }
     }
     ngAfterViewInit() {
         if (this.renderOnViewInit) {
