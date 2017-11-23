@@ -170,14 +170,15 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
         this._watcherHelper.checkWatchers();
+        super.ngDoCheck();
     }
 
-    _updateOption(name: string, value: any) {
+    _setOption(name: string, value: any) {
         let isSetup = this._idh.setupSingle(name, value);
         let isChanged = this._idh.getChanges(name, value) !== null;
 
         if (isSetup || isChanged) {
-            super._updateOption(name, value);
+            super._setOption(name, value);
         }
     }<#?#>
 <#? it.isEditor #>

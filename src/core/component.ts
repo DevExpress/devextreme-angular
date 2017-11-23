@@ -3,7 +3,8 @@ import {
     NgZone,
     QueryList,
     AfterViewInit,
-    AfterViewChecked
+    DoCheck,
+    AfterContentChecked
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -19,16 +20,15 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit,
-        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost, AfterViewChecked {
-    private _initialOptions: any = {};
+export abstract class DxComponent implements AfterViewInit, DoCheck, AfterContentChecked,
+        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
+    private _optionToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
     changedOptions = {};
     renderOnViewInit = true;
-    widgetUpdateLocked = false;
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -38,12 +38,12 @@ export abstract class DxComponent implements AfterViewInit,
             this.templates.forEach(template => {
                 initialTemplates[template.name] = template;
             });
-            this._initialOptions.integrationOptions.templates = initialTemplates;
+            this._optionToUpdate.integrationOptions.templates = initialTemplates;
         }
     }
     private _initOptions() {
-        this._initialOptions.eventsStrategy = this.eventHelper.strategy;
-        this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
+        this._optionToUpdate.eventsStrategy = this.eventHelper.strategy;
+        this._optionToUpdate.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
     protected _createEventEmitters(events) {
         events.forEach(event => {
@@ -62,30 +62,19 @@ export abstract class DxComponent implements AfterViewInit,
     protected _getOption(name: string) {
         return this.instance ?
             this.instance.option(name) :
-            this._initialOptions[name];
+            this._optionToUpdate[name];
     }
     protected _setOption(name: string, value: any) {
-        if (this.instance) {
-            this._updateOption(name, value);
-        } else {
-            this._initialOptions[name] = value;
-        }
-    }
-    lockWidgetUpdate() {
-        if (!this.widgetUpdateLocked) {
-            this.instance.beginUpdate();
-            this.widgetUpdateLocked = true;
-        }
-    }
-    protected _updateOption(name: string, value: any) {
-        this.lockWidgetUpdate();
         if (this._shouldOptionChange(name, value)) {
-            this.instance.option(name, value);
+            this.updateOption(name, value);
         };
+    }
+    public updateOption(name: string, value: any) {
+        this._optionToUpdate[name] = value;
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
-        this._initialOptions.integrationOptions = {};
+        this._optionToUpdate.integrationOptions = {};
         this._initTemplates();
         this._initOptions();
 
@@ -93,11 +82,11 @@ export abstract class DxComponent implements AfterViewInit,
             this.eventHelper.rememberEvent(e.name);
         };
 
-        this._initialOptions.onInitializing = function() {
+        this._optionToUpdate.onInitializing = function() {
             this.on('optionChanged', optionChangeHandler);
         };
-        this.instance = this._createInstance(element, this._initialOptions);
-        this._initialOptions = {};
+        this.instance = this._createInstance(element, this._optionToUpdate);
+        this._optionToUpdate = {};
 
         this.instance.off('optionChanged', optionChangeHandler);
         this.instance.on('optionChanged', (e) => {
@@ -119,15 +108,21 @@ export abstract class DxComponent implements AfterViewInit,
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(this.ngZone, this);
     }
-    ngAfterViewChecked() {
-        if (this.widgetUpdateLocked) {
-            this.widgetUpdateLocked = false;
-            this.instance.endUpdate();
-        }
-    }
     ngAfterViewInit() {
         if (this.renderOnViewInit) {
             this._createWidget(this.element.nativeElement);
+        }
+    }
+    ngAfterContentChecked() {
+        this.applyOptions();
+    }
+    ngDoCheck() {
+        this.applyOptions();
+    }
+    applyOptions() {
+        if (this.instance && Object.keys(this._optionToUpdate).length) {
+            this.instance.option(this._optionToUpdate);
+            this._optionToUpdate = {};
         }
     }
     setTemplate(template: DxTemplateDirective) {
