@@ -29,6 +29,7 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
     instance: any;
     changedOptions = {};
     renderOnViewInit = true;
+    widgetUpdateLocked = false;
 
     protected _events: { subscribe?: string, emit: string }[];
 
@@ -64,7 +65,14 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
             this.instance.option(name) :
             this._optionsToUpdate[name];
     }
+    lockWidgetUpdate() {
+        if (!this.widgetUpdateLocked && this.instance) {
+            this.instance.beginUpdate();
+            this.widgetUpdateLocked = true;
+        }
+    }
     protected _setOption(name: string, value: any) {
+        this.lockWidgetUpdate();
         if (this._shouldOptionChange(name, value)) {
             this.updateOption(name, value);
         };
@@ -115,6 +123,10 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
     }
     ngAfterContentChecked() {
         this.applyOptions();
+        if (this.widgetUpdateLocked) {
+            this.widgetUpdateLocked = false;
+            this.instance.endUpdate();
+        }
     }
     ngDoCheck() {
         this.applyOptions();

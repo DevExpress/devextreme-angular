@@ -46,13 +46,15 @@ describe('DxTabPanel', () => {
         fixture.detectChanges();
 
         let component: TestContainerComponent = fixture.componentInstance;
-        component.tabPanelItems.push(1);
-        component.selectedIndex = 1;
+        component.tabPanelItems.push(3);
+
+        let index = component.tabPanelItems.length - 1;
+        component.selectedIndex = index;
         fixture.detectChanges();
 
         let instance: any = component.tabPanel.instance;
         expect(instance.option('items').length).toBe(4);
-        expect(instance.option('selectedIndex')).toBe(1);
+        expect(instance.option('selectedIndex')).toBe(index);
     });
 
     it('option, binded to another widget, should update second widget before AfterViewChecked lifecycle hook', () => {

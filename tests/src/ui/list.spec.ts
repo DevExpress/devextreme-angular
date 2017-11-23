@@ -71,7 +71,7 @@ describe('DxList', () => {
         testComponent.items.push(2);
         fixture.detectChanges();
 
-        expect(instance.option).toHaveBeenCalledWith({ 'items': [1, 2] });
+        expect(instance.option).toHaveBeenCalledWith('items', [1, 2]);
         instance.option.calls.reset();
     }));
 
