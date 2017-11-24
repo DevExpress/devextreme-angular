@@ -9,6 +9,7 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 
 export interface INestedOptionContainer {
     instance: any;
+    isLinked: boolean;
 }
 
 export interface IOptionPathGetter { (): string; }
@@ -60,7 +61,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     }
 
     get isLinked() {
-        return !!this.instance;
+        return !!this.instance && this._host.isLinked;
     }
 }
 
