@@ -23,7 +23,7 @@ export abstract class DxComponent implements AfterViewInit,
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
-    isLinked: boolean;
+    isLinked: boolean = true;
     changedOptions = {};
     renderOnViewInit = true;
 
@@ -87,7 +87,6 @@ export abstract class DxComponent implements AfterViewInit,
             this.on('optionChanged', optionChangeHandler);
         };
         this.instance = this._createInstance(element, this._initialOptions);
-        this.isLinked = this.instance ? true : false;
         this._initialOptions = {};
 
         this.instance.off('optionChanged', optionChangeHandler);
