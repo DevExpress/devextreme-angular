@@ -26,7 +26,7 @@ export abstract class DxComponent implements AfterViewInit,
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
     instance: any;
-    isLinked: boolean = true;
+    isLinked = true;
     changedOptions = {};
     renderOnViewInit = true;
     widgetUpdateLocked = false;
