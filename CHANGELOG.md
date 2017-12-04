@@ -1,4 +1,4 @@
-## 17.1.9-beta.1(1017-12-04)
+## 17.1.9-beta.2(1017-12-04)
 
 ### Bug Fixes
 [Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/28?closed=1)
