@@ -808,11 +808,12 @@ describe("metadata-generator", function() {
 
         it("should generate proper typed properties", function() {
             expect(metas.DxoProperty.properties.map(p => p.type)).toEqual([
-                'string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType' + TYPES_SEPORATOR + 
-                '{ deep?: boolean' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType, ' +
-                'collectionDeeps?: boolean' + TYPES_SEPORATOR + 'Array<number' + TYPES_SEPORATOR + '{ value?: string }>, ' +
-                'deepWithPromise?: Promise<boolean> & JQueryPromise<boolean> }',
-                'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType' + TYPES_SEPORATOR + '{ deep?: string }>'
+                `string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}` +
+                `{ deep?: boolean${TYPES_SEPORATOR}DevExpress.ui.ComplexType, ` +
+                `collectionDeeps?: boolean${TYPES_SEPORATOR}Array<number${TYPES_SEPORATOR}{ value?: string }>, ` +
+                `deepWithPromise?: Promise<boolean> & JQueryPromise<boolean> }`,
+
+                `Array<string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}{ deep?: string }>`
             ]);
         });
 

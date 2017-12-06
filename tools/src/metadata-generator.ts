@@ -197,11 +197,7 @@ export default class DXComponentMetadataGenerator {
             let optionType = this.getObjectType(optionMetadata.Options);
 
             if (optionType.length) {
-                if (optionMetadata.IsCollection) {
-                    arrayTypes.push(optionType);
-                } else {
-                    primitiveTypes.push(optionType);
-                }
+                (optionMetadata.IsCollection ? arrayTypes : primitiveTypes).push(optionType);
             }
         }
 
