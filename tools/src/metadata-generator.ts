@@ -170,9 +170,18 @@ export default class DXComponentMetadataGenerator {
     }
 
     private getTypesDescription(optionMetadata) {
-        let primitiveTypes = optionMetadata.PrimitiveTypes || [];
+        let typeParts = this.getTypeParts(optionMetadata, true);
+
+        return {
+            primitiveTypes: typeParts.primitiveTypes,
+            arrayTypes: typeParts.arrayTypes,
+            isDevExpressRequired: this.detectComplexTypes(typeParts.primitiveTypes) || this.detectComplexTypes(typeParts.arrayTypes)
+        };
+    }
+
+    private getTypeParts(optionMetadata, canIgnoreObjectType) {
+        let primitiveTypes = optionMetadata.PrimitiveTypes ? optionMetadata.PrimitiveTypes.slice(0) : [];
         let arrayTypes = [];
-        let isDevExpressRequired = false;
 
         if (optionMetadata.ItemPrimitiveTypes) {
             if (optionMetadata.IsPromise) {
@@ -183,13 +192,32 @@ export default class DXComponentMetadataGenerator {
             }
         }
 
-        isDevExpressRequired = this.detectComplexTypes(primitiveTypes) || this.detectComplexTypes(arrayTypes);
+        // TODO: Get rid of right part of this condition in 18.1
+        if (optionMetadata.Options && (!canIgnoreObjectType || (primitiveTypes.length || arrayTypes.length))) {
+            let optionType = this.getObjectType(optionMetadata.Options);
 
-        return {
-            primitiveTypes,
-            arrayTypes,
-            isDevExpressRequired
-        };
+            if (optionType.length) {
+                (optionMetadata.IsCollection ? arrayTypes : primitiveTypes).push(optionType);
+            }
+        }
+
+        return({ primitiveTypes, arrayTypes });
+    }
+
+    private getObjectType(optionMetadata) {
+        let objectType = [];
+
+        for (let option in optionMetadata) {
+            let typeParts = this.getTypeParts(optionMetadata[option], false);
+            let type = this.getType(typeParts);
+
+            objectType.push(option + '?: ' + type);
+        }
+
+        if (objectType.length) {
+            return '{ ' + objectType.join(', ') + ' }';
+        }
+        return '';
     }
 
     private getType(typesDescription) {

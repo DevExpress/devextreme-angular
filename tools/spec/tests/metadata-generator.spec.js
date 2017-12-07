@@ -567,7 +567,9 @@ describe("metadata-generator", function() {
                         Options: {
                             property: {
                                 Options: {
-                                    nestedProperty1: {}
+                                    nestedProperty1: {
+                                        PrimitiveTypes: [ 'number' ]
+                                    }
                                 },
                                 PrimitiveTypes: [
                                     'string'
@@ -587,7 +589,9 @@ describe("metadata-generator", function() {
                         Options: {
                             property: {
                                 Options: {
-                                    nestedProperty2: {}
+                                    nestedProperty2: {
+                                        PrimitiveTypes: [ 'string' ]
+                                    }
                                 },
                                 PrimitiveTypes: [
                                     'boolean',
@@ -655,9 +659,11 @@ describe("metadata-generator", function() {
         it("should generate nested components with merged types of repetitive properties", function() {
             expect(metas.DxoExternalProperty.properties.map(p => p.type))
             .toEqual([
-                    'string' + TYPES_SEPORATOR + 
+                    'string' + TYPES_SEPORATOR +
+                    '{ nestedProperty1?: number }' + TYPES_SEPORATOR +
                     'boolean' + TYPES_SEPORATOR + 
-                    'DevExpress.ui.dxComplexType', 
+                    'DevExpress.ui.dxComplexType' + TYPES_SEPORATOR +
+                    '{ nestedProperty2?: string }',
                     'string', 
                     'any', 
                     'any'
@@ -688,6 +694,29 @@ describe("metadata-generator", function() {
                                                 ],                    
                                                 ComplexTypes: [
                                                     'ExternalPropertyType'
+                                                ]
+                                            },
+                                            collectionDeeps : {
+                                                PrimitiveTypes: [
+                                                    "boolean"
+                                                ], 
+                                                ItemPrimitiveTypes: [
+                                                    "number"
+                                                ],                    
+                                                Options: {
+                                                    value: {
+                                                        PrimitiveTypes: [
+                                                            "string"
+                                                        ]
+                                                    }
+                                                },
+                                                IsCollection: true,
+                                                SingularName: "collectionDeep"                                                
+                                            },
+                                            deepWithPromise: {
+                                                IsPromise: true,
+                                                ItemPrimitiveTypes: [
+                                                    "boolean"
                                                 ]
                                             }
                                         },
@@ -763,7 +792,7 @@ describe("metadata-generator", function() {
         });
                     
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(9);
+            expect(Object.keys(metas).length).toBe(10);
 
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxoExternalPropertyType).not.toBe(undefined);
@@ -774,12 +803,17 @@ describe("metadata-generator", function() {
             expect(metas.DxiNestedItem).not.toBe(undefined);
             expect(metas.DxiCollectionItem).not.toBe(undefined);
             expect(metas.DxoCollectionItem).not.toBe(undefined);
+            expect(metas.DxiCollectionDeep).not.toBe(undefined);
         });
 
         it("should generate proper typed properties", function() {
             expect(metas.DxoProperty.properties.map(p => p.type)).toEqual([
-                'string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType',
-                'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>'
+                `string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}` +
+                `{ deep?: boolean${TYPES_SEPORATOR}DevExpress.ui.ComplexType, ` +
+                `collectionDeeps?: boolean${TYPES_SEPORATOR}Array<number${TYPES_SEPORATOR}{ value?: string }>, ` +
+                `deepWithPromise?: Promise<boolean> & JQueryPromise<boolean> }`,
+
+                `Array<string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}{ deep?: string }>`
             ]);
         });
 
