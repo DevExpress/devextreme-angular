@@ -25,7 +25,7 @@ import {
 export abstract class DxComponent implements AfterViewInit, DoCheck, OnChanges, AfterContentChecked,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _initialOptions: any = {};
-    private _optionsToUpdate: any = {};
+    protected _optionsToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];

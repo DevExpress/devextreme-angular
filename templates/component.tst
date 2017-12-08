@@ -165,7 +165,15 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#? collectionProperties.length #>
     ngOnChanges(changes: SimpleChanges) {
         super.ngOnChanges(changes);<#~ collectionProperties :prop:i #>
-        this._idh.setup('<#= prop #>', changes);<#~#>
+        this.setupChanges('<#= prop #>', changes);<#~#>
+    }
+
+    setupChanges(prop: string, changes: SimpleChanges) {
+        if (prop in changes) {
+            if (!(prop in this._optionsToUpdate)) {
+                this._idh.setup(prop, changes);
+            }
+        }
     }
 
     ngDoCheck() {<#~ collectionProperties :prop:i #>
