@@ -169,10 +169,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     setupChanges(prop: string, changes: SimpleChanges) {
-        if (prop in changes) {
-            if (!(prop in this._optionsToUpdate)) {
-                this._idh.setup(prop, changes);
-            }
+        if (!(prop in this._optionsToUpdate)) {
+            this._idh.setup(prop, changes);
         }
     }
 
