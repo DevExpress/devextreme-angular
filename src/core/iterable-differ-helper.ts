@@ -22,8 +22,10 @@ export class IterableDifferHelper {
 
     setup(prop: string, changes: SimpleChanges) {
         if (prop in changes) {
-            const value = changes[prop].currentValue;
-            this.setupSingle(prop, value);
+            if (!(prop in this._host['_opts'])) {
+                const value = changes[prop].currentValue;
+                this.setupSingle(prop, value);
+            }
         }
     }
 

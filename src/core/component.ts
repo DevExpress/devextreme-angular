@@ -4,7 +4,9 @@ import {
     QueryList,
     AfterViewInit,
     DoCheck,
-    AfterContentChecked
+    OnChanges,
+    AfterContentChecked,
+    SimpleChanges
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -20,9 +22,10 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit, DoCheck, AfterContentChecked,
-        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
+export abstract class DxComponent implements AfterViewInit, DoCheck, OnChanges, AfterContentChecked,
+    INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _optionsToUpdate: any = {};
+    private _opts: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
@@ -73,12 +76,16 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
     }
     protected _setOption(name: string, value: any) {
         this.lockWidgetUpdate();
-        if (this._shouldOptionChange(name, value)) {
-            this.updateOption(name, value);
-        };
-    }
-    public updateOption(name: string, value: any) {
-        this._optionsToUpdate[name] = value;
+
+        if (!this._shouldOptionChange(name, value)) {
+            return;
+        }
+
+        if (this.instance) {
+            this.instance.option(name, value);
+        } else {
+            this._optionsToUpdate[name] = value;
+        }
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
@@ -90,7 +97,7 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
             this.eventHelper.rememberEvent(e.name);
         };
 
-        this._optionsToUpdate.onInitializing = function() {
+        this._optionsToUpdate.onInitializing = function () {
             this.on('optionChanged', optionChangeHandler);
         };
         this.instance = this._createInstance(element, this._optionsToUpdate);
@@ -128,13 +135,23 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, AfterConten
             this.instance.endUpdate();
         }
     }
+    ngOnChanges(changes: SimpleChanges) {
+        for (let key in changes) {
+            let change = changes[key];
+            if (change.currentValue !== this[key]) {
+                this._opts[key] = changes[key].currentValue;
+            }
+        }
+    }
     ngDoCheck() {
         this.applyOptions();
     }
     applyOptions() {
-        if (this.instance && Object.keys(this._optionsToUpdate).length) {
-            this.instance.option(this._optionsToUpdate);
-            this._optionsToUpdate = {};
+        if (Object.keys(this._opts).length) {
+            if (this.instance) {
+                this.instance.option(this._opts);
+            }
+            this._opts = {};
         }
     }
     setTemplate(template: DxTemplateDirective) {

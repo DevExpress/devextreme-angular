@@ -163,7 +163,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._destroyWidget();
     }
 <#? collectionProperties.length #>
-    ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
+    ngOnChanges(changes: SimpleChanges) {
+        super.ngOnChanges(changes);<#~ collectionProperties :prop:i #>
         this._idh.setup('<#= prop #>', changes);<#~#>
     }
 

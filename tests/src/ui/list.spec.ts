@@ -106,15 +106,15 @@ describe('DxList', () => {
         fixture.detectChanges();
 
         let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
+            widgetComponent = testComponent.innerWidgets.first;
 
-        spyOn(instance, 'option').and.callThrough();
+        spyOn(widgetComponent, '_setOption').and.callThrough();
 
         testComponent.items = testComponent.items.slice(0);
         fixture.detectChanges();
 
-        expect(instance.option).toHaveBeenCalledTimes(1);
-        instance.option.calls.reset();
+        expect(widgetComponent['_setOption']).toHaveBeenCalledTimes(1);
+        widgetComponent['_setOption']['calls'].reset();
     }));
 
     it('should react if the initial value is assigned to the collection', async(() => {
