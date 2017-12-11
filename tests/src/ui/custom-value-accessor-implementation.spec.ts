@@ -28,7 +28,7 @@ import {
     template: `
         <form [formGroup]="form">
             <div class="form-group">
-                <dx-text-box formControlName="formControl" [(ngModel)]="value"></dx-text-box>
+                <dx-text-box formControlName="formControl" [(ngModel)]="value" [isValid]="form.pristine"></dx-text-box>
             </div>
         </form>
     `
@@ -101,5 +101,18 @@ describe('DxTextBox value accessor', () => {
         instance.blur();
 
         expect(fixture.componentInstance.formControl.touched).toBe(true);
+    }));
+    it('should set value without error', async(() => {
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        let errorMessage = "";
+        fixture.detectChanges();
+
+        fixture.componentInstance.value = "test";
+        try{
+            fixture.detectChanges();
+        } catch(e) {
+            errorMessage = e.message;
+        }
+        expect(errorMessage).toBe("");
     }));
 });
