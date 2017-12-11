@@ -104,15 +104,15 @@ describe('DxTextBox value accessor', () => {
     }));
     it('should set value without error', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
-        let errorMessage = "";
+        let errorMessage = '';
         fixture.detectChanges();
 
-        fixture.componentInstance.value = "test";
-        try{
+        fixture.componentInstance.value = 'test';
+        try {
             fixture.detectChanges();
-        } catch(e) {
+        } catch (e) {
             errorMessage = e.message;
         }
-        expect(errorMessage).toBe("");
+        expect(errorMessage).toBe('');
     }));
 });
