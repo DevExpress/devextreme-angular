@@ -96,48 +96,6 @@ describe('DxList', () => {
         instance.option.calls.reset();
     }));
 
-    it('should not react if the identicaly value is assigned to the collection', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-list [items]="items"></dx-list>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            widgetComponent = testComponent.innerWidgets.first;
-
-        spyOn(widgetComponent, '_setOption').and.callThrough();
-
-        testComponent.items = testComponent.items.slice(0);
-        fixture.detectChanges();
-
-        expect(widgetComponent['_setOption']).toHaveBeenCalledTimes(1);
-        widgetComponent['_setOption']['calls'].reset();
-    }));
-
-    it('should react if the initial value is assigned to the collection', async(() => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: '<dx-list [items]="emptyItems"></dx-list>'
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let testComponent = fixture.componentInstance,
-            instance = getWidget(fixture);
-
-        spyOn(instance, 'option').and.callThrough();
-
-        testComponent.emptyItems = [];
-        fixture.detectChanges();
-
-        expect(instance.option.calls.count()).toBeGreaterThan(1);
-        instance.option.calls.reset();
-    }));
-
     it('should be able to accept items as a static nested components list', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
