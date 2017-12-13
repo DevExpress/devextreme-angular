@@ -1017,7 +1017,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -1043,7 +1043,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -2426,6 +2426,14 @@
           "IsEvent": true,
           "Description": "A handler for the click event."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -2698,7 +2706,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -4553,7 +4561,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Specifies the widget's data origin."
         },
         "defaultPane": {
           "PrimitiveTypes": [
@@ -6599,6 +6607,14 @@
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -6659,7 +6675,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -7998,7 +8014,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -8173,7 +8189,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field that contains an array of nested items."
+          "Description": "Specifies which data field contains nested items."
         },
         "itemTemplate": {
           "PrimitiveTypes": [
@@ -9762,7 +9778,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
+          "Description": "Specifies the keys of rows that must be selected initially."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -10589,7 +10605,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The text displayed by the widget when the widget value is not yet specified. This text is also used as a title of the date picker."
+          "Description": "Specifies a placeholder for the input field."
         },
         "readOnly": {
           "PrimitiveTypes": [
@@ -10652,7 +10668,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -10754,6 +10770,14 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -11206,7 +11230,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -11218,7 +11242,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the currently selected value. May be an object if dataSource contains objects and valueExpr is not set."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -11232,7 +11256,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11418,6 +11442,14 @@
           ],
           "Description": "Specifies the value passed to the name attribute of the underlying input element."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -11578,7 +11610,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "value": {
           "ItemPrimitiveTypes": [
@@ -14621,7 +14653,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not to display a grouped list."
+          "Description": "Specifies whether data items should be grouped."
         },
         "groupTemplate": {
           "PrimitiveTypes": [
@@ -15003,7 +15035,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether searching is enabled."
+          "Description": "Specifies whether the search panel is visible."
         },
         "searchExpr": {
           "PrimitiveTypes": [
@@ -15133,6 +15165,14 @@
             "string"
           ],
           "Description": "Specifies the path to an image used as the indicator."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -15898,7 +15938,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not the search bar is visible."
+          "Description": ""
         },
         "searchExpr": {
           "PrimitiveTypes": [
@@ -16015,7 +16055,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -16027,7 +16067,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the currently selected value. May be an object if dataSource contains objects and valueExpr is not set."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -16041,7 +16081,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -16577,7 +16617,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field that contains an array of nested items."
+          "Description": "Specifies which data field contains nested items."
         },
         "itemTemplate": {
           "PrimitiveTypes": [
@@ -17496,6 +17536,14 @@
           "IsEvent": true,
           "Description": "A handler for the change event."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onCopy": {
           "PrimitiveTypes": [
             "Function"
@@ -17667,7 +17715,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -18050,7 +18098,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Specifies the widget's data origin."
         },
         "diameter": {
           "PrimitiveTypes": [
@@ -21037,7 +21085,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Specifies the widget's data origin."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -23368,6 +23416,14 @@
           "IsEvent": true,
           "Description": "A handler for the complete event."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -23430,7 +23486,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -23603,6 +23659,14 @@
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -23657,7 +23721,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -23677,7 +23741,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -25287,6 +25351,14 @@
           ],
           "Description": "The minimum value the widget can accept."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -25398,7 +25470,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -26187,7 +26259,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -27130,7 +27202,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the widget supports searching."
+          "Description": "Specifies whether to allow searching."
         },
         "searchExpr": {
           "PrimitiveTypes": [
@@ -27203,7 +27275,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -27215,7 +27287,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the currently selected value. May be an object if dataSource contains objects and valueExpr is not set."
         },
         "valueChangeEvent": {
           "PrimitiveTypes": [
@@ -27229,7 +27301,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -27776,6 +27848,14 @@
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -27875,7 +27955,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -28445,6 +28525,14 @@
           ],
           "Description": "Text displayed when the widget is in a disabled state."
         },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "PrimitiveTypes": [
             "Function"
@@ -28505,7 +28593,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -29603,7 +29691,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the widget supports searching."
+          "Description": "Specifies whether to allow searching."
         },
         "searchExpr": {
           "PrimitiveTypes": [
@@ -29693,7 +29781,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -29717,7 +29805,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget value."
+          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
         "values": {
           "PrimitiveTypes": [
@@ -29856,6 +29944,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the change event."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onCopy": {
           "PrimitiveTypes": [
@@ -30010,7 +30106,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -30171,6 +30267,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the change event."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onCopy": {
           "PrimitiveTypes": [
@@ -30343,7 +30447,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Holds the object that defines the error that occurred during validation."
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
@@ -32135,7 +32239,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event. Executed when the widget's content is ready."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onContextMenuPreparing": {
           "PrimitiveTypes": [
@@ -32493,7 +32597,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially. Applies only if selection.deferred is false."
+          "Description": "Specifies the keys of rows that must be selected initially."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -33613,7 +33717,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field that contains an array of nested items."
+          "Description": "Specifies which data field contains nested items."
         },
         "itemTemplate": {
           "PrimitiveTypes": [
@@ -33780,7 +33884,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether searching is enabled."
+          "Description": "Specifies whether the search panel is visible."
         },
         "searchExpr": {
           "PrimitiveTypes": [
@@ -38855,7 +38959,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the currency code for the 'currency' format."
+          "Description": "Specifies the currency code. Applies only if type is \"currency\"."
         },
         "formatter": {
           "PrimitiveTypes": [
