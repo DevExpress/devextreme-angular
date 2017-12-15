@@ -13,9 +13,19 @@
 
 ## <a name="17.2.3"></a>17.2.3 (2017-11-16)
 
+### Features
+
+- Update `typescript` version to 2.4.2
+
 ### Bug Fixes
 
 [Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/26?closed=1)
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/25?closed=1)
+
+### Breaking changes
+- TypeScript declarations have become strict, which can cause a build failure. Use correct types to prevent this.
+- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). To use jQuery, you need to manually install the jquery npm package and include the jQuery integration module in your application. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
+
 
 ### Deprecations
 - The `dxo-data-source` nested component is deprecated. Use the `dataSource` option instead.
@@ -36,44 +46,11 @@ Currently, this will be used like simple property:
 ></dx-data-grid>
 ```
 
-## 17.2.2-beta.1 (2017-11-03)
-
-### Features
-
-- DevExtreme dependency has been updated to the 17.2.2-pre-beta
-
-## 17.2.1-beta.4 (2017-10-31)
-
-### Breaking changes
-- TypeScript declarations have become strict, which can cause a build failure. Use correct types to prevent this.
-
-## 17.2.1-beta.3 (2017-10-25)
-
-### Breaking changes
-- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). To use jQuery, you need to manually install it via NPM and include the jQuery integration module in your application. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
-
-## 17.2.1-beta.2 (2017-10-10)
-
-### Features
-
-- Update `devextreme` version to 17.2.1-pre-17273
-
-### Bug Fixes
-
-[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/25?closed=1)
-
 ## 17.1.7-rc.2 (2017-09-25)
 
 ### Bug Fixes
 
 [Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/22?closed=1)
-
-## 17.2.1-beta.1 (2017-09-15)
-
-### Features
-
-- Update `typescript` version to 2.4.2
-- Update `devextreme` version to 17.2.1-pre
 
 ## 17.1.7-rc.1 (2017-09-11)
 
