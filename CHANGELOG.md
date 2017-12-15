@@ -50,7 +50,7 @@ Currently, this will be used like simple property:
 ## 17.2.1-beta.3 (2017-10-25)
 
 ### Breaking changes
-- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). You can include jQuery integration into your application to use jQuery. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
+- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). To use jQuery, you need to manually install it via NPM and include the jQuery integration module in your application. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
 
 ## 17.2.1-beta.2 (2017-10-10)
 
