@@ -13,9 +13,14 @@
 
 ## <a name="17.2.3"></a>17.2.3 (2017-11-16)
 
-### Bug Fixes
+### Features
 
-[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/26?closed=1)
+- Update `typescript` version to 2.4.2
+
+### Breaking changes
+- TypeScript declarations have become strict, which can cause a build failure. Use correct types to prevent this.
+- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). To use jQuery, you need to manually install the jquery npm package and include the jQuery integration module in your application. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
+
 
 ### Deprecations
 - The `dxo-data-source` nested component is deprecated. Use the `dataSource` option instead.
@@ -41,16 +46,6 @@ Currently, this will be used like simple property:
 ### Features
 
 - DevExtreme dependency has been updated to the 17.2.2-pre-beta
-
-## 17.2.1-beta.4 (2017-10-31)
-
-### Breaking changes
-- TypeScript declarations have become strict, which can cause a build failure. Use correct types to prevent this.
-
-## 17.2.1-beta.3 (2017-10-25)
-
-### Breaking changes
-- The jQuery dependency has been removed ([#46](https://github.com/DevExpress/devextreme-angular/issues/46)). You can include jQuery integration into your application to use jQuery. For more information, please see: [Include jQuery integration](https://github.com/DevExpress/devextreme-angular#include-jquery-integration)
 
 ## 17.2.1-beta.2 (2017-10-10)
 

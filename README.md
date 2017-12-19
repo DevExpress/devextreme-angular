@@ -11,6 +11,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
   * [Running the local examples](#running-examples)
+  * [Include jQuery integration](#jquery-integration)
 * [Usage samples](#usage-samples)
   * [Static string option value](#static-option)
   * [Static non-string option value](#static-non-string-option)
@@ -139,8 +140,12 @@ npm start
 
 Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) in the opened browser window. Explore the **examples** folder of this repository for the examples source code.
 
-### <a name="jquery integration"></a>Include jQuery integration ###
-Starting with version 17.2, DevExtreme doesn't depend on jQuery. It means that our widgets work without jQuery elements. If you need to use jQuery, you can include the jQuery integration as described below:
+### <a name="jquery-integration"></a>Include jQuery integration ###
+Starting with version 17.2, DevExtreme doesn't depend on jQuery. It means that our widgets work without jQuery elements. If you need to use jQuery, you can manually install the jquery npm package and include the jQuery integration as described below:
+
+```js
+npm install --save jquery
+```
 
 ```js
 import 'devextreme/integration/jquery';
