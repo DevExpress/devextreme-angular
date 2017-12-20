@@ -30,6 +30,7 @@ class TestContainerComponent {
     emptyItems = undefined;
     items = [1];
     complexItems = [{ text: 'Item 1' }];
+    emptyDataSource = { items: [] };
     defaultTemplateItems = [{ text: 'test', disabled: false }];
     disabled = false;
     @ViewChildren(DxListComponent) innerWidgets: QueryList<DxListComponent>;
@@ -70,6 +71,33 @@ describe('DxList', () => {
 
         expect(instance.option).toHaveBeenCalledWith('items', [1, 2]);
         instance.option.calls.reset();
+    }));
+
+    it('should react to collection change for empty dataSource', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-list [dataSource]="emptyDataSource.items">
+                        <div *dxTemplate="let i of 'item'">
+                            {{i}}
+                        </div>
+                    </dx-list>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture);
+
+        testComponent.emptyDataSource = { items: [] };
+        fixture.detectChanges();
+
+        testComponent.emptyDataSource.items.push({ id: 1 });
+        fixture.detectChanges();
+
+        expect(instance.option('items').length).toBe(1);
     }));
 
     it('should not react if the same value is assigned to the collection', async(() => {
