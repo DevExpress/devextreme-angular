@@ -2029,6 +2029,11 @@
           "IsEvent": true,
           "Description": "A handler for the click event."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "IsFunc": true,
           "IsEvent": true,
@@ -5563,6 +5568,11 @@
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "IsFunc": true,
           "IsEvent": true,
@@ -7056,7 +7066,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -8986,7 +8996,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The text displayed by the widget when the widget value is not yet specified. This text is also used as a title of the date picker."
+          "Description": "Specifies a placeholder for the input field."
         },
         "readOnly": {
           "PrimitiveTypes": [
@@ -9587,6 +9597,11 @@
             "string"
           ],
           "Description": "Specifies the value passed to the name attribute of the underlying input element."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -11234,7 +11249,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "A Boolean value specifying whether or not to display a grouped list."
+          "Description": "Specifies whether data items should be grouped."
         },
         "groupTemplate": {
           "IsTemplate": true,
@@ -11614,6 +11629,11 @@
             "string"
           ],
           "Description": "Specifies the path to an image used as the indicator."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -13549,6 +13569,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the change event."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onCopy": {
           "IsFunc": true,
@@ -17890,7 +17915,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the popover is hidden."
+              "Description": "The delay in milliseconds after which the widget is hidden."
             },
             "name": {
               "PrimitiveTypes": [
@@ -18026,7 +18051,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -18505,6 +18530,11 @@
           "IsEvent": true,
           "Description": "A handler for the complete event."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "IsFunc": true,
           "IsEvent": true,
@@ -18698,6 +18728,11 @@
             "string"
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -19378,7 +19413,7 @@
                   "PrimitiveTypes": [
                     "double"
                   ],
-                  "Description": "Specified the indent between the marker and the scale lables."
+                  "Description": "Specified the indent between the marker and the scale labels."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -20158,6 +20193,11 @@
           ],
           "Description": "The minimum value the widget can accept."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "IsFunc": true,
           "IsEvent": true,
@@ -20658,6 +20698,9 @@
           "Description": "Specifies a date displayed on the current scheduler view by default."
         },
         "currentView": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "EnumName": "SchedulerViewType",
           "Description": "Specifies the view used in the scheduler by default."
         },
@@ -20755,7 +20798,7 @@
         },
         "firstDayOfWeek": {
           "EnumName": "FirstDayOfWeek",
-          "Description": "Specifies the first day of a week."
+          "Description": "Specifies the first day of a week. Does not apply to the agenda view."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -20870,7 +20913,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -21080,7 +21123,7 @@
             },
             "firstDayOfWeek": {
               "EnumName": "FirstDayOfWeek",
-              "Description": "The first day of a week."
+              "Description": "The first day of a week. Does not apply to the agenda view."
             },
             "groups": {
               "PrimitiveTypes": [
@@ -22121,6 +22164,11 @@
           ],
           "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onDisposing": {
           "IsFunc": true,
           "IsEvent": true,
@@ -22710,6 +22758,11 @@
             "string"
           ],
           "Description": "Text displayed when the widget is in a disabled state."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onDisposing": {
           "IsFunc": true,
@@ -23848,6 +23901,11 @@
           "IsEvent": true,
           "Description": "A handler for the change event."
         },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
+        },
         "onCopy": {
           "IsFunc": true,
           "IsEvent": true,
@@ -24108,6 +24166,11 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the change event."
+        },
+        "onContentReady": {
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onCopy": {
           "IsFunc": true,
@@ -24970,7 +25033,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the popover is hidden."
+              "Description": "The delay in milliseconds after which the widget is hidden."
             },
             "name": {
               "PrimitiveTypes": [
@@ -25095,7 +25158,7 @@
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "The time span after which the widget is shown."
+              "Description": "The delay in milliseconds after which the widget is displayed."
             },
             "name": {
               "PrimitiveTypes": [
@@ -25735,7 +25798,7 @@
         "onContentReady": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contentReady event. Executed when the widget's content is ready."
+          "Description": "A handler for the contentReady event. Executed when the widget's content is ready. This handler may be executed multiple times during the widget's lifetime depending on the number of times its content changes."
         },
         "onContextMenuPreparing": {
           "IsFunc": true,
@@ -27405,7 +27468,7 @@
       }
     },
     "dxVectorMap": {
-      "Description": "The VectorMap is a widget that visualize geographical locations. This widget represents a geographical map that contains areas and markers. Areas embody continents and countries. Markers flag specific points on the map, for example, towns, cities or capitals.",
+      "Description": "The VectorMap is a widget that visualizes geographical locations. This widget represents a geographical map that contains areas and markers. Areas embody continents and countries. Markers flag specific points on the map, for example, towns, cities or capitals.",
       "Module": "viz/vector_map",
       "Options": {
         "areaSettings": {
@@ -32556,7 +32619,7 @@
             },
             "dataType": {
               "EnumName": "PivotGridDataType",
-              "Description": "Specifies a type of field values."
+              "Description": "Casts field values to a specific data type."
             },
             "displayFolder": {
               "PrimitiveTypes": [
