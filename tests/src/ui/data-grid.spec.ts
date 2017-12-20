@@ -23,6 +23,7 @@ import DxDataGrid from 'devextreme/ui/data_grid';
 })
 class TestContainerComponent {
     dataSource = [{
+        id: 1,
         string: 'String',
         date: new Date(),
         dateString: '1995/01/15',
@@ -38,9 +39,16 @@ class TestContainerComponent {
     ];
     dataSourceWithUndefined = [{ obj: { field: undefined }}];
 
+    columsChanged = 0;
     @ViewChildren(DxDataGridComponent) innerWidgets: QueryList<DxDataGridComponent>;
 
     testMethod() {}
+
+    onOptionChanged(e) {
+        if (e.name === 'columns') {
+            this.columsChanged++;
+        }
+    }
 }
 
 
@@ -177,5 +185,98 @@ describe('DxDataGrid', () => {
 
         expect(fixture.componentInstance.isDestroyed).toBe(true);
         jasmine.clock().uninstall();
+    });
+});
+
+describe('Nested DxDataGrid', () => {
+    let originalTimeout;
+
+    beforeEach(() => {
+        TestBed.configureTestingModule(
+            {
+                declarations: [TestContainerComponent],
+                imports: [DxDataGridModule]
+            });
+
+        originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = 3000;
+    });
+
+    afterEach(function() {
+        jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
+    });
+
+    // NOTE: https://github.com/angular/angular/issues/18997
+    it('should not update parent DxDataGrid with 30 dxi-column (T545977)', (done) => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-data-grid 
+                        [dataSource]="dataSource"
+                        keyExpr="id"
+                        [masterDetail]="{ enabled: true, template: 'detail' }"
+                        (onOptionChanged)="onOptionChanged($event)">
+
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        <dxi-column dataField="string"></dxi-column>
+                        
+                        <div *dxTemplate="let data of 'detail'">
+                            <dx-data-grid [dataSource]="dataSource">
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                                <dxi-column dataField="number"></dxi-column>
+                            </dx-data-grid>
+                        </div>
+                    </dx-data-grid>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        setTimeout(() => {
+            fixture.detectChanges();
+
+            let testComponent = fixture.componentInstance,
+                widgetComponent = testComponent.innerWidgets.first;
+
+            widgetComponent.instance.expandRow(1);
+            fixture.detectChanges();
+
+            setTimeout(() => {
+                fixture.detectChanges();
+
+                expect(testComponent.columsChanged).toBe(0);
+                testComponent.columsChanged = 0;
+
+                done();
+            }, 1000);
+        }, 1000);
     });
 });

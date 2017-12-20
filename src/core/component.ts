@@ -3,7 +3,10 @@ import {
     NgZone,
     QueryList,
     AfterViewInit,
-    AfterViewChecked
+    DoCheck,
+    OnChanges,
+    AfterContentChecked,
+    SimpleChanges
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -19,9 +22,10 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements AfterViewInit,
-        INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost, AfterViewChecked {
+export abstract class DxComponent implements AfterViewInit, DoCheck, OnChanges, AfterContentChecked,
+    INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _initialOptions: any = {};
+    protected _optionsToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
     templates: DxTemplateDirective[];
@@ -65,24 +69,24 @@ export abstract class DxComponent implements AfterViewInit,
             this.instance.option(name) :
             this._initialOptions[name];
     }
-    protected _setOption(name: string, value: any) {
-        if (this.instance) {
-            this._updateOption(name, value);
-        } else {
-            this._initialOptions[name] = value;
-        }
-    }
     lockWidgetUpdate() {
-        if (!this.widgetUpdateLocked) {
+        if (!this.widgetUpdateLocked && this.instance) {
             this.instance.beginUpdate();
             this.widgetUpdateLocked = true;
         }
     }
-    protected _updateOption(name: string, value: any) {
+    protected _setOption(name: string, value: any) {
         this.lockWidgetUpdate();
-        if (this._shouldOptionChange(name, value)) {
+
+        if (!this._shouldOptionChange(name, value)) {
+            return;
+        }
+
+        if (this.instance) {
             this.instance.option(name, value);
-        };
+        } else {
+            this._initialOptions[name] = value;
+        }
     }
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
@@ -94,7 +98,7 @@ export abstract class DxComponent implements AfterViewInit,
             this.eventHelper.rememberEvent(e.name);
         };
 
-        this._initialOptions.onInitializing = function() {
+        this._initialOptions.onInitializing = function () {
             this.on('optionChanged', optionChangeHandler);
         };
         this.instance = this._createInstance(element, this._initialOptions);
@@ -120,15 +124,35 @@ export abstract class DxComponent implements AfterViewInit,
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
         this.eventHelper = new EmitterHelper(this.ngZone, this);
     }
-    ngAfterViewChecked() {
+    ngAfterViewInit() {
+        if (this.renderOnViewInit) {
+            this._createWidget(this.element.nativeElement);
+        }
+    }
+    ngAfterContentChecked() {
+        this.applyOptions();
         if (this.widgetUpdateLocked) {
             this.widgetUpdateLocked = false;
             this.instance.endUpdate();
         }
     }
-    ngAfterViewInit() {
-        if (this.renderOnViewInit) {
-            this._createWidget(this.element.nativeElement);
+    ngOnChanges(changes: SimpleChanges) {
+        for (let key in changes) {
+            let change = changes[key];
+            if (change.currentValue !== this[key]) {
+                this._optionsToUpdate[key] = changes[key].currentValue;
+            }
+        }
+    }
+    ngDoCheck() {
+        this.applyOptions();
+    }
+    applyOptions() {
+        if (Object.keys(this._optionsToUpdate).length) {
+            if (this.instance) {
+                this.instance.option(this._optionsToUpdate);
+            }
+            this._optionsToUpdate = {};
         }
     }
     setTemplate(template: DxTemplateDirective) {

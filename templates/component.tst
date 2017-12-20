@@ -160,21 +160,29 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._destroyWidget();
     }
 <#? collectionProperties.length #>
-    ngOnChanges(changes: SimpleChanges) {<#~ collectionProperties :prop:i #>
-        this._idh.setup('<#= prop #>', changes);<#~#>
+    ngOnChanges(changes: SimpleChanges) {
+        super.ngOnChanges(changes);<#~ collectionProperties :prop:i #>
+        this.setupChanges('<#= prop #>', changes);<#~#>
+    }
+
+    setupChanges(prop: string, changes: SimpleChanges) {
+        if (!(prop in this._optionsToUpdate)) {
+            this._idh.setup(prop, changes);
+        }
     }
 
     ngDoCheck() {<#~ collectionProperties :prop:i #>
         this._idh.doCheck('<#= prop #>');<#~#>
         this._watcherHelper.checkWatchers();
+        super.ngDoCheck();
     }
 
-    _updateOption(name: string, value: any) {
+    _setOption(name: string, value: any) {
         let isSetup = this._idh.setupSingle(name, value);
         let isChanged = this._idh.getChanges(name, value) !== null;
 
         if (isSetup || isChanged) {
-            super._updateOption(name, value);
+            super._setOption(name, value);
         }
     }<#?#>
 <#? it.isEditor #>
