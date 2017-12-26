@@ -9,7 +9,6 @@ import {
     Input,
     Output,
     QueryList,
-    AfterViewInit,
     OnDestroy
 } from '@angular/core';
 
@@ -31,7 +30,6 @@ let DxTestWidget = DxButton['inherit']({
     _render() {
         this.callBase();
         this.element().classList.add('dx-test-widget');
-        this.option('testCalculatedOption', 'changed');
     }
 });
 
@@ -40,7 +38,7 @@ let DxTestWidget = DxButton['inherit']({
     template: '',
     providers: [DxTemplateHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent implements AfterViewInit, OnDestroy {
+export class DxTestWidgetComponent extends DxComponent implements OnDestroy {
     @Input()
     get testOption(): any {
         return this._getOption('testOption');
@@ -48,20 +46,12 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
     set testOption(value: any) {
         this._setOption('testOption', value);
     };
-    @Input()
-    get testCalculatedOption(): any {
-        return this._getOption('testCalculatedOption');
-    }
-    set testCalculatedOption(value: any) {
-        this._setOption('testCalculatedOption', value);
-    };
 
     @Output() onOptionChanged = new EventEmitter<any>();
     @Output() onInitialized = new EventEmitter<any>();
     @Output() onDisposing = new EventEmitter<any>();
     @Output() onContentReady = new EventEmitter<any>();
     @Output() testOptionChange = new EventEmitter<any>();
-    @Output() testCalculatedOptionChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
@@ -71,17 +61,12 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
             { subscribe: 'initialized', emit: 'onInitialized' },
             { subscribe: 'disposing', emit: 'onDisposing' },
             { subscribe: 'contentReady', emit: 'onContentReady' },
-            { emit: 'testOptionChange' },
-            { emit: 'testCalculatedOptionChange' }
+            { emit: 'testOptionChange' }
         ]);
     }
 
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
-    }
-
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
     }
 
     ngOnDestroy() {
@@ -96,7 +81,6 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit,
 export class TestContainerComponent {
     visible = true;
     testOption: string;
-    testCalculatedOption = 'initial';
     onStableCallCount = 0;
 
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
@@ -371,30 +355,6 @@ describe('DevExtreme Angular widget', () => {
         instance.fireEvent('unknownEvent');
     }));
 
-    it('should detect option changes when option was changed on DX widget creation (T527596)', async(() => {
-        TestBed.configureTestingModule(
-        {
-            declarations: [ TestContainerComponent, DxTestWidgetComponent ],
-            providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }]
-        });
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-                    <dx-test-widget [(testCalculatedOption)]="testCalculatedOption"></dx-test-widget>
-                    <div id="test">{{testCalculatedOption}}</div>
-                `
-            }
-        });
-
-        let fixture = TestBed.createComponent(TestContainerComponent);
-
-        expect(getWidget(fixture).option('testCalculatedOption')).toBe('changed');
-        expect(fixture.componentInstance.testCalculatedOption).toBe('changed');
-        expect(document.getElementById('test').innerText).toBe('changed');
-
-        fixture.autoDetectChanges(false);
-    }));
-
     it('ngZone onStable should not called recursively (T551347)', async(() => {
         TestBed.configureTestingModule(
         {
@@ -413,7 +373,7 @@ describe('DevExtreme Angular widget', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
 
-        expect(fixture.componentInstance.onStableCallCount).toBe(2);
+        expect(fixture.componentInstance.onStableCallCount).toBe(1);
 
         fixture.autoDetectChanges(false);
     }));

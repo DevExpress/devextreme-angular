@@ -77,4 +77,25 @@ describe('DxTabPanel', () => {
 
         expect(fixture.detectChanges.bind(fixture)).not.toThrow();
     });
+
+    it('dxi-item nested component should render own content', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-tab-panel>
+                        <dxi-item title="page1">
+                            <div id="content">Page1</div>
+                        </dxi-item>
+                    </dx-tab-panel>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let content = document.getElementById('content');
+
+        expect(content).not.toBe(null);
+        expect(content.innerText).toBe('Page1');
+    });
 });
