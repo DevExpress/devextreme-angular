@@ -1,3 +1,9 @@
+## 17.2.5-beta.1 (2017-12-26)
+
+### Bug Fixes
+
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/31?closed=1)
+
 ## 17.2.4 (2017-12-13)
 
 ### Bug Fixes
