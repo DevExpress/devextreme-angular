@@ -48,6 +48,12 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
             this.instance.option('integrationOptions.templates', initialTemplates);
         }
     }
+    private _initEvents() {
+        this.instance.on('optionChanged', (e) => {
+            this.changedOptions[e.name] = e.value;
+            this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
+        });
+    }
     private _initOptions() {
         this._initialOptions.eventsStrategy = this.eventHelper.strategy;
         this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
@@ -102,25 +108,15 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
         this._initOptions();
 
         let renderOnContentInit = this.renderOnContentInit;
-        let optionChangeHandler = (e) => {
-            this.eventHelper.rememberEvent(e.name);
-        };
 
         this._initialOptions.onInitializing = function () {
             if (renderOnContentInit) {
                 this.beginUpdate();
             }
-            this.on('optionChanged', optionChangeHandler);
         };
         this.instance = this._createInstance(element, this._initialOptions);
+        this._initEvents();
         this._initialOptions = {};
-        this.eventHelper.fireRemeberedEvents();
-
-        this.instance.off('optionChanged', optionChangeHandler);
-        this.instance.on('optionChanged', (e) => {
-            this.changedOptions[e.name] = e.value;
-            this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
-        });
     }
     protected _destroyWidget() {
         if (this.instance) {

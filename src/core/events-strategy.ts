@@ -62,14 +62,8 @@ export class NgEventsStrategy {
     }
 }
 
-interface IRememberedEvent {
-    name: string;
-    context: EmitterHelper;
-}
-
 export class EmitterHelper {
     strategy: NgEventsStrategy;
-    private _events: IRememberedEvent[] = [];
 
     constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
@@ -85,15 +79,5 @@ export class EmitterHelper {
         if (dxEventName) {
             dxToNgEventNames[dxEventName] = ngEventName;
         }
-    }
-    rememberEvent(name: string) {
-        this._events.push({ name: name, context: this });
-    }
-    fireRemeberedEvents() {
-        this._events.forEach(event => {
-            let value = event.context.component[event.name];
-
-            this.fireNgEvent.call(event.context, event.name + 'Change', [value]);
-        });
     }
 }
