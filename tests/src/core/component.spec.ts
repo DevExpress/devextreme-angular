@@ -33,6 +33,12 @@ let DxTestWidget = DxButton['inherit']({
     }
 });
 
+DxTestWidget.defaultOptions({
+    options: {
+        text: 'test text'
+    }
+});
+
 @Component({
     selector: 'dx-test-widget',
     template: '',
@@ -46,12 +52,20 @@ export class DxTestWidgetComponent extends DxComponent implements OnDestroy {
     set testOption(value: any) {
         this._setOption('testOption', value);
     };
+    @Input()
+    get text(): any {
+        return this._getOption('text');
+    }
+    set text(value: any) {
+        this._setOption('text', value);
+    };
 
     @Output() onOptionChanged = new EventEmitter<any>();
     @Output() onInitialized = new EventEmitter<any>();
     @Output() onDisposing = new EventEmitter<any>();
     @Output() onContentReady = new EventEmitter<any>();
     @Output() testOptionChange = new EventEmitter<any>();
+    @Output() textChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
         super(elementRef, ngZone, templateHost, _watcherHelper);
@@ -61,7 +75,8 @@ export class DxTestWidgetComponent extends DxComponent implements OnDestroy {
             { subscribe: 'initialized', emit: 'onInitialized' },
             { subscribe: 'disposing', emit: 'onDisposing' },
             { subscribe: 'contentReady', emit: 'onContentReady' },
-            { emit: 'testOptionChange' }
+            { emit: 'testOptionChange' },
+            { emit: 'textChange' }
         ]);
     }
 
@@ -377,5 +392,26 @@ describe('DevExtreme Angular widget', () => {
 
         fixture.autoDetectChanges(false);
     }));
+
+    it('should not be failed when two-way binding in markup is used for ininitial option', () => {
+        TestBed.configureTestingModule(
+        {
+            declarations: [ TestContainerComponent, DxTestWidgetComponent ],
+            providers: [{ provide: ComponentFixtureAutoDetect, useValue: true }]
+        });
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget #widget></dx-test-widget>
+                    <div id="test">{{widget.text}}</div>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+
+        expect(document.getElementById('test').innerText).toBe('test text');
+        fixture.autoDetectChanges(false);
+    });
 
   });
