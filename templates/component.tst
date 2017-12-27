@@ -4,7 +4,7 @@
 
 <# var implementedInterfaces = ['OnDestroy']; #>
 
-<# it.isEditor && implementedInterfaces.push('AfterContentInit'); #>
+<# it.isEditor && implementedInterfaces.push('OnInit') && implementedInterfaces.push('AfterViewInit'); #>
 <# it.isEditor && implementedInterfaces.push('ControlValueAccessor'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
@@ -17,7 +17,8 @@ import {
     Output,
     OnDestroy,
     EventEmitter<#? it.isEditor #>,
-    AfterContentInit,
+    OnInit,
+    AfterViewInit,
     ContentChild,
     forwardRef,
     HostListener<#?#><#? collectionProperties.length #>,
@@ -131,11 +132,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 
     protected _createInstance(element, options) {
-        <#? it.isEditor #>let widget = new <#= it.className #>(element, options);
-        if (this.validator) {
-            this.validator.createInstance(element);
-        }
-        return widget;<#?#><#? !it.isEditor #>return new <#= it.className #>(element, options);<#?#>
+        return new <#= it.className #>(element, options);
     }
 <#? it.isEditor #>
     writeValue(value: any): void {
@@ -186,9 +183,16 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         }
     }<#?#>
 <#? it.isEditor #>
-    ngAfterContentInit() {
+    ngOnInit() {
+        super.ngOnInit();
         if (this.validator) {
-            this.validator.renderOnViewInit = false;
+            this.validator.createInstanceOnInit = false;
+        }
+    }
+    ngAfterViewInit() {
+        super.ngAfterViewInit();
+        if (this.validator) {
+            this.validator.createInstance(this.element.nativeElement);
         }
     }<#?#>
 }

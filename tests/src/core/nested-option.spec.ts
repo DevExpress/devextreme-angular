@@ -104,7 +104,7 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
 })
 export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNestedOption implements AfterViewInit  {
     protected get _optionPath() {
-        return 'testCollectionWithTemplateOption';
+        return 'testCollectionOptionWithTemplate';
     }
 
     get template() {
@@ -144,7 +144,7 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
     template: '',
     providers: [DxTemplateHost, NestedOptionHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
+export class DxTestWidgetComponent extends DxComponent {
     @Input()
     get testOption(): any {
         return this._getOption('testOption');
@@ -207,10 +207,6 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
 
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
-    }
-
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
     }
 }
 

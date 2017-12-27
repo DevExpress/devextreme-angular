@@ -62,41 +62,11 @@ export class NgEventsStrategy {
     }
 }
 
-interface IRememberedEvent {
-    name: string;
-    context: EmitterHelper;
-}
-
-let events: IRememberedEvent[] = [];
-let onStableSubscription: IEventSubscription = null;
-
-let createOnStableSubscription = function(ngZone: NgZone, fireNgEvent: Function) {
-    if (onStableSubscription) {
-        return;
-    }
-
-    onStableSubscription = ngZone.onStable.subscribe(function() {
-        onStableSubscription.unsubscribe();
-        onStableSubscription = null;
-
-        ngZone.run(() => {
-            events.forEach(event => {
-                let value = event.context.component[event.name];
-
-                fireNgEvent.call(event.context, event.name + 'Change', [value]);
-            });
-        });
-
-        events = [];
-    });
-};
-
 export class EmitterHelper {
     strategy: NgEventsStrategy;
 
     constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
-        createOnStableSubscription(ngZone, this.fireNgEvent);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
         let emitter = this.component[eventName];
@@ -109,8 +79,5 @@ export class EmitterHelper {
         if (dxEventName) {
             dxToNgEventNames[dxEventName] = ngEventName;
         }
-    }
-    rememberEvent(name: string) {
-        events.push({ name: name, context: this });
     }
 }

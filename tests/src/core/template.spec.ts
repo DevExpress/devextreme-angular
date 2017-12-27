@@ -38,7 +38,7 @@ let DxTestWidget = DxButton['inherit']({
     template: '',
     providers: [DxTemplateHost, WatcherHelper]
 })
-export class DxTestWidgetComponent extends DxComponent implements AfterViewInit {
+export class DxTestWidgetComponent extends DxComponent {
     @Input()
     get testTemplate(): any {
         return this._getOption('testTemplate');
@@ -62,10 +62,6 @@ export class DxTestWidgetComponent extends DxComponent implements AfterViewInit 
     protected _createInstance(element, options) {
         return new DxTestWidget(element, options);
     }
-
-    ngAfterViewInit() {
-        this._createWidget(this.element.nativeElement);
-    }
 }
 
 @Component({
@@ -80,7 +76,9 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
         super(elementRef, ngZone, templateHost, _watcherHelper);
     }
 
-    protected _createInstance() {}
+    protected _createInstance(element, options) {
+        return new DxTestWidget(element, options);
+    }
 
     ngAfterViewInit() {
         this.templates[0].render({
