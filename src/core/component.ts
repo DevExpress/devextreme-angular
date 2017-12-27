@@ -34,7 +34,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
     instance: any;
     isLinked = true;
     changedOptions = {};
-    renderOnContentInit = true;
+    createInstanceOnInit = true;
     widgetUpdateLocked = false;
 
     protected _events: { subscribe?: string, emit: string }[];
@@ -107,10 +107,10 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
         this._initialOptions.integrationOptions = {};
         this._initOptions();
 
-        let renderOnContentInit = this.renderOnContentInit;
+        let createInstanceOnInit = this.createInstanceOnInit;
 
         this._initialOptions.onInitializing = function () {
-            if (renderOnContentInit) {
+            if (createInstanceOnInit) {
                 this.beginUpdate();
             }
         };
@@ -142,7 +142,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
         }
     }
     ngOnInit() {
-        if (this.renderOnContentInit) {
+        if (this.createInstanceOnInit) {
             this._createWidget(this.element.nativeElement);
         }
     }
@@ -151,7 +151,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
     }
     ngAfterViewInit() {
         this._initTemplates();
-        if (this.instance) {
+        if (this.createInstanceOnInit) {
             this.instance.endUpdate();
         }
     }

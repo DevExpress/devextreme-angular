@@ -186,7 +186,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     ngOnInit() {
         super.ngOnInit();
         if (this.validator) {
-            this.validator.renderOnContentInit = false;
+            this.validator.createInstanceOnInit = false;
         }
     }
     ngAfterViewInit() {
