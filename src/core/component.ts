@@ -7,8 +7,8 @@ import {
     OnChanges,
     OnInit,
     DoCheck,
-    AfterViewInit,
-    AfterViewChecked
+    AfterContentChecked,
+    AfterViewInit
 } from '@angular/core';
 
 import { DxTemplateDirective } from './template';
@@ -24,7 +24,7 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterViewInit, AfterViewChecked,
+export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterContentChecked, AfterViewInit,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
     private _initialOptions: any = {};
     protected _optionsToUpdate: any = {};
@@ -149,15 +149,15 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterVi
     ngDoCheck() {
         this.applyOptions();
     }
+    ngAfterContentChecked() {
+        this.applyOptions();
+        this.unlockWidgetUpdate();
+    }
     ngAfterViewInit() {
         this._initTemplates();
         if (this.createInstanceOnInit) {
             this.instance.endUpdate();
         }
-    }
-    ngAfterViewChecked() {
-        this.applyOptions();
-        this.unlockWidgetUpdate();
     }
 
     applyOptions() {
