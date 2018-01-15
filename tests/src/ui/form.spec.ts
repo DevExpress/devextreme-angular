@@ -2,16 +2,14 @@
 
 import {
     Component,
-    ViewChildren,
-    QueryList
+    ViewChild
 } from '@angular/core';
 
 import {
     TestBed,
-    async
+    async,
+    ComponentFixture
 } from '@angular/core/testing';
-
-import DxForm from 'devextreme/ui/form';
 
 import {
     DxFormModule,
@@ -28,7 +26,7 @@ class TestContainerComponent {
         name: 'Unknown',
         date: new Date()
     };
-    @ViewChildren(DxFormComponent) innerWidgets: QueryList<DxFormComponent>;
+    @ViewChild(DxFormComponent) formComponent: DxFormComponent;
 }
 
 describe('DxForm', () => {
@@ -41,9 +39,8 @@ describe('DxForm', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-form') || fixture.nativeElement;
-        return DxForm['getInstance'](widgetElement) as any;
+    function getWidget(fixture: ComponentFixture<TestContainerComponent>) {
+        return fixture.componentInstance.formComponent.instance;
     }
 
     // spec
@@ -108,6 +105,31 @@ describe('DxForm', () => {
         let instance = getWidget(fixture);
         expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
     }));
+
+    it('should update model after editor value was changed', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form [formData]="formData">
+                        <dxi-item dataField="name" editorType="dxTextBox">
+                        </dxi-item>
+                    </dx-form>
+                    <span id="text">{{formData.name}}<span>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.autoDetectChanges();
+
+        let instance = getWidget(fixture);
+        let input = instance.element().querySelector('input');
+        input.value = 'test value';
+        input.dispatchEvent(new Event('change'));
+
+        expect(document.getElementById('text').innerText).toBe('test value');
+        fixture.autoDetectChanges(false);
+    });
 
     it('should work with dxTagBox', async(() => {
         TestBed.overrideComponent(TestContainerComponent, {
