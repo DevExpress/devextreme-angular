@@ -1,5 +1,6 @@
-import { EventEmitter, NgZone } from '@angular/core';
+import { EventEmitter, NgZone, Injectable } from '@angular/core';
 import { DxComponent } from './component';
+import * as eventsEngine from 'devextreme/events/core/events_engine';
 
 const dxToNgEventNames = {};
 
@@ -14,7 +15,9 @@ export class NgEventsStrategy {
     constructor(private component: DxComponent, private ngZone: NgZone) { }
 
     hasEvent(name: string) {
-        return this.getEmitter(name).observers.length;
+        return this.ngZone.run(() => {
+            return this.getEmitter(name).observers.length;
+        });
     }
 
     fireEvent(name, args) {
@@ -79,5 +82,18 @@ export class EmitterHelper {
         if (dxEventName) {
             dxToNgEventNames[dxEventName] = ngEventName;
         }
+    }
+}
+
+@Injectable()
+export class EventsRegistrator {
+    constructor(ngZone: NgZone) {
+        eventsEngine.set({
+            on: function(...args) {
+                ngZone.runOutsideAngular(() => {
+                    this.callBase.apply(this, args);
+                });
+            }
+        });
     }
 }

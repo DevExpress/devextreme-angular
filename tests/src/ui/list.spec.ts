@@ -5,6 +5,7 @@ import {
     Component,
     ViewChildren,
     QueryList,
+    AfterViewChecked,
     OnDestroy
 } from '@angular/core';
 
@@ -26,7 +27,7 @@ import {
     selector: 'test-container-component',
     template: ''
 })
-class TestContainerComponent {
+class TestContainerComponent implements AfterViewChecked {
     emptyItems = undefined;
     items = [1];
     complexItems = [{ text: 'Item 1' }];
@@ -34,6 +35,9 @@ class TestContainerComponent {
     defaultTemplateItems = [{ text: 'test', disabled: false }];
     disabled = false;
     @ViewChildren(DxListComponent) innerWidgets: QueryList<DxListComponent>;
+
+    ngAfterViewChecked() {}
+
 }
 
 describe('DxList', () => {
@@ -545,4 +549,23 @@ describe('DxList', () => {
         expect(DxButton['getInstance'](elements[1])).not.toBeUndefined();
     }));
 
+    it('widget events should subscribe on native events outside NgZone', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-list [items]="items"></dx-list>`
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.autoDetectChanges();
+
+        let instance = getWidget(fixture);
+        let onChangesSpy = spyOn(fixture.componentInstance, 'ngAfterViewChecked');
+
+        expect(onChangesSpy.calls.count()).toBe(0);
+        instance.element().dispatchEvent(new Event('mouseover'));
+
+        expect(onChangesSpy.calls.count()).toBe(0);
+        fixture.autoDetectChanges(false);
+    });
 });
