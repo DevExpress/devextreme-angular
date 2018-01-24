@@ -158,14 +158,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "itemTitleTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item title."
+          "Description": "Specifies a custom template for item titles."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -444,7 +444,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onCancelClick": {
           "PrimitiveTypes": [
@@ -543,7 +543,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "Specifies the element the action sheet popover points at."
+          "Description": "Specifies the element the action sheet popover points at. Applies only if usePopover is true."
         },
         "title": {
           "PrimitiveTypes": [
@@ -747,7 +747,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "maxItemCount": {
           "PrimitiveTypes": [
@@ -1853,6 +1853,12 @@
               ],
               "Description": "Specifies the ratio value used to count the item element size along the main direction."
             },
+            "shrink": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "A factor that defines how much an item shrinks relative to the rest of the items in the container."
+            },
             "template": {
               "PrimitiveTypes": [
                 "any"
@@ -1879,7 +1885,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -2475,7 +2481,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering the Button widget."
+          "Description": "Specifies a custom template for the Button widget."
         },
         "text": {
           "PrimitiveTypes": [
@@ -2540,7 +2546,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering calendar cells."
+          "Description": "Specifies a custom template for calendar cells."
         },
         "dateSerializationFormat": {
           "PrimitiveTypes": [
@@ -6134,7 +6140,7 @@
                 "number",
                 "string"
               ],
-              "Description": "Specifies the interval between minor ticks. Applies only to the axes of the \"continuous\" type.",
+              "Description": "Specifies the interval between minor ticks. Applies only to continuous axes.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -6412,7 +6418,7 @@
                 "number",
                 "string"
               ],
-              "Description": "Specifies the interval between major ticks.",
+              "Description": "Specifies the interval between major ticks. Does not apply to discrete axes.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -7784,7 +7790,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget input field."
+          "Description": "Specifies a custom template for the input field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -8090,7 +8096,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the context menu."
+          "Description": "Specifies whether to close the ContextMenu if a user clicks outside it."
         },
         "cssClass": {
           "PrimitiveTypes": [
@@ -8196,7 +8202,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -8337,14 +8343,6 @@
             "any"
           ],
           "Description": "The selected item object."
-        },
-        "selectedItems": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "SingularName": "selectedItem",
-          "Description": "An array of currently selected item objects."
         },
         "selectionByClick": {
           "PrimitiveTypes": [
@@ -9273,7 +9271,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies the template for detail sections."
+              "Description": "Specifies a custom template for detail sections."
             }
           }
         },
@@ -9675,7 +9673,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for grid rows."
+          "Description": "Specifies a custom template for rows."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -10959,7 +10957,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget's text field."
+          "Description": "Specifies a custom template for the text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -13405,7 +13403,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -14660,7 +14658,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering item groups. Specifies a custom template for a group caption."
+          "Description": "Specifies a custom template for group captions."
         },
         "height": {
           "PrimitiveTypes": [
@@ -14766,7 +14764,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -15054,6 +15052,12 @@
           ],
           "Description": "Specifies whether the widget finds entries that contain your search string or entries that only start with it."
         },
+        "searchTimeout": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a delay in milliseconds between when a user finishes typing, and the search is executed."
+        },
         "searchValue": {
           "PrimitiveTypes": [
             "string"
@@ -15254,7 +15258,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the overlapping window."
+          "Description": "Specifies whether to close the widget if a user clicks outside it."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -15284,7 +15288,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The height of the widget."
+          "Description": "Specified the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -15545,7 +15549,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "A Boolean value specifying whether or not a widget is closed if a user clicks outside of the overlaying window."
+          "Description": "Specifies whether to close the drop-down menu if a user clicks outside it."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -15610,7 +15614,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field."
+          "Description": "Specifies a custom template for the input field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -15635,7 +15639,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for a group caption."
+          "Description": "Specifies a custom template for group captions."
         },
         "height": {
           "PrimitiveTypes": [
@@ -15716,7 +15720,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "minSearchLength": {
           "PrimitiveTypes": [
@@ -15884,7 +15888,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The height of the widget popup element."
+          "Description": "Specifies the popup element's height. Applies only if fullScreen is false."
         },
         "popupWidth": {
           "PrimitiveTypes": [
@@ -15893,7 +15897,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The width of the widget popup element."
+          "Description": "Specifies the popup element's width. Applies only if fullScreen is false."
         },
         "position": {
           "PrimitiveTypes": [
@@ -16037,7 +16041,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering the widget title."
+          "Description": "Specifies a custom template for the title."
         },
         "useNativeScrolling": {
           "PrimitiveTypes": [
@@ -16624,7 +16628,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -16992,7 +16996,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -17260,7 +17264,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -17890,7 +17894,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -18958,7 +18962,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content. Rendered only once - when the widget is created."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -19066,14 +19070,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "itemTitleTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item title."
+          "Description": "Specifies a custom template for item titles."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -19926,7 +19930,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the height of the widget."
+          "Description": "Specifies the widget's height."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -22624,7 +22628,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -22871,7 +22875,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering the widget title."
+          "Description": "Specifies a custom template for the widget title. Does not apply if the title is defined."
         },
         "toolbarItems": {
           "ItemPrimitiveTypes": [
@@ -23009,14 +23013,14 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the overlapping window."
+          "Description": "Specifies whether to close the widget if a user clicks outside it."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -23061,7 +23065,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The height of the widget in pixels."
+          "Description": "Specifies the widget's height in pixels."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -23269,7 +23273,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering the widget title."
+          "Description": "Specifies a custom template for the widget title. Does not apply if the title is defined."
         },
         "toolbarItems": {
           "ItemPrimitiveTypes": [
@@ -23349,7 +23353,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The widget width in pixels."
+          "Description": "Specifies the widget's width in pixels."
         }
       }
     },
@@ -23645,7 +23649,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "layout": {
           "PrimitiveTypes": [
@@ -25648,6 +25652,12 @@
                 "string"
               ],
               "Description": "Decides on which screens the current column is rendered."
+            },
+            "shrink": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "A factor that defines how much a column width shrinks relative to the rest of the columns in the container."
             }
           }
         },
@@ -25784,7 +25794,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -25877,6 +25887,12 @@
                 "string"
               ],
               "Description": "Decides on which screens the current row is rendered."
+            },
+            "shrink": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "A factor that defines how much a row height shrinks relative to the rest of the rows in the container."
             }
           }
         },
@@ -25937,14 +25953,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering appointments."
+          "Description": "Specifies a custom template for appointments."
         },
         "appointmentTooltipTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering an appointment tooltip."
+          "Description": "Specifies a custom template for appointment tooltips."
         },
         "cellDuration": {
           "PrimitiveTypes": [
@@ -25977,7 +25993,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering table cells."
+          "Description": "Specifies a custom template for table cells."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -25996,7 +26012,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template used for rendering day scale items."
+          "Description": "Specifies a custom template for day scale items."
         },
         "dateSerializationFormat": {
           "PrimitiveTypes": [
@@ -26021,7 +26037,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering appointments in the appointment collector's drop-down list."
+          "Description": "Specifies a custom template for appointments in the appointment collector's drop-down list."
         },
         "editing": {
           "PrimitiveTypes": [
@@ -26090,7 +26106,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the first day of a week."
+          "Description": "Specifies the first day of a week. Does not apply to the agenda view."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -26314,7 +26330,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering resource headers."
+          "Description": "Specifies a custom template for resource headers."
         },
         "resources": {
           "ItemPrimitiveTypes": [
@@ -26457,7 +26473,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering time scale items."
+          "Description": "Specifies a custom template for time scale items."
         },
         "timeZone": {
           "PrimitiveTypes": [
@@ -26493,14 +26509,14 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies a custom template for an appointment."
+              "Description": "Specifies a custom template for appointments."
             },
             "appointmentTooltipTemplate": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering an appointment tooltip."
+              "Description": "Specifies a custom template for appointment tooltips."
             },
             "cellDuration": {
               "PrimitiveTypes": [
@@ -26513,21 +26529,21 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering table cells."
+              "Description": "Specifies a custom template for table cells."
             },
             "dateCellTemplate": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering date scale items."
+              "Description": "Specifies a custom template for date scale items."
             },
             "dropDownAppointmentTemplate": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering appointments in the appointment collector's drop-down list."
+              "Description": "Specifies a custom template for appointments in the appointment collector's drop-down list."
             },
             "endDayHour": {
               "PrimitiveTypes": [
@@ -26540,7 +26556,7 @@
                 "number",
                 "string"
               ],
-              "Description": "The first day of a week."
+              "Description": "The first day of a week. Does not apply to the agenda view."
             },
             "groups": {
               "ItemPrimitiveTypes": [
@@ -26574,7 +26590,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering resource headers."
+              "Description": "Specifies a custom template for resource headers."
             },
             "startDate": {
               "PrimitiveTypes": [
@@ -26595,7 +26611,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "The template to be used for rendering time scale items."
+              "Description": "Specifies a custom template for time scale items."
             },
             "type": {
               "PrimitiveTypes": [
@@ -26872,7 +26888,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
+          "Description": "Specifies a custom template for the text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -26972,7 +26988,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "maxLength": {
           "PrimitiveTypes": [
@@ -27335,7 +27351,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content. Rendered only once - when the widget is created."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -27443,7 +27459,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "menuGrouped": {
           "PrimitiveTypes": [
@@ -27456,14 +27472,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for a group caption."
+          "Description": "Specifies a custom template for group captions."
         },
         "menuItemTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template used to render menu items."
+          "Description": "Specifies a custom template for menu items."
         },
         "menuPosition": {
           "PrimitiveTypes": [
@@ -27628,7 +27644,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -27674,7 +27690,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering menu panel content."
+          "Description": "Specifies a custom template for the menu content."
         },
         "menuVisible": {
           "PrimitiveTypes": [
@@ -28783,14 +28799,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "itemTitleTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item title."
+          "Description": "Specifies a custom template for item titles."
         },
         "loop": {
           "PrimitiveTypes": [
@@ -29101,7 +29117,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -29358,7 +29374,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template to be used for rendering the widget text field. Must contain the TextBox widget."
+          "Description": "Specifies a custom template for the text field. Must contain the TextBox widget."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -29464,7 +29480,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "maxDisplayedTags": {
           "PrimitiveTypes": [
@@ -29768,7 +29784,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for a tag."
+          "Description": "Specifies a custom template for tags."
         },
         "text": {
           "PrimitiveTypes": [
@@ -30639,7 +30655,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -30798,7 +30814,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the overlapping window."
+          "Description": "Specifies whether to close the widget if a user clicks outside it."
         },
         "closeOnSwipe": {
           "PrimitiveTypes": [
@@ -30811,7 +30827,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -30844,7 +30860,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The height of the widget in pixels."
+          "Description": "Specifies the widget's height in pixels."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -31017,7 +31033,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "The widget width in pixels."
+          "Description": "Specifies the widget's width in pixels."
         }
       }
     },
@@ -31161,14 +31177,14 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "menuItemTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "The template used to render menu items. Specifies a custom template for a menu item."
+          "Description": "Specifies a custom template for menu items."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -31325,7 +31341,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "A template to be used for rendering widget content."
+          "Description": "Specifies a custom template for the widget content."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -33724,7 +33740,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -33902,6 +33918,12 @@
             "string"
           ],
           "Description": "Specifies whether the widget finds entries that contain your search string or entries that only start with it."
+        },
+        "searchTimeout": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a delay in milliseconds between when a user finishes typing, and the search is executed."
         },
         "searchValue": {
           "PrimitiveTypes": [
@@ -34108,7 +34130,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for an item."
+          "Description": "Specifies a custom template for items."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -38138,7 +38160,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the group cell of a grid column."
+          "Description": "Specifies a custom template for group cells."
         },
         "groupIndex": {
           "PrimitiveTypes": [
@@ -38151,7 +38173,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the column header."
+          "Description": "Specifies a custom template for column headers."
         },
         "headerFilter": {
           "Description": "Specifies data settings for the header filter.",
@@ -38354,7 +38376,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the column is visible or not."
+          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
@@ -38376,34 +38398,46 @@
         "caption": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the data field's caption."
         },
         "customizeText": {
           "PrimitiveTypes": [
             "Function"
           ],
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Customizes the input value's display text."
         },
         "dataField": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the name of a field to be filtered."
         },
         "dataType": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Casts field values to a specific data type."
+        },
+        "editorOptions": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Configures the widget used to edit the field value."
         },
         "editorTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies the editor's custom template."
         },
         "falseText": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the false value text. Applies only if dataType is \"boolean\"."
         },
         "filterOperations": {
           "PrimitiveTypes": [
@@ -38413,7 +38447,8 @@
             "string"
           ],
           "IsCollection": true,
-          "SingularName": "filterOperation"
+          "SingularName": "filterOperation",
+          "Description": "Specifies a set of available filter operations."
         },
         "format": {
           "PrimitiveTypes": [
@@ -38422,14 +38457,17 @@
           ],
           "ComplexTypes": [
             "Format"
-          ]
+          ],
+          "Description": "Formats a value before it is displayed."
         },
         "lookup": {
+          "Description": "Configures the lookup field.",
           "Options": {
             "allowClearing": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether a user can nullify the lookup values. Set to true only if your data source accepts null values."
             },
             "dataSource": {
               "PrimitiveTypes": [
@@ -38438,28 +38476,32 @@
               "ItemPrimitiveTypes": [
                 "any"
               ],
-              "IsDataSource": true
+              "IsDataSource": true,
+              "Description": "Specifies the lookup data source."
             },
             "displayExpr": {
               "PrimitiveTypes": [
                 "Function",
                 "string"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies the data source field whose values are displayed."
             },
             "valueExpr": {
               "PrimitiveTypes": [
                 "Function",
                 "string"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies the data source field whose values should be replaced."
             }
           }
         },
         "trueText": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the true value text. Applies only if dataType is \"boolean\"."
         }
       }
     },
@@ -39009,6 +39051,12 @@
             "number"
           ],
           "Description": "Specifies the base value for the indicator of the rangeBar type."
+        },
+        "beginAdaptingAtRadius": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a radius small enough for the indicator to begin adapting."
         },
         "color": {
           "PrimitiveTypes": [
@@ -41985,7 +42033,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the column header."
+          "Description": "Specifies a custom template for column headers."
         },
         "headerFilter": {
           "Description": "Specifies data settings for the header filter.",
@@ -42175,7 +42223,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the column is visible or not."
+          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
