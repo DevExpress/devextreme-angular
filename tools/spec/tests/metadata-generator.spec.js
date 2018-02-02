@@ -615,6 +615,8 @@ describe("metadata-generator", function() {
                                 ]
                             },
                             property3: {
+                            },
+                            property4: {
                             }
                         }
                     }
@@ -649,14 +651,14 @@ describe("metadata-generator", function() {
         it("should generate nested components with merged properties", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoExternalProperty');
 
-            expect(metas.DxoExternalProperty.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2', 'property3']);
+            expect(metas.DxoExternalProperty.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2', 'property3', 'property4']);
             expect(metas.DxoExternalProperty.optionName).toBe('externalProperty');
         });
 
         it("should generate collection nested components with merged properties", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxiExternalPropertyItem');
 
-            expect(metas.DxiExternalPropertyItem.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2', 'property3']);
+            expect(metas.DxiExternalPropertyItem.properties.map(p => p.name)).toEqual(['property', 'property1', 'property2', 'property3', 'property4']);
             expect(metas.DxiExternalPropertyItem.optionName).toBe('externalPropertyItems');
         });
 
@@ -677,6 +679,7 @@ describe("metadata-generator", function() {
                     '{ nestedProperty2?: string }',
                     'string', 
                     'any', 
+                    '{ nestedProperty1?: number, nestedProperty2?: string }',
                     'any'
                 ]);
         });
