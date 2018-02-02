@@ -170,7 +170,7 @@ export default class DXComponentMetadataGenerator {
     }
 
     private getTypesDescription(optionMetadata) {
-        let typeParts = this.getTypeParts(optionMetadata, true);
+        let typeParts = this.getTypeParts(optionMetadata);
 
         return {
             primitiveTypes: typeParts.primitiveTypes,
@@ -179,7 +179,7 @@ export default class DXComponentMetadataGenerator {
         };
     }
 
-    private getTypeParts(optionMetadata, canIgnoreObjectType) {
+    private getTypeParts(optionMetadata) {
         let primitiveTypes = optionMetadata.PrimitiveTypes ? optionMetadata.PrimitiveTypes.slice(0) : [];
         let arrayTypes = [];
 
@@ -207,7 +207,7 @@ export default class DXComponentMetadataGenerator {
         let objectType = [];
 
         for (let option in optionMetadata) {
-            let typeParts = this.getTypeParts(optionMetadata[option], false);
+            let typeParts = this.getTypeParts(optionMetadata[option]);
             let type = this.getType(typeParts);
 
             objectType.push(option + '?: ' + type);
