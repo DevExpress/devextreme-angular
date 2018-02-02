@@ -288,7 +288,7 @@ gulp.task('watch.test', function(done) {
 //------------TSLint------------
 
 gulp.task('lint', function() {
-    return gulp.src([path.join(buildConfig.components.sourceCorePath, buildConfig.components.srcFilesPattern)]
+    return gulp.src([path.join(buildConfig.components.sourcePath, buildConfig.components.srcFilesPattern)]
             .concat(buildConfig.components.tsTestSrc)
             .concat(buildConfig.examples.srcFilesPattern)
             .concat(buildConfig.tools.srcFilesPattern)

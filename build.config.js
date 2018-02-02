@@ -56,7 +56,6 @@ module.exports = {
         tsTestSrc: ['tests/src/**/*.spec.ts'],
         testsPath: 'tests/dist',
         sourcePath: 'src',
-        sourceCorePath: 'src/core',
         outputPath: 'dist',
         bundleName: bundleName
     },
