@@ -192,8 +192,7 @@ export default class DXComponentMetadataGenerator {
             }
         }
 
-        // TODO: Get rid of right part of this condition in 18.1
-        if (optionMetadata.Options && (!canIgnoreObjectType || (primitiveTypes.length || arrayTypes.length))) {
+        if (optionMetadata.Options) {
             let optionType = this.getObjectType(optionMetadata.Options);
 
             if (optionType.length) {
