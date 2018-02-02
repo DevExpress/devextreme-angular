@@ -623,7 +623,7 @@ describe("metadata-generator", function() {
         });
 
         it("should write generated data to a separate file for each widget", function() {
-            expect(store.write.calls.count()).toBe(4);
+            expect(store.write.calls.count()).toBe(5);
 
             let writeToPathCount = (path) => {
                 return store.write.calls
@@ -638,7 +638,7 @@ describe("metadata-generator", function() {
         });
 
         it("should generate matadata", function() {
-            expect(Object.keys(metas).length).toBe(4);
+            expect(Object.keys(metas).length).toBe(5);
 
             expect(metas.DxComplexWidget).not.toBe(undefined);
             expect(metas.DxoExternalProperty).not.toBe(undefined);
