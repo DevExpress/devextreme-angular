@@ -7,7 +7,7 @@ let inflector = require('inflector-js');
 
 const OPTION_COMPONENT_PREFIX = 'Dxo';
 const ITEM_COMPONENT_PREFIX = 'Dxi';
-const TYPES_SEPORATOR = '|\n        ';
+const TYPES_SEPORATOR = ' | ';
 
 function trimDx(value: string) {
     return trimPrefix('dx-', value);
