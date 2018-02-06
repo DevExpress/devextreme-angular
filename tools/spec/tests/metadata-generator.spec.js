@@ -687,11 +687,6 @@ describe("metadata-generator", function() {
         it("should generate nested components with merged isDevExpressRequired", function() {
             expect(metas.DxoExternalProperty.isDevExpressRequired).toBe(true);
         });
-
-        it("should generate nested components with complex types", function() {
-           expect(metas.DxoExternalProperty.properties[3].type).toEqual('{ nestedProperty1?: number, nestedProperty2?: string }');
-        });
-
     });
 
     
