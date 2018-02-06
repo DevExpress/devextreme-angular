@@ -4,7 +4,7 @@ describe("metadata-generator", function() {
     var path = require('path');
     var Generator = require('../../dist/metadata-generator').default;
 
-    const TYPES_SEPORATOR = '|\n        ';
+    const TYPES_SEPORATOR = ' | ';
 
     var testConfig = {
         sourceMetadataFilePath: "source-path",
