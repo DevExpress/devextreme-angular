@@ -1,3 +1,8 @@
+## Unreleased
+
+### Breaking changes
+TypeScript declarations of nested components have become strict, which can cause a build failure. Use correct types to prevent this.
+
 ## 17.2.5-beta.1 (2017-12-26)
 
 ### Bug Fixes
