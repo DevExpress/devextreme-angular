@@ -5,6 +5,8 @@ import {
     NgModule,
     Host,<#? it.hasTemplate #>
     ElementRef,
+    Renderer2,
+    Inject,
     AfterViewInit,<#?#>
     SkipSelf<#? it.properties #>,
     Input<#?#><#? it.collectionNestedComponents.length #>,
@@ -12,6 +14,8 @@ import {
     forwardRef,
     QueryList<#?#>
 } from '@angular/core';
+
+<#? it.hasTemplate #>import { DOCUMENT } from '@angular/common';<#?#>
 
 <#? it.isDevExpressRequired #>
 import DevExpress from 'devextreme/bundles/dx.all';<#?#>
@@ -56,6 +60,8 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
 <#~#>
     constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost,
             @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>,
+            private renderer: Renderer2,
+            @Inject(DOCUMENT) private document: any,
             @Host() templateHost: DxTemplateHost,
             private element: ElementRef<#?#>) {
         super();
@@ -74,7 +80,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this.template = template;
     }
     ngAfterViewInit() {
-        extractTemplate(this, this.element);
+        extractTemplate(this, this.element, this.renderer, this.document);
     }
 <#?#>
 }

@@ -6,11 +6,12 @@ import {
     TemplateRef,
     ViewContainerRef,
     Input,
+    Renderer2,
     NgZone
 } from '@angular/core';
 
 import { DxTemplateHost } from './template-host';
-import { addClass, getElement } from './utils';
+import { getElement } from './utils';
 import * as events from 'devextreme/events';
 
 export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
@@ -34,6 +35,7 @@ export class DxTemplateDirective {
     constructor(private templateRef: TemplateRef<any>,
         private viewContainerRef: ViewContainerRef,
         templateHost: DxTemplateHost,
+        private renderer: Renderer2,
         private ngZone: NgZone) {
         templateHost.setTemplate(this);
     }
@@ -46,7 +48,7 @@ export class DxTemplateDirective {
         let container = getElement(renderData.container);
         if (renderData.container) {
             childView.rootNodes.forEach((element) => {
-                container.appendChild(element);
+                this.renderer.appendChild(container, element);
             });
         }
         // =========== WORKAROUND =============
@@ -56,7 +58,9 @@ export class DxTemplateDirective {
         });
         // =========== /WORKAROUND =============
         childView.rootNodes.forEach((element) => {
-            addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+            if (element.nodeType === 1) {
+                this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+            }
 
             events.one(element, 'dxremove', (e) => {
                 if (!e._angularIntegration) {
