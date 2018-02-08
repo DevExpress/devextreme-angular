@@ -58,7 +58,9 @@ export class DxTemplateDirective {
         });
         // =========== /WORKAROUND =============
         childView.rootNodes.forEach((element) => {
-            this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+            if (element.nodeType === 1) {
+                this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+            }
 
             events.one(element, 'dxremove', (e) => {
                 if (!e._angularIntegration) {
