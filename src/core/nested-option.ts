@@ -1,7 +1,8 @@
 import { QueryList, ElementRef, Renderer2 } from '@angular/core';
+import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import { hasClass, getElement } from './utils';
+import { getElement } from './utils';
 
 import * as events from 'devextreme/events';
 
@@ -131,7 +132,7 @@ export interface IOptionWithTemplate extends BaseNestedOption {
 let triggerShownEvent = function(element) {
     let changeHandlers = [];
 
-    if (hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
+    if (getDOM().hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
         changeHandlers.push(element);
     }
 
