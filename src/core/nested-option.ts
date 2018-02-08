@@ -1,7 +1,7 @@
-import { QueryList, ElementRef } from '@angular/core';
+import { QueryList, ElementRef, Renderer2 } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import { addClass, hasClass, getElement } from './utils';
+import { hasClass, getElement } from './utils';
 
 import * as events from 'devextreme/events';
 
@@ -142,7 +142,7 @@ let triggerShownEvent = function(element) {
     }
 };
 
-export function extractTemplate(option: IOptionWithTemplate, element: ElementRef) {
+export function extractTemplate(option: IOptionWithTemplate, element: ElementRef, renderer: Renderer2, document: any) {
     if (!option.template === undefined || !element.nativeElement.hasChildNodes()) {
         return;
     }
@@ -164,13 +164,13 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         render: (renderData) => {
             let result = element.nativeElement;
 
-            addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
+            renderer.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
 
             if (renderData.container) {
                 let container = getElement(renderData.container);
                 let resultInContainer = container.contains(element.nativeElement);
 
-                container.appendChild(element.nativeElement);
+                renderer.appendChild(container, element.nativeElement);
 
                 if (!resultInContainer) {
                     let resultInBody = document.body.contains(container);
