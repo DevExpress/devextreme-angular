@@ -15,7 +15,7 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
-<#? it.hasTemplate #>import { DOCUMENT } from '@angular/core';<#?#>
+<#? it.hasTemplate #>import { DOCUMENT } from '@angular/common';<#?#>
 
 <#? it.isDevExpressRequired #>
 import DevExpress from 'devextreme/bundles/dx.all';<#?#>
@@ -61,7 +61,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost,
             @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>,
             private renderer: Renderer2,
-            @Inject(DOCUMENT) private document: any
+            @Inject(DOCUMENT) private document: any,
             @Host() templateHost: DxTemplateHost,
             private element: ElementRef<#?#>) {
         super();
