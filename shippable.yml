@@ -15,15 +15,14 @@ before_script:
 
 build:
   pre_ci_boot:
-    image_name: drydock/u14nodpls
+    image_name: drydock/u16nodall
     image_tag: prod
     pull: true
 
   ci:
-    - export DISPLAY=:99.0
     - shippable_retry npm install --unsafe-perm
-    - xvfb-run --server-args="-ac" gulp test
+    - gulp test
     - shippable_retry npm install @angular/core@^4.0.0 @angular/common@^4.0.0 @angular/forms@^4.0.0 @angular/compiler@^4.0.0 @angular/platform-browser@^4.0.0 @angular/platform-browser-dynamic@^4.0.0 --unsafe-perm
-    - xvfb-run --server-args="-ac" gulp run.tests
+    - gulp run.tests
     - shippable_retry npm install @angular/core@^2.4.2 @angular/common@^2.4.2 @angular/forms@^2.4.2 @angular/compiler@^2.4.2 @angular/platform-browser@^2.4.2 @angular/platform-browser-dynamic@^2.4.2 --unsafe-perm
-    - xvfb-run --server-args="-ac" gulp run.tests
+    - gulp run.tests
