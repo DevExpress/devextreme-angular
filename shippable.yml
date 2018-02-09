@@ -22,6 +22,9 @@ build:
   ci:
     - shippable_retry npm install --unsafe-perm
     - gulp test
-    - shippable_retry npm install @angular/core@^5.0.0-rc.1 @angular/common@^5.0.0-rc.1 @angular/forms@^5.0.0-rc.1 @angular/compiler@^5.0.0-rc.1 @angular/platform-browser@^5.0.0-rc.1 @angular/platform-browser-dynamic@^5.0.0-rc.1 --unsafe-perm
+    - shippable_retry npm install @angular/core@^5.0.0 @angular/common@^5.0.0 @angular/forms@^5.0.0 @angular/compiler@^5.0.0 @angular/platform-browser@^5.0.0 @angular/platform-browser-dynamic@^5.0.0 --unsafe-perm
+    - gulp build.tests
+    - gulp run.tests
+    - shippable_retry npm install @angular/core@^6.0.0-0 @angular/common@^6.0.0-0 @angular/forms@^6.0.0-0 @angular/compiler@^6.0.0-0 @angular/platform-browser@^6.0.0-0 @angular/platform-browser-dynamic@^6.0.0-0 --unsafe-perm
     - gulp build.tests
     - gulp run.tests
