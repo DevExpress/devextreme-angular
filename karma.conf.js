@@ -1,3 +1,5 @@
+var webpackConfig = require('./webpack.test');
+
 module.exports = function(config) {
     config.set({
 
@@ -6,47 +8,11 @@ module.exports = function(config) {
         frameworks: ['jasmine'],
 
         files: [
-            // System.js for module loading
-            'node_modules/systemjs/dist/system.src.js',
-
-            // Polyfills
-            'node_modules/core-js/client/shim.js',
-
-            // Reflect and Zone.js
-            'node_modules/zone.js/dist/zone.js',
-            'node_modules/zone.js/dist/long-stack-trace-zone.js',
-            'node_modules/zone.js/dist/proxy.js',
-            'node_modules/zone.js/dist/sync-test.js',
-            'node_modules/zone.js/dist/jasmine-patch.js',
-            'node_modules/zone.js/dist/async-test.js',
-            'node_modules/zone.js/dist/fake-async-test.js',
-
-            // RxJs
-            { pattern: 'node_modules/rxjs/**/*.+(js|js.map)', included: false, watched: false },
-
-            // Angular 2 itself and the testing library
-            { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.+(js|js.map)', included: false, watched: false },
-
-            // DevExtreme & DevExtreme Deps
-            { pattern: 'node_modules/jszip/dist/jszip.min.js', included: false, watched: false },
-            { pattern: 'node_modules/devextreme/**/*.js', included: false, watched: false },
-
-            { pattern: 'dist/**/*.+(js|js.map|ts)', included: false, watched: true },
-
-            { pattern: 'node_modules/systemjs/dist/system-polyfills.js', included: false, watched: false }, // PhantomJS2 require it
-
-            // Karma config
-            { pattern: 'karma.systemjs.conf.js', included: false, watched: false },
-            { pattern: 'karma.test.shim.js', included: true, watched: true },
-
-            // Tests
-            { pattern: 'tests/dist/**/*.+(js|js.map|ts)', included: false, watched: true }
+            { pattern: './karma.test.shim.js', watched: false }
         ],
 
-        // proxied base paths
-        proxies: {
-            // required for component assests fetched by Angular's compiler
-            '/src/': '/base/src/'
+        preprocessors: {
+            './karma.test.shim.js': [ 'webpack' ]
         },
 
         port: 9876,
@@ -71,12 +37,14 @@ module.exports = function(config) {
 
         // Karma plugins loaded
         plugins: [
-            'karma-jasmine',
-            'karma-coverage',
-            'karma-junit-reporter',
-            'karma-phantomjs-launcher',
-            'karma-chrome-launcher'
+            require('karma-jasmine'),
+            require('karma-chrome-launcher'),
+            require('karma-phantomjs-launcher'),
+            require('karma-junit-reporter'),
+            require('karma-webpack')
         ],
+
+        webpack: webpackConfig,
 
         singleRun: true,
 
