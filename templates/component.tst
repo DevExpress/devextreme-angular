@@ -106,7 +106,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#? it.isEditor #>
     @HostListener('valueChange', ['$event']) change(_) { }
-    @HostListener('onBlur', ['$event']) touched = () => {};<#?#>
+    @HostListener('onBlur', ['$event']) touched = (_) => {};<#?#>
 
 <#~ collectionNestedComponents :component:i #>
     @ContentChildren(<#= component.className #>Component)

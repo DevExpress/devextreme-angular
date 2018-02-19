@@ -7,6 +7,8 @@ import {
     ViewChildren,
     NgZone,
     Input,
+    Renderer2,
+    Inject,
     Output,
     ContentChildren,
     QueryList,
@@ -14,6 +16,8 @@ import {
     SkipSelf,
     AfterViewInit
 } from '@angular/core';
+
+import { DOCUMENT } from '@angular/common';
 
 import {
     TestBed,
@@ -116,7 +120,11 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
 
     shownEventFired = false;
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost, private element: ElementRef) {
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost,
+        @Host() private _noh: NestedOptionHost,
+        private element: ElementRef,
+        private renderer: Renderer2,
+        @Inject(DOCUMENT) private document: any) {
         super();
 
         this._pnoh.setNestedOption(this);
@@ -126,7 +134,7 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
     ngAfterViewInit() {
         let element = this.element.nativeElement;
 
-        extractTemplate(this, this.element);
+        extractTemplate(this, this.element, this.renderer, this.document);
 
         element.classList.add('dx-visibility-change-handler');
         events.on(element, 'dxshown', function() {

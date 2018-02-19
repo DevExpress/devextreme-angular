@@ -1,40 +1,26 @@
-// /*global jasmine, __karma__, window*/
 Error.stackTraceLimit = Infinity;
-jasmine.DEFAULT_TIMEOUT_INTERVAL = 2000;
+
+require("core-js/es6");
+require("reflect-metadata");
+
+require("zone.js/dist/zone");
+require("zone.js/dist/long-stack-trace-zone");
+require("zone.js/dist/proxy");
+require("zone.js/dist/sync-test");
+require("zone.js/dist/jasmine-patch");
+require("zone.js/dist/async-test");
+require("zone.js/dist/fake-async-test");
+
+const testing = require("@angular/core/testing");
+const browser = require("@angular/platform-browser-dynamic/testing");
 
 __karma__.loaded = function () {};
 
-function isSpecFile(path) {
-  return /\.spec\.js$/.test(path);
-}
+testing.TestBed.initTestEnvironment(
+    browser.BrowserDynamicTestingModule,
+    browser.platformBrowserDynamicTesting()
+);
 
-var allSpecFiles = Object.keys(window.__karma__.files)
-  .filter(isSpecFile);
-
-System.config({
-  baseURL: '/base',
-  packageWithIndex: true
-});
-
-System.import('karma.systemjs.conf.js')
-  .then(function () {
-    return Promise.all([
-      System.import('@angular/core/testing'),
-      System.import('@angular/platform-browser-dynamic/testing')
-    ])
-  })
-  .then(function (providers) {
-    var coreTesting = providers[0];
-    var browserTesting = providers[1];
-
-    coreTesting.TestBed.initTestEnvironment(
-            browserTesting.BrowserDynamicTestingModule,
-            browserTesting.platformBrowserDynamicTesting());
-  })
-  .then(function() {
-    return Promise.all(
-      allSpecFiles.map(function (moduleName) {
-        return System.import(moduleName);
-      }));
-  })
-  .then(__karma__.start, __karma__.error);
+const context = require.context('./tests/dist', true, /\.spec\.js$/);
+context.keys().map(context);
+__karma__.start();
