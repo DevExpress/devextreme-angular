@@ -1,7 +1,9 @@
 ## Unreleased
 
 ### Breaking changes
-Angular version 2.x is no longer supported. Now our integration library is based on the Angular Renderer2 class, which is available starting with Angular version 4 and allows manipulating DOM elements on the server side (server-side rendering).
+- TypeScript declarations of nested components have become strict, which can cause a build failure. Use correct types to prevent this.
+- Angular version 2.x is no longer supported. Now our integration library is based on the Angular Renderer2 class, which is available starting with Angular version 4 and allows manipulating DOM elements on the server side (server-side rendering).
+
 
 ## 17.2.5-beta.1 (2017-12-26)
 
