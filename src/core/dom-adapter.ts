@@ -1,27 +1,33 @@
-import { Inject, Injectable } from '@angular/core';
+import { Inject, Injectable, VERSION } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 
+const NG_VERSION_SUPPORTING_SSR = '5';
+
 @Injectable()
 export class NgDomAdapter {
     constructor(@Inject(DOCUMENT) document: any) {
-        domAdapter.inject({
-            _document: document,
+        if (VERSION.major >= NG_VERSION_SUPPORTING_SSR) {
+            domAdapter.inject({
+                _document: document,
 
-            isElementNode: function(element) {
-                return element && element.nodeType === 1;
-            },
+                isElementNode: function(element) {
+                    return element && element.nodeType === 1;
+                },
 
-            isTextNode: function(element) {
-                return element && element.nodeType === 3;
-            },
+                isTextNode: function(element) {
+                    return element && element.nodeType === 3;
+                },
 
-            isDocument: function(element) {
-                return element && element.nodeType === 9;
-            }
-        });
+                isDocument: function(element) {
+                    return element && element.nodeType === 9;
+                }
+            });
 
-        readyCallbacks.fire();
-      }
+            readyCallbacks.fire();
+        } else {
+            return;
+        }
+    }
 }

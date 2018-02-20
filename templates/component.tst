@@ -13,7 +13,6 @@ import {
     NgModule,
     ElementRef,
     NgZone,
-    VERSION,
     Input,
     Output,
     OnDestroy,
@@ -64,8 +63,6 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     useExisting: forwardRef(() => <#= it.className #>Component),
     multi: true
 };<#?#>
-
-const NG_VERSION_SUPPORTING_SSR = '5';
 
 <#? it.description #>/**
  * <#= it.description #>
@@ -128,9 +125,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
         injector.get(EventsRegistrator);
-        if (VERSION.major >= NG_VERSION_SUPPORTING_SSR) {
-            injector.get(NgDomAdapter);
-        }
+        injector.get(NgDomAdapter);
 
         this._createEventEmitters([
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
