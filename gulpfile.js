@@ -18,6 +18,7 @@ var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
 var fs = require('fs');
+var version = require('@angular/core').VERSION;
 
 //------------Main------------
 
@@ -242,14 +243,23 @@ var getKarmaConfig = function(testsPath) {
     });
 };
 
-gulp.task('test.components', ['test.components.client', 'test.components.server']);
+gulp.task('test.components', function(done) {
+    runSequence(
+        'test.components.server',
+        'test.components.client',
+        done);
+});
 
 gulp.task('test.components.client', ['build.tests'], function(done) {
     new karmaServer(getKarmaConfig('./karma.test.shim.js'), done).start();
 });
 
 gulp.task('test.components.server', ['build.tests'], function(done) {
-    new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
+    if (version.major >= '5') {
+        new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
+    } else {
+        done();
+    }
 });
 
 gulp.task('test.components.debug', function(done) {

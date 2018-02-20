@@ -13,6 +13,7 @@ import {
     NgModule,
     ElementRef,
     NgZone,
+    VERSION,
     Input,
     Output,
     OnDestroy,
@@ -46,6 +47,7 @@ import { <#= baseClass #> } from '../core/component';
 import { DxTemplateHost } from '../core/template-host';
 import { DxTemplateModule } from '../core/template';
 import { EventsRegistrator } from '../core/events-strategy';
+import { NgDomAdapter } from '../core/dom-adapter';
 import { NestedOptionHost } from '../core/nested-option';
 import { WatcherHelper } from '../core/watcher-helper';
 <#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
@@ -62,6 +64,8 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     useExisting: forwardRef(() => <#= it.className #>Component),
     multi: true
 };<#?#>
+
+const NG_VERSION_SUPPORTING_SSR = '5';
 
 <#? it.description #>/**
  * <#= it.description #>
@@ -124,6 +128,9 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
         super(elementRef, ngZone, templateHost, _watcherHelper);
         injector.get(EventsRegistrator);
+        if (VERSION.major >= NG_VERSION_SUPPORTING_SSR) {
+            injector.get(NgDomAdapter);
+        }
 
         this._createEventEmitters([
             <#~ it.events :event:i #>{ <#? event.subscribe #>subscribe: '<#= event.subscribe #>', <#?#>emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
@@ -213,7 +220,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     <#= component.className #>Module<#~#>,
     DxTemplateModule
   ],
-  providers: [EventsRegistrator]
+  providers: [EventsRegistrator, NgDomAdapter]
 
 })
 export class <#= it.className #>Module { }
