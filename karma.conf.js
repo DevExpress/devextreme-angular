@@ -7,14 +7,6 @@ module.exports = function(config) {
 
         frameworks: ['jasmine'],
 
-        files: [
-            { pattern: './karma.test.shim.js', watched: false }
-        ],
-
-        preprocessors: {
-            './karma.test.shim.js': [ 'webpack' ]
-        },
-
         port: 9876,
 
         logLevel: config.LOG_ERROR,
@@ -45,6 +37,10 @@ module.exports = function(config) {
         ],
 
         webpack: webpackConfig,
+
+        webpackMiddleware: {
+            stats: 'errors-only'
+        },
 
         singleRun: true,
 

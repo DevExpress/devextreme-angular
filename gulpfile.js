@@ -14,9 +14,11 @@ var del = require('del');
 var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
+var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
 var fs = require('fs');
+var version = require('@angular/core').VERSION;
 
 //------------Main------------
 
@@ -232,10 +234,32 @@ gulp.task('watch.spec', function() {
     gulp.watch(buildConfig.components.tsTestSrc, ['build.tests']);
 });
 
+var getKarmaConfig = function(testsPath) {
+    const preprocessors = {};
+    preprocessors[testsPath] = [ 'webpack' ];
+    return karmaConfig.parseConfig(path.resolve('./karma.conf.js'), { 
+        files: [{ pattern: testsPath, watched: false }],
+        preprocessors: preprocessors
+    });
+};
+
 gulp.task('test.components', function(done) {
-    new karmaServer({
-        configFile: __dirname + '/karma.conf.js'
-    }, done).start();
+    runSequence(
+        'test.components.server',
+        'test.components.client',
+        done);
+});
+
+gulp.task('test.components.client', ['build.tests'], function(done) {
+    new karmaServer(getKarmaConfig('./karma.test.shim.js'), done).start();
+});
+
+gulp.task('test.components.server', ['build.tests'], function(done) {
+    if (version.major >= '5') {
+        new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
+    } else {
+        done();
+    }
 });
 
 gulp.task('test.components.debug', function(done) {
