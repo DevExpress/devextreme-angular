@@ -1,4 +1,10 @@
-## Unreleased
+## 18.1.1-beta.1 (2018-02-21)
+
+### Features
+- Render dx-button widget on server [#694](https://github.com/DevExpress/devextreme-angular/pull/694)
+
+### Bug Fixes
+- DevExtreme Angular components force Angular change detection [#516](https://github.com/DevExpress/devextreme-angular/issues/516)
 
 ### Breaking changes
 - TypeScript declarations of nested components have become strict, which can cause a build failure. Use correct types to prevent this.
