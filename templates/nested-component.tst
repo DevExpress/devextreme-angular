@@ -1,3 +1,5 @@
+/* tslint:disable:max-line-length */
+
 <#? it.inputs #>/* tslint:disable:use-input-property-decorator */
 <#?#>
 import {
