@@ -124,7 +124,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "PrimitiveTypes": [
@@ -595,7 +595,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -628,7 +629,7 @@
           ],
           "IsDeprecated": true,
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Use the valueExpr option instead."
         },
         "displayValue": {
           "PrimitiveTypes": [
@@ -2421,7 +2422,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the icon option instead."
         },
         "onClick": {
           "PrimitiveTypes": [
@@ -3195,21 +3197,21 @@
                         "string"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -3921,21 +3923,21 @@
                         "string"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -5986,21 +5988,21 @@
                         "string"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "number"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -7074,28 +7076,28 @@
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "label": {
               "Description": "Specifies common options for scale labels.",
@@ -7156,7 +7158,7 @@
                         "boolean"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the scale.label.overlappingBehavior option instead."
                     }
                   }
                 },
@@ -7183,14 +7185,14 @@
             },
             "majorTick": {
               "IsDeprecated": true,
-              "Description": "Use the tick option instead.",
+              "Description": "Use the scale.tick option instead.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.color option instead."
+                  "Description": "Use the scale.tick.color option instead."
                 },
                 "customTickValues": {
                   "ItemPrimitiveTypes": [
@@ -7206,7 +7208,7 @@
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.length option instead."
+                  "Description": "Use the scale.tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -7227,21 +7229,21 @@
                     "boolean"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior option instead."
+                  "Description": "Use the scale.label.overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "boolean"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.visible option instead."
+                  "Description": "Use the scale.tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.width option instead."
+                  "Description": "Use the scale.tick.width option instead."
                 }
               }
             },
@@ -7746,7 +7748,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -8173,14 +8176,8 @@
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
         "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "ContextMenuItem"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxContextMenuItemTemplate"
           ],
           "ItemComplexTypes": [
             "ContextMenuItem"
@@ -8599,14 +8596,8 @@
           "Description": "Specifies how the widget resizes columns. Applies only if allowColumnResizing is true."
         },
         "columns": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "DataGridColumn"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxDataGridColumn"
           ],
           "ItemComplexTypes": [
             "DataGridColumn"
@@ -8678,13 +8669,15 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowUpdating option instead."
             },
             "editMode": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.mode option instead."
             },
             "form": {
               "PrimitiveTypes": [
@@ -8699,7 +8692,8 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowAdding option instead."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -8720,7 +8714,8 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowDeleting option instead."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -8853,7 +8848,8 @@
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportAll option instead."
                 },
                 "exportAll": {
                   "PrimitiveTypes": [
@@ -8877,13 +8873,15 @@
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportAll option instead."
                 },
                 "selectedRows": {
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportSelectedRows option instead."
                 }
               }
             }
@@ -9020,7 +9018,7 @@
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
         },
         "grouping": {
-          "Description": "Specifies grouping settings and the behavior of grouped grid records.",
+          "Description": "Configures grouping.",
           "Options": {
             "allowCollapsing": {
               "PrimitiveTypes": [
@@ -9050,13 +9048,15 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the grouping.texts.groupContinuedMessage option instead."
             },
             "groupContinuesMessage": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the grouping.texts.groupContinuesMessage option instead."
             },
             "texts": {
               "Description": "Defines the texts of grouping-related visual elements.",
@@ -9201,7 +9201,7 @@
           ],
           "IsCollection": true,
           "SingularName": "keyExpr",
-          "Description": "Specifies which data field provides keys for data items. Applies only if data is a simple array."
+          "Description": "Specifies which data field provides data items' keys. Applies only if data is a JavaScript array."
         },
         "loadPanel": {
           "Description": "Configures the load panel.",
@@ -9352,7 +9352,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editingStart event."
+          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "PrimitiveTypes": [
@@ -10266,7 +10266,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -10337,7 +10338,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -10349,13 +10351,15 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the type option instead."
         },
         "formatString": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the displayFormat option instead."
         },
         "height": {
           "PrimitiveTypes": [
@@ -11375,7 +11379,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the selectButtonText option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11622,7 +11627,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the value option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -13937,28 +13943,28 @@
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "horizontalOrientation": {
               "PrimitiveTypes": [
@@ -14019,7 +14025,7 @@
                         "boolean"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the scale.label.overlappingBehavior option instead."
                     }
                   }
                 },
@@ -14046,14 +14052,14 @@
             },
             "majorTick": {
               "IsDeprecated": true,
-              "Description": "Use the tick option instead.",
+              "Description": "Use the scale.tick option instead.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.color option instead."
+                  "Description": "Use the scale.tick.color option instead."
                 },
                 "customTickValues": {
                   "ItemPrimitiveTypes": [
@@ -14069,7 +14075,7 @@
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.length option instead."
+                  "Description": "Use the scale.tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -14090,21 +14096,21 @@
                     "boolean"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior option instead."
+                  "Description": "Use the scale.label.overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "boolean"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.visible option instead."
+                  "Description": "Use the scale.tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.width option instead."
+                  "Description": "Use the scale.tick.width option instead."
                 }
               }
             },
@@ -14602,7 +14608,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the pageLoadMode option instead."
         },
         "bounceEnabled": {
           "PrimitiveTypes": [
@@ -15096,7 +15103,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the pageLoadMode option instead."
         },
         "showScrollbar": {
           "PrimitiveTypes": [
@@ -15416,11 +15424,14 @@
         },
         "position": {
           "PrimitiveTypes": [
-            "DevExpress.positionConfig"
+            "DevExpress.positionConfig",
+            "Function",
+            "string"
           ],
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsFunc": true,
           "Description": "An object defining widget positioning options."
         },
         "rtlEnabled": {
@@ -15523,7 +15534,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -15873,7 +15885,7 @@
             "boolean"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -16599,14 +16611,8 @@
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
         "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "MenuItem"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxMenuItemTemplate"
           ],
           "ItemComplexTypes": [
             "MenuItem"
@@ -17236,7 +17242,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "PrimitiveTypes": [
@@ -17439,7 +17445,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -19805,7 +19812,8 @@
             "boolean",
             "string"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the scrolling.useNative option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -19831,7 +19839,7 @@
       }
     },
     "dxPivotGridFieldChooser": {
-      "Description": "A complementary widget for the PivotGrid that allows you to manage data displayed in the PivotGrid.",
+      "Description": "A complementary widget for the PivotGrid that allows you to manage data displayed in the PivotGrid. The field chooser is already integrated in the PivotGrid and can be invoked using the context menu. If you need to continuously display the field chooser near the PivotGrid widget, use the PivotGridFieldChooser widget.",
       "Module": "ui/pivot_grid_field_chooser",
       "Options": {
         "accessKey": {
@@ -23213,11 +23221,14 @@
         },
         "position": {
           "PrimitiveTypes": [
-            "DevExpress.positionConfig"
+            "DevExpress.positionConfig",
+            "Function",
+            "string"
           ],
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsFunc": true,
           "Description": "An object defining widget positioning options."
         },
         "resizeEnabled": {
@@ -23822,7 +23833,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the callValueChanged option instead."
+              "Description": "Use the behavior.callValueChanged option instead."
             },
             "callValueChanged": {
               "PrimitiveTypes": [
@@ -24422,56 +24433,56 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the tickInterval option instead.",
+              "Description": "Use the scale.tickInterval option instead.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.days option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "hours": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.hours option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "milliseconds": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.milliseconds option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "minutes": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.minutes option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "months": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.months option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "seconds": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.seconds option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "years": {
                   "PrimitiveTypes": [
                     "number"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.years option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 }
               }
             },
@@ -24780,7 +24791,7 @@
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the minorTick.visible option instead."
+              "Description": "Use the scale.minorTick.visible option instead."
             },
             "singleWorkdays": {
               "ItemPrimitiveTypes": [
@@ -24897,7 +24908,7 @@
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the overlappingBehavior option instead."
+              "Description": "Use the scale.label.overlappingBehavior option instead."
             },
             "valueType": {
               "PrimitiveTypes": [
@@ -25639,7 +25650,7 @@
                 "number",
                 "string"
               ],
-              "Description": "The base width of the column."
+              "Description": "The column's base width. Calculated automatically when the singleColumnScreen option arranges all elements in a single column."
             },
             "ratio": {
               "PrimitiveTypes": [
@@ -25874,7 +25885,7 @@
                 "number",
                 "string"
               ],
-              "Description": "The base height of the row."
+              "Description": "The row's base height. Calculated automatically when the singleColumnScreen option arranges all elements in a single column."
             },
             "ratio": {
               "PrimitiveTypes": [
@@ -25913,7 +25924,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Decides on which screens all layout elements should be arranged in a single column."
+          "Description": "Specifies on which screens all layout elements should be arranged in a single column. Accepts a single or several size qualifiers separated by a space."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -26141,7 +26152,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the crossScrollingEnabled option instead."
         },
         "indicatorUpdateInterval": {
           "PrimitiveTypes": [
@@ -26377,7 +26389,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the fieldExpr option instead."
+              "Description": "Use the resources.fieldExpr option instead."
             },
             "fieldExpr": {
               "PrimitiveTypes": [
@@ -26396,7 +26408,7 @@
                 "boolean"
               ],
               "IsDeprecated": true,
-              "Description": "Use the useColorAsDefault option instead."
+              "Description": "Use the resources.useColorAsDefault option instead."
             },
             "useColorAsDefault": {
               "PrimitiveTypes": [
@@ -26824,7 +26836,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -26881,7 +26894,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "PrimitiveTypes": [
@@ -27194,7 +27208,7 @@
             "boolean"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -27630,7 +27644,7 @@
       }
     },
     "dxSlideOutView": {
-      "Description": "The SlideOutView widget is a classic slide-out menu paired with a view.",
+      "Description": "The SlideOutView widget is a classic slide-out menu paired with a view. This widget is very similar to the SlideOut with only one difference - the SlideOut always contains the List in the slide-out menu, while the SlideOutView can hold any collection there.",
       "Module": "ui/slide_out_view",
       "Options": {
         "activeStateEnabled": {
@@ -28764,7 +28778,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "tabTemplate": {
               "PrimitiveTypes": [
@@ -29089,7 +29103,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "PrimitiveTypes": [
@@ -29316,7 +29330,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -29367,7 +29382,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "PrimitiveTypes": [
@@ -29683,7 +29699,7 @@
             "boolean"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -29827,7 +29843,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the value option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -29867,7 +29884,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "autoResizeEnabled": {
           "PrimitiveTypes": [
@@ -30180,7 +30198,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31732,14 +31751,8 @@
           "Description": "Specifies how the widget resizes columns. Applies only if allowColumnResizing is true."
         },
         "columns": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "TreeListColumn"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxTreeListColumn"
           ],
           "ItemComplexTypes": [
             "TreeListColumn"
@@ -32287,7 +32300,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for editingStart. Executed before a cell or row switches to the editing state."
+          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "PrimitiveTypes": [
@@ -33712,20 +33725,15 @@
           "Description": "The time period in milliseconds before the onItemHold event is raised."
         },
         "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "TreeViewItem"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxTreeViewItemTemplate"
           ],
           "ItemComplexTypes": [
             "TreeViewItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "An array of items displayed by the widget."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -33835,7 +33843,7 @@
           "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "Use the itemSelectionChanged event instead."
+          "Description": "Use the onItemSelectionChanged option instead."
         },
         "onItemSelectionChanged": {
           "PrimitiveTypes": [
@@ -33936,7 +33944,7 @@
             "boolean"
           ],
           "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode options instead."
+          "Description": "Use the showCheckBoxesMode option instead."
         },
         "selectAllText": {
           "PrimitiveTypes": [
@@ -33975,7 +33983,7 @@
             "boolean"
           ],
           "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode options instead."
+          "Description": "Use the showCheckBoxesMode option instead."
         },
         "showCheckBoxesMode": {
           "PrimitiveTypes": [
@@ -34013,7 +34021,7 @@
       }
     },
     "dxValidationGroup": {
-      "Description": "The widget that is used in the Knockout and AngularJS approaches to combine the editors to be validated.",
+      "Description": "The ValidationGroup is a widget that allows you to validate several editors simultaneously.",
       "IsTranscludedContent": true,
       "Module": "ui/validation_group",
       "Options": {
@@ -34338,7 +34346,7 @@
       "Options": {
         "areaSettings": {
           "IsDeprecated": true,
-          "Description": "Use the \"area\" type element of the layers array.",
+          "Description": "Use the layers option instead.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -34676,7 +34684,7 @@
               ],
               "IsDeprecated": true,
               "IsDataSource": true,
-              "Description": "Use the dataSource option instead."
+              "Description": "Use the layers.dataSource option instead."
             },
             "dataField": {
               "PrimitiveTypes": [
@@ -35168,7 +35176,7 @@
         },
         "markerSettings": {
           "IsDeprecated": true,
-          "Description": "Use the \"marker\" type element of the layers array.",
+          "Description": "Use the layers option instead.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -35474,7 +35482,7 @@
           "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "Use the onSelecitonChanged option instead."
+          "Description": "Use the onSelectionChanged option instead."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -37777,9 +37785,39 @@
         }
       }
     },
-    "ContextMenuItem": {
-      "Description": "Holds an array of menu items.",
+    "CustomRule": {
+      "Description": "A validation rule with custom validation logic.",
       "IsCollection": true,
+      "Options": {
+        "message": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+        },
+        "reevaluate": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Indicates whether the rule should be always checked for the target value or only when the target value changes."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the type of the current rule."
+        },
+        "validationCallback": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "A function that validates the target value."
+        }
+      }
+    },
+    "ContextMenuItem": {
+      "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
         "beginGroup": {
           "PrimitiveTypes": [
@@ -37810,17 +37848,11 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the icon field instead."
+          "Description": "Use items.icon instead."
         },
         "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "ContextMenuItem"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxContextMenuItemTemplate"
           ],
           "ItemComplexTypes": [
             "ContextMenuItem"
@@ -37862,40 +37894,7 @@
         }
       }
     },
-    "CustomRule": {
-      "Description": "A validation rule with custom validation logic.",
-      "IsCollection": true,
-      "Options": {
-        "message": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
-        },
-        "reevaluate": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Indicates whether the rule should be always checked for the target value or only when the target value changes."
-        },
-        "type": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the type of the current rule."
-        },
-        "validationCallback": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "A function that validates the target value."
-        }
-      }
-    },
     "DataGridColumn": {
-      "Description": "An array of grid columns.",
-      "IsCollection": true,
       "Options": {
         "alignment": {
           "PrimitiveTypes": [
@@ -38027,14 +38026,8 @@
           "Description": "Specifies a custom template for column cells."
         },
         "columns": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "DataGridColumn"
-          ],
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxDataGridColumn"
           ],
           "ItemComplexTypes": [
             "DataGridColumn"
@@ -38394,6 +38387,7 @@
       }
     },
     "FilterBuilderField": {
+      "Description": "The FilterBuilder's field structure.",
       "Options": {
         "caption": {
           "PrimitiveTypes": [
@@ -38530,7 +38524,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the form item name."
+          "Description": "Specifies a name that identifies the form item."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -38630,6 +38624,12 @@
             "string"
           ],
           "Description": "Specifies the type of the current item."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a name that identifies the form item."
         },
         "template": {
           "PrimitiveTypes": [
@@ -38742,7 +38742,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the form item name."
+          "Description": "Specifies a name that identifies the form item."
         },
         "template": {
           "PrimitiveTypes": [
@@ -38810,6 +38810,12 @@
             "string"
           ],
           "Description": "Specifies the type of the current item."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a name that identifies the form item."
         },
         "tabPanelOptions": {
           "PrimitiveTypes": [
@@ -38937,6 +38943,609 @@
             "number"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
+        }
+      }
+    },
+    "MenuItem": {
+      "Description": "This section lists the data source fields that are used in a default item template.",
+      "Options": {
+        "beginGroup": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a group separator is displayed over the item."
+        },
+        "closeMenuOnClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies if a menu is closed when a user clicks the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the menu item is disabled."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The name of an icon to be displayed on the menu item."
+        },
+        "iconSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use items.icon instead."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxMenuItemTemplate"
+          ],
+          "ItemComplexTypes": [
+            "MenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Holds an array of menu items."
+        },
+        "selectable": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a user can select a menu item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the item is selected."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text inserted into the item element."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the menu item is visible."
+        }
+      }
+    },
+    "TreeListColumn": {
+      "Options": {
+        "alignment": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Aligns the content of the column."
+        },
+        "allowEditing": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing.allowUpdating option."
+        },
+        "allowFiltering": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow.visible is true."
+        },
+        "allowFixing": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing.enabled is true."
+        },
+        "allowHeaderFiltering": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter.visible is true. By default, inherits the value of the allowFiltering option."
+        },
+        "allowHiding": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser.enabled is true."
+        },
+        "allowReordering": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether this column can be used in column reordering at runtime. Applies only if allowColumnReordering is true."
+        },
+        "allowResizing": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can resize the column at runtime. Applies only if allowColumnResizing is true."
+        },
+        "allowSearch": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether this column can be searched. Applies only if searchPanel.visible is true. Inherits the value of the allowFiltering option by default."
+        },
+        "allowSorting": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting.mode differs from \"none\"."
+        },
+        "calculateCellValue": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Calculates custom values for column cells."
+        },
+        "calculateDisplayValue": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
+        },
+        "calculateFilterExpression": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the column's custom filtering rules."
+        },
+        "calculateSortValue": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Calculates custom values to be used in sorting."
+        },
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a caption for the column."
+        },
+        "cellTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for column cells."
+        },
+        "columns": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxTreeListColumn"
+          ],
+          "ItemComplexTypes": [
+            "TreeListColumn"
+          ],
+          "IsCollection": true,
+          "SingularName": "column",
+          "Description": "Configures columns."
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to the column."
+        },
+        "customizeText": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes the text displayed in column cells."
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Binds the column to a field of the dataSource."
+        },
+        "dataType": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Casts column values to a specific data type."
+        },
+        "editCellTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for column cells in the editing state."
+        },
+        "editorOptions": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies options for the underlain editor."
+        },
+        "encodeHtml": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether HTML tags are displayed as plain text or applied to the values of the column."
+        },
+        "falseText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
+        },
+        "filterOperations": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "filterOperation",
+          "Description": "Specifies a set of available filter operations. Applies only if filterRow.visible and allowFiltering are true."
+        },
+        "filterType": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter.visible and allowHeaderFiltering are true."
+        },
+        "filterValue": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies a filter value for the column."
+        },
+        "filterValues": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "filterValue",
+          "Description": "Specifies filter values for the column's header filter."
+        },
+        "fixed": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Fixes the column."
+        },
+        "fixedPosition": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.format",
+            "string"
+          ],
+          "ComplexTypes": [
+            "Format"
+          ],
+          "Description": "Formats a value before it is displayed in a column cell."
+        },
+        "formItem": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxFormSimpleItem"
+          ],
+          "ComplexTypes": [
+            "FormSimpleItem"
+          ],
+          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
+        },
+        "headerCellTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for column headers."
+        },
+        "headerFilter": {
+          "Description": "Specifies data settings for the header filter.",
+          "Options": {
+            "allowSearch": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether searching is enabled in the header filter."
+            },
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSourceOptions",
+                "Function"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsFunc": true,
+              "IsDataSource": true,
+              "Description": "Specifies a data source for the header filter."
+            },
+            "groupInterval": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "Specifies how the header filter combines values into groups."
+            },
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the width of the popup menu containing filtering values."
+            }
+          }
+        },
+        "hidingPriority": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
+        },
+        "isBand": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the column bands other columns or not."
+        },
+        "lookup": {
+          "Description": "Specifies options of a lookup column.",
+          "Options": {
+            "allowClearing": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can nullify values of the lookup column."
+            },
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSourceOptions",
+                "Function"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsFunc": true,
+              "IsDataSource": true,
+              "Description": "Specifies the data source for the lookup column."
+            },
+            "displayExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data source field whose values must be displayed."
+            },
+            "valueExpr": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the data source field whose values must be replaced."
+            }
+          }
+        },
+        "minWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the minimum width of the column."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the identifier of the column."
+        },
+        "ownerBand": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
+        },
+        "selectedFilterOperation": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the selected filter operation for the column."
+        },
+        "setCellValue": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies a function to be invoked after the user has edited a cell value, but before it will be saved in the data source."
+        },
+        "showEditorAlways": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the column displays its values using editors."
+        },
+        "showInColumnChooser": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the column chooser can contain the column header."
+        },
+        "sortIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the index according to which columns participate in sorting."
+        },
+        "sortingMethod": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
+        },
+        "sortOrder": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the sort order of column values."
+        },
+        "trueText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
+        },
+        "validationRules": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.RequiredRule",
+            "DevExpress.ui.NumericRule",
+            "DevExpress.ui.RangeRule",
+            "DevExpress.ui.StringLengthRule",
+            "DevExpress.ui.CustomRule",
+            "DevExpress.ui.CompareRule",
+            "DevExpress.ui.PatternRule",
+            "DevExpress.ui.EmailRule"
+          ],
+          "ItemComplexTypes": [
+            "RequiredRule",
+            "NumericRule",
+            "RangeRule",
+            "StringLengthRule",
+            "CustomRule",
+            "CompareRule",
+            "PatternRule",
+            "EmailRule"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationRule",
+          "Description": "Specifies validation rules to be checked on updating cell values."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the position of the column regarding other columns in the resulting widget."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+        }
+      }
+    },
+    "TreeViewItem": {
+      "Description": "This section lists the data source fields that are used in a default item template.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed disabled."
+        },
+        "expanded": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the tree view item is displayed expanded."
+        },
+        "hasItems": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the tree view item has children."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The name of an icon to be displayed on the tree view item."
+        },
+        "iconSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "Description": "Use items.icon instead."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxTreeViewItemTemplate"
+          ],
+          "ItemComplexTypes": [
+            "TreeViewItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Holds an array of tree view items."
+        },
+        "parentId": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Holds the key of the parent item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the tree view item is displayed selected."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
         }
       }
     },
@@ -39189,91 +39798,6 @@
             "number"
           ],
           "Description": "Specifies the width of an indicator in pixels."
-        }
-      }
-    },
-    "MenuItem": {
-      "Description": "Holds an array of menu items.",
-      "IsCollection": true,
-      "Options": {
-        "beginGroup": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a group separator is displayed over the item."
-        },
-        "closeMenuOnClick": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies if a menu is closed when a user clicks the item."
-        },
-        "disabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the menu item is disabled."
-        },
-        "icon": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "The name of an icon to be displayed on the menu item."
-        },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the icon field instead."
-        },
-        "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "MenuItem"
-          ],
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "ItemComplexTypes": [
-            "MenuItem"
-          ],
-          "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of menu items."
-        },
-        "selectable": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not a user can select a menu item."
-        },
-        "selected": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the item is selected."
-        },
-        "template": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
-        },
-        "text": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the text inserted into the item element."
-        },
-        "visible": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the menu item is visible."
         }
       }
     },
@@ -41789,546 +42313,6 @@
             "string"
           ],
           "Description": "Specifies the type of the current rule."
-        }
-      }
-    },
-    "TreeListColumn": {
-      "Description": "Configures columns.",
-      "IsCollection": true,
-      "Options": {
-        "alignment": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Aligns the content of the column."
-        },
-        "allowEditing": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a user can edit values in the column at runtime. By default, inherits the value of the editing.allowUpdating option."
-        },
-        "allowFiltering": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether data can be filtered by this column. Applies only if filterRow.visible is true."
-        },
-        "allowFixing": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a user can fix the column at runtime. Applies only if columnFixing.enabled is true."
-        },
-        "allowHeaderFiltering": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the header filter can be used to filter data by this column. Applies only if headerFilter.visible is true. By default, inherits the value of the allowFiltering option."
-        },
-        "allowHiding": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a user can hide the column using the column chooser at runtime. Applies only if columnChooser.enabled is true."
-        },
-        "allowReordering": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether this column can be used in column reordering at runtime. Applies only if allowColumnReordering is true."
-        },
-        "allowResizing": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a user can resize the column at runtime. Applies only if allowColumnResizing is true."
-        },
-        "allowSearch": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether this column can be searched. Applies only if searchPanel.visible is true. Inherits the value of the allowFiltering option by default."
-        },
-        "allowSorting": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting.mode differs from \"none\"."
-        },
-        "calculateCellValue": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "Calculates custom values for column cells."
-        },
-        "calculateDisplayValue": {
-          "PrimitiveTypes": [
-            "Function",
-            "string"
-          ],
-          "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
-        },
-        "calculateFilterExpression": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "Specifies the column's custom filtering rules."
-        },
-        "calculateSortValue": {
-          "PrimitiveTypes": [
-            "Function",
-            "string"
-          ],
-          "IsFunc": true,
-          "Description": "Calculates custom values to be used in sorting."
-        },
-        "caption": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies a caption for the column."
-        },
-        "cellTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells."
-        },
-        "columns": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "TreeListColumn"
-          ],
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "ItemComplexTypes": [
-            "TreeListColumn"
-          ],
-          "IsCollection": true,
-          "SingularName": "column",
-          "Description": "Configures columns."
-        },
-        "cssClass": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies a CSS class to be applied to the column."
-        },
-        "customizeText": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "Customizes the text displayed in column cells."
-        },
-        "dataField": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Binds the column to a field of the dataSource."
-        },
-        "dataType": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Casts column values to a specific data type."
-        },
-        "editCellTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells in the editing state."
-        },
-        "editorOptions": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "Description": "Specifies options for the underlain editor."
-        },
-        "encodeHtml": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether HTML tags are displayed as plain text or applied to the values of the column."
-        },
-        "falseText": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
-        },
-        "filterOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "IsCollection": true,
-          "SingularName": "filterOperation",
-          "Description": "Specifies a set of available filter operations. Applies only if filterRow.visible and allowFiltering are true."
-        },
-        "filterType": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies whether a user changes the current filter by including (selecting) or excluding (clearing the selection of) values. Applies only if headerFilter.visible and allowHeaderFiltering are true."
-        },
-        "filterValue": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "Description": "Specifies a filter value for the column."
-        },
-        "filterValues": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "SingularName": "filterValue",
-          "Description": "Specifies filter values for the column's header filter."
-        },
-        "fixed": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Fixes the column."
-        },
-        "fixedPosition": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
-        },
-        "format": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.format",
-            "string"
-          ],
-          "ComplexTypes": [
-            "Format"
-          ],
-          "Description": "Formats a value before it is displayed in a column cell."
-        },
-        "formItem": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.dxFormSimpleItem"
-          ],
-          "ComplexTypes": [
-            "FormSimpleItem"
-          ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
-        },
-        "headerCellTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies a custom template for column headers."
-        },
-        "headerFilter": {
-          "Description": "Specifies data settings for the header filter.",
-          "Options": {
-            "allowSearch": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether searching is enabled in the header filter."
-            },
-            "dataSource": {
-              "PrimitiveTypes": [
-                "DevExpress.data.DataSourceOptions",
-                "Function"
-              ],
-              "ItemPrimitiveTypes": [
-                "any"
-              ],
-              "IsFunc": true,
-              "IsDataSource": true,
-              "Description": "Specifies a data source for the header filter."
-            },
-            "groupInterval": {
-              "PrimitiveTypes": [
-                "number",
-                "string"
-              ],
-              "Description": "Specifies how the header filter combines values into groups."
-            },
-            "height": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "Description": "Specifies the height of the popup menu containing filtering values."
-            },
-            "width": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "Description": "Specifies the width of the popup menu containing filtering values."
-            }
-          }
-        },
-        "hidingPriority": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size. Ignored if allowColumnResizing is true and columnResizingMode is \"widget\"."
-        },
-        "isBand": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the column bands other columns or not."
-        },
-        "lookup": {
-          "Description": "Specifies options of a lookup column.",
-          "Options": {
-            "allowClearing": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether a user can nullify values of the lookup column."
-            },
-            "dataSource": {
-              "PrimitiveTypes": [
-                "DevExpress.data.DataSourceOptions",
-                "Function"
-              ],
-              "ItemPrimitiveTypes": [
-                "any"
-              ],
-              "IsFunc": true,
-              "IsDataSource": true,
-              "Description": "Specifies the data source for the lookup column."
-            },
-            "displayExpr": {
-              "PrimitiveTypes": [
-                "Function",
-                "string"
-              ],
-              "IsFunc": true,
-              "Description": "Specifies the data source field whose values must be displayed."
-            },
-            "valueExpr": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the data source field whose values must be replaced."
-            }
-          }
-        },
-        "minWidth": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the minimum width of the column."
-        },
-        "name": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the identifier of the column."
-        },
-        "ownerBand": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
-        },
-        "selectedFilterOperation": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the selected filter operation for the column."
-        },
-        "setCellValue": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "Specifies a function to be invoked after the user has edited a cell value, but before it will be saved in the data source."
-        },
-        "showEditorAlways": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the column displays its values using editors."
-        },
-        "showInColumnChooser": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the column chooser can contain the column header."
-        },
-        "sortIndex": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the index according to which columns participate in sorting."
-        },
-        "sortingMethod": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "Description": "Specifies a custom comparison function for sorting. Applies only when sorting is performed on the client."
-        },
-        "sortOrder": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the sort order of column values."
-        },
-        "trueText": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
-        },
-        "validationRules": {
-          "ItemPrimitiveTypes": [
-            "DevExpress.ui.RequiredRule",
-            "DevExpress.ui.NumericRule",
-            "DevExpress.ui.RangeRule",
-            "DevExpress.ui.StringLengthRule",
-            "DevExpress.ui.CustomRule",
-            "DevExpress.ui.CompareRule",
-            "DevExpress.ui.PatternRule",
-            "DevExpress.ui.EmailRule"
-          ],
-          "ItemComplexTypes": [
-            "RequiredRule",
-            "NumericRule",
-            "RangeRule",
-            "StringLengthRule",
-            "CustomRule",
-            "CompareRule",
-            "PatternRule",
-            "EmailRule"
-          ],
-          "IsCollection": true,
-          "SingularName": "validationRule",
-          "Description": "Specifies validation rules to be checked on updating cell values."
-        },
-        "visible": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
-        },
-        "visibleIndex": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the position of the column regarding other columns in the resulting widget."
-        },
-        "width": {
-          "PrimitiveTypes": [
-            "number",
-            "string"
-          ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
-        }
-      }
-    },
-    "TreeViewItem": {
-      "Description": "An array of items displayed by the widget.",
-      "IsCollection": true,
-      "Options": {
-        "disabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not a widget item must be displayed disabled."
-        },
-        "expanded": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the tree view item is displayed expanded."
-        },
-        "hasItems": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the tree view item has children."
-        },
-        "html": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies html code inserted into the widget item element."
-        },
-        "icon": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "The name of an icon to be displayed on the tree view item."
-        },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the icon field instead."
-        },
-        "items": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "ComplexTypes": [
-            "TreeViewItem"
-          ],
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "ItemComplexTypes": [
-            "TreeViewItem"
-          ],
-          "IsCollection": true,
-          "SingularName": "item",
-          "Description": "Holds an array of tree view items."
-        },
-        "parentId": {
-          "PrimitiveTypes": [
-            "number",
-            "string"
-          ],
-          "Description": "Holds the key of the parent item."
-        },
-        "selected": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the tree view item is displayed selected."
-        },
-        "template": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
-        },
-        "text": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies text displayed for the widget item."
-        },
-        "visible": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not a widget item must be displayed."
         }
       }
     }
