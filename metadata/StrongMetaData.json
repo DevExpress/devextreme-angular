@@ -109,7 +109,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "IsTemplate": true,
@@ -476,7 +476,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -499,7 +500,7 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Use the valueExpr option instead."
         },
         "displayValue": {
           "PrimitiveTypes": [
@@ -2022,7 +2023,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the icon option instead."
         },
         "onClick": {
           "IsFunc": true,
@@ -2610,21 +2612,21 @@
                     "mode": {
                       "IsDeprecated": true,
                       "EnumName": "OverlappingBehavior",
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -3232,21 +3234,21 @@
                     "mode": {
                       "IsDeprecated": true,
                       "EnumName": "OverlappingBehavior",
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -4978,21 +4980,21 @@
                     "mode": {
                       "IsDeprecated": true,
                       "EnumName": "OverlappingBehavior",
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the commonAxisSettings.label.overlappingBehavior option instead."
                     },
                     "rotationAngle": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the rotationAngle option instead."
+                      "Description": "Use the commonAxisSettings.label.rotationAngle option instead."
                     },
                     "staggeringSpacing": {
                       "PrimitiveTypes": [
                         "double"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Use the staggeringSpacing option instead."
+                      "Description": "Use the commonAxisSettings.label.staggeringSpacing option instead."
                     }
                   }
                 },
@@ -5960,28 +5962,28 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "label": {
               "Description": "Specifies common options for scale labels.",
@@ -6030,7 +6032,7 @@
                         "bool"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the scale.label.overlappingBehavior option instead."
                     }
                   }
                 },
@@ -6057,14 +6059,14 @@
             },
             "majorTick": {
               "IsDeprecated": true,
-              "Description": "Use the tick option instead.",
+              "Description": "Use the scale.tick option instead.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.color option instead."
+                  "Description": "Use the scale.tick.color option instead."
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
@@ -6080,7 +6082,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.length option instead."
+                  "Description": "Use the scale.tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -6101,21 +6103,21 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior option instead."
+                  "Description": "Use the scale.label.overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.visible option instead."
+                  "Description": "Use the scale.tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.width option instead."
+                  "Description": "Use the scale.tick.width option instead."
                 }
               }
             },
@@ -6584,7 +6586,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -7335,13 +7338,15 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowUpdating option instead."
             },
             "editMode": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.mode option instead."
             },
             "form": {
               "ComplexTypes": [
@@ -7353,7 +7358,8 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowAdding option instead."
             },
             "mode": {
               "EnumName": "GridEditMode",
@@ -7369,7 +7375,8 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowDeleting option instead."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -7502,7 +7509,8 @@
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportAll option instead."
                 },
                 "exportAll": {
                   "PrimitiveTypes": [
@@ -7526,13 +7534,15 @@
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportAll option instead."
                 },
                 "selectedRows": {
                   "PrimitiveTypes": [
                     "any"
                   ],
-                  "IsDeprecated": true
+                  "IsDeprecated": true,
+                  "Description": "Use the export.texts.exportSelectedRows option instead."
                 }
               }
             }
@@ -7695,13 +7705,15 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the grouping.texts.groupContinuedMessage option instead."
             },
             "groupContinuesMessage": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "IsDeprecated": true
+              "IsDeprecated": true,
+              "Description": "Use the grouping.texts.groupContinuesMessage option instead."
             },
             "texts": {
               "Description": "Defines the texts of grouping-related visual elements.",
@@ -7955,7 +7967,7 @@
         "onEditingStart": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editingStart event."
+          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "IsFunc": true,
@@ -8737,7 +8749,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -8793,7 +8806,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -8805,13 +8819,15 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the type option instead."
         },
         "formatString": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the displayFormat option instead."
         },
         "height": {
           "PrimitiveTypes": [
@@ -9119,6 +9135,12 @@
           ],
           "Description": "Specifies the jQuery.Promise or boolean value, which when resolved, forces widget content to render."
         },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
         "showLoadIndicator": {
           "PrimitiveTypes": [
             "bool"
@@ -9130,6 +9152,25 @@
             "string"
           ],
           "Description": "Specifies a jQuery selector of items that should be rendered using a staggered animation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "int32"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "bool"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "double",
+            "string"
+          ],
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -9535,7 +9576,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the selectButtonText option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -9746,7 +9788,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the value option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -10590,28 +10633,28 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideFirstTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastLabel": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "hideLastTick": {
               "PrimitiveTypes": [
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the scale.label.overlappingBehavior.hideFirstOrLast option instead."
+              "Description": "Use the scale.label.hideFirstOrLast option instead."
             },
             "horizontalOrientation": {
               "EnumName": "HorizontalAlignment",
@@ -10660,7 +10703,7 @@
                         "bool"
                       ],
                       "IsDeprecated": true,
-                      "Description": "Instead, use the overlappingBehavior option directly."
+                      "Description": "Use the scale.label.overlappingBehavior option instead."
                     }
                   }
                 },
@@ -10687,14 +10730,14 @@
             },
             "majorTick": {
               "IsDeprecated": true,
-              "Description": "Use the tick option instead.",
+              "Description": "Use the scale.tick option instead.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.color option instead."
+                  "Description": "Use the scale.tick.color option instead."
                 },
                 "customTickValues": {
                   "PrimitiveTypes": [
@@ -10710,7 +10753,7 @@
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.length option instead."
+                  "Description": "Use the scale.tick.length option instead."
                 },
                 "showCalculatedTicks": {
                   "PrimitiveTypes": [
@@ -10731,21 +10774,21 @@
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the overlappingBehavior option instead."
+                  "Description": "Use the scale.label.overlappingBehavior option instead."
                 },
                 "visible": {
                   "PrimitiveTypes": [
                     "bool"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.visible option instead."
+                  "Description": "Use the scale.tick.visible option instead."
                 },
                 "width": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tick.width option instead."
+                  "Description": "Use the scale.tick.width option instead."
                 }
               }
             },
@@ -11209,7 +11252,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the pageLoadMode option instead."
         },
         "bounceEnabled": {
           "PrimitiveTypes": [
@@ -11562,7 +11606,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the pageLoadMode option instead."
         },
         "showScrollbar": {
           "EnumName": "ShowScrollbarMode",
@@ -11918,7 +11963,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -12195,7 +12241,7 @@
             "bool"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -13325,7 +13371,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "IsTemplate": true,
@@ -13486,7 +13532,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -15430,7 +15477,8 @@
             "bool",
             "string"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the scrolling.useNative option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -18863,7 +18911,7 @@
             "callSelectedRangeChanged": {
               "IsDeprecated": true,
               "EnumName": "ValueChangedCallMode",
-              "Description": "Use the callValueChanged option instead."
+              "Description": "Use the behavior.callValueChanged option instead."
             },
             "callValueChanged": {
               "EnumName": "ValueChangedCallMode",
@@ -19316,56 +19364,56 @@
               ],
               "IsDeprecated": true,
               "EnumName": "VizTimeInterval",
-              "Description": "Use the tickInterval option instead.",
+              "Description": "Use the scale.tickInterval option instead.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.days option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "hours": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.hours option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "milliseconds": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.milliseconds option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "minutes": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.minutes option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "months": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.months option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "seconds": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.seconds option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 },
                 "years": {
                   "PrimitiveTypes": [
                     "double"
                   ],
                   "IsDeprecated": true,
-                  "Description": "Use the tickInterval.years option instead."
+                  "Description": "Use the scale.tickInterval option instead."
                 }
               }
             },
@@ -19670,7 +19718,7 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the minorTick.visible option instead."
+              "Description": "Use the scale.minorTick.visible option instead."
             },
             "startValue": {
               "PrimitiveTypes": [
@@ -19775,7 +19823,7 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the overlappingBehavior option instead."
+              "Description": "Use the scale.label.overlappingBehavior option instead."
             },
             "valueType": {
               "EnumName": "ChartDataType",
@@ -20429,7 +20477,7 @@
                 "double"
               ],
               "EnumName": "Mode",
-              "Description": "The base width of the column."
+              "Description": "The column's base width. Calculated automatically when the singleColumnScreen option arranges all elements in a single column."
             },
             "ratio": {
               "PrimitiveTypes": [
@@ -20606,7 +20654,7 @@
                 "double"
               ],
               "EnumName": "Mode",
-              "Description": "The base height of the row."
+              "Description": "The row's base height. Calculated automatically when the singleColumnScreen option arranges all elements in a single column."
             },
             "ratio": {
               "PrimitiveTypes": [
@@ -20636,7 +20684,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Decides on which screens all layout elements should be arranged in a single column."
+          "Description": "Specifies on which screens all layout elements should be arranged in a single column. Accepts a single or several size qualifiers separated by a space."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -20831,7 +20879,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the crossScrollingEnabled option instead."
         },
         "max": {
           "PrimitiveTypes": [
@@ -20988,7 +21037,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the fieldExpr option instead."
+              "Description": "Use the resources.fieldExpr option instead."
             },
             "fieldExpr": {
               "PrimitiveTypes": [
@@ -21007,7 +21056,7 @@
                 "bool"
               ],
               "IsDeprecated": true,
-              "Description": "Use the useColorAsDefault option instead."
+              "Description": "Use the resources.useColorAsDefault option instead."
             },
             "useColorAsDefault": {
               "PrimitiveTypes": [
@@ -21325,7 +21374,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -21369,7 +21419,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "IsTemplate": true,
@@ -21601,7 +21652,7 @@
             "bool"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -22948,7 +22999,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "tabTemplate": {
               "IsTemplate": true,
@@ -23206,7 +23257,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Use the icon field instead."
+              "Description": "Use items.icon instead."
             },
             "template": {
               "IsTemplate": true,
@@ -23389,7 +23440,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "dataSource": {
           "IsDataSource": true,
@@ -23427,7 +23479,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "IsTemplate": true,
@@ -23655,7 +23708,7 @@
             "bool"
           ],
           "IsDeprecated": true,
-          "Description": "Use the DataSource paging opportunities instead."
+          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -23775,7 +23828,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the value option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -23813,7 +23867,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "autoResizeEnabled": {
           "PrimitiveTypes": [
@@ -24071,7 +24126,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "IsDeprecated": true
+          "IsDeprecated": true,
+          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -25818,7 +25874,7 @@
         "onEditingStart": {
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for editingStart. Executed before a cell or row switches to the editing state."
+          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "IsFunc": true,
@@ -27041,7 +27097,8 @@
             "TreeViewItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "An array of items displayed by the widget."
         },
         "itemsExpr": {
           "PrimitiveTypes": [
@@ -27114,7 +27171,7 @@
           "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "Use the itemSelectionChanged event instead."
+          "Description": "Use the onItemSelectionChanged option instead."
         },
         "onItemSelectionChanged": {
           "IsFunc": true,
@@ -27164,7 +27221,7 @@
             "bool"
           ],
           "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode options instead."
+          "Description": "Use the showCheckBoxesMode option instead."
         },
         "selectAllText": {
           "PrimitiveTypes": [
@@ -27199,7 +27256,7 @@
             "bool"
           ],
           "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode options instead."
+          "Description": "Use the showCheckBoxesMode option instead."
         },
         "showCheckBoxesMode": {
           "EnumName": "TreeViewCheckBoxMode",
@@ -27473,7 +27530,7 @@
       "Options": {
         "areaSettings": {
           "IsDeprecated": true,
-          "Description": "Use the \"area\" type element of the layers array.",
+          "Description": "Use the layers option instead.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -27784,7 +27841,7 @@
             "data": {
               "IsDeprecated": true,
               "IsDataSource": true,
-              "Description": "Use the dataSource option instead."
+              "Description": "Use the layers.dataSource option instead."
             },
             "dataField": {
               "PrimitiveTypes": [
@@ -28224,7 +28281,7 @@
         },
         "markerSettings": {
           "IsDeprecated": true,
-          "Description": "Use the \"marker\" type element of the layers array.",
+          "Description": "Use the layers option instead.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -28476,7 +28533,7 @@
           "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "Use the onSelecitonChanged option instead."
+          "Description": "Use the onSelectionChanged option instead."
         },
         "onOptionChanged": {
           "IsFunc": true,
@@ -30566,7 +30623,7 @@
       }
     },
     "ContextMenuItem": {
-      "Description": "Holds an array of menu items.",
+      "Description": "This section lists the data source fields that are used in a default item template.",
       "IsCollection": true,
       "Options": {
         "beginGroup": {
@@ -30598,7 +30655,7 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the icon field instead."
+          "Description": "Use items.icon instead."
         },
         "items": {
           "ComplexTypes": [
@@ -30665,7 +30722,6 @@
       }
     },
     "DataGridColumn": {
-      "Description": "An array of grid columns.",
       "IsCollection": true,
       "Options": {
         "alignment": {
@@ -30872,7 +30928,7 @@
             "Format"
           ],
           "EnumName": "Format",
-          "Description": "Specifies a format for the values displayed in the column."
+          "Description": "Formats a value before it is displayed in a column cell."
         },
         "formItem": {
           "ComplexTypes": [
@@ -31041,7 +31097,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the column is visible or not."
+          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
@@ -31630,7 +31686,7 @@
       }
     },
     "MenuItem": {
-      "Description": "Holds an array of menu items.",
+      "Description": "This section lists the data source fields that are used in a default item template.",
       "IsCollection": true,
       "Options": {
         "beginGroup": {
@@ -31662,7 +31718,7 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the icon field instead."
+          "Description": "Use items.icon instead."
         },
         "items": {
           "ComplexTypes": [
@@ -34301,7 +34357,6 @@
       }
     },
     "TreeListColumn": {
-      "Description": "Configures columns.",
       "IsCollection": true,
       "Options": {
         "alignment": {
@@ -34484,7 +34539,7 @@
             "Format"
           ],
           "EnumName": "Format",
-          "Description": "Specifies a format for the values displayed in the column."
+          "Description": "Formats a value before it is displayed in a column cell."
         },
         "formItem": {
           "ComplexTypes": [
@@ -34630,7 +34685,7 @@
           "PrimitiveTypes": [
             "bool"
           ],
-          "Description": "Specifies whether the column is visible or not."
+          "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
@@ -34648,7 +34703,7 @@
       }
     },
     "TreeViewItem": {
-      "Description": "An array of items displayed by the widget.",
+      "Description": "This section lists the data source fields that are used in a default item template.",
       "IsCollection": true,
       "Options": {
         "disabled": {
@@ -34686,7 +34741,7 @@
             "string"
           ],
           "IsDeprecated": true,
-          "Description": "Use the icon field instead."
+          "Description": "Use items.icon instead."
         },
         "items": {
           "ComplexTypes": [
@@ -34765,61 +34820,116 @@
     }
   },
   "Enums": {
-    "HorizontalAlignment": {
+    "AnimationEasing": {
+      "Items": [
+        {
+          "Name": "ease"
+        },
+        {
+          "Name": "ease-in"
+        },
+        {
+          "Name": "ease-in-out"
+        },
+        {
+          "Name": "ease-out"
+        },
+        {
+          "Name": "linear"
+        },
+        {
+          "Name": "step-end"
+        },
+        {
+          "Name": "step-start"
+        },
+        {
+          "Name": "swing"
+        }
+      ]
+    },
+    "AnimationType": {
+      "Items": [
+        {
+          "Name": "css"
+        },
+        {
+          "Name": "fade"
+        },
+        {
+          "Name": "fadeIn"
+        },
+        {
+          "Name": "fadeOut"
+        },
+        {
+          "Name": "pop"
+        },
+        {
+          "Name": "slide"
+        },
+        {
+          "Name": "slideIn"
+        },
+        {
+          "Name": "slideOut"
+        }
+      ]
+    },
+    "ArgumentAxisHoverMode": {
+      "Items": [
+        {
+          "Name": "allArgumentPoints"
+        },
+        {
+          "Name": "none"
+        }
+      ]
+    },
+    "AxisScaleType": {
+      "Items": [
+        {
+          "Name": "continuous"
+        },
+        {
+          "Name": "discrete"
+        },
+        {
+          "Name": "logarithmic"
+        }
+      ]
+    },
+    "BackgroundImageLocation": {
       "Items": [
         {
           "Name": "center"
         },
         {
-          "Name": "left"
+          "Name": "centerBottom"
         },
         {
-          "Name": "right"
-        }
-      ]
-    },
-    "VerticalAlignment": {
-      "Items": [
-        {
-          "Name": "bottom"
+          "Name": "centerTop"
         },
         {
-          "Name": "center"
+          "Name": "full"
         },
         {
-          "Name": "top"
-        }
-      ]
-    },
-    "Position": {
-      "Items": [
-        {
-          "Name": "bottom"
+          "Name": "leftBottom"
         },
         {
-          "Name": "left"
+          "Name": "leftCenter"
         },
         {
-          "Name": "right"
+          "Name": "leftTop"
         },
         {
-          "Name": "top"
-        }
-      ]
-    },
-    "Direction": {
-      "Items": [
-        {
-          "Name": "bottom"
+          "Name": "rightBottom"
         },
         {
-          "Name": "left"
+          "Name": "rightCenter"
         },
         {
-          "Name": "right"
-        },
-        {
-          "Name": "top"
+          "Name": "rightTop"
         }
       ]
     },
@@ -34868,155 +34978,420 @@
         }
       ]
     },
-    "PositionResolveCollision": {
+    "ButtonType": {
       "Items": [
         {
-          "Name": "fit"
+          "Name": "back"
         },
         {
-          "Name": "flip"
+          "Name": "danger"
         },
         {
-          "Name": "flipfit"
+          "Name": "default"
         },
         {
-          "Name": "none"
-        }
-      ],
-      "Renamings": {
-        "flipfit": "flipFit"
-      }
-    },
-    "PositionResolveCollisionXY": {
-      "Items": [
-        {
-          "Name": "fit"
+          "Name": "normal"
         },
         {
-          "Name": "fit flip"
-        },
-        {
-          "Name": "fit flipfit"
-        },
-        {
-          "Name": "fit none"
-        },
-        {
-          "Name": "flip"
-        },
-        {
-          "Name": "flip fit"
-        },
-        {
-          "Name": "flip none"
-        },
-        {
-          "Name": "flipfit"
-        },
-        {
-          "Name": "flipfit fit"
-        },
-        {
-          "Name": "flipfit none"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "none fit"
-        },
-        {
-          "Name": "none flip"
-        },
-        {
-          "Name": "none flipfit"
+          "Name": "success"
         }
       ]
     },
-    "PositionAlignment": {
+    "CalendarZoomLevel": {
       "Items": [
         {
-          "Name": "bottom"
+          "Name": "century"
         },
         {
+          "Name": "decade"
+        },
+        {
+          "Name": "month"
+        },
+        {
+          "Name": "year"
+        }
+      ]
+    },
+    "ChartDataType": {
+      "Items": [
+        {
+          "Name": "datetime"
+        },
+        {
+          "Name": "numeric"
+        },
+        {
+          "Name": "string"
+        }
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
+    },
+    "ChartElementSelectionMode": {
+      "Items": [
+        {
+          "Name": "multiple"
+        },
+        {
+          "Name": "single"
+        }
+      ]
+    },
+    "ChartLabelDisplayMode": {
+      "Items": [
+        {
+          "Name": "rotate"
+        },
+        {
+          "Name": "stagger"
+        },
+        {
+          "Name": "standard"
+        }
+      ]
+    },
+    "ChartLegendHoverMode": {
+      "Items": [
+        {
+          "Name": "excludePoints"
+        },
+        {
+          "Name": "includePoints"
+        },
+        {
+          "Name": "none"
+        }
+      ]
+    },
+    "ChartPointerType": {
+      "Items": [
+        {
+          "Name": "all"
+        },
+        {
+          "Name": "mouse"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "touch"
+        }
+      ]
+    },
+    "ChartPointInteractionMode": {
+      "Items": [
+        {
+          "Name": "allArgumentPoints"
+        },
+        {
+          "Name": "allSeriesPoints"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "onlyPoint"
+        }
+      ]
+    },
+    "ChartResolveLabelOverlapping": {
+      "Items": [
+        {
+          "Name": "hide"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "stack"
+        }
+      ]
+    },
+    "ChartSeriesHoverMode": {
+      "Items": [
+        {
+          "Name": "allArgumentPoints"
+        },
+        {
+          "Name": "allSeriesPoints"
+        },
+        {
+          "Name": "excludePoints"
+        },
+        {
+          "Name": "includePoints"
+        },
+        {
+          "Name": "nearestPoint"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "onlyPoint"
+        }
+      ]
+    },
+    "ChartSeriesSelectionMode": {
+      "Items": [
+        {
+          "Name": "allArgumentPoints"
+        },
+        {
+          "Name": "allSeriesPoints"
+        },
+        {
+          "Name": "excludePoints"
+        },
+        {
+          "Name": "includePoints"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "onlyPoint"
+        }
+      ]
+    },
+    "ChartTooltipLocation": {
+      "Items": [
+        {
           "Name": "center"
+        },
+        {
+          "Name": "edge"
+        }
+      ]
+    },
+    "CircularGaugeElementOrientation": {
+      "Items": [
+        {
+          "Name": "center"
+        },
+        {
+          "Name": "inside"
+        },
+        {
+          "Name": "outside"
+        }
+      ]
+    },
+    "ColumnResizingMode": {
+      "Items": [
+        {
+          "Name": "nextColumn"
+        },
+        {
+          "Name": "widget"
+        }
+      ]
+    },
+    "ComparisonOperator": {
+      "Items": [
+        {
+          "Name": "!="
+        },
+        {
+          "Name": "!=="
+        },
+        {
+          "Name": "<"
+        },
+        {
+          "Name": "<="
+        },
+        {
+          "Name": "=="
+        },
+        {
+          "Name": "==="
+        },
+        {
+          "Name": ">"
+        },
+        {
+          "Name": ">="
+        }
+      ],
+      "Renamings": {
+        "==": "equal",
+        "!=": "notEqual",
+        "===": "strictEqual",
+        "!==": "notStrictEqual",
+        ">": "greaterThan",
+        ">=": "greaterThanOrEqual",
+        "<": "lessThan",
+        "<=": "lessThanOrEqual"
+      }
+    },
+    "ContextMenuSubmenuDirection": {
+      "Items": [
+        {
+          "Name": "auto"
         },
         {
           "Name": "left"
         },
         {
-          "Name": "left bottom"
+          "Name": "right"
+        }
+      ]
+    },
+    "DashStyle": {
+      "Items": [
+        {
+          "Name": "dash"
         },
         {
-          "Name": "left top"
+          "Name": "dot"
+        },
+        {
+          "Name": "longDash"
+        },
+        {
+          "Name": "solid"
+        }
+      ]
+    },
+    "DateBoxPickerType": {
+      "Items": [
+        {
+          "Name": "calendar"
+        },
+        {
+          "Name": "list"
+        },
+        {
+          "Name": "native"
+        },
+        {
+          "Name": "rollers"
+        }
+      ]
+    },
+    "DateBoxType": {
+      "Items": [
+        {
+          "Name": "date"
+        },
+        {
+          "Name": "datetime"
+        },
+        {
+          "Name": "time"
+        }
+      ],
+      "Renamings": {
+        "datetime": "DateTime"
+      }
+    },
+    "Direction": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "left"
         },
         {
           "Name": "right"
-        },
-        {
-          "Name": "right bottom"
-        },
-        {
-          "Name": "right top"
         },
         {
           "Name": "top"
         }
       ]
     },
-    "AnimationType": {
+    "DiscreteAxisDivisionMode": {
       "Items": [
         {
-          "Name": "css"
+          "Name": "betweenLabels"
         },
         {
-          "Name": "fade"
-        },
-        {
-          "Name": "fadeIn"
-        },
-        {
-          "Name": "fadeOut"
-        },
-        {
-          "Name": "pop"
-        },
-        {
-          "Name": "slide"
-        },
-        {
-          "Name": "slideIn"
-        },
-        {
-          "Name": "slideOut"
+          "Name": "crossLabels"
         }
       ]
     },
-    "AnimationEasing": {
+    "DropDownSearchMode": {
       "Items": [
         {
-          "Name": "ease"
+          "Name": "contains"
         },
         {
-          "Name": "ease-in"
+          "Name": "startswith"
+        }
+      ],
+      "Renamings": {
+        "startswith": "startsWith"
+      }
+    },
+    "EditorApplyValueMode": {
+      "Items": [
+        {
+          "Name": "instantly"
         },
         {
-          "Name": "ease-in-out"
+          "Name": "useButtons"
+        }
+      ]
+    },
+    "EdmType": {
+      "Items": [
+        {
+          "Name": "Guid"
         },
         {
-          "Name": "ease-out"
+          "Name": "Int32"
         },
         {
-          "Name": "linear"
+          "Name": "Int64"
         },
         {
-          "Name": "step-end"
+          "Name": "String"
         },
         {
-          "Name": "step-start"
+          "Name": "Boolean"
         },
         {
-          "Name": "swing"
+          "Name": "Single"
+        },
+        {
+          "Name": "Decimal"
+        }
+      ]
+    },
+    "ExportFormat": {
+      "Items": [
+        {
+          "Name": "GIF"
+        },
+        {
+          "Name": "JPEG"
+        },
+        {
+          "Name": "PDF"
+        },
+        {
+          "Name": "PNG"
+        },
+        {
+          "Name": "SVG"
+        }
+      ]
+    },
+    "FileUploadMode": {
+      "Items": [
+        {
+          "Name": "instantly"
+        },
+        {
+          "Name": "useButtons"
+        },
+        {
+          "Name": "useForm"
         }
       ]
     },
@@ -35069,587 +35444,29 @@
         "endswith": "endsWith"
       }
     },
-    "ButtonType": {
+    "FilterType": {
       "Items": [
         {
-          "Name": "back"
+          "Name": "exclude"
         },
         {
-          "Name": "danger"
-        },
-        {
-          "Name": "default"
-        },
-        {
-          "Name": "normal"
-        },
-        {
-          "Name": "success"
+          "Name": "include"
         }
       ]
     },
-    "DropDownSearchMode": {
+    "FinancialChartReductionLevel": {
       "Items": [
         {
-          "Name": "contains"
+          "Name": "close"
         },
         {
-          "Name": "startswith"
-        }
-      ],
-      "Renamings": {
-        "startswith": "startsWith"
-      }
-    },
-    "NumberBoxMode": {
-      "Items": [
-        {
-          "Name": "number"
-        },
-        {
-          "Name": "text"
-        }
-      ]
-    },
-    "VerticalEdge": {
-      "Items": [
-        {
-          "Name": "bottom"
-        },
-        {
-          "Name": "top"
-        }
-      ]
-    },
-    "HorizontalEdge": {
-      "Items": [
-        {
-          "Name": "left"
-        },
-        {
-          "Name": "right"
-        }
-      ]
-    },
-    "SliderTooltipShowMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "onHover"
-        }
-      ]
-    },
-    "ValidationMessageMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "auto"
-        }
-      ]
-    },
-    "Toolbar": {
-      "Items": [
-        {
-          "Name": "bottom"
-        },
-        {
-          "Name": "top"
-        }
-      ]
-    },
-    "ToolbarItemLocation": {
-      "Items": [
-        {
-          "Name": "after"
-        },
-        {
-          "Name": "before"
-        },
-        {
-          "Name": "center"
-        }
-      ]
-    },
-    "ToolbarRenderMode": {
-      "Items": [
-        {
-          "Name": "bottomToolbar"
-        },
-        {
-          "Name": "topToolbar"
-        }
-      ]
-    },
-    "ToolbarItemWidget": {
-      "Items": [
-        {
-          "Name": "dxAutocomplete"
-        },
-        {
-          "Name": "dxButton"
-        },
-        {
-          "Name": "dxCheckBox"
-        },
-        {
-          "Name": "dxDateBox"
-        },
-        {
-          "Name": "dxDropDownMenu"
-        },
-        {
-          "Name": "dxMenu"
-        },
-        {
-          "Name": "dxSelectBox"
-        },
-        {
-          "Name": "dxTabs"
-        },
-        {
-          "Name": "dxTextBox"
-        }
-      ],
-      "Renamings": {
-        "dxAutocomplete": "Autocomplete",
-        "dxButton": "Button",
-        "dxCheckBox": "CheckBox",
-        "dxDateBox": "DateBox",
-        "dxDropDownMenu": "DropDownMenu",
-        "dxMenu": "Menu",
-        "dxSelectBox": "SelectBox",
-        "dxTabs": "Tabs",
-        "dxTextBox": "TextBox"
-      }
-    },
-    "SelectionMode": {
-      "Items": [
-        {
-          "Name": "multiple"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "single"
-        }
-      ]
-    },
-    "SelectAllMode": {
-      "Items": [
-        {
-          "Name": "allPages"
-        },
-        {
-          "Name": "page"
-        }
-      ]
-    },
-    "NavSelectionMode": {
-      "Items": [
-        {
-          "Name": "multiple"
-        },
-        {
-          "Name": "single"
-        }
-      ]
-    },
-    "ListSelectionMode": {
-      "Items": [
-        {
-          "Name": "all"
-        },
-        {
-          "Name": "multiple"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "single"
-        }
-      ]
-    },
-    "MenuSelectionMode": {
-      "Items": [
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "single"
-        }
-      ]
-    },
-    "GridSortingMode": {
-      "Items": [
-        {
-          "Name": "multiple"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "single"
-        }
-      ]
-    },
-    "ShowSubmenuMode": {
-      "Items": [
-        {
-          "Name": "onClick"
-        },
-        {
-          "Name": "onHover"
-        }
-      ]
-    },
-    "SubmenuDirection": {
-      "Items": [
-        {
-          "Name": "auto"
-        },
-        {
-          "Name": "leftOrTop"
-        },
-        {
-          "Name": "rightOrBottom"
-        }
-      ]
-    },
-    "ContextMenuSubmenuDirection": {
-      "Items": [
-        {
-          "Name": "auto"
-        },
-        {
-          "Name": "left"
-        },
-        {
-          "Name": "right"
-        }
-      ]
-    },
-    "ListItemDeleteMode": {
-      "Items": [
-        {
-          "Name": "context"
-        },
-        {
-          "Name": "slideButton"
-        },
-        {
-          "Name": "slideItem"
-        },
-        {
-          "Name": "static"
-        },
-        {
-          "Name": "swipe"
-        },
-        {
-          "Name": "toggle"
-        }
-      ]
-    },
-    "ListMenuMode": {
-      "Items": [
-        {
-          "Name": "context"
-        },
-        {
-          "Name": "slide"
-        }
-      ]
-    },
-    "ListPageLoadMode": {
-      "Items": [
-        {
-          "Name": "nextButton"
-        },
-        {
-          "Name": "scrollBottom"
-        }
-      ]
-    },
-    "ShowScrollbarMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "never"
-        },
-        {
-          "Name": "onHover"
-        },
-        {
-          "Name": "onScroll"
-        }
-      ]
-    },
-    "CalendarZoomLevel": {
-      "Items": [
-        {
-          "Name": "century"
-        },
-        {
-          "Name": "decade"
-        },
-        {
-          "Name": "month"
-        },
-        {
-          "Name": "year"
-        }
-      ]
-    },
-    "EditorApplyValueMode": {
-      "Items": [
-        {
-          "Name": "instantly"
-        },
-        {
-          "Name": "useButtons"
-        }
-      ]
-    },
-    "FileUploadMode": {
-      "Items": [
-        {
-          "Name": "instantly"
-        },
-        {
-          "Name": "useButtons"
-        },
-        {
-          "Name": "useForm"
-        }
-      ]
-    },
-    "DateBoxType": {
-      "Items": [
-        {
-          "Name": "date"
-        },
-        {
-          "Name": "datetime"
-        },
-        {
-          "Name": "time"
-        }
-      ],
-      "Renamings": {
-        "datetime": "DateTime"
-      }
-    },
-    "TextBoxMode": {
-      "Items": [
-        {
-          "Name": "email"
-        },
-        {
-          "Name": "password"
-        },
-        {
-          "Name": "search"
-        },
-        {
-          "Name": "tel"
-        },
-        {
-          "Name": "text"
-        },
-        {
-          "Name": "url"
-        }
-      ]
-    },
-    "Orientation": {
-      "Items": [
-        {
-          "Name": "horizontal"
-        },
-        {
-          "Name": "vertical"
-        }
-      ]
-    },
-    "DateBoxPickerType": {
-      "Items": [
-        {
-          "Name": "calendar"
-        },
-        {
-          "Name": "list"
-        },
-        {
-          "Name": "native"
-        },
-        {
-          "Name": "rollers"
-        }
-      ]
-    },
-    "GeoMapProvider": {
-      "Items": [
-        {
-          "Name": "bing"
-        },
-        {
-          "Name": "google"
-        },
-        {
-          "Name": "googleStatic"
-        }
-      ]
-    },
-    "GeoMapType": {
-      "Items": [
-        {
-          "Name": "hybrid"
-        },
-        {
-          "Name": "roadmap"
-        },
-        {
-          "Name": "satellite"
-        }
-      ]
-    },
-    "GeoMapRouteMode": {
-      "Items": [
-        {
-          "Name": "driving"
-        },
-        {
-          "Name": "walking"
-        }
-      ]
-    },
-    "TreeViewDataStructure": {
-      "Items": [
-        {
-          "Name": "plain"
-        },
-        {
-          "Name": "tree"
-        }
-      ]
-    },
-    "TreeListDataStructure": {
-      "Items": [
-        {
-          "Name": "plain"
-        },
-        {
-          "Name": "tree"
-        }
-      ]
-    },
-    "ScrollDirection": {
-      "Items": [
-        {
-          "Name": "both"
-        },
-        {
-          "Name": "horizontal"
-        },
-        {
-          "Name": "vertical"
-        }
-      ]
-    },
-    "ToastType": {
-      "Items": [
-        {
-          "Name": "custom"
-        },
-        {
-          "Name": "error"
-        },
-        {
-          "Name": "info"
-        },
-        {
-          "Name": "success"
-        },
-        {
-          "Name": "warning"
-        }
-      ]
-    },
-    "TreeViewCheckBoxMode": {
-      "Items": [
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "normal"
-        },
-        {
-          "Name": "selectAll"
-        }
-      ]
-    },
-    "ResizeHandle": {
-      "Items": [
-        {
-          "Name": "bottom"
-        },
-        {
-          "Name": "left"
-        },
-        {
-          "Name": "right"
-        },
-        {
-          "Name": "top"
-        }
-      ]
-    },
-    "SlideOutMenuPosition": {
-      "Items": [
-        {
-          "Name": "inverted"
-        },
-        {
-          "Name": "normal"
-        }
-      ]
-    },
-    "SchedulerViewType": {
-      "Items": [
-        {
-          "Name": "agenda"
-        },
-        {
-          "Name": "day"
-        },
-        {
-          "Name": "month"
-        },
-        {
-          "Name": "timelineDay"
-        },
-        {
-          "Name": "timelineMonth"
-        },
-        {
-          "Name": "timelineWeek"
-        },
-        {
-          "Name": "timelineWorkWeek"
+          "Name": "high"
         },
         {
-          "Name": "week"
+          "Name": "low"
         },
         {
-          "Name": "workWeek"
+          "Name": "open"
         }
       ]
     },
@@ -35686,496 +35503,6 @@
         "5": "Friday",
         "6": "Saturday"
       }
-    },
-    "SchedulerRecurrenceEditMode": {
-      "Items": [
-        {
-          "Name": "dialog"
-        },
-        {
-          "Name": "occurrence"
-        },
-        {
-          "Name": "series"
-        }
-      ]
-    },
-    "GridColumnDataType": {
-      "Items": [
-        {
-          "Name": "string"
-        },
-        {
-          "Name": "number"
-        },
-        {
-          "Name": "date"
-        },
-        {
-          "Name": "boolean"
-        },
-        {
-          "Name": "object"
-        }
-      ]
-    },
-    "SortOrder": {
-      "Items": [
-        {
-          "Name": "asc"
-        },
-        {
-          "Name": "desc"
-        }
-      ]
-    },
-    "GridEditMode": {
-      "Items": [
-        {
-          "Name": "batch"
-        },
-        {
-          "Name": "cell"
-        },
-        {
-          "Name": "row"
-        },
-        {
-          "Name": "form"
-        },
-        {
-          "Name": "popup"
-        }
-      ]
-    },
-    "GridApplyFilterMode": {
-      "Items": [
-        {
-          "Name": "auto"
-        },
-        {
-          "Name": "onClick"
-        }
-      ]
-    },
-    "GridScrollingMode": {
-      "Items": [
-        {
-          "Name": "infinite"
-        },
-        {
-          "Name": "standard"
-        },
-        {
-          "Name": "virtual"
-        }
-      ]
-    },
-    "TreeListScrollingMode": {
-      "Items": [
-        {
-          "Name": "standard"
-        },
-        {
-          "Name": "virtual"
-        }
-      ]
-    },
-    "GridSelectionShowCheckBoxesMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "onClick"
-        },
-        {
-          "Name": "onLongTap"
-        }
-      ]
-    },
-    "StateStoringType": {
-      "Items": [
-        {
-          "Name": "custom"
-        },
-        {
-          "Name": "localStorage"
-        },
-        {
-          "Name": "sessionStorage"
-        }
-      ]
-    },
-    "ColumnResizingMode": {
-      "Items": [
-        {
-          "Name": "nextColumn"
-        },
-        {
-          "Name": "widget"
-        }
-      ]
-    },
-    "SummaryType": {
-      "Items": [
-        {
-          "Name": "avg"
-        },
-        {
-          "Name": "count"
-        },
-        {
-          "Name": "custom"
-        },
-        {
-          "Name": "max"
-        },
-        {
-          "Name": "min"
-        },
-        {
-          "Name": "sum"
-        }
-      ]
-    },
-    "FilterType": {
-      "Items": [
-        {
-          "Name": "exclude"
-        },
-        {
-          "Name": "include"
-        }
-      ]
-    },
-    "HeaderFilterGroupInterval": {
-      "Items": [
-        {
-          "Name": "day"
-        },
-        {
-          "Name": "hour"
-        },
-        {
-          "Name": "minute"
-        },
-        {
-          "Name": "month"
-        },
-        {
-          "Name": "quarter"
-        },
-        {
-          "Name": "second"
-        },
-        {
-          "Name": "year"
-        }
-      ]
-    },
-    "PivotGridFieldChooserLayout": {
-      "Items": [
-        {
-          "Name": "0"
-        },
-        {
-          "Name": "1"
-        },
-        {
-          "Name": "2"
-        }
-      ],
-      "Renamings": {
-        "0": "Layout0",
-        "1": "Layout1",
-        "2": "Layout2"
-      }
-    },
-    "PivotGridTotalsDisplayMode": {
-      "Items": [
-        {
-          "Name": "both"
-        },
-        {
-          "Name": "columns"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "rows"
-        }
-      ]
-    },
-    "PivotGridScrollingMode": {
-      "Items": [
-        {
-          "Name": "standard"
-        },
-        {
-          "Name": "virtual"
-        }
-      ]
-    },
-    "PivotGridArea": {
-      "Items": [
-        {
-          "Name": "column"
-        },
-        {
-          "Name": "data"
-        },
-        {
-          "Name": "filter"
-        },
-        {
-          "Name": "row"
-        }
-      ]
-    },
-    "PivotGridDataType": {
-      "Items": [
-        {
-          "Name": "date"
-        },
-        {
-          "Name": "number"
-        },
-        {
-          "Name": "string"
-        }
-      ]
-    },
-    "PivotGridGroupInterval": {
-      "Items": [
-        {
-          "Name": "day"
-        },
-        {
-          "Name": "dayOfWeek"
-        },
-        {
-          "Name": "month"
-        },
-        {
-          "Name": "quarter"
-        },
-        {
-          "Name": "year"
-        }
-      ]
-    },
-    "PivotGridSortBy": {
-      "Items": [
-        {
-          "Name": "displayText"
-        },
-        {
-          "Name": "value"
-        }
-      ]
-    },
-    "PivotGridRunningTotalMode": {
-      "Items": [
-        {
-          "Name": "column"
-        },
-        {
-          "Name": "row"
-        }
-      ]
-    },
-    "PivotGridSummaryDisplayMode": {
-      "Items": [
-        {
-          "Name": "absoluteVariation"
-        },
-        {
-          "Name": "percentOfColumnGrandTotal"
-        },
-        {
-          "Name": "percentOfColumnTotal"
-        },
-        {
-          "Name": "percentOfGrandTotal"
-        },
-        {
-          "Name": "percentOfRowGrandTotal"
-        },
-        {
-          "Name": "percentOfRowTotal"
-        },
-        {
-          "Name": "percentVariation"
-        }
-      ]
-    },
-    "PivotGridRowHeadersLayout": {
-      "Items": [
-        {
-          "Name": "standard"
-        },
-        {
-          "Name": "tree"
-        }
-      ]
-    },
-    "PivotGridDataFieldArea": {
-      "Items": [
-        {
-          "Name": "column"
-        },
-        {
-          "Name": "row"
-        }
-      ]
-    },
-    "FormLabelLocation": {
-      "Items": [
-        {
-          "Name": "left"
-        },
-        {
-          "Name": "right"
-        },
-        {
-          "Name": "top"
-        }
-      ]
-    },
-    "FormItemType": {
-      "Items": [
-        {
-          "Name": "empty"
-        },
-        {
-          "Name": "group"
-        },
-        {
-          "Name": "simple"
-        },
-        {
-          "Name": "tabbed"
-        }
-      ]
-    },
-    "FormItemEditorType": {
-      "Items": [
-        {
-          "Name": "dxAutocomplete"
-        },
-        {
-          "Name": "dxCalendar"
-        },
-        {
-          "Name": "dxCheckBox"
-        },
-        {
-          "Name": "dxColorBox"
-        },
-        {
-          "Name": "dxDateBox"
-        },
-        {
-          "Name": "dxDropDownBox"
-        },
-        {
-          "Name": "dxLookup"
-        },
-        {
-          "Name": "dxNumberBox"
-        },
-        {
-          "Name": "dxRadioGroup"
-        },
-        {
-          "Name": "dxSelectBox"
-        },
-        {
-          "Name": "dxSlider"
-        },
-        {
-          "Name": "dxSwitch"
-        },
-        {
-          "Name": "dxTagBox"
-        },
-        {
-          "Name": "dxTextArea"
-        },
-        {
-          "Name": "dxTextBox"
-        }
-      ],
-      "Renamings": {
-        "dxAutocomplete": "Autocomplete",
-        "dxCalendar": "Calendar",
-        "dxCheckBox": "CheckBox",
-        "dxColorBox": "ColorBox",
-        "dxDateBox": "DateBox",
-        "dxDropDownBox": "DropDownBox",
-        "dxLookup": "Lookup",
-        "dxNumberBox": "NumberBox",
-        "dxRadioGroup": "RadioGroup",
-        "dxSelectBox": "SelectBox",
-        "dxSlider": "Slider",
-        "dxSwitch": "Switch",
-        "dxTagBox": "TagBox",
-        "dxTextArea": "TextArea",
-        "dxTextBox": "TextBox"
-      }
-    },
-    "VizTheme": {
-      "Items": [
-        {
-          "Name": "android5.light"
-        },
-        {
-          "Name": "generic.dark"
-        },
-        {
-          "Name": "generic.light"
-        },
-        {
-          "Name": "generic.contrast"
-        },
-        {
-          "Name": "ios7.default"
-        },
-        {
-          "Name": "win10.black"
-        },
-        {
-          "Name": "win10.white"
-        },
-        {
-          "Name": "win8.black",
-          "Deprecated": true,
-          "InsteadUse": "win10.black"
-        },
-        {
-          "Name": "win8.white",
-          "Deprecated": true,
-          "InsteadUse": "win10.white"
-        }
-      ],
-      "Renamings": {
-        "ios7.default": "iOS7Default"
-      }
-    },
-    "VizAnimationEasing": {
-      "Items": [
-        {
-          "Name": "easeOutCubic"
-        },
-        {
-          "Name": "linear"
-        }
-      ]
     },
     "Format": {
       "Items": [
@@ -36265,38 +35592,451 @@
         }
       ]
     },
-    "VizPalette": {
+    "FormItemEditorType": {
       "Items": [
         {
-          "Name": "Bright"
+          "Name": "dxAutocomplete"
         },
         {
-          "Name": "Default"
+          "Name": "dxCalendar"
         },
         {
-          "Name": "Harmony Light"
+          "Name": "dxCheckBox"
         },
         {
-          "Name": "Ocean"
+          "Name": "dxColorBox"
         },
         {
-          "Name": "Pastel"
+          "Name": "dxDateBox"
         },
         {
-          "Name": "Soft"
+          "Name": "dxDropDownBox"
         },
         {
-          "Name": "Soft Pastel"
+          "Name": "dxLookup"
         },
         {
-          "Name": "Vintage"
+          "Name": "dxNumberBox"
         },
         {
-          "Name": "Violet"
+          "Name": "dxRadioGroup"
+        },
+        {
+          "Name": "dxSelectBox"
+        },
+        {
+          "Name": "dxSlider"
+        },
+        {
+          "Name": "dxSwitch"
+        },
+        {
+          "Name": "dxTagBox"
+        },
+        {
+          "Name": "dxTextArea"
+        },
+        {
+          "Name": "dxTextBox"
+        }
+      ],
+      "Renamings": {
+        "dxAutocomplete": "Autocomplete",
+        "dxCalendar": "Calendar",
+        "dxCheckBox": "CheckBox",
+        "dxColorBox": "ColorBox",
+        "dxDateBox": "DateBox",
+        "dxDropDownBox": "DropDownBox",
+        "dxLookup": "Lookup",
+        "dxNumberBox": "NumberBox",
+        "dxRadioGroup": "RadioGroup",
+        "dxSelectBox": "SelectBox",
+        "dxSlider": "Slider",
+        "dxSwitch": "Switch",
+        "dxTagBox": "TagBox",
+        "dxTextArea": "TextArea",
+        "dxTextBox": "TextBox"
+      }
+    },
+    "FormItemType": {
+      "Items": [
+        {
+          "Name": "empty"
+        },
+        {
+          "Name": "group"
+        },
+        {
+          "Name": "simple"
+        },
+        {
+          "Name": "tabbed"
         }
       ]
     },
-    "ChartElementSelectionMode": {
+    "FormLabelLocation": {
+      "Items": [
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "right"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
+    "GaugeIndicatorType": {
+      "Items": [
+        {
+          "Name": "circle"
+        },
+        {
+          "Name": "rangeBar"
+        },
+        {
+          "Name": "rectangle"
+        },
+        {
+          "Name": "rectangleNeedle"
+        },
+        {
+          "Name": "rhombus"
+        },
+        {
+          "Name": "textCloud"
+        },
+        {
+          "Name": "triangleMarker"
+        },
+        {
+          "Name": "triangleNeedle"
+        },
+        {
+          "Name": "twoColorNeedle"
+        }
+      ]
+    },
+    "GaugeOverlappingBehavior": {
+      "Items": [
+        {
+          "Name": "first"
+        },
+        {
+          "Name": "last"
+        }
+      ],
+      "Renamings": {
+        "first": "HideFirstLabel",
+        "last": "HideLastLabel"
+      }
+    },
+    "GaugeTitlePosition": {
+      "Items": [
+        {
+          "Name": "bottom-center"
+        },
+        {
+          "Name": "bottom-left"
+        },
+        {
+          "Name": "bottom-right"
+        },
+        {
+          "Name": "top-center"
+        },
+        {
+          "Name": "top-left"
+        },
+        {
+          "Name": "top-right"
+        }
+      ]
+    },
+    "GeoMapProvider": {
+      "Items": [
+        {
+          "Name": "bing"
+        },
+        {
+          "Name": "google"
+        },
+        {
+          "Name": "googleStatic"
+        }
+      ]
+    },
+    "GeoMapRouteMode": {
+      "Items": [
+        {
+          "Name": "driving"
+        },
+        {
+          "Name": "walking"
+        }
+      ]
+    },
+    "GeoMapType": {
+      "Items": [
+        {
+          "Name": "hybrid"
+        },
+        {
+          "Name": "roadmap"
+        },
+        {
+          "Name": "satellite"
+        }
+      ]
+    },
+    "GridApplyFilterMode": {
+      "Items": [
+        {
+          "Name": "auto"
+        },
+        {
+          "Name": "onClick"
+        }
+      ]
+    },
+    "GridColumnChooserMode": {
+      "Items": [
+        {
+          "Name": "dragAndDrop"
+        },
+        {
+          "Name": "select"
+        }
+      ]
+    },
+    "GridColumnDataType": {
+      "Items": [
+        {
+          "Name": "string"
+        },
+        {
+          "Name": "number"
+        },
+        {
+          "Name": "date"
+        },
+        {
+          "Name": "boolean"
+        },
+        {
+          "Name": "object"
+        }
+      ]
+    },
+    "GridEditMode": {
+      "Items": [
+        {
+          "Name": "batch"
+        },
+        {
+          "Name": "cell"
+        },
+        {
+          "Name": "row"
+        },
+        {
+          "Name": "form"
+        },
+        {
+          "Name": "popup"
+        }
+      ]
+    },
+    "GridGroupingExpandMode": {
+      "Items": [
+        {
+          "Name": "buttonClick"
+        },
+        {
+          "Name": "rowClick"
+        }
+      ]
+    },
+    "GridScrollingMode": {
+      "Items": [
+        {
+          "Name": "infinite"
+        },
+        {
+          "Name": "standard"
+        },
+        {
+          "Name": "virtual"
+        }
+      ]
+    },
+    "GridSelectionShowCheckBoxesMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "onClick"
+        },
+        {
+          "Name": "onLongTap"
+        }
+      ]
+    },
+    "GridSortingMode": {
+      "Items": [
+        {
+          "Name": "multiple"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "single"
+        }
+      ]
+    },
+    "HatchingDirection": {
+      "Items": [
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "right"
+        }
+      ]
+    },
+    "HeaderFilterGroupInterval": {
+      "Items": [
+        {
+          "Name": "day"
+        },
+        {
+          "Name": "hour"
+        },
+        {
+          "Name": "minute"
+        },
+        {
+          "Name": "month"
+        },
+        {
+          "Name": "quarter"
+        },
+        {
+          "Name": "second"
+        },
+        {
+          "Name": "year"
+        }
+      ]
+    },
+    "HorizontalAlignment": {
+      "Items": [
+        {
+          "Name": "center"
+        },
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "right"
+        }
+      ]
+    },
+    "HorizontalEdge": {
+      "Items": [
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "right"
+        }
+      ]
+    },
+    "ListItemDeleteMode": {
+      "Items": [
+        {
+          "Name": "context"
+        },
+        {
+          "Name": "slideButton"
+        },
+        {
+          "Name": "slideItem"
+        },
+        {
+          "Name": "static"
+        },
+        {
+          "Name": "swipe"
+        },
+        {
+          "Name": "toggle"
+        }
+      ]
+    },
+    "ListMenuMode": {
+      "Items": [
+        {
+          "Name": "context"
+        },
+        {
+          "Name": "slide"
+        }
+      ]
+    },
+    "ListPageLoadMode": {
+      "Items": [
+        {
+          "Name": "nextButton"
+        },
+        {
+          "Name": "scrollBottom"
+        }
+      ]
+    },
+    "ListSelectionMode": {
+      "Items": [
+        {
+          "Name": "all"
+        },
+        {
+          "Name": "multiple"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "single"
+        }
+      ]
+    },
+    "MenuSelectionMode": {
+      "Items": [
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "single"
+        }
+      ]
+    },
+    "Mode": {
+      "Items": [
+        {
+          "Name": "auto"
+        }
+      ]
+    },
+    "NavSelectionMode": {
       "Items": [
         {
           "Name": "multiple"
@@ -36306,29 +36046,23 @@
         }
       ]
     },
-    "ChartResolveLabelOverlapping": {
+    "NumberBoxMode": {
       "Items": [
         {
-          "Name": "hide"
+          "Name": "number"
         },
         {
-          "Name": "none"
-        },
-        {
-          "Name": "stack"
+          "Name": "text"
         }
       ]
     },
-    "PieChartResolveLabelOverlapping": {
+    "Orientation": {
       "Items": [
         {
-          "Name": "hide"
+          "Name": "horizontal"
         },
         {
-          "Name": "none"
-        },
-        {
-          "Name": "shift"
+          "Name": "vertical"
         }
       ]
     },
@@ -36358,92 +36092,16 @@
         }
       ]
     },
-    "ChartLabelDisplayMode": {
+    "PieChartLabelPosition": {
       "Items": [
         {
-          "Name": "rotate"
+          "Name": "columns"
         },
         {
-          "Name": "stagger"
+          "Name": "inside"
         },
         {
-          "Name": "standard"
-        }
-      ]
-    },
-    "ChartPointerType": {
-      "Items": [
-        {
-          "Name": "all"
-        },
-        {
-          "Name": "mouse"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "touch"
-        }
-      ]
-    },
-    "ChartLegendHoverMode": {
-      "Items": [
-        {
-          "Name": "excludePoints"
-        },
-        {
-          "Name": "includePoints"
-        },
-        {
-          "Name": "none"
-        }
-      ]
-    },
-    "ChartSeriesHoverMode": {
-      "Items": [
-        {
-          "Name": "allArgumentPoints"
-        },
-        {
-          "Name": "allSeriesPoints"
-        },
-        {
-          "Name": "excludePoints"
-        },
-        {
-          "Name": "includePoints"
-        },
-        {
-          "Name": "nearestPoint"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "onlyPoint"
-        }
-      ]
-    },
-    "ChartSeriesSelectionMode": {
-      "Items": [
-        {
-          "Name": "allArgumentPoints"
-        },
-        {
-          "Name": "allSeriesPoints"
-        },
-        {
-          "Name": "excludePoints"
-        },
-        {
-          "Name": "includePoints"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "onlyPoint"
+          "Name": "outside"
         }
       ]
     },
@@ -36457,70 +36115,34 @@
         }
       ]
     },
-    "RelativePosition": {
+    "PieChartResolveLabelOverlapping": {
       "Items": [
         {
-          "Name": "inside"
-        },
-        {
-          "Name": "outside"
-        }
-      ]
-    },
-    "ChartTooltipLocation": {
-      "Items": [
-        {
-          "Name": "center"
-        },
-        {
-          "Name": "edge"
-        }
-      ]
-    },
-    "DiscreteAxisDivisionMode": {
-      "Items": [
-        {
-          "Name": "betweenLabels"
-        },
-        {
-          "Name": "crossLabels"
-        }
-      ]
-    },
-    "ChartDataType": {
-      "Items": [
-        {
-          "Name": "datetime"
-        },
-        {
-          "Name": "numeric"
-        },
-        {
-          "Name": "string"
-        }
-      ],
-      "Renamings": {
-        "datetime": "DateTime"
-      }
-    },
-    "ArgumentAxisHoverMode": {
-      "Items": [
-        {
-          "Name": "allArgumentPoints"
+          "Name": "hide"
         },
         {
           "Name": "none"
+        },
+        {
+          "Name": "shift"
         }
       ]
     },
-    "ChartPointInteractionMode": {
+    "PieChartSegmentsDirection": {
       "Items": [
         {
-          "Name": "allArgumentPoints"
+          "Name": "anticlockwise"
         },
         {
-          "Name": "allSeriesPoints"
-        },
+          "Name": "clockwise"
+        }
+      ],
+      "Renamings": {
+        "anticlockwise": "AntiClockwise"
+      }
+    },
+    "PieChartSeriesInteractionMode": {
+      "Items": [
         {
           "Name": "none"
         },
@@ -36529,16 +36151,356 @@
         }
       ]
     },
-    "AxisScaleType": {
+    "PieChartType": {
       "Items": [
         {
-          "Name": "continuous"
+          "Name": "donut"
         },
         {
-          "Name": "discrete"
+          "Name": "doughnut"
         },
         {
-          "Name": "logarithmic"
+          "Name": "pie"
+        }
+      ]
+    },
+    "PivotGridArea": {
+      "Items": [
+        {
+          "Name": "column"
+        },
+        {
+          "Name": "data"
+        },
+        {
+          "Name": "filter"
+        },
+        {
+          "Name": "row"
+        }
+      ]
+    },
+    "PivotGridDataFieldArea": {
+      "Items": [
+        {
+          "Name": "column"
+        },
+        {
+          "Name": "row"
+        }
+      ]
+    },
+    "PivotGridDataType": {
+      "Items": [
+        {
+          "Name": "date"
+        },
+        {
+          "Name": "number"
+        },
+        {
+          "Name": "string"
+        }
+      ]
+    },
+    "PivotGridFieldChooserLayout": {
+      "Items": [
+        {
+          "Name": "0"
+        },
+        {
+          "Name": "1"
+        },
+        {
+          "Name": "2"
+        }
+      ],
+      "Renamings": {
+        "0": "Layout0",
+        "1": "Layout1",
+        "2": "Layout2"
+      }
+    },
+    "PivotGridGroupInterval": {
+      "Items": [
+        {
+          "Name": "day"
+        },
+        {
+          "Name": "dayOfWeek"
+        },
+        {
+          "Name": "month"
+        },
+        {
+          "Name": "quarter"
+        },
+        {
+          "Name": "year"
+        }
+      ]
+    },
+    "PivotGridRowHeadersLayout": {
+      "Items": [
+        {
+          "Name": "standard"
+        },
+        {
+          "Name": "tree"
+        }
+      ]
+    },
+    "PivotGridRunningTotalMode": {
+      "Items": [
+        {
+          "Name": "column"
+        },
+        {
+          "Name": "row"
+        }
+      ]
+    },
+    "PivotGridScrollingMode": {
+      "Items": [
+        {
+          "Name": "standard"
+        },
+        {
+          "Name": "virtual"
+        }
+      ]
+    },
+    "PivotGridSortBy": {
+      "Items": [
+        {
+          "Name": "displayText"
+        },
+        {
+          "Name": "value"
+        }
+      ]
+    },
+    "PivotGridSummaryDisplayMode": {
+      "Items": [
+        {
+          "Name": "absoluteVariation"
+        },
+        {
+          "Name": "percentOfColumnGrandTotal"
+        },
+        {
+          "Name": "percentOfColumnTotal"
+        },
+        {
+          "Name": "percentOfGrandTotal"
+        },
+        {
+          "Name": "percentOfRowGrandTotal"
+        },
+        {
+          "Name": "percentOfRowTotal"
+        },
+        {
+          "Name": "percentVariation"
+        }
+      ]
+    },
+    "PivotGridTotalsDisplayMode": {
+      "Items": [
+        {
+          "Name": "both"
+        },
+        {
+          "Name": "columns"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "rows"
+        }
+      ]
+    },
+    "PointSymbol": {
+      "Items": [
+        {
+          "Name": "circle"
+        },
+        {
+          "Name": "cross"
+        },
+        {
+          "Name": "polygon"
+        },
+        {
+          "Name": "square"
+        },
+        {
+          "Name": "triangleDown"
+        },
+        {
+          "Name": "triangleUp"
+        }
+      ]
+    },
+    "PolarChartOverlappingBehavior": {
+      "Items": [
+        {
+          "Name": "enlargeTickInterval",
+          "Deprecated": true,
+          "InsteadUse": "hide"
+        },
+        {
+          "Name": "ignore",
+          "Deprecated": true,
+          "InsteadUse": "none"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "hide"
+        }
+      ]
+    },
+    "PolarChartResolveLabelOverlapping": {
+      "Items": [
+        {
+          "Name": "hide"
+        },
+        {
+          "Name": "none"
+        }
+      ]
+    },
+    "PolarChartSeriesType": {
+      "Items": [
+        {
+          "Name": "area"
+        },
+        {
+          "Name": "bar"
+        },
+        {
+          "Name": "line"
+        },
+        {
+          "Name": "scatter"
+        },
+        {
+          "Name": "stackedbar"
+        }
+      ]
+    },
+    "Position": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "right"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
+    "PositionAlignment": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "center"
+        },
+        {
+          "Name": "left"
+        },
+        {
+          "Name": "left bottom"
+        },
+        {
+          "Name": "left top"
+        },
+        {
+          "Name": "right"
+        },
+        {
+          "Name": "right bottom"
+        },
+        {
+          "Name": "right top"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
+    "PositionResolveCollision": {
+      "Items": [
+        {
+          "Name": "fit"
+        },
+        {
+          "Name": "flip"
+        },
+        {
+          "Name": "flipfit"
+        },
+        {
+          "Name": "none"
+        }
+      ],
+      "Renamings": {
+        "flipfit": "flipFit"
+      }
+    },
+    "PositionResolveCollisionXY": {
+      "Items": [
+        {
+          "Name": "fit"
+        },
+        {
+          "Name": "fit flip"
+        },
+        {
+          "Name": "fit flipfit"
+        },
+        {
+          "Name": "fit none"
+        },
+        {
+          "Name": "flip"
+        },
+        {
+          "Name": "flip fit"
+        },
+        {
+          "Name": "flip none"
+        },
+        {
+          "Name": "flipfit"
+        },
+        {
+          "Name": "flipfit fit"
+        },
+        {
+          "Name": "flipfit none"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "none fit"
+        },
+        {
+          "Name": "none flip"
+        },
+        {
+          "Name": "none flipfit"
         }
       ]
     },
@@ -36558,19 +36520,129 @@
         }
       ]
     },
-    "DashStyle": {
+    "RangeSelectorChartAxisScaleType": {
       "Items": [
         {
-          "Name": "dash"
+          "Name": "continuous"
         },
         {
-          "Name": "dot"
+          "Name": "logarithmic"
+        }
+      ]
+    },
+    "RelativePosition": {
+      "Items": [
+        {
+          "Name": "inside"
         },
         {
-          "Name": "longDash"
+          "Name": "outside"
+        }
+      ]
+    },
+    "ResizeHandle": {
+      "Items": [
+        {
+          "Name": "bottom"
         },
         {
-          "Name": "solid"
+          "Name": "left"
+        },
+        {
+          "Name": "right"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
+    "ScaleLabelOverlappingBehavior": {
+      "Items": [
+        {
+          "Name": "hide"
+        },
+        {
+          "Name": "none"
+        }
+      ]
+    },
+    "SchedulerRecurrenceEditMode": {
+      "Items": [
+        {
+          "Name": "dialog"
+        },
+        {
+          "Name": "occurrence"
+        },
+        {
+          "Name": "series"
+        }
+      ]
+    },
+    "SchedulerViewType": {
+      "Items": [
+        {
+          "Name": "agenda"
+        },
+        {
+          "Name": "day"
+        },
+        {
+          "Name": "month"
+        },
+        {
+          "Name": "timelineDay"
+        },
+        {
+          "Name": "timelineMonth"
+        },
+        {
+          "Name": "timelineWeek"
+        },
+        {
+          "Name": "timelineWorkWeek"
+        },
+        {
+          "Name": "week"
+        },
+        {
+          "Name": "workWeek"
+        }
+      ]
+    },
+    "ScrollDirection": {
+      "Items": [
+        {
+          "Name": "both"
+        },
+        {
+          "Name": "horizontal"
+        },
+        {
+          "Name": "vertical"
+        }
+      ]
+    },
+    "SelectAllMode": {
+      "Items": [
+        {
+          "Name": "allPages"
+        },
+        {
+          "Name": "page"
+        }
+      ]
+    },
+    "SelectionMode": {
+      "Items": [
+        {
+          "Name": "multiple"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "single"
         }
       ]
     },
@@ -36664,6 +36736,75 @@
         "stepline": "StepLine"
       }
     },
+    "ShowScrollbarMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "never"
+        },
+        {
+          "Name": "onHover"
+        },
+        {
+          "Name": "onScroll"
+        }
+      ]
+    },
+    "ShowSubmenuMode": {
+      "Items": [
+        {
+          "Name": "onClick"
+        },
+        {
+          "Name": "onHover"
+        }
+      ]
+    },
+    "SlideOutMenuPosition": {
+      "Items": [
+        {
+          "Name": "inverted"
+        },
+        {
+          "Name": "normal"
+        }
+      ]
+    },
+    "SliderTooltipShowMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "onHover"
+        }
+      ]
+    },
+    "SmallValuesGroupingMode": {
+      "Items": [
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "smallValueThreshold"
+        },
+        {
+          "Name": "topN"
+        }
+      ]
+    },
+    "SortOrder": {
+      "Items": [
+        {
+          "Name": "asc"
+        },
+        {
+          "Name": "desc"
+        }
+      ]
+    },
     "SparklineType": {
       "Items": [
         {
@@ -36698,60 +36839,349 @@
         "winloss": "WinLoss"
       }
     },
-    "PointSymbol": {
+    "StateStoringType": {
       "Items": [
         {
-          "Name": "circle"
+          "Name": "custom"
         },
         {
-          "Name": "cross"
+          "Name": "localStorage"
         },
         {
-          "Name": "polygon"
-        },
-        {
-          "Name": "square"
-        },
-        {
-          "Name": "triangleDown"
-        },
-        {
-          "Name": "triangleUp"
+          "Name": "sessionStorage"
         }
       ]
     },
-    "VizPointSymbol": {
+    "SubmenuDirection": {
       "Items": [
         {
-          "Name": "circle"
+          "Name": "auto"
         },
         {
-          "Name": "cross"
+          "Name": "leftOrTop"
         },
         {
-          "Name": "polygon"
-        },
-        {
-          "Name": "square"
-        },
-        {
-          "Name": "triangle"
+          "Name": "rightOrBottom"
         }
       ]
     },
-    "FinancialChartReductionLevel": {
+    "SummaryType": {
       "Items": [
         {
-          "Name": "close"
+          "Name": "avg"
         },
         {
-          "Name": "high"
+          "Name": "count"
         },
         {
-          "Name": "low"
+          "Name": "custom"
         },
         {
-          "Name": "open"
+          "Name": "max"
+        },
+        {
+          "Name": "min"
+        },
+        {
+          "Name": "sum"
+        }
+      ]
+    },
+    "TextBoxMode": {
+      "Items": [
+        {
+          "Name": "email"
+        },
+        {
+          "Name": "password"
+        },
+        {
+          "Name": "search"
+        },
+        {
+          "Name": "tel"
+        },
+        {
+          "Name": "text"
+        },
+        {
+          "Name": "url"
+        }
+      ]
+    },
+    "ToastType": {
+      "Items": [
+        {
+          "Name": "custom"
+        },
+        {
+          "Name": "error"
+        },
+        {
+          "Name": "info"
+        },
+        {
+          "Name": "success"
+        },
+        {
+          "Name": "warning"
+        }
+      ]
+    },
+    "Toolbar": {
+      "Items": [
+        {
+          "Name": "bottom"
+        },
+        {
+          "Name": "top"
+        }
+      ]
+    },
+    "ToolbarItemLocateInMenuMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "auto"
+        },
+        {
+          "Name": "never"
+        }
+      ]
+    },
+    "ToolbarItemLocation": {
+      "Items": [
+        {
+          "Name": "after"
+        },
+        {
+          "Name": "before"
+        },
+        {
+          "Name": "center"
+        }
+      ]
+    },
+    "ToolbarItemShowTextMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "inMenu"
+        }
+      ]
+    },
+    "ToolbarItemWidget": {
+      "Items": [
+        {
+          "Name": "dxAutocomplete"
+        },
+        {
+          "Name": "dxButton"
+        },
+        {
+          "Name": "dxCheckBox"
+        },
+        {
+          "Name": "dxDateBox"
+        },
+        {
+          "Name": "dxDropDownMenu"
+        },
+        {
+          "Name": "dxMenu"
+        },
+        {
+          "Name": "dxSelectBox"
+        },
+        {
+          "Name": "dxTabs"
+        },
+        {
+          "Name": "dxTextBox"
+        }
+      ],
+      "Renamings": {
+        "dxAutocomplete": "Autocomplete",
+        "dxButton": "Button",
+        "dxCheckBox": "CheckBox",
+        "dxDateBox": "DateBox",
+        "dxDropDownMenu": "DropDownMenu",
+        "dxMenu": "Menu",
+        "dxSelectBox": "SelectBox",
+        "dxTabs": "Tabs",
+        "dxTextBox": "TextBox"
+      }
+    },
+    "ToolbarRenderMode": {
+      "Items": [
+        {
+          "Name": "bottomToolbar"
+        },
+        {
+          "Name": "topToolbar"
+        }
+      ]
+    },
+    "TreeListDataStructure": {
+      "Items": [
+        {
+          "Name": "plain"
+        },
+        {
+          "Name": "tree"
+        }
+      ]
+    },
+    "TreeListScrollingMode": {
+      "Items": [
+        {
+          "Name": "standard"
+        },
+        {
+          "Name": "virtual"
+        }
+      ]
+    },
+    "TreeMapColorizerType": {
+      "Items": [
+        {
+          "Name": "discrete"
+        },
+        {
+          "Name": "gradient"
+        },
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "range"
+        }
+      ]
+    },
+    "TreeMapLayoutAlgorithm": {
+      "Items": [
+        {
+          "Name": "sliceanddice"
+        },
+        {
+          "Name": "squarified"
+        },
+        {
+          "Name": "strip"
+        }
+      ],
+      "Renamings": {
+        "sliceanddice": "SliceAndDice"
+      }
+    },
+    "TreeMapLayoutDirection": {
+      "Items": [
+        {
+          "Name": "leftBottomRightTop"
+        },
+        {
+          "Name": "leftTopRightBottom"
+        },
+        {
+          "Name": "rightBottomLeftTop"
+        },
+        {
+          "Name": "rightTopLeftBottom"
+        }
+      ]
+    },
+    "TreeMapResolveLabelOverflow": {
+      "Items": [
+        {
+          "Name": "ellipsis"
+        },
+        {
+          "Name": "hide"
+        }
+      ]
+    },
+    "TreeViewCheckBoxMode": {
+      "Items": [
+        {
+          "Name": "none"
+        },
+        {
+          "Name": "normal"
+        },
+        {
+          "Name": "selectAll"
+        }
+      ]
+    },
+    "TreeViewDataStructure": {
+      "Items": [
+        {
+          "Name": "plain"
+        },
+        {
+          "Name": "tree"
+        }
+      ]
+    },
+    "UploadHttpMethod": {
+      "Items": [
+        {
+          "Name": "POST"
+        },
+        {
+          "Name": "PUT"
+        }
+      ]
+    },
+    "ValidationMessageMode": {
+      "Items": [
+        {
+          "Name": "always"
+        },
+        {
+          "Name": "auto"
+        }
+      ]
+    },
+    "ValidationRuleType": {
+      "Items": [
+        {
+          "Name": "required"
+        },
+        {
+          "Name": "numeric"
+        },
+        {
+          "Name": "range"
+        },
+        {
+          "Name": "stringLength"
+        },
+        {
+          "Name": "custom"
+        },
+        {
+          "Name": "compare"
+        },
+        {
+          "Name": "pattern"
+        },
+        {
+          "Name": "email"
+        }
+      ]
+    },
+    "ValueChangedCallMode": {
+      "Items": [
+        {
+          "Name": "onMoving"
+        },
+        {
+          "Name": "onMovingComplete"
         }
       ]
     },
@@ -36790,273 +37220,165 @@
         }
       ]
     },
-    "HatchingDirection": {
+    "VectorMapLayerType": {
       "Items": [
         {
-          "Name": "left"
+          "Name": "area"
         },
         {
-          "Name": "none"
+          "Name": "line"
         },
         {
-          "Name": "right"
+          "Name": "marker"
         }
       ]
     },
-    "PieChartSeriesInteractionMode": {
+    "VectorMapMarkerShape": {
       "Items": [
         {
-          "Name": "none"
+          "Name": "circle"
         },
         {
-          "Name": "onlyPoint"
+          "Name": "square"
         }
       ]
     },
-    "PieChartSegmentsDirection": {
+    "VectorMapMarkerType": {
       "Items": [
         {
-          "Name": "anticlockwise"
+          "Name": "bubble"
         },
         {
-          "Name": "clockwise"
-        }
-      ],
-      "Renamings": {
-        "anticlockwise": "AntiClockwise"
-      }
-    },
-    "PieChartType": {
-      "Items": [
-        {
-          "Name": "donut"
+          "Name": "dot"
         },
         {
-          "Name": "doughnut"
+          "Name": "image"
         },
         {
           "Name": "pie"
         }
       ]
     },
-    "PieChartLabelPosition": {
+    "VerticalAlignment": {
       "Items": [
         {
-          "Name": "columns"
+          "Name": "bottom"
         },
-        {
-          "Name": "inside"
-        },
-        {
-          "Name": "outside"
-        }
-      ]
-    },
-    "SmallValuesGroupingMode": {
-      "Items": [
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "smallValueThreshold"
-        },
-        {
-          "Name": "topN"
-        }
-      ]
-    },
-    "ValueChangedCallMode": {
-      "Items": [
-        {
-          "Name": "onMoving"
-        },
-        {
-          "Name": "onMovingComplete"
-        }
-      ]
-    },
-    "BackgroundImageLocation": {
-      "Items": [
         {
           "Name": "center"
         },
         {
-          "Name": "centerBottom"
-        },
-        {
-          "Name": "centerTop"
-        },
-        {
-          "Name": "full"
-        },
-        {
-          "Name": "leftBottom"
-        },
-        {
-          "Name": "leftCenter"
-        },
-        {
-          "Name": "leftTop"
-        },
-        {
-          "Name": "rightBottom"
-        },
-        {
-          "Name": "rightCenter"
-        },
-        {
-          "Name": "rightTop"
+          "Name": "top"
         }
       ]
     },
-    "RangeSelectorChartAxisScaleType": {
+    "VerticalEdge": {
       "Items": [
         {
-          "Name": "continuous"
+          "Name": "bottom"
         },
         {
-          "Name": "logarithmic"
+          "Name": "top"
         }
       ]
     },
-    "GaugeTitlePosition": {
+    "VizAnimationEasing": {
       "Items": [
         {
-          "Name": "bottom-center"
+          "Name": "easeOutCubic"
         },
         {
-          "Name": "bottom-left"
-        },
-        {
-          "Name": "bottom-right"
-        },
-        {
-          "Name": "top-center"
-        },
-        {
-          "Name": "top-left"
-        },
-        {
-          "Name": "top-right"
+          "Name": "linear"
         }
       ]
     },
-    "CircularGaugeElementOrientation": {
+    "VizPalette": {
       "Items": [
         {
-          "Name": "center"
+          "Name": "Bright"
         },
         {
-          "Name": "inside"
+          "Name": "Default"
         },
         {
-          "Name": "outside"
+          "Name": "Harmony Light"
+        },
+        {
+          "Name": "Ocean"
+        },
+        {
+          "Name": "Pastel"
+        },
+        {
+          "Name": "Soft"
+        },
+        {
+          "Name": "Soft Pastel"
+        },
+        {
+          "Name": "Vintage"
+        },
+        {
+          "Name": "Violet"
         }
       ]
     },
-    "GaugeOverlappingBehavior": {
-      "Items": [
-        {
-          "Name": "first"
-        },
-        {
-          "Name": "last"
-        }
-      ],
-      "Renamings": {
-        "first": "HideFirstLabel",
-        "last": "HideLastLabel"
-      }
-    },
-    "ScaleLabelOverlappingBehavior": {
-      "Items": [
-        {
-          "Name": "hide"
-        },
-        {
-          "Name": "none"
-        }
-      ]
-    },
-    "GaugeIndicatorType": {
+    "VizPointSymbol": {
       "Items": [
         {
           "Name": "circle"
         },
         {
-          "Name": "rangeBar"
+          "Name": "cross"
         },
         {
-          "Name": "rectangle"
+          "Name": "polygon"
         },
         {
-          "Name": "rectangleNeedle"
+          "Name": "square"
         },
         {
-          "Name": "rhombus"
-        },
-        {
-          "Name": "textCloud"
-        },
-        {
-          "Name": "triangleMarker"
-        },
-        {
-          "Name": "triangleNeedle"
-        },
-        {
-          "Name": "twoColorNeedle"
+          "Name": "triangle"
         }
       ]
     },
-    "PolarChartOverlappingBehavior": {
+    "VizTheme": {
       "Items": [
         {
-          "Name": "enlargeTickInterval",
+          "Name": "android5.light"
+        },
+        {
+          "Name": "generic.dark"
+        },
+        {
+          "Name": "generic.light"
+        },
+        {
+          "Name": "generic.contrast"
+        },
+        {
+          "Name": "ios7.default"
+        },
+        {
+          "Name": "win10.black"
+        },
+        {
+          "Name": "win10.white"
+        },
+        {
+          "Name": "win8.black",
           "Deprecated": true,
-          "InsteadUse": "hide"
+          "InsteadUse": "win10.black"
         },
         {
-          "Name": "ignore",
+          "Name": "win8.white",
           "Deprecated": true,
-          "InsteadUse": "none"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "hide"
+          "InsteadUse": "win10.white"
         }
-      ]
-    },
-    "PolarChartSeriesType": {
-      "Items": [
-        {
-          "Name": "area"
-        },
-        {
-          "Name": "bar"
-        },
-        {
-          "Name": "line"
-        },
-        {
-          "Name": "scatter"
-        },
-        {
-          "Name": "stackedbar"
-        }
-      ]
-    },
-    "PolarChartResolveLabelOverlapping": {
-      "Items": [
-        {
-          "Name": "hide"
-        },
-        {
-          "Name": "none"
-        }
-      ]
+      ],
+      "Renamings": {
+        "ios7.default": "iOS7Default"
+      }
     },
     "VizTimeInterval": {
       "Items": [
@@ -37086,273 +37408,6 @@
         },
         {
           "Name": "year"
-        }
-      ]
-    },
-    "VectorMapMarkerType": {
-      "Items": [
-        {
-          "Name": "bubble"
-        },
-        {
-          "Name": "dot"
-        },
-        {
-          "Name": "image"
-        },
-        {
-          "Name": "pie"
-        }
-      ]
-    },
-    "VectorMapLayerType": {
-      "Items": [
-        {
-          "Name": "area"
-        },
-        {
-          "Name": "line"
-        },
-        {
-          "Name": "marker"
-        }
-      ]
-    },
-    "VectorMapMarkerShape": {
-      "Items": [
-        {
-          "Name": "circle"
-        },
-        {
-          "Name": "square"
-        }
-      ]
-    },
-    "Mode": {
-      "Items": [
-        {
-          "Name": "auto"
-        }
-      ]
-    },
-    "GridColumnChooserMode": {
-      "Items": [
-        {
-          "Name": "dragAndDrop"
-        },
-        {
-          "Name": "select"
-        }
-      ]
-    },
-    "GridGroupingExpandMode": {
-      "Items": [
-        {
-          "Name": "buttonClick"
-        },
-        {
-          "Name": "rowClick"
-        }
-      ]
-    },
-    "UploadHttpMethod": {
-      "Items": [
-        {
-          "Name": "POST"
-        },
-        {
-          "Name": "PUT"
-        }
-      ]
-    },
-    "ToolbarItemLocateInMenuMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "auto"
-        },
-        {
-          "Name": "never"
-        }
-      ]
-    },
-    "ToolbarItemShowTextMode": {
-      "Items": [
-        {
-          "Name": "always"
-        },
-        {
-          "Name": "inMenu"
-        }
-      ]
-    },
-    "TreeMapLayoutAlgorithm": {
-      "Items": [
-        {
-          "Name": "sliceanddice"
-        },
-        {
-          "Name": "squarified"
-        },
-        {
-          "Name": "strip"
-        }
-      ],
-      "Renamings": {
-        "sliceanddice": "SliceAndDice"
-      }
-    },
-    "TreeMapLayoutDirection": {
-      "Items": [
-        {
-          "Name": "leftBottomRightTop"
-        },
-        {
-          "Name": "leftTopRightBottom"
-        },
-        {
-          "Name": "rightBottomLeftTop"
-        },
-        {
-          "Name": "rightTopLeftBottom"
-        }
-      ]
-    },
-    "TreeMapColorizerType": {
-      "Items": [
-        {
-          "Name": "discrete"
-        },
-        {
-          "Name": "gradient"
-        },
-        {
-          "Name": "none"
-        },
-        {
-          "Name": "range"
-        }
-      ]
-    },
-    "TreeMapResolveLabelOverflow": {
-      "Items": [
-        {
-          "Name": "ellipsis"
-        },
-        {
-          "Name": "hide"
-        }
-      ]
-    },
-    "EdmType": {
-      "Items": [
-        {
-          "Name": "Guid"
-        },
-        {
-          "Name": "Int32"
-        },
-        {
-          "Name": "Int64"
-        },
-        {
-          "Name": "String"
-        },
-        {
-          "Name": "Boolean"
-        },
-        {
-          "Name": "Single"
-        },
-        {
-          "Name": "Decimal"
-        }
-      ]
-    },
-    "ComparisonOperator": {
-      "Items": [
-        {
-          "Name": "!="
-        },
-        {
-          "Name": "!=="
-        },
-        {
-          "Name": "<"
-        },
-        {
-          "Name": "<="
-        },
-        {
-          "Name": "=="
-        },
-        {
-          "Name": "==="
-        },
-        {
-          "Name": ">"
-        },
-        {
-          "Name": ">="
-        }
-      ],
-      "Renamings": {
-        "==": "equal",
-        "!=": "notEqual",
-        "===": "strictEqual",
-        "!==": "notStrictEqual",
-        ">": "greaterThan",
-        ">=": "greaterThanOrEqual",
-        "<": "lessThan",
-        "<=": "lessThanOrEqual"
-      }
-    },
-    "ExportFormat": {
-      "Items": [
-        {
-          "Name": "GIF"
-        },
-        {
-          "Name": "JPEG"
-        },
-        {
-          "Name": "PDF"
-        },
-        {
-          "Name": "PNG"
-        },
-        {
-          "Name": "SVG"
-        }
-      ]
-    },
-    "ValidationRuleType": {
-      "Items": [
-        {
-          "Name": "required"
-        },
-        {
-          "Name": "numeric"
-        },
-        {
-          "Name": "range"
-        },
-        {
-          "Name": "stringLength"
-        },
-        {
-          "Name": "custom"
-        },
-        {
-          "Name": "compare"
-        },
-        {
-          "Name": "pattern"
-        },
-        {
-          "Name": "email"
         }
       ]
     }
