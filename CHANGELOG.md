@@ -1,3 +1,8 @@
+## 17.2.5 (2018-03-03)
+
+### Bug Fixes
+- The issue with the enabled FullTemplateTypeCheck option has been fixed [#690](https://github.com/DevExpress/devextreme-angular/commit/04876307debcff605a4ef9bb9cd063f8cdb24ecb)
+
 ## 17.2.5 (2017-01-24)
 
 ### Bug Fixes
