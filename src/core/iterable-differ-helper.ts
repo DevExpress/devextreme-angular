@@ -48,12 +48,19 @@ export class IterableDifferHelper {
         }
     }
 
+    checkChangedOptions(propName: string, hostValue: any) {
+        return this._host.changedOptions[propName] === hostValue;
+    };
+
     doCheck(prop: string) {
         if (this._propertyDiffers[prop]) {
-            const changes = this.getChanges(prop, this._host[prop]);
-            if (changes && this._host.instance) {
+            let hostValue = this._host[prop],
+                isChangedOption = this.checkChangedOptions(prop, hostValue);
+
+            const changes = this.getChanges(prop, hostValue);
+            if (changes && this._host.instance && !isChangedOption) {
                 this._host.lockWidgetUpdate();
-                this._host.instance.option(prop, this._host[prop]);
+                this._host.instance.option(prop, hostValue);
             }
         }
     }
