@@ -5644,7 +5644,8 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not to filter the series points depending on their quantity."
+          "IsDeprecated": true,
+          "Description": "Use CommonSeries.aggregation.enabled instead."
         },
         "valueAxis": {
           "ItemPrimitiveTypes": [
@@ -5664,7 +5665,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\". Does not apply to a multi-axis chart."
+              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
             },
             "axisDivisionFactor": {
               "PrimitiveTypes": [
@@ -5678,7 +5679,7 @@
               ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\". Does not apply to a multi-axis chart.",
+              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
               "Options": {
                 "endValue": {
                   "PrimitiveTypes": [
@@ -11738,6 +11739,12 @@
         "filterOperationDescriptions": {
           "Description": "Specifies filter operation descriptions.",
           "Options": {
+            "between": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "contains": {
               "PrimitiveTypes": [
                 "string"
@@ -23303,11 +23310,13 @@
         "position": {
           "PrimitiveTypes": [
             "DevExpress.positionConfig",
+            "Function",
             "string"
           ],
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsFunc": true,
           "Description": "An object defining widget positioning options."
         },
         "resizeEnabled": {
@@ -24077,7 +24086,8 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not to filter the series points depending on their quantity."
+              "IsDeprecated": true,
+              "Description": "Use CommonSeries.aggregation.enabled instead."
             },
             "valueAxis": {
               "Description": "Configures the chart value axis.",
@@ -36063,6 +36073,17 @@
     "ChartCommonSeriesSettings": {
       "Description": "Specifies settings common for all series in the chart.",
       "Options": {
+        "aggregation": {
+          "Description": "",
+          "Options": {
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            }
+          }
+        },
         "area": {
           "PrimitiveTypes": [
             "any"
@@ -37091,6 +37112,17 @@
       "Description": "Specifies options for Chart widget series.",
       "IsCollection": true,
       "Options": {
+        "aggregation": {
+          "Description": "",
+          "Options": {
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            }
+          }
+        },
         "argumentField": {
           "PrimitiveTypes": [
             "string"
@@ -38670,9 +38702,6 @@
           "Description": "Specifies the false value text. Applies only if dataType is \"boolean\"."
         },
         "filterOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
           "ItemPrimitiveTypes": [
             "string"
           ],
@@ -38760,7 +38789,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the form item name."
+          "Description": "Specifies a name that identifies the form item."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -38865,7 +38894,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies a name that identifies the form item."
         },
         "template": {
           "PrimitiveTypes": [
@@ -38978,7 +39007,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the form item name."
+          "Description": "Specifies a name that identifies the form item."
         },
         "template": {
           "PrimitiveTypes": [
@@ -39051,7 +39080,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies a name that identifies the form item."
         },
         "tabPanelOptions": {
           "PrimitiveTypes": [

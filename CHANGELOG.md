@@ -1,3 +1,8 @@
+## 18.1.1-beta.2 (2018-03-06)
+
+### Features
+- Implement ajax on server [#705](https://github.com/DevExpress/devextreme-angular/pull/705)
+
 ## 18.1.1-beta.1 (2018-02-21)
 
 ### Features
