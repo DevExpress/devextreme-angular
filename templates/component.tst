@@ -175,6 +175,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
         this._idh.doCheck('<#= prop #>');<#~#>
         this._watcherHelper.checkWatchers();
         super.ngDoCheck();
+        super.clearChangedOptions();
     }
 
     _setOption(name: string, value: any) {

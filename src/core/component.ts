@@ -64,6 +64,9 @@ export abstract class DxComponent implements AfterViewInit, DoCheck, OnChanges, 
         }
         return true;
     }
+    clearChangedOptions() {
+        this.changedOptions = {};
+    }
     protected _getOption(name: string) {
         return this.instance ?
             this.instance.option(name) :
