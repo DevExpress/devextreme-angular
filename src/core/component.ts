@@ -130,7 +130,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             getDOM().remove(element);
         }
     }
-    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
+    constructor(protected element: ElementRef, protected ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));

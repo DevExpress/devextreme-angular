@@ -147,7 +147,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 <#? it.isEditor #>
     writeValue(value: any): void {
-        this.value = value;
+        let onStableSubscription = this.ngZone.onStable.subscribe(() => {
+            onStableSubscription.unsubscribe();
+            this.value = value;
+        });
     }
 <#? it.widgetName !== "dxRangeSelector" #>
     setDisabledState(isDisabled: boolean): void {
