@@ -3,6 +3,14 @@
 ### Features
 - Implement ajax on server [#705](https://github.com/DevExpress/devextreme-angular/pull/705)
 
+### Breaking changes
+
+- Since the @Common/http module is deprecated (see https://github.com/angular/angular/pull/18906), DevExtreme-angular now requires adding the following modules to config.ts if you use SystemJS:
+```JavaScript
+'@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
+'tslib': 'npm:tslib/tslib.js',
+```
+
 ## 18.1.1-beta.1 (2018-02-21)
 
 ### Features
