@@ -67,14 +67,17 @@ export class NgEventsStrategy {
 
 export class EmitterHelper {
     strategy: NgEventsStrategy;
+    lockEventFire = false;
 
     constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
-        let emitter = this.component[eventName];
-        if (emitter) {
-            emitter.next(eventArgs && eventArgs[0]);
+        if (!this.lockEventFire) {
+            let emitter = this.component[eventName];
+            if (emitter) {
+                emitter.next(eventArgs && eventArgs[0]);
+            }
         }
     }
     createEmitter(ngEventName: string, dxEventName: string) {

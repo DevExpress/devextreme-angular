@@ -194,6 +194,23 @@ describe('DevExtreme Angular widget', () => {
         expect(testSpy).toHaveBeenCalledTimes(1);
     }));
 
+    it('should not emit testOptionChange event when changes happen in component (T614207)', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-test-widget [(testOption)]="testOption" (testOptionChange)="testMethod()"></dx-test-widget>'
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let component = fixture.componentInstance,
+            testSpy = spyOn(component, 'testMethod');
+
+        component.testOption = 'new value';
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(0);
+    }));
+
     it('should change component option value', async(() => {
         let fixture = TestBed.createComponent(DxTestWidgetComponent);
         fixture.detectChanges();
