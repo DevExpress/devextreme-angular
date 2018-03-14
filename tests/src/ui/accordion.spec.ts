@@ -2,13 +2,12 @@
 
 import {
     Component,
-    ViewChildren,
-    QueryList
+    ViewChild
 } from '@angular/core';
 
-import { TestBed } from '@angular/core/testing';
-
-import DxAccordion from 'devextreme/ui/accordion';
+import {
+    TestBed
+} from '@angular/core/testing';
 
 import {
     DxAccordionModule,
@@ -17,18 +16,23 @@ import {
 
 @Component({
     selector: 'test-container-component',
-    template: ''
+    template: `
+        <dx-accordion
+            [items]="items"
+            [(selectedIndex)]="selectedIndex"
+            [(selectedItem)]="selectedItem"
+        ></dx-accordion>
+    `
 })
 class TestContainerComponent {
+    @ViewChild(DxAccordionComponent) accordion: DxAccordionComponent;
+
     items = [{ id: 1, name: 'name1' }, { id: 2, name: 'name2' }];
     selectedItem = this.items[0];
     selectedIndex = 0;
-
-    @ViewChildren(DxAccordionComponent) innerWidgets: QueryList<DxAccordionComponent>;
 }
 
 describe('DxAccordion', () => {
-
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
@@ -37,38 +41,24 @@ describe('DxAccordion', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-accordion') || fixture.nativeElement;
-        return DxAccordion['getInstance'](widgetElement) as any;
-    }
-
     it('should change bound options', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-                    <dx-accordion [items]="items" [(selectedIndex)]="selectedIndex" [(selectedItem)]="selectedItem">
-                    </dx-accordion>
-                `
-            }
-        });
-
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let accordion = fixture.componentInstance;
-        let instance = getWidget(fixture);
+        let component: TestContainerComponent = fixture.componentInstance;
+        let instance: any = component.accordion.instance;
 
         expect(instance.option('selectedIndex')).toBe(0);
-        expect(instance.option('selectedItem')).toBe(accordion.items[0]);
-        expect(accordion.selectedIndex).toBe(0);
-        expect(accordion.selectedItem).toBe(accordion.items[0]);
+        expect(instance.option('selectedItem')).toBe(component.items[0]);
+        expect(component.selectedIndex).toBe(0);
+        expect(component.selectedItem).toBe(component.items[0]);
 
-        accordion.selectedIndex = 1;
+        component.selectedIndex = 1;
         fixture.detectChanges();
 
         expect(instance.option('selectedIndex')).toBe(1);
-        expect(instance.option('selectedItem')).toBe(accordion.items[1]);
-        expect(accordion.selectedIndex).toBe(1);
-        expect(accordion.selectedItem).toBe(accordion.items[1]);
+        expect(instance.option('selectedItem')).toBe(component.items[1]);
+        expect(component.selectedIndex).toBe(1);
+        expect(component.selectedItem).toBe(component.items[1]);
     });
 });
