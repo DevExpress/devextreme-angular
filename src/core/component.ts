@@ -93,15 +93,6 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             this.instance.endUpdate();
         }
     }
-    lockEventFire(name: string) {
-        this.eventHelper.lockEventFire.push(name + 'Change');
-    }
-    unlockEventFire(name: string) {
-        let index = this.eventHelper.lockEventFire.indexOf(name + 'Change');
-        if (index > -1) {
-            this.eventHelper.lockEventFire.splice(index, 1);
-        }
-    }
     protected _setOption(name: string, value: any) {
         this.lockWidgetUpdate();
 
@@ -110,9 +101,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         }
 
         if (this.instance) {
-            this.lockEventFire(name);
+            this.eventHelper.lockEventFire = name + 'Change';
             this.instance.option(name, value);
-            this.unlockEventFire(name);
+            this.eventHelper.lockEventFire = '';
         } else {
             this._initialOptions[name] = value;
         }
