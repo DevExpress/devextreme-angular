@@ -209,7 +209,7 @@ describe('DevExtreme Angular widget', () => {
         component.testOption = 'new value';
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(0);
-    }));
+    });
 
     it('should change component option value', async(() => {
         let fixture = TestBed.createComponent(DxTestWidgetComponent);
