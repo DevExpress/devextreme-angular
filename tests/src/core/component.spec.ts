@@ -194,7 +194,7 @@ describe('DevExtreme Angular widget', () => {
         expect(testSpy).toHaveBeenCalledTimes(1);
     }));
 
-    it('should not emit testOptionChange event when changes happen in component (T614207)', async(() => {
+    it('should not emit testOptionChange event when changes occur in component (T614207)', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget [(testOption)]="testOption" (testOptionChange)="testMethod()"></dx-test-widget>'
