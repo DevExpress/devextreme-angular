@@ -101,9 +101,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         }
 
         if (this.instance) {
-            this.eventHelper.lockEventFire = name + 'Change';
+            this.eventHelper.lockedEventName = name + 'Change';
             this.instance.option(name, value);
-            this.eventHelper.lockEventFire = '';
+            this.eventHelper.lockedEventName = '';
         } else {
             this._initialOptions[name] = value;
         }

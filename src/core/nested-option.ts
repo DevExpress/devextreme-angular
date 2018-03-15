@@ -38,7 +38,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     protected _setOption(name: string, value: any) {
         if (this.isLinked) {
-            this.instance.option(this._fullOptionPath() + name, value);
+            let optionPath = this._fullOptionPath(),
+                parent = this.getParentComponent();
+
+            parent.eventHelper.lockedEventName = optionPath.split('.')[0] + 'Change';
+            this.instance.option(optionPath + name, value);
+            parent.eventHelper.lockedEventName = '';
         } else {
             this._initialOptions[name] = value;
         }
@@ -47,6 +52,18 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
+    }
+
+    getHost() {
+        return this._host;
+    }
+
+    getParentComponent() {
+        let parent: any = this.getHost();
+        while (parent.getHost) {
+            parent = parent.getHost();
+        }
+        return parent;
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {

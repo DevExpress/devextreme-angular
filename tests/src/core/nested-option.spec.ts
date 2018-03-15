@@ -225,6 +225,8 @@ export class DxTestWidgetComponent extends DxComponent {
 export class TestContainerComponent {
     testOption: string;
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
+
+    testMethod() {}
 }
 
 
@@ -328,5 +330,26 @@ describe('DevExtreme Angular widget', () => {
 
         expect(nestedOption.shownEventFired).toBe(true);
     }));
+
+    it('nested option setting should not emit testOptionChange event (T614207)', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget (testOptionChange)="testMethod()">
+                        <dxo-test-option [(testNestedOption)]="testOption"></dxo-test-option>
+                    </dx-test-widget>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let component = fixture.componentInstance,
+            testSpy = spyOn(component, 'testMethod');
+
+        component.testOption = 'new value';
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(0);
+    });
 
   });
