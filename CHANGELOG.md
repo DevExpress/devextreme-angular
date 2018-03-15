@@ -10,7 +10,7 @@
 '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
 'tslib': 'npm:tslib/tslib.js',
 ```
-- Angular below version 4.3 in not supported anymore.
+- Angular below version 4.3 is not supported anymore.
 
 ## 18.1.1-beta.1 (2018-02-21)
 
