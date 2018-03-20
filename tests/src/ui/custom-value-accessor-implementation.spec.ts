@@ -28,7 +28,7 @@ import {
     template: `
         <form [formGroup]="form">
             <div class="form-group">
-                <dx-text-box formControlName="formControl" [(ngModel)]="value"></dx-text-box>
+                <dx-text-box formControlName="formControl" [(ngModel)]="value" (valueChange)="testMethod()"></dx-text-box>
             </div>
         </form>
     `
@@ -44,6 +44,7 @@ class TestContainerComponent implements OnInit {
         });
         this.formControl = this.form.controls['formControl'];
     }
+    testMethod() { }
 }
 
 describe('DxTextBox value accessor', () => {
@@ -78,6 +79,7 @@ describe('DxTextBox value accessor', () => {
 
         expect(instance.option('disabled')).toBe(false);
     }));
+
     it('should change the value', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
@@ -89,6 +91,7 @@ describe('DxTextBox value accessor', () => {
 
         expect(instance.option('value')).toBe('text');
     }));
+
     it('should change touched option', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
@@ -102,4 +105,17 @@ describe('DxTextBox value accessor', () => {
 
         expect(fixture.componentInstance.formControl.touched).toBe(true);
     }));
+
+    it('should not fire valueChange event after value changing (T614207)', () => {
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let component = fixture.componentInstance,
+            testSpy = spyOn(component, 'testMethod');
+
+        component.value = 'text';
+        fixture.detectChanges();
+
+        expect(testSpy).toHaveBeenCalledTimes(0);
+    });
 });
