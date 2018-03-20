@@ -119,7 +119,7 @@ describe('DxTextBox value accessor', () => {
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(0);
 
-        form.controls['formControl'].patchValue('text');
+        form.controls['formControl'].patchValue('text2');
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(1);
     });
