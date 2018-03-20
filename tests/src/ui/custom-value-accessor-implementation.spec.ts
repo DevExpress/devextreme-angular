@@ -28,7 +28,7 @@ import {
     template: `
         <form [formGroup]="form">
             <div class="form-group">
-                <dx-text-box formControlName="formControl" [(ngModel)]="value" (valueChange)="testMethod()"></dx-text-box>
+                <dx-text-box formControlName="formControl" [(ngModel)]="value"></dx-text-box>
             </div>
         </form>
     `
@@ -44,7 +44,6 @@ class TestContainerComponent implements OnInit {
         });
         this.formControl = this.form.controls['formControl'];
     }
-    testMethod() { }
 }
 
 describe('DxTextBox value accessor', () => {
@@ -106,16 +105,22 @@ describe('DxTextBox value accessor', () => {
         expect(fixture.componentInstance.formControl.touched).toBe(true);
     }));
 
-    it('should not fire valueChange event after value changing (T614207)', () => {
+    it('should not fire valueChanges event when patchValue method is used with emitEvent=false (T614207)', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
         let component = fixture.componentInstance,
-            testSpy = spyOn(component, 'testMethod');
+            form = component.form,
+            testSpy = jasmine.createSpy('testSpy');
 
-        component.value = 'text';
+        form.valueChanges.subscribe(testSpy);
+
+        form.controls['formControl'].patchValue('text', { emitEvent: false });
         fixture.detectChanges();
-
         expect(testSpy).toHaveBeenCalledTimes(0);
+
+        form.controls['formControl'].patchValue('text');
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(1);
     });
 });
