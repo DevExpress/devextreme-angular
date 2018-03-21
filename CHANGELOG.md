@@ -1,3 +1,8 @@
+## 18.1.1-beta.3 (2018-03-21)
+
+### Bug Fixes
+[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/33?closed=1)
+
 ## 18.1.1-beta.2 (2018-03-06)
 
 ### Features
