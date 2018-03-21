@@ -1,7 +1,8 @@
 ## 18.1.1-beta.3 (2018-03-21)
 
 ### Bug Fixes
-[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/33?closed=1)
+- Fix firing onValueChanged event when changing a value of dxTagBox [#710](https://github.com/DevExpress/devextreme-angular/pull/710)
+- Prevent valueChanges event when patchValue method is used with emitEvent=false [#712](https://github.com/DevExpress/devextreme-angular/pull/712)
 
 ## 18.1.1-beta.2 (2018-03-06)
 
