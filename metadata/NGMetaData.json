@@ -635,6 +635,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -1159,7 +1160,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -4648,7 +4649,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -4789,7 +4790,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -6819,7 +6820,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -8639,6 +8640,12 @@
           "SingularName": "column",
           "Description": "An array of grid columns."
         },
+        "columnWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": ""
+        },
         "customizeColumns": {
           "PrimitiveTypes": [
             "Function"
@@ -8872,7 +8879,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             },
             "texts": {
               "Description": "Contains options that specify texts for the export-related commands and hints.",
@@ -9581,7 +9588,7 @@
           "Description": "A handler for the toolbarPreparing event. Executed before the toolbar is created."
         },
         "pager": {
-          "Description": "Specifies the options of a grid pager.",
+          "Description": "",
           "Options": {
             "allowedPageSizes": {
               "PrimitiveTypes": [
@@ -9592,61 +9599,61 @@
               ],
               "IsCollection": true,
               "SingularName": "allowedPageSize",
-              "Description": "Specifies the page sizes that can be selected at runtime."
+              "Description": ""
             },
             "infoText": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the text accompanying the page navigator."
+              "Description": ""
             },
             "showInfo": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not to display the text accompanying the page navigator. This text is specified by the infoText option."
+              "Description": ""
             },
             "showNavigationButtons": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not to display buttons that switch the grid to the previous or next page."
+              "Description": ""
             },
             "showPageSizeSelector": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to show the page size selector or not."
+              "Description": ""
             },
             "visible": {
               "PrimitiveTypes": [
                 "boolean",
                 "string"
               ],
-              "Description": "Specifies whether to show the pager or not."
+              "Description": ""
             }
           }
         },
         "paging": {
-          "Description": "Specifies paging options.",
+          "Description": "",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether DataGrid loads data page by page or all at once."
+              "Description": ""
             },
             "pageIndex": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the grid page that should be displayed by default."
+              "Description": ""
             },
             "pageSize": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the size of grid pages."
+              "Description": ""
             }
           }
         },
@@ -9809,7 +9816,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially."
+          "Description": "Allows you to select rows or learn which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -11711,7 +11718,7 @@
           ],
           "IsCollection": true,
           "SingularName": "customOperation",
-          "Description": ""
+          "Description": "Configures custom filter operations."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11743,7 +11750,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "The \"between\" operation's description."
             },
             "contains": {
               "PrimitiveTypes": [
@@ -11940,7 +11947,7 @@
             "any"
           ],
           "IsFilterExpr": true,
-          "Description": "Specifies the current filter expression."
+          "Description": "Allows you to specify a filter."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -12350,7 +12357,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -12764,7 +12771,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -13701,7 +13708,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -15494,7 +15501,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15661,6 +15668,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -18224,7 +18232,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -18371,7 +18379,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -19344,7 +19352,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -21232,7 +21240,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -21373,7 +21381,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -23317,7 +23325,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "resizeEnabled": {
           "PrimitiveTypes": [
@@ -24201,7 +24209,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -26324,6 +26332,15 @@
           "IsEvent": true,
           "Description": "A handler for the appointmentClick event."
         },
+        "onAppointmentContextMenu": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": ""
+        },
         "onAppointmentDblClick": {
           "PrimitiveTypes": [
             "Function",
@@ -26389,6 +26406,15 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the cellClick event."
+        },
+        "onCellContextMenu": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": ""
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -26984,6 +27010,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -31116,7 +31143,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -31870,6 +31897,12 @@
           "SingularName": "column",
           "Description": "Configures columns."
         },
+        "columnWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": ""
+        },
         "customizeColumns": {
           "PrimitiveTypes": [
             "Function"
@@ -32457,7 +32490,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the nodesInitialized event. Executed after all nodes in the widget are initialized."
+          "Description": "A handler for the nodesInitialized event. Executed after the loaded nodes are initialized."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -32587,6 +32620,76 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the toolbarPreparing event. Executed before the toolbar is created."
+        },
+        "pager": {
+          "Description": "",
+          "Options": {
+            "allowedPageSizes": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "ItemPrimitiveTypes": [
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "allowedPageSize",
+              "Description": ""
+            },
+            "infoText": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "showInfo": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "showNavigationButtons": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "showPageSizeSelector": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean",
+                "string"
+              ],
+              "Description": ""
+            }
+          }
+        },
+        "paging": {
+          "Description": "",
+          "Options": {
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "pageIndex": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
+            "pageSize": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            }
+          }
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -32735,7 +32838,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially."
+          "Description": "Allows you to select rows or learn which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -33012,7 +33115,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -34025,7 +34128,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Raised after an item is selected or unselected."
+          "Description": "A handler for the selectionChanged event. Executed after selecting an item or clearing its selection."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -34783,7 +34886,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in IE9 and Safari browsers."
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             }
           }
         },
@@ -35145,7 +35248,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -36076,9 +36179,22 @@
         "aggregation": {
           "Description": "",
           "Options": {
+            "calculate": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": ""
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
+              ],
+              "Description": ""
+            },
+            "method": {
+              "PrimitiveTypes": [
+                "string"
               ],
               "Description": ""
             }
@@ -37115,9 +37231,22 @@
         "aggregation": {
           "Description": "",
           "Options": {
+            "calculate": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": ""
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
+              ],
+              "Description": ""
+            },
+            "method": {
+              "PrimitiveTypes": [
+                "string"
               ],
               "Description": ""
             }
@@ -38586,7 +38715,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },
@@ -38597,20 +38726,20 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies a function that returns a filter expression for this custom operation."
         },
         "caption": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the operation's caption."
         },
         "customizeText": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "Description": ""
+          "Description": "Customizes the field value's text representation."
         },
         "dataTypes": {
           "ItemPrimitiveTypes": [
@@ -38618,32 +38747,32 @@
           ],
           "IsCollection": true,
           "SingularName": "dataType",
-          "Description": ""
+          "Description": "Specifies for which data types the operation is available by default."
         },
         "editorTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": ""
+          "Description": "Specifies a custom template for the widget used to edit the field value."
         },
         "hasValue": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether the operation can have a value. If it can, the editor is displayed."
         },
         "icon": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies an icon that represents the operation. Accepts the name of an icon from the built-in icon library, a path to an image, or the CSS class of an icon stored in an external icon library."
         },
         "name": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the operation's identifier."
         }
       }
     },
@@ -39725,7 +39854,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },
