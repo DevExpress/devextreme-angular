@@ -635,6 +635,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -4769,7 +4770,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -9776,7 +9777,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially."
+          "Description": "Allows you to select rows or learn which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -9903,45 +9904,45 @@
           }
         },
         "stateStoring": {
-          "Description": "Specifies options of state storing.",
+          "Description": "Configures state storing.",
           "Options": {
             "customLoad": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state loading."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
             },
             "customSave": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state saving."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not a grid saves its state."
+              "Description": "Enables state storing."
             },
             "savingTimeout": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the delay between the last change of a grid state and the operation of saving this state in milliseconds."
+              "Description": "Specifies the delay in milliseconds between when a user makes a change and when this change is saved."
             },
             "storageKey": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a unique key to be used for storing the grid state."
+              "Description": "Specifies the key for storing the widget state."
             },
             "type": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the type of storage to be used for state storing."
+              "Description": "Specifies the type of storage where the state is saved."
             }
           }
         },
@@ -12714,7 +12715,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -15432,7 +15433,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15599,6 +15600,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -18309,7 +18311,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -21291,7 +21293,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -23229,7 +23231,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "resizeEnabled": {
           "PrimitiveTypes": [
@@ -26875,6 +26877,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -31007,7 +31010,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
-          "Description": "An object defining widget positioning options."
+          "Description": "Positions the widget."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -32348,7 +32351,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the nodesInitialized event. Executed after all nodes in the widget are initialized."
+          "Description": "A handler for the nodesInitialized event. Executed after the loaded nodes are initialized."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -32626,7 +32629,7 @@
           ],
           "IsCollection": true,
           "SingularName": "selectedRowKey",
-          "Description": "Specifies the keys of rows that must be selected initially."
+          "Description": "Allows you to select rows or learn which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -33867,7 +33870,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Raised after an item is selected or unselected."
+          "Description": "A handler for the selectionChanged event. Executed after selecting an item or clearing its selection."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -34987,7 +34990,7 @@
                   "PrimitiveTypes": [
                     "number"
                   ],
-                  "Description": "Specifies the legend's bottom margin in pixels."
+                  "Description": "Specifies the legend's top margin in pixels."
                 }
               }
             },
@@ -38382,7 +38385,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },
@@ -39460,7 +39463,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },

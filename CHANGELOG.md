@@ -1,4 +1,10 @@
-## 17.2.5 (2018-03-03)
+## 17.2.7 (2018-03-21)
+
+### Bug Fixes
+- Fix firing onValueChanged event when changing a value of dxTagBox [#708](https://github.com/DevExpress/devextreme-angular/pull/708)
+- Prevent valueChanges event when patchValue method is used with emitEvent=false [#717](https://github.com/DevExpress/devextreme-angular/pull/717)
+
+## 17.2.6 (2018-03-03)
 
 ### Bug Fixes
 - The issue with the enabled FullTemplateTypeCheck option has been fixed [#690](https://github.com/DevExpress/devextreme-angular/commit/04876307debcff605a4ef9bb9cd063f8cdb24ecb)
