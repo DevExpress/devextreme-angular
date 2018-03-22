@@ -29,7 +29,8 @@
       'jszip': 'npm:jszip/dist/jszip.min.js',
 
       // other libraries
-      'rxjs': 'npm:rxjs'
+      'rxjs': 'npm:rxjs',
+      'rxjs/operators': 'npm:rxjs/operators/index.js'
     },
     packages: {
       app: {
@@ -37,6 +38,7 @@
         defaultExtension: 'js'
       },
       rxjs: {
+        main: 'index.js',
         defaultExtension: 'js'
       },
       'dist': {
