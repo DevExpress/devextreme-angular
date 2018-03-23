@@ -1,3 +1,9 @@
+## Unreleased
+
+### Breaking changes
+
+- Angular below version 5 is not supported anymore.
+
 ## 18.1.1-beta.3 (2018-03-21)
 
 ### Bug Fixes
