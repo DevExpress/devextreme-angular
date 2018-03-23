@@ -26,7 +26,7 @@ export class NgHttp {
                 let key = makeStateKey(that.generateKey(args)),
                     сaсhedData = that.state.get(key, null as any);
 
-                if (isPlatformServer(that.platformId) && !сaсhedData) {
+                if (isPlatformServer(that.platformId)) {
                     let result = this.callBase.apply(this, args);
                     result.always((data, status) => {
                         let dataForCache = {
@@ -39,14 +39,13 @@ export class NgHttp {
                     return result;
                 } else {
                     if (сaсhedData) {
-                        let d = new deferred.Deferred(),
-                        promise = d.promise();
+                        let d = new deferred.Deferred();
 
                         d.resolve(сaсhedData.data, сaсhedData.status);
 
                         that.state.set(key, null as any);
 
-                        return promise;
+                        return d.promise();
                     }
 
                     return this.callBase.apply(this, args);
