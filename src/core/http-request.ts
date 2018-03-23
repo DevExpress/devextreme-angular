@@ -32,7 +32,6 @@ export class NgHttp {
                         let dataForCache = {
                             data: data,
                             status: status
-
                         };
                         that.state.set(key, dataForCache as any);
                     });
@@ -40,14 +39,11 @@ export class NgHttp {
                 } else {
                     if (сaсhedData) {
                         let d = new deferred.Deferred();
-
                         d.resolve(сaсhedData.data, сaсhedData.status);
-
                         that.state.set(key, null as any);
 
                         return d.promise();
                     }
-
                     return this.callBase.apply(this, args);
                 }
             }

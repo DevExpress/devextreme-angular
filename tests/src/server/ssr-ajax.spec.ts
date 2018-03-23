@@ -19,10 +19,10 @@ import {
 
 let mockSendRequest = {
     callBase: function() {
-        let d = new def.Deferred(),
-            promise = d.promise();
+        let d = new def.Deferred();
         d.resolve('test', 'success');
-        return promise;
+
+        return d.promise();
     }
 };
 
@@ -79,7 +79,6 @@ describe('Universal', () => {
         const platformId = TestBed.get(PLATFORM_ID);
         if (isPlatformServer(platformId)) {
             TestBed.get(NgHttp);
-
 
             sendRequest.apply(mockSendRequest, [{url: 'someurl', data: { filter: { name: 'test'}, select: ['name']}}]);
             let key = makeStateKey('0urlsomeurldatafilternametestselect0name');
