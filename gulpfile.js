@@ -5,6 +5,7 @@ var typescript = require('gulp-typescript');
 var tsc = require('typescript');
 var tslint = require('gulp-tslint');
 var rename = require('gulp-rename');
+var replace = require('gulp-replace');
 var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
@@ -139,6 +140,15 @@ gulp.task('build.copy-sources', ['clean.dist'], function() {
 
 });
 
+// Note: workaround for https://github.com/angular/angular-cli/issues/4874
+gulp.task('build.remove-unusable-variable', function() {
+    var config = buildConfig.components;
+
+    return gulp.src(path.join(config.outputPath, '**/*.js'))
+        .pipe(replace('var dx_all_1 = require("devextreme/bundles/dx.all");', ''))
+        .pipe(gulp.dest(config.outputPath));
+});
+
 gulp.task('build.checkMetadata', function(done) {
     if(fs.existsSync(path.resolve(buildConfig.components.outputPath, 'index.metadata.json'))) {
         done();
@@ -152,6 +162,7 @@ gulp.task('build.components', ['generate.facades'], function(done) {
         'build.copy-sources',
         'build.license-headers',
         'build.ngc',
+        'build.remove-unusable-variable',
         'build.checkMetadata',
         done
     );
