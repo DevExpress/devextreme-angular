@@ -2,24 +2,19 @@ var gulp = require('gulp');
 var runSequence = require("run-sequence");
 var path = require('path');
 var typescript = require('gulp-typescript');
-var tsc = require('typescript');
 var tslint = require('gulp-tslint');
-var rename = require('gulp-rename');
 var replace = require('gulp-replace');
-var uglify = require('gulp-uglify');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
-var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
 var fs = require('fs');
-var version = require('@angular/core').VERSION;
 
 //------------Main------------
 
