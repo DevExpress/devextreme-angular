@@ -1,6 +1,6 @@
 [![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
-### If you are looking for the 17.2 branch, please forward the following [link](https://github.com/DevExpress/devextreme-angular/tree/17.2).
+### If you are looking for the v17.2 branch, please follow this link:: [https://github.com/DevExpress/devextreme-angular/tree/17.2](https://github.com/DevExpress/devextreme-angular/tree/17.2).
 
 # Angular UI and Visualization Components Based on DevExtreme Widgets #
 
