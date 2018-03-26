@@ -262,12 +262,21 @@ gulp.task('test.components.server', ['build.tests'], function(done) {
     }
 });
 
-gulp.task('test.components.debug', function(done) {
-    new karmaServer({
-        configFile: __dirname + '/karma.conf.js',
-        browsers: [ 'Chrome' ],
-        singleRun: false
-    }, done).start();
+gulp.task('test.components.client.debug', function(done) {
+    var config = getKarmaConfig('./karma.test.shim.js');
+    config.browsers = [ 'Chrome' ];
+    config.singleRun = false;
+
+    new karmaServer(config, done).start();
+});
+
+gulp.task('test.components.server.debug', function(done) {
+    var config = getKarmaConfig('./karma.server.test.shim.js');
+    debugger;
+    config.browsers = [ 'Chrome' ];
+    config.singleRun = false;
+
+    new karmaServer(config, done).start();
 });
 
 gulp.task('test.tools', function(done) {
