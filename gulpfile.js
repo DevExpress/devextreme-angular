@@ -145,7 +145,7 @@ gulp.task('build.remove-unusable-variable', function() {
     var config = buildConfig.components;
 
     return gulp.src(path.join(config.outputPath, '**/*.js'))
-        .pipe(replace('var dx_all_1 = require("devextreme/bundles/dx.all");', ''))
+        .pipe(replace(/var.+devextreme\/bundles\/dx\.all.+/g, ''))
         .pipe(gulp.dest(config.outputPath));
 });
 
@@ -266,11 +266,7 @@ gulp.task('test.components.client', ['build.tests'], function(done) {
 });
 
 gulp.task('test.components.server', ['build.tests'], function(done) {
-    if (version.major >= '5') {
-        new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
-    } else {
-        done();
-    }
+    new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
 });
 
 gulp.task('test.components.debug', function(done) {
