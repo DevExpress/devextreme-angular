@@ -272,7 +272,6 @@ gulp.task('test.components.client.debug', function(done) {
 
 gulp.task('test.components.server.debug', function(done) {
     var config = getKarmaConfig('./karma.server.test.shim.js');
-    debugger;
     config.browsers = [ 'Chrome' ];
     config.singleRun = false;
 
