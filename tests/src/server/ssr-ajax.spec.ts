@@ -67,11 +67,6 @@ describe('Universal', () => {
 
             expect(transferState.hasKey(key)).toBe(true);
             expect(transferState.get(key, null as any)).toEqual(Object({ data: 'test', status: 'success' }));
-
-            // sendRequest.apply(mockSendRequest, [{url: 'someurl'}]);
-
-            // expect(transferState.hasKey(key)).toBe(true);
-            // expect(transferState.get(key, null as any)).toEqual(null);
         }
     }));
 
