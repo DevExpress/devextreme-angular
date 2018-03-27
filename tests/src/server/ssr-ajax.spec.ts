@@ -48,7 +48,7 @@ describe('Universal', () => {
                     ServerTransferStateModule,
                     BrowserTransferStateModule,
                     BrowserModule.withServerTransition({appId: 'appid'})],
-                providers: [NgHttp]
+                    providers: [NgHttp]
             });
     });
 
