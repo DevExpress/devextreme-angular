@@ -2,23 +2,19 @@ var gulp = require('gulp');
 var runSequence = require("run-sequence");
 var path = require('path');
 var typescript = require('gulp-typescript');
-var tsc = require('typescript');
 var tslint = require('gulp-tslint');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
+var replace = require('gulp-replace');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
-var merge = require('merge-stream');
 var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
 var fs = require('fs');
-var version = require('@angular/core').VERSION;
 
 //------------Main------------
 
@@ -139,6 +135,15 @@ gulp.task('build.copy-sources', ['clean.dist'], function() {
 
 });
 
+// Note: workaround for https://github.com/angular/angular-cli/issues/4874
+gulp.task('build.remove-unusable-variable', function() {
+    var config = buildConfig.components;
+
+    return gulp.src(path.join(config.outputPath, '**/*.js'))
+        .pipe(replace(/var.+devextreme\/bundles\/dx\.all.+/g, ''))
+        .pipe(gulp.dest(config.outputPath));
+});
+
 gulp.task('build.checkMetadata', function(done) {
     if(fs.existsSync(path.resolve(buildConfig.components.outputPath, 'index.metadata.json'))) {
         done();
@@ -152,6 +157,7 @@ gulp.task('build.components', ['generate.facades'], function(done) {
         'build.copy-sources',
         'build.license-headers',
         'build.ngc',
+        'build.remove-unusable-variable',
         'build.checkMetadata',
         done
     );
@@ -255,19 +261,23 @@ gulp.task('test.components.client', ['build.tests'], function(done) {
 });
 
 gulp.task('test.components.server', ['build.tests'], function(done) {
-    if (version.major >= '5') {
-        new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
-    } else {
-        done();
-    }
+    new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
 });
 
-gulp.task('test.components.debug', function(done) {
-    new karmaServer({
-        configFile: __dirname + '/karma.conf.js',
-        browsers: [ 'Chrome' ],
-        singleRun: false
-    }, done).start();
+gulp.task('test.components.client.debug', function(done) {
+    var config = getKarmaConfig('./karma.test.shim.js');
+    config.browsers = [ 'Chrome' ];
+    config.singleRun = false;
+
+    new karmaServer(config, done).start();
+});
+
+gulp.task('test.components.server.debug', function(done) {
+    var config = getKarmaConfig('./karma.server.test.shim.js');
+    config.browsers = [ 'Chrome' ];
+    config.singleRun = false;
+
+    new karmaServer(config, done).start();
 });
 
 gulp.task('test.tools', function(done) {
