@@ -29,7 +29,7 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-const PLATFORM_SERVER = makeStateKey('platformServer');
+const IS_PLATFORM_SERVER = makeStateKey('isPlatformServer');
 
 export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterContentChecked, AfterViewInit,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
@@ -67,11 +67,11 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     private _initPlatform() {
-        if (this.transferState.hasKey(PLATFORM_SERVER)) {
-            this._initialOptions.integrationOptions.renderedOnServer = this.transferState.get(PLATFORM_SERVER, null as any);
-            this.transferState.set(PLATFORM_SERVER, null as any);
+        if (this.transferState.hasKey(IS_PLATFORM_SERVER)) {
+            this._initialOptions.integrationOptions.renderedOnServer = this.transferState.get(IS_PLATFORM_SERVER, null as any);
+            this.transferState.set(IS_PLATFORM_SERVER, null as any);
         } else if (isPlatformServer(this.platformId)) {
-            this.transferState.set(PLATFORM_SERVER, true as any);
+            this.transferState.set(IS_PLATFORM_SERVER, true as any);
         }
     }
 
