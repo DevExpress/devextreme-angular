@@ -67,12 +67,18 @@ export class DxoTestOptionComponent extends NestedOption {
         this._setOption('testNestedOption', value);
     }
 
+    @Output() testNestedOptionChange: EventEmitter<any>;
+
     protected get _optionPath() {
         return 'testOption';
     }
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super();
+    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super(ngZone);
+
+        this._createEventEmitters([
+            { emit: 'testNestedOptionChange' }
+        ]);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this);
@@ -93,12 +99,18 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
         this._setOption('testOption', value);
     }
 
+    @Output() testOptionChange: EventEmitter<any>;
+
     protected get _optionPath() {
         return 'testCollectionOption';
     }
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super();
+    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super(ngZone);
+
+        this._createEventEmitters([
+            { emit: 'testOptionChange' }
+        ]);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));
@@ -124,12 +136,13 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
 
     shownEventFired = false;
 
-    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost,
+    constructor(ngZone: NgZone,
+        @SkipSelf() @Host() private _pnoh: NestedOptionHost,
         @Host() private _noh: NestedOptionHost,
         private element: ElementRef,
         private renderer: Renderer2,
         @Inject(DOCUMENT) private document: any) {
-        super();
+        super(ngZone);
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));
@@ -230,6 +243,8 @@ export class DxTestWidgetComponent extends DxComponent {
 export class TestContainerComponent {
     testOption: string;
     @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
+
+    testMethod() {}
 }
 
 
@@ -312,6 +327,56 @@ describe('DevExtreme Angular widget', () => {
         fixture.detectChanges();
 
         expect(instance.option('testCollectionOption')[0].testOption).toEqual({ testNestedOption: 'text' });
+    }));
+
+    it('nested option should emit change event', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget>
+                        <dxo-test-option
+                            [(testNestedOption)]='testOption'
+                            (testNestedOptionChange)='testMethod()'>
+                        </dxo-test-option>
+                    </dx-test-widget>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture),
+            testSpy = spyOn(testComponent, 'testMethod');
+
+        instance.option('testOption.testNestedOption', 'new value');
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(1);
+    }));
+
+    it('collection nested option should emit change event', async(() => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget>
+                        <dxi-test-collection-option
+                            [(testOption)]='testOption'
+                            (testOptionChange)='testMethod()'>
+                        </dxi-test-collection-option>
+                    </dx-test-widget>
+                `
+            }
+        });
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let testComponent = fixture.componentInstance,
+            instance = getWidget(fixture),
+            testSpy = spyOn(testComponent, 'testMethod');
+
+        instance.option('testCollectionOption[0].testOption', 'new value');
+        fixture.detectChanges();
+        expect(testSpy).toHaveBeenCalledTimes(1);
     }));
 
     it('method template.render of nested option should trigger shownEvent after rendering', async(() => {

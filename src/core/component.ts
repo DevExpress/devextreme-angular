@@ -75,9 +75,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _createEventEmitters(events) {
-        events.forEach(event => {
-            this.eventHelper.createEmitter(event.emit, event.subscribe);
-        });
+        this.eventHelper.createEventEmitters(events);
     }
     _shouldOptionChange(name: string, value: any) {
         if (this.changedOptions.hasOwnProperty(name)) {
