@@ -9,8 +9,13 @@ import {
     Input,
     Output,
     QueryList,
-    OnDestroy
+    OnDestroy,
+    PLATFORM_ID,
+    Inject
 } from '@angular/core';
+
+import { TransferState } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import {
     TestBed,
@@ -67,8 +72,13 @@ export class DxTestWidgetComponent extends DxComponent implements OnDestroy {
     @Output() testOptionChange = new EventEmitter<any>();
     @Output() textChange = new EventEmitter<any>();
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+    constructor(elementRef: ElementRef,
+        ngZone: NgZone,
+        templateHost: DxTemplateHost,
+        _watcherHelper: WatcherHelper,
+         transferState: TransferState,
+        @Inject(PLATFORM_ID) platformId: any) {
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
 
         this._createEventEmitters([
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
@@ -116,6 +126,7 @@ describe('DevExtreme Angular widget', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
+                imports: [BrowserTransferStateModule],
                 declarations: [TestContainerComponent, DxTestWidgetComponent]
             });
     });

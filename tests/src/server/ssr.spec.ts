@@ -4,6 +4,8 @@ import {
     Component
 } from '@angular/core';
 
+import { TransferState, makeStateKey } from '@angular/platform-browser';
+
 import {
     TestBed
 } from '@angular/core/testing';
@@ -41,4 +43,21 @@ describe('Universal', () => {
         expect(fixture.detectChanges.bind(fixture)).not.toThrow();
     });
 
+    it('should set renderedOnServer option of integration', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-button></dx-button>`
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        const transferState: TransferState = TestBed.get(TransferState);
+        const PLATFORM = "platformServer";
+        let key = makeStateKey(PLATFORM);
+
+        expect(transferState.hasKey(key)).toBe(true);
+        expect(transferState.get(key, null as any)).toEqual(true);
+    });
 });

@@ -13,13 +13,16 @@
 import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserTransferStateModule } from '@angular/platform-browser';
-
+import { TransferState } from '@angular/platform-browser';
 
 import {
     Component,
     NgModule,
     ElementRef,
     NgZone,
+    PLATFORM_ID,
+    Inject,
+
     Input,
     Output,
     OnDestroy,
@@ -129,9 +132,11 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, injector: Injector,
             <#? collectionProperties.length #>private <#?#>_watcherHelper: WatcherHelper<#? collectionProperties.length #>,
-            private _idh: IterableDifferHelper<#?#>, optionHost: NestedOptionHost) {
+            private _idh: IterableDifferHelper<#?#>, optionHost: NestedOptionHost,
+            transferState: TransferState,
+            @Inject(PLATFORM_ID) platformId: any) {
 
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
         injector.get(EventsRegistrator);
         injector.get(NgDomAdapter);
         injector.get(NgHttp);

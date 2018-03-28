@@ -3,6 +3,8 @@ import {
     NgZone,
     QueryList,
     SimpleChanges,
+    PLATFORM_ID,
+    Inject,
 
     OnChanges,
     OnInit,
@@ -12,6 +14,8 @@ import {
 } from '@angular/core';
 
 import { ɵgetDOM as getDOM } from '@angular/platform-browser';
+import { isPlatformServer } from '@angular/common';
+import { TransferState, makeStateKey } from '@angular/platform-browser';
 
 import { DxTemplateDirective } from './template';
 import { IDxTemplateHost, DxTemplateHost } from './template-host';
@@ -24,6 +28,8 @@ import {
     ICollectionNestedOptionContainer,
     CollectionNestedOptionContainerImpl
 } from './nested-option';
+
+const PLATFORM_SERVER = makeStateKey('platformServer');
 
 export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterContentChecked, AfterViewInit,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
@@ -59,6 +65,16 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this._initialOptions.eventsStrategy = this.eventHelper.strategy;
         this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
+
+    private _initPlatform() {
+        if (this.transferState.hasKey(PLATFORM_SERVER)) {
+            this._initialOptions.integrationOptions.renderedOnServer = this.transferState.get(PLATFORM_SERVER, null as any);
+            this.transferState.set(PLATFORM_SERVER, null as any);
+        } else if (isPlatformServer(this.platformId)) {
+            this.transferState.set(PLATFORM_SERVER, true as any);
+        }
+    }
+
     protected _createEventEmitters(events) {
         events.forEach(event => {
             this.eventHelper.createEmitter(event.emit, event.subscribe);
@@ -109,6 +125,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     protected abstract _createInstance(element, options)
     protected _createWidget(element: any) {
         this._initialOptions.integrationOptions = {};
+        this._initPlatform();
         this._initOptions();
 
         let createInstanceOnInit = this.createInstanceOnInit;
@@ -130,7 +147,12 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             getDOM().remove(element);
         }
     }
-    constructor(protected element: ElementRef, private ngZone: NgZone, templateHost: DxTemplateHost, private watcherHelper: WatcherHelper) {
+    constructor(protected element: ElementRef,
+        private ngZone: NgZone,
+        templateHost: DxTemplateHost,
+        private watcherHelper: WatcherHelper,
+        private transferState: TransferState,
+        @Inject(PLATFORM_ID) private platformId: any) {
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));

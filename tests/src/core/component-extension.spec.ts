@@ -5,8 +5,13 @@ import {
     ElementRef,
     ViewChildren,
     NgZone,
-    QueryList
+    QueryList,
+    PLATFORM_ID,
+    Inject
 } from '@angular/core';
+
+import { TransferState } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import {
     TestBed,
@@ -33,8 +38,13 @@ let DxTestExtension = DxButton['inherit']({
     providers: [DxTemplateHost, WatcherHelper]
 })
 export class DxTestExtensionComponent extends DxComponentExtension {
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+    constructor(elementRef: ElementRef,
+        ngZone: NgZone,
+        templateHost: DxTemplateHost,
+        _watcherHelper: WatcherHelper,
+        transferState: TransferState,
+        @Inject(PLATFORM_ID) platformId: any) {
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
 
         this._events = [];
     }
@@ -58,6 +68,7 @@ describe('DevExtreme Angular component extension', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
+                imports: [BrowserTransferStateModule],
                 declarations: [TestContainerComponent, DxTestExtensionComponent]
             });
     });

@@ -14,8 +14,12 @@ import {
     QueryList,
     Host,
     SkipSelf,
-    AfterViewInit
+    AfterViewInit,
+    PLATFORM_ID
 } from '@angular/core';
+
+import { TransferState } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import { DOCUMENT } from '@angular/common';
 
@@ -200,8 +204,9 @@ export class DxTestWidgetComponent extends DxComponent {
     @Output() testCollectionOptionWithTemplateChange = new EventEmitter<any>();
 
     constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, private _noh: NestedOptionHost,
-        _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+        _watcherHelper: WatcherHelper, transferState: TransferState,
+        @Inject(PLATFORM_ID) platformId: any) {
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
 
         this._events = [
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
@@ -233,6 +238,7 @@ describe('DevExtreme Angular widget', () => {
     beforeEach(() => {
         TestBed.configureTestingModule(
             {
+                imports: [BrowserTransferStateModule],
                 declarations: [
                     TestContainerComponent,
                     DxTestWidgetComponent,

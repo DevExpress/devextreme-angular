@@ -9,8 +9,13 @@ import {
     Input,
     Output,
     QueryList,
-    AfterViewInit
+    AfterViewInit,
+    PLATFORM_ID,
+    Inject
 } from '@angular/core';
+
+import { TransferState } from '@angular/platform-browser';
+import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import {
     TestBed,
@@ -50,8 +55,13 @@ export class DxTestWidgetComponent extends DxComponent {
     @Output() onOptionChanged = new EventEmitter<any>();
     @Output() testTemplateChange = new EventEmitter<any>();
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+    constructor(elementRef: ElementRef,
+        ngZone: NgZone,
+        templateHost: DxTemplateHost,
+        _watcherHelper: WatcherHelper,
+        transferState: TransferState,
+        @Inject(PLATFORM_ID) platformId: any) {
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
 
         this._createEventEmitters([
             { subscribe: 'optionChanged', emit: 'onOptionChanged' },
@@ -72,8 +82,13 @@ export class DxTestWidgetComponent extends DxComponent {
 export class DxTestComponent extends DxComponent implements AfterViewInit {
     templates: DxTemplateDirective[];
 
-    constructor(elementRef: ElementRef, ngZone: NgZone, templateHost: DxTemplateHost, _watcherHelper: WatcherHelper) {
-        super(elementRef, ngZone, templateHost, _watcherHelper);
+    constructor(elementRef: ElementRef,
+        ngZone: NgZone,
+        templateHost: DxTemplateHost,
+        _watcherHelper: WatcherHelper,
+        transferState: TransferState,
+        @Inject(PLATFORM_ID) platformId: any) {
+        super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
     }
 
     protected _createInstance(element, options) {
@@ -105,7 +120,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent, DxTestWidgetComponent, DxTestComponent],
-                imports: [DxTemplateModule]
+                imports: [DxTemplateModule, BrowserTransferStateModule]
             });
     });
 
