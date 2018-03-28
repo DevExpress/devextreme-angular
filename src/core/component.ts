@@ -29,7 +29,7 @@ import {
     CollectionNestedOptionContainerImpl
 } from './nested-option';
 
-const IS_PLATFORM_SERVER = makeStateKey<any>('DX_isPlatformServer');
+export const IS_PLATFORM_SERVER = makeStateKey<any>('DX_isPlatformServer');
 
 export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterContentChecked, AfterViewInit,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {

@@ -7,7 +7,9 @@ import {
 
 import { isPlatformServer } from '@angular/common';
 
-import { TransferState, makeStateKey } from '@angular/platform-browser';
+import { TransferState } from '@angular/platform-browser';
+
+import { IS_PLATFORM_SERVER } from '../../../dist';
 
 import DxButton from 'devextreme/ui/button';
 
@@ -65,11 +67,9 @@ describe('Universal', () => {
             fixture.detectChanges();
 
             const transferState: TransferState = TestBed.get(TransferState);
-            const PLATFORM = 'DX_isPlatformServer';
-            let key = makeStateKey(PLATFORM);
 
-            expect(transferState.hasKey(key)).toBe(true);
-            expect(transferState.get(key, null as any)).toEqual(true);
+            expect(transferState.hasKey(IS_PLATFORM_SERVER)).toBe(true);
+            expect(transferState.get(IS_PLATFORM_SERVER, null as any)).toEqual(true);
         }
     });
 
@@ -82,9 +82,8 @@ describe('Universal', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
         const transferState: TransferState = TestBed.get(TransferState);
-        const IS_PLATFORM_SERVER = 'DX_isPlatformServer';
-        let key = makeStateKey(IS_PLATFORM_SERVER);
-        transferState.set(key, true as any);
+
+        transferState.set(IS_PLATFORM_SERVER, true as any);
 
         fixture.detectChanges();
 
