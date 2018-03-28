@@ -9,6 +9,8 @@ import { isPlatformServer } from '@angular/common';
 
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 
+import DxButton from 'devextreme/ui/button';
+
 import {
     TestBed
 } from '@angular/core/testing';
@@ -25,6 +27,11 @@ class TestContainerComponent {
 }
 
 describe('Universal', () => {
+
+    function getWidget(fixture) {
+        let widgetElement = fixture.nativeElement.querySelector('.dx-button') || fixture.nativeElement;
+        return DxButton['getInstance'](widgetElement) as any;
+    }
 
     beforeEach(() => {
         TestBed.configureTestingModule(
@@ -64,5 +71,25 @@ describe('Universal', () => {
             expect(transferState.hasKey(key)).toBe(true);
             expect(transferState.get(key, null as any)).toEqual(true);
         }
+    });
+
+    it('should set rendererdOnServer option of integration', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-button></dx-button>`
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        const transferState: TransferState = TestBed.get(TransferState);
+        const IS_PLATFORM_SERVER = 'isPlatformServer';
+        let key = makeStateKey(IS_PLATFORM_SERVER);
+        transferState.set(key, true as any);
+
+        fixture.detectChanges();
+
+        let instance = getWidget(fixture);
+
+        expect(instance.option('integrationOptions.renderedOnServer')).toBe(true);
     });
 });
