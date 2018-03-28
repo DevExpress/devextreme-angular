@@ -65,7 +65,7 @@ describe('Universal', () => {
             fixture.detectChanges();
 
             const transferState: TransferState = TestBed.get(TransferState);
-            const PLATFORM = 'platformServer';
+            const PLATFORM = 'DX_isPlatformServer';
             let key = makeStateKey(PLATFORM);
 
             expect(transferState.hasKey(key)).toBe(true);
@@ -82,7 +82,7 @@ describe('Universal', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
         const transferState: TransferState = TestBed.get(TransferState);
-        const IS_PLATFORM_SERVER = 'isPlatformServer';
+        const IS_PLATFORM_SERVER = 'DX_isPlatformServer';
         let key = makeStateKey(IS_PLATFORM_SERVER);
         transferState.set(key, true as any);
 
