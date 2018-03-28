@@ -58,7 +58,7 @@ describe('Universal', () => {
             fixture.detectChanges();
 
             const transferState: TransferState = TestBed.get(TransferState);
-            const PLATFORM = "platformServer";
+            const PLATFORM = 'platformServer';
             let key = makeStateKey(PLATFORM);
 
             expect(transferState.hasKey(key)).toBe(true);
