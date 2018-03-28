@@ -1,8 +1,11 @@
 /* tslint:disable:component-selector */
 
 import {
-    Component
+    Component,
+    PLATFORM_ID
 } from '@angular/core';
+
+import { isPlatformServer } from '@angular/common';
 
 import { TransferState, makeStateKey } from '@angular/platform-browser';
 
@@ -43,21 +46,23 @@ describe('Universal', () => {
         expect(fixture.detectChanges.bind(fixture)).not.toThrow();
     });
 
-    it('should set renderedOnServer option of integration', () => {
+    it('should set transfer state for rendererdOnServer option of integration', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `<dx-button></dx-button>`
             }
         });
+        let platformID = TestBed.get(PLATFORM_ID);
+        if (isPlatformServer(platformID)) {
+            let fixture = TestBed.createComponent(TestContainerComponent);
+            fixture.detectChanges();
 
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
+            const transferState: TransferState = TestBed.get(TransferState);
+            const PLATFORM = "platformServer";
+            let key = makeStateKey(PLATFORM);
 
-        const transferState: TransferState = TestBed.get(TransferState);
-        const PLATFORM = "platformServer";
-        let key = makeStateKey(PLATFORM);
-
-        expect(transferState.hasKey(key)).toBe(true);
-        expect(transferState.get(key, null as any)).toEqual(true);
+            expect(transferState.hasKey(key)).toBe(true);
+            expect(transferState.get(key, null as any)).toEqual(true);
+        }
     });
 });
