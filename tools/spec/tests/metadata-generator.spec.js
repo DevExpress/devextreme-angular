@@ -318,26 +318,56 @@ describe("metadata-generator", function() {
                                 Options: {
                                     nested: { // DxoNested
                                         Options: {
-                                            deep: {}
+                                            deep: {},
+                                            changeable: {
+                                                IsChangeable: true
+                                            },
+                                            readonly: {
+                                                IsReadonly: true
+                                            }
                                         }
                                     },
                                     nestedItems: { // DxiNestedItem
                                         Options: {
-                                            deep: {}
+                                            deep: {},
+                                            changeable: {
+                                                IsChangeable: true
+                                            },
+                                            readonly: {
+                                                IsReadonly: true
+                                            }
                                         },
                                         IsCollection: true,
                                         SingularName: "nestedItem"
+                                    },
+                                    changeable: {
+                                        IsChangeable: true
+                                    },
+                                    readonly: {
+                                        IsReadonly: true
                                     }
                                 }
                             },
                             collectionItem: { // DxoItem
                                 Options: {
-                                    nested: {}
+                                    nested: {},
+                                    changeable: {
+                                        IsChangeable: true
+                                    },
+                                    readonly: {
+                                        IsReadonly: true
+                                    }
                                 }
                             },
                             collectionItems: { // DxiItem
                                 Options: {
-                                    nested: {}
+                                    nested: {},
+                                    changeable: {
+                                        IsChangeable: true
+                                    },
+                                    readonly: {
+                                        IsReadonly: true
+                                    }
                                 },
                                 IsCollection: true,
                                 SingularName: "collectionItem"
@@ -447,7 +477,7 @@ describe("metadata-generator", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoProperty');
 
-            expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nested', 'nestedItems', 'anotherNested']);
+            expect(metas.DxoProperty.properties.map(p => p.name)).toEqual(['nested', 'nestedItems', 'changeable', 'readonly', 'anotherNested']);
             expect(metas.DxoProperty.optionName).toBe('property');
         });
 
@@ -474,11 +504,22 @@ describe("metadata-generator", function() {
             expect(metas.DxiExternalPropertyItem.basePath).toBe('./base/external-property-type-dxi');
         });
 
+        it("should generate proper events emit field of if nested components isChangeable=true or isReadonly=true", function() {
+            ['DxoProperty', 'DxoNested', 'DxiNestedItem', 'DxoCollectionItem', 'DxiCollectionItem'].forEach((component) => {
+                expect(metas[component].events
+                    .map(p => p.emit)).toEqual([
+                        'changeableChange',
+                        'readonlyChange'
+                    ]
+                );
+            });
+        });
+
         it("should generate deep nested components", function() {
             expect(metas.DxComplexWidget.nestedComponents.map(c => c.className)).toContain('DxoNested');
             expect(metas.DxAnotherComplexWidget.nestedComponents.map(c => c.className)).not.toContain('DxoNested');
 
-            expect(metas.DxoNested.properties.map(p => p.name)).toEqual(['deep']);
+            expect(metas.DxoNested.properties.map(p => p.name)).toEqual(['deep', 'changeable', 'readonly']);
             expect(metas.DxoNested.optionName).toBe('nested');
             expect(metas.DxoNested.baseClass).toBe('NestedOption');
             expect(metas.DxoNested.hasSimpleBaseClass).toBe(true);

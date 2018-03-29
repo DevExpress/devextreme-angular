@@ -98,6 +98,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -279,12 +280,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index number of the currently selected item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "selectedItemKeys": {
@@ -292,6 +295,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
@@ -300,6 +304,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItem",
           "Description": "An array of currently selected item objects."
         },
@@ -394,6 +399,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -940,6 +946,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "placeholder": {
@@ -1031,6 +1038,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the current value displayed by the widget."
         },
         "valueChangeEvent": {
@@ -1824,6 +1832,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -2735,6 +2744,7 @@
             "number",
             "string"
           ],
+          "IsChangeable": true,
           "Description": "An object or a value specifying the date and time currently selected in the calendar."
         },
         "visible": {
@@ -2828,6 +2838,75 @@
         "argumentAxis": {
           "Description": "Configures the argument axis.",
           "Options": {
+            "aggregationGroupWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
+            "aggregationInterval": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "",
+              "Options": {
+                "days": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
+                },
+                "hours": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
+                },
+                "milliseconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
+                },
+                "minutes": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
+                },
+                "months": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
+                },
+                "quarters": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
+                },
+                "seconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
+                },
+                "weeks": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
+                },
+                "years": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
+                }
+              }
+            },
             "allowDecimals": {
               "PrimitiveTypes": [
                 "boolean"
@@ -6723,6 +6802,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the widget state."
         },
         "visible": {
@@ -8020,6 +8100,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "placeholder": {
@@ -8069,6 +8150,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the currently selected value."
         },
         "visible": {
@@ -8217,6 +8299,7 @@
             "ContextMenuItem"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "Holds an array of menu items."
         },
@@ -8373,6 +8456,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "selectionByClick": {
@@ -8465,6 +8549,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -8927,6 +9012,24 @@
             }
           }
         },
+        "filterBuilder": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxFilterBuilderOptions"
+          ],
+          "ComplexTypes": [
+            "dxFilterBuilderOptions"
+          ],
+          "Description": ""
+        },
+        "filterPopup": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": ""
+        },
         "filterRow": {
           "Description": "Configures the filter row.",
           "Options": {
@@ -9050,6 +9153,19 @@
               "Description": "Specifies whether the filter row is visible."
             }
           }
+        },
+        "filterSyncEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
+        },
+        "filterValue": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsFilterExpr": true,
+          "Description": ""
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -9327,7 +9443,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the adaptiveDetailRowPreparing event. Executed before an adaptive detail row is rendered."
+          "Description": "A function that is executed before an adaptive detail row is rendered."
         },
         "onCellClick": {
           "PrimitiveTypes": [
@@ -9336,7 +9452,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellClick event."
+          "Description": "A function that is executed when a user clicks a cell."
         },
         "onCellHoverChanged": {
           "PrimitiveTypes": [
@@ -9344,7 +9460,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellHoverChanged event."
+          "Description": "A function that is executed after the pointer enters or leaves a cell."
         },
         "onCellPrepared": {
           "PrimitiveTypes": [
@@ -9352,7 +9468,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellPrepared event."
+          "Description": "A function that is executed after the widget creates a cell."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -9368,7 +9484,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contextMenuPreparing event."
+          "Description": "A function that is executed before a context menu is rendered."
         },
         "onDataErrorOccurred": {
           "PrimitiveTypes": [
@@ -9376,7 +9492,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the dataErrorOccurred event. Executed when an error occurs in the data source."
+          "Description": "A function that is executed when an error occurs in the data source."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -9392,7 +9508,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
+          "Description": "A function that is executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "PrimitiveTypes": [
@@ -9400,7 +9516,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPrepared event."
+          "Description": "A function that is executed after an editor is created."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -9408,7 +9524,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPreparing event."
+          "Description": "A function that is executed before an editor is created."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -9416,7 +9532,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A function that is executed after data from the widget is exported."
         },
         "onExporting": {
           "PrimitiveTypes": [
@@ -9424,7 +9540,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A function that is executed before data from the widget is exported."
         },
         "onFileSaving": {
           "PrimitiveTypes": [
@@ -9432,7 +9548,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the fileSaving event."
+          "Description": "A function that is executed before a file with exported data is saved to the user's local storage."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -9448,7 +9564,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initNewRow event. Executed before a new row is added to the widget."
+          "Description": "A function that is executed before a new row is added to the widget."
         },
         "onKeyDown": {
           "PrimitiveTypes": [
@@ -9456,7 +9572,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the keyDown event. Executed when the widget is in focus and a key has been pressed down."
+          "Description": "A function that is executed when the widget is in focus and a key has been pressed down."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -9473,7 +9589,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowClick event."
+          "Description": "A function that is executed when a user clicks a row."
         },
         "onRowCollapsed": {
           "PrimitiveTypes": [
@@ -9481,7 +9597,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowCollapsed event. Executed after a row is collapsed."
+          "Description": "A function that is executed after a row is collapsed."
         },
         "onRowCollapsing": {
           "PrimitiveTypes": [
@@ -9489,7 +9605,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowCollapsing event. Executed before a row is collapsed."
+          "Description": "A function that is executed before a row is collapsed."
         },
         "onRowExpanded": {
           "PrimitiveTypes": [
@@ -9497,7 +9613,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowExpanded event. Executed after a row is expanded."
+          "Description": "A function that is executed after a row is expanded."
         },
         "onRowExpanding": {
           "PrimitiveTypes": [
@@ -9505,7 +9621,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowExpanding event. Executed before a row is expanded."
+          "Description": "A function that is executed before a row is expanded."
         },
         "onRowInserted": {
           "PrimitiveTypes": [
@@ -9513,7 +9629,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowInserted event. Executed after a new row has been inserted into the data source."
+          "Description": "A function that is executed after a new row has been inserted into the data source."
         },
         "onRowInserting": {
           "PrimitiveTypes": [
@@ -9521,7 +9637,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowInserting event. Executed before a new row is inserted into the data source."
+          "Description": "A function that is executed before a new row is inserted into the data source."
         },
         "onRowPrepared": {
           "PrimitiveTypes": [
@@ -9529,7 +9645,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowPrepared event."
+          "Description": "A function that is executed after the widget creates a row."
         },
         "onRowRemoved": {
           "PrimitiveTypes": [
@@ -9537,7 +9653,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowRemoved event. Executed after a row has been removed from the data source."
+          "Description": "A function that is executed after a row has been removed from the data source."
         },
         "onRowRemoving": {
           "PrimitiveTypes": [
@@ -9545,7 +9661,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowRemoving event. Executed before a row is removed from the data source."
+          "Description": "A function that is executed before a row is removed from the data source."
         },
         "onRowUpdated": {
           "PrimitiveTypes": [
@@ -9553,7 +9669,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowUpdated event. Executed after a row has been updated in the data source."
+          "Description": "A function that is executed after a row has been updated in the data source."
         },
         "onRowUpdating": {
           "PrimitiveTypes": [
@@ -9561,7 +9677,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowUpdating event. Executed before a row is updated in the data source."
+          "Description": "A function that is executed before a row is updated in the data source."
         },
         "onRowValidating": {
           "PrimitiveTypes": [
@@ -9569,7 +9685,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowValidating event. Executed after cells in a row are validated against validation rules."
+          "Description": "A function that is executed after cells in a row are validated against validation rules."
         },
         "onSelectionChanged": {
           "PrimitiveTypes": [
@@ -9577,7 +9693,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Executed after selecting a row or clearing its selection."
+          "Description": "A function that is executed after selecting a row or clearing its selection."
         },
         "onToolbarPreparing": {
           "PrimitiveTypes": [
@@ -9585,7 +9701,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the toolbarPreparing event. Executed before the toolbar is created."
+          "Description": "A function that is executed before the toolbar is created."
         },
         "pager": {
           "Description": "",
@@ -9647,12 +9763,14 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "Description": ""
             },
             "pageSize": {
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "Description": ""
             }
           }
@@ -9752,7 +9870,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
+              "Description": "Specifies when to show scrollbars. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -9794,6 +9912,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "IsChangeable": true,
               "Description": "Sets a search string for the search panel."
             },
             "visible": {
@@ -9815,6 +9934,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedRowKey",
           "Description": "Allows you to select rows or learn which rows are selected."
         },
@@ -9858,6 +9978,7 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Specifies filters for the rows that must be selected initially. Applies only if selection.deferred is true."
         },
         "showBorders": {
@@ -10635,6 +10756,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "pickerType": {
@@ -10660,6 +10782,12 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "showAnalogClock": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
         },
         "showClearButton": {
           "PrimitiveTypes": [
@@ -10724,6 +10852,7 @@
             "number",
             "string"
           ],
+          "IsChangeable": true,
           "Description": "An object or a value specifying the date and time currently selected using the date box."
         },
         "valueChangeEvent": {
@@ -11229,6 +11358,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "placeholder": {
@@ -11660,6 +11790,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies a File instance representing the selected file. Read-only when uploadMode is \"useForm\"."
         },
@@ -11947,6 +12078,7 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Allows you to specify a filter."
         },
         "visible": {
@@ -12059,7 +12191,8 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "An object providing data for the form."
+          "IsChangeable": true,
+          "Description": "Provides the Form's data. Gets updated every time form fields change."
         },
         "height": {
           "PrimitiveTypes": [
@@ -13425,6 +13558,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -13563,12 +13697,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently active gallery item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "showIndicator": {
@@ -14781,6 +14917,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -15151,6 +15288,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
@@ -15159,6 +15297,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItem",
           "Description": "An array of currently selected item objects."
         },
@@ -15537,6 +15676,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -15936,6 +16076,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "pageLoadingText": {
@@ -16153,6 +16294,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the currently selected value. May be an object if dataSource contains objects and valueExpr is not set."
         },
         "valueChangeEvent": {
@@ -16688,6 +16830,7 @@
             "MenuItem"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "Holds an array of menu items."
         },
@@ -16833,6 +16976,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "selectionByClick": {
@@ -17037,6 +17181,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -17169,12 +17314,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently displayed item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "swipeEnabled": {
@@ -17280,6 +17427,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -17439,12 +17587,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently selected widget item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "selectedItemKeys": {
@@ -17452,6 +17602,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
@@ -17462,6 +17613,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItem",
           "Description": "An array of currently selected item objects."
         },
@@ -17808,6 +17960,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The current number box value."
         },
         "valueChangeEvent": {
@@ -17930,6 +18083,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -18056,12 +18210,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently active panorama item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "title": {
@@ -19105,6 +19261,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -19245,12 +19402,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently active pivot item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "swipeEnabled": {
@@ -22759,6 +22918,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's height."
         },
         "hideEvent": {
@@ -23050,6 +23210,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -23059,6 +23220,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's width."
         }
       }
@@ -23169,6 +23331,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's height in pixels."
         },
         "hint": {
@@ -23451,6 +23614,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -23460,6 +23624,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's width in pixels."
         }
       }
@@ -23609,6 +23774,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The current widget value."
         },
         "visible": {
@@ -23844,6 +24010,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the currently selected value."
         },
         "valueExpr": {
@@ -24393,6 +24560,75 @@
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
           "Options": {
+            "aggregationGroupWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
+            "aggregationInterval": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "",
+              "Options": {
+                "days": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
+                },
+                "hours": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
+                },
+                "milliseconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
+                },
+                "minutes": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
+                },
+                "months": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
+                },
+                "quarters": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
+                },
+                "seconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
+                },
+                "weeks": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
+                },
+                "years": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
+                }
+              }
+            },
             "allowDecimals": {
               "PrimitiveTypes": [
                 "boolean"
@@ -25359,6 +25595,7 @@
             "Date"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "The selected range, initial or current."
         }
@@ -25615,6 +25852,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies the currently selected value."
         },
@@ -25659,6 +25897,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's height."
         },
         "maxHeight": {
@@ -25746,6 +25985,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's width."
         }
       }
@@ -25841,6 +26081,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -26108,12 +26349,14 @@
             "number",
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies a date displayed on the current scheduler view by default."
         },
         "currentView": {
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the currently displayed view. Accepts the view's name or type."
         },
         "dataCellTemplate": {
@@ -26339,7 +26582,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": ""
+          "Description": "A function that is executed when a user attempts to open the browser's context menu for an appointment. Allows you to replace this context menu with a custom one."
         },
         "onAppointmentDblClick": {
           "PrimitiveTypes": [
@@ -26414,7 +26657,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": ""
+          "Description": "A function that is executed when a user attempts to open the browser's context menu for a cell. Allows you to replace this context menu with a custom one."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -27337,6 +27580,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "pagingEnabled": {
@@ -27453,6 +27697,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the currently selected value. May be an object if dataSource contains objects and valueExpr is not set."
         },
         "valueChangeEvent": {
@@ -27561,6 +27806,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -27748,12 +27994,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index number of the currently selected item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "swipeEnabled": {
@@ -28133,6 +28381,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The current slider value."
         },
         "visible": {
@@ -28771,6 +29020,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether the current switch state is \"On\" or \"Off\"."
         },
         "visible": {
@@ -28882,6 +29132,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -29090,12 +29341,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently displayed item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "showNavButtons": {
@@ -29207,6 +29460,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -29372,12 +29626,14 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The index of the currently selected widget item."
         },
         "selectedItem": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "The selected item object."
         },
         "selectedItemKeys": {
@@ -29385,6 +29641,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItemKey",
           "Description": "Specifies an array of currently selected item keys."
         },
@@ -29395,6 +29652,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedItem",
           "Description": "An array of currently selected item objects."
         },
@@ -29828,6 +30086,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
         "pagingEnabled": {
@@ -29964,6 +30223,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies the selected items."
         },
@@ -30288,6 +30548,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies a value the widget displays."
         },
         "valueChangeEvent": {
@@ -30630,6 +30891,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies a value the widget displays."
         },
         "valueChangeEvent": {
@@ -30757,6 +31019,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -31179,6 +31442,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -31254,6 +31518,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -31523,6 +31788,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's height."
         },
         "hideEvent": {
@@ -31716,6 +31982,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the widget is visible."
         },
         "width": {
@@ -31725,6 +31992,7 @@
             "string"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Specifies the widget's width."
         }
       }
@@ -32081,6 +32349,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "expandedRowKey",
           "Description": "Specifies keys of the initially expanded rows."
         },
@@ -32089,6 +32358,24 @@
             "boolean"
           ],
           "Description": "Specifies whether nodes appear expanded or collapsed after filtering is applied."
+        },
+        "filterBuilder": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxFilterBuilderOptions"
+          ],
+          "ComplexTypes": [
+            "dxFilterBuilderOptions"
+          ],
+          "Description": ""
+        },
+        "filterPopup": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": ""
         },
         "filterRow": {
           "Description": "Configures the filter row.",
@@ -32213,6 +32500,19 @@
               "Description": "Specifies whether the filter row is visible."
             }
           }
+        },
+        "filterSyncEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
+        },
+        "filterValue": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsFilterExpr": true,
+          "Description": ""
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -32377,7 +32677,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the adaptiveDetailRowPreparing event. Executed before an adaptive detail row is rendered."
+          "Description": "A function that is executed before an adaptive detail row is rendered."
         },
         "onCellClick": {
           "PrimitiveTypes": [
@@ -32386,7 +32686,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellClick event. Executed after a user clicks a cell."
+          "Description": "A function that is executed after a user clicks a cell."
         },
         "onCellHoverChanged": {
           "PrimitiveTypes": [
@@ -32394,7 +32694,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellHoverChanged event. Executed after the pointer enters or leaves a cell."
+          "Description": "A function that is executed after the pointer enters or leaves a cell."
         },
         "onCellPrepared": {
           "PrimitiveTypes": [
@@ -32402,7 +32702,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the cellPrepared event. Executed after the widget creates a cell."
+          "Description": "A function that is executed after the widget creates a cell."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -32418,7 +32718,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the contextMenuPreparing event. Executed before a context menu is rendered."
+          "Description": "A function that is executed before a context menu is rendered."
         },
         "onDataErrorOccurred": {
           "PrimitiveTypes": [
@@ -32426,7 +32726,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the dataErrorOccurred event. Executed when an error occurs in the data source."
+          "Description": "A function that is executed when an error occurs in the data source."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -32442,7 +32742,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editingStart event. Executed before a cell or row switches to the editing state."
+          "Description": "A function that is executed before a cell or row switches to the editing state."
         },
         "onEditorPrepared": {
           "PrimitiveTypes": [
@@ -32450,7 +32750,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPrepared event. Executed after an editor is created."
+          "Description": "A function that is executed after an editor is created."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -32458,7 +32758,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPreparing event. Executed before an editor is created."
+          "Description": "A function that is executed before an editor is created."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -32474,7 +32774,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the initNewRow event. Executed before a new row is added to the widget."
+          "Description": "A function that is executed before a new row is added to the widget."
         },
         "onKeyDown": {
           "PrimitiveTypes": [
@@ -32482,7 +32782,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the keyDown event. Executed when the widget is in focus and a key has been pressed down."
+          "Description": "A function that is executed when the widget is in focus and a key has been pressed down."
         },
         "onNodesInitialized": {
           "PrimitiveTypes": [
@@ -32490,7 +32790,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the nodesInitialized event. Executed after the loaded nodes are initialized."
+          "Description": "A function that is executed after the loaded nodes are initialized."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -32507,7 +32807,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowClick event. Executed when a user clicks a row."
+          "Description": "A function that is executed when a user clicks a row."
         },
         "onRowCollapsed": {
           "PrimitiveTypes": [
@@ -32515,7 +32815,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowCollapsed event. Executed after a row is collapsed."
+          "Description": "A function that is executed after a row is collapsed."
         },
         "onRowCollapsing": {
           "PrimitiveTypes": [
@@ -32523,7 +32823,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowCollapsing event. Executed before a row is collapsed."
+          "Description": "A function that is executed before a row is collapsed."
         },
         "onRowExpanded": {
           "PrimitiveTypes": [
@@ -32531,7 +32831,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowExpanded event. Executed after a row is expanded."
+          "Description": "A function that is executed after a row is expanded."
         },
         "onRowExpanding": {
           "PrimitiveTypes": [
@@ -32539,7 +32839,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowExpanding event. Executed before a row is expanded."
+          "Description": "A function that is executed before a row is expanded."
         },
         "onRowInserted": {
           "PrimitiveTypes": [
@@ -32547,7 +32847,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowInserted event. Executed after a new row has been inserted into the data source."
+          "Description": "A function that is executed after a new row has been inserted into the data source."
         },
         "onRowInserting": {
           "PrimitiveTypes": [
@@ -32555,7 +32855,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowInserting event. Executed before a new row is inserted into the data source."
+          "Description": "A function that is executed before a new row is inserted into the data source."
         },
         "onRowPrepared": {
           "PrimitiveTypes": [
@@ -32563,7 +32863,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowPrepared event. Executed after the widget creates a row."
+          "Description": "A function that is executed after the widget creates a row."
         },
         "onRowRemoved": {
           "PrimitiveTypes": [
@@ -32571,7 +32871,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowRemoved event. Executed after a row has been removed from the data source."
+          "Description": "A function that is executed after a row has been removed from the data source."
         },
         "onRowRemoving": {
           "PrimitiveTypes": [
@@ -32579,7 +32879,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowRemoving event. Executed before a row is removed from the data source."
+          "Description": "A function that is executed before a row is removed from the data source."
         },
         "onRowUpdated": {
           "PrimitiveTypes": [
@@ -32587,7 +32887,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowUpdated event. Executed after a row has been updated in the data source."
+          "Description": "A function that is executed after a row has been updated in the data source."
         },
         "onRowUpdating": {
           "PrimitiveTypes": [
@@ -32595,7 +32895,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowUpdating event. Executed before a row is updated in the data source."
+          "Description": "A function that is executed before a row is updated in the data source."
         },
         "onRowValidating": {
           "PrimitiveTypes": [
@@ -32603,7 +32903,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the rowValidating event. Executed after cells in a row are validated against validation rules."
+          "Description": "A function that is executed after cells in a row are validated against validation rules."
         },
         "onSelectionChanged": {
           "PrimitiveTypes": [
@@ -32611,7 +32911,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the selectionChanged event. Executed after selecting a row or clearing its selection."
+          "Description": "A function that is executed after selecting a row or clearing its selection."
         },
         "onToolbarPreparing": {
           "PrimitiveTypes": [
@@ -32619,7 +32919,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the toolbarPreparing event. Executed before the toolbar is created."
+          "Description": "A function that is executed before the toolbar is created."
         },
         "pager": {
           "Description": "",
@@ -32681,12 +32981,14 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "Description": ""
             },
             "pageSize": {
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "Description": ""
             }
           }
@@ -32774,7 +33076,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
+              "Description": "Specifies when to show scrollbars. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -32816,6 +33118,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
+              "IsChangeable": true,
               "Description": "Sets a search string for the search panel."
             },
             "visible": {
@@ -32837,6 +33140,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "selectedRowKey",
           "Description": "Allows you to select rows or learn which rows are selected."
         },
@@ -33993,6 +34297,7 @@
             "TreeViewItem"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget."
         },
@@ -34358,6 +34663,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "item",
           "Description": "An array of items displayed by the widget.",
           "Options": {
@@ -38440,6 +38746,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "Specifies a filter value for the column."
         },
         "filterValues": {
@@ -38447,6 +38754,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "filterValue",
           "Description": "Specifies filter values for the column's header filter."
         },
@@ -38492,6 +38800,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the index of a column when grid records are grouped by the values of this column."
         },
         "headerCellTemplate": {
@@ -38621,6 +38930,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the selected filter operation for the column."
         },
         "setCellValue": {
@@ -38652,6 +38962,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the index according to which columns participate in sorting."
         },
         "sortingMethod": {
@@ -38665,6 +38976,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the sort order of column values."
         },
         "trueText": {
@@ -38702,12 +39014,14 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the position of the column regarding other columns in the resulting widget."
         },
         "width": {
@@ -39605,6 +39919,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsChangeable": true,
           "Description": "Specifies a filter value for the column."
         },
         "filterValues": {
@@ -39612,6 +39927,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "filterValue",
           "Description": "Specifies filter values for the column's header filter."
         },
@@ -39766,6 +40082,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the selected filter operation for the column."
         },
         "setCellValue": {
@@ -39791,6 +40108,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the index according to which columns participate in sorting."
         },
         "sortingMethod": {
@@ -39804,6 +40122,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the sort order of column values."
         },
         "trueText": {
@@ -39841,12 +40160,14 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether the column is visible, that is, occupies space in the table."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the position of the column regarding other columns in the resulting widget."
         },
         "width": {

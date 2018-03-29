@@ -1,8 +1,9 @@
-import { QueryList, ElementRef, Renderer2 } from '@angular/core';
+import { QueryList, ElementRef, Renderer2, NgZone, AfterContentInit } from '@angular/core';
 import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 import { getElement } from './utils';
+import { EmitterHelper } from './events-strategy';
 
 import * as events from 'devextreme/events';
 
@@ -15,17 +16,27 @@ export interface INestedOptionContainer {
 
 export interface IOptionPathGetter { (): string; }
 
-export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
+export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer, AfterContentInit {
     protected _host: INestedOptionContainer;
     protected _hostOptionPath: IOptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
+    eventHelper: EmitterHelper;
 
     protected abstract get _optionPath(): string;
     protected abstract _fullOptionPath(): string;
+    protected abstract _initEvents(): void;
 
-    constructor() {
+    constructor(ngZone: NgZone) {
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this), this._filterItems.bind(this));
+        this.eventHelper = new EmitterHelper(ngZone, this);
+    }
+
+    ngAfterContentInit() {
+        this._initEvents();
+    }
+    protected _createEventEmitters(events) {
+        this.eventHelper.createEventEmitters(events);
     }
 
     protected _getOption(name: string): any {
@@ -102,6 +113,19 @@ export abstract class NestedOption extends BaseNestedOption {
     protected _fullOptionPath() {
         return this._hostOptionPath() + this._optionPath + '.';
     }
+
+    protected _initEvents() {
+        this.instance.on('optionChanged', (e) => {
+            let nameParts = e.fullName.split('.');
+
+            for (let i = 0; i <= nameParts.length - 2; i++ ) {
+                if (nameParts[i] === this._optionPath) {
+                    this.eventHelper.fireNgEvent(nameParts[i + 1] + 'Change', [e.value]);
+                    return;
+                }
+            };
+        });
+    }
 }
 
 export interface ICollectionNestedOption {
@@ -122,6 +146,29 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
 
     get isLinked() {
         return this._index !== undefined && !!this.instance;
+    }
+
+    protected _initEvents() {
+        if (!this.instance) {
+            return;
+        }
+
+        this.instance.on('optionChanged', (e) => {
+            let nameParts = e.fullName.split('.');
+
+            for (let i = 0; i <= nameParts.length - 2; i++ ) {
+                if (nameParts[i].indexOf('[') !== -1) {
+                    let parts = nameParts[i].split('['),
+                        name = parts[0],
+                        index = parts[1].split(']')[0];
+
+                    if (name === this._optionPath && +index === this._index) {
+                        this.eventHelper.fireNgEvent(nameParts[i + 1] + 'Change', [e.value]);
+                        return;
+                    }
+                }
+            };
+        });
     }
 }
 
