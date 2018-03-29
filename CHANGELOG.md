@@ -1,7 +1,9 @@
 ## Unreleased
 
-### Breaking changes
+### Features
+- Create event emitters for nested components [#728](https://github.com/DevExpress/devextreme-angular/pull/728)
 
+### Breaking changes
 - Angular below version 5 is not supported anymore.
 
 ## 18.1.1-beta.3 (2018-03-21)
