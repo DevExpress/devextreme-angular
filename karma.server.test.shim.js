@@ -3,11 +3,11 @@ require("./karma.common.test.shim");
 const testing = require("@angular/core/testing");
 const server = require("@angular/platform-server/testing");
 
-let windowUtils = require('devextreme/core/utils/window');
+var windowUtils = require("devextreme/core/utils/window");
 windowUtils.hasWindow = function() {
     return false;
 };
-let windowMock = {};
+var windowMock = {};
 windowMock.window = windowMock;
 windowUtils.getWindow = function() {
     return windowMock;
