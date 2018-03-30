@@ -18,8 +18,12 @@ import {
 } from '@angular/core/testing';
 
 import {
-    DxButtonModule
+    DevExtremeModule
 } from '../../../dist';
+
+import {
+    componentNames
+} from './component-names';
 
 @Component({
     selector: 'test-container-component',
@@ -39,20 +43,24 @@ describe('Universal', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxButtonModule]
+                imports: [
+                    DevExtremeModule
+                ]
             });
     });
 
     // spec
-    it('should render button', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `<dx-button></dx-button>`
-            }
-        });
+    componentNames.forEach(componentName => {
+        it('should render ' + componentName, () => {
+            TestBed.overrideComponent(TestContainerComponent, {
+                set: {
+                    template: `<dx-${componentName}></dx-${componentName}>`
+                }
+            });
 
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        expect(fixture.detectChanges.bind(fixture)).not.toThrow();
+            let fixture = TestBed.createComponent(TestContainerComponent);
+            expect(fixture.detectChanges.bind(fixture)).not.toThrow();
+        });
     });
 
     it('should set transfer state for rendererdOnServer option of integration', () => {

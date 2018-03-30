@@ -46,6 +46,12 @@ module.exports = {
                 }
             }
         },
+        componentNamesGenerator: {
+            importFrom: './tools/dist/component-names-generator',
+            componentFilesPath: './src/ui/',
+            excludedFileNames: [ 'all.ts', 'validation-group.ts', 'validation-summary.ts', 'validator.ts' ],
+            outputFileName: 'tests/src/server/component-names.ts'
+        },
         tsConfigPath: "tools/src/tsconfig.json",
         tests: {
             srcFilesPattern: 'tools/spec/tests/*.spec.js'
@@ -53,7 +59,7 @@ module.exports = {
     },
     components: {
         srcFilesPattern: '**/*.ts',
-        tsTestSrc: ['tests/src/**/*.spec.ts'],
+        tsTestSrc: ['tests/src/**/*.spec.ts', 'tests/src/**/component-names.ts'],
         testsPath: 'tests/dist',
         sourcePath: 'src',
         outputPath: 'dist',

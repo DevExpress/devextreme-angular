@@ -3,6 +3,16 @@ require("./karma.common.test.shim");
 const testing = require("@angular/core/testing");
 const server = require("@angular/platform-server/testing");
 
+let windowUtils = require('devextreme/core/utils/window');
+windowUtils.hasWindow = function() {
+    return false;
+};
+let windowMock = {};
+windowMock.window = windowMock;
+windowUtils.getWindow = function() {
+    return windowMock;
+};
+
 testing.TestBed.initTestEnvironment(
     server.ServerTestingModule,
     server.platformServerTesting()
