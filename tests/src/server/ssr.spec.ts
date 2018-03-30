@@ -11,10 +11,9 @@ import { TransferState } from '@angular/platform-browser';
 
 import { IS_PLATFORM_SERVER } from '../../../dist';
 
-import DxButton from 'devextreme/ui/button';
-
 import {
-    TestBed
+    TestBed,
+    async
 } from '@angular/core/testing';
 
 import {
@@ -30,28 +29,26 @@ import {
     template: ''
 })
 class TestContainerComponent {
+    renderedOnServer: false;
+    initializedHandler(e) {
+        this.renderedOnServer = e.component.option('integrationOptions.renderedOnServer');
+    }
 }
 
 describe('Universal', () => {
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-button') || fixture.nativeElement;
-        return DxButton['getInstance'](widgetElement) as any;
-    }
-
-    beforeEach(() => {
-        TestBed.configureTestingModule(
-            {
-                declarations: [TestContainerComponent],
-                imports: [
-                    DevExtremeModule
-                ]
-            });
-    });
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [
+                DevExtremeModule
+            ]
+        });
+    }));
 
     // spec
-    componentNames.forEach(componentName => {
-        it('should render ' + componentName, () => {
+    componentNames.forEach((componentName) => {
+        it('should render ' + componentName, async(() => {
             TestBed.overrideComponent(TestContainerComponent, {
                 set: {
                     template: `<dx-${componentName}></dx-${componentName}>`
@@ -60,43 +57,42 @@ describe('Universal', () => {
 
             let fixture = TestBed.createComponent(TestContainerComponent);
             expect(fixture.detectChanges.bind(fixture)).not.toThrow();
-        });
-    });
+        }));
 
-    it('should set transfer state for rendererdOnServer option of integration', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `<dx-button></dx-button>`
+        
+        it('should set transfer state for rendererdOnServer option of integration for ' + componentName, async(() => {
+            TestBed.overrideComponent(TestContainerComponent, {
+                set: {
+                    template: `<dx-${componentName}></dx-${componentName}>`
+                }
+            });
+            let platformID = TestBed.get(PLATFORM_ID);
+            if (isPlatformServer(platformID)) {
+                let fixture = TestBed.createComponent(TestContainerComponent);
+                fixture.detectChanges();
+
+                const transferState: TransferState = TestBed.get(TransferState);
+
+                expect(transferState.hasKey(IS_PLATFORM_SERVER)).toBe(true);
+                expect(transferState.get(IS_PLATFORM_SERVER, null as any)).toEqual(true);
             }
-        });
-        let platformID = TestBed.get(PLATFORM_ID);
-        if (isPlatformServer(platformID)) {
+        }));
+
+        it('should set rendererdOnServer option of integration for ' + componentName, async(() => {
+            TestBed.overrideComponent(TestContainerComponent, {
+                set: {
+                    template: `<dx-${componentName} (onInitialized)="initializedHandler($event)"></dx-${componentName}>`
+                }
+            });
+    
             let fixture = TestBed.createComponent(TestContainerComponent);
-            fixture.detectChanges();
-
             const transferState: TransferState = TestBed.get(TransferState);
-
-            expect(transferState.hasKey(IS_PLATFORM_SERVER)).toBe(true);
-            expect(transferState.get(IS_PLATFORM_SERVER, null as any)).toEqual(true);
-        }
-    });
-
-    it('should set rendererdOnServer option of integration', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `<dx-button></dx-button>`
-            }
-        });
-
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        const transferState: TransferState = TestBed.get(TransferState);
-
-        transferState.set(IS_PLATFORM_SERVER, true as any);
-
-        fixture.detectChanges();
-
-        let instance = getWidget(fixture);
-
-        expect(instance.option('integrationOptions.renderedOnServer')).toBe(true);
+    
+            transferState.set(IS_PLATFORM_SERVER, true as any);
+    
+            fixture.detectChanges();
+    
+            expect(fixture.componentInstance.renderedOnServer).toBe(true);
+        }));
     });
 });
