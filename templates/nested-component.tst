@@ -81,6 +81,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
             <#~ it.events :event:i #>{ emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
             <#?#><#~#>
         ]);
+        this.eventHelper.subscribeToOptionChanged(this._optionChangedHandler.bind(this));
 <#?#>
         parentOptionHost.setNestedOption(this);
         optionHost.setHost(this, this._fullOptionPath.bind(this));<#? it.hasTemplate #>
