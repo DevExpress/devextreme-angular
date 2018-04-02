@@ -1,6 +1,5 @@
-import { EventEmitter, NgZone, Injectable } from '@angular/core';
+import { EventEmitter, NgZone } from '@angular/core';
 import { DxComponent } from './component';
-import * as eventsEngine from 'devextreme/events/core/events_engine';
 import { BaseNestedOption } from './nested-option';
 
 const dxToNgEventNames = {};
@@ -95,15 +94,3 @@ export class EmitterHelper {
     }
 }
 
-@Injectable()
-export class EventsRegistrator {
-    constructor(ngZone: NgZone) {
-        eventsEngine.set({
-            on: function(...args) {
-                ngZone.runOutsideAngular(() => {
-                    this.callBase.apply(this, args);
-                });
-            }
-        });
-    }
-}
