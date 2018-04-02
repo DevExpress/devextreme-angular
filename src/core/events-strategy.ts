@@ -66,8 +66,6 @@ export class NgEventsStrategy {
     }
 }
 
-let optionChangedEmitter = new EventEmitter();
-
 export class EmitterHelper {
     strategy: NgEventsStrategy;
     lockedValueChangeEvent = false;
@@ -94,12 +92,6 @@ export class EmitterHelper {
         events.forEach(event => {
             this.createEmitter(event.emit, event.subscribe);
         });
-    }
-    emitOptionChanged(e: any) {
-        optionChangedEmitter.emit(e);
-    }
-    subscribeToOptionChanged(subscriber: Function) {
-        optionChangedEmitter.subscribe(subscriber);
     }
 }
 

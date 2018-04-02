@@ -37,6 +37,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     protected _optionsToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
+    optionChangedHandlers: Array<Function> = [];
     templates: DxTemplateDirective[];
     instance: any;
     isLinked = true;
@@ -59,7 +60,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this.instance.on('optionChanged', (e) => {
             this.changedOptions[e.name] = e.value;
             this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
-            this.eventHelper.emitOptionChanged(e);
+            this.optionChangedHandlers.forEach((handler) => handler(e));
         });
     }
     private _initOptions() {

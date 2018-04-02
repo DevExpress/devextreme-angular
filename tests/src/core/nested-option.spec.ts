@@ -79,10 +79,11 @@ export class DxoTestOptionComponent extends NestedOption {
         this._createEventEmitters([
             { emit: 'testNestedOptionChange' }
         ]);
-        this.eventHelper.subscribeToOptionChanged(this._optionChangedHandler.bind(this));
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this);
+
+        this._addOptionChangedHandler();
     }
 }
 
@@ -112,10 +113,11 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
         this._createEventEmitters([
             { emit: 'testOptionChange' }
         ]);
-        this.eventHelper.subscribeToOptionChanged(this._optionChangedHandler.bind(this));
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));
+
+        this._addOptionChangedHandler();
     }
 }
 
