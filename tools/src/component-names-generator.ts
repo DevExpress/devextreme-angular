@@ -25,7 +25,8 @@ export default class ComponentNamesGenerator {
             .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile() && this.validateFileName(fileName))
             .map(fileName => this.prepareTagName(fileName))
             .join(', ');
-        let resultContent = `export const componentNames = [ ${fileList} ];`;
+        let resultContent = `export const componentNames = [ ${fileList} ];
+        `;
         fs.writeFileSync(this._config.outputFileName, resultContent, { encoding: this._encoding });
     }
 };
