@@ -11,7 +11,7 @@ export default class ComponentNamesGenerator {
     }
 
     prepareTagName(fileName: string) {
-        return `'${fileName.replace('.ts', '')}'`;
+        return `    '${fileName.replace('.ts', '')}'`;
     }
 
     validateFileName(fileName: string) {
@@ -24,9 +24,8 @@ export default class ComponentNamesGenerator {
         let fileList = files
             .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile() && this.validateFileName(fileName))
             .map(fileName => this.prepareTagName(fileName))
-            .join(', ');
-        let resultContent = `export const componentNames = [ ${fileList} ];
-        `;
+            .join(',\n');
+        let resultContent = `export const componentNames = [\n${fileList}\n];\n`;
         fs.writeFileSync(this._config.outputFileName, resultContent, { encoding: this._encoding });
     }
 };
