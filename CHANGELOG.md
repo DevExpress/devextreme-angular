@@ -1,4 +1,4 @@
-## Unreleased
+## 18.1.1-beta.4 (2018-04-3)
 
 ### Features
 - Create event emitters for nested components [#728](https://github.com/DevExpress/devextreme-angular/pull/728)
