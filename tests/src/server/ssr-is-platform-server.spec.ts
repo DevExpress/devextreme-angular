@@ -11,14 +11,12 @@ import { TransferState } from '@angular/platform-browser';
 
 import { IS_PLATFORM_SERVER } from '../../../dist';
 
-import DxButton from 'devextreme/ui/button';
-
 import {
     TestBed
 } from '@angular/core/testing';
 
 import {
-    DxButtonModule
+    DxDataGridModule
 } from '../../../dist';
 
 @Component({
@@ -26,39 +24,28 @@ import {
     template: ''
 })
 class TestContainerComponent {
+    renderedOnServer: false;
+    initializedHandler(e) {
+        this.renderedOnServer = e.component.option('integrationOptions.renderedOnServer');
+    }
 }
 
 describe('Universal', () => {
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-button') || fixture.nativeElement;
-        return DxButton['getInstance'](widgetElement) as any;
-    }
-
     beforeEach(() => {
-        TestBed.configureTestingModule(
-            {
-                declarations: [TestContainerComponent],
-                imports: [DxButtonModule]
-            });
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [
+                DxDataGridModule
+            ]
+        });
     });
 
     // spec
-    it('should render button', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `<dx-button></dx-button>`
-            }
-        });
-
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        expect(fixture.detectChanges.bind(fixture)).not.toThrow();
-    });
-
     it('should set transfer state for rendererdOnServer option of integration', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: `<dx-button></dx-button>`
+                template: `<dx-data-grid></dx-data-grid>`
             }
         });
         let platformID = TestBed.get(PLATFORM_ID);
@@ -76,7 +63,7 @@ describe('Universal', () => {
     it('should set rendererdOnServer option of integration', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: `<dx-button></dx-button>`
+                template: `<dx-data-grid (onInitialized)="initializedHandler($event)"></dx-data-grid>`
             }
         });
 
@@ -87,8 +74,6 @@ describe('Universal', () => {
 
         fixture.detectChanges();
 
-        let instance = getWidget(fixture);
-
-        expect(instance.option('integrationOptions.renderedOnServer')).toBe(true);
+        expect(fixture.componentInstance.renderedOnServer).toBe(true);
     });
 });

@@ -71,15 +71,15 @@ gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponent
 });
 
 gulp.task('generate.moduleFacades', ['generate.components'], function () {
-    var ModuleFacadeGenerator = require(buildConfig.tools.moduleFacadeGenerator.importFrom).default;
-    moduleFacadeGenerator = new ModuleFacadeGenerator();
+    var ModuleFacadeGenerator = require(buildConfig.tools.moduleFacadeGenerator.importFrom).default,
+        moduleFacadeGenerator = new ModuleFacadeGenerator();
 
     moduleFacadeGenerator.generate(buildConfig.tools.moduleFacadeGenerator);
 });
 
 gulp.task('generate.facades', ['generate.moduleFacades'], function () {
-    var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default;
-    facadeGenerator = new FacadeGenerator();
+    var FacadeGenerator = require(buildConfig.tools.facadeGenerator.importFrom).default,
+        facadeGenerator = new FacadeGenerator();
 
     facadeGenerator.generate(buildConfig.tools.facadeGenerator);
 });
@@ -225,7 +225,7 @@ gulp.task('clean.tests', function () {
     return del([outputFolderPath]);
 });
 
-gulp.task('build.tests', ['clean.tests'], function() {
+gulp.task('build.tests', ['clean.tests', 'generate-component-names'], function() {
     var config = buildConfig.components,
         testConfig = buildConfig.tests;
 
@@ -258,6 +258,15 @@ gulp.task('test.components', function(done) {
 
 gulp.task('test.components.client', ['build.tests'], function(done) {
     new karmaServer(getKarmaConfig('./karma.test.shim.js'), done).start();
+});
+
+gulp.task('generate-component-names', ['build.tools'], function(done) {
+    var ComponentNamesGenerator = require(buildConfig.tools.componentNamesGenerator.importFrom).default;
+    var generator = new ComponentNamesGenerator(buildConfig.tools.componentNamesGenerator);
+
+    generator.generate();
+
+    done();
 });
 
 gulp.task('test.components.server', ['build.tests'], function(done) {
