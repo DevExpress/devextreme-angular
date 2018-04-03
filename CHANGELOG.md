@@ -1,7 +1,9 @@
-## Unreleased
+## 18.1.1-beta.4 (2018-04-3)
 
 ### Features
 - Create event emitters for nested components [#728](https://github.com/DevExpress/devextreme-angular/pull/728)
+- Support server side rendering [#732](https://github.com/DevExpress/devextreme-angular/pull/732)
+- Request result caching on the server is implemented. This feature prevents widget blinking during data loading[#721](https://github.com/DevExpress/devextreme-angular/pull/721)
 
 ### Breaking changes
 - Angular below version 5 is not supported anymore.

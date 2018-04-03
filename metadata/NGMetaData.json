@@ -8722,6 +8722,7 @@
             "DataGridColumn"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "column",
           "Description": "An array of grid columns."
         },
@@ -8729,7 +8730,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Specifies the width for all data columns. Has a lower priority than the column.width option."
         },
         "customizeColumns": {
           "PrimitiveTypes": [
@@ -9021,6 +9022,53 @@
           ],
           "Description": ""
         },
+        "filterPanel": {
+          "Description": "",
+          "Options": {
+            "customizeText": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": ""
+            },
+            "filterEnabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "texts": {
+              "Description": "",
+              "Options": {
+                "clearFilter": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                },
+                "createFilter": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                },
+                "filterEnabledHint": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                }
+              }
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            }
+          }
+        },
         "filterPopup": {
           "PrimitiveTypes": [
             "DevExpress.ui.dxPopupOptions"
@@ -9156,7 +9204,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": ""
         },
@@ -9842,6 +9891,12 @@
         "scrolling": {
           "Description": "Configures scrolling.",
           "Options": {
+            "columnRenderingMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "mode": {
               "PrimitiveTypes": [
                 "string"
@@ -9853,6 +9908,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
+            },
+            "rowRenderingMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
             },
             "scrollByContent": {
               "PrimitiveTypes": [
@@ -10430,6 +10491,15 @@
           "IsDeprecated": true,
           "Description": "Use the inputAttr option instead."
         },
+        "calendarOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxCalendarOptions"
+          ],
+          "ComplexTypes": [
+            "dxCalendarOptions"
+          ],
+          "Description": ""
+        },
         "cancelButtonText": {
           "PrimitiveTypes": [
             "string"
@@ -10586,7 +10656,8 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the maximum zoom level of a calendar, which is used to pick the date."
+          "IsDeprecated": true,
+          "Description": "Use the calendarOptions option instead."
         },
         "min": {
           "PrimitiveTypes": [
@@ -10600,7 +10671,8 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the minimal zoom level of a calendar, which is used to pick the date."
+          "IsDeprecated": true,
+          "Description": "Use the calendarOptions option instead."
         },
         "name": {
           "PrimitiveTypes": [
@@ -10787,7 +10859,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether to show the analog clock in the value picker. Applies only if type is \"datetime\" and pickerType is \"calendar\"."
         },
         "showClearButton": {
           "PrimitiveTypes": [
@@ -12220,13 +12292,15 @@
             "DevExpress.ui.dxFormSimpleItem",
             "DevExpress.ui.dxFormGroupItem",
             "DevExpress.ui.dxFormTabbedItem",
-            "DevExpress.ui.dxFormEmptyItem"
+            "DevExpress.ui.dxFormEmptyItem",
+            "DevExpress.ui.dxFormButtonItem"
           ],
           "ItemComplexTypes": [
             "FormSimpleItem",
             "FormGroupItem",
             "FormTabbedItem",
-            "FormEmptyItem"
+            "FormEmptyItem",
+            "FormButtonItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -22863,15 +22937,6 @@
             }
           }
         },
-        "buttons": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "IsDeprecated": true,
-          "SingularName": "button",
-          "Description": "Use the toolbarItems option instead."
-        },
         "closeOnBackButton": {
           "PrimitiveTypes": [
             "boolean"
@@ -23257,15 +23322,6 @@
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
           }
-        },
-        "buttons": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "IsDeprecated": true,
-          "SingularName": "button",
-          "Description": "Use the toolbarItems option instead."
         },
         "closeOnBackButton": {
           "PrimitiveTypes": [
@@ -26947,6 +27003,12 @@
                 "string"
               ],
               "Description": "The first day of a week. Does not apply to the agenda view."
+            },
+            "groupOrientation": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
             },
             "groups": {
               "ItemPrimitiveTypes": [
@@ -31733,15 +31795,6 @@
             }
           }
         },
-        "buttons": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "IsDeprecated": true,
-          "SingularName": "button",
-          "Description": "Use the toolbarItems option instead."
-        },
         "closeOnBackButton": {
           "PrimitiveTypes": [
             "boolean"
@@ -32162,6 +32215,7 @@
             "TreeListColumn"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "column",
           "Description": "Configures columns."
         },
@@ -32169,7 +32223,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Specifies the width for all data columns. Has a lower priority than the column.width option."
         },
         "customizeColumns": {
           "PrimitiveTypes": [
@@ -32368,6 +32422,53 @@
           ],
           "Description": ""
         },
+        "filterPanel": {
+          "Description": "",
+          "Options": {
+            "customizeText": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": ""
+            },
+            "filterEnabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
+            "texts": {
+              "Description": "",
+              "Options": {
+                "clearFilter": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                },
+                "createFilter": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                },
+                "filterEnabledHint": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                }
+              }
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            }
+          }
+        },
         "filterPopup": {
           "PrimitiveTypes": [
             "DevExpress.ui.dxPopupOptions"
@@ -32503,7 +32604,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": ""
         },
@@ -33048,6 +33150,12 @@
         "scrolling": {
           "Description": "Configures scrolling.",
           "Options": {
+            "columnRenderingMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "mode": {
               "PrimitiveTypes": [
                 "string"
@@ -33059,6 +33167,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
+            },
+            "rowRenderingMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
             },
             "scrollByContent": {
               "PrimitiveTypes": [
@@ -39207,6 +39321,62 @@
         }
       }
     },
+    "FormButtonItem": {
+      "Description": "",
+      "Options": {
+        "alignment": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "buttonOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxButtonOptions"
+          ],
+          "ComplexTypes": [
+            "dxButtonOptions"
+          ],
+          "Description": ""
+        },
+        "colSpan": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": ""
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "itemType": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": ""
+        }
+      }
+    },
     "FormEmptyItem": {
       "Description": "This article describes configuration options of an empty form item.",
       "Options": {
@@ -39315,13 +39485,15 @@
             "DevExpress.ui.dxFormSimpleItem",
             "DevExpress.ui.dxFormGroupItem",
             "DevExpress.ui.dxFormTabbedItem",
-            "DevExpress.ui.dxFormEmptyItem"
+            "DevExpress.ui.dxFormEmptyItem",
+            "DevExpress.ui.dxFormButtonItem"
           ],
           "ItemComplexTypes": [
             "FormSimpleItem",
             "FormGroupItem",
             "FormTabbedItem",
-            "FormEmptyItem"
+            "FormEmptyItem",
+            "FormButtonItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
@@ -39606,13 +39778,15 @@
                 "DevExpress.ui.dxFormSimpleItem",
                 "DevExpress.ui.dxFormGroupItem",
                 "DevExpress.ui.dxFormTabbedItem",
-                "DevExpress.ui.dxFormEmptyItem"
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
               ],
               "ItemComplexTypes": [
                 "FormSimpleItem",
                 "FormGroupItem",
                 "FormTabbedItem",
-                "FormEmptyItem"
+                "FormEmptyItem",
+                "FormButtonItem"
               ],
               "IsCollection": true,
               "SingularName": "item",
