@@ -5,6 +5,7 @@ import {
     SimpleChanges,
     PLATFORM_ID,
     Inject,
+    EventEmitter,
 
     OnChanges,
     OnInit,
@@ -37,14 +38,13 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     protected _optionsToUpdate: any = {};
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     eventHelper: EmitterHelper;
+    optionChangedHandlers: EventEmitter<any> = new EventEmitter();
     templates: DxTemplateDirective[];
     instance: any;
     isLinked = true;
     changedOptions = {};
     createInstanceOnInit = true;
     widgetUpdateLocked = false;
-
-    protected _events: { subscribe?: string, emit: string }[];
 
     private _initTemplates() {
         if (this.templates.length) {
@@ -59,6 +59,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this.instance.on('optionChanged', (e) => {
             this.changedOptions[e.name] = e.value;
             this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
+            this.optionChangedHandlers.emit(e);
         });
     }
     private _initOptions() {
@@ -75,7 +76,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _createEventEmitters(events) {
-        this.eventHelper.createEventEmitters(events);
+        events.forEach(event => {
+            this.eventHelper.createEmitter(event.emit, event.subscribe);
+        });
     }
     _shouldOptionChange(name: string, value: any) {
         if (this.changedOptions.hasOwnProperty(name)) {

@@ -73,8 +73,8 @@ export class DxoTestOptionComponent extends NestedOption {
         return 'testOption';
     }
 
-    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super(ngZone);
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super();
 
         this._createEventEmitters([
             { emit: 'testNestedOptionChange' }
@@ -105,8 +105,8 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
         return 'testCollectionOption';
     }
 
-    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super(ngZone);
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super();
 
         this._createEventEmitters([
             { emit: 'testOptionChange' }
@@ -136,13 +136,12 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
 
     shownEventFired = false;
 
-    constructor(ngZone: NgZone,
-        @SkipSelf() @Host() private _pnoh: NestedOptionHost,
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost,
         @Host() private _noh: NestedOptionHost,
         private element: ElementRef,
         private renderer: Renderer2,
         @Inject(DOCUMENT) private document: any) {
-        super(ngZone);
+        super();
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));
@@ -220,13 +219,6 @@ export class DxTestWidgetComponent extends DxComponent {
         _watcherHelper: WatcherHelper, transferState: TransferState,
         @Inject(PLATFORM_ID) platformId: any) {
         super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
-
-        this._events = [
-            { subscribe: 'optionChanged', emit: 'onOptionChanged' },
-            { emit: 'testOptionChange' },
-            { emit: 'testCollectionOptionChange' },
-            { emit: 'testCollectionOptionWithTemplate' }
-        ];
 
         this._noh.setHost(this);
     }

@@ -1,9 +1,8 @@
-import { QueryList, ElementRef, Renderer2, NgZone, AfterContentInit } from '@angular/core';
+import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 import { getElement } from './utils';
-import { EmitterHelper } from './events-strategy';
 
 import * as events from 'devextreme/events';
 
@@ -12,31 +11,41 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 export interface INestedOptionContainer {
     instance: any;
     isLinked: boolean;
+    optionChangedHandlers: EventEmitter<any>;
 }
 
 export interface IOptionPathGetter { (): string; }
 
-export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer, AfterContentInit {
+export abstract class BaseNestedOption implements INestedOptionContainer, ICollectionNestedOptionContainer {
     protected _host: INestedOptionContainer;
     protected _hostOptionPath: IOptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
-    eventHelper: EmitterHelper;
 
     protected abstract get _optionPath(): string;
     protected abstract _fullOptionPath(): string;
-    protected abstract _initEvents(): void;
 
-    constructor(ngZone: NgZone) {
+    constructor() {
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this), this._filterItems.bind(this));
-        this.eventHelper = new EmitterHelper(ngZone, this);
     }
 
-    ngAfterContentInit() {
-        this._initEvents();
+    protected _optionChangedHandler(e: any) {
+        let fullOptionPath = this._fullOptionPath();
+
+        if (e.fullName.indexOf(fullOptionPath) === 0) {
+            let optionName = e.fullName.slice(fullOptionPath.length);
+            let emitter = this[optionName + 'Change'];
+
+            if (emitter) {
+                emitter.next(e.value);
+            }
+        }
     }
+
     protected _createEventEmitters(events) {
-        this.eventHelper.createEventEmitters(events);
+        events.forEach(event => {
+            this[event.emit] = new EventEmitter();
+        });
     }
 
     protected _getOption(name: string): any {
@@ -58,6 +67,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
+        this.optionChangedHandlers.subscribe(this._optionChangedHandler.bind(this));
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
@@ -74,6 +84,10 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     get isLinked() {
         return !!this.instance && this._host.isLinked;
+    }
+
+    get optionChangedHandlers() {
+        return this._host && this._host.optionChangedHandlers;
     }
 }
 
@@ -113,19 +127,6 @@ export abstract class NestedOption extends BaseNestedOption {
     protected _fullOptionPath() {
         return this._hostOptionPath() + this._optionPath + '.';
     }
-
-    protected _initEvents() {
-        this.instance.on('optionChanged', (e) => {
-            let nameParts = e.fullName.split('.');
-
-            for (let i = 0; i <= nameParts.length - 2; i++ ) {
-                if (nameParts[i] === this._optionPath) {
-                    this.eventHelper.fireNgEvent(nameParts[i + 1] + 'Change', [e.value]);
-                    return;
-                }
-            };
-        });
-    }
 }
 
 export interface ICollectionNestedOption {
@@ -146,29 +147,6 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
 
     get isLinked() {
         return this._index !== undefined && !!this.instance;
-    }
-
-    protected _initEvents() {
-        if (!this.instance) {
-            return;
-        }
-
-        this.instance.on('optionChanged', (e) => {
-            let nameParts = e.fullName.split('.');
-
-            for (let i = 0; i <= nameParts.length - 2; i++ ) {
-                if (nameParts[i].indexOf('[') !== -1) {
-                    let parts = nameParts[i].split('['),
-                        name = parts[0],
-                        index = parts[1].split(']')[0];
-
-                    if (name === this._optionPath && +index === this._index) {
-                        this.eventHelper.fireNgEvent(nameParts[i + 1] + 'Change', [e.value]);
-                        return;
-                    }
-                }
-            };
-        });
     }
 }
 

@@ -45,8 +45,6 @@ export class DxTestExtensionComponent extends DxComponentExtension {
         transferState: TransferState,
         @Inject(PLATFORM_ID) platformId: any) {
         super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
-
-        this._events = [];
     }
 
     protected _createInstance(element, options) {
