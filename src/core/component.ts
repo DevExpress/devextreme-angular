@@ -46,8 +46,6 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     createInstanceOnInit = true;
     widgetUpdateLocked = false;
 
-    protected _events: { subscribe?: string, emit: string }[];
-
     private _initTemplates() {
         if (this.templates.length) {
             let initialTemplates = {};

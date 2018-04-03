@@ -225,13 +225,6 @@ export class DxTestWidgetComponent extends DxComponent {
         @Inject(PLATFORM_ID) platformId: any) {
         super(elementRef, ngZone, templateHost, _watcherHelper, transferState, platformId);
 
-        this._events = [
-            { subscribe: 'optionChanged', emit: 'onOptionChanged' },
-            { emit: 'testOptionChange' },
-            { emit: 'testCollectionOptionChange' },
-            { emit: 'testCollectionOptionWithTemplate' }
-        ];
-
         this._noh.setHost(this);
     }
 
