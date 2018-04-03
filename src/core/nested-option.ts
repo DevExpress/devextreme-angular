@@ -1,4 +1,4 @@
-import { QueryList, ElementRef, Renderer2, NgZone } from '@angular/core';
+import { QueryList, ElementRef, Renderer2, NgZone, EventEmitter } from '@angular/core';
 import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
@@ -12,7 +12,7 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 export interface INestedOptionContainer {
     instance: any;
     isLinked: boolean;
-    optionChangedHandlers: Array<Function>;
+    optionChangedHandlers: EventEmitter<any>;
 }
 
 export interface IOptionPathGetter { (): string; }
@@ -35,14 +35,14 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     protected _optionChangedHandler(e: any) {
         let fullOptionPath = this._fullOptionPath();
 
-        if (e.fullName.indexOf(fullOptionPath) !== -1) {
+        if (e.fullName.indexOf(fullOptionPath) === 0) {
             let optionName = e.fullName.slice(fullOptionPath.length);
             this.eventHelper.fireNgEvent(optionName + 'Change', [e.value]);
         }
     }
 
     protected _addOptionChangedHandler() {
-        this.optionChangedHandlers.push(this._optionChangedHandler.bind(this));
+        this.optionChangedHandlers.subscribe(this._optionChangedHandler.bind(this));
     }
 
     protected _createEventEmitters(events) {
