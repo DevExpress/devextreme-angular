@@ -2,6 +2,16 @@
 
 ### Features
 - Create event emitters for nested components [#728](https://github.com/DevExpress/devextreme-angular/pull/728)
+- Support server side rendering
+- Implement TransferState for request result caching on the server [#721](https://github.com/DevExpress/devextreme-angular/pull/721). To use the feature, do the following:  
+  - Import ServerTransferStateModule to app.server.module.ts. 
+  - Modify the main.ts file as shown below to bootstrap the application when the document is ready.
+  ```JavaScript
+    document.addEventListener('DOMContentLoaded', () => {
+      platformBrowserDynamic().bootstrapModule(AppModule)
+      .catch(err => console.log(err));
+    });
+  ```
 
 ### Breaking changes
 - Angular below version 5 is not supported anymore.
