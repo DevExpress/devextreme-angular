@@ -5,7 +5,6 @@
 import {
     Component,
     NgModule,
-    NgZone,
     Host,<#? it.hasTemplate #>
     ElementRef,
     Renderer2,
@@ -69,13 +68,13 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this.setChildren('<#= component.propertyName #>', value);
     }
 <#~#>
-    constructor(ngZone: NgZone, @SkipSelf() @Host() parentOptionHost: NestedOptionHost,
+    constructor(@SkipSelf() @Host() parentOptionHost: NestedOptionHost,
             @Host() optionHost: NestedOptionHost<#? it.hasTemplate #>,
             private renderer: Renderer2,
             @Inject(DOCUMENT) private document: any,
             @Host() templateHost: DxTemplateHost,
             private element: ElementRef<#?#>) {
-        super(ngZone);<#? it.events #>
+        super();<#? it.events #>
 
         this._createEventEmitters([
             <#~ it.events :event:i #>{ emit: '<#= event.emit #>' }<#? i < it.events.length-1 #>,
@@ -84,8 +83,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
 <#?#>
         parentOptionHost.setNestedOption(this);
         optionHost.setHost(this, this._fullOptionPath.bind(this));<#? it.hasTemplate #>
-        templateHost.setHost(this);<#?#><#? it.events #>
-        this._addOptionChangedHandler();<#?#><#? it.optionName === 'dataSource' #>
+        templateHost.setHost(this);<#?#><#? it.optionName === 'dataSource' #>
         if ((console) && (console.warn)) {
             console.warn('The nested \'<#= it.selector #>\' component is deprecated in 17.2. ' +
                 'Use the \'<#= it.optionName #>\' option instead. ' +

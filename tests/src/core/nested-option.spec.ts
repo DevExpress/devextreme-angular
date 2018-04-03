@@ -73,8 +73,8 @@ export class DxoTestOptionComponent extends NestedOption {
         return 'testOption';
     }
 
-    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super(ngZone);
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super();
 
         this._createEventEmitters([
             { emit: 'testNestedOptionChange' }
@@ -82,8 +82,6 @@ export class DxoTestOptionComponent extends NestedOption {
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this);
-
-        this._addOptionChangedHandler();
     }
 }
 
@@ -107,8 +105,8 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
         return 'testCollectionOption';
     }
 
-    constructor(ngZone: NgZone, @SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
-        super(ngZone);
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost, @Host() private _noh: NestedOptionHost) {
+        super();
 
         this._createEventEmitters([
             { emit: 'testOptionChange' }
@@ -116,8 +114,6 @@ export class DxiTestCollectionOptionComponent extends CollectionNestedOption {
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));
-
-        this._addOptionChangedHandler();
     }
 }
 
@@ -140,13 +136,12 @@ export class DxiTestCollectionOptionWithTemplateComponent extends CollectionNest
 
     shownEventFired = false;
 
-    constructor(ngZone: NgZone,
-        @SkipSelf() @Host() private _pnoh: NestedOptionHost,
+    constructor(@SkipSelf() @Host() private _pnoh: NestedOptionHost,
         @Host() private _noh: NestedOptionHost,
         private element: ElementRef,
         private renderer: Renderer2,
         @Inject(DOCUMENT) private document: any) {
-        super(ngZone);
+        super();
 
         this._pnoh.setNestedOption(this);
         this._noh.setHost(this, this._fullOptionPath.bind(this));

@@ -1,6 +1,5 @@
 import { EventEmitter, NgZone } from '@angular/core';
 import { DxComponent } from './component';
-import { BaseNestedOption } from './nested-option';
 
 const dxToNgEventNames = {};
 
@@ -12,7 +11,7 @@ interface IEventSubscription {
 export class NgEventsStrategy {
     private subscriptions: { [key: string]: IEventSubscription[] } = {};
 
-    constructor(private component: DxComponent | BaseNestedOption, private ngZone: NgZone) { }
+    constructor(private component: DxComponent, private ngZone: NgZone) { }
 
     hasEvent(name: string) {
         return this.ngZone.run(() => {
@@ -69,7 +68,7 @@ export class EmitterHelper {
     strategy: NgEventsStrategy;
     lockedValueChangeEvent = false;
 
-    constructor(ngZone: NgZone, public component: DxComponent | BaseNestedOption) {
+    constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
@@ -86,11 +85,6 @@ export class EmitterHelper {
         if (dxEventName) {
             dxToNgEventNames[dxEventName] = ngEventName;
         }
-    }
-    createEventEmitters(events: Array<any>) {
-        events.forEach(event => {
-            this.createEmitter(event.emit, event.subscribe);
-        });
     }
 }
 

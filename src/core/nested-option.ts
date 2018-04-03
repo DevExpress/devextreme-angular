@@ -1,9 +1,8 @@
-import { QueryList, ElementRef, Renderer2, NgZone, EventEmitter } from '@angular/core';
+import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 import { getElement } from './utils';
-import { EmitterHelper } from './events-strategy';
 
 import * as events from 'devextreme/events';
 
@@ -22,14 +21,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     protected _hostOptionPath: IOptionPathGetter;
     private _collectionContainerImpl: ICollectionNestedOptionContainer;
     protected _initialOptions = {};
-    eventHelper: EmitterHelper;
 
     protected abstract get _optionPath(): string;
     protected abstract _fullOptionPath(): string;
 
-    constructor(ngZone: NgZone) {
+    constructor() {
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this), this._filterItems.bind(this));
-        this.eventHelper = new EmitterHelper(ngZone, this);
     }
 
     protected _optionChangedHandler(e: any) {
@@ -37,16 +34,18 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
         if (e.fullName.indexOf(fullOptionPath) === 0) {
             let optionName = e.fullName.slice(fullOptionPath.length);
-            this.eventHelper.fireNgEvent(optionName + 'Change', [e.value]);
+            let emitter = this[optionName + 'Change'];
+
+            if (emitter) {
+                emitter.next(e.value);
+            }
         }
     }
 
-    protected _addOptionChangedHandler() {
-        this.optionChangedHandlers.subscribe(this._optionChangedHandler.bind(this));
-    }
-
     protected _createEventEmitters(events) {
-        this.eventHelper.createEventEmitters(events);
+        events.forEach(event => {
+            this[event.emit] = new EventEmitter();
+        });
     }
 
     protected _getOption(name: string): any {
@@ -68,6 +67,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;
+        this.optionChangedHandlers.subscribe(this._optionChangedHandler.bind(this));
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
