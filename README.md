@@ -124,17 +124,15 @@ Depending on your requirements you can choose one of the following ways to start
 
 [Server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) provided by Angular Universal can significantly speed up application loading. Use DevExtreme widgets in Angular Universal applications in the same maner as in usual Angular apps.
 
-You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it. 
-
-If you already have an existing Angular application with DevExtreme, you can just add the Universal module:
+You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it, or add the Universal module to an existing Angular application with DevExtreme. Use the follwoing command to add the Universal module to an existing app.
 
 ```bash
 ng generate universal my-app
 ```
 
-See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e)
+See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for details.
 
-#### <a name="request-caching"></a>Request Caching on the Server ####
+#### <a name="cache-requests"></a>Cache Requests on the Server ####
 
 In the server-side rendering mode, DevExtreme-angular supports caching requests on the server, which helps to avoid redundant data loading and widget rerendering on the first page load.
 
@@ -154,7 +152,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 })
 ```
 
-Make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code shown below). Otherwise, caching can work incorrectly.
+Also, make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching can work incorrectly.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
