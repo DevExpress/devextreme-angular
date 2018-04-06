@@ -322,12 +322,12 @@ The DevExtreme Angular editors support the 'ngModel' binding as well as the 'for
 
 ```html
 <form [formGroup]="form">
-        <dx-text-box
-            name="email"
-            [(ngModel)]="email"
-            [isValid]="emailControl.valid || emailControl.pristine"
-            [validationError]="{ message: 'Email is invalid'}">
-        </dx-text-box>
+    <dx-text-box
+        name="email"
+        [(ngModel)]="email"
+        [isValid]="emailControl.valid || emailControl.pristine"
+        [validationError]="{ message: 'Email is invalid'}">
+    </dx-text-box>
 </form>
 ```
 
