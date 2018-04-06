@@ -122,7 +122,7 @@ Depending on your requirements you can choose one of the following ways to start
 
 ### <a name="server-side-rendering"></a>Server-side Rendering ###
 
-[Server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) provided by Angular Universal can significantly speed up your application. Use DevExtreme widgets in Angular Universal applications in the same maner as in usual Angular apps.
+[Server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) provided by Angular Universal can significantly speed up application loading. Use DevExtreme widgets in Angular Universal applications in the same maner as in usual Angular apps.
 
 You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it. 
 
@@ -134,9 +134,11 @@ ng generate universal my-app
 
 See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e)
 
-#### <a name="enable-caching"></a>Enable Caching on the Server ####
+#### <a name="request-caching"></a>Request Caching on the Server ####
 
-Go to the server module .ts file (usually *src/app.server.module.ts*) and import the `ServerTransferStateModule` module:
+In the server-side rendering mode, DevExtreme-angular supports caching requests on the server, which helps to avoid redundant data loading and widget rerendering on the first page load.
+
+To enable caching, go to the server module .ts file (usually *src/app.server.module.ts*) and import the `ServerTransferStateModule` module:
 
 ```js
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
@@ -152,7 +154,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 })
 ```
 
-Make sure that the application module is bootstrapped when the document has been loaded. Otherwise, state transfering can work incorrectly. The *main.ts* file should contain the following code:
+Make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code shown below). Otherwise, state transfering can work incorrectly.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
