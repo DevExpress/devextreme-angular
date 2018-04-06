@@ -136,7 +136,7 @@ See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-
 
 #### <a name="enable-caching"></a>Enable Caching on the Server ####
 
-Go to the server module .ts file (usually *src/app.server.module.ts*) and import the ServerTransferStateModule module:
+Go to the server module .ts file (usually *src/app.server.module.ts*) and import the `ServerTransferStateModule` module:
 
 ```js
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
