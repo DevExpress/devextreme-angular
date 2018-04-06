@@ -154,7 +154,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 })
 ```
 
-Make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code shown below). Otherwise, state transfering can work incorrectly.
+Make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code shown below). Otherwise, caching can work incorrectly.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
