@@ -152,7 +152,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 })
 ```
 
-Make sure that the application module is bootstrapped when the document has been loaded in the *main.ts* file. Otherwise, state transfering can work incorrectly.
+Make sure that the application module is bootstrapped when the document has been loaded. Otherwise, state transfering can work incorrectly. The *main.ts* file should contain the following code:
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
