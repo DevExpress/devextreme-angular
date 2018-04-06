@@ -10,6 +10,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Prerequisites](#prerequisites)
   * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
+  * [Server-side Rendering](#server-side-rendering)
   * [Running the local examples](#running-examples)
   * [Include jQuery integration](#jquery-integration)
 * [Usage samples](#usage-samples)
@@ -31,7 +32,6 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 * [Demos](#demos)
 * [API reference](#api-reference)
 * [Bundle size optimization](#bundle-optimization)
-* [Server-side rendering](#server-side-rendering)
 * [License](#license)
 * [Support & feedback](#support-feedback)
 
@@ -120,6 +120,47 @@ Depending on your requirements you can choose one of the following ways to start
 * [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
 * [Start with Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md)
 
+### <a name="server-side-rendering"></a>Server-side Rendering ###
+
+[Server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) provided by Angular Universal can significantly speed up your application. Use DevExtreme widgets in Angular Universal applications in the same maner as in usual Angular apps.
+
+You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it. 
+
+If you already have an existing Angular application with DevExtreme, you can just add the Universal module:
+
+```bash
+ng generate universal my-app
+```
+
+See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e)
+
+#### <a name="enable-caching"></a>Enable Caching on the Server ####
+
+Go to the server module .ts file (usually *src/app.server.module.ts*) and import the ServerTransferStateModule module:
+
+```js
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
+
+@NgModule({
+  imports: [
+    AppModule,
+    ServerModule,
+    ServerTransferStateModule,
+    ModuleMapLoaderModule
+  ],
+  bootstrap: [AppComponent],
+})
+```
+
+Make sure that the application module is bootstrapped when the document has been loaded in the *main.ts* file. Otherwise, state transfering can work incorrectly.
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+    platformBrowserDynamic().bootstrapModule(AppModule)
+        .catch(err => console.log(err));
+});
+```
+
 ### <a name="running-examples"></a>Running the Local Examples ###
 
 ```bash
@@ -143,7 +184,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 ### <a name="jquery-integration"></a>Include jQuery integration ###
 Starting with version 17.2, DevExtreme doesn't depend on jQuery. It means that our widgets work without jQuery elements. If you need to use jQuery, you can manually install the jquery npm package and include the jQuery integration as described below:
 
-```js
+```bash
 npm install --save jquery
 ```
 
@@ -582,11 +623,6 @@ as follows:
 ```js
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 ```
-
-## <a name="server-side-rendering"></a>Server-side Rendering ##
-
-Currently, DevExtreme components **do not support** server side rendering (check [this issue](https://github.com/DevExpress/devextreme-angular/issues/46)).
-So, you are required to switch this feature off.
 
 ## <a name="license"></a>License ##
 
