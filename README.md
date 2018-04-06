@@ -142,13 +142,13 @@ To enable caching, go to the server module .ts file (usually *src/app.server.mod
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 
 @NgModule({
-  imports: [
-    AppModule,
-    ServerModule,
-    ServerTransferStateModule,
-    ModuleMapLoaderModule
-  ],
-  bootstrap: [AppComponent],
+    imports: [
+        AppModule,
+        ServerModule,
+        ServerTransferStateModule,
+        ModuleMapLoaderModule
+    ],
+    bootstrap: [AppComponent],
 })
 ```
 
