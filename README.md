@@ -122,21 +122,21 @@ Depending on your requirements you can choose one of the following ways to start
 
 ### <a name="server-side-rendering"></a>Server-side Rendering ###
 
-[Server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) provided by Angular Universal can significantly speed up application loading. Use DevExtreme widgets in Angular Universal applications in the same maner as in usual Angular apps.
+Angular Universal provides [server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) that significantly reduces the application's loading time. You can use DevExtreme widgets in Angular Universal applications in the same manner as in other Angular apps.
 
-You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it, or add the Universal module to an existing Angular application with DevExtreme. Use the follwoing command to add the Universal module to an existing app.
+You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it, or add the Universal module to an existing Angular application with DevExtreme. Use the following command to add the Universal module to an existing app:
 
 ```bash
 ng generate universal my-app
 ```
 
-See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for details.
+See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for more information.
 
 #### <a name="cache-requests"></a>Cache Requests on the Server ####
 
-In the server-side rendering mode, DevExtreme-angular supports caching requests on the server, which helps to avoid redundant data loading and widget rerendering on the first page load.
+DevExtreme-angular supports caching requests on the server in the server-side rendering mode. This avoids repeatedly requesting data from the browser and renders widgets using data that is initially applied when the page is loaded for the first time.
 
-To enable caching, go to the server module .ts file (usually *src/app.server.module.ts*) and import the `ServerTransferStateModule` module:
+To enable caching, import the `ServerTransferStateModule` module in the server module's .ts file (usually *src/app.server.module.ts*):
 
 ```js
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
@@ -152,7 +152,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 })
 ```
 
-Also, make sure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching can work incorrectly.
+Also, ensure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching does not work correctly.
 
 ```js
 document.addEventListener('DOMContentLoaded', () => {
