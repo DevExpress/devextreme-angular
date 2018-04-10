@@ -93,16 +93,12 @@ let createOnStableSubscription = function(ngZone: NgZone, fireNgEvent: Function)
 
 export class EmitterHelper {
     strategy: NgEventsStrategy;
-    lockedValueChangeEvent = false;
 
     constructor(ngZone: NgZone, public component: DxComponent) {
         this.strategy = new NgEventsStrategy(component, ngZone);
         createOnStableSubscription(ngZone, this.fireNgEvent);
     }
     fireNgEvent(eventName: string, eventArgs: any) {
-        if (this.lockedValueChangeEvent && eventName === 'valueChange') {
-            return;
-        }
         let emitter = this.component[eventName];
         if (emitter) {
             emitter.next(eventArgs && eventArgs[0]);
