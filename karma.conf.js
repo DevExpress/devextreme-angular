@@ -24,6 +24,9 @@ module.exports = function(config) {
             // RxJs
             { pattern: 'node_modules/rxjs/**/*.+(js|js.map)', included: false, watched: false },
 
+            // tslib
+            { pattern: 'node_modules/tslib/tslib.js', included: false, watched: false },
+
             // Angular 2 itself and the testing library
             { pattern: 'node_modules/@angular/!(compiler-cli|tsc-wrapped)/**/*.+(js|js.map)', included: false, watched: false },
 

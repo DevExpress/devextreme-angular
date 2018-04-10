@@ -30,7 +30,8 @@
 
       // other libraries
       'rxjs': 'npm:rxjs',
-      'rxjs/operators': 'npm:rxjs/operators/index.js'
+      'rxjs/operators': 'npm:rxjs/operators/index.js',
+      'tslib': 'npm:tslib/tslib.js'
     },
     packages: {
       app: {
