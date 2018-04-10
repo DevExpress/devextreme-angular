@@ -139,9 +139,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }
 <#? it.isEditor #>
     writeValue(value: any): void {
-        this.eventHelper.lockedValueChangeEvent = true;
         this.value = value;
-        this.eventHelper.lockedValueChangeEvent = false;
     }
 <#? it.widgetName !== "dxRangeSelector" #>
     setDisabledState(isDisabled: boolean): void {
