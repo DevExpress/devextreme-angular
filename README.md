@@ -46,7 +46,7 @@ You have the following options to start:
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
-[Angular](https://angular.io/) version 5 or later
+**Starting with v18.1, DevExtreme-Angular requires [Angular](https://angular.io/) version 5 or later**
 
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
 required and essential to Angular development.
