@@ -46,6 +46,8 @@ You have the following options to start:
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
+[Angular](https://angular.io/) version 5 or later
+
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
 required and essential to Angular development.
 
@@ -132,6 +134,8 @@ ng generate universal my-app
 
 See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for more information.
 
+[This example](https://github.com/DevExpress/devextreme-examples/tree/18_1/universal-angular) demonstrates the use of DevExtreme Angular controls in an Angular Universal application.
+
 #### <a name="cache-requests"></a>Cache Requests on the Server ####
 
 DevExtreme-angular supports caching requests on the server in the server-side rendering mode. This avoids repeatedly requesting data from the browser and renders widgets using data that is initially applied when the page is loaded for the first time.
@@ -160,6 +164,8 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => console.log(err));
 });
 ```
+
+
 
 ### <a name="running-examples"></a>Running the Local Examples ###
 
