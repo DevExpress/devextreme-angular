@@ -78,7 +78,6 @@ describe('DxTextBox value accessor', () => {
 
         expect(instance.option('disabled')).toBe(false);
     }));
-
     it('should change the value', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
@@ -90,7 +89,6 @@ describe('DxTextBox value accessor', () => {
 
         expect(instance.option('value')).toBe('text');
     }));
-
     it('should change touched option', async(() => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
@@ -104,23 +102,4 @@ describe('DxTextBox value accessor', () => {
 
         expect(fixture.componentInstance.formControl.touched).toBe(true);
     }));
-
-    it('should not fire valueChanges event when patchValue method is used with emitEvent=false (T614207)', () => {
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let component = fixture.componentInstance,
-            form = component.form,
-            testSpy = jasmine.createSpy('testSpy');
-
-        form.valueChanges.subscribe(testSpy);
-
-        form.controls['formControl'].patchValue('text', { emitEvent: false });
-        fixture.detectChanges();
-        expect(testSpy).toHaveBeenCalledTimes(0);
-
-        form.controls['formControl'].patchValue('text2');
-        fixture.detectChanges();
-        expect(testSpy).toHaveBeenCalledTimes(1);
-    });
 });

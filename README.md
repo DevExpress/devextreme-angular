@@ -10,6 +10,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
   * [Prerequisites](#prerequisites)
   * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
+  * [Server-side Rendering](#server-side-rendering)
   * [Running the local examples](#running-examples)
   * [Include jQuery integration](#jquery-integration)
 * [Usage samples](#usage-samples)
@@ -31,7 +32,6 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 * [Demos](#demos)
 * [API reference](#api-reference)
 * [Bundle size optimization](#bundle-optimization)
-* [Server-side rendering](#server-side-rendering)
 * [License](#license)
 * [Support & feedback](#support-feedback)
 
@@ -120,6 +120,47 @@ Depending on your requirements you can choose one of the following ways to start
 * [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
 * [Start with Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md)
 
+### <a name="server-side-rendering"></a>Server-side Rendering ###
+
+Angular Universal provides [server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) that significantly reduces the application's loading time. You can use DevExtreme widgets in Angular Universal applications in the same manner as in other Angular apps.
+
+You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it, or add the Universal module to an existing Angular application with DevExtreme. Use the following command to add the Universal module to an existing app:
+
+```bash
+ng generate universal my-app
+```
+
+See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for more information.
+
+#### <a name="cache-requests"></a>Cache Requests on the Server ####
+
+DevExtreme-angular supports caching requests on the server in the server-side rendering mode. This avoids repeatedly requesting data from the browser and renders widgets using data that is initially applied when the page is loaded for the first time.
+
+To enable caching, import the `ServerTransferStateModule` module in the server module's .ts file (usually *src/app.server.module.ts*):
+
+```js
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
+
+@NgModule({
+    imports: [
+        AppModule,
+        ServerModule,
+        ServerTransferStateModule,
+        ModuleMapLoaderModule
+    ],
+    bootstrap: [AppComponent],
+})
+```
+
+Also, ensure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching does not work correctly.
+
+```js
+document.addEventListener('DOMContentLoaded', () => {
+    platformBrowserDynamic().bootstrapModule(AppModule)
+        .catch(err => console.log(err));
+});
+```
+
 ### <a name="running-examples"></a>Running the Local Examples ###
 
 ```bash
@@ -143,7 +184,7 @@ Navigate to [http://127.0.0.1:8875/examples/](http://127.0.0.1:8875/examples/) i
 ### <a name="jquery-integration"></a>Include jQuery integration ###
 Starting with version 17.2, DevExtreme doesn't depend on jQuery. It means that our widgets work without jQuery elements. If you need to use jQuery, you can manually install the jquery npm package and include the jQuery integration as described below:
 
-```js
+```bash
 npm install --save jquery
 ```
 
@@ -281,12 +322,12 @@ The DevExtreme Angular editors support the 'ngModel' binding as well as the 'for
 
 ```html
 <form [formGroup]="form">
-        <dx-text-box
-            name="email"
-            [(ngModel)]="email"
-            [isValid]="emailControl.valid || emailControl.pristine"
-            [validationError]="{ message: 'Email is invalid'}">
-        </dx-text-box>
+    <dx-text-box
+        name="email"
+        [(ngModel)]="email"
+        [isValid]="emailControl.valid || emailControl.pristine"
+        [validationError]="{ message: 'Email is invalid'}">
+    </dx-text-box>
 </form>
 ```
 
@@ -582,11 +623,6 @@ as follows:
 ```js
 import { DxButtonModule } from 'devextreme-angular/ui/button';
 ```
-
-## <a name="server-side-rendering"></a>Server-side Rendering ##
-
-Currently, DevExtreme components **do not support** server side rendering (check [this issue](https://github.com/DevExpress/devextreme-angular/issues/46)).
-So, you are required to switch this feature off.
 
 ## <a name="license"></a>License ##
 
