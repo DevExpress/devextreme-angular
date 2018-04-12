@@ -67,8 +67,6 @@ export class NgEventsStrategy {
 }
 
 export class EmitterHelper {
-    strategy: NgEventsStrategy;
-    events: any[];
 
     constructor(private component: DxComponent) { }
 
@@ -80,16 +78,8 @@ export class EmitterHelper {
     }
 
     createEmitters(events: any[]) {
-        this.events = events;
         events.forEach(event => {
             this.component[event.emit] = new EventEmitter();
-        });
-    }
-
-    public setStrategy(value: NgEventsStrategy) {
-        this.strategy = value;
-        this.events.filter(event => event.subscribe).forEach(event => {
-            this.strategy.addEmitter(event.subscribe, this.component[event.emit]);
         });
     }
 }
