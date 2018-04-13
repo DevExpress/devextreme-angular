@@ -18,9 +18,7 @@ export class NgEventsStrategy {
     fireEvent(name, args) {
         let emitter = this.getEmitter(name);
         if (emitter.observers.length) {
-            this.ngZone.run(() => {
-                this.getEmitter(name).next(args && args[0]);
-            });
+            this.ngZone.run(() => emitter.next(args && args[0]));
         }
     }
 
