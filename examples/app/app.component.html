@@ -22,17 +22,17 @@
             <label for="email">Email</label>
             <dx-text-box
                 formControlName="emailControl"
-                [(ngModel)]="formData.email"
-                [isValid]="!emailControl.invalid || emailControl.pristine"
+                [value]="formData.email"
+                [isValid]="!emailControl.invalid || !emailControlIsChanged"
                 [validationError]="{ message: 'Enter correct email' }">
             </dx-text-box>
 
             <label for="password">Password</label>
             <dx-text-box
                 formControlName="passwordControl"
-                [(ngModel)]="formData.password"
+                [value]="formData.password"
                 mode="password"
-                [isValid]="!passwordControl.invalid || passwordControl.pristine"
+                [isValid]="!passwordControl.invalid || !passwordControlIsChanged"
                 [validationError]="{ message: 'Password should be greater that six symbols' }">
             </dx-text-box>
 
