@@ -1,33 +1,30 @@
 import { EventEmitter, NgZone } from '@angular/core';
 import { DxComponent } from './component';
 
-const dxToNgEventNames = {};
-
 interface IEventSubscription {
     handler: any;
     unsubscribe: () => void;
 }
-
 export class NgEventsStrategy {
     private subscriptions: { [key: string]: IEventSubscription[] } = {};
+    private events: { [key: string]: EventEmitter<any> } = {};
 
-    constructor(private component: DxComponent, private ngZone: NgZone) { }
+    constructor(private ngZone: NgZone, private instance: any) { }
 
     hasEvent(name: string) {
-        return this.ngZone.run(() => {
-            return this.getEmitter(name).observers.length;
-        });
+        return this.getEmitter(name).observers.length;
     }
 
     fireEvent(name, args) {
-        this.ngZone.run(() => {
-            this.getEmitter(name).next(args && args[0]);
-        });
+        let emitter = this.getEmitter(name);
+        if (emitter.observers.length) {
+            this.ngZone.run(() => emitter.next(args && args[0]));
+        }
     }
 
     on(name, handler) {
         let eventSubscriptions = this.subscriptions[name] || [],
-            subcription = this.getEmitter(name).subscribe(handler.bind(this.component.instance)),
+            subcription = this.getEmitter(name).subscribe(handler.bind(this.instance)),
             unsubscribe = subcription.unsubscribe.bind(subcription);
 
         eventSubscriptions.push({ handler, unsubscribe });
@@ -55,32 +52,33 @@ export class NgEventsStrategy {
 
     dispose() {}
 
+    public addEmitter(eventName: string, emitter: EventEmitter<any>) {
+        this.events[eventName] = emitter;
+    }
+
     private getEmitter(eventName: string): EventEmitter<any> {
-        let ngEventName = dxToNgEventNames[eventName];
-        if (!this.component[ngEventName]) {
-            this.component[ngEventName] = new EventEmitter();
+        if (!this.events[eventName]) {
+            this.events[eventName] = new EventEmitter();
         }
-        return this.component[ngEventName];
+        return this.events[eventName];
     }
 }
 
 export class EmitterHelper {
-    strategy: NgEventsStrategy;
 
-    constructor(ngZone: NgZone, public component: DxComponent) {
-        this.strategy = new NgEventsStrategy(component, ngZone);
-    }
+    constructor(private component: DxComponent) { }
+
     fireNgEvent(eventName: string, eventArgs: any) {
         let emitter = this.component[eventName];
         if (emitter) {
             emitter.next(eventArgs && eventArgs[0]);
         }
     }
-    createEmitter(ngEventName: string, dxEventName: string) {
-        this.component[ngEventName] = new EventEmitter();
-        if (dxEventName) {
-            dxToNgEventNames[dxEventName] = ngEventName;
-        }
+
+    createEmitters(events: any[]) {
+        events.forEach(event => {
+            this.component[event.emit] = new EventEmitter();
+        });
     }
 }
 

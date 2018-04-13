@@ -566,6 +566,10 @@ describe('DxList', () => {
         instance.element().dispatchEvent(new Event('mouseover'));
 
         expect(onChangesSpy.calls.count()).toBe(0);
+        let item = instance.element().querySelector('.dx-item');
+        item.click();
+
+        expect(onChangesSpy.calls.count()).toBe(0);
         fixture.autoDetectChanges(false);
     });
 });

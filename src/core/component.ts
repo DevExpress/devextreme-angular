@@ -20,7 +20,7 @@ import { TransferState, makeStateKey } from '@angular/platform-browser';
 
 import { DxTemplateDirective } from './template';
 import { IDxTemplateHost, DxTemplateHost } from './template-host';
-import { EmitterHelper } from './events-strategy';
+import { EmitterHelper, NgEventsStrategy } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
 import * as events from 'devextreme/events';
 import {
@@ -63,7 +63,6 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         });
     }
     private _initOptions() {
-        this._initialOptions.eventsStrategy = this.eventHelper.strategy;
         this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
 
@@ -76,9 +75,25 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _createEventEmitters(events) {
-        events.forEach(event => {
-            this.eventHelper.createEmitter(event.emit, event.subscribe);
-        });
+        let ngZone = this.ngZone;
+        this.eventHelper.createEmitters(events);
+
+        this._initialOptions.eventsStrategy = (instance) => {
+            let strategy = new NgEventsStrategy(ngZone, instance);
+
+            events.filter(event => event.subscribe).forEach(event => {
+                strategy.addEmitter(event.subscribe, this[event.emit]);
+            });
+
+            return strategy;
+        };
+
+        this._initialOptions.nestedComponentOptions = function(component) {
+            return {
+                eventsStrategy: (instance) => { return new NgEventsStrategy(ngZone, instance); },
+                nestedComponentOptions: component.option('nestedComponentOptions')
+            };
+        };
     }
     _shouldOptionChange(name: string, value: any) {
         if (this.changedOptions.hasOwnProperty(name)) {
@@ -156,7 +171,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
-        this.eventHelper = new EmitterHelper(this.ngZone, this);
+        this.eventHelper = new EmitterHelper(this);
     }
 
     ngOnChanges(changes: SimpleChanges) {
