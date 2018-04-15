@@ -3,7 +3,6 @@
 import {
     Component,
     OnInit,
-    AfterViewInit,
     ViewChild
 } from '@angular/core';
 import {
@@ -97,7 +96,7 @@ import{
         OwnerService
     ]
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
     @ViewChild(DxPopoverComponent) popover: DxPopoverComponent;
     text = 'Initial text';
     formData = { email: '', password: '' };
@@ -171,6 +170,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     callNumber(number) {
         alert(number + ' is being called...');
     }
+    updateEmailControl(e) {
+        this.form.controls['emailControl'].setValue(e.value);
+        this.emailControlIsChanged = true;
+    }
+    updatePasswordControl(e) {
+        this.form.controls['passwordControl'].setValue(e.value);
+        this.passwordControlIsChanged = true;
+    }
     toggleFormControlsState(e) {
         if (e.value) {
             this.emailControl.disable();
@@ -210,16 +217,6 @@ export class AppComponent implements OnInit, AfterViewInit {
             label: 'Owner'
         }];
         this.tabPanelItems = this.customers.slice(0, 4);
-    }
-    ngAfterViewInit() {
-        this.form.controls['emailControl'].valueChanges.subscribe((value) => {
-            this.emailControlIsChanged = true;
-            this.formData.email = value;
-        });
-        this.form.controls['passwordControl'].valueChanges.subscribe((value) => {
-            this.passwordControlIsChanged = true;
-            this.formData.password = value;
-        });
     }
     showPopover() {
         this.popover.instance.show();
