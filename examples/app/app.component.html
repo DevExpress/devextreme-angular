@@ -22,17 +22,15 @@
             <label for="email">Email</label>
             <dx-text-box
                 formControlName="emailControl"
-                [(ngModel)]="formData.email"
-                [isValid]="!emailControl.invalid || emailControl.pristine"
+                [isValid]="!emailControl.invalid || !emailControlIsChanged"
                 [validationError]="{ message: 'Enter correct email' }">
             </dx-text-box>
 
             <label for="password">Password</label>
             <dx-text-box
                 formControlName="passwordControl"
-                [(ngModel)]="formData.password"
                 mode="password"
-                [isValid]="!passwordControl.invalid || passwordControl.pristine"
+                [isValid]="!passwordControl.invalid || !passwordControlIsChanged"
                 [validationError]="{ message: 'Password should be greater that six symbols' }">
             </dx-text-box>
 
@@ -47,7 +45,7 @@
         <div class="form-group">
 
             <label>Email</label>
-            <dx-text-box [(value)]="formData.email">
+            <dx-text-box [(value)]="formData.email" (onValueChanged)="updateEmailControl($event)">
                 <dx-validator>
                     <dxi-validation-rule type="required" message="Email is required."></dxi-validation-rule>
                     <dxi-validation-rule type="email" message="Email is invalid."></dxi-validation-rule>
@@ -55,7 +53,7 @@
             </dx-text-box>
 
             <label>Password</label>
-            <dx-text-box [(value)]="formData.password" mode="password">
+            <dx-text-box [(value)]="formData.password" mode="password" (onValueChanged)="updatePasswordControl($event)">
                 <dx-validator>
                     <dxi-validation-rule type="required" message="Password is required."></dxi-validation-rule>
                 </dx-validator>
