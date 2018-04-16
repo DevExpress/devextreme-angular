@@ -165,8 +165,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-
-
 ### <a name="running-examples"></a>Running the Local Examples ###
 
 ```bash
@@ -337,7 +335,6 @@ The DevExtreme Angular editors support the 'ngModel' binding as well as the 'for
 </form>
 ```
 
-
 ```js
 @Component({
    selector: 'my-app',
@@ -379,7 +376,6 @@ validation summary and other DevExtreme validation features with Angular DevExtr
 </dx-validation-group>
 ```
 
-
 ```js
 @Component({
     selector: 'my-app',
@@ -406,7 +402,6 @@ export class AppComponent {
     }
 }
 ```
-
 
 ### <a name="configuration-components"></a>Configuration Components ###
 
