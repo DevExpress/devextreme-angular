@@ -136,20 +136,20 @@ See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-
 
 DevExtreme-angular supports caching requests on the server in the server-side rendering mode. This avoids repeatedly requesting data from the browser and renders widgets using data that is initially applied when the page is loaded for the first time.
 
-To enable caching, import the `ServerTransferStateModule` module in the server module's .ts file (usually *src/app.server.module.ts*):
+To enable caching, import the DxServerTransferStateModule module in the module's .ts file (usually src/app.module.ts):
 
 ```js
-import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
+import { DxServerTransferStateModule } from 'devextreme-angular';
 
 @NgModule({
+    ...
     imports: [
-        AppModule,
-        ServerModule,
-        ServerTransferStateModule,
-        ModuleMapLoaderModule
-    ],
-    bootstrap: [AppComponent],
+        ...
+        DxServerTransferStateModule,
+        ...
+    ]
 })
+export class AppModule {}
 ```
 
 Also, ensure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching does not work correctly.
@@ -529,7 +529,7 @@ Angular has a built-in `template` directive. To define the `template` property o
 <dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
 ```
 
-Note that some options with an object type are not implemented as nested components - for example, 
+Note that some options with an object type are not implemented as nested components - for example,
 [editorOptions of dxDataGrid](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDataGrid/Configuration/columns/#editorOptions), [editorOptions of dxForm](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxForm/Item_Types/SimpleItem/#editorOptions), [the widget option of dxToolbar](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxToolbar/Default_Item_Template/#options).
 
 ### <a name="accessing-widget-instance"></a>Accessing a DevExtreme Widget Instance ###
