@@ -4,7 +4,7 @@ import { Component, PLATFORM_ID } from '@angular/core';
 
 import { isPlatformServer } from '@angular/common';
 
-import { DxTransferStateModule, NgHttp } from '../../../dist';
+import { DxServerTransferStateModule, NgHttp } from '../../../dist';
 
 import * as def from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';
@@ -45,7 +45,7 @@ describe('Universal', () => {
             {
                 declarations: [TestContainerComponent],
                 imports: [ServerModule,
-                    DxTransferStateModule,
+                    DxServerTransferStateModule,
                     BrowserModule.withServerTransition({appId: 'appid'})],
                     providers: [NgHttp]
             });

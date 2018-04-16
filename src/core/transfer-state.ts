@@ -12,7 +12,7 @@ import { ServerTransferStateModule } from '@angular/platform-server';
   ]
 })
 
-export class DxTransferStateModule {
+export class DxServerTransferStateModule {
     constructor(private state: TransferState, @Inject(PLATFORM_ID) private platformId: any) {
         let that = this;
 
