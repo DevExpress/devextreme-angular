@@ -4,13 +4,13 @@ import { Component, PLATFORM_ID } from '@angular/core';
 
 import { isPlatformServer } from '@angular/common';
 
+import { DxTransferStateModule, NgHttp } from '../../../dist';
+
 import * as def from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';
 
-import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
-import { BrowserModule, BrowserTransferStateModule, TransferState, makeStateKey } from '@angular/platform-browser';
-
-import { NgHttp } from '../../../dist';
+import { ServerModule } from '@angular/platform-server';
+import { BrowserModule, TransferState, makeStateKey } from '@angular/platform-browser';
 
 import {
     TestBed,
@@ -45,8 +45,7 @@ describe('Universal', () => {
             {
                 declarations: [TestContainerComponent],
                 imports: [ServerModule,
-                    ServerTransferStateModule,
-                    BrowserTransferStateModule,
+                    DxTransferStateModule,
                     BrowserModule.withServerTransition({appId: 'appid'})],
                     providers: [NgHttp]
             });
