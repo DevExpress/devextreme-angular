@@ -136,7 +136,7 @@ See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-
 
 DevExtreme-angular supports caching requests on the server in the server-side rendering mode. This avoids repeatedly requesting data from the browser and renders widgets using data that is initially applied when the page is loaded for the first time.
 
-To enable caching, import the DxServerTransferStateModule module in the module's .ts file (usually src/app.module.ts):
+To enable caching, import the `DxServerTransferStateModule` module in the module's .ts file (usually *src/app.module.ts*):
 
 ```js
 import { DxServerTransferStateModule } from 'devextreme-angular';
