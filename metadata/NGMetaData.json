@@ -120,13 +120,6 @@
               ],
               "Description": "Specifies the name of the icon displayed by the widget item title."
             },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use items.icon instead."
-            },
             "template": {
               "PrimitiveTypes": [
                 "any"
@@ -597,13 +590,6 @@
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "dataSource": {
           "PrimitiveTypes": [
             "DevExpress.data.DataSource",
@@ -627,15 +613,6 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget responds to user interaction."
-        },
-        "displayExpr": {
-          "PrimitiveTypes": [
-            "Function",
-            "string"
-          ],
-          "IsDeprecated": true,
-          "IsFunc": true,
-          "Description": "Use the valueExpr option instead."
         },
         "displayValue": {
           "PrimitiveTypes": [
@@ -1326,7 +1303,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -2057,7 +2034,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -2433,13 +2410,6 @@
             "string"
           ],
           "Description": "Specifies the icon to be displayed on the button."
-        },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the icon option instead."
         },
         "onClick": {
           "PrimitiveTypes": [
@@ -2842,14 +2812,14 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Specifies the length of aggregation intervals in pixels. May be ignored in favor of the aggregationInterval option."
             },
             "aggregationInterval": {
               "PrimitiveTypes": [
                 "number",
                 "string"
               ],
-              "Description": "",
+              "Description": "Specifies the length of aggregation intervals in axis units. Applies only to axes of continuous and logarithmic types.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -5031,7 +5001,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -5039,7 +5009,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -6996,7 +6966,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -7858,13 +7828,6 @@
           ],
           "Description": "Specifies the way an end-user applies the selected value."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "cancelButtonText": {
           "PrimitiveTypes": [
             "string"
@@ -8459,13 +8422,6 @@
           "IsChangeable": true,
           "Description": "The selected item object."
         },
-        "selectionByClick": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the selectByClick option instead."
-        },
         "selectionMode": {
           "PrimitiveTypes": [
             "string"
@@ -8791,20 +8747,6 @@
               ],
               "Description": "Specifies whether a user can update rows."
             },
-            "editEnabled": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the editing.allowUpdating option instead."
-            },
-            "editMode": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the editing.mode option instead."
-            },
             "form": {
               "PrimitiveTypes": [
                 "DevExpress.ui.dxFormOptions"
@@ -8813,13 +8755,6 @@
                 "dxFormOptions"
               ],
               "Description": "Configures the form. Used only if editing.mode is \"form\" or \"popup\"."
-            },
-            "insertEnabled": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the editing.allowAdding option instead."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -8835,13 +8770,6 @@
                 "dxPopupOptions"
               ],
               "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
-            },
-            "removeEnabled": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the editing.allowDeleting option instead."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -8913,6 +8841,12 @@
                   "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing.mode is \"cell\" and data validation is enabled."
                 }
               }
+            },
+            "useIcons": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the editing column uses icons instead of links."
             }
           }
         },
@@ -8961,6 +8895,12 @@
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
             },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether Excel should hide warnings if there are errors in the exported document."
+            },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
@@ -8970,13 +8910,6 @@
             "texts": {
               "Description": "Contains options that specify texts for the export-related commands and hints.",
               "Options": {
-                "excelFormat": {
-                  "PrimitiveTypes": [
-                    "any"
-                  ],
-                  "IsDeprecated": true,
-                  "Description": "Use the export.texts.exportAll option instead."
-                },
                 "exportAll": {
                   "PrimitiveTypes": [
                     "string"
@@ -8994,20 +8927,6 @@
                     "string"
                   ],
                   "Description": "Specifies the hint of the Export button when the allowExportSelectedData option is true."
-                },
-                "exportToExcel": {
-                  "PrimitiveTypes": [
-                    "any"
-                  ],
-                  "IsDeprecated": true,
-                  "Description": "Use the export.texts.exportAll option instead."
-                },
-                "selectedRows": {
-                  "PrimitiveTypes": [
-                    "any"
-                  ],
-                  "IsDeprecated": true,
-                  "Description": "Use the export.texts.exportSelectedRows option instead."
                 }
               }
             }
@@ -9020,44 +8939,53 @@
           "ComplexTypes": [
             "dxFilterBuilderOptions"
           ],
-          "Description": ""
+          "Description": "Configures the integrated filter builder."
+        },
+        "filterBuilderPopup": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the popup in which the integrated filter builder is shown."
         },
         "filterPanel": {
-          "Description": "",
+          "Description": "Configures the filter panel.",
           "Options": {
             "customizeText": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": ""
+              "Description": "Customizes the filter expression's text representation."
             },
             "filterEnabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
-              "Description": "",
+              "Description": "Specifies texts for the filter panel's elements.",
               "Options": {
                 "clearFilter": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The text of the \"Clear\" link."
                 },
                 "createFilter": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The text of the \"Create Filter\" link."
                 },
                 "filterEnabledHint": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The hint of the checkbox that applies the filter."
                 }
               }
             },
@@ -9065,18 +8993,9 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the filter panel is visible."
             }
           }
-        },
-        "filterPopup": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.dxPopupOptions"
-          ],
-          "ComplexTypes": [
-            "dxPopupOptions"
-          ],
-          "Description": ""
         },
         "filterRow": {
           "Description": "Configures the filter row.",
@@ -9204,17 +9123,16 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean",
-            "string"
+            "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
         "filterValue": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsFilterExpr": true,
-          "Description": ""
+          "Description": "Specifies a filter expression."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -9248,20 +9166,6 @@
                 "string"
               ],
               "Description": "Specifies the event on which a group will be expanded/collapsed."
-            },
-            "groupContinuedMessage": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the grouping.texts.groupContinuedMessage option instead."
-            },
-            "groupContinuesMessage": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the grouping.texts.groupContinuesMessage option instead."
             },
             "texts": {
               "Description": "Defines the texts of grouping-related visual elements.",
@@ -9413,8 +9317,7 @@
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
               "Description": "Specifies whether to show the load panel or not."
             },
@@ -9753,81 +9656,76 @@
           "Description": "A function that is executed before the toolbar is created."
         },
         "pager": {
-          "Description": "",
+          "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
-              "PrimitiveTypes": [
-                "string"
-              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
               "IsCollection": true,
               "SingularName": "allowedPageSize",
-              "Description": ""
+              "Description": "Specifies the available page sizes in the page size selector."
             },
             "infoText": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the page information text."
             },
             "showInfo": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show the page information."
             },
             "showNavigationButtons": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show navigation buttons."
             },
             "showPageSizeSelector": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show the page size selector."
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the pager is visible."
             }
           }
         },
         "paging": {
-          "Description": "",
+          "Description": "Configures paging.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Enables paging."
             },
             "pageIndex": {
               "PrimitiveTypes": [
                 "number"
               ],
               "IsChangeable": true,
-              "Description": ""
+              "Description": "Specifies the page to be displayed using a zero-based index."
             },
             "pageSize": {
               "PrimitiveTypes": [
                 "number"
               ],
               "IsChangeable": true,
-              "Description": ""
+              "Description": "Specifies the page size."
             }
           }
         },
         "remoteOperations": {
           "PrimitiveTypes": [
-            "boolean",
-            "string"
+            "boolean"
           ],
           "Description": "Specifies the operations that must be performed on the server side.",
           "Options": {
@@ -9895,7 +9793,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -9913,7 +9811,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the rendering mode for loaded rows."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
@@ -9935,8 +9833,7 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -9997,7 +9894,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "selectedRowKey",
-          "Description": "Allows you to select rows or learn which rows are selected."
+          "Description": "Allows you to select rows or determine which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -10484,13 +10381,6 @@
           ],
           "Description": "Specifies the way an end-user applies the selected value."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "calendarOptions": {
           "PrimitiveTypes": [
             "DevExpress.ui.dxCalendarOptions"
@@ -10498,7 +10388,7 @@
           "ComplexTypes": [
             "dxCalendarOptions"
           ],
-          "Description": ""
+          "Description": "Configures the calendar's value picker. Applies only if the pickerType is \"calendar\"."
         },
         "cancelButtonText": {
           "PrimitiveTypes": [
@@ -10565,32 +10455,11 @@
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
         },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the acceptCustomValue option instead."
-        },
         "focusStateEnabled": {
           "PrimitiveTypes": [
             "boolean"
           ],
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
-        },
-        "format": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the type option instead."
-        },
-        "formatString": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the displayFormat option instead."
         },
         "height": {
           "PrimitiveTypes": [
@@ -10891,20 +10760,6 @@
             "string"
           ],
           "Description": "A format used to display date/time information."
-        },
-        "useCalendar": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the pickerType option instead."
-        },
-        "useNative": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the pickerType option instead."
         },
         "validationError": {
           "PrimitiveTypes": [
@@ -11617,13 +11472,6 @@
           ],
           "Description": "Specifies if an end user can remove a file from the selection and interrupt uploading."
         },
-        "buttonText": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the selectButtonText option instead."
-        },
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -11865,13 +11713,6 @@
           "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies a File instance representing the selected file. Read-only when uploadMode is \"useForm\"."
-        },
-        "values": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the value option instead."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -13119,7 +12960,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -14008,7 +13849,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -14883,13 +14724,6 @@
           ],
           "Description": "Specifies whether or not an end user can reorder list items."
         },
-        "autoPagingEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the pageLoadMode option instead."
-        },
         "bounceEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -15381,13 +15215,6 @@
           ],
           "Description": "Specifies item selection mode."
         },
-        "showNextButton": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the pageLoadMode option instead."
-        },
         "showScrollbar": {
           "PrimitiveTypes": [
             "string"
@@ -15813,13 +15640,6 @@
           ],
           "Description": "Specifies the way an end-user applies the selected value."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "cancelButtonText": {
           "PrimitiveTypes": [
             "string"
@@ -15897,13 +15717,6 @@
             "any"
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
-        },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "This option is deprecated, because the functionality controlled by it was not supposed to belong to the Lookup widget. Instead, we suggest that you use the SelectBox widget with the acceptCustomValue option set to true."
         },
         "fieldTemplate": {
           "PrimitiveTypes": [
@@ -16165,13 +15978,6 @@
           ],
           "Description": "Specifies whether the next page is loaded when a user scrolls the widget to the bottom or when the \"next\" button is clicked."
         },
-        "pagingEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the DataSource.paginate option instead."
-        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -16300,13 +16106,6 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
-        },
-        "showNextButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the pageLoadMode option instead."
         },
         "showPopupTitle": {
           "PrimitiveTypes": [
@@ -17053,13 +16852,6 @@
           "IsChangeable": true,
           "Description": "The selected item object."
         },
-        "selectionByClick": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the selectByClick option instead."
-        },
         "selectionMode": {
           "PrimitiveTypes": [
             "string"
@@ -17529,13 +17321,6 @@
               ],
               "Description": "Specifies the name of the icon displayed by the widget item."
             },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use items.icon instead."
-            },
             "template": {
               "PrimitiveTypes": [
                 "any"
@@ -17736,13 +17521,6 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
-        },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -18061,7 +17839,6 @@
       }
     },
     "dxPanorama": {
-      "Description": "The Panorama widget is a full-screen widget that allows you to arrange items on a long horizontal canvas split into several views. Each view contains several items, and an end user navigates the views with the swipe gesture. The Panorama is often used as a navigation map on the first page of an application.",
       "Module": "ui/panorama",
       "Options": {
         "activeStateEnabled": {
@@ -18744,7 +18521,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -18752,7 +18529,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -19261,7 +19038,6 @@
       }
     },
     "dxPivot": {
-      "Description": "The Pivot provides a quick way to manage multiple views. It includes a collection of views and a navigation header. An end user switches the views by swiping them or by clicking their titles on the navigation header.",
       "Module": "ui/pivot",
       "Options": {
         "activeStateEnabled": {
@@ -19581,6 +19357,12 @@
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
             },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether Excel should hide warnings if there are errors in the exported document."
+            },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
@@ -19597,6 +19379,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether searching is enabled in the field chooser."
+            },
+            "applyChangesMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -19953,8 +19741,7 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
               "Description": "Specifies whether or not the widget uses native scrolling."
             }
@@ -20116,14 +19903,6 @@
             }
           }
         },
-        "useNativeScrolling": {
-          "PrimitiveTypes": [
-            "boolean",
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the scrolling.useNative option instead."
-        },
         "visible": {
           "PrimitiveTypes": [
             "boolean"
@@ -20168,6 +19947,12 @@
             "boolean"
           ],
           "Description": "Specifies whether searching is enabled in the field chooser."
+        },
+        "applyChangesMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -20313,6 +20098,12 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "state": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": ""
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -21758,7 +21549,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -21766,7 +21557,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -22951,6 +22742,13 @@
           "IsFunc": true,
           "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element."
         },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies the container in which to place the widget."
+        },
         "contentTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -23336,6 +23134,13 @@
           ],
           "IsFunc": true,
           "Description": "Specifies whether to close the widget if a user clicks outside it."
+        },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies the container in which to place the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -24528,7 +24333,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -24620,14 +24425,14 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Specifies the length of aggregation intervals in pixels. May be ignored in favor of the aggregationInterval option."
             },
             "aggregationInterval": {
               "PrimitiveTypes": [
                 "number",
                 "string"
               ],
-              "Description": "",
+              "Description": "Specifies the length of aggregation intervals in scale units. Applies only to the scale of the continuous or logarithmic type.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -26564,13 +26369,6 @@
           ],
           "Description": "Specifies text for a hint that appears when a user pauses on the widget."
         },
-        "horizontalScrollingEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the crossScrollingEnabled option instead."
-        },
         "indicatorUpdateInterval": {
           "PrimitiveTypes": [
             "number"
@@ -26818,13 +26616,6 @@
               "IsFunc": true,
               "Description": "Specifies the resource object field whose value is displayed by the Resource editor in the Appointment popup window."
             },
-            "field": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the resources.fieldExpr option instead."
-            },
             "fieldExpr": {
               "PrimitiveTypes": [
                 "string"
@@ -26836,13 +26627,6 @@
                 "string"
               ],
               "Description": "Specifies the label of the Appointment popup window field that allows end users to assign a resource of this kind."
-            },
-            "mainColor": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use the resources.useColorAsDefault option instead."
             },
             "useColorAsDefault": {
               "PrimitiveTypes": [
@@ -26865,6 +26649,15 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "selectedCellData": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "IsReadonly": true,
+          "SingularName": "selectedCellData",
+          "Description": ""
         },
         "shadeUntilCurrentTime": {
           "PrimitiveTypes": [
@@ -27008,7 +26801,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Arranges resource headers vertically (in a column) or horizontally (in a row)."
             },
             "groups": {
               "ItemPrimitiveTypes": [
@@ -27272,13 +27065,6 @@
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "dataSource": {
           "PrimitiveTypes": [
             "DevExpress.data.DataSource",
@@ -27330,13 +27116,6 @@
             "any"
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
-        },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "PrimitiveTypes": [
@@ -27644,13 +27423,6 @@
           ],
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
-        },
-        "pagingEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the DataSource.paginate option instead."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -28600,7 +28372,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -29222,13 +28994,6 @@
               ],
               "Description": "Specifies the name of the icon displayed by the widget item title."
             },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use items.icon instead."
-            },
             "tabTemplate": {
               "PrimitiveTypes": [
                 "any"
@@ -29550,13 +29315,6 @@
               ],
               "Description": "Specifies the name of the icon displayed by the widget item."
             },
-            "iconSrc": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "IsDeprecated": true,
-              "Description": "Use items.icon instead."
-            },
             "template": {
               "PrimitiveTypes": [
                 "any"
@@ -29782,13 +29540,6 @@
           ],
           "Description": "Specifies how the widget applies values."
         },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
-        },
         "dataSource": {
           "PrimitiveTypes": [
             "DevExpress.data.DataSource",
@@ -29833,13 +29584,6 @@
             "any"
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
-        },
-        "fieldEditEnabled": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the acceptCustomValue option instead."
         },
         "fieldTemplate": {
           "PrimitiveTypes": [
@@ -30151,13 +29895,6 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
-        "pagingEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the DataSource.paginate option instead."
-        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -30297,13 +30034,6 @@
           "IsFunc": true,
           "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
         },
-        "values": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the value option instead."
-        },
         "visible": {
           "PrimitiveTypes": [
             "boolean"
@@ -30337,13 +30067,6 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
-        },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
         },
         "autoResizeEnabled": {
           "PrimitiveTypes": [
@@ -30652,13 +30375,6 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
-        },
-        "attr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the inputAttr option instead."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31809,6 +31525,13 @@
           "IsFunc": true,
           "Description": "A Boolean value specifying whether or not the widget is closed if a user clicks outside of the popover window and outside the target element."
         },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies the container in which to place the widget."
+        },
         "contentTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -32383,6 +32106,12 @@
                   "Description": "Specifies text for a hint appearing when a user pauses on the button that cancels changes in a cell. Applies only if editing.mode is \"cell\" and data validation is enabled."
                 }
               }
+            },
+            "useIcons": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the editing column uses icons instead of links."
             }
           }
         },
@@ -32420,44 +32149,53 @@
           "ComplexTypes": [
             "dxFilterBuilderOptions"
           ],
-          "Description": ""
+          "Description": "Configures the integrated filter builder."
+        },
+        "filterBuilderPopup": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the popup in which the integrated filter builder is shown."
         },
         "filterPanel": {
-          "Description": "",
+          "Description": "Configures the filter panel.",
           "Options": {
             "customizeText": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": ""
+              "Description": "Customizes the filter expression's text representation."
             },
             "filterEnabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
-              "Description": "",
+              "Description": "Specifies texts for the filter panel's elements.",
               "Options": {
                 "clearFilter": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The text of the \"Clear\" link."
                 },
                 "createFilter": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The text of the \"Create Filter\" link."
                 },
                 "filterEnabledHint": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "The hint of the checkbox that applies the filter."
                 }
               }
             },
@@ -32465,18 +32203,9 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the filter panel is visible."
             }
           }
-        },
-        "filterPopup": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.dxPopupOptions"
-          ],
-          "ComplexTypes": [
-            "dxPopupOptions"
-          ],
-          "Description": ""
         },
         "filterRow": {
           "Description": "Configures the filter row.",
@@ -32604,17 +32333,16 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean",
-            "string"
+            "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
         "filterValue": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsFilterExpr": true,
-          "Description": ""
+          "Description": "Specifies a filter expression."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -32724,8 +32452,7 @@
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
               "Description": "Specifies whether to show the load panel or not."
             },
@@ -33024,74 +32751,70 @@
           "Description": "A function that is executed before the toolbar is created."
         },
         "pager": {
-          "Description": "",
+          "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
-              "PrimitiveTypes": [
-                "string"
-              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
               "IsCollection": true,
               "SingularName": "allowedPageSize",
-              "Description": ""
+              "Description": "Specifies the available page sizes in the page size selector."
             },
             "infoText": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the page information text."
             },
             "showInfo": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show the page information."
             },
             "showNavigationButtons": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show navigation buttons."
             },
             "showPageSizeSelector": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether to show the page size selector."
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
-              "Description": ""
+              "Description": "Specifies whether the pager is visible."
             }
           }
         },
         "paging": {
-          "Description": "",
+          "Description": "Configures paging.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Enables paging."
             },
             "pageIndex": {
               "PrimitiveTypes": [
                 "number"
               ],
               "IsChangeable": true,
-              "Description": ""
+              "Description": "Specifies the page to be displayed using a zero-based index."
             },
             "pageSize": {
               "PrimitiveTypes": [
                 "number"
               ],
               "IsChangeable": true,
-              "Description": ""
+              "Description": "Specifies the page size."
             }
           }
         },
@@ -33104,9 +32827,6 @@
           "Description": "Specifies which data field provides parent keys."
         },
         "remoteOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
           "Description": "Specifies what operations are performed on the server.",
           "Options": {
             "filtering": {
@@ -33154,7 +32874,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -33172,7 +32892,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the rendering mode for loaded rows."
             },
             "scrollByContent": {
               "PrimitiveTypes": [
@@ -33194,8 +32914,7 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean",
-                "string"
+                "boolean"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -33256,7 +32975,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "selectedRowKey",
-          "Description": "Allows you to select rows or learn which rows are selected."
+          "Description": "Allows you to select rows or determine which rows are selected."
         },
         "selection": {
           "Description": "Configures runtime selection.",
@@ -33752,7 +33471,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onDrill": {
           "PrimitiveTypes": [
@@ -34516,15 +34235,6 @@
           "IsEvent": true,
           "Description": "A handler for the itemRendered event."
         },
-        "onItemSelected": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsDeprecated": true,
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "Use the onItemSelectionChanged option instead."
-        },
         "onItemSelectionChanged": {
           "PrimitiveTypes": [
             "Function"
@@ -34619,13 +34329,6 @@
           ],
           "Description": "Specifies the current search string."
         },
-        "selectAllEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode option instead."
-        },
         "selectAllText": {
           "PrimitiveTypes": [
             "string"
@@ -34657,13 +34360,6 @@
             "boolean"
           ],
           "Description": "Specifies whether or not to select nodes recursively."
-        },
-        "showCheckBoxes": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use the showCheckBoxesMode option instead."
         },
         "showCheckBoxesMode": {
           "PrimitiveTypes": [
@@ -36104,7 +35800,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -36597,26 +36293,26 @@
       "Description": "Specifies settings common for all series in the chart.",
       "Options": {
         "aggregation": {
-          "Description": "",
+          "Description": "Configures data aggregation for the series.",
           "Options": {
             "calculate": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": ""
+              "Description": "Specifies a custom aggregate function. Applies only if the aggregation method is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Enables data aggregation for the series."
             },
             "method": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies how to aggregate series points."
             }
           }
         },
@@ -37649,26 +37345,26 @@
       "IsCollection": true,
       "Options": {
         "aggregation": {
-          "Description": "",
+          "Description": "Configures data aggregation for the series.",
           "Options": {
             "calculate": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": ""
+              "Description": "Specifies a custom aggregate function. Applies only if the aggregation method is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": ""
+              "Description": "Enables data aggregation for the series."
             },
             "method": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies how to aggregate series points."
             }
           }
         },
@@ -38596,13 +38292,6 @@
           ],
           "Description": "The name of an icon to be displayed on the menu item."
         },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use items.icon instead."
-        },
         "items": {
           "ItemPrimitiveTypes": [
             "DevExpress.ui.dxContextMenuItemTemplate"
@@ -38788,6 +38477,12 @@
           "IsCollection": true,
           "SingularName": "column",
           "Description": "An array of grid columns."
+        },
+        "command": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "cssClass": {
           "PrimitiveTypes": [
@@ -39212,7 +38907,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": ""
+          "Description": "Specifies the field's custom filtering rules."
         },
         "caption": {
           "PrimitiveTypes": [
@@ -39322,13 +39017,13 @@
       }
     },
     "FormButtonItem": {
-      "Description": "",
+      "Description": "Configures a button form item.",
       "Options": {
         "alignment": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the button's horizontal alignment."
         },
         "buttonOptions": {
           "PrimitiveTypes": [
@@ -39337,43 +39032,43 @@
           "ComplexTypes": [
             "dxButtonOptions"
           ],
-          "Description": ""
+          "Description": "Configures the button."
         },
         "colSpan": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Specifies how many columns the item spans."
         },
         "cssClass": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies a CSS class to be applied to the item."
         },
         "itemType": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the item's type. Set it to \"button\" to create a button item."
         },
         "name": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the item's identifier."
         },
         "visible": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether the item is visible."
         },
         "visibleIndex": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Specifies the item's position regarding other items in a group, tab, or the whole widget."
         }
       }
     },
@@ -39396,7 +39091,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current item."
+          "Description": "Specifies the item's type. Set it to \"empty\" to create an empty item."
         },
         "name": {
           "PrimitiveTypes": [
@@ -39503,7 +39198,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current item."
+          "Description": "Specifies the item's type. Set it to \"group\" to create a group item."
         },
         "name": {
           "PrimitiveTypes": [
@@ -39581,7 +39276,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current item."
+          "Description": "Specifies the item's type. Set it to \"simple\" to create a simple item."
         },
         "label": {
           "Description": "Specifies options for the form item label.",
@@ -39689,7 +39384,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current item."
+          "Description": "Specifies the item's type. Set it to \"tabbed\" to create a tabbed item."
         },
         "name": {
           "PrimitiveTypes": [
@@ -39855,13 +39550,6 @@
           ],
           "Description": "The name of an icon to be displayed on the menu item."
         },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use items.icon instead."
-        },
         "items": {
           "ItemPrimitiveTypes": [
             "DevExpress.ui.dxMenuItemTemplate"
@@ -40021,6 +39709,12 @@
           "IsCollection": true,
           "SingularName": "column",
           "Description": "Configures columns."
+        },
+        "command": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": ""
         },
         "cssClass": {
           "PrimitiveTypes": [
@@ -40385,13 +40079,6 @@
             "string"
           ],
           "Description": "The name of an icon to be displayed on the tree view item."
-        },
-        "iconSrc": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsDeprecated": true,
-          "Description": "Use items.icon instead."
         },
         "items": {
           "ItemPrimitiveTypes": [
