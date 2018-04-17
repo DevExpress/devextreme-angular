@@ -1,3 +1,8 @@
+## 18.1.1-beta.6 (2018-04-17)
+
+### Bug Fixes
+- Fix applications based on SystemJS
+
 ## 18.1.1-beta.5 (2018-04-17)
 
 ### Features

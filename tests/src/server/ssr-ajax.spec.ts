@@ -9,7 +9,7 @@ import { DxServerTransferStateModule, NgHttp } from '../../../dist';
 import * as def from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';
 
-import { ServerModule } from '@angular/platform-server';
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
 import { BrowserModule, TransferState, makeStateKey } from '@angular/platform-browser';
 
 import {
@@ -46,6 +46,7 @@ describe('Universal', () => {
                 declarations: [TestContainerComponent],
                 imports: [ServerModule,
                     DxServerTransferStateModule,
+                    ServerTransferStateModule,
                     BrowserModule.withServerTransition({appId: 'appid'})],
                     providers: [NgHttp]
             });
