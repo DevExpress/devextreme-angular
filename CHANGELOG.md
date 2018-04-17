@@ -1,3 +1,11 @@
+## 18.1.1-beta.5 (2018-04-17)
+
+### Features
+- Create the DxServerTransferStateModule module to include the cache of the request result [#752](https://github.com/DevExpress/devextreme-angular/pull/752)
+
+### Bug Fixes
+- Event with subscriptions should be fired inside NgZone [#748](https://github.com/DevExpress/devextreme-angular/pull/748)
+
 ## 18.1.1-beta.4 (2018-04-3)
 
 ### Features
