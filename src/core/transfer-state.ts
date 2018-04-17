@@ -3,11 +3,9 @@ import { isPlatformServer } from '@angular/common';
 import * as ajax from 'devextreme/core/utils/ajax';
 import * as deferred from 'devextreme/core/utils/deferred';
 import { TransferState, makeStateKey, BrowserTransferStateModule } from '@angular/platform-browser';
-import { ServerTransferStateModule } from '@angular/platform-server';
 
 @NgModule({
   imports: [
-    ServerTransferStateModule,
     BrowserTransferStateModule
   ]
 })
