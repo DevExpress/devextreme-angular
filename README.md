@@ -152,6 +152,22 @@ import { DxServerTransferStateModule } from 'devextreme-angular';
 export class AppModule {}
 ```
 
+and import the the `ServerTransferStateModule` module in the server module's .ts file (usually *src/app.server.module.ts*):
+
+```js
+import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
+
+@NgModule({
+    imports: [
+        AppModule,
+        ServerModule,
+        ServerTransferStateModule,
+        ModuleMapLoaderModule
+    ],
+    bootstrap: [AppComponent],
+})
+```
+
 Also, ensure that the application module is bootstrapped when the document has been loaded (the *main.ts* file should contain the code below). Otherwise, caching does not work correctly.
 
 ```js
