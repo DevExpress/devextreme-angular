@@ -359,7 +359,7 @@ export class AppComponent implements OnInit {
    form: FormGroup;
    ngOnInit() {
        this.form = new FormGroup({
-           email: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat]))
+           email: new FormControl('', Validators.compose([Validators.required, Validators.email]))
        });
        this.emailControl = this.form.controls['email'];
    }
