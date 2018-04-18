@@ -10,9 +10,7 @@ import {
     AbstractControl,
     FormGroup,
     FormControl,
-    Validator,
-    Validators,
-    ValidatorFn
+    Validators
 } from '@angular/forms';
 import {
     Orange,
@@ -108,7 +106,6 @@ export class AppComponent implements OnInit, AfterViewInit {
     emailControlIsChanged = false;
     passwordControlIsChanged = false;
     form: FormGroup;
-    EMAIL_REGEXP: any;
     boolValue: boolean;
     numberValue: number;
     dateValue: Date;
@@ -203,9 +200,8 @@ export class AppComponent implements OnInit, AfterViewInit {
         }
     }
     ngOnInit() {
-        this.EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
         this.form = new FormGroup({
-            emailControl: new FormControl('', Validators.compose([Validators.required, CustomValidator(this.EMAIL_REGEXP)])),
+            emailControl: new FormControl('', Validators.compose([Validators.required, CustomValidator.mailFormat])),
             passwordControl: new FormControl('', Validators.compose([Validators.required, Validators.minLength(6)]))
         });
         this.emailControl = this.form.controls['emailControl'];
@@ -239,9 +235,14 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 }
 
-export function CustomValidator(regExp: RegExp): ValidatorFn {
-    return (control: AbstractControl): {[key: string]: any} => {
-        const forbidden = control.value && control.value.length && (control.value.length <= 5 || !regExp.test(control.value));
-        return forbidden ? {'incorrectMailFormat': {value: control.value}} : null;
-    };
+export class CustomValidator {
+    static mailFormat(control: FormControl) {
+        let EMAIL_REGEXP = /^[a-z0-9!#$%&'*+\/=?^_`{|}~.-]+@[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)*$/i;
+
+        if (control.value && control.value.length && (control.value.length <= 5 || !EMAIL_REGEXP.test(control.value))) {
+            return { 'incorrectMailFormat': true };
+        }
+
+        return null;
+    }
 }
