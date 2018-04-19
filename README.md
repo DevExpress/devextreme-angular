@@ -46,6 +46,8 @@ You have the following options to start:
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
+**Starting with v18.1, DevExtreme-Angular requires [Angular](https://angular.io/) version 5 or later**
+
 <a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank" title="Installing Node.js and updating npm">Node.js and npm</a> are
 required and essential to Angular development.
 
@@ -131,6 +133,8 @@ ng generate universal my-app
 ```
 
 See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for more information.
+
+[This example](https://github.com/DevExpress/devextreme-examples/tree/18_1/universal-angular) demonstrates the use of DevExtreme Angular controls in an Angular Universal application.
 
 #### <a name="cache-requests"></a>Cache Requests on the Server ####
 
@@ -347,7 +351,6 @@ The DevExtreme Angular editors support the 'ngModel' binding as well as the 'for
 </form>
 ```
 
-
 ```js
 @Component({
    selector: 'my-app',
@@ -389,7 +392,6 @@ validation summary and other DevExtreme validation features with Angular DevExtr
 </dx-validation-group>
 ```
 
-
 ```js
 @Component({
     selector: 'my-app',
@@ -416,7 +418,6 @@ export class AppComponent {
     }
 }
 ```
-
 
 ### <a name="configuration-components"></a>Configuration Components ###
 
