@@ -1,32 +1,13 @@
 
-import { NgModule, NgZone, Inject } from '@angular/core';
+import { NgModule, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
-import { NgHttp } from './http-request';
 
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
-import * as eventsEngine from 'devextreme/events/core/events_engine';
 
-@NgModule({
-    providers: [ NgHttp ]
-})
+@NgModule({})
 export class DxIntegrationModule {
-    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone, _ngHttp: NgHttp) {
-        this.initEvents(ngZone);
-        this.initDomAdapter(document);
-    }
-
-    private initEvents(ngZone: NgZone) {
-        eventsEngine.set({
-            on: function(...args) {
-                ngZone.runOutsideAngular(() => {
-                    this.callBase.apply(this, args);
-                });
-            }
-        });
-    }
-
-    private initDomAdapter(document: any) {
+    constructor(@Inject(DOCUMENT) document: any) {
         domAdapter.inject({
             _document: document,
 
