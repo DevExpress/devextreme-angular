@@ -548,28 +548,4 @@ describe('DxList', () => {
         expect(DxButton['getInstance'](elements[0])).not.toBeUndefined();
         expect(DxButton['getInstance'](elements[1])).not.toBeUndefined();
     }));
-
-    it('widget events should subscribe on native events outside NgZone', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `<dx-list [items]="items"></dx-list>`
-            }
-        });
-
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.autoDetectChanges();
-
-        let instance = getWidget(fixture);
-        let onChangesSpy = spyOn(fixture.componentInstance, 'ngAfterViewChecked');
-
-        expect(onChangesSpy.calls.count()).toBe(0);
-        instance.element().dispatchEvent(new Event('mouseover'));
-
-        expect(onChangesSpy.calls.count()).toBe(0);
-        let item = instance.element().querySelector('.dx-item');
-        item.click();
-
-        expect(onChangesSpy.calls.count()).toBe(0);
-        fixture.autoDetectChanges(false);
-    });
 });
