@@ -1,15 +1,28 @@
 
-import { NgModule, Inject } from '@angular/core';
+import { NgModule, Inject, NgZone } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 
+const events = ['mousemove', 'mouseover', 'mouseout', 'scroll']
 @NgModule({})
 export class DxIntegrationModule {
-    constructor(@Inject(DOCUMENT) document: any) {
+    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone) {
         domAdapter.inject({
             _document: document,
+
+            listen: function(...args) {
+                if(events.indexOf(args[1]) === -1) {
+                    return ngZone.run(() => {
+                        return this.callBase.apply(this, args); 
+                    });
+                }
+                
+                return ngZone.runOutsideAngular(() => { 
+                    return this.callBase.apply(this, args); 
+                });
+            },
 
             isElementNode: function(element) {
                 return element && element.nodeType === 1;
@@ -24,6 +37,6 @@ export class DxIntegrationModule {
             }
         });
 
-        readyCallbacks.fire();
+        ngZone.run(() => readyCallbacks.fire());
     }
 }
