@@ -5,7 +5,7 @@ import { DOCUMENT } from '@angular/common';
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 
-const events = ['mousemove', 'mouseover', 'mouseout', 'scroll']
+const events = ['mousemove', 'mouseover', 'mouseout', 'scroll'];
 @NgModule({})
 export class DxIntegrationModule {
     constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone) {
@@ -13,14 +13,14 @@ export class DxIntegrationModule {
             _document: document,
 
             listen: function(...args) {
-                if(events.indexOf(args[1]) === -1) {
+                if (events.indexOf(args[1]) === -1) {
                     return ngZone.run(() => {
-                        return this.callBase.apply(this, args); 
+                        return this.callBase.apply(this, args);
                     });
                 }
-                
-                return ngZone.runOutsideAngular(() => { 
-                    return this.callBase.apply(this, args); 
+
+                return ngZone.runOutsideAngular(() => {
+                    return this.callBase.apply(this, args);
                 });
             },
 
