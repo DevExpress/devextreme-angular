@@ -1,14 +1,17 @@
 
 import { NgModule, Inject, NgZone } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { NgHttp } from './http-request';
 
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 
 const events = ['mousemove', 'mouseover', 'mouseout', 'scroll'];
-@NgModule({})
+@NgModule({
+    providers: [ NgHttp ]
+})
 export class DxIntegrationModule {
-    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone) {
+    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone, _ngHttp: NgHttp) {
         domAdapter.inject({
             _document: document,
 
