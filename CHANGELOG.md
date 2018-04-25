@@ -1,3 +1,11 @@
+## 18.1.2-beta.1 (2018-04-25)
+
+### Features
+- DevExtreme dependency has been updated to the 18.1.2-pre-beta
+
+### Bug Fixes
+- Event with subscriptions should be fired inside NgZoneEvent [#762](https://github.com/DevExpress/devextreme-angular/pull/762)
+
 ## 18.1.1-beta.6 (2018-04-17)
 
 ### Bug Fixes
