@@ -41,10 +41,19 @@ export class DxTemplateDirective {
     }
 
     render(renderData: RenderData) {
-        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, {
-            '$implicit': renderData.model,
-            index: renderData.index
-        });
+        let renderTemplate = () => {
+            return this.viewContainerRef.createEmbeddedView(this.templateRef, {
+                '$implicit': renderData.model,
+                index: renderData.index
+            });
+        };
+
+        let childView;
+        if (this.ngZone.isStable) {
+            childView = this.ngZone.run(() => renderTemplate());
+        } else {
+            childView = renderTemplate();
+        }
         let container = getElement(renderData.container);
         if (renderData.container) {
             childView.rootNodes.forEach((element) => {

@@ -4,11 +4,10 @@ import {
     Component,
     ElementRef,
     EventEmitter,
-    ViewChildren,
+    ViewChild,
     NgZone,
     Input,
     Output,
-    QueryList,
     AfterViewInit,
     PLATFORM_ID,
     Inject
@@ -18,8 +17,7 @@ import { TransferState } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
 
 import {
@@ -110,7 +108,13 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
     providers: [DxTemplateHost]
 })
 export class TestContainerComponent {
-    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
+    @ViewChild(DxTestWidgetComponent) widget: DxTestWidgetComponent;
+
+    @Output() onInnerElementClicked = new EventEmitter<any>();
+
+    testFunction() {
+        this.onInnerElementClicked.next();
+    }
 }
 
 
@@ -124,13 +128,8 @@ describe('DevExtreme Angular widget\'s template', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
-        return DxTestWidget.getInstance(widgetElement);
-    }
-
     // spec
-    it('should initialize named templates #17', async(() => {
+    it('should initialize named templates #17', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -142,16 +141,16 @@ describe('DevExtreme Angular widget\'s template', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let instance = getWidget(fixture),
+        let instance = fixture.componentInstance.widget.instance,
             templatesHash = instance.option('integrationOptions.templates');
 
         expect(templatesHash['templateName']).not.toBeUndefined();
         expect(typeof templatesHash['templateName'].render).toBe('function');
 
-    }));
+    });
 
 
-    it('should add template wrapper class as template has root container', async(() => {
+    it('should add template wrapper class as template has root container', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -164,7 +163,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         fixture.detectChanges();
 
         let testComponent = fixture.componentInstance,
-            innerComponent = testComponent.innerWidgets.first,
+            innerComponent = testComponent.widget,
             templatesHash = innerComponent.instance.option('integrationOptions.templates'),
             template = innerComponent.testTemplate,
             container = document.createElement('div');
@@ -176,10 +175,9 @@ describe('DevExtreme Angular widget\'s template', () => {
 
         expect(container.children[0].classList.contains('dx-template-wrapper')).toBe(true);
 
-    }));
+    });
 
-
-    it('should have item index', async(() => {
+    it('should have item index', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -193,7 +191,35 @@ describe('DevExtreme Angular widget\'s template', () => {
 
         let element = fixture.nativeElement.querySelector('div');
         expect(element.textContent).toBe('index: 5');
-    }));
+    });
+
+    it('should render template inside zone', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-test-widget>
+                        <div *dxTemplate="let d of 'test'">
+                            <button id="inner" (click)="testFunction()"></button>
+                        </div>
+                    </dx-test-widget>
+           `}
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent),
+            zone = fixture.ngZone,
+            widget = fixture.componentInstance.widget;
+
+        fixture.detectChanges();
+        zone.runOutsideAngular(() => {
+            widget.instance.option('template', 'test');
+        });
+
+        expect(zone.isStable).toBeTruthy();
+        fixture.componentInstance.onInnerElementClicked.subscribe(() => {
+            expect(zone.isStable).toBeFalsy();
+        });
+        fixture.nativeElement.querySelector('#inner').click();
+    });
 
 });
 
