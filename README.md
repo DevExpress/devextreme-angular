@@ -126,7 +126,7 @@ Depending on your requirements you can choose one of the following ways to start
 
 Angular Universal provides [server-side rendering](https://angular.io/guide/universal#angular-universal-server-side-rendering) that significantly reduces the application's loading time. You can use DevExtreme widgets in Angular Universal applications in the same manner as in other Angular apps.
 
-**Note: Due to technical restrictions, DevExtreme-angular does not support dynamic theme loading in the Server-side rendering mode. You can use only a single static theme by linking the corresponding css file.**
+**Note: Due to technical restrictions, DevExtreme-angular does not support [dynamic theme loading](https://js.devexpress.com/Documentation/Guide/Themes/Predefined_Themes/#Themes_in_DevExtreme_Apps) in the Server-side rendering mode. You can use only a single static theme by linking the corresponding css file.**
 
 You can [create a new Angular Universal app](https://github.com/angular/angular-cli/wiki/stories-universal-rendering#angular-universal-integration) and [add DevExtreme widgets](#add-to-existing-app) to it, or add the Universal module to an existing Angular application with DevExtreme. Use the following command to add the Universal module to an existing app:
 
