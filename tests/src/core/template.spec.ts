@@ -214,11 +214,13 @@ describe('DevExtreme Angular widget\'s template', () => {
             widget.instance.option('template', 'test');
         });
 
-        expect(zone.isStable).toBeTruthy();
+        let isZoneStable = zone.isStable;
+        expect(isZoneStable).toBeTruthy();
         fixture.componentInstance.onInnerElementClicked.subscribe(() => {
-            expect(zone.isStable).toBeFalsy();
+            isZoneStable = zone.isStable;
         });
         fixture.nativeElement.querySelector('#inner').click();
+        expect(isZoneStable).toBeFalsy();
     });
 
 });
