@@ -3,9 +3,8 @@
 import {
     Component,
     ElementRef,
-    ViewChildren,
+    ViewChild,
     NgZone,
-    QueryList,
     PLATFORM_ID,
     Inject
 } from '@angular/core';
@@ -14,8 +13,7 @@ import { TransferState } from '@angular/platform-browser';
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
 
 import {
@@ -57,7 +55,7 @@ export class DxTestExtensionComponent extends DxComponentExtension {
     template: ''
 })
 export class TestContainerComponent {
-    @ViewChildren(DxTestExtensionComponent) innerWidgets: QueryList<DxTestExtensionComponent>;
+    @ViewChild(DxTestExtensionComponent) innerWidget: DxTestExtensionComponent;
 }
 
 
@@ -74,12 +72,11 @@ describe('DevExtreme Angular component extension', () => {
     function getWidget(element) {
         return DxTestExtension.getInstance(element);
     }
-
     // spec
-    it('should not create widget instance by itself', async(() => {
+    it('should not create widget instance by itself', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: '<dx-test-extension> </dx-test-extension>'
+                template: '<dx-test-extension></dx-test-extension>'
             }
         });
         let fixture = TestBed.createComponent(TestContainerComponent);
@@ -87,10 +84,9 @@ describe('DevExtreme Angular component extension', () => {
 
         let instance = getWidget(fixture.nativeElement);
         expect(instance).toBe(undefined);
+    });
 
-    }));
-
-    it('should instantiate widget with the createInstance() method', async(() => {
+    it('should instantiate widget with the createInstance() method', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-extension></dx-test-extension>'
@@ -100,13 +96,13 @@ describe('DevExtreme Angular component extension', () => {
         fixture.detectChanges();
 
         let outerComponent = fixture.componentInstance,
-            innerComponent = outerComponent.innerWidgets.first,
+            innerComponent = outerComponent.innerWidget,
             targetElement = document.createElement('div');
 
         innerComponent.createInstance(targetElement);
         let instance = getWidget(targetElement);
         expect(instance).not.toBe(undefined);
+        expect(innerComponent.instance).not.toBe(undefined);
+    });
 
-    }));
-
-  });
+});
