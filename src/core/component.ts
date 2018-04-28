@@ -55,6 +55,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             this.instance.option('integrationOptions.templates', initialTemplates);
         }
     }
+
     private _initEvents() {
         this.instance.on('optionChanged', (e) => {
             this.changedOptions[e.name] = e.value;
@@ -62,6 +63,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             this.optionChangedHandlers.emit(e);
         });
     }
+
     private _initOptions() {
         this._initialOptions.integrationOptions.watchMethod = this.watcherHelper.getWatchMethod();
     }
@@ -95,6 +97,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             };
         };
     }
+
     _shouldOptionChange(name: string, value: any) {
         if (this.changedOptions.hasOwnProperty(name)) {
             const prevValue = this.changedOptions[name];
@@ -104,26 +107,31 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         }
         return true;
     }
+
     clearChangedOptions() {
         this.changedOptions = {};
     }
+
     protected _getOption(name: string) {
         return this.instance ?
             this.instance.option(name) :
             this._initialOptions[name];
     }
+
     lockWidgetUpdate() {
         if (!this.widgetUpdateLocked && this.instance) {
             this.instance.beginUpdate();
             this.widgetUpdateLocked = true;
         }
     }
+
     unlockWidgetUpdate() {
         if (this.widgetUpdateLocked) {
             this.widgetUpdateLocked = false;
             this.instance.endUpdate();
         }
     }
+
     protected _setOption(name: string, value: any) {
         this.lockWidgetUpdate();
 
@@ -137,7 +145,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             this._initialOptions[name] = value;
         }
     }
+
     protected abstract _createInstance(element, options)
+
     protected _createWidget(element: any) {
         this._initialOptions.integrationOptions = {};
         this._initPlatform();
@@ -154,6 +164,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this._initEvents();
         this._initialOptions = {};
     }
+
     protected _destroyWidget() {
         if (this.instance) {
             let element = this.instance.element();
@@ -162,6 +173,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             getDOM().remove(element);
         }
     }
+
     constructor(protected element: ElementRef,
         private ngZone: NgZone,
         templateHost: DxTemplateHost,
@@ -182,18 +194,22 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             }
         }
     }
+
     ngOnInit() {
         if (this.createInstanceOnInit) {
             this._createWidget(this.element.nativeElement);
         }
     }
+
     ngDoCheck() {
         this.applyOptions();
     }
+
     ngAfterContentChecked() {
         this.applyOptions();
         this.unlockWidgetUpdate();
     }
+
     ngAfterViewInit() {
         this._initTemplates();
         if (this.createInstanceOnInit) {
@@ -209,9 +225,11 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
             this._optionsToUpdate = {};
         }
     }
+
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
     }
+
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         return this._collectionContainerImpl.setChildren(propertyName, items);
     }

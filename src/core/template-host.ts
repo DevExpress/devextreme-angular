@@ -6,9 +6,11 @@ export interface IDxTemplateHost {
 
 export class DxTemplateHost {
     host: IDxTemplateHost;
+
     setHost(host: IDxTemplateHost) {
         this.host = host;
     }
+
     setTemplate(template: DxTemplateDirective) {
         this.host.setTemplate(template);
     }
