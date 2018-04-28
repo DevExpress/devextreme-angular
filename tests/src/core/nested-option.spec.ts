@@ -4,7 +4,7 @@ import {
     Component,
     ElementRef,
     EventEmitter,
-    ViewChildren,
+    ViewChild,
     NgZone,
     Input,
     Renderer2,
@@ -25,7 +25,7 @@ import { DOCUMENT } from '@angular/common';
 
 import {
     TestBed,
-    async
+    ComponentFixture
 } from '@angular/core/testing';
 
 import { WatcherHelper } from '../../../dist/core/watcher-helper';
@@ -234,7 +234,7 @@ export class DxTestWidgetComponent extends DxComponent {
 })
 export class TestContainerComponent {
     testOption: string;
-    @ViewChildren(DxTestWidgetComponent) innerWidgets: QueryList<DxTestWidgetComponent>;
+    @ViewChild(DxTestWidgetComponent) innerWidget: DxTestWidgetComponent;
 
     testMethod() {}
 }
@@ -256,13 +256,12 @@ describe('DevExtreme Angular widget', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-test-widget') || fixture.nativeElement;
-        return DxTestWidget.getInstance(widgetElement);
+    function getWidget(fixture: ComponentFixture<TestContainerComponent>) {
+        return fixture.componentInstance.innerWidget.instance;
     }
 
     // spec
-    it('option should be initially setted', async(() => {
+    it('option should be initially setted', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget><dxo-test-option testNestedOption="test"></dxo-test-option></dx-test-widget>'
@@ -274,9 +273,9 @@ describe('DevExtreme Angular widget', () => {
         let instance = getWidget(fixture);
 
         expect(instance.option('testOption')).toEqual({ testNestedOption: 'test' });
-    }));
+    });
 
-    it('option should be setted dynamically', async(() => {
+    it('option should be setted dynamically', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: '<dx-test-widget><dxo-test-option [testNestedOption]="testOption"></dxo-test-option></dx-test-widget>'
@@ -292,9 +291,9 @@ describe('DevExtreme Angular widget', () => {
         fixture.detectChanges();
 
         expect(instance.option('testOption')).toEqual({ testNestedOption: 'text' });
-    }));
+    });
 
-    it('nested option should update their nested options', async(() => {
+    it('nested option should update their nested options', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -319,9 +318,9 @@ describe('DevExtreme Angular widget', () => {
         fixture.detectChanges();
 
         expect(instance.option('testCollectionOption')[0].testOption).toEqual({ testNestedOption: 'text' });
-    }));
+    });
 
-    it('nested option should emit change event', async(() => {
+    it('nested option should emit change event', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -344,9 +343,9 @@ describe('DevExtreme Angular widget', () => {
         instance.option('testOption.testNestedOption', 'new value');
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(1);
-    }));
+    });
 
-    it('collection nested option should emit change event', async(() => {
+    it('collection nested option should emit change event', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -369,9 +368,9 @@ describe('DevExtreme Angular widget', () => {
         instance.option('testCollectionOption[0].testOption', 'new value');
         fixture.detectChanges();
         expect(testSpy).toHaveBeenCalledTimes(1);
-    }));
+    });
 
-    it('method template.render of nested option should trigger shownEvent after rendering', async(() => {
+    it('method template.render of nested option should trigger shownEvent after rendering', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -386,10 +385,10 @@ describe('DevExtreme Angular widget', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let innerWidget = fixture.componentInstance.innerWidgets.first;
+        let innerWidget = fixture.componentInstance.innerWidget;
         let nestedOption = innerWidget.testCollectionOptionWithTemplateChildrens.first;
 
         expect(nestedOption.shownEventFired).toBe(true);
-    }));
+    });
 
   });
