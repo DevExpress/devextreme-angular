@@ -2,16 +2,12 @@
 
 import {
     Component,
-    ViewChildren,
-    QueryList
+    ViewChild
 } from '@angular/core';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
-
-import DxResponsiveBox from 'devextreme/ui/responsive_box';
 
 import {
     DxResponsiveBoxModule,
@@ -23,7 +19,7 @@ import {
     template: ''
 })
 class TestContainerComponent {
-    @ViewChildren(DxResponsiveBoxComponent) innerWidgets: QueryList<DxResponsiveBoxComponent>;
+    @ViewChild(DxResponsiveBoxComponent) innerWidget: DxResponsiveBoxComponent;
     screenByWidth() {
         return 'sm';
     }
@@ -39,13 +35,8 @@ describe('DxResponsiveBox', () => {
             });
     });
 
-    function getWidget(fixture) {
-        let widgetElement = fixture.nativeElement.querySelector('.dx-responsivebox') || fixture.nativeElement;
-        return DxResponsiveBox['getInstance'](widgetElement) as any;
-    }
-
     // spec
-    it('should be able to accept item locations as dxi components', async(() => {
+    it('should be able to accept item locations as dxi components', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -71,7 +62,7 @@ describe('DxResponsiveBox', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
-        let instance = getWidget(fixture);
+        let instance = fixture.componentInstance.innerWidget.instance;
         fixture.detectChanges();
 
         expect(instance.option('items')[0].location.length).toBe(1);
@@ -79,6 +70,6 @@ describe('DxResponsiveBox', () => {
         expect(instance.option('items')[0].location[0].col).toBe(0);
         expect(instance.option('items')[0].location[0].colspan).toBe(1);
         expect(instance.option('items')[0].location[0].screen).toBe('lg');
-    }));
+    });
 
 });
