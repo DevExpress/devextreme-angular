@@ -275,7 +275,7 @@ describe('DevExtreme Angular widget', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
-        expect(testSpy).toHaveBeenCalledTimes(1)
+        expect(testSpy).toHaveBeenCalledTimes(1);
     });
 
     it('should fire onContentReady event', () => {
