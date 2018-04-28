@@ -10,7 +10,7 @@ export class DxTemplateHost {
     setHost(host: IDxTemplateHost) {
         this.host = host;
     }
-    
+
     setTemplate(template: DxTemplateDirective) {
         this.host.setTemplate(template);
     }

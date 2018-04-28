@@ -229,7 +229,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     setTemplate(template: DxTemplateDirective) {
         this.templates.push(template);
     }
-    
+
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         return this._collectionContainerImpl.setChildren(propertyName, items);
     }
