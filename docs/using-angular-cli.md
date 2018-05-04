@@ -10,7 +10,38 @@ Follow the [installation](https://github.com/DevExpress/devextreme-angular#insta
 
 ## <a name="configuration"></a>Configure Stylesheets ##
 
-Go to **angular-cli.json** and add references to the necessary DevExtreme css files:
+Go to **angular.json** and add references to the necessary DevExtreme css files:
+
+```js
+{
+  ...
+  "projects": {
+    "ProjectName": {
+      ...
+      "architect": {
+        "build": {
+          ...
+          "options": {
+            ...
+            "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css",
+              "src/styles.css"
+            ],
+            ...
+          },
+          ...
+        },
+        ...
+      }
+    },
+    ...
+  },
+  ...
+}
+```
+
+**For Angular CLI prior to 6** modify **angular-cli.json**:
 
 ```js
 { 
