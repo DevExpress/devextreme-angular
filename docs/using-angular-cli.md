@@ -13,6 +13,37 @@ Follow the [installation](https://github.com/DevExpress/devextreme-angular#insta
 Go to **angular-cli.json** and add references to the necessary DevExtreme css files:
 
 ```js
+{
+  ...
+  "projects": {
+    "ProjectName": {
+      ...
+      "architect": {
+        "build": {
+          ...
+          "options": {
+            ...
+            "styles": [
+              "node_modules/devextreme/dist/css/dx.common.css",
+              "node_modules/devextreme/dist/css/dx.light.css",
+              "src/styles.css"
+            ],
+            ...
+          },
+          ...
+        },
+        ...
+      }
+    },
+    ...
+  },
+  ...
+}
+```
+
+**For Angular 2 - 5:**
+
+```js
 { 
   ... 
   "apps": [ 
