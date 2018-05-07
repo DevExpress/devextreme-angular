@@ -70,7 +70,7 @@ The further configuration steps depend on which build tool, bundler or module lo
 
 * [Configuring SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md#configuration)
 * [Configuring Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md#configuration)
-       - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
+    - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
 * [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
 * [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
 * [Configuring Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md#configuration)
@@ -119,7 +119,7 @@ Depending on your requirements you can choose one of the following ways to start
 
 * [Start with SystemJS](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-systemjs.md)
 * [Start with Angular CLI](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-angular-cli.md)
-       - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
+    - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
 * [Start with Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md)
 * [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
 * [Start with Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md)
