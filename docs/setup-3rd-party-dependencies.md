@@ -1,6 +1,6 @@
-# Third-party dependencies registration in Angular CLI 6+
+# Third-Party Dependencies Registration in Angular CLI 6+
 
-## JSZip library registration ##
+## JSZip Library Registration ##
 
 Our client-side Excel export requires the JSZip library that should be registered in the `tsconfig.json` file in the `compilerOptions.paths` section:
 
@@ -18,7 +18,7 @@ Our client-side Excel export requires the JSZip library that should be registere
 }
 ```
 
-## Globalize registration ##
+## Globalize Registration ##
 
 If you localize your application using Globalize, register the Globalize and CLDR scripts in the `tsconfig.json` file in the `compilerOptions.paths` section:
 
