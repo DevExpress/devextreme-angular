@@ -2,7 +2,7 @@
 
 ## JSZip library registration ##
 
-Our client-side Excel export depends on the JSZip library that should be registered in the `tsconfig.json` file in the `compilerOptions.paths` section:
+Our client-side Excel export requires the JSZip library that should be registered in the `tsconfig.json` file in the `compilerOptions.paths` section:
 
 ```js
 {
@@ -20,7 +20,7 @@ Our client-side Excel export depends on the JSZip library that should be registe
 
 ## Globalize registration ##
 
-If you are using Globalize for your application localization, Globalize and CLDR scripts should also be registered in the `tsconfig.json` file in the `compilerOptions.paths` section:
+If you localize your application using Globalize, register the Globalize and CLDR scripts in the `tsconfig.json` file in the `compilerOptions.paths` section:
 
 ```js
 {
@@ -48,7 +48,7 @@ If you are using Globalize for your application localization, Globalize and CLDR
 }
 ```
 
-The correct import of our Globalize integration, our localization messages, GLDR data and Globalize itself is illustrated in the [demo](https://js.devexpress.com/Demos/WidgetsGallery/Demo/Localization/UsingGlobalize/Angular). For Angular CLI, you also need to provide ambient declarations for them. To do this, add the `typings.d.ts` file with the following content to the `src` folder.
+The correct import of our Globalize integration, our localization messages, CLDR data and Globalize itself is illustrated in the [demo](https://js.devexpress.com/Demos/WidgetsGallery/Demo/Localization/UsingGlobalize/Angular). For Angular CLI, you also need to provide ambient declarations for them. To do this, add the `typings.d.ts` file with the following content to the `src` folder.
 
 ```js
 declare module 'globalize' {
