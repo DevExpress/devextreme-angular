@@ -1,3 +1,11 @@
+## 18.1.3 (2018-05-16)
+
+### Features
+- DevExtreme dependency has been updated to the 18.1.3
+
+### Bug Fixes
+- Render templates within the Angular zone [#767](https://github.com/DevExpress/devextreme-angular/pull/767)
+
 ## 18.1.2-beta.1 (2018-04-25)
 
 ### Features
