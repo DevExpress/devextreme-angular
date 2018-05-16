@@ -1318,7 +1318,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -2042,7 +2042,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -4932,7 +4932,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -4940,7 +4940,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -5433,7 +5433,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments of the chart's series points."
+              "Description": "Formats the point argument before it is displayed in the tooltip. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -6889,7 +6889,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -8836,6 +8836,12 @@
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
             },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether Excel should hide warnings if there are errors in the exported document."
+            },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
@@ -9212,7 +9218,7 @@
                 "boolean",
                 "string"
               ],
-              "Description": "Specifies whether to show the load panel or not."
+              "Description": "Enables displaying the load panel automatically."
             },
             "height": {
               "PrimitiveTypes": [
@@ -9713,7 +9719,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
+              "Description": "Specifies when to show scrollbars. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -12003,7 +12009,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "An object providing data for the form."
+          "Description": "Provides the Form's data. Gets updated every time form fields change."
         },
         "height": {
           "PrimitiveTypes": [
@@ -12856,7 +12862,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -13736,7 +13742,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -15628,7 +15634,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the input field. Must contain the TextBox widget."
+          "Description": "Specifies a custom template for the input field."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -16138,7 +16144,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the widget automatically adjusts center and zoom option values when adding a new marker or route, or when creating a widget if it initially contains markers or routes."
+          "Description": "Specifies whether the widget automatically adjusts center and zoom option values when adding a new marker or route, or if a new widget contains markers or routes by default."
         },
         "center": {
           "PrimitiveTypes": [
@@ -16149,7 +16155,7 @@
           ],
           "IsCollection": true,
           "SingularName": "center",
-          "Description": "An object, a string, or an array specifying the location displayed at the center of the widget.",
+          "Description": "An object, a string, or an array specifying which part of the map is displayed at the widget's center using coordinates. The widget can change this value if autoAdjust is enabled.",
           "Options": {
             "lat": {
               "PrimitiveTypes": [
@@ -16483,7 +16489,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The zoom level of the map."
+          "Description": "The map's zoom level. The widget can change this value if autoAdjust is enabled."
         }
       }
     },
@@ -17703,7 +17709,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies by which value the widget value changes when a spin button is clicked."
+          "Description": "Specifies how much the widget's value changes when using the spin buttons, Up/Down arrow keys, or mouse wheel."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -18446,7 +18452,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -18454,7 +18460,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -18778,7 +18784,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments of the chart's series points."
+              "Description": "Formats the point argument before it is displayed in the tooltip. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -19274,6 +19280,12 @@
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
             },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether Excel should hide warnings if there are errors in the exported document."
+            },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
@@ -19289,7 +19301,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether searching is enabled in the field chooser."
+              "Description": "Specifies whether the field chooser allows searching in the \"All Fields\" section."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -19860,7 +19872,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether searching is enabled in the field chooser."
+          "Description": "Specifies whether the field chooser allows searching in the \"All Fields\" section."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -21437,7 +21449,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the done event."
+          "Description": "A function that is executed when all series are ready."
         },
         "onDrawn": {
           "PrimitiveTypes": [
@@ -21445,7 +21457,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -21782,7 +21794,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments of the chart's series points."
+              "Description": "Formats the point argument before it is displayed in the tooltip. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -24190,7 +24202,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -28156,7 +28168,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -32186,7 +32198,7 @@
                 "boolean",
                 "string"
               ],
-              "Description": "Specifies whether to show the load panel or not."
+              "Description": "Enables displaying the load panel automatically."
             },
             "height": {
               "PrimitiveTypes": [
@@ -32565,7 +32577,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies when to show the scrollbar. Applies only if useNative is false."
+              "Description": "Specifies when to show scrollbars. Applies only if useNative is false."
             },
             "useNative": {
               "PrimitiveTypes": [
@@ -33076,7 +33088,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onDrill": {
           "PrimitiveTypes": [
@@ -35426,7 +35438,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the drawn event. Executed when the widget has finished drawing itself."
+          "Description": "A function that is executed when the widget's rendering has finished."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -36186,7 +36198,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Formats the point argument before it will be displayed in the point label."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -37121,7 +37133,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Formats the point argument before it will be displayed in the point label."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -38237,6 +38249,7 @@
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSourceOptions",
+                "DevExpress.data.Store",
                 "Function"
               ],
               "ItemPrimitiveTypes": [
@@ -39328,6 +39341,7 @@
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSourceOptions",
+                "DevExpress.data.Store",
                 "Function"
               ],
               "ItemPrimitiveTypes": [
@@ -39627,7 +39641,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Parses string values into numeric or date-time values. Always used with formatter."
+          "Description": "Parses string values into numeric or date-time values. Can be used with formatter or one of the predefined formats."
         },
         "precision": {
           "PrimitiveTypes": [
@@ -39990,7 +40004,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments displayed by point labels."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -40418,7 +40432,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments displayed by point labels."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -40892,7 +40906,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments displayed by point labels."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
@@ -41584,7 +41598,7 @@
               "ComplexTypes": [
                 "Format"
               ],
-              "Description": "Specifies a format for arguments displayed by point labels."
+              "Description": "Formats the point argument before it is displayed in the point label. To format the point value, use the format option."
             },
             "argumentPrecision": {
               "PrimitiveTypes": [
