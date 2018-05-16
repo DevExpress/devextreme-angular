@@ -2,79 +2,31 @@
 
 ### Features
 - DevExtreme dependency has been updated to the 18.1.3
-
-### Bug Fixes
-- Render templates within the Angular zone [#767](https://github.com/DevExpress/devextreme-angular/pull/767)
-
-## 18.1.2-beta.1 (2018-04-25)
-
-### Features
-- DevExtreme dependency has been updated to the 18.1.2-pre-beta
-
-### Bug Fixes
-- Event with subscriptions should be fired inside NgZoneEvent [#762](https://github.com/DevExpress/devextreme-angular/pull/762)
-
-## 18.1.1-beta.6 (2018-04-17)
-
-### Bug Fixes
-- Fix applications based on SystemJS
-
-## 18.1.1-beta.5 (2018-04-17)
-
-### Features
 - Create the DxServerTransferStateModule module to include the cache of the request result [#752](https://github.com/DevExpress/devextreme-angular/pull/752)
-
-### Bug Fixes
-- Event with subscriptions should be fired inside NgZone [#748](https://github.com/DevExpress/devextreme-angular/pull/748)
-
-## 18.1.1-beta.4 (2018-04-3)
-
-### Features
 - Create event emitters for nested components [#728](https://github.com/DevExpress/devextreme-angular/pull/728)
 - Support server side rendering [#732](https://github.com/DevExpress/devextreme-angular/pull/732)
 - Implement request result caching on the server, which prevents widget blinking during data loading [#721](https://github.com/DevExpress/devextreme-angular/pull/721)
+- Implement ajax on server [#705](https://github.com/DevExpress/devextreme-angular/pull/705)
+- Render dx-button widget on server [#694](https://github.com/DevExpress/devextreme-angular/pull/694)
+
+### Bug Fixes
+- Render templates within the Angular zone [#767](https://github.com/DevExpress/devextreme-angular/pull/767)
+- Event with subscriptions should be fired inside NgZoneEvent [#762](https://github.com/DevExpress/devextreme-angular/pull/762)
+- Event with subscriptions should be fired inside NgZone [#748](https://github.com/DevExpress/devextreme-angular/pull/748)
+- Fix applications based on SystemJS
+- Fix firing onValueChanged event when changing a value of dxTagBox [#710](https://github.com/DevExpress/devextreme-angular/pull/710)
+- Prevent valueChanges event when patchValue method is used with emitEvent=false [#712](https://github.com/DevExpress/devextreme-angular/pull/712)
+- DevExtreme Angular components force Angular change detection [#516](https://github.com/DevExpress/devextreme-angular/issues/516)
+- Rework the strategy of applying options[#626](https://github.com/DevExpress/devextreme-angular/pull/626)
 
 ### Breaking changes
 - Angular below version 5 is not supported anymore.
-
-## 18.1.1-beta.3 (2018-03-21)
-
-### Bug Fixes
-- Fix firing onValueChanged event when changing a value of dxTagBox [#710](https://github.com/DevExpress/devextreme-angular/pull/710)
-- Prevent valueChanges event when patchValue method is used with emitEvent=false [#712](https://github.com/DevExpress/devextreme-angular/pull/712)
-
-## 18.1.1-beta.2 (2018-03-06)
-
-### Features
-- Implement ajax on server [#705](https://github.com/DevExpress/devextreme-angular/pull/705)
-
-### Breaking changes
-
 - Since the @angular/http module is deprecated (see https://github.com/angular/angular/pull/18906), DevExtreme-angular now requires adding the following modules to config.ts if you use SystemJS:
 ```JavaScript
 '@angular/common/http': 'npm:@angular/common/bundles/common-http.umd.js',
 'tslib': 'npm:tslib/tslib.js',
 ```
-- Angular below version 4.3 is not supported anymore.
-
-## 18.1.1-beta.1 (2018-02-21)
-
-### Features
-- Render dx-button widget on server [#694](https://github.com/DevExpress/devextreme-angular/pull/694)
-
-### Bug Fixes
-- DevExtreme Angular components force Angular change detection [#516](https://github.com/DevExpress/devextreme-angular/issues/516)
-
-### Breaking changes
 - TypeScript declarations of nested components have become strict, which can cause a build failure. Use correct types to prevent this.
-- Angular version 2.x is no longer supported. Now our integration library is based on the Angular Renderer2 class, which is available starting with Angular version 4 and allows manipulating DOM elements on the server side (server-side rendering).
-
-
-## 17.2.5-beta.1 (2017-12-26)
-
-### Bug Fixes
-
-[Open the list of closed bugs](https://github.com/DevExpress/devextreme-angular/milestone/31?closed=1)
 
 ## 17.2.4 (2017-12-13)
 
