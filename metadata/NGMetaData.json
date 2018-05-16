@@ -1135,6 +1135,12 @@
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
             },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "boolean"
@@ -4688,6 +4694,12 @@
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
             },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "boolean"
@@ -6859,6 +6871,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -12395,6 +12413,12 @@
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
             },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "boolean"
@@ -13748,6 +13772,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -15403,9 +15433,12 @@
         },
         "height": {
           "PrimitiveTypes": [
-            "number"
+            "number",
+            "Function",
+            "string"
           ],
-          "Description": "Specified the widget's height."
+          "IsFunc": true,
+          "Description": "Specifies the widget's height in pixels."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -15582,9 +15615,12 @@
         },
         "width": {
           "PrimitiveTypes": [
-            "number"
+            "number",
+            "Function",
+            "string"
           ],
-          "Description": "Specifies the widget's width."
+          "IsFunc": true,
+          "Description": "Specifies the widget's width in pixels."
         }
       }
     },
@@ -15723,7 +15759,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the input field. Must contain the TextBox widget."
+          "Description": "Specifies a custom template for the input field."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -16221,7 +16257,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the widget automatically adjusts center and zoom option values when adding a new marker or route, or when creating a widget if it initially contains markers or routes."
+          "Description": "Specifies whether the widget automatically adjusts center and zoom option values when adding a new marker or route, or if a new widget contains markers or routes by default."
         },
         "center": {
           "PrimitiveTypes": [
@@ -16232,7 +16268,7 @@
           ],
           "IsCollection": true,
           "SingularName": "center",
-          "Description": "An object, a string, or an array specifying the location displayed at the center of the widget.",
+          "Description": "An object, a string, or an array specifying which part of the map is displayed at the widget's center using coordinates. The widget can change this value if autoAdjust is enabled.",
           "Options": {
             "lat": {
               "PrimitiveTypes": [
@@ -16566,7 +16602,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "The zoom level of the map."
+          "Description": "The map's zoom level. The widget can change this value if autoAdjust is enabled."
         }
       }
     },
@@ -17775,7 +17811,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies by which value the widget value changes when a spin button is clicked."
+          "Description": "Specifies how much the widget's value changes when using the spin buttons, Up/Down arrow keys, or mouse wheel."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -18228,6 +18264,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -19378,7 +19420,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether searching is enabled in the field chooser."
+              "Description": "Specifies whether the field chooser allows searching in the \"All Fields\" section."
             },
             "applyChangesMode": {
               "PrimitiveTypes": [
@@ -19946,7 +19988,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether searching is enabled in the field chooser."
+          "Description": "Specifies whether the field chooser allows searching in the \"All Fields\" section."
         },
         "applyChangesMode": {
           "PrimitiveTypes": [
@@ -21253,6 +21295,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -24226,6 +24274,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -33242,6 +33296,12 @@
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
             },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
+            },
             "printingEnabled": {
               "PrimitiveTypes": [
                 "boolean"
@@ -34991,6 +35051,12 @@
               "IsCollection": true,
               "SingularName": "format",
               "Description": "Specifies a set of formats available for exporting into."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": ""
             },
             "printingEnabled": {
               "PrimitiveTypes": [
