@@ -1,3 +1,8 @@
+## 17.2.8 (2018-05-16)
+
+### Features
+- Update `devextreme` version to 17.2.8
+
 ## 17.2.7 (2018-03-21)
 
 ### Bug Fixes
