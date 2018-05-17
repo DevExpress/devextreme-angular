@@ -7,7 +7,6 @@ import {
 
 import {
     TestBed,
-    async,
     ComponentFixture
 } from '@angular/core/testing';
 
@@ -44,7 +43,7 @@ describe('DxForm', () => {
     }
 
     // spec
-    it('should be able to accept items via nested dxi components (T459714)', async(() => {
+    it('should be able to accept items via nested dxi components (T459714)', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -59,9 +58,9 @@ describe('DxForm', () => {
 
         let instance = getWidget(fixture);
         expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
-    }));
+    });
 
-    it('should be able to accept items recursively', async(() => {
+    it('should be able to accept items recursively', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -81,9 +80,9 @@ describe('DxForm', () => {
 
         let instance = getWidget(fixture);
         expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(2);
-    }));
+    });
 
-    it('should be able to accept items via nested dxi components with comment from ngIf directive (#440)', async(() => {
+    it('should be able to accept items via nested dxi components with comment from ngIf directive (#440)', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -104,7 +103,7 @@ describe('DxForm', () => {
 
         let instance = getWidget(fixture);
         expect(instance.element().querySelectorAll('.dx-textbox').length).toBe(1);
-    }));
+    });
 
     it('should update model after editor value was changed', () => {
         TestBed.overrideComponent(TestContainerComponent, {
@@ -131,7 +130,7 @@ describe('DxForm', () => {
         fixture.autoDetectChanges(false);
     });
 
-    it('should work with dxTagBox', async(() => {
+    it('should work with dxTagBox', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -159,9 +158,9 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         expect(formInstance.option('formData.name')).toEqual([2]);
-    }));
+    });
 
-    it('should change the value of dxDateBox', async(() => {
+    it('should change the value of dxDateBox', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
@@ -180,5 +179,5 @@ describe('DxForm', () => {
         let dateBoxInstance = formInstance.getEditor('date');
 
         expect(dateBoxInstance.option('value')).toEqual(new Date(2017, 0, 1));
-    }));
+    });
 });
