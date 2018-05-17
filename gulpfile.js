@@ -58,7 +58,7 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 
 gulp.task('clean.generatedComponents', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-
+    del.sync([outputFolderPath + "/*.*"]);
     return del([outputFolderPath]);
 });
 
@@ -116,6 +116,7 @@ gulp.task('build.license-headers', function() {
 });
 
 gulp.task('clean.dist', function () {
+    del.sync([buildConfig.components.outputPath + "/*.*"]);
     return del([buildConfig.components.outputPath]);
 });
 
