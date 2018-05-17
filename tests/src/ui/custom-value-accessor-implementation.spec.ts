@@ -13,8 +13,7 @@ import {
 } from '@angular/forms';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
 
 import DxTextBox from 'devextreme/ui/text_box';
@@ -62,7 +61,7 @@ describe('DxTextBox value accessor', () => {
     }
 
     // spec
-    it('should process disable/enable methods', async(() => {
+    it('should process disable/enable methods', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
@@ -77,9 +76,9 @@ describe('DxTextBox value accessor', () => {
         fixture.detectChanges();
 
         expect(instance.option('disabled')).toBe(false);
-    }));
+    });
 
-    it('should change the value', async(() => {
+    it('should change the value', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
@@ -89,9 +88,9 @@ describe('DxTextBox value accessor', () => {
         fixture.detectChanges();
 
         expect(instance.option('value')).toBe('text');
-    }));
+    });
 
-    it('should change touched option', async(() => {
+    it('should change touched option', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
 
@@ -103,7 +102,7 @@ describe('DxTextBox value accessor', () => {
         instance.blur();
 
         expect(fixture.componentInstance.formControl.touched).toBe(true);
-    }));
+    });
 
     it('should not fire valueChanges event when patchValue method is used with emitEvent=false (T614207)', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);

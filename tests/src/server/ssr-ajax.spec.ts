@@ -13,8 +13,7 @@ import { ServerModule, ServerTransferStateModule } from '@angular/platform-serve
 import { BrowserModule, TransferState, makeStateKey } from '@angular/platform-browser';
 
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
 
 let mockSendRequest = {
@@ -56,7 +55,7 @@ describe('Universal', () => {
         ajax.inject = ajaxInject;
     });
     // spec
-    it('should set state and remove data from the state when the request is repeated', async(() => {
+    it('should set state and remove data from the state when the request is repeated', () => {
         const platformId = TestBed.get(PLATFORM_ID);
         if (isPlatformServer(platformId)) {
             TestBed.get(NgHttp);
@@ -68,9 +67,9 @@ describe('Universal', () => {
             expect(transferState.hasKey(key)).toBe(true);
             expect(transferState.get(key, null as any)).toEqual(Object({ data: 'test', status: 'success' }));
         }
-    }));
+    });
 
-    it('should generate complex key', async(() => {
+    it('should generate complex key', () => {
         const platformId = TestBed.get(PLATFORM_ID);
         if (isPlatformServer(platformId)) {
             TestBed.get(NgHttp);
@@ -81,6 +80,6 @@ describe('Universal', () => {
 
             expect(transferState.hasKey(key)).toBe(true);
         }
-    }));
+    });
 
 });
