@@ -58,10 +58,9 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 
 gulp.task('clean.generatedComponents', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-    del.sync([outputFolderPath + "/*.*"]);
-    return del([outputFolderPath]);
+    
+    return del([outputFolderPath + "/**/*.*"]);
 });
-
 
 gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponents'], function () {
     var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
