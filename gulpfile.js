@@ -58,10 +58,9 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 
 gulp.task('clean.generatedComponents', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-
-    return del([outputFolderPath]);
+    
+    return del([outputFolderPath + "/**/*.*"]);
 });
-
 
 gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponents'], function () {
     var DoTGenerator = require(buildConfig.tools.componentGenerator.importFrom).default,
@@ -116,6 +115,7 @@ gulp.task('build.license-headers', function() {
 });
 
 gulp.task('clean.dist', function () {
+    del.sync([buildConfig.components.outputPath + "/*.*"]);
     return del([buildConfig.components.outputPath]);
 });
 
