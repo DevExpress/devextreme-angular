@@ -38,10 +38,10 @@ export class DxIntegrationModule {
                 return element && element.nodeType === 9;
             }
         });
-        
+
         httpRequest.inject({
             getXhr: function() {
-                if(!xhrFactory) {
+                if (!xhrFactory) {
                     return this.callBase.apply(this);
                 }
                 let _xhr = xhrFactory.build();

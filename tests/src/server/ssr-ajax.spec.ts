@@ -4,7 +4,7 @@ import { Component, PLATFORM_ID } from '@angular/core';
 
 import { isPlatformServer } from '@angular/common';
 
-import { DxServerTransferStateModule, NgHttp } from '../../../dist';
+import { DxServerTransferStateModule } from '../../../dist';
 
 import * as def from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';
@@ -46,8 +46,7 @@ describe('Universal', () => {
                 imports: [ServerModule,
                     DxServerTransferStateModule,
                     ServerTransferStateModule,
-                    BrowserModule.withServerTransition({appId: 'appid'})],
-                    providers: [NgHttp]
+                    BrowserModule.withServerTransition({appId: 'appid'})]
             });
     });
 
@@ -58,8 +57,6 @@ describe('Universal', () => {
     it('should set state and remove data from the state when the request is repeated', () => {
         const platformId = TestBed.get(PLATFORM_ID);
         if (isPlatformServer(platformId)) {
-            TestBed.get(NgHttp);
-
             sendRequest.apply(mockSendRequest, [{url: 'someurl'}]);
             const transferState: TransferState = TestBed.get(TransferState);
             let key = makeStateKey('0urlsomeurl');
@@ -72,8 +69,6 @@ describe('Universal', () => {
     it('should generate complex key', () => {
         const platformId = TestBed.get(PLATFORM_ID);
         if (isPlatformServer(platformId)) {
-            TestBed.get(NgHttp);
-
             sendRequest.apply(mockSendRequest, [{url: 'someurl', data: { filter: { name: 'test'}, select: ['name']}}]);
             let key = makeStateKey('0urlsomeurldatafilternametestselect0name');
             const transferState: TransferState = TestBed.get(TransferState);
