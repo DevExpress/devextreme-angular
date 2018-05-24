@@ -10,8 +10,6 @@
 <# it.isEditor && implementedInterfaces.push('ControlValueAccessor'); #>
 <# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
 
-import { HttpClientModule } from '@angular/common/http';
-
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { TransferState } from '@angular/platform-browser';
 
@@ -218,7 +216,6 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     <#= component.className #>Module,<#~#>
     DxIntegrationModule,
     DxTemplateModule,
-    HttpClientModule,
     BrowserTransferStateModule
   ],
   declarations: [
