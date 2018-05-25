@@ -1,3 +1,8 @@
+## 18.1.4-beta.1 (2018-05-25)
+
+### Bug Fixes
+- Get rid of HttpClientModule from components [#794](https://github.com/DevExpress/devextreme-angular/pull/794)
+
 ## 18.1.3 (2018-05-16)
 
 ### Features
