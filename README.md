@@ -136,6 +136,24 @@ You can [create a new Angular Universal app](https://github.com/angular/angular-
 ng generate universal my-app
 ```
 
+**Note: You should import the HttpClientModule module in the server module's .ts file (*src/app.server.module.ts*) if you access remote data using the DevExtreme data layer in the Server-side rendering mode:**
+
+```js
+import { HttpClientModule } from '@angular/common/http';
+
+@NgModule({
+    imports: [
+        AppModule,
+        ModuleMapLoaderModule,
+        HttpClientModule
+        ...
+    ],
+    bootstrap: [AppComponent],
+})
+```
+
+
+
 See [Angular 5.1 & More Now Available](https://blog.angular.io/angular-5-1-more-now-available-27d372f5eb4e) for more information.
 
 [This example](https://github.com/DevExpress/devextreme-examples/tree/18_1/universal-angular) demonstrates the use of DevExtreme Angular controls in an Angular Universal application.
