@@ -1,3 +1,8 @@
+## 18.1.4-beta.2 (2018-05-30)
+
+### Bug Fixes
+- DevExtreme should subscribe on all global events within Angular Zone [#798](https://github.com/DevExpress/devextreme-angular/pull/798)
+
 ## 18.1.4-beta.1 (2018-05-25)
 
 ### Bug Fixes
