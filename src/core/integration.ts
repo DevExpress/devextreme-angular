@@ -7,7 +7,16 @@ import { DOCUMENT } from '@angular/common';
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 
-const events = ['mousemove', 'mouseover', 'mouseout', 'scroll'];
+const events = ['mousemove', 'mouseover', 'mouseout', 'scroll', 'wheel'];
+let originalAdd;
+const callbacks = [];
+readyCallbacks.inject({
+    add: function(callback) {
+        originalAdd = this.callBase;
+        callbacks.push(callback);
+    }
+});
+
 @NgModule({})
 export class DxIntegrationModule {
     constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone, @Optional() xhrFactory: XhrFactory) {
@@ -53,6 +62,9 @@ export class DxIntegrationModule {
             }
         });
 
-        ngZone.run(() => readyCallbacks.fire());
+        ngZone.run(() => {
+            callbacks.forEach(callback => originalAdd.call(null, callback));
+            readyCallbacks.fire();
+        });
     }
 }
