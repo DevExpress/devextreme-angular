@@ -12,7 +12,7 @@ let originalAdd;
 const callbacks = [];
 readyCallbacks.inject({
     add: function(callback) {
-        originalAdd = this.callBase;
+        originalAdd = this.callBase.bind(this);
         callbacks.push(callback);
     }
 });
