@@ -65,7 +65,7 @@ export class WatcherHelper {
             let newValue = this._toComparable(checkingToObject[field]);
             let isEqualObjects = false;
 
-            if(typeof oldValue === 'object' && typeof newValue === 'object') {
+            if (typeof oldValue === 'object' && typeof newValue === 'object') {
                 isEqualObjects = commonUtils.equalByValue(oldValue, newValue, true);
             }
             if (oldValue !== newValue && !isEqualObjects) {
