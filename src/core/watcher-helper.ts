@@ -2,6 +2,8 @@ import {
     Injectable
 } from '@angular/core';
 
+import * as commonUtils from 'devextreme/core/utils/common';
+
 @Injectable()
 export class WatcherHelper {
     private _watchers: any[] = [];
@@ -61,8 +63,12 @@ export class WatcherHelper {
         for (let field in checkingFromObject) {
             let oldValue = this._toComparable(checkingFromObject[field]);
             let newValue = this._toComparable(checkingToObject[field]);
+            let isEqualObjects = false;
 
-            if (newValue !== oldValue) {
+            if (typeof oldValue === 'object' && typeof newValue === 'object') {
+                isEqualObjects = commonUtils.equalByValue(oldValue, newValue);
+            }
+            if (oldValue !== newValue && !isEqualObjects) {
                 return true;
             }
         }

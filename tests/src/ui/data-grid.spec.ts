@@ -37,12 +37,18 @@ class TestContainerComponent {
         { dataField: 'boolean' },
         { dataField: 'number' }
     ];
+
     dataSourceWithUndefined = [{ obj: { field: undefined }}];
 
     columsChanged = 0;
     @ViewChildren(DxDataGridComponent) innerWidgets: QueryList<DxDataGridComponent>;
 
     testMethod() {}
+
+    getCellValue() {
+        return {};
+    }
+    onRowPrepared() {}
 
     onOptionChanged(e) {
         if (e.name === 'columns') {
@@ -141,6 +147,33 @@ describe('DxDataGrid', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
         expect(fixture.componentInstance.innerWidgets.first.columns[0].columns).toContain({ dataField: 'Field' });
+    });
+
+    it('should create rows only once when value of cells is an object', () => {
+        let testSpy = spyOn(TestContainerComponent.prototype, 'onRowPrepared');
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-data-grid [dataSource]="[{text: 'text'}]" (onRowPrepared)="onRowPrepared()">
+                    <dxo-editing mode="popup" [allowUpdating]="true"></dxo-editing>
+                    <dxi-column dataField="text"></dxi-column>
+                    <dxi-column [calculateCellValue]="getCellValue"></dxi-column>
+                </dx-data-grid>`
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        jasmine.clock().tick(101);
+
+        fixture.componentInstance.innerWidgets.last.instance.editRow(0);
+        fixture.detectChanges();
+
+        expect(testSpy).toHaveBeenCalledTimes(2);
+        jasmine.clock().uninstall();
     });
 
     it('should destroy devextreme components in template correctly', () => {
