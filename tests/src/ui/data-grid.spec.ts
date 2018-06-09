@@ -38,17 +38,17 @@ class TestContainerComponent {
         { dataField: 'number' }
     ];
 
-    getCellValue() {
-        return {};
-    }
-    onRowPrepared() {
-    }
     dataSourceWithUndefined = [{ obj: { field: undefined }}];
 
     columsChanged = 0;
     @ViewChildren(DxDataGridComponent) innerWidgets: QueryList<DxDataGridComponent>;
 
     testMethod() {}
+
+    getCellValue() {
+        return {};
+    }
+    onRowPrepared() {}
 
     onOptionChanged(e) {
         if (e.name === 'columns') {
