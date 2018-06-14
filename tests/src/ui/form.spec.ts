@@ -29,6 +29,10 @@ class TestContainerComponent {
         date: new Date()
     };
     @ViewChildren(DxFormComponent) innerWidgets: QueryList<DxFormComponent>;
+
+    validateForm() {
+        return true;
+    }
 }
 
 describe('DxForm', () => {
