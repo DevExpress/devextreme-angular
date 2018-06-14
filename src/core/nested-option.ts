@@ -146,7 +146,7 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
     }
 
     get isLinked() {
-        return this._index !== undefined && !!this.instance;
+        return this._index !== undefined && !!this.instance && this._host.isLinked;
     }
 }
 

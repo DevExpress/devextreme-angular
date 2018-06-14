@@ -26,6 +26,10 @@ class TestContainerComponent {
         date: new Date()
     };
     @ViewChild(DxFormComponent) formComponent: DxFormComponent;
+
+    validateForm() {
+        return true;
+    }
 }
 
 describe('DxForm', () => {
@@ -158,6 +162,29 @@ describe('DxForm', () => {
         fixture.detectChanges();
 
         expect(formInstance.option('formData.name')).toEqual([2]);
+    });
+
+    it('should work with custom validation and ngIf', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form [formData]="{ text: 1 }">
+                        <dxi-item itemType="group" *ngIf="true">
+                            <dxi-item dataField="text">
+                                <dxi-validation-rule type="custom" [validationCallback]="validateForm">
+                                </dxi-validation-rule>
+                            </dxi-item>
+                        </dxi-item>      
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        expect(formInstance.validate()).toBeDefined();
     });
 
     it('should change the value of dxDateBox', () => {
