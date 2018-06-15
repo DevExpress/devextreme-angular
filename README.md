@@ -39,7 +39,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 
 You have the following options to start:
 
-* Play around with our [Plunker](http://next.plnkr.co/edit/XuAPDd?preview) or [Stackblitz](https://stackblitz.com/edit/angular-c2djgn) without installing anything.
+* Play around with our [Plunker](http://next.plnkr.co/edit/XuAPDd?preview) or [Stackblitz](https://stackblitz.com/edit/angular-c2djgn) without installing anything
 * [Add DevExtreme to your existing Angular application](#add-to-existing-app)
 * [Creating a new Angular application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
