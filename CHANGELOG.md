@@ -1,3 +1,9 @@
+## 18.1.4 (2018-06-21)
+
+### Bug Fixes
+- Fix check for objects comparison [#801](https://github.com/DevExpress/devextreme-angular/pull/801)
+- Form should validate items if the ngIf directive is applied to an item [#805](https://github.com/DevExpress/devextreme-angular/pull/805)
+
 ## 18.1.4-beta.2 (2018-05-31)
 
 ### Bug Fixes

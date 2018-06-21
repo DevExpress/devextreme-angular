@@ -45,7 +45,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the panel's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -560,6 +560,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "A Boolean value specifying whether or not the ActionSheet widget is visible."
         },
         "width": {
@@ -600,13 +601,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -1139,7 +1140,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -4698,7 +4699,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -5727,7 +5728,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
+              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\" and valueType is \"numeric\"."
             },
             "axisDivisionFactor": {
               "PrimitiveTypes": [
@@ -6876,7 +6877,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -7856,7 +7857,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8616,6 +8617,12 @@
               ],
               "Description": "Specifies how a user manages columns using the column chooser."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the column chooser's search panel, and when the search is executed."
+            },
             "title": {
               "PrimitiveTypes": [
                 "string"
@@ -8718,7 +8725,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Customizes grid columns and data before exporting."
+          "Description": "Customizes data before exporting."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -9261,6 +9268,12 @@
               ],
               "Description": "Specifies the height of the popup menu that contains values for filtering."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Contains options that specify text for various elements of the popup menu.",
               "Options": {
@@ -9337,7 +9350,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to show the load panel or not."
+              "Description": "Enables displaying the load panel automatically."
             },
             "height": {
               "PrimitiveTypes": [
@@ -9502,7 +9515,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after data from the widget is exported."
+          "Description": "A function that is executed after data is exported."
         },
         "onExporting": {
           "PrimitiveTypes": [
@@ -9510,7 +9523,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before data from the widget is exported."
+          "Description": "A function that is executed before data is exported."
         },
         "onFileSaving": {
           "PrimitiveTypes": [
@@ -10430,7 +10443,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11026,13 +11039,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11393,12 +11406,9 @@
       }
     },
     "dxExporter": {
-      "Description": "[note]This widget is deprecated. Instead of it, use the built-in client-side exporting. For further information, refer to the export option of a particular widget.",
+      "Description": "This widget is deprecated. Instead of it, use the built-in client-side exporting. For further information, refer to the export option of a particular widget.",
       "Options": {
         "exportFormat": {
-          "PrimitiveTypes": [
-            "string"
-          ],
           "ItemPrimitiveTypes": [
             "string"
           ],
@@ -12417,7 +12427,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -13777,7 +13787,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -15407,11 +15417,18 @@
           "IsFunc": true,
           "Description": "Specifies whether to close the widget if a user clicks outside it."
         },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies the container in which to place the widget."
+        },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "delay": {
           "PrimitiveTypes": [
@@ -15712,13 +15729,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -17030,7 +17047,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the view's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -17875,6 +17892,7 @@
       }
     },
     "dxPanorama": {
+      "Description": "The Panorama widget is deprecated since v18.1. We recommend using the TabPanel or MultiView widget instead.",
       "Module": "ui/panorama",
       "Options": {
         "activeStateEnabled": {
@@ -18269,7 +18287,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -19080,6 +19098,7 @@
       }
     },
     "dxPivot": {
+      "Description": "The Pivot widget is deprecated since v18.1. We recommend using the TabPanel widget instead.",
       "Module": "ui/pivot",
       "Options": {
         "activeStateEnabled": {
@@ -19447,6 +19466,12 @@
               ],
               "Description": "Specifies the field chooser layout."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the field chooser's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Strings that can be changed or localized in the pivot grid's integrated Field Chooser.",
               "Options": {
@@ -19580,6 +19605,12 @@
                 "number"
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
             },
             "texts": {
               "Description": "Configures the texts of the popup menu's elements.",
@@ -19833,14 +19864,14 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state loading."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
             },
             "customSave": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state saving."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -20036,6 +20067,12 @@
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Configures the texts of the popup menu's elements.",
               "Options": {
@@ -20140,6 +20177,12 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "searchTimeout": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a delay in milliseconds between when a user finishes typing in the field chooser's search panel, and when the search is executed."
         },
         "state": {
           "PrimitiveTypes": [
@@ -21300,7 +21343,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -22808,7 +22851,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -23201,7 +23244,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -23730,7 +23773,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -24279,7 +24322,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -27129,13 +27172,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -28967,7 +29010,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the view's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -29604,13 +29647,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31083,7 +31126,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "displayTime": {
           "PrimitiveTypes": [
@@ -31597,7 +31640,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31911,6 +31954,12 @@
                 "string"
               ],
               "Description": "Specifies how a user manages columns using the column chooser."
+            },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the column chooser's search panel, and when the search is executed."
             },
             "title": {
               "PrimitiveTypes": [
@@ -32427,6 +32476,12 @@
               ],
               "Description": "Specifies the height of the popup menu that contains values for filtering."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Contains options that specify text for various elements of the popup menu.",
               "Options": {
@@ -32508,7 +32563,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to show the load panel or not."
+              "Description": "Enables displaying the load panel automatically."
             },
             "height": {
               "PrimitiveTypes": [
@@ -33300,7 +33355,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -35056,7 +35111,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
             },
             "printingEnabled": {
               "PrimitiveTypes": [
@@ -38713,6 +38768,12 @@
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
             },
+            "searchMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "width": {
               "PrimitiveTypes": [
                 "number"
@@ -38745,6 +38806,7 @@
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSourceOptions",
+                "DevExpress.data.Store",
                 "Function"
               ],
               "ItemPrimitiveTypes": [
@@ -39925,6 +39987,12 @@
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
             },
+            "searchMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
             "width": {
               "PrimitiveTypes": [
                 "number"
@@ -39957,6 +40025,7 @@
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSourceOptions",
+                "DevExpress.data.Store",
                 "Function"
               ],
               "ItemPrimitiveTypes": [
