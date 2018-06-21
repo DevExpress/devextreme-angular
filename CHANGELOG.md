@@ -1,3 +1,9 @@
+## 17.1.12 (2018-06-21)
+
+### Features
+
+- DevExtreme dependency has been updated to the 17.1.12
+
 ## 17.1.10 (2018-03-05)
 
 ### Features
