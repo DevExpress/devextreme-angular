@@ -9,7 +9,7 @@ export class NgEventsStrategy {
     private subscriptions: { [key: string]: IEventSubscription[] } = {};
     private events: { [key: string]: EventEmitter<any> } = {};
 
-    constructor(private ngZone: NgZone, private instance: any) { }
+    constructor(private instance: any) { }
 
     hasEvent(name: string) {
         return this.getEmitter(name).observers.length;
@@ -18,11 +18,7 @@ export class NgEventsStrategy {
     fireEvent(name, args) {
         let emitter = this.getEmitter(name);
         if (emitter.observers.length) {
-            if (this.ngZone.isStable) {
-                this.ngZone.run(() => emitter.next(args && args[0]));
-            } else {
-                emitter.next(args && args[0]);
-            }
+            emitter.next(args && args[0]);
         }
     }
 
@@ -71,15 +67,17 @@ export class NgEventsStrategy {
 export class EmitterHelper {
     lockedValueChangeEvent = false;
 
-    constructor(private component: DxComponent) { }
+    constructor(private zone: NgZone, private component: DxComponent) { }
 
     fireNgEvent(eventName: string, eventArgs: any) {
         if (this.lockedValueChangeEvent && eventName === 'valueChange') {
             return;
         }
         let emitter = this.component[eventName];
-        if (emitter) {
-            emitter.next(eventArgs && eventArgs[0]);
+        if (emitter && emitter.observers.length) {
+            this.zone.run(() => {
+                emitter.next(eventArgs && eventArgs[0]);
+            });
         }
     }
 
