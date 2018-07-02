@@ -1,3 +1,8 @@
+## 18.1.5-beta.1 (2018-07-02)
+
+### Bug Fixes
+- Reduce change detection call count for widgets [#817](https://github.com/DevExpress/devextreme-angular/pull/817)
+
 ## 18.1.4 (2018-06-21)
 
 ### Bug Fixes
