@@ -4,8 +4,7 @@ import {
     Component
 } from '@angular/core';
 import {
-    TestBed,
-    async
+    TestBed
 } from '@angular/core/testing';
 
 import {
@@ -25,26 +24,26 @@ class TestContainerComponent {
 
 describe('Universal', () => {
 
-    beforeEach(async(() => {
+    beforeEach(() => {
         TestBed.configureTestingModule({
             declarations: [TestContainerComponent],
             imports: [
                 DevExtremeModule
             ]
         });
-    }));
+    });
 
     // spec
-    componentNames.forEach((componentName) => {
-        it('should render ' + componentName, async(() => {
-            TestBed.overrideComponent(TestContainerComponent, {
-                set: {
-                    template: `<dx-${componentName}></dx-${componentName}>`
-                }
-            });
+    it('should render all components', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    ${componentNames.map((name) => `<dx-${name}></dx-${name}>`).join('')}
+                `
+            }
+        });
 
-            let fixture = TestBed.createComponent(TestContainerComponent);
-            expect(fixture.detectChanges.bind(fixture)).not.toThrow();
-        }));
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        expect(fixture.detectChanges.bind(fixture)).not.toThrow();
     });
 });
