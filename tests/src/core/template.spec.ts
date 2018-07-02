@@ -193,35 +193,5 @@ describe('DevExtreme Angular widget\'s template', () => {
         expect(element.textContent).toBe('index: 5');
     });
 
-    it('should render template inside zone', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-                    <dx-test-widget>
-                        <div *dxTemplate="let d of 'test'">
-                            <button id="inner" (click)="testFunction()"></button>
-                        </div>
-                    </dx-test-widget>
-           `}
-        });
-
-        let fixture = TestBed.createComponent(TestContainerComponent),
-            zone = fixture.ngZone,
-            widget = fixture.componentInstance.widget;
-
-        fixture.detectChanges();
-        zone.runOutsideAngular(() => {
-            widget.instance.option('template', 'test');
-        });
-
-        let isZoneStable = zone.isStable;
-        expect(isZoneStable).toBeTruthy();
-        fixture.componentInstance.onInnerElementClicked.subscribe(() => {
-            isZoneStable = zone.isStable;
-        });
-        fixture.nativeElement.querySelector('#inner').click();
-        expect(isZoneStable).toBeFalsy();
-    });
-
 });
 

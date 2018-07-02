@@ -77,11 +77,10 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _createEventEmitters(events) {
-        let ngZone = this.ngZone;
         this.eventHelper.createEmitters(events);
 
         this._initialOptions.eventsStrategy = (instance) => {
-            let strategy = new NgEventsStrategy(ngZone, instance);
+            let strategy = new NgEventsStrategy(instance);
 
             events.filter(event => event.subscribe).forEach(event => {
                 strategy.addEmitter(event.subscribe, this[event.emit]);
@@ -92,7 +91,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
         this._initialOptions.nestedComponentOptions = function(component) {
             return {
-                eventsStrategy: (instance) => { return new NgEventsStrategy(ngZone, instance); },
+                eventsStrategy: (instance) => { return new NgEventsStrategy(instance); },
                 nestedComponentOptions: component.option('nestedComponentOptions')
             };
         };
@@ -175,7 +174,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     constructor(protected element: ElementRef,
-        private ngZone: NgZone,
+        ngZone: NgZone,
         templateHost: DxTemplateHost,
         private watcherHelper: WatcherHelper,
         private transferState: TransferState,
@@ -183,7 +182,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this.templates = [];
         templateHost.setHost(this);
         this._collectionContainerImpl = new CollectionNestedOptionContainerImpl(this._setOption.bind(this));
-        this.eventHelper = new EmitterHelper(this);
+        this.eventHelper = new EmitterHelper(ngZone, this);
     }
 
     ngOnChanges(changes: SimpleChanges) {
