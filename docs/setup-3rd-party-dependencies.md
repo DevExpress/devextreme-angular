@@ -65,7 +65,11 @@ declare module 'devextreme/localization/messages/*' {
     const value: any;
     export default value;
 }
+```
 
+If you use `devextreme-cldr-data` data, `typings.d.ts` should also contain the appropriate module declaration:
+ 
+```js
 declare module 'devextreme-cldr-data/*' {
     const value: any;
     export default value;
