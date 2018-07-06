@@ -34,6 +34,7 @@ This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Dem
 * [Bundle size optimization](#bundle-optimization)
 * [License](#license)
 * [Support & feedback](#support-feedback)
+* [Version history](#version-history)
 
 ## <a name="getting-started"></a>Getting Started ##
 
@@ -658,3 +659,11 @@ Familiarize yourself with the
 * For general Angular topics, follow [these guidelines](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
 * For questions regarding DevExtreme libraries and JavaScript API, use [DevExpress Support Center](https://www.devexpress.com/Support/Center)
 * For DevExtreme Angular integration bugs, questions and suggestions, use the [GitHub issue tracker](https://github.com/DevExpress/devextreme-angular/issues)
+
+## <a name="version-history"></a>Version history ###
+
+| DevExtreme | Angular |
+| ---------- | ----------------|
+| v18.1+     | v5.0 - v6.0+ | 
+| v17.1+ <br/> v17.2+ | v2.4 - v5.0+ | 
+ 
