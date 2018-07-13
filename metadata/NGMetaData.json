@@ -45,7 +45,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the panel's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -608,13 +608,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -5639,7 +5639,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\". Does not apply to a multi-axis chart."
+              "Description": "Enables auto-calculated scale breaks. Applies only if the axis' type is \"continuous\" or \"logarithmic\" and valueType is \"numeric\". Does not apply to a multi-axis chart."
             },
             "axisDivisionFactor": {
               "PrimitiveTypes": [
@@ -7762,7 +7762,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8524,6 +8524,12 @@
               ],
               "Description": "Specifies how a user manages columns using the column chooser."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the column chooser's search panel, and when the search is executed."
+            },
             "title": {
               "PrimitiveTypes": [
                 "string"
@@ -8619,7 +8625,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Customizes grid columns and data before exporting."
+          "Description": "Customizes data before exporting."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -9141,6 +9147,12 @@
               ],
               "Description": "Specifies the height of the popup menu that contains values for filtering."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Contains options that specify text for various elements of the popup menu.",
               "Options": {
@@ -9367,7 +9379,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPrepared event."
+          "Description": "A function that is executed after an editor is created."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -9375,7 +9387,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPreparing event."
+          "Description": "A function that is executed before an editor is created."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -9383,7 +9395,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exported event."
+          "Description": "A function that is executed after data is exported."
         },
         "onExporting": {
           "PrimitiveTypes": [
@@ -9391,7 +9403,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the exporting event."
+          "Description": "A function that is executed before data is exported."
         },
         "onFileSaving": {
           "PrimitiveTypes": [
@@ -10298,7 +10310,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -10919,13 +10931,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -12472,7 +12484,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Colors the labels' background. Inherits the funnel item's color by default."
+              "Description": "Colors the labels' background. The default color is inherited from the funnel items."
             },
             "border": {
               "Description": "Configures the label borders.",
@@ -14609,7 +14621,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not an end user can reorder list items."
+          "Description": "Specifies whether a user can reorder list items. Grouped items cannot be moved from one group to another."
         },
         "autoPagingEnabled": {
           "PrimitiveTypes": [
@@ -15279,7 +15291,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "delay": {
           "PrimitiveTypes": [
@@ -15580,13 +15592,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -16922,7 +16934,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the view's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -19322,6 +19334,12 @@
               ],
               "Description": "Specifies the field chooser layout."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the field chooser's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Strings that can be changed or localized in the pivot grid's integrated Field Chooser.",
               "Options": {
@@ -19455,6 +19473,12 @@
                 "number"
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
+            },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
             },
             "texts": {
               "Description": "Configures the texts of the popup menu's elements.",
@@ -19709,14 +19733,14 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state loading."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
             },
             "customSave": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state saving."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -19914,6 +19938,12 @@
               ],
               "Description": "Specifies the height of the popup menu containing filtering values."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Configures the texts of the popup menu's elements.",
               "Options": {
@@ -20018,6 +20048,12 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "searchTimeout": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a delay in milliseconds between when a user finishes typing in the field chooser's search panel, and when the search is executed."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -22656,7 +22692,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -23048,7 +23084,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -23573,7 +23609,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -26863,13 +26899,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -28708,7 +28744,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the view's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -29358,13 +29394,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "A data source used to fetch data the widget should display."
         },
         "deferRendering": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the drop-down field's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -30867,7 +30903,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "displayTime": {
           "PrimitiveTypes": [
@@ -31381,7 +31417,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether widget content is rendered when the widget is shown or when rendering the widget."
+          "Description": "Specifies whether to render the widget's content when it is displayed. If false, the content is rendered immediately."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31692,6 +31728,12 @@
                 "string"
               ],
               "Description": "Specifies how a user manages columns using the column chooser."
+            },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the column chooser's search panel, and when the search is executed."
             },
             "title": {
               "PrimitiveTypes": [
@@ -32116,6 +32158,12 @@
               ],
               "Description": "Specifies the height of the popup menu that contains values for filtering."
             },
+            "searchTimeout": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a delay in milliseconds between when a user finishes typing in the header filter's search panel, and when the search is executed."
+            },
             "texts": {
               "Description": "Contains options that specify text for various elements of the popup menu.",
               "Options": {
@@ -32323,7 +32371,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPrepared event. Executed after an editor is created."
+          "Description": "A function that is executed after an editor is created."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -32331,7 +32379,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A handler for the editorPreparing event. Executed before an editor is created."
+          "Description": "A function that is executed before an editor is created."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -33875,6 +33923,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A handler for the optionChanged event. Executed after an option of the widget is changed."
+        },
+        "onSelectAllValueChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the \"Select All\" check box's state changes. Applies only if showCheckBoxesMode is \"selectAll\" and selectionMode is \"multiple\"."
         },
         "onSelectionChanged": {
           "PrimitiveTypes": [
@@ -36211,7 +36267,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Colors the background of point labels. By default, point labels inherit the color from their points."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Configures the borders of point labels.",
@@ -37146,7 +37202,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Colors the background of point labels. By default, point labels inherit the color from their points."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Configures the borders of point labels.",
@@ -40017,7 +40073,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a background color for point labels."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Specifies border options for point labels.",
@@ -40445,7 +40501,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a background color for point labels."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Specifies border options for point labels.",
@@ -40919,7 +40975,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a background color for point labels."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Specifies border options for point labels.",
@@ -41611,7 +41667,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a background color for point labels."
+              "Description": "Colors the point labels' background. The default color is inherited from the points."
             },
             "border": {
               "Description": "Specifies border options for point labels.",

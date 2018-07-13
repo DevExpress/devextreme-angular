@@ -1,3 +1,8 @@
+## 17.2.9 (2018-07-13)
+
+### Bug Fixes
+- Form should validate items if the ngIf directive is applied to an item [#806](https://github.com/DevExpress/devextreme-angular/pull/806)
+
 ## 17.2.8 (2018-05-16)
 
 ### Features
