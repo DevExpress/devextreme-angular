@@ -58,8 +58,8 @@ export class DxTemplateDirective {
                 this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
             }
 
-            events.one(element, 'dxremove', (e) => {
-                if (!e._angularIntegration) {
+            events.one(element, 'dxremove', ({}, params) => {
+                if (!params || !params._angularIntegration) {
                     childView.destroy();
                 }
             });
