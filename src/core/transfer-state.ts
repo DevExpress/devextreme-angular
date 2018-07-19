@@ -17,7 +17,7 @@ export class DxServerTransferStateModule {
         ajax.inject({
             sendRequest: function(...args) {
                 let key = makeStateKey(that.generateKey(args)),
-                    сaсhedData = that.state.get(key, null as any);
+                    cachedData = that.state.get(key, null as any);
 
                 if (isPlatformServer(that.platformId)) {
                     let result = this.callBase.apply(this, args);
@@ -30,9 +30,9 @@ export class DxServerTransferStateModule {
                     });
                     return result;
                 } else {
-                    if (сaсhedData) {
+                    if (cachedData) {
                         let d = new deferred.Deferred();
-                        d.resolve(сaсhedData.data, сaсhedData.status);
+                        d.resolve(cachedData.data, cachedData.status);
                         that.state.set(key, null as any);
 
                         return d.promise();
