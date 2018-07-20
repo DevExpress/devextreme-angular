@@ -1,3 +1,8 @@
+## 18.1.5-beta.3 (2018-07-20)
+
+### Bug Fixes
+- Fix NPM package
+
 ## 18.1.5-beta.2 (2018-07-19)
 
 ### Bug Fixes
