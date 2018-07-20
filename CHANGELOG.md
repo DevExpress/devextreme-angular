@@ -1,3 +1,8 @@
+## 18.1.5-beta.2 (2018-07-19)
+
+### Bug Fixes
+- Fix the variable name [#830](https://github.com/DevExpress/devextreme-angular/pull/830)
+
 ## 18.1.5-beta.1 (2018-07-02)
 
 ### Bug Fixes
