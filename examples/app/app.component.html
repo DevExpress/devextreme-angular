@@ -277,6 +277,21 @@
     </div>
 </dx-tab-panel>
 
+<h2>DxDrawer</h2>
+
+<dx-button icon="menu" (onClick)="drawer.menuVisible = !drawer.menuVisible"></dx-button>
+<dx-drawer #drawer [height]="260">
+    <div *dxTemplate="let data of 'menu'">
+        <ul style="padding: 20px;">
+            <li>Home</li>
+            <li>About</li>
+        </ul>
+    </div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, eveniet tempore, perspiciatis totam qui est minima dicta beatae dolores, omnis enim ut incidunt. Ut reprehenderit, tempore iusto deserunt doloremque fugit.</p>
+    <p>Sint natus quia repellendus cum neque. Velit similique dicta corrupti nesciunt quas ea quam minima, aliquid qui ratione suscipit magnam molestiae aspernatur iure, tenetur sapiente voluptates laborum quidem nisi molestias.</p>
+    <p>Id, nesciunt adipisci sint. Doloribus minima expedita, soluta. Eveniet reiciendis eius ducimus provident autem amet alias quis natus. In veritatis, repellendus laborum illo voluptates est quis consectetur consequuntur reiciendis rem!</p>
+</dx-drawer>
+
 <h2>dxChart</h2>
 
 <dx-select-box #serieType
