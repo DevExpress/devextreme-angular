@@ -1,3 +1,9 @@
+## 18.2.1-beta.1 (2018-08-10)
+
+### Features
+
+- Update `devextreme` version to 18.2.1-pre
+
 ## 18.1.5-beta.3 (2018-07-20)
 
 ### Bug Fixes

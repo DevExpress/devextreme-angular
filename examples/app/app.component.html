@@ -279,7 +279,7 @@
 
 <h2>DxDrawer</h2>
 
-<dx-button icon="menu" (onClick)="drawer.menuVisible = !drawer.menuVisible"></dx-button>
+<dx-button icon="menu" (onClick)="drawer.toggle()"></dx-button>
 <dx-drawer #drawer [height]="260">
     <div *dxTemplate="let data of 'menu'">
         <ul style="padding: 20px;">
