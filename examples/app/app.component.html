@@ -279,9 +279,9 @@
 
 <h2>DxDrawer</h2>
 
-<dx-button icon="menu" (onClick)="drawer.toggle()"></dx-button>
+<dx-button icon="menu" (onClick)="drawer.opened = !drawer.opened"></dx-button>
 <dx-drawer #drawer [height]="260">
-    <div *dxTemplate="let data of 'menu'">
+    <div *dxTemplate="let data of 'panel'">
         <ul style="padding: 20px;">
             <li>Home</li>
             <li>About</li>

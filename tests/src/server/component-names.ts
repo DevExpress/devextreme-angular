@@ -47,6 +47,7 @@ export const componentNames = [
     'recurrence-editor',
     'resizable',
     'responsive-box',
+    'sankey',
     'scheduler',
     'scroll-view',
     'select-box',

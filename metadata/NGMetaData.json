@@ -981,6 +981,12 @@
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
         },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
+        },
         "spellcheck": {
           "PrimitiveTypes": [
             "boolean"
@@ -1134,7 +1140,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -3676,15 +3682,14 @@
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "visualRange",
-              "Description": ""
+              "SingularName": "visualRange"
             },
             "visualRangeLength": {
               "PrimitiveTypes": [
                 "number",
                 "string"
               ],
-              "Description": "",
+              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -3741,6 +3746,11 @@
                   "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
                 }
               }
+            },
+            "visualRangeOnDataUpdate": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "wholeRange": {
               "ItemPrimitiveTypes": [
@@ -4633,7 +4643,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -6512,8 +6522,7 @@
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "visualRange",
-              "Description": ""
+              "SingularName": "visualRange"
             },
             "wholeRange": {
               "ItemPrimitiveTypes": [
@@ -6775,7 +6784,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -7253,9 +7262,6 @@
           }
         },
         "subvalueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -7528,9 +7534,6 @@
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -9793,7 +9796,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -9919,55 +9922,55 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'avg' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"avg\" summary items when they are displayed in the parent column."
                 },
                 "avgOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'avg' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"avg\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "count": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'count' summary items."
+                  "Description": "Specifies a pattern for the \"count\" summary items."
                 },
                 "max": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'max' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"max\" summary items when they are displayed in the parent column."
                 },
                 "maxOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'max' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"max\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "min": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'min' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"min\" summary items when they are displayed in the parent column."
                 },
                 "minOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'min' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"min\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "sum": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'sum' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"sum\" summary items when they are displayed in the parent column."
                 },
                 "sumOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'sum' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"sum\" summary items displayed in a group row or in any other column rather than the parent one."
                 }
               }
             },
@@ -10183,7 +10186,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies the date display format. Ignored if the pickerType option is 'native'"
+          "Description": "Specifies the date display format. Ignored if the pickerType option is \"native\""
         },
         "dropDownButtonTemplate": {
           "PrimitiveTypes": [
@@ -10479,6 +10482,12 @@
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
         },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
+        },
         "spellcheck": {
           "PrimitiveTypes": [
             "boolean"
@@ -10503,6 +10512,12 @@
             "string"
           ],
           "Description": "A format used to display date/time information."
+        },
+        "useMaskBehavior": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to use an input mask converted from the displayFormat."
         },
         "validationError": {
           "PrimitiveTypes": [
@@ -10732,11 +10747,12 @@
             "boolean"
           ]
         },
-        "contentTemplate": {
+        "closeOnOutsideClick": {
           "PrimitiveTypes": [
-            "any"
+            "boolean",
+            "Function"
           ],
-          "IsTemplate": true
+          "IsFunc": true
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -10776,30 +10792,9 @@
             "number"
           ]
         },
-        "menuPosition": {
-          "PrimitiveTypes": [
-            "string"
-          ]
-        },
-        "menuTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true
-        },
-        "menuVisible": {
-          "PrimitiveTypes": [
-            "boolean"
-          ]
-        },
         "minWidth": {
           "PrimitiveTypes": [
             "number"
-          ]
-        },
-        "mode": {
-          "PrimitiveTypes": [
-            "string"
           ]
         },
         "onDisposing": {
@@ -10826,21 +10821,42 @@
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
         },
+        "opened": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
+        "openedStateMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "position": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "revealMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
-        "showMode": {
-          "PrimitiveTypes": [
-            "string"
-          ]
-        },
-        "showShader": {
+        "shading": {
           "PrimitiveTypes": [
             "boolean"
           ]
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11203,6 +11219,12 @@
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
         },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -11293,6 +11315,13 @@
           ],
           "Description": "Specifies if an end user can remove a file from the selection and interrupt uploading."
         },
+        "allowedFileExtensions": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "allowedFileExtension"
+        },
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -11332,6 +11361,21 @@
           ],
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
+        "invalidFileExtensionMessage": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "invalidMaxFileSizeMessage": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "invalidMinFileSizeMessage": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "isValid": {
           "PrimitiveTypes": [
             "boolean"
@@ -11343,6 +11387,16 @@
             "string"
           ],
           "Description": "Specifies the text displayed on the area to which an end-user can drop a file."
+        },
+        "maxFileSize": {
+          "PrimitiveTypes": [
+            "number"
+          ]
+        },
+        "minFileSize": {
+          "PrimitiveTypes": [
+            "number"
+          ]
         },
         "multiple": {
           "PrimitiveTypes": [
@@ -12228,7 +12282,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -13581,7 +13635,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -14073,9 +14127,6 @@
           }
         },
         "subvalueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -14348,9 +14399,6 @@
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -15379,13 +15427,6 @@
           ],
           "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
-        },
-        "dropDownButtonTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "Description": "Specifies a custom template for the drop-down button."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -17903,7 +17944,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -19465,14 +19506,14 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is \"custom\"."
             },
             "customSave": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -20917,7 +20958,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -23856,7 +23897,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -25205,7 +25246,7 @@
       }
     },
     "dxRecurrenceEditor": {
-      "Description": "",
+      "Description": "A base class for editors.",
       "Module": "ui/recurrence_editor",
       "IsEditor": true,
       "Options": {
@@ -25237,8 +25278,7 @@
           "PrimitiveTypes": [
             "number",
             "string"
-          ],
-          "Description": ""
+          ]
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -25328,8 +25368,7 @@
         "startDate": {
           "PrimitiveTypes": [
             "Date"
-          ],
-          "Description": ""
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -25354,7 +25393,7 @@
             "string"
           ],
           "IsChangeable": true,
-          "Description": ""
+          "Description": "Specifies the currently selected value."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -25798,6 +25837,958 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        }
+      }
+    },
+    "dxSankey": {
+      "Description": "The Sankey is a widget that visualizes the flow magnitude between value sets. The values being connected are called nodes; the connections - links. The higher the flow magnitude, the wider the link is.",
+      "Module": "viz/sankey",
+      "Options": {
+        "adaptiveLayout": {
+          "Description": "Specifies adaptive layout options.",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the widget's height when it begins to adapt the layout."
+            },
+            "keepLabels": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether node labels should be kept when the widget adapts the layout."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the widget's width when it begins to adapt the layout."
+            }
+          }
+        },
+        "alignment": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "alignment",
+          "Description": "Specifies nodes' vertical alignment."
+        },
+        "dataSource": {
+          "PrimitiveTypes": [
+            "DevExpress.data.DataSource",
+            "DevExpress.data.DataSourceOptions",
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsDataSource": true,
+          "Description": "Specifies the widget's data source."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "export": {
+          "Description": "Configures the exporting and printing features.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the color that will fill transparent regions in the resulting file or document."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables the client-side exporting in the widget."
+            },
+            "fileName": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a default name for the file to which the widget will be exported."
+            },
+            "formats": {
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "format",
+              "Description": "Specifies a set of export formats."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Adds an empty space around the exported widget; measured in pixels."
+            },
+            "printingEnabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables the printing feature in the widget. Applies only if the export.enabled option is true."
+            },
+            "proxyUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+            }
+          }
+        },
+        "hoverEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether nodes and links change their style when they are hovered over or pressed."
+        },
+        "label": {
+          "Description": "Configures sankey nodes' labels.",
+          "Options": {
+            "border": {
+              "Description": "Configures the labels' borders.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the labels' borders."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ],
+                  "Description": "Specifies whether the borders are visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Sets the borders' width in pixels."
+                }
+              }
+            },
+            "customizeText": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "Customizes the labels' texts."
+            },
+            "font": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.Font"
+              ],
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies the labels' font options."
+            },
+            "horizontalOffset": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the labels horizontally from their initial positions."
+            },
+            "overlappingBehavior": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how to arrange labels when there is insufficient space to display them all."
+            },
+            "shadow": {
+              "Description": "Configures the labels' shadows.",
+              "Options": {
+                "blur": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the shadows' blur distance. A larger value increases the blur distance."
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the labels' shadows."
+                },
+                "offsetX": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Moves the shadows horizontally from their initial positions."
+                },
+                "offsetY": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Moves the shadows vertically from their initial positions."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the shadows' transparency."
+                }
+              }
+            },
+            "useNodeColors": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to color labels in the nodes' colors."
+            },
+            "verticalOffset": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the labels vertically from their initial positions."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the labels are visible."
+            }
+          }
+        },
+        "link": {
+          "Description": "Configures sankey links' appearance.",
+          "Options": {
+            "border": {
+              "Description": "Configures the links' borders.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the links' borders."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ],
+                  "Description": "Specifies whether the borders are visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Sets the borders' width in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the sankey links. Applies only if colorMode is \"none\"."
+            },
+            "colorMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how to color links."
+            },
+            "hoverStyle": {
+              "Description": "Configures the appearance a link changes to when it is hovered over or pressed.",
+              "Options": {
+                "border": {
+                  "Description": "Configures the appearance a link's border changes to when the link is hovered over or pressed.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the color a link's border changes to when the link is hovered over or pressed."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "boolean"
+                      ],
+                      "Description": "Specifies whether a link's border is visible when the link is hovered over or pressed."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies the width a link's border changes to when the link is hovered over or pressed."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color a link changes to when it is hovered over or pressed."
+                },
+                "hatching": {
+                  "Description": "Applies hatching to a link when it is hovered over or pressed.",
+                  "Options": {
+                    "direction": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies hatching lines' direction."
+                    },
+                    "opacity": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies hatching lines' transparency."
+                    },
+                    "step": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies the distance in pixels between two hatching lines."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies hatching lines' width."
+                    }
+                  }
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the transparency a link changes to when it is hovered over or pressed."
+                }
+              }
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the links' transparency."
+            }
+          }
+        },
+        "loadingIndicator": {
+          "Description": "Configures the loading indicator.",
+          "Options": {
+            "backgroundColor": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the background of the loading indicator."
+            },
+            "font": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.Font"
+              ],
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the loading indicator."
+            },
+            "show": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to show the loading indicator or not."
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the text to be displayed by the loading indicator."
+            }
+          }
+        },
+        "margin": {
+          "Description": "Generates space around the widget.",
+          "Options": {
+            "bottom": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the bottom margin of the widget in pixels."
+            },
+            "left": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the left margin of the widget in pixels."
+            },
+            "right": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the right margin of the widget in pixels."
+            },
+            "top": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the top margin of the widget in pixels."
+            }
+          }
+        },
+        "node": {
+          "Description": "Configures sankey nodes' appearance.",
+          "Options": {
+            "border": {
+              "Description": "Configures the nodes' borders.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors the nodes' borders."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ],
+                  "Description": "Specifies whether the borders are visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Sets the borders' width in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the sankey nodes."
+            },
+            "hoverStyle": {
+              "Description": "Configures the appearance a node changes to when it is hovered over or pressed.",
+              "Options": {
+                "border": {
+                  "Description": "Configures the appearance a node's border changes to when the node is hovered over or pressed.",
+                  "Options": {
+                    "color": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies the color a node's border changes to when the node is hovered over or pressed."
+                    },
+                    "visible": {
+                      "PrimitiveTypes": [
+                        "boolean"
+                      ],
+                      "Description": "Specifies whether a node's border is visible when the node is hovered over or pressed."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies the width a node's border changes to when the node is hovered over or pressed."
+                    }
+                  }
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the color a node changes to when it is hovered over or pressed."
+                },
+                "hatching": {
+                  "Description": "Applies hatching to a node when it is hovered over or pressed.",
+                  "Options": {
+                    "direction": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies hatching lines' direction."
+                    },
+                    "opacity": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies hatching lines' transparency."
+                    },
+                    "step": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies the distance in pixels between two hatching lines."
+                    },
+                    "width": {
+                      "PrimitiveTypes": [
+                        "number"
+                      ],
+                      "Description": "Specifies hatching lines' width."
+                    }
+                  }
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the transparency a node changes to when it is hovered over or pressed."
+                }
+              }
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the nodes' transparency."
+            },
+            "padding": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the vertical distance, in pixels, between two nodes."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the nodes' width in pixels."
+            }
+          }
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onDrawn": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's rendering has finished."
+        },
+        "onExported": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the widget is exported."
+        },
+        "onExporting": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is exported."
+        },
+        "onFileSaving": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before a file with exported widget is saved to the user's local storage."
+        },
+        "onIncidentOccurred": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when an error or warning occurs."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed only once, after the widget is initialized."
+        },
+        "onLinkClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when a sankey link is clicked or tapped."
+        },
+        "onLinkHoverChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the pointer enters or leaves a sankey link."
+        },
+        "onNodeClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when a sankey node is clicked or tapped."
+        },
+        "onNodeHoverChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the pointer enters or leaves a sankey node."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "palette": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "palette",
+          "Description": "Sets the palette to be used to colorize sankey nodes."
+        },
+        "paletteExtensionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to extend the palette when it contains less colors than the number of sankey nodes."
+        },
+        "pathModified": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Notifies the widget that it is embedded into an HTML page that uses a tag modifying the path."
+        },
+        "redrawOnResize": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to redraw the widget when the size of the parent browser window changes or a mobile device rotates."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "size": {
+          "Description": "Specifies the widget's size in pixels.",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the height of the widget in pixels."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the width of the widget in pixels."
+            }
+          }
+        },
+        "sortData": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies nodes' sorting order."
+        },
+        "sourceField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides links' source nodes."
+        },
+        "targetField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides links' target nodes."
+        },
+        "theme": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Sets the name of the theme the widget uses."
+        },
+        "title": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Configures the widget's title.",
+          "Options": {
+            "font": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.Font"
+              ],
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies font options for the title."
+            },
+            "horizontalAlignment": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the title's alignment in a horizontal direction."
+            },
+            "margin": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Generates space around the title.",
+              "Options": {
+                "bottom": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the bottom margin of the title."
+                },
+                "left": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the left margin of the title."
+                },
+                "right": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the right margin of the title."
+                },
+                "top": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the top margin of the title."
+                }
+              }
+            },
+            "placeholderSize": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the minimum height that the title occupies."
+            },
+            "subtitle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Configures the widget's subtitle.",
+              "Options": {
+                "font": {
+                  "PrimitiveTypes": [
+                    "DevExpress.viz.Font"
+                  ],
+                  "ComplexTypes": [
+                    "VizFont"
+                  ],
+                  "Description": "Specifies font options for the subtitle."
+                },
+                "text": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies text for the subtitle."
+                }
+              }
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the title's text."
+            },
+            "verticalAlignment": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the title's alignment in a vertical direction."
+            }
+          }
+        },
+        "tooltip": {
+          "Description": "Configures tooltips - small pop-up rectangles that display information about a data-visualizing widget element being pressed or hovered over with the mouse pointer.",
+          "Options": {
+            "arrowLength": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the length of a tooltip's arrow in pixels."
+            },
+            "border": {
+              "Description": "Configures a tooltip's border.",
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors a tooltip's border."
+                },
+                "dashStyle": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the dash style of a tooltip's border."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the transparency of a tooltip's border."
+                },
+                "visible": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ],
+                  "Description": "Specifies whether a tooltip's border is visible."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the width of a tooltip's border in pixels."
+                }
+              }
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors all tooltips."
+            },
+            "container": {
+              "PrimitiveTypes": [
+                "Element",
+                "JQuery"
+              ],
+              "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
+            },
+            "customizeLinkTooltip": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "Customizes link tooltips' appearance."
+            },
+            "customizeNodeTooltip": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "Customizes node tooltips' appearance."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables tooltips."
+            },
+            "font": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.Font"
+              ],
+              "ComplexTypes": [
+                "VizFont"
+              ],
+              "Description": "Specifies tooltips' font options."
+            },
+            "format": {
+              "PrimitiveTypes": [
+                "DevExpress.ui.format",
+                "string"
+              ],
+              "ComplexTypes": [
+                "Format"
+              ],
+              "Description": "Formats a value before it is displayed it in a tooltip."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies tooltips' transparency."
+            },
+            "paddingLeftRight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's left/right border and its text."
+            },
+            "paddingTopBottom": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Generates an empty space, measured in pixels, between a tooltip's top/bottom border and its text."
+            },
+            "shadow": {
+              "Description": "Configures a tooltip's shadow.",
+              "Options": {
+                "blur": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the blur distance of a tooltip's shadow. The larger the value, the blurrier the shadow's edge."
+                },
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Colors a tooltip's shadow."
+                },
+                "offsetX": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the horizontal offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
+                },
+                "offsetY": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the vertical offset of a tooltip's shadow relative to the tooltip itself. Measured in pixels."
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the transparency of a tooltip's shadow."
+                }
+              }
+            },
+            "zIndex": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a tooltip's z-index."
+            }
+          }
+        },
+        "weightField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data source field provides links' weights."
         }
       }
     },
@@ -27129,6 +28120,12 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
+        },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -29590,6 +30587,12 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget displays unfiltered values until a user types a number of characters exceeding the minSearchLength option value."
+        },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
         },
         "showMultiTagOnly": {
           "PrimitiveTypes": [
@@ -32486,7 +33489,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the root node's identifier. Applies if dataStructure is 'plain'."
+          "Description": "Specifies the root node's identifier. Applies if dataStructure is \"plain\"."
         },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
@@ -32701,7 +33704,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -32873,7 +33876,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -33705,7 +34708,13 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value defines whether or not the corresponding widget item is displayed expanded."
+          "Description": "Specifies which data source field specifies whether an item is expanded."
+        },
+        "expandEvent": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the event on which to expand/collapse a node."
         },
         "expandNodesRecursive": {
           "PrimitiveTypes": [
@@ -34474,7 +35483,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -39293,32 +40302,32 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies a font color."
+          "Description": "Specifies font color."
         },
         "family": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies a font family."
+          "Description": "Specifies font family."
         },
         "opacity": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a font opacity."
+          "Description": "Specifies font opacity."
         },
         "size": {
           "PrimitiveTypes": [
             "number",
             "string"
           ],
-          "Description": "Specifies a font size."
+          "Description": "Specifies font size."
         },
         "weight": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a font weight."
+          "Description": "Specifies font weight. Accepts values from 100 to 900 in increments of 100. Higher values increase boldness."
         }
       }
     },
@@ -39360,7 +40369,7 @@
       }
     },
     "GaugeIndicator": {
-      "Description": "An object that defines a gauge indicator of the rectangleNeedle type.",
+      "Description": "A base object for gauge value and subvalue indicators. Includes the options of indicators of all types.",
       "Options": {
         "arrowLength": {
           "PrimitiveTypes": [
