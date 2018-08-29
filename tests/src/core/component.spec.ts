@@ -10,8 +10,7 @@ import {
     Output,
     OnDestroy,
     PLATFORM_ID,
-    Inject,
-    VERSION
+    Inject
 } from '@angular/core';
 
 import { TransferState } from '@angular/platform-browser';
@@ -148,7 +147,6 @@ describe('DevExtreme Angular widget', () => {
         let element = getWidget(fixture).element();
 
         expect(element.classList).toContain('dx-test-widget');
-        expect(VERSION.major).toBe('6');
     });
 
     it('should be disposed', () => {
