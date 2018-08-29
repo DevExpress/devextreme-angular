@@ -1,3 +1,10 @@
+## 18.2.1-beta.2 (2018-08-29)
+
+### Features
+
+- Drawer Component
+- Sankey Chart Component
+
 ## 18.2.1-beta.1 (2018-08-10)
 
 ### Features
