@@ -1,0 +1,19 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:7.10
+
+    steps:
+      - checkout
+
+      - run:
+         - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: Install packages
+          command: npm install --unsafe-perm
+      - run:
+          name: Run tests with Angular 5
+          command: npx gulp test
