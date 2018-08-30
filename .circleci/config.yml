@@ -1,0 +1,28 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8-browsers
+
+    steps:
+      - checkout
+
+      - run:
+          name: Update npm
+          command: 'sudo npm install -g npm@latest'
+      - run:
+          name: Install packages
+          command: npm install --unsafe-perm
+      - run:
+          name: Build and run tests with Angular 2
+          command: npx gulp test
+
+      - run:
+          name: Install Angular 4
+          command: npm install @angular/core@^4.0.0 @angular/common@^4.0.0 @angular/forms@^4.0.0 @angular/compiler@^4.0.0 @angular/platform-browser@^4.0.0 @angular/platform-browser-dynamic@^4.0.0 --unsafe-perm
+      - run:
+          name: Build tests with Angular 4
+          command: npx gulp build.tests
+      - run:
+          name: Run tests with Angular 4
+          command: npx gulp run.tests

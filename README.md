@@ -1,4 +1,4 @@
-[![Run Status](https://api.shippable.com/projects/575802872a8192902e22e62a/badge?branch=master)](https://app.shippable.com/projects/575802872a8192902e22e62a) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
+[![CircleCI](https://img.shields.io/circleci/project/github/DevExpress/devextreme-angular/17.1.svg)](https://circleci.com/gh/DevExpress/devextreme-angular) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
 # Angular UI and Visualization Components Based on DevExtreme Widgets #
 
