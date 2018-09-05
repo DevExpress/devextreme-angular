@@ -1,3 +1,8 @@
+## 17.2.10 (2018-09-05)
+
+### Features
+- Update `devextreme` version to 17.2.10
+
 ## 17.2.9 (2018-07-13)
 
 ### Bug Fixes
