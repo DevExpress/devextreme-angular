@@ -622,6 +622,13 @@
           "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
+        "dropDownButtonTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the drop-down button."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -974,6 +981,12 @@
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
         },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to show the drop-down button."
+        },
         "spellcheck": {
           "PrimitiveTypes": [
             "boolean"
@@ -1127,7 +1140,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -4686,7 +4699,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -6864,7 +6877,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -7506,9 +7519,6 @@
           }
         },
         "subvalueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -7795,9 +7805,6 @@
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -10060,7 +10067,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -10193,55 +10200,55 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'avg' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"avg\" summary items when they are displayed in the parent column."
                 },
                 "avgOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'avg' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"avg\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "count": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'count' summary items."
+                  "Description": "Specifies a pattern for the \"count\" summary items."
                 },
                 "max": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'max' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"max\" summary items when they are displayed in the parent column."
                 },
                 "maxOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'max' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"max\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "min": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'min' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"min\" summary items when they are displayed in the parent column."
                 },
                 "minOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'min' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"min\" summary items displayed in a group row or in any other column rather than the parent one."
                 },
                 "sum": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'sum' summary items when they are displayed in the parent column."
+                  "Description": "Specifies a pattern for the \"sum\" summary items when they are displayed in the parent column."
                 },
                 "sumOtherColumn": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the 'sum' summary items displayed in a group row or in any other column rather than the parent one."
+                  "Description": "Specifies a pattern for the \"sum\" summary items displayed in a group row or in any other column rather than the parent one."
                 }
               }
             },
@@ -10464,7 +10471,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies the date display format. Ignored if the pickerType option is 'native'"
+          "Description": "Specifies the date display format. Ignored if the pickerType option is \"native\""
         },
         "dropDownButtonTemplate": {
           "PrimitiveTypes": [
@@ -10763,7 +10770,8 @@
         "showDropDownButton": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to show the drop-down button."
         },
         "spellcheck": {
           "PrimitiveTypes": [
@@ -11344,7 +11352,8 @@
         "showDropDownButton": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to show the drop-down button."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -12424,7 +12433,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -13784,7 +13793,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -14440,9 +14449,6 @@
           }
         },
         "subvalueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -14729,9 +14735,6 @@
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
-          "PrimitiveTypes": [
-            "any"
-          ],
           "ComplexTypes": [
             "GaugeIndicator"
           ],
@@ -18277,7 +18280,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -19860,14 +19863,14 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is \"custom\"."
             },
             "customSave": {
               "PrimitiveTypes": [
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -21333,7 +21336,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -24312,7 +24315,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -27587,7 +27590,8 @@
         "showDropDownButton": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to show the drop-down button."
         },
         "showSelectionControls": {
           "PrimitiveTypes": [
@@ -30073,7 +30077,8 @@
         "showDropDownButton": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to show the drop-down button."
         },
         "showMultiTagOnly": {
           "PrimitiveTypes": [
@@ -32969,7 +32974,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the root node's identifier. Applies if dataStructure is 'plain'."
+          "Description": "Specifies the root node's identifier. Applies if dataStructure is \"plain\"."
         },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
@@ -33184,7 +33189,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is \"custom\"."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -33356,7 +33361,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -35120,7 +35125,7 @@
               ],
               "IsCollection": true,
               "SingularName": "format",
-              "Description": "Specifies a set of formats available for exporting into."
+              "Description": "Specifies a set of export formats."
             },
             "margin": {
               "PrimitiveTypes": [
@@ -40301,32 +40306,32 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies a font color."
+          "Description": "Specifies font color."
         },
         "family": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies a font family."
+          "Description": "Specifies font family."
         },
         "opacity": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a font opacity."
+          "Description": "Specifies font opacity."
         },
         "size": {
           "PrimitiveTypes": [
             "number",
             "string"
           ],
-          "Description": "Specifies a font size."
+          "Description": "Specifies font size."
         },
         "weight": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a font weight."
+          "Description": "Specifies font weight. Accepts values from 100 to 900 in increments of 100. Higher values increase boldness."
         }
       }
     },
@@ -40368,7 +40373,7 @@
       }
     },
     "GaugeIndicator": {
-      "Description": "An object that defines a gauge indicator of the rectangleNeedle type.",
+      "Description": "A base object for gauge value and subvalue indicators. Includes the options of indicators of all types.",
       "Options": {
         "arrowLength": {
           "PrimitiveTypes": [
