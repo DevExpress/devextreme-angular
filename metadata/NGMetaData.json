@@ -3676,6 +3676,9 @@
               "Description": "Makes the axis line visible."
             },
             "visualRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
@@ -3684,83 +3687,22 @@
               "IsCollection": true,
               "SingularName": "visualRange"
             },
-            "visualRangeLength": {
-              "PrimitiveTypes": [
-                "number",
-                "string"
-              ],
-              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
-              "Options": {
-                "days": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
-                },
-                "hours": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
-                },
-                "milliseconds": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
-                },
-                "minutes": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
-                },
-                "months": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
-                },
-                "quarters": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
-                },
-                "seconds": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
-                },
-                "weeks": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
-                },
-                "years": {
-                  "PrimitiveTypes": [
-                    "number"
-                  ],
-                  "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
-                }
-              }
-            },
-            "visualRangeOnDataUpdate": {
+            "visualRangeUpdateMode": {
               "PrimitiveTypes": [
                 "string"
               ]
             },
             "wholeRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be scrolled or zoomed. Equals the data range when it is not set."
+              "SingularName": "wholeRange"
             },
             "width": {
               "PrimitiveTypes": [
@@ -4202,16 +4144,6 @@
                 "boolean"
               ],
               "Description": "Makes the axis line visible."
-            },
-            "wholeRange": {
-              "ItemPrimitiveTypes": [
-                "number",
-                "string",
-                "Date"
-              ],
-              "IsCollection": true,
-              "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be scrolled or zoomed. Equals the data range when it is not set."
             },
             "width": {
               "PrimitiveTypes": [
@@ -6516,6 +6448,9 @@
               "Description": "Makes the axis line visible."
             },
             "visualRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
@@ -6525,14 +6460,16 @@
               "SingularName": "visualRange"
             },
             "wholeRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be scrolled or zoomed. Equals the data range when it is not set."
+              "SingularName": "wholeRange"
             },
             "width": {
               "PrimitiveTypes": [
@@ -9527,6 +9464,11 @@
             }
           }
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -9832,7 +9774,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Allows you to use a custom aggregate function to calculate the value of a summary item."
+              "Description": "Specifies a custom aggregate function. This function is called for summary items whose summaryType is \"custom\"."
             },
             "groupItems": {
               "ItemPrimitiveTypes": [
@@ -9895,7 +9837,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies how to aggregate data for a summary item."
+                  "Description": "Specifies how to aggregate data for the group summary item."
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
@@ -10035,7 +9977,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies how to aggregate data for a summary item."
+                  "Description": "Specifies how to aggregate data for the total summary item."
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
@@ -10787,12 +10729,12 @@
           ],
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
-        "maxWidth": {
+        "maxSize": {
           "PrimitiveTypes": [
             "number"
           ]
         },
-        "minWidth": {
+        "minSize": {
           "PrimitiveTypes": [
             "number"
           ]
@@ -11320,7 +11262,13 @@
             "string"
           ],
           "IsCollection": true,
-          "SingularName": "allowedFileExtension"
+          "SingularName": "allowedFileExtension",
+          "Description": "Restricts file extensions that can be uploaded to the server."
+        },
+        "chunkSize": {
+          "PrimitiveTypes": [
+            "number"
+          ]
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11364,17 +11312,20 @@
         "invalidFileExtensionMessage": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The text displayed when the extension of the file being uploaded is not an allowed file extension."
         },
         "invalidMaxFileSizeMessage": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The text displayed when the size of the file being uploaded is greater than the maxFileSize."
         },
         "invalidMinFileSizeMessage": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The text displayed when the size of the file being uploaded is less than the minFileSize."
         },
         "isValid": {
           "PrimitiveTypes": [
@@ -11391,12 +11342,14 @@
         "maxFileSize": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the maximum file size allowed for uploading."
         },
         "minFileSize": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the minimum file size allowed for uploading."
         },
         "multiple": {
           "PrimitiveTypes": [
@@ -17072,6 +17025,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies which data field provides keys for widget items."
+        },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -24961,6 +24920,9 @@
           }
         },
         "value": {
+          "PrimitiveTypes": [
+            "DevExpress.viz.VizRange"
+          ],
           "ItemPrimitiveTypes": [
             "number",
             "string",
@@ -24968,8 +24930,7 @@
           ],
           "IsCollection": true,
           "IsChangeable": true,
-          "SingularName": "value",
-          "Description": "The selected range, initial or current."
+          "SingularName": "value"
         }
       }
     },
@@ -25851,7 +25812,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's height when it begins to adapt the layout."
+              "Description": "Specifies the minimum container height at which the widget begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
@@ -25863,7 +25824,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's width when it begins to adapt the layout."
+              "Description": "Specifies the minimum container width at which the widget begins to adapt."
             }
           }
         },
@@ -25876,7 +25837,7 @@
           ],
           "IsCollection": true,
           "SingularName": "alignment",
-          "Description": "Specifies nodes' vertical alignment."
+          "Description": "Aligns node columns vertically."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -26511,7 +26472,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies nodes' sorting order."
+          "Description": "Specifies nodes' sorting order in their columns."
         },
         "sourceField": {
           "PrimitiveTypes": [
@@ -26976,6 +26937,11 @@
           ],
           "Description": "Specifies whether the widget can be focused using keyboard navigation."
         },
+        "groupByDate": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "groups": {
           "ItemPrimitiveTypes": [
             "string"
@@ -27427,6 +27393,11 @@
                 "string"
               ],
               "Description": "The first day of a week. Does not apply to the agenda view."
+            },
+            "groupByDate": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -29967,6 +29938,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies which data field provides keys for widget items."
+        },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -33484,6 +33461,11 @@
               "Description": "Specifies whether sorting should be performed on the server."
             }
           }
+        },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
         },
         "rootValue": {
           "PrimitiveTypes": [
@@ -38573,7 +38555,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
+          "Description": "Calculates custom display values for column cells. Used when display and editing values should be different. Requires specifying the dataField or calculateCellValue option."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -38694,7 +38676,7 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies a filter value for the column."
+          "Description": "Specifies the column's filter value displayed in the filter row."
         },
         "filterValues": {
           "ItemPrimitiveTypes": [
@@ -38703,7 +38685,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "filterValue",
-          "Description": "Specifies filter values for the column's header filter."
+          "Description": "Specifies values selected in the column's header filter."
         },
         "fixed": {
           "PrimitiveTypes": [
@@ -38734,7 +38716,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item that the column produces in the editing state. Applies only if editing.mode is \"form\" or \"popup\"."
         },
         "groupCellTemplate": {
           "PrimitiveTypes": [
@@ -38873,12 +38855,17 @@
           ],
           "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
             "string"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the selected filter operation for the column."
+          "Description": "Specifies the column's filter operation displayed in the filter row."
         },
         "setCellValue": {
           "PrimitiveTypes": [
@@ -39820,7 +39807,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
+          "Description": "Calculates custom display values for column cells. Used when display and editing values should be different. Requires specifying the dataField or calculateCellValue option."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -39933,7 +39920,7 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies a filter value for the column."
+          "Description": "Specifies the column's filter value displayed in the filter row."
         },
         "filterValues": {
           "ItemPrimitiveTypes": [
@@ -39942,7 +39929,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "filterValue",
-          "Description": "Specifies filter values for the column's header filter."
+          "Description": "Specifies values selected in the column's header filter."
         },
         "fixed": {
           "PrimitiveTypes": [
@@ -39973,7 +39960,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item that the column produces in the editing state. Applies only if editing.mode is \"form\" or \"popup\"."
         },
         "headerCellTemplate": {
           "PrimitiveTypes": [
@@ -40098,12 +40085,17 @@
           ],
           "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
             "string"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the selected filter operation for the column."
+          "Description": "Specifies the column's filter operation displayed in the filter row."
         },
         "setCellValue": {
           "PrimitiveTypes": [
