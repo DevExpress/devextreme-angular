@@ -1,3 +1,9 @@
+## 18.2.1-beta.3 (2018-09-12)
+
+### Features
+
+- Update NGMetaData
+
 ## 18.2.1-beta.2 (2018-08-29)
 
 ### Features
