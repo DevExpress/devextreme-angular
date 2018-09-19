@@ -1,3 +1,8 @@
+## 18.1.7-beta.1 (2018-09-19)
+
+### Bug Fixes
+- Clear ready callbacks after they were called [#856](https://github.com/DevExpress/devextreme-angular/pull/856)
+
 ## 18.1.6 (2018-09-05)
 
 ### Features

@@ -9798,6 +9798,11 @@
             }
           }
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -9824,7 +9829,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport. Requires the columnWidth, columnAutoWidth, or width (for all columns) option specified."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -10103,7 +10108,7 @@
                 "Function"
               ],
               "IsFunc": true,
-              "Description": "Allows you to use a custom aggregate function to calculate the value of a summary item."
+              "Description": "Specifies a custom aggregate function. This function is called for summary items whose summaryType is \"custom\"."
             },
             "groupItems": {
               "ItemPrimitiveTypes": [
@@ -10173,7 +10178,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies how to aggregate data for a summary item."
+                  "Description": "Specifies how to aggregate data for the group summary item."
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
@@ -10320,7 +10325,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies how to aggregate data for a summary item."
+                  "Description": "Specifies how to aggregate data for the total summary item."
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
@@ -15021,7 +15026,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is clicked or tapped. Applies only if the selectionMode is \"none\"."
+          "Description": "A function that is executed when a collection item is clicked or tapped."
         },
         "onItemContextMenu": {
           "PrimitiveTypes": [
@@ -17409,6 +17414,12 @@
           "IsFunc": true,
           "Description": "Specifies which data field provides keys for widget items."
         },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
+        },
         "onContentReady": {
           "PrimitiveTypes": [
             "Function"
@@ -17600,7 +17611,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies the value's display format and controls the user input according to it."
+          "Description": "Specifies the value's display format and controls user input accordingly."
         },
         "height": {
           "PrimitiveTypes": [
@@ -29454,6 +29465,12 @@
           "IsFunc": true,
           "Description": "Specifies which data field provides keys for widget items."
         },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
+        },
         "onContentReady": {
           "PrimitiveTypes": [
             "Function"
@@ -32970,6 +32987,11 @@
             }
           }
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "rootValue": {
           "PrimitiveTypes": [
             "any"
@@ -32995,7 +33017,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport. Requires the columnWidth, columnAutoWidth, or width (for all columns) option specified."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -38570,7 +38592,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
+          "Description": "Calculates custom display values for column cells. Requires specifying the dataField or calculateCellValue option. Used in lookup optimization."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -38691,7 +38713,7 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies a filter value for the column."
+          "Description": "Specifies the column's filter value displayed in the filter row."
         },
         "filterValues": {
           "ItemPrimitiveTypes": [
@@ -38700,7 +38722,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "filterValue",
-          "Description": "Specifies filter values for the column's header filter."
+          "Description": "Specifies values selected in the column's header filter."
         },
         "fixed": {
           "PrimitiveTypes": [
@@ -38731,7 +38753,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item that the column produces in the editing state. Applies only if editing.mode is \"form\" or \"popup\"."
         },
         "groupCellTemplate": {
           "PrimitiveTypes": [
@@ -38877,12 +38899,17 @@
           "IsDeprecated": true,
           "Description": "Use the format.precision option instead."
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
             "string"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the selected filter operation for the column."
+          "Description": "Specifies the column's filter operation displayed in the filter row."
         },
         "setCellValue": {
           "PrimitiveTypes": [
@@ -39824,7 +39851,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display values should differ from values for editing."
+          "Description": "Calculates custom display values for column cells. Requires specifying the dataField or calculateCellValue option. Used in lookup optimization."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -39937,7 +39964,7 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies a filter value for the column."
+          "Description": "Specifies the column's filter value displayed in the filter row."
         },
         "filterValues": {
           "ItemPrimitiveTypes": [
@@ -39946,7 +39973,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "filterValue",
-          "Description": "Specifies filter values for the column's header filter."
+          "Description": "Specifies values selected in the column's header filter."
         },
         "fixed": {
           "PrimitiveTypes": [
@@ -39977,7 +40004,7 @@
           "ComplexTypes": [
             "FormSimpleItem"
           ],
-          "Description": "Configures the form item produced by this column in the editing state. Used only if editing.mode is \"form\" or \"popup\"."
+          "Description": "Configures the form item that the column produces in the editing state. Applies only if editing.mode is \"form\" or \"popup\"."
         },
         "headerCellTemplate": {
           "PrimitiveTypes": [
@@ -40102,12 +40129,17 @@
           ],
           "Description": "Specifies the band column that owns the current column. Accepts the index of the band column in the columns array."
         },
+        "renderAsync": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
             "string"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the selected filter operation for the column."
+          "Description": "Specifies the column's filter operation displayed in the filter row."
         },
         "setCellValue": {
           "PrimitiveTypes": [
