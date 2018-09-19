@@ -10,7 +10,7 @@ import * as eventsEngine from 'devextreme/events/core/events_engine';
 
 const events = ['mousemove', 'mouseover', 'mouseout', 'wheel'];
 let originalAdd;
-const callbacks = [];
+let callbacks = [];
 readyCallbacks.inject({
     add: function(callback) {
         originalAdd = this.callBase.bind(this);
@@ -64,6 +64,7 @@ export class DxIntegrationModule {
         ngZone.run(() => {
             eventsEngine.set({});
             callbacks.forEach(callback => originalAdd.call(null, callback));
+            callbacks = [];
             readyCallbacks.fire();
         });
     }
