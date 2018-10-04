@@ -78,7 +78,7 @@ required to build the project and run tests.
 
 ### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular Application ###
 
-You can add DevExtreme to an existing application using the [Angular](https://github.com/angular/angular-cli) or [DevExtreme](https://github.com/DevExpress/devextreme-cli) CLI:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to add DevExtreme to an existing application:
 
 - Angular CLI
 
@@ -88,7 +88,7 @@ You can add DevExtreme to an existing application using the [Angular](https://gi
 
         npx devextreme-cli add devextreme-angular
 
-Or follow the steps below to add DevExtreme manually.
+Alternatively, you can follow the steps below to add DevExtreme manually.
 
 #### <a name="installation"></a>Install DevExtreme ####
 
