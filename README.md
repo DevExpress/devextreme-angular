@@ -7,6 +7,7 @@
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular](https://angular.io/) applications.
 
 * [Getting started](#getting-started)
+  * [Quick Start](#quick-start)
   * [Prerequisites](#prerequisites)
   * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
@@ -44,6 +45,26 @@ You have the following options to start:
 * [Add DevExtreme to your existing Angular application](#add-to-existing-app)
 * [Creating a new Angular application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
+
+### Quick Start
+
+You can also create an application based on DevExtreme Angular Template that already includes several sample views and a navigation menu using the [Angular](https://github.com/angular/angular-cli) or [DevExtreme](https://github.com/DevExpress/devextreme-cli) CLI:
+
+- Angular CLI
+
+        npm install -g @angular/cli
+        ng new app-name --style=scss
+        cd app-name
+        ng g devextreme-angular:add-app-template
+        npm run start
+
+- DevExtreme CLI
+
+        npx devextreme-cli new angular-app app-name
+        cd app-name
+        npm run start
+
+See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
 
 ### <a name="prerequisites"></a>Prerequisites ###
 
