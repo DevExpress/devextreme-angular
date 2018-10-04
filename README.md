@@ -48,7 +48,7 @@ You have the following options to start:
 
 ### <a name="quick-start"></a>Quick Start ###
 
-You can also create an application based on DevExtreme Angular Template that already includes several sample views and a navigation menu using the [Angular](https://github.com/angular/angular-cli) or [DevExtreme](https://github.com/DevExpress/devextreme-cli) CLI:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a DevExtreme Angular application that already includes several sample views and a navigation menu:
 
 - Angular CLI
 
@@ -56,13 +56,13 @@ You can also create an application based on DevExtreme Angular Template that alr
         ng new app-name --style=scss
         cd app-name
         ng g devextreme-angular:add-app-template
-        npm run start
+        ng serve
 
 - DevExtreme CLI
 
         npx devextreme-cli new angular-app app-name
         cd app-name
-        npm run start
+        ng serve
 
 See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
 
