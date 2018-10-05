@@ -46,7 +46,7 @@ You have the following options to start:
 * [Creating a new Angular application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
 
-### <a name="quick-start"></a>Quick Start ###
+### <a name="quick-start"></a>Quick Start **(18.2-beta)** ###
 
 You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a DevExtreme Angular application that already includes several sample views and a navigation menu:
 
@@ -78,7 +78,7 @@ required to build the project and run tests.
 
 ### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular Application ###
 
-You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to add DevExtreme to an existing application:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to add DevExtreme to an existing application **(18.2-beta)**:
 
 - Angular CLI
 
