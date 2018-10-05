@@ -7,6 +7,7 @@
 This project allows you to use [DevExtreme Widgets](http://js.devexpress.com/Demos/WidgetsGallery/) in [Angular](https://angular.io/) applications.
 
 * [Getting started](#getting-started)
+  * [Quick Start](#quick-start)
   * [Prerequisites](#prerequisites)
   * [DevExtreme installation](#add-to-existing-app)
   * [Starting a new application](#create-application)
@@ -45,6 +46,26 @@ You have the following options to start:
 * [Creating a new Angular application](#create-application) and install DevExtreme
 * [Run the local examples](#running-examples)
 
+### <a name="quick-start"></a>Quick Start **(18.2-beta)** ###
+
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a DevExtreme Angular application that already includes several sample views and a navigation menu:
+
+- Angular CLI
+
+        npm install -g @angular/cli
+        ng new app-name --style=scss
+        cd app-name
+        ng g devextreme-angular:add-app-template
+        ng serve
+
+- DevExtreme CLI
+
+        npx devextreme-cli new angular-app app-name
+        cd app-name
+        ng serve
+
+See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
+
 ### <a name="prerequisites"></a>Prerequisites ###
 
 **Starting with v18.1, DevExtreme-Angular requires [Angular](https://angular.io/) version 5 or later**
@@ -56,6 +77,18 @@ required and essential to Angular development.
 required to build the project and run tests.
 
 ### <a name="add-to-existing-app"></a>Adding DevExteme to an Existing Angular Application ###
+
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to add DevExtreme to an existing application **(18.2-beta)**:
+
+- Angular CLI
+
+        ng add devextreme-angular
+
+- DevExtreme CLI
+
+        npx devextreme-cli add devextreme-angular
+
+Alternatively, you can follow the steps below to add DevExtreme manually.
 
 #### <a name="installation"></a>Install DevExtreme ####
 
