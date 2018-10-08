@@ -61,7 +61,7 @@ You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [De
         npm install -g @angular/cli
         ng new app-name --style=scss
         cd app-name
-        npm i devextreme-angular@unstable
+        npm i devextreme-angular@18.2-unstable
         ng g devextreme-angular:add-app-template
         ng serve
 
