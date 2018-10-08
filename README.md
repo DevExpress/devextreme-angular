@@ -83,7 +83,7 @@ You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [De
 
 - Angular CLI
 
-        ng add devextreme-angular
+        ng add devextreme-angular@18.2-unstable
 
 - DevExtreme CLI
 
