@@ -263,6 +263,12 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -518,6 +524,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -927,6 +939,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -1029,7 +1046,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -1256,6 +1273,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -1911,6 +1929,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -2682,6 +2706,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the current calendar zoom level."
         }
       }
@@ -2717,7 +2742,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not to adjust the value axis when zooming the widget."
+          "Description": "Specifies whether to adjust the value axis's visualRange when the argument axis is being zoomed or scrolled."
         },
         "animation": {
           "PrimitiveTypes": [
@@ -2845,27 +2870,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -2925,6 +2935,11 @@
                     "string"
                   ],
                   "Description": "Specifies the dash style of constant lines."
+                },
+                "extendAxis": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ]
                 },
                 "label": {
                   "Description": "Configures the constant line label.",
@@ -3679,30 +3694,39 @@
               "PrimitiveTypes": [
                 "DevExpress.viz.VizRange"
               ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "visualRange"
+              "SingularName": "visualRange",
+              "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
             },
             "visualRangeUpdateMode": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies how the axis's visual range should behave when chart data is updated."
             },
             "wholeRange": {
               "PrimitiveTypes": [
                 "DevExpress.viz.VizRange"
               ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "wholeRange"
+              "SingularName": "wholeRange",
+              "Description": "Defines the range where the axis can be zoomed and scrolled. Equals the data range when unspecified."
             },
             "width": {
               "PrimitiveTypes": [
@@ -4816,6 +4840,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -5601,27 +5626,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -5681,6 +5691,11 @@
                     "string"
                   ],
                   "Description": "Specifies the dash style of constant lines."
+                },
+                "extendAxis": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ]
                 },
                 "label": {
                   "Description": "Configures the constant line label.",
@@ -6451,25 +6466,33 @@
               "PrimitiveTypes": [
                 "DevExpress.viz.VizRange"
               ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "visualRange"
+              "SingularName": "visualRange",
+              "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
             },
             "wholeRange": {
               "PrimitiveTypes": [
                 "DevExpress.viz.VizRange"
               ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
               "ItemPrimitiveTypes": [
                 "number",
                 "string",
                 "Date"
               ],
               "IsCollection": true,
-              "SingularName": "wholeRange"
+              "SingularName": "wholeRange",
+              "Description": "Defines the range where the axis can be zoomed and scrolled. Equals the data range when not set."
             },
             "width": {
               "PrimitiveTypes": [
@@ -6782,6 +6805,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -7751,6 +7775,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -8079,6 +8108,12 @@
             "PositionConfig"
           ],
           "Description": "An object defining widget positioning options."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -8422,21 +8457,24 @@
           "Options": {
             "allowAdding": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can add new rows."
+              "IsFunc": true
             },
             "allowDeleting": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can delete rows."
+              "IsFunc": true
             },
             "allowUpdating": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can update rows."
+              "IsFunc": true
             },
             "form": {
               "PrimitiveTypes": [
@@ -8461,6 +8499,11 @@
                 "dxPopupOptions"
               ],
               "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
+            },
+            "refreshMode": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -8823,7 +8866,28 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Specifies a filter expression."
+        },
+        "focusedColumnIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ]
+        },
+        "focusedRowEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
+        "focusedRowIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ]
+        },
+        "focusedRowKey": {
+          "PrimitiveTypes": [
+            "any"
+          ]
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -8985,6 +9049,11 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's height."
+        },
+        "highlightChanges": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9199,6 +9268,34 @@
           "IsEvent": true,
           "Description": "A function that is executed before a file with exported data is saved to the user's local storage."
         },
+        "onFocusedCellChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedCellChanging": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedRowChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedRowChanging": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
         "onInitialized": {
           "PrimitiveTypes": [
             "Function"
@@ -9352,6 +9449,13 @@
           "IsEvent": true,
           "Description": "A function that is executed before the toolbar is created."
         },
+        "onXlsxCellPrepared": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
         "pager": {
           "Description": "Configures the pager.",
           "Options": {
@@ -9467,7 +9571,14 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the filter row, command columns, and columns with showEditorAlways set to true after other elements."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those cells whose data changed."
         },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
@@ -9495,7 +9606,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport. Requires the columnWidth, columnAutoWidth, or width (for all columns) option specified."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -9850,6 +9961,11 @@
                   "Description": "Specifies a summary item value's display format."
                 }
               }
+            },
+            "recalculateWhileEditing": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
             },
             "skipEmptyValues": {
               "PrimitiveTypes": [
@@ -10388,6 +10504,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "pickerType": {
           "PrimitiveTypes": [
             "string"
@@ -10486,7 +10607,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -10669,7 +10790,7 @@
       }
     },
     "dxDrawer": {
-      "Description": "The base class for widgets.",
+      "Description": "The Drawer is a dismissible or permanently visible panel used for navigation in responsive web application layouts.",
       "IsTranscludedContent": true,
       "Module": "ui/drawer",
       "Options": {
@@ -10682,19 +10803,22 @@
         "animationDuration": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the duration of the drawer's opening and closing animation (in milliseconds). Applies only if animationEnabled is true."
         },
         "animationEnabled": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to use an opening and closing animation."
         },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
             "boolean",
             "Function"
           ],
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Specifies whether to close the drawer if a user clicks or taps the view area."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -10732,12 +10856,14 @@
         "maxSize": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the drawer's width or height (depending on the drawer's position) in the opened state."
         },
         "minSize": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the drawer's width or height (depending on the drawer's position) in the closed state."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -10766,22 +10892,26 @@
         "opened": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether the drawer is opened."
         },
         "openedStateMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the drawer interacts with the view in the opened state."
         },
         "position": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the drawer's position in relation to the view."
         },
         "revealMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the drawer's reveal mode."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -10792,13 +10922,22 @@
         "shading": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to shade the view when the drawer is opened."
+        },
+        "target": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "The target element associated with the drawer. Applies only when the openedStateMode is \"overlap\"."
         },
         "template": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies the drawer's content."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11137,6 +11276,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -11202,7 +11346,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies after which DOM events the widget updates the value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -11268,7 +11412,8 @@
         "chunkSize": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "Description": "Specifies the chunk size in bytes. Applies only if uploadMode is \"instantly\" or \"useButtons\". Requires a server that can process file chunks."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -11343,13 +11488,13 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies the maximum file size allowed for uploading."
+          "Description": "Specifies the maximum file size (in bytes) allowed for uploading. Applies only if uploadMode is \"instantly\" or \"useButtons\"."
         },
         "minFileSize": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies the minimum file size allowed for uploading."
+          "Description": "Specifies the minimum file size (in bytes) allowed for uploading. Applies only if uploadMode is \"instantly\" or \"useButtons\"."
         },
         "multiple": {
           "PrimitiveTypes": [
@@ -12743,6 +12888,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -13443,6 +13589,12 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -13519,6 +13671,188 @@
             "boolean"
           ],
           "Description": "Specifies whether or not to display parts of previous and next images along the sides of the current image."
+        }
+      }
+    },
+    "dxHtmlEditor": {
+      "Description": "A base class for editors.",
+      "Module": "ui/html_editor",
+      "IsEditor": true,
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "dataPlaceholder": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxDataPlaceholderModule"
+          ],
+          "ComplexTypes": [
+            "HtmlEditorDataPlaceholder"
+          ]
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "isValid": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the editor's value is valid."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onValueChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the widget's value is changed."
+        },
+        "placeholder": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "readOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "A Boolean value specifying whether or not the widget is read-only."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "toolbar": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxToolbarModule"
+          ],
+          "ComplexTypes": [
+            "HtmlEditorToolbar"
+          ]
+        },
+        "validationError": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+        },
+        "validationMessageMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "value": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsChangeable": true,
+          "Description": "Specifies the currently selected value."
+        },
+        "valueType": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -13643,6 +13977,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -14510,6 +14845,12 @@
               ],
               "Description": "Specifies html code inserted into the widget item element."
             },
+            "icon": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the item's icon. Accepts an icon name from the built-in icon library, the URL of an image, a CSS class from an external icon library, or a Base64 image."
+            },
             "key": {
               "PrimitiveTypes": [
                 "string"
@@ -14638,7 +14979,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is clicked or tapped. Applies only if the selectionMode is \"none\"."
+          "Description": "A function that is executed when a collection item is clicked or tapped."
         },
         "onItemContextMenu": {
           "PrimitiveTypes": [
@@ -14779,6 +15120,12 @@
             "string"
           ],
           "Description": "Specifies the text displayed in the pullDown panel while the list is being refreshed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15635,6 +15982,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "pageLoadingText": {
           "PrimitiveTypes": [
             "string"
@@ -15843,7 +16195,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -16494,6 +16846,12 @@
           ],
           "Description": "Specifies whether the menu has horizontal or vertical orientation."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -16839,6 +17197,12 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -17105,6 +17469,12 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -17223,7 +17593,7 @@
           "ComplexTypes": [
             "Format"
           ],
-          "Description": "Specifies the value's display format and controls the user input according to it."
+          "Description": "Specifies the value's display format and controls user input accordingly."
         },
         "height": {
           "PrimitiveTypes": [
@@ -17494,7 +17864,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -17726,6 +18096,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -18144,6 +18520,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -18903,6 +19280,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -19964,6 +20347,11 @@
                     "string"
                   ],
                   "Description": "Specifies a dash style for a constant line."
+                },
+                "extendAxis": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ]
                 },
                 "label": {
                   "Description": "An object defining constant line label options.",
@@ -21152,6 +21540,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -21782,6 +22171,11 @@
                     "string"
                   ],
                   "Description": "Specifies a dash style for a constant line."
+                },
+                "extendAxis": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ]
                 },
                 "label": {
                   "Description": "An object defining constant line label options.",
@@ -23642,7 +24036,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies a coefficient for determining an indent from the bottom background boundary to the lowest chart point."
+              "Description": "Specifies an indent from the background's bottom to the lowest chart point. Accepts values from 0 to 1."
             },
             "commonSeriesSettings": {
               "PrimitiveTypes": [
@@ -23747,7 +24141,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies a coefficient for determining an indent from the background's top boundary to the topmost chart point."
+              "Description": "Specifies an indent from the background's top to the topmost chart point. Accepts values from 0 to 1."
             },
             "useAggregation": {
               "PrimitiveTypes": [
@@ -23917,6 +24311,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -24128,27 +24523,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a scale break collection. Applies only if the scale's type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a scale break collection. Applies only if the scale's type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -24923,6 +25303,9 @@
           "PrimitiveTypes": [
             "DevExpress.viz.VizRange"
           ],
+          "ComplexTypes": [
+            "VizRange"
+          ],
           "ItemPrimitiveTypes": [
             "number",
             "string",
@@ -24930,7 +25313,8 @@
           ],
           "IsCollection": true,
           "IsChangeable": true,
-          "SingularName": "value"
+          "SingularName": "value",
+          "Description": "The selected range (initial or current). Equals the entire scale when not set."
         }
       }
     },
@@ -25187,173 +25571,6 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "value",
-          "Description": "Specifies the currently selected value."
-        },
-        "visible": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget is visible."
-        },
-        "width": {
-          "PrimitiveTypes": [
-            "number",
-            "Function",
-            "string"
-          ],
-          "IsFunc": true,
-          "Description": "Specifies the widget's width."
-        }
-      }
-    },
-    "dxRecurrenceEditor": {
-      "Description": "A base class for editors.",
-      "Module": "ui/recurrence_editor",
-      "IsEditor": true,
-      "Options": {
-        "accessKey": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the shortcut key that sets focus on the widget."
-        },
-        "activeStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
-        },
-        "disabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget responds to user interaction."
-        },
-        "elementAttr": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "Description": "Specifies the attributes to be attached to the widget's root element."
-        },
-        "firstDayOfWeek": {
-          "PrimitiveTypes": [
-            "number",
-            "string"
-          ]
-        },
-        "focusStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget can be focused using keyboard navigation."
-        },
-        "height": {
-          "PrimitiveTypes": [
-            "number",
-            "Function",
-            "string"
-          ],
-          "IsFunc": true,
-          "Description": "Specifies the widget's height."
-        },
-        "hint": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
-        },
-        "hoverStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget changes its state when a user pauses on it."
-        },
-        "isValid": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the editor's value is valid."
-        },
-        "onContentReady": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
-        },
-        "onDisposing": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A function that is executed before the widget is disposed of."
-        },
-        "onInitialized": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A function that is executed only once, after the widget is initialized."
-        },
-        "onOptionChanged": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A function that is executed after a widget option is changed."
-        },
-        "onValueChanged": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true,
-          "Description": "A function that is executed after the widget's value is changed."
-        },
-        "readOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is read-only."
-        },
-        "rtlEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Switches the widget to a right-to-left representation."
-        },
-        "startDate": {
-          "PrimitiveTypes": [
-            "Date"
-          ]
-        },
-        "tabIndex": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the number of the element when the Tab key is used for navigating."
-        },
-        "validationError": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
-        },
-        "validationMessageMode": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
-        },
-        "value": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "IsChangeable": true,
           "Description": "Specifies the currently selected value."
         },
         "visible": {
@@ -25729,6 +25946,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rows": {
           "ItemPrimitiveTypes": [
@@ -26158,6 +26381,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -26940,7 +27164,8 @@
         "groupByDate": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to group appointments by date first."
         },
         "groups": {
           "ItemPrimitiveTypes": [
@@ -26984,7 +27209,7 @@
             "number",
             "string"
           ],
-          "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
+          "Description": "Specifies the limit of full-sized appointments displayed per cell. Applies to all views except \"agenda\"."
         },
         "min": {
           "PrimitiveTypes": [
@@ -27397,7 +27622,8 @@
             "groupByDate": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to group appointments by date first."
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -27424,7 +27650,7 @@
                 "number",
                 "string"
               ],
-              "Description": "Specifies the limit of full-sized appointments displayed per cell. In the \"day\", \"week\" and \"workweek\" views, this option applies only to all-day appointments."
+              "Description": "Specifies the limit of full-sized appointments displayed per cell. Applies to all views except \"agenda\"."
             },
             "name": {
               "PrimitiveTypes": [
@@ -28026,6 +28252,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -28146,7 +28377,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated. Applies only if acceptCustomValue is set to true."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -28425,6 +28656,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -29734,6 +29971,12 @@
           "IsEvent": true,
           "Description": "A function that is executed after a tab is rendered."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -30017,6 +30260,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -30489,6 +30738,11 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -30940,7 +31194,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -31276,7 +31530,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -31523,6 +31777,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -32061,6 +32321,12 @@
           ],
           "Description": "Informs the widget about its location in a view HTML markup."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -32597,21 +32863,24 @@
           "Options": {
             "allowAdding": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can add new rows."
+              "IsFunc": true
             },
             "allowDeleting": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can delete rows."
+              "IsFunc": true
             },
             "allowUpdating": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "Function"
               ],
-              "Description": "Specifies whether a user can update rows."
+              "IsFunc": true
             },
             "form": {
               "PrimitiveTypes": [
@@ -32636,6 +32905,11 @@
                 "dxPopupOptions"
               ],
               "Description": "Configures the popup. Used only if editing.mode is \"popup\"."
+            },
+            "refreshMode": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -32949,7 +33223,28 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Specifies a filter expression."
+        },
+        "focusedColumnIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ]
+        },
+        "focusedRowEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
+        "focusedRowIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ]
+        },
+        "focusedRowKey": {
+          "PrimitiveTypes": [
+            "any"
+          ]
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -33031,6 +33326,11 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's height."
+        },
+        "highlightChanges": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
         },
         "hint": {
           "PrimitiveTypes": [
@@ -33201,6 +33501,34 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed before an editor is created."
+        },
+        "onFocusedCellChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedCellChanging": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedRowChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusedRowChanging": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -33465,7 +33793,14 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the filter row, command columns, and columns with showEditorAlways set to true after other elements."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those cells whose data changed."
         },
         "rootValue": {
           "PrimitiveTypes": [
@@ -33492,7 +33827,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport."
+              "Description": "Specifies the rendering mode for columns. Applies when columns are left outside the viewport. Requires the columnWidth, columnAutoWidth, or width (for all columns) option specified."
             },
             "mode": {
               "PrimitiveTypes": [
@@ -34056,6 +34391,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -34898,6 +35234,12 @@
           "IsFunc": true,
           "Description": "Specifies the name of the data source item field for holding the parent key of the corresponding node."
         },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
+        },
         "rootValue": {
           "PrimitiveTypes": [
             "any"
@@ -35188,6 +35530,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
+        },
+        "repaintChangesOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -35940,6 +36288,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -38555,7 +38904,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display and editing values should be different. Requires specifying the dataField or calculateCellValue option."
+          "Description": "Calculates custom display values for column cells. Requires specifying the dataField or calculateCellValue option. Used in lookup optimization."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -38858,7 +39207,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the column after other columns and elements. Use if column cells have a complex template. Requires the width option specified."
         },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
@@ -39661,6 +40011,143 @@
         }
       }
     },
+    "HtmlEditorDataPlaceholder": {
+      "Options": {
+        "dataSource": {
+          "PrimitiveTypes": [
+            "DevExpress.data.DataSource",
+            "DevExpress.data.DataSourceOptions",
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsDataSource": true
+        },
+        "endEscapedChar": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "escapedChar": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "startEscapedChar": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        }
+      }
+    },
+    "HtmlEditorToolbar": {
+      "Options": {
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ]
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxHtmlEditorToolbarItem"
+          ],
+          "ItemComplexTypes": [
+            "HtmlEditorToolbarItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item"
+        }
+      }
+    },
+    "HtmlEditorToolbarItem": {
+      "Description": "This section lists the data source fields that are used in a default template for toolbar items.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed disabled."
+        },
+        "format": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "locateInMenu": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display an item in the toolbar's overflow menu."
+        },
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a location for the item on the toolbar."
+        },
+        "menuItemTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render a menu item."
+        },
+        "options": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+        },
+        "showText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display the text for the widget item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "values": {
+          "ItemPrimitiveTypes": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "IsCollection": true,
+          "SingularName": "value"
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        },
+        "widget": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "A widget that presents a toolbar item."
+        }
+      }
+    },
     "MenuItem": {
       "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
@@ -39807,7 +40294,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Calculates custom display values for column cells. Used when display and editing values should be different. Requires specifying the dataField or calculateCellValue option."
+          "Description": "Calculates custom display values for column cells. Requires specifying the dataField or calculateCellValue option. Used in lookup optimization."
         },
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -40088,7 +40575,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the column after other columns and elements. Use if column cells have a complex template. Requires the width option specified."
         },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
@@ -42891,6 +43379,27 @@
         }
       }
     },
+    "VizScaleBreak": {
+      "Description": "A class describing a scale break range. Inherited by scale breaks in the Chart and RangeSelector.",
+      "Options": {
+        "endValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Along with the startValue option, limits the scale break."
+        },
+        "startValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Along with the endValue option, limits the scale break."
+        }
+      }
+    },
     "StringLengthRule": {
       "Description": "A validation rule that demands the target value length be within the specified value range (including the range's end points).",
       "IsCollection": true,
@@ -42924,6 +43433,89 @@
             "string"
           ],
           "Description": "Specifies the type of the current rule."
+        }
+      }
+    },
+    "VizRange": {
+      "Options": {
+        "endValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "The range's end value."
+        },
+        "length": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "The range's length.",
+          "Options": {
+            "days": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
+            },
+            "hours": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
+            },
+            "milliseconds": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
+            },
+            "minutes": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
+            },
+            "months": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
+            },
+            "quarters": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
+            },
+            "seconds": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
+            },
+            "weeks": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
+            },
+            "years": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
+            }
+          }
+        },
+        "startValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "The range's start value."
         }
       }
     }
