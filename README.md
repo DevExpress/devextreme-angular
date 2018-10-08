@@ -50,18 +50,19 @@ You have the following options to start:
 
 You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a DevExtreme Angular application that already includes several sample views and a navigation menu:
 
+- DevExtreme CLI
+
+        npx devextreme-cli new angular-app app-name
+        cd app-name
+        ng serve
+
 - Angular CLI
 
         npm install -g @angular/cli
         ng new app-name --style=scss
         cd app-name
+        npm i devextreme-angular@unstable
         ng g devextreme-angular:add-app-template
-        ng serve
-
-- DevExtreme CLI
-
-        npx devextreme-cli new angular-app app-name
-        cd app-name
         ng serve
 
 See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
@@ -697,6 +698,6 @@ Familiarize yourself with the
 
 | DevExtreme | Angular |
 | ---------- | ----------------|
-| v18.1+     | v5.0 - v6.0+ | 
-| v17.1+ <br/> v17.2+ | v2.4 - v5.0+ | 
- 
+| v18.1+     | v5.0 - v6.0+ |
+| v17.1+ <br/> v17.2+ | v2.4 - v5.0+ |
+
