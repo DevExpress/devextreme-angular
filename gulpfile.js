@@ -191,7 +191,7 @@ gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src([path.join(cmpConfig.outputPath, '**/*.{js,d.ts,js.map,metadata.json}')])
+    return gulp.src([path.join(cmpConfig.outputPath, '**/{*.{js,d.ts,js.map,metadata.json},collection.json}')])
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
