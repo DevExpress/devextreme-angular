@@ -1,3 +1,8 @@
+## 18.2.1-beta.5 (2018-10-08)
+
+### Bug Fixes
+- Add schematics to package.json
+
 ## 18.2.1-beta.4 (2018-10-05)
 
 ### Features
