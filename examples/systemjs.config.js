@@ -21,6 +21,8 @@
       // devextreme & devextreme deps
       'devextreme': 'npm:devextreme',
       'jszip': 'npm:jszip/dist/jszip.min.js',
+      'quill-delta-to-html': 'npm:quill-delta-to-html/dist/browser/QuillDeltaToHtmlConverter.bundle.js',
+      'quill': 'npm:quill/dist/quill.min.js',
       '../../dist': '../../dist',
       // other libraries
       'rxjs': 'npm:rxjs'
