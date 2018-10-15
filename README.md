@@ -63,7 +63,6 @@ You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [De
         cd app-name
         npm i devextreme-angular@18.2-unstable
         ng g devextreme-angular:add-app-template
-        npx devextreme build
         ng serve
 
 See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
