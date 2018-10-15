@@ -1010,6 +1010,11 @@
           ],
           "Description": "Specifies whether or not the widget checks the inner text for spelling mistakes."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -1117,6 +1122,12 @@
             "number"
           ],
           "Description": "Specifies a base value for bars."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -1969,6 +1980,12 @@
           ],
           "Description": "Specifies a color for the bullet bar."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -2428,6 +2445,11 @@
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -2464,6 +2486,173 @@
             "string"
           ],
           "Description": "Specifies the name of the validation group to be accessed in the click event handler."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
+    "dxButtonGroup": {
+      "Description": "The base class for widgets.",
+      "Module": "ui/button_group",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxButtonGroupItem"
+          ],
+          "ItemComplexTypes": [
+            "ButtonGroupItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item"
+        },
+        "itemTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
+        },
+        "keyExpr": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onSelectionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "selectedItemKeys": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "IsChangeable": true,
+          "SingularName": "selectedItemKey"
+        },
+        "selectedItems": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "IsChangeable": true,
+          "SingularName": "selectedItem"
+        },
+        "selectionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -4559,6 +4748,12 @@
           ],
           "Description": "Specifies which pane should be used by default."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -5249,7 +5444,8 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Enables scrolling in your chart."
+          "IsDeprecated": true,
+          "Description": "Use the zoomAndPan option instead."
         },
         "series": {
           "PrimitiveTypes": [
@@ -6502,11 +6698,60 @@
             }
           }
         },
+        "zoomAndPan": {
+          "Options": {
+            "allowGestures": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "allowMouseWheel": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "argumentAxis": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "dragBoxStyle": {
+              "Options": {
+                "color": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ]
+                },
+                "opacity": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ]
+                }
+              }
+            },
+            "dragToZoom": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "panKey": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
+            "valueAxis": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            }
+          }
+        },
         "zoomingMode": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Enables zooming in your chart."
+          "IsDeprecated": true,
+          "Description": "Use the zoomAndPan option instead."
         }
       }
     },
@@ -6710,6 +6955,12 @@
             "string"
           ],
           "Description": "Specifies the color of the parent page element."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -7775,11 +8026,6 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
-        "openOnFieldClick": {
-          "PrimitiveTypes": [
-            "boolean"
-          ]
-        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -7797,6 +8043,11 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -8460,21 +8711,24 @@
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can add new rows."
             },
             "allowDeleting": {
               "PrimitiveTypes": [
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can delete rows. It is called for each data row when defined as a function."
             },
             "allowUpdating": {
               "PrimitiveTypes": [
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can update rows. It is called for each data row when defined as a function."
             },
             "form": {
               "PrimitiveTypes": [
@@ -8503,7 +8757,8 @@
             "refreshMode": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies operations that are performed after saving changes."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -8872,7 +9127,8 @@
         "focusedColumnIndex": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -8882,12 +9138,14 @@
         "focusedRowIndex": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
             "any"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -9449,13 +9707,6 @@
           "IsEvent": true,
           "Description": "A function that is executed before the toolbar is created."
         },
-        "onXlsxCellPrepared": {
-          "PrimitiveTypes": [
-            "Function"
-          ],
-          "IsFunc": true,
-          "IsEvent": true
-        },
         "pager": {
           "Description": "Configures the pager.",
           "Options": {
@@ -9965,7 +10216,8 @@
             "recalculateWhileEditing": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to recalculate summaries while a user edits data."
             },
             "skipEmptyValues": {
               "PrimitiveTypes": [
@@ -10557,6 +10809,11 @@
           ],
           "Description": "Specifies whether or not the widget checks the inner text for spelling mistakes."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -10930,7 +11187,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "The target element associated with the drawer. Applies only when the openedStateMode is \"overlap\"."
+          "Description": "Specifies the target element associated with the drawer. Applies only when the openedStateMode is \"overlap\"."
         },
         "template": {
           "PrimitiveTypes": [
@@ -11310,6 +11567,11 @@
             "boolean"
           ],
           "Description": "Specifies whether the drop-down button is visible."
+        },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -12346,6 +12608,12 @@
           ],
           "IsDataSource": true,
           "Description": "Specifies the widget's data origin."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -13691,14 +13959,6 @@
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
         },
-        "dataPlaceholder": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.dxHtmlEditorDataPlaceholder"
-          ],
-          "ComplexTypes": [
-            "HtmlEditorDataPlaceholder"
-          ]
-        },
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -13759,6 +14019,20 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onFocusIn": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "onFocusOut": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -13839,6 +14113,14 @@
             "string"
           ]
         },
+        "variables": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxHtmlEditorVariables"
+          ],
+          "ComplexTypes": [
+            "HtmlEditorVariables"
+          ]
+        },
         "visible": {
           "PrimitiveTypes": [
             "boolean"
@@ -13888,6 +14170,12 @@
             "string"
           ],
           "Description": "Specifies the color of the parent page element."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -15982,11 +16270,6 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
-        "openOnFieldClick": {
-          "PrimitiveTypes": [
-            "boolean"
-          ]
-        },
         "pageLoadingText": {
           "PrimitiveTypes": [
             "string"
@@ -16133,6 +16416,11 @@
             "boolean"
           ],
           "Description": "A Boolean value specifying whether or not to display the title in the popup window."
+        },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -17822,6 +18110,11 @@
           ],
           "Description": "Specifies how much the widget's value changes when using the spin buttons, Up/Down arrow keys, or mouse wheel."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -18245,6 +18538,12 @@
             "number"
           ],
           "Description": "Specifies the diameter of the pie."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -21265,6 +21564,12 @@
           "IsDataSource": true,
           "Description": "Specifies the widget's data origin."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -24217,6 +24522,12 @@
           ],
           "Description": "Specifies the data source field that provides data for the scale."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -25590,6 +25901,162 @@
         }
       }
     },
+    "dxRecurrenceEditor": {
+      "Description": "A base class for editors.",
+      "Module": "ui/recurrence_editor",
+      "IsEditor": true,
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "isValid": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the editor's value is valid."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed only once, after the widget is initialized."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onValueChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the widget's value is changed."
+        },
+        "readOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "A Boolean value specifying whether or not the widget is read-only."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "validationError": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+        },
+        "validationMessageMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "value": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsChangeable": true,
+          "Description": "Specifies the currently selected value."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
     "dxResizable": {
       "Description": "The Resizable widget enables its content to be resizable in the UI.",
       "IsTranscludedContent": true,
@@ -26073,6 +26540,12 @@
           ],
           "IsDataSource": true,
           "Description": "Specifies the widget's data source."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -28341,6 +28814,11 @@
           ],
           "Description": "Specifies whether or not the widget checks the inner text for spelling mistakes."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -29114,6 +29592,12 @@
           ],
           "IsDataSource": true,
           "Description": "Specifies a data source for the sparkline."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -30837,6 +31321,11 @@
           ],
           "Description": "Specifies whether or not to display selection controls."
         },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -31157,6 +31646,11 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget checks the inner text for spelling mistakes."
+        },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -31487,6 +31981,11 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget checks the inner text for spelling mistakes."
+        },
+        "stylingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -32866,21 +33365,24 @@
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can add new rows. It is called for each data row when defined as a function."
             },
             "allowDeleting": {
               "PrimitiveTypes": [
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can delete rows. It is called for each data row when defined as a function."
             },
             "allowUpdating": {
               "PrimitiveTypes": [
                 "boolean",
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Specifies whether a user can update rows. It is called for each data row when defined as a function"
             },
             "form": {
               "PrimitiveTypes": [
@@ -32909,7 +33411,8 @@
             "refreshMode": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies operations that are performed after saving changes."
             },
             "texts": {
               "Description": "Contains options that specify texts for editing-related UI elements.",
@@ -33229,7 +33732,8 @@
         "focusedColumnIndex": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -33239,12 +33743,14 @@
         "focusedRowIndex": {
           "PrimitiveTypes": [
             "number"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
             "any"
-          ]
+          ],
+          "IsChangeable": true
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -34159,6 +34665,12 @@
           ],
           "IsDataSource": true,
           "Description": "Specifies the origin of data for the widget."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -35779,6 +36291,12 @@
               "Description": "Specifies the position of the control bar."
             }
           }
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -38740,6 +39258,51 @@
         }
       }
     },
+    "ButtonGroupItem": {
+      "Description": "This section lists the data source fields that are used in a default item template.",
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed disabled."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
     "ContextMenuItem": {
       "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
@@ -38890,6 +39453,17 @@
             "boolean"
           ],
           "Description": "Specifies whether groups appear expanded or not when records are grouped by a specific column. Setting this option makes sense only when grouping is allowed for this column."
+        },
+        "buttons": {
+          "ItemPrimitiveTypes": [
+            "string",
+            "DevExpress.ui.dxDataGridColumnButton"
+          ],
+          "ItemComplexTypes": [
+            "DataGridColumnButton"
+          ],
+          "IsCollection": true,
+          "SingularName": "button"
         },
         "calculateCellValue": {
           "PrimitiveTypes": [
@@ -39269,6 +39843,11 @@
           ],
           "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
         },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "validationRules": {
           "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
@@ -39314,6 +39893,56 @@
             "string"
           ],
           "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
+        }
+      }
+    },
+    "DataGridColumnButton": {
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "onClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean",
+            "Function"
+          ],
+          "IsFunc": true
         }
       }
     },
@@ -40011,36 +40640,6 @@
         }
       }
     },
-    "HtmlEditorDataPlaceholder": {
-      "Options": {
-        "dataSource": {
-          "PrimitiveTypes": [
-            "DevExpress.data.DataSource",
-            "DevExpress.data.DataSourceOptions",
-            "string"
-          ],
-          "ItemPrimitiveTypes": [
-            "string"
-          ],
-          "IsDataSource": true
-        },
-        "endEscapedChar": {
-          "PrimitiveTypes": [
-            "string"
-          ]
-        },
-        "escapedChar": {
-          "PrimitiveTypes": [
-            "string"
-          ]
-        },
-        "startEscapedChar": {
-          "PrimitiveTypes": [
-            "string"
-          ]
-        }
-      }
-    },
     "HtmlEditorToolbar": {
       "Options": {
         "container": {
@@ -40070,10 +40669,19 @@
           ],
           "Description": "Specifies whether or not a widget item must be displayed disabled."
         },
-        "format": {
+        "formatName": {
           "PrimitiveTypes": [
             "string"
           ]
+        },
+        "formatValues": {
+          "ItemPrimitiveTypes": [
+            "string",
+            "number",
+            "boolean"
+          ],
+          "IsCollection": true,
+          "SingularName": "formatValue"
         },
         "html": {
           "PrimitiveTypes": [
@@ -40125,15 +40733,6 @@
           ],
           "Description": "Specifies text displayed for the widget item."
         },
-        "values": {
-          "ItemPrimitiveTypes": [
-            "string",
-            "number",
-            "boolean"
-          ],
-          "IsCollection": true,
-          "SingularName": "value"
-        },
         "visible": {
           "PrimitiveTypes": [
             "boolean"
@@ -40145,6 +40744,31 @@
             "string"
           ],
           "Description": "A widget that presents a toolbar item."
+        }
+      }
+    },
+    "HtmlEditorVariables": {
+      "Options": {
+        "dataSource": {
+          "PrimitiveTypes": [
+            "DevExpress.data.DataSource",
+            "DevExpress.data.DataSourceOptions",
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsDataSource": true
+        },
+        "escapeChar": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "escapeChar"
         }
       }
     },
@@ -40280,6 +40904,17 @@
             "boolean"
           ],
           "Description": "Specifies whether a user can sort rows by this column at runtime. Applies only if sorting.mode differs from \"none\"."
+        },
+        "buttons": {
+          "ItemPrimitiveTypes": [
+            "string",
+            "DevExpress.ui.dxTreeListColumnButton"
+          ],
+          "ItemComplexTypes": [
+            "TreeListColumnButton"
+          ],
+          "IsCollection": true,
+          "SingularName": "button"
         },
         "calculateCellValue": {
           "PrimitiveTypes": [
@@ -40631,6 +41266,11 @@
           ],
           "Description": "In a boolean column, replaces all true items with a specified text. Applies only if showEditorAlways option is false."
         },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
         "validationRules": {
           "ItemPrimitiveTypes": [
             "DevExpress.ui.RequiredRule",
@@ -40676,6 +41316,56 @@
             "string"
           ],
           "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
+        }
+      }
+    },
+    "TreeListColumnButton": {
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "onClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean",
+            "Function"
+          ],
+          "IsFunc": true
         }
       }
     },
