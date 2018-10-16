@@ -12,7 +12,7 @@ export class NgEventsStrategy {
     constructor(private instance: any) { }
 
     hasEvent(name: string) {
-        return this.getEmitter(name).observers.length;
+        return this.getEmitter(name).observers.length !== 0;
     }
 
     fireEvent(name, args) {
