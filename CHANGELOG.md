@@ -1,3 +1,8 @@
+## 18.1.7-beta.2 (2018-10-16)
+
+### Bug Fixes
+- Return the boolean type from the hasEvent method [#873](https://github.com/DevExpress/devextreme-angular/pull/873)
+
 ## 18.1.7-beta.1 (2018-09-19)
 
 ### Bug Fixes
