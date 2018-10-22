@@ -27,7 +27,7 @@ jobs:
           command: npx gulp run.tests
       - run:
           name: Install Angular Next
-          command: npm install @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/http@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
+          command: npm install @angular/animations@^7.0.0 @angular/core@^7.0.0  @angular/common@^7.0.0 @angular/compiler@^7.0.0 @angular/forms@^7.0.0 @angular/http@^7.0.0 @angular/platform-browser@^7.0.0 @angular/platform-server@^7.0.0 @angular/platform-browser-dynamic@^7.0.0 @angular/compiler-cli@^7.0.0 --unsafe-perm
       - run:
           name: Build tests with Angular Next
           command: npx gulp build.tests
