@@ -118,7 +118,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the name of the icon displayed by the widget item title."
+              "Description": "Specifies the icon to be displayed in the panel's title."
             },
             "template": {
               "PrimitiveTypes": [
@@ -412,7 +412,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the icon to be displayed on an action sheet button."
+              "Description": "Specifies the icon to be displayed on the action sheet button."
             },
             "onClick": {
               "PrimitiveTypes": [
@@ -524,12 +524,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -942,7 +936,8 @@
         "openOnFieldClick": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -1725,6 +1720,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies the array of values to be indicated on a bar gauge."
         }
@@ -1940,12 +1936,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -2561,7 +2551,7 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxButtonGroupItem"
           ],
           "ItemComplexTypes": [
             "ButtonGroupItem"
@@ -2644,6 +2634,11 @@
           "SingularName": "selectedItem"
         },
         "selectionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ]
+        },
+        "stylingMode": {
           "PrimitiveTypes": [
             "string"
           ]
@@ -3128,7 +3123,8 @@
                 "extendAxis": {
                   "PrimitiveTypes": [
                     "boolean"
-                  ]
+                  ],
+                  "Description": "Specifies whether to extend the axis's default visual range to display the constant line."
                 },
                 "label": {
                   "Description": "Configures the constant line label.",
@@ -3892,6 +3888,7 @@
                 "Date"
               ],
               "IsCollection": true,
+              "IsChangeable": true,
               "SingularName": "visualRange",
               "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
             },
@@ -5891,7 +5888,8 @@
                 "extendAxis": {
                   "PrimitiveTypes": [
                     "boolean"
-                  ]
+                  ],
+                  "Description": "Specifies whether to extend the axis's default visual range to display the constant line."
                 },
                 "label": {
                   "Description": "Configures the constant line label.",
@@ -6671,6 +6669,7 @@
                 "Date"
               ],
               "IsCollection": true,
+              "IsChangeable": true,
               "SingularName": "visualRange",
               "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
             },
@@ -7484,6 +7483,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "subvalue",
           "Description": "Specifies a set of subvalues to be designated by the subvalue indicators."
         },
@@ -7743,6 +7743,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
@@ -8360,12 +8361,6 @@
           ],
           "Description": "An object defining widget positioning options."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -8953,6 +8948,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
@@ -10759,7 +10755,8 @@
         "openOnFieldClick": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
         },
         "pickerType": {
           "PrimitiveTypes": [
@@ -11536,7 +11533,8 @@
         "openOnFieldClick": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -13857,12 +13855,6 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -14115,7 +14107,7 @@
         },
         "variables": {
           "PrimitiveTypes": [
-            "any"
+            "DevExpress.ui.dxHtmlEditorVariables"
           ],
           "ComplexTypes": [
             "HtmlEditorVariables"
@@ -14713,6 +14705,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "subvalue",
           "Description": "Specifies a set of subvalues to be designated by the subvalue indicators."
         },
@@ -14972,6 +14965,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
@@ -15137,7 +15131,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the item's icon. Accepts an icon name from the built-in icon library, the URL of an image, a CSS class from an external icon library, or a Base64 image."
+              "Description": "Specifies the list item's icon."
             },
             "key": {
               "PrimitiveTypes": [
@@ -17134,12 +17128,6 @@
           ],
           "Description": "Specifies whether the menu has horizontal or vertical orientation."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -17485,12 +17473,6 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -17640,7 +17622,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the name of the icon displayed by the widget item."
+              "Description": "Specifies the icon to be displayed on the tab."
             },
             "template": {
               "PrimitiveTypes": [
@@ -18389,12 +18371,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -19580,12 +19556,6 @@
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -20650,7 +20620,8 @@
                 "extendAxis": {
                   "PrimitiveTypes": [
                     "boolean"
-                  ]
+                  ],
+                  "Description": "Specifies whether to extend the axis to display the constant line."
                 },
                 "label": {
                   "Description": "An object defining constant line label options.",
@@ -22480,7 +22451,8 @@
                 "extendAxis": {
                   "PrimitiveTypes": [
                     "boolean"
-                  ]
+                  ],
+                  "Description": "Specifies whether to extend the axis to display the constant line."
                 },
                 "label": {
                   "Description": "An object defining constant line label options.",
@@ -26414,12 +26386,6 @@
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rows": {
           "ItemPrimitiveTypes": [
             "any"
@@ -28728,7 +28694,8 @@
         "openOnFieldClick": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -29134,12 +29101,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when a collection item is selected or the selection is canceled."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -30301,7 +30262,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the name of the icon displayed by the widget item title."
+              "Description": "Specifies the icon to be displayed in the tab's title."
             },
             "tabTemplate": {
               "PrimitiveTypes": [
@@ -30628,7 +30589,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the name of the icon displayed by the widget item."
+              "Description": "Specifies the icon to be displayed on the tab."
             },
             "template": {
               "PrimitiveTypes": [
@@ -31225,7 +31186,8 @@
         "openOnFieldClick": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
         },
         "placeholder": {
           "PrimitiveTypes": [
@@ -32277,12 +32239,6 @@
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -32819,12 +32775,6 @@
             "string"
           ],
           "Description": "Informs the widget about its location in a view HTML markup."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -33558,6 +33508,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
@@ -35746,12 +35697,6 @@
           "IsFunc": true,
           "Description": "Specifies the name of the data source item field for holding the parent key of the corresponding node."
         },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
-        },
         "rootValue": {
           "PrimitiveTypes": [
             "any"
@@ -36042,12 +35987,6 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed after a widget option is changed."
-        },
-        "repaintChangesOnly": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether to repaint only those elements whose data changed."
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -39328,7 +39267,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The name of an icon to be displayed on the menu item."
+          "Description": "Specifies the menu item's icon."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -39993,7 +39932,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies an icon that represents the operation. Accepts the name of an icon from the built-in icon library, a path to an image, or the CSS class of an icon stored in an external icon library."
+          "Description": "Specifies the icon that should represent the filter operation."
         },
         "name": {
           "PrimitiveTypes": [
@@ -40650,7 +40589,8 @@
         },
         "items": {
           "ItemPrimitiveTypes": [
-            "DevExpress.ui.dxHtmlEditorToolbarItem"
+            "DevExpress.ui.dxHtmlEditorToolbarItem",
+            "string"
           ],
           "ItemComplexTypes": [
             "HtmlEditorToolbarItem"
@@ -40797,7 +40737,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The name of an icon to be displayed on the menu item."
+          "Description": "Specifies the menu item's icon."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -41400,7 +41340,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The name of an icon to be displayed on the tree view item."
+          "Description": "Specifies the tree view item's icon."
         },
         "items": {
           "ItemPrimitiveTypes": [
