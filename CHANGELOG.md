@@ -1,3 +1,8 @@
+## 18.2.2-beta.1 (2018-10-23)
+
+### Features
+- DevExtreme dependency has been updated to the 18.2.2-pre-18292
+
 ## 18.2.1-beta.5 (2018-10-08)
 
 ### Bug Fixes
