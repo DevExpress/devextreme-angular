@@ -130,7 +130,7 @@ describe('DxForm', () => {
         input.value = 'test value';
         input.dispatchEvent(new Event('change'));
 
-        expect(document.getElementById('text').innerText).toBe('test value');
+        expect(document.getElementById('text').innerText.trim()).toBe('test value');
         fixture.autoDetectChanges(false);
     });
 
