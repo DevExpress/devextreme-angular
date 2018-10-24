@@ -261,7 +261,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "repaintChangesOnly": {
           "PrimitiveTypes": [
@@ -916,7 +916,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is selected or the selection is canceled."
+          "Description": "A function that is executed when a list item is selected or selection is canceled."
         },
         "onValueChanged": {
           "PrimitiveTypes": [
@@ -1008,7 +1008,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -2438,7 +2439,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the button is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -2495,7 +2497,7 @@
       }
     },
     "dxButtonGroup": {
-      "Description": "The base class for widgets.",
+      "Description": "The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.",
       "Module": "ui/button_group",
       "Options": {
         "accessKey": {
@@ -2557,20 +2559,23 @@
             "ButtonGroupItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Configures buttons in the group."
         },
         "itemTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom button template."
         },
         "keyExpr": {
           "PrimitiveTypes": [
             "Function",
             "string"
           ],
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Specifies which data field provides keys used to distinguish between the selected buttons."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -2609,7 +2614,8 @@
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed when a button is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -2623,7 +2629,8 @@
           ],
           "IsCollection": true,
           "IsChangeable": true,
-          "SingularName": "selectedItemKey"
+          "SingularName": "selectedItemKey",
+          "Description": "Contains the keys of the selected buttons and allows selecting buttons initially."
         },
         "selectedItems": {
           "ItemPrimitiveTypes": [
@@ -2631,12 +2638,14 @@
           ],
           "IsCollection": true,
           "IsChangeable": true,
-          "SingularName": "selectedItem"
+          "SingularName": "selectedItem",
+          "Description": "Contains the data objects that correspond to the selected buttons. The data objects are taken from the items array."
         },
         "selectionMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies whether a single or multiple buttons can be in the selected state simultaneously."
         },
         "stylingMode": {
           "PrimitiveTypes": [
@@ -2926,7 +2935,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to adjust the value axis's visualRange when the argument axis is being zoomed or scrolled."
+          "Description": "Specifies whether to adjust the value axis's visualRange when the argument axis is being zoomed or panned."
         },
         "animation": {
           "PrimitiveTypes": [
@@ -3912,7 +3921,7 @@
               ],
               "IsCollection": true,
               "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be zoomed and scrolled. Equals the data range when unspecified."
+              "Description": "Defines the range where the axis can be zoomed and panned. Equals the data range when unspecified."
             },
             "width": {
               "PrimitiveTypes": [
@@ -5203,7 +5212,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a series point is selected or the selection is canceled."
+          "Description": "A function that is executed when a series point is selected or selection is canceled."
         },
         "onSeriesClick": {
           "PrimitiveTypes": [
@@ -5228,7 +5237,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a series is selected or the selection is canceled."
+          "Description": "A function that is executed when a series is selected or selection is canceled."
         },
         "onTooltipHidden": {
           "PrimitiveTypes": [
@@ -5252,7 +5261,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when zooming or scrolling ends."
+          "Description": "A function that is executed when zooming or panning ends."
         },
         "onZoomStart": {
           "PrimitiveTypes": [
@@ -5260,7 +5269,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when zooming or scrolling begins."
+          "Description": "A function that is executed when zooming or panning begins."
         },
         "palette": {
           "PrimitiveTypes": [
@@ -6687,7 +6696,7 @@
               ],
               "IsCollection": true,
               "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be zoomed and scrolled. Equals the data range when not set."
+              "Description": "Defines the range where the axis can be zoomed and panned. Equals the data range when not set."
             },
             "width": {
               "PrimitiveTypes": [
@@ -6698,50 +6707,60 @@
           }
         },
         "zoomAndPan": {
+          "Description": "Configures zooming and panning.",
           "Options": {
-            "allowGestures": {
-              "PrimitiveTypes": [
-                "boolean"
-              ]
-            },
             "allowMouseWheel": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether users can use the mouse wheel to zoom the chart. Applies only if zoom is allowed for the argument or value axis."
+            },
+            "allowTouchGestures": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether users can use touch gestures to zoom or pan the chart. Applies only if zoom and pan are allowed for the argument or value axis."
             },
             "argumentAxis": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies whether users are allowed to zoom and/or pan the argument axis."
             },
             "dragBoxStyle": {
+              "Description": "Configures the box that appears when users zoom the chart by selecting an area with the drag gesture. Applies only if dragToZoom is true.",
               "Options": {
                 "color": {
                   "PrimitiveTypes": [
                     "string"
-                  ]
+                  ],
+                  "Description": "Specifies the drag box's color."
                 },
                 "opacity": {
                   "PrimitiveTypes": [
                     "number"
-                  ]
+                  ],
+                  "Description": "Specifies the drag box's transparency."
                 }
               }
             },
             "dragToZoom": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Enables users to zoom the chart by selecting an area with the drag gesture. Applies only on devices that use a mouse."
             },
             "panKey": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the key that enables panning when dragToZoom is true. Applies only on devices that use a mouse."
             },
             "valueAxis": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies whether users are allowed to zoom and/or pan the value axis."
             }
           }
         },
@@ -8048,7 +8067,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -8334,7 +8354,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "onShowing": {
           "PrimitiveTypes": [
@@ -8855,6 +8875,12 @@
               ],
               "Description": "Allows an end user to export selected rows only."
             },
+            "customizeExcelCell": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true
+            },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
@@ -9124,24 +9150,28 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies the initially or currently focused column's index. This column is focused when the data row area is focused."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether the focused row feature is enabled."
         },
         "focusedRowIndex": {
           "PrimitiveTypes": [
             "number"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies the initially or currently focused grid row's index. Use it when focusedRowEnabled is true."
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies initially or currently focused grid row's key. Use it when focusedRowEnabled is true."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -9527,28 +9557,32 @@
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed after the focused cell changes."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed before the focused cell changes."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed after the focused row changes. Applies only when focusedRowEnabled is true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -10809,7 +10843,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -11569,7 +11604,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -13302,7 +13338,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a funnel item is selected or the selection is canceled."
+          "Description": "A function that is executed when a funnel item is selected or selection is canceled."
         },
         "palette": {
           "PrimitiveTypes": [
@@ -13853,7 +13889,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15365,7 +15401,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "pageLoadingText": {
           "PrimitiveTypes": [
@@ -16239,7 +16275,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is selected or the selection is canceled."
+          "Description": "A function that is executed when a list item is selected or selection is canceled."
         },
         "onTitleRendered": {
           "PrimitiveTypes": [
@@ -16414,7 +16450,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -17088,7 +17125,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "onSubmenuHidden": {
           "PrimitiveTypes": [
@@ -17471,7 +17508,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -17737,7 +17774,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "repaintChangesOnly": {
           "PrimitiveTypes": [
@@ -18095,7 +18132,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -18370,7 +18408,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -18945,7 +18983,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a series point is selected or the selection is canceled."
+          "Description": "A function that is executed when a series point is selected or selection is canceled."
         },
         "onTooltipHidden": {
           "PrimitiveTypes": [
@@ -19554,7 +19592,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -21975,7 +22013,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a series point is selected or the selection is canceled."
+          "Description": "A function that is executed when a series point is selected or selection is canceled."
         },
         "onSeriesClick": {
           "PrimitiveTypes": [
@@ -22000,7 +22038,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a series is selected or the selection is canceled."
+          "Description": "A function that is executed when a series is selected or selection is canceled."
         },
         "onTooltipHidden": {
           "PrimitiveTypes": [
@@ -28674,7 +28712,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is selected or the selection is canceled."
+          "Description": "A function that is executed when a list item is selected or selection is canceled."
         },
         "onValueChanged": {
           "PrimitiveTypes": [
@@ -28784,7 +28822,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -29100,7 +29139,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -30389,7 +30428,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "onTitleClick": {
           "PrimitiveTypes": [
@@ -30704,7 +30743,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a collection item is selected or the selection is canceled."
+          "Description": "A function that is executed when a collection item is selected or selection is canceled."
         },
         "repaintChangesOnly": {
           "PrimitiveTypes": [
@@ -31166,7 +31205,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a list item is selected or the selection is canceled."
+          "Description": "A function that is executed when a list item is selected or selection is canceled."
         },
         "onValueChanged": {
           "PrimitiveTypes": [
@@ -31286,7 +31325,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -31612,7 +31652,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -31947,7 +31988,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how the widget's text field is styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -33684,24 +33726,28 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies the initially or currently focused column's index. This column is focused when the data row area is focused."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether the focused row feature is enabled."
         },
         "focusedRowIndex": {
           "PrimitiveTypes": [
             "number"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies the initially or currently focused grid row's index. Use it when focusedRowEnabled is true."
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsChangeable": true
+          "IsChangeable": true,
+          "Description": "Specifies initially or currently focused grid row's key. Use it when focusedRowEnabled is true."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -33964,28 +34010,32 @@
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed after the focused cell changes."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed before the focused cell changes."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that executed when the focused row changes. Applies only when focusedRowEnabled is true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -34982,7 +35032,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a node is selected or the selection is canceled."
+          "Description": "A function that is executed when a node is selected or selection is canceled."
         },
         "parentField": {
           "PrimitiveTypes": [
@@ -35663,7 +35713,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a tree view item is selected or the selection is canceled."
+          "Description": "A function that is executed when a tree view item is selected or selection is canceled."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -35687,7 +35737,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a tree view item is selected or the selection is canceled."
+          "Description": "A function that is executed when a tree view item is selected or selection is canceled."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -36849,7 +36899,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a layer element is selected or the selection is canceled."
+          "Description": "A function that is executed when a layer element is selected or selection is canceled."
         },
         "onTooltipHidden": {
           "PrimitiveTypes": [
@@ -39198,7 +39248,7 @@
       }
     },
     "ButtonGroupItem": {
-      "Description": "This section lists the data source fields that are used in a default item template.",
+      "Description": "This section describes object fields that can be used in the default item template.",
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
@@ -39209,12 +39259,14 @@
         "hint": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a text for the hint that appears when the button is hovered over or long-pressed."
         },
         "icon": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the icon to be displayed on the button."
         },
         "template": {
           "PrimitiveTypes": [
@@ -39232,7 +39284,8 @@
         "type": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the button type."
         },
         "visible": {
           "PrimitiveTypes": [
