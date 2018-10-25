@@ -48,7 +48,7 @@ You have the following options to start:
 
 ### <a name="quick-start"></a>Quick Start **(18.2-beta)** ###
 
-You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a DevExtreme Angular application that already includes several sample views and a navigation menu:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that already includes several sample views and a navigation menu:
 
 - DevExtreme CLI
 
