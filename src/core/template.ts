@@ -6,7 +6,9 @@ import {
     TemplateRef,
     ViewContainerRef,
     Input,
-    Renderer2
+    Renderer2,
+    NgZone,
+    EmbeddedViewRef
 } from '@angular/core';
 
 import { DxTemplateHost } from './template-host';
@@ -34,25 +36,41 @@ export class DxTemplateDirective {
     constructor(private templateRef: TemplateRef<any>,
         private viewContainerRef: ViewContainerRef,
         templateHost: DxTemplateHost,
-        private renderer: Renderer2) {
+        private renderer: Renderer2,
+        private zone: NgZone) {
         templateHost.setTemplate(this);
     }
 
-    render(renderData: RenderData) {
-        let childView = this.viewContainerRef.createEmbeddedView(this.templateRef, {
+    private renderTemplate(renderData: RenderData): EmbeddedViewRef<any> {
+        const childView = this.viewContainerRef.createEmbeddedView(this.templateRef, {
             '$implicit': renderData.model,
             index: renderData.index
         });
-        let container = getElement(renderData.container);
+
+        const container = getElement(renderData.container);
         if (renderData.container) {
             childView.rootNodes.forEach((element) => {
                 this.renderer.appendChild(container, element);
             });
         }
-        // =========== WORKAROUND =============
-        // https://github.com/angular/angular/issues/12243
-        childView['detectChanges']();
-        // =========== /WORKAROUND =============
+
+        return childView;
+    }
+
+    render(renderData: RenderData) {
+        let childView;
+        if (this.zone.isStable) {
+            childView = this.zone.run(() => {
+                return this.renderTemplate(renderData);
+            });
+        } else {
+            childView = this.renderTemplate(renderData);
+            // =========== WORKAROUND =============
+            // https://github.com/angular/angular/issues/12243
+            childView['detectChanges']();
+            // =========== /WORKAROUND =============
+        }
+
         childView.rootNodes.forEach((element) => {
             if (element.nodeType === 1) {
                 this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);

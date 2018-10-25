@@ -93,11 +93,19 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
         return new DxTestWidget(element, options);
     }
 
-    ngAfterViewInit() {
+    renderTemplate(model) {
+        const element = this.element.nativeElement;
+        element.textContent = '';
         this.templates[0].render({
-            model: {},
-            container: this.element.nativeElement,
+            model: model,
+            container: element,
             index: 5
+        });
+    }
+
+    ngAfterViewInit() {
+        this.renderTemplate({
+            value: () => ''
         });
     }
 }
@@ -109,6 +117,7 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
 })
 export class TestContainerComponent {
     @ViewChild(DxTestWidgetComponent) widget: DxTestWidgetComponent;
+    @ViewChild(DxTestComponent) testComponent: DxTestComponent;
 
     @Output() onInnerElementClicked = new EventEmitter<any>();
 
@@ -193,5 +202,30 @@ describe('DevExtreme Angular widget\'s template', () => {
         expect(element.textContent).toBe('index: 5');
     });
 
+    it('should be created within Angular Zone', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+            <dx-test>
+                <div *dxTemplate="let d of 'templateName'">
+                    <div class="elem" (click)="d.value()"></div>
+                </div>
+            </dx-test>
+           `}
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        fixture.ngZone.runOutsideAngular(() => {
+            fixture.componentInstance.testComponent.renderTemplate({
+                value: () => {
+                    expect(fixture.ngZone.isStable).toBe(false);
+                }
+            });
+        });
+
+        fixture.nativeElement.querySelector('.elem').click();
+    });
 });
 
