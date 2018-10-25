@@ -13,6 +13,7 @@ import {
 } from '../../../dist';
 
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
+import * as events from 'devextreme/events';
 
 @Component({
     selector: 'test-container-component',
@@ -50,3 +51,34 @@ describe('global events', () => {
 
 });
 
+describe('events', () => {
+
+    it('should be fired within Angular Zone', () => {
+        TestBed.configureTestingModule({
+            declarations: [TestContainerComponent],
+            imports: [DxDataGridModule]
+        });
+
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: { template: `
+                <div class="elem"><div>
+            ` }
+        });
+
+        const fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        const element = fixture.nativeElement.querySelector('.elem');
+        let counter = 0;
+        fixture.ngZone.runOutsideAngular(() => {
+            events.on(element, 'click', () => {
+                expect(NgZone.isInAngularZone()).toBe(true);
+                counter++;
+            });
+        });
+
+        element.click();
+        expect(counter).toBe(1);
+    });
+
+});
