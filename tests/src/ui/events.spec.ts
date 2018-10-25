@@ -72,7 +72,7 @@ describe('events', () => {
         let counter = 0;
         fixture.ngZone.runOutsideAngular(() => {
             events.on(element, 'click', () => {
-                expect(fixture.ngZone.isStable).toBe(false);
+                expect(NgZone.isInAngularZone()).toBe(true);
                 counter++;
             });
         });

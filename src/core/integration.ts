@@ -34,7 +34,7 @@ export class DxIntegrationModule {
                     });
                 }
 
-                if (insideZoneEvents.indexOf(eventName) !== -1) {
+                if (ngZone.isStable && insideZoneEvents.indexOf(eventName) !== -1) {
                     return ngZone.run(() => {
                         return this.callBase.apply(this, args);
                     });
