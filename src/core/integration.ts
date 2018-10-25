@@ -8,7 +8,9 @@ import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 import * as eventsEngine from 'devextreme/events/core/events_engine';
 
-const events = ['mousemove', 'mouseover', 'mouseout', 'wheel'];
+const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout', 'wheel'];
+const insideZoneEvents = ['mouseup', 'click', 'mousedown'];
+
 let originalAdd;
 let callbacks = [];
 readyCallbacks.inject({
@@ -25,13 +27,20 @@ export class DxIntegrationModule {
             _document: document,
 
             listen: function(...args) {
-                if (events.indexOf(args[1]) === -1) {
-                    return this.callBase.apply(this, args);
+                const eventName = args[1];
+                if (outsideZoneEvents.indexOf(eventName) !== -1) {
+                    return ngZone.runOutsideAngular(() => {
+                        return this.callBase.apply(this, args);
+                    });
                 }
 
-                return ngZone.runOutsideAngular(() => {
-                    return this.callBase.apply(this, args);
-                });
+                if (ngZone.isStable && insideZoneEvents.indexOf(eventName) !== -1) {
+                    return ngZone.run(() => {
+                        return this.callBase.apply(this, args);
+                    });
+                }
+
+                return this.callBase.apply(this, args);
             },
 
             isElementNode: function(element) {
