@@ -1,7 +1,10 @@
-## 18.2.2-beta.1 (2018-10-23)
+## 18.2.2-beta.1 (2018-10-25)
+
+### Bug Fixes
+- DevExtreme widgets should render templates within Angular Zone[#882](https://github.com/DevExpress/devextreme-angular/pull/882)
 
 ### Features
-- DevExtreme dependency has been updated to the 18.2.2-pre-18292
+- DevExtreme dependency has been updated to the 18.2.2-pre-beta
 
 ## 18.2.1-beta.5 (2018-10-08)
 
