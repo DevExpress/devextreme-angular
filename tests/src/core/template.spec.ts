@@ -202,7 +202,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         expect(element.textContent).toBe('index: 5');
     });
 
-    fit('should be created within Angular Zone', () => {
+    it('should be created within Angular Zone', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
