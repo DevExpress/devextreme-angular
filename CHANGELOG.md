@@ -1,3 +1,8 @@
+## 18.1.7-beta.4 (2018-10-26)
+
+### Bug Fixes
+- Transitionend event should be subscribed within Angular Zone[#889](https://github.com/DevExpress/devextreme-angular/pull/889)
+
 ## 18.1.7-beta.3 (2018-10-25)
 
 ### Bug Fixes
