@@ -9,7 +9,7 @@ import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 import * as eventsEngine from 'devextreme/events/core/events_engine';
 
 const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout', 'wheel'];
-const insideZoneEvents = ['mouseup', 'click', 'mousedown'];
+const insideZoneEvents = ['mouseup', 'click', 'mousedown', 'transitionend'];
 
 let originalAdd;
 let callbacks = [];
