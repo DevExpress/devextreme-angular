@@ -664,6 +664,6 @@ Familiarize yourself with the
 
 | DevExtreme | Angular |
 | ---------- | ----------------|
-| v18.1+     | v5.0 - v6.0+ | 
+| v18.1+ <br/> v18.2+ | v5.0 - v7.0+ | 
 | v17.1+ <br/> v17.2+ | v2.4 - v5.0+ | 
  
