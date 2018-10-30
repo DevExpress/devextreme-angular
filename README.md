@@ -51,7 +51,6 @@ You have the following options to start:
 You can use the [Angular CLI](https://github.com/angular/angular-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that already includes several sample views and a navigation menu:
 
 ```bash
-npm install -g @angular/cli
 ng new app-name --style=scss
 cd app-name
 npm i devextreme-angular@18.2-unstable
@@ -59,7 +58,7 @@ ng g devextreme-angular:add-app-template
 ng serve
 ```
 
-If you have the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) installed, you can use the `new angular-app` command to perform this task:
+Alternatively, you can perform this task with the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli)'s `new angular-app` command:
 
 ```bash
 npx devextreme-cli new angular-app app-name
