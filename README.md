@@ -48,22 +48,24 @@ You have the following options to start:
 
 ### <a name="quick-start"></a>Quick Start **(18.2-beta)** ###
 
-You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that already includes several sample views and a navigation menu:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that already includes several sample views and a navigation menu:
 
-- DevExtreme CLI
+```bash
+npm install -g @angular/cli
+ng new app-name --style=scss
+cd app-name
+npm i devextreme-angular@18.2-unstable
+ng g devextreme-angular:add-app-template
+ng serve
+```
 
-        npx devextreme-cli new angular-app app-name
-        cd app-name
-        ng serve
+If you have the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli) installed, you can use the `new angular-app` command to perform this task:
 
-- Angular CLI
-
-        npm install -g @angular/cli
-        ng new app-name --style=scss
-        cd app-name
-        npm i devextreme-angular@18.2-unstable
-        ng g devextreme-angular:add-app-template
-        ng serve
+```bash
+npx devextreme-cli new angular-app app-name
+cd app-name
+ng serve
+```
 
 See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
 
