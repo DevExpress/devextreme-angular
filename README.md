@@ -48,7 +48,7 @@ You have the following options to start:
 
 ### <a name="quick-start"></a>Quick Start **(18.2-beta)** ###
 
-You can use the [Angular CLI](https://github.com/angular/angular-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that already includes several sample views and a navigation menu:
+You can use the [Angular CLI](https://github.com/angular/angular-cli) to create a [DevExtreme Angular application](https://devexpress.github.io/devextreme-angular-template) that includes several sample views and a navigation menu:
 
 ```bash
 ng new app-name --style=scss
@@ -58,7 +58,7 @@ ng g devextreme-angular:add-app-template
 ng serve
 ```
 
-Alternatively, you can perform this task with the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli)'s `new angular-app` command:
+You can also use the [DevExtreme CLI](https://github.com/DevExpress/devextreme-cli)'s `new angular-app` command to do this:
 
 ```bash
 npx devextreme-cli new angular-app app-name
