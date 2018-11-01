@@ -30,8 +30,8 @@ class TestContainerComponent {
         boolean: true,
         number: 10
     }];
-    columns = [
-        { dataField: 'string' },
+    columns: { dataField: string; dataType?: string, visible?: boolean; }[] = [
+        { dataField: 'string', visible: true },
         { dataField: 'date' },
         { dataField: 'dateString', dataType: 'date' },
         { dataField: 'boolean' },
@@ -83,6 +83,30 @@ describe('DxDataGrid', () => {
 
             done();
         }, 0);
+    });
+
+    it('should update columns', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: '<dx-data-grid [(columns)]="columns" [dataSource]="dataSource"></dx-data-grid>'
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        const fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        jasmine.clock().tick(101);
+
+        const component = fixture.componentInstance;
+        expect(component.columns[0].visible).toBe(true);
+
+        const instance = component.innerWidgets.first.instance;
+        instance.option('columns[0].visible', false);
+
+        fixture.detectChanges();
+        expect(component.columns[0].visible).toBe(false);
     });
 
     it('should react to item option change from undefined', () => {
