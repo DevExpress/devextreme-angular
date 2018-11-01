@@ -59,7 +59,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     private _initEvents() {
         this.instance.on('optionChanged', (e) => {
             this.changedOptions[e.name] = e.value;
-            this.eventHelper.fireNgEvent(e.name + 'Change', [e.value]);
+            this.eventHelper.fireNgEvent(e.name + 'Change', [e.component.option(e.name)]);
             this.optionChangedHandlers.emit(e);
         });
     }
