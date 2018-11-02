@@ -506,6 +506,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -7496,6 +7497,11 @@
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
             },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
+            },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
@@ -8419,37 +8425,37 @@
           }
         },
         "stateStoring": {
-          "Description": "Specifies options of state storing.",
+          "Description": "Configures state storing.",
           "Options": {
             "customLoad": {
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state loading."
+              "Description": "Specifies a function that is executed on state loading. Applies only if the type is 'custom'."
             },
             "customSave": {
               "IsFunc": true,
-              "Description": "Specifies a callback function that performs specific actions on state saving."
+              "Description": "Specifies a function that is executed on state saving. Applies only if the type is 'custom'."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "bool"
               ],
-              "Description": "Specifies whether or not a grid saves its state."
+              "Description": "Enables state storing."
             },
             "savingTimeout": {
               "PrimitiveTypes": [
                 "double"
               ],
-              "Description": "Specifies the delay between the last change of a grid state and the operation of saving this state in milliseconds."
+              "Description": "Specifies the delay in milliseconds between when a user makes a change and when this change is saved."
             },
             "storageKey": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a unique key to be used for storing the grid state."
+              "Description": "Specifies the key for storing the widget state."
             },
             "type": {
               "EnumName": "StateStoringType",
-              "Description": "Specifies the type of storage to be used for state storing."
+              "Description": "Specifies the type of storage where the state is saved."
             }
           }
         },
@@ -9896,7 +9902,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "An object providing data for the form."
+          "Description": "Provides the Form's data. Gets updated every time form fields change."
         },
         "height": {
           "PrimitiveTypes": [
@@ -12016,6 +12022,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -15037,6 +15044,11 @@
                 "string"
               ],
               "Description": "Specifies a default name for the file to which grid data is exported."
+            },
+            "ignoreExcelErrors": {
+              "PrimitiveTypes": [
+                "bool"
+              ]
             },
             "proxyUrl": {
               "PrimitiveTypes": [
@@ -21403,6 +21415,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
         "dropDownButtonTemplate": {
@@ -31110,7 +31123,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },
@@ -32867,9 +32880,7 @@
           "Description": "Specifies the underlying Store instance used to access data.",
           "Options": {
             "type": {
-              "PrimitiveTypes": [
-                "string"
-              ],
+              "EnumName": "PivotGridStoreType",
               "Description": "Specifies the type of the store used to access data."
             }
           }
@@ -34698,7 +34709,7 @@
             "double",
             "string"
           ],
-          "Description": "Specifies the column's width in pixels or percentages. Ignored if less than minWidth."
+          "Description": "Specifies the column's width in pixels or as a percentage. Ignored if it is less than minWidth."
         }
       }
     },
@@ -35254,6 +35265,19 @@
         },
         {
           "Name": "solid"
+        }
+      ]
+    },
+    "DataSourceStoreType": {
+      "Items": [
+        {
+          "Name": "array"
+        },
+        {
+          "Name": "local"
+        },
+        {
+          "Name": "odata"
         }
       ]
     },
@@ -36277,6 +36301,22 @@
         },
         {
           "Name": "value"
+        }
+      ]
+    },
+    "PivotGridStoreType": {
+      "Items": [
+        {
+          "Name": "array"
+        },
+        {
+          "Name": "local"
+        },
+        {
+          "Name": "odata"
+        },
+        {
+          "Name": "xmla"
         }
       ]
     },
