@@ -2650,7 +2650,8 @@
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies how buttons in the group are styled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -8879,7 +8880,8 @@
               "PrimitiveTypes": [
                 "Function"
               ],
-              "IsFunc": true
+              "IsFunc": true,
+              "Description": "Customizes an Excel cell after it is created."
             },
             "enabled": {
               "PrimitiveTypes": [
@@ -9151,7 +9153,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the initially or currently focused column's index. This column is focused when the data row area is focused."
+          "Description": "Specifies the index of the column focused initially or currently in the data row area."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -9337,7 +9339,8 @@
         "highlightChanges": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to highlight rows and cells whose data changed."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -9382,6 +9385,16 @@
                 "string"
               ],
               "Description": "Specifies a URL pointing to an image to be used as a loading indicator."
+            },
+            "shading": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "shadingColor": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -10869,7 +10882,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to use an input mask converted from the displayFormat."
+          "Description": "Specifies whether to control user input using a mask created based on the displayFormat."
         },
         "validationError": {
           "PrimitiveTypes": [
@@ -11247,6 +11260,7 @@
     },
     "dxDropDownBox": {
       "Description": "The DropDownBox widget consists of a text field, which displays the current value, and a drop-down field, which can contain any UI element.",
+      "IsTranscludedContent": true,
       "Module": "ui/drop_down_box",
       "IsEditor": true,
       "Options": {
@@ -13971,7 +13985,8 @@
       }
     },
     "dxHtmlEditor": {
-      "Description": "A base class for editors.",
+      "Description": "[tags] ctp HtmlEditor is a WYSIWYG text editor build on top of Quill, designed to support HTML and Markdown output formats. HtmlEditor is at the Community Technology Preview (CTP) development stage. That means that the widget is available for testing, but its concept, design and behavior can be reconsidered and changed without notice.",
+      "IsTranscludedContent": true,
       "Module": "ui/html_editor",
       "IsEditor": true,
       "Options": {
@@ -27642,7 +27657,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to group appointments by date first."
+          "Description": "Specifies whether to group appointments by date first. Applies to all view types except \"agenda\"."
         },
         "groups": {
           "ItemPrimitiveTypes": [
@@ -28100,7 +28115,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to group appointments by date first."
+              "Description": "Specifies whether to group appointments by date first. Applies to all view types except \"agenda\"."
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -30081,7 +30096,8 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Text displayed when the widget is in a disabled state."
+          "IsDeprecated": true,
+          "Description": "Use the switchedOffText option instead."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -30119,7 +30135,8 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Text displayed when the widget is in an enabled state."
+          "IsDeprecated": true,
+          "Description": "Use the switchedOnText option instead."
         },
         "onValueChanged": {
           "PrimitiveTypes": [
@@ -30140,6 +30157,18 @@
             "boolean"
           ],
           "Description": "Switches the widget to a right-to-left representation."
+        },
+        "switchedOffText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text displayed when the widget is switched off."
+        },
+        "switchedOnText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text displayed when the widget is switched on."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -33727,7 +33756,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the initially or currently focused column's index. This column is focused when the data row area is focused."
+          "Description": "Specifies the index of the column focused initially or currently in the data row area."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -33833,7 +33862,8 @@
         "highlightChanges": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to highlight rows and cells whose data changed."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -33883,6 +33913,16 @@
                 "string"
               ],
               "Description": "Specifies a URL pointing to an image to be used as a loading indicator."
+            },
+            "shading": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "shadingColor": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -39455,7 +39495,8 @@
             "DataGridColumnButton"
           ],
           "IsCollection": true,
-          "SingularName": "button"
+          "SingularName": "button",
+          "Description": "Allows you to customize buttons in the editing column or create a custom command column. Applies only if the column's type is \"buttons\"."
         },
         "calculateCellValue": {
           "PrimitiveTypes": [
@@ -39838,7 +39879,8 @@
         "type": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the command column that this object customizes."
         },
         "validationRules": {
           "ItemPrimitiveTypes": [
@@ -39889,26 +39931,31 @@
       }
     },
     "DataGridColumnButton": {
+      "Description": "Allows you to customize buttons in the editing column or create a custom command column. Applies only if the column's type is \"buttons\".",
       "Options": {
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the button."
         },
         "hint": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the text for the hint that appears when the button is hovered over or long-pressed."
         },
         "icon": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the button's icon."
         },
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The name used to identify a built-in button."
         },
         "onClick": {
           "PrimitiveTypes": [
@@ -39916,25 +39963,29 @@
             "string"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed when the button is clicked or tapped."
         },
         "template": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom button template."
         },
         "text": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the button's text. Applies only if the button's icon is not specified."
         },
         "visible": {
           "PrimitiveTypes": [
             "boolean",
             "Function"
           ],
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Specifies the button's visibility."
         }
       }
     },
@@ -40907,7 +40958,8 @@
             "TreeListColumnButton"
           ],
           "IsCollection": true,
-          "SingularName": "button"
+          "SingularName": "button",
+          "Description": "Allows you to customize buttons in the editing column or create a custom command column. Applies only if the column's type is \"buttons\"."
         },
         "calculateCellValue": {
           "PrimitiveTypes": [
@@ -41262,7 +41314,8 @@
         "type": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the command column that this object customizes."
         },
         "validationRules": {
           "ItemPrimitiveTypes": [
@@ -41313,26 +41366,31 @@
       }
     },
     "TreeListColumnButton": {
+      "Description": "Allows you to customize buttons in the editing column or create a custom command column. Applies only if the column's type is \"buttons\".",
       "Options": {
         "cssClass": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies a CSS class to be applied to the button."
         },
         "hint": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the text for the hint that appears when the button is hovered over or long-pressed."
         },
         "icon": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the button's icon."
         },
         "name": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "The name used to identify a built-in button."
         },
         "onClick": {
           "PrimitiveTypes": [
@@ -41340,25 +41398,29 @@
             "string"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed when the button is clicked or tapped."
         },
         "template": {
           "PrimitiveTypes": [
             "any"
           ],
-          "IsTemplate": true
+          "IsTemplate": true,
+          "Description": "Specifies a custom button template."
         },
         "text": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the button's text. Applies only if the button's icon is not specified."
         },
         "visible": {
           "PrimitiveTypes": [
             "boolean",
             "Function"
           ],
-          "IsFunc": true
+          "IsFunc": true,
+          "Description": "Specifies the button's visibility."
         }
       }
     },

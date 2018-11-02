@@ -1,3 +1,8 @@
+## 18.2.2-beta.2 (2018-11-02)
+
+### Bug Fixes
+- dxDataGrid: two-way binding should work correctly for columns [#898](https://github.com/DevExpress/devextreme-angular/pull/898)
+
 ## 18.2.2-beta.1 (2018-10-25)
 
 ### Bug Fixes
