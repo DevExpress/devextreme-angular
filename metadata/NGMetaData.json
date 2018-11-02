@@ -1029,7 +1029,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -1100,6 +1100,12 @@
             "number"
           ],
           "Description": "Specifies a base value for bars."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -1263,6 +1269,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -1743,6 +1750,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "value",
           "Description": "Specifies the array of values to be indicated on a bar gauge."
         }
@@ -1991,6 +1999,12 @@
             "string"
           ],
           "Description": "Specifies a color for the bullet bar."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -2749,6 +2763,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the current calendar zoom level."
         }
       }
@@ -2912,27 +2927,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -4659,6 +4659,12 @@
           ],
           "Description": "Specifies which pane should be used by default."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -4940,6 +4946,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -5746,27 +5753,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a custom scale break collection. Applies only if the axis' type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -6844,6 +6836,12 @@
           ],
           "Description": "Specifies the color of the parent page element."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -6938,6 +6936,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -7529,6 +7528,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "subvalue",
           "Description": "Specifies a set of subvalues to be designated by the subvalue indicators."
         },
@@ -7802,6 +7802,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
@@ -8989,6 +8990,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
@@ -9157,6 +9159,7 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Specifies a filter expression."
         },
         "focusStateEnabled": {
@@ -9363,6 +9366,16 @@
                 "string"
               ],
               "Description": "Specifies a URL pointing to an image to be used as a loading indicator."
+            },
+            "shading": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "shadingColor": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -9801,7 +9814,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the filter row, command columns, and columns with showEditorAlways set to true after other elements."
         },
         "rowAlternationEnabled": {
           "PrimitiveTypes": [
@@ -10828,7 +10842,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -11395,7 +11409,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies after which DOM events the widget updates the value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -12405,6 +12419,12 @@
           "IsDataSource": true,
           "Description": "Specifies the widget's data origin."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -12946,6 +12966,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -13765,6 +13786,12 @@
           ],
           "Description": "Specifies the color of the parent page element."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -13853,6 +13880,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -14464,6 +14492,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "subvalue",
           "Description": "Specifies a set of subvalues to be designated by the subvalue indicators."
         },
@@ -14737,6 +14766,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "Specifies the main value on a gauge."
         },
         "valueIndicator": {
@@ -16231,7 +16261,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -17882,7 +17912,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -18258,6 +18288,12 @@
           ],
           "Description": "Specifies the diameter of the pie."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -18532,6 +18568,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -21307,6 +21344,12 @@
           "IsDataSource": true,
           "Description": "Specifies the widget's data origin."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -21582,6 +21625,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -24293,6 +24337,12 @@
           ],
           "Description": "Specifies the data source field that provides data for the scale."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -24387,6 +24437,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -24607,27 +24658,12 @@
               "ItemPrimitiveTypes": [
                 "DevExpress.viz.ScaleBreak"
               ],
+              "ItemComplexTypes": [
+                "VizScaleBreak"
+              ],
               "IsCollection": true,
               "SingularName": "break",
-              "Description": "Declares a scale break collection. Applies only if the scale's type is \"continuous\" or \"logarithmic\".",
-              "Options": {
-                "endValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the startValue option, limits the scale break."
-                },
-                "startValue": {
-                  "PrimitiveTypes": [
-                    "Date",
-                    "number",
-                    "string"
-                  ],
-                  "Description": "Along with the endValue option, limits the scale break."
-                }
-              }
+              "Description": "Declares a scale break collection. Applies only if the scale's type is \"continuous\" or \"logarithmic\"."
             },
             "breakStyle": {
               "Description": "Configures the scale breaks' appearance.",
@@ -27652,7 +27688,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated. Applies only if acceptCustomValue is set to true."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -28382,6 +28418,12 @@
           ],
           "IsDataSource": true,
           "Description": "Specifies a data source for the sparkline."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -30466,7 +30508,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -30802,7 +30844,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies DOM event names that update a widget's value."
+          "Description": "Specifies the DOM events after which the widget's value should be updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -32306,6 +32348,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether the filter expression is applied."
             },
             "texts": {
@@ -32474,6 +32517,7 @@
             "any"
           ],
           "IsFilterExpr": true,
+          "IsChangeable": true,
           "Description": "Specifies a filter expression."
         },
         "focusStateEnabled": {
@@ -32605,6 +32649,16 @@
                 "string"
               ],
               "Description": "Specifies a URL pointing to an image to be used as a loading indicator."
+            },
+            "shading": {
+              "PrimitiveTypes": [
+                "boolean"
+              ]
+            },
+            "shadingColor": {
+              "PrimitiveTypes": [
+                "string"
+              ]
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -32990,7 +33044,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the filter row, command columns, and columns with showEditorAlways set to true after other elements."
         },
         "rootValue": {
           "PrimitiveTypes": [
@@ -33350,6 +33405,12 @@
           "IsDataSource": true,
           "Description": "Specifies the origin of data for the widget."
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -33581,6 +33642,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -35114,6 +35176,12 @@
             }
           }
         },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to the user interaction."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -35632,6 +35700,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
+              "IsChangeable": true,
               "Description": "Specifies whether to show the loading indicator or not."
             },
             "text": {
@@ -38902,7 +38971,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the column after other columns and elements. Use if column cells have a complex template. Requires the width option specified."
         },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
@@ -40132,7 +40202,8 @@
         "renderAsync": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether to render the column after other columns and elements. Use if column cells have a complex template. Requires the width option specified."
         },
         "selectedFilterOperation": {
           "PrimitiveTypes": [
@@ -43065,6 +43136,27 @@
             "string"
           ],
           "Description": "Specifies the type of the current rule."
+        }
+      }
+    },
+    "VizScaleBreak": {
+      "Description": "A class describing a scale break range. Inherited by scale breaks in the Chart and RangeSelector.",
+      "Options": {
+        "endValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Along with the startValue option, limits the scale break."
+        },
+        "startValue": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Along with the endValue option, limits the scale break."
         }
       }
     },
