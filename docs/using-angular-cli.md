@@ -62,3 +62,5 @@ Go to **angular.json** and add references to the necessary DevExtreme css files:
 ... 
 } 
 ```
+
+Certain DevExtreme-Angular features require third-party libraries. Read [Third-Party Dependencies Registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md) for more information.
