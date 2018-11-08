@@ -2,6 +2,7 @@
 
 ### Features
 - Update `devextreme` version to 18.2.3
+- Transcluded anonymous templates now work with components
 - Schematics included
 
 ### Bug Fixes
