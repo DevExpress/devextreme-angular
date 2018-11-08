@@ -3900,7 +3900,7 @@
               "IsCollection": true,
               "IsChangeable": true,
               "SingularName": "visualRange",
-              "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
+              "Description": "Defines the axis' displayed range. Cannot be wider than the wholeRange."
             },
             "visualRangeUpdateMode": {
               "PrimitiveTypes": [
@@ -6681,7 +6681,7 @@
               "IsCollection": true,
               "IsChangeable": true,
               "SingularName": "visualRange",
-              "Description": "Defines the axis's displayed range. Cannot be wider than the wholeRange."
+              "Description": "Defines the axis' displayed range. Cannot be wider than the wholeRange."
             },
             "wholeRange": {
               "PrimitiveTypes": [
@@ -9389,12 +9389,14 @@
             "shading": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to shade the widget when the load panel is shown."
             },
             "shadingColor": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the shading color. Applies only if shading is true."
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -14068,14 +14070,16 @@
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget gets focus."
         },
         "onFocusOut": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "IsEvent": true
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget loses focus."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -14104,7 +14108,8 @@
         "placeholder": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the text displayed when the input field is empty."
         },
         "readOnly": {
           "PrimitiveTypes": [
@@ -14130,7 +14135,8 @@
           ],
           "ComplexTypes": [
             "HtmlEditorToolbar"
-          ]
+          ],
+          "Description": "Configures the widget's toolbar."
         },
         "validationError": {
           "PrimitiveTypes": [
@@ -14149,12 +14155,13 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the widget's value."
         },
         "valueType": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies in which markup language the value is stored."
         },
         "variables": {
           "PrimitiveTypes": [
@@ -14162,7 +14169,8 @@
           ],
           "ComplexTypes": [
             "HtmlEditorVariables"
-          ]
+          ],
+          "Description": "Configures variables, which are placeholders to be replaced with actual values when processing text."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -24234,7 +24242,7 @@
             "any"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the widget's value."
         },
         "valueExpr": {
           "PrimitiveTypes": [
@@ -25907,7 +25915,7 @@
           "IsCollection": true,
           "IsChangeable": true,
           "SingularName": "value",
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the widget's value."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -26063,7 +26071,7 @@
             "string"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the currently selected value."
+          "Description": "Specifies the widget's value."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -33917,12 +33925,14 @@
             "shading": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to shade the widget when the load panel is shown."
             },
             "shadingColor": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the shading color. Applies only if shading is true."
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -40689,7 +40699,8 @@
           "PrimitiveTypes": [
             "Element",
             "JQuery"
-          ]
+          ],
+          "Description": "Specifies the container in which to place the toolbar."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -40802,7 +40813,8 @@
           "ItemPrimitiveTypes": [
             "string"
           ],
-          "IsDataSource": true
+          "IsDataSource": true,
+          "Description": "Specifies a collection of variables available for a user."
         },
         "escapeChar": {
           "PrimitiveTypes": [
@@ -40812,7 +40824,8 @@
             "string"
           ],
           "IsCollection": true,
-          "SingularName": "escapeChar"
+          "SingularName": "escapeChar",
+          "Description": "Specifies the special character(s) that should surround the variables."
         }
       }
     },
