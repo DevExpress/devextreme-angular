@@ -53,7 +53,7 @@ You can use the [Angular CLI](https://github.com/angular/angular-cli) to create 
 ```bash
 ng new app-name --style=scss
 cd app-name
-npm i devextreme-angular@18.2-unstable
+npm i devextreme-angular
 ng g devextreme-angular:add-app-template
 ng serve
 ```
@@ -84,7 +84,7 @@ You can use the [Angular CLI](https://github.com/angular/angular-cli) or the [De
 
 - Angular CLI
 
-        ng add devextreme-angular@18.2-unstable
+        ng add devextreme-angular
 
 - DevExtreme CLI
 
