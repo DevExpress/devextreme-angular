@@ -1,38 +1,13 @@
-## 18.2.2-beta.2 (2018-11-02)
+## 18.2.3 (2018-11-08)
+
+### Features
+- Update `devextreme` version to 18.2.3
+- Transcluded anonymous templates now work with components
+- Schematics included
 
 ### Bug Fixes
 - dxDataGrid: two-way binding should work correctly for columns [#898](https://github.com/DevExpress/devextreme-angular/pull/898)
-
-## 18.2.2-beta.1 (2018-10-25)
-
-### Bug Fixes
-- DevExtreme widgets should render templates within Angular Zone[#882](https://github.com/DevExpress/devextreme-angular/pull/882)
-
-### Features
-- DevExtreme dependency has been updated to the 18.2.2-pre-beta
-
-## 18.2.1-beta.5 (2018-10-08)
-
-### Bug Fixes
-- Add schematics to package.json
-
-## 18.2.1-beta.4 (2018-10-05)
-
-### Features
-- Schematics included
-
-## 18.2.1-beta.2 (2018-08-29)
-
-### Features
-
-- Drawer Component
-- Sankey Chart Component
-
-## 18.2.1-beta.1 (2018-08-10)
-
-### Features
-
-- Update `devextreme` version to 18.2.1-pre
+- DevExtreme widgets should render templates within Angular Zone [#882](https://github.com/DevExpress/devextreme-angular/pull/882)
 
 ## 18.1.5-beta.3 (2018-07-20)
 
