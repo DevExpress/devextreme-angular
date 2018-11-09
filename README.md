@@ -351,6 +351,18 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
+The widgets that support the **template** option (**Button**, **Popup**, **Drawer** and others) also allow you to put the markup directly into the widget element to customize their content:
+
+```html
+<dx-button
+    text="Refresh"
+    (onClick)="foo($event)">
+    <i style="color:green">
+        {{buttonData.text}}
+    </i> 
+</dx-button>
+```
+
 ### <a name="data-layer"></a>Data Layer ###
 
 The DevExtreme framework includes a data layer, which is a set of complementary components that enable you to read and write data.
