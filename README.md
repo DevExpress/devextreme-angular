@@ -354,11 +354,9 @@ The 'item' and 'group' names are default template names for the 'itemTemplate' a
 The widgets that support the **template** option (**Button**, **Popup**, **Drawer** and others) also allow you to put the markup directly into the widget element to customize their content:
 
 ```html
-<dx-button
-    text="Refresh"
-    (onClick)="foo($event)">
+<dx-button (onClick)="foo($event)">
     <i style="color:green">
-        {{buttonData.text}}
+        Refresh
     </i> 
 </dx-button>
 ```
