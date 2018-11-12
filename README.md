@@ -63,7 +63,7 @@ You can also use the [DevExtreme CLI](https://github.com/DevExpress/devextreme-c
 ```bash
 npx devextreme-cli new angular-app app-name
 cd app-name
-ng serve
+npm run start
 ```
 
 See the [DevExtreme Angular Template README](https://github.com/DevExpress/devextreme-angular-template#devextreme-angular-template) for more information.
