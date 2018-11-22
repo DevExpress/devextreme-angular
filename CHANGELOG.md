@@ -1,3 +1,8 @@
+## 18.2.4-beta.1 (2018-11-22)
+
+### Bug Fixes
+- Fix binding options with an object type [#912](https://github.com/DevExpress/devextreme-angular/pull/912)
+
 ## 18.2.3 (2018-11-08)
 
 ### Features
