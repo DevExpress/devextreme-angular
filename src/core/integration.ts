@@ -8,8 +8,8 @@ import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as readyCallbacks from 'devextreme/core/utils/ready_callbacks';
 import * as eventsEngine from 'devextreme/events/core/events_engine';
 
-const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout', 'wheel'];
-const insideZoneEvents = ['mouseup', 'click', 'mousedown', 'transitionend'];
+const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout'];
+const insideZoneEvents = ['mouseup', 'click', 'mousedown', 'transitionend', 'wheel'];
 
 let originalAdd;
 let callbacks = [];
