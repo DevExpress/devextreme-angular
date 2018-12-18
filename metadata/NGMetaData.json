@@ -3593,6 +3593,69 @@
               ],
               "Description": "Controls the empty space between the minimum series points and the axis. Applies only to the axes of the \"continuous\" and \"logarithmic\" type."
             },
+            "minVisualRangeLength": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
+              "Options": {
+                "days": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
+                },
+                "hours": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
+                },
+                "milliseconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
+                },
+                "minutes": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
+                },
+                "months": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
+                },
+                "quarters": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
+                },
+                "seconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
+                },
+                "weeks": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
+                },
+                "years": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
+                }
+              }
+            },
             "opacity": {
               "PrimitiveTypes": [
                 "number"
@@ -3922,7 +3985,7 @@
               ],
               "IsCollection": true,
               "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be zoomed and panned. Equals the data range when unspecified."
+              "Description": "Defines the range where the axis can be zoomed and panned."
             },
             "width": {
               "PrimitiveTypes": [
@@ -6348,6 +6411,69 @@
               ],
               "Description": "Controls the empty space between the minimum series points and the axis. Applies only to the axes of the \"continuous\" and \"logarithmic\" type."
             },
+            "minVisualRangeLength": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
+              "Options": {
+                "days": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in days. Available only for an axis/scale displaying date-time values."
+                },
+                "hours": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in hours. Available only for an axis/scale displaying date-time values."
+                },
+                "milliseconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in milliseconds. Available only for an axis/scale displaying date-time values."
+                },
+                "minutes": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in minutes. Available only for an axis/scale displaying date-time values."
+                },
+                "months": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in months. Available only for an axis/scale displaying date-time values."
+                },
+                "quarters": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in quarters. Available only for an axis/scale displaying date-time values."
+                },
+                "seconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in seconds. Available only for an axis/scale displaying date-time values."
+                },
+                "weeks": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in weeks. Available only for an axis/scale displaying date-time values."
+                },
+                "years": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in years. Available only for an axis/scale displaying date-time values."
+                }
+              }
+            },
             "multipleAxesSpacing": {
               "PrimitiveTypes": [
                 "number"
@@ -6683,6 +6809,11 @@
               "SingularName": "visualRange",
               "Description": "Defines the axis' displayed range. Cannot be wider than the wholeRange."
             },
+            "visualRangeUpdateMode": {
+              "PrimitiveTypes": [
+                "string"
+              ]
+            },
             "wholeRange": {
               "PrimitiveTypes": [
                 "DevExpress.viz.VizRange"
@@ -6697,7 +6828,7 @@
               ],
               "IsCollection": true,
               "SingularName": "wholeRange",
-              "Description": "Defines the range where the axis can be zoomed and panned. Equals the data range when not set."
+              "Description": "Defines the range where the axis can be zoomed and panned."
             },
             "width": {
               "PrimitiveTypes": [
@@ -8693,7 +8824,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Customizes data before exporting."
+          "Description": "Customizes data before export. You can use the exporting.customizeExcelCell function instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -8724,10 +8855,8 @@
           "Options": {
             "allowAdding": {
               "PrimitiveTypes": [
-                "boolean",
-                "Function"
+                "boolean"
               ],
-              "IsFunc": true,
               "Description": "Specifies whether a user can add new rows."
             },
             "allowDeleting": {
@@ -9955,7 +10084,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Notifies the widget whether search is case-sensitive to ensure proper highlightning of search results. Applies only if highlightSearchText is true."
+              "Description": "Notifies the widget whether search is case-sensitive to ensure that search results are highlighted correctly. Applies only if highlightSearchText is true."
             },
             "highlightSearchText": {
               "PrimitiveTypes": [
@@ -11818,7 +11947,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the value passed to the name attribute of the underlying input element."
+          "Description": "Specifies the value passed to the name attribute of the underlying input element. Required to access uploaded files on the server."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -14049,6 +14178,12 @@
           ],
           "Description": "Specifies whether the editor's value is valid."
         },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The value to be assigned to the `name` attribute of the underlying HTML element."
+        },
         "onContentReady": {
           "PrimitiveTypes": [
             "Function"
@@ -15902,6 +16037,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "rtlEnabled": {
@@ -16594,6 +16730,7 @@
             "number"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "center",
           "Description": "An object, a string, or an array specifying which part of the map is displayed at the widget's center using coordinates. The widget can change this value if autoAdjust is enabled.",
           "Options": {
@@ -16693,6 +16830,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "marker",
           "Description": "An array of markers displayed on a map.",
           "Options": {
@@ -16841,6 +16979,7 @@
             "any"
           ],
           "IsCollection": true,
+          "IsChangeable": true,
           "SingularName": "route",
           "Description": "An array of routes shown on the map.",
           "Options": {
@@ -16929,6 +17068,7 @@
           "PrimitiveTypes": [
             "number"
           ],
+          "IsChangeable": true,
           "Description": "The map's zoom level. The widget can change this value if autoAdjust is enabled."
         }
       }
@@ -23301,6 +23441,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "An object defining widget positioning options."
         },
         "rtlEnabled": {
@@ -23719,6 +23860,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "resizeEnabled": {
@@ -25416,6 +25558,12 @@
             "string"
           ],
           "Description": "Specifies the color of the selected range."
+        },
+        "selectedRangeUpdateMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how the selected range should behave when data is updated. Applies only when the RangeSelector is bound to a data source."
         },
         "shutter": {
           "Description": "Specifies range selector shutter options.",
@@ -27493,6 +27641,12 @@
           ],
           "Description": "Specifies the name of the data source item field whose value defines whether or not the corresponding appointment is an all-day appointment."
         },
+        "appointmentCollectorTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true
+        },
         "appointmentTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -27534,6 +27688,12 @@
           ],
           "IsChangeable": true,
           "Description": "Specifies the currently displayed view. Accepts the view's name or type."
+        },
+        "customizeDateNavigatorText": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true
         },
         "dataCellTemplate": {
           "PrimitiveTypes": [
@@ -27646,7 +27806,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies an end hour in the scheduler view's time interval."
+          "Description": "Specifies the last hour in the time scale. Cannot be greater than 24."
         },
         "firstDayOfWeek": {
           "PrimitiveTypes": [
@@ -27665,7 +27825,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to group appointments by date first. Applies to all view types except \"agenda\"."
+          "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
         },
         "groups": {
           "ItemPrimitiveTypes": [
@@ -27790,7 +27950,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when an appointment's edit form is created."
+          "Description": "A function that is executed before an appointment details form is opened."
         },
         "onAppointmentRendered": {
           "PrimitiveTypes": [
@@ -28014,7 +28174,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a start hour in the scheduler view's time interval."
+          "Description": "Specifies the first hour in the time scale."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -28065,6 +28225,12 @@
               ],
               "Description": "Specifies the number of dates that can be shown at a time in the agenda view."
             },
+            "appointmentCollectorTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true
+            },
             "appointmentTemplate": {
               "PrimitiveTypes": [
                 "any"
@@ -28110,7 +28276,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The end hour of the view time scale."
+              "Description": "Specifies the last hour in the view's time scale."
             },
             "firstDayOfWeek": {
               "PrimitiveTypes": [
@@ -28123,7 +28289,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to group appointments by date first. Applies to all view types except \"agenda\"."
+              "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -28177,7 +28343,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The start hour of the view time scale."
+              "Description": "Specifies the start hour in the view's time scale. Cannot be greater than 24."
             },
             "timeCellTemplate": {
               "PrimitiveTypes": [
@@ -32578,6 +32744,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "rtlEnabled": {
@@ -33102,6 +33269,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "An object defining widget positioning options."
         },
         "rtlEnabled": {
@@ -34437,7 +34605,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Notifies the widget whether search is case-sensitive to ensure proper highlightning of search results. Applies only if highlightSearchText is true."
+              "Description": "Notifies the widget whether search is case-sensitive to ensure that search results are highlighted correctly. Applies only if highlightSearchText is true."
             },
             "highlightSearchText": {
               "PrimitiveTypes": [
@@ -39246,6 +39414,11 @@
           ],
           "Description": "Specifies the operator to be used for comparing the validated value with the target."
         },
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "message": {
           "PrimitiveTypes": [
             "string"
@@ -39270,6 +39443,11 @@
       "Description": "A validation rule with custom validation logic.",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "message": {
           "PrimitiveTypes": [
             "string"
@@ -39434,7 +39612,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether data from this column should be exported."
+          "Description": "Specifies whether data from this column should be exported. Applies only if the column is visible."
         },
         "allowFiltering": {
           "PrimitiveTypes": [
@@ -40716,7 +40894,7 @@
       }
     },
     "HtmlEditorToolbarItem": {
-      "Description": "This section lists the data source fields that are used in a default template for toolbar items.",
+      "Description": "Configures toolbar controls which allow users to format text and execute commands.",
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
@@ -40727,7 +40905,8 @@
         "formatName": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the built-in control that this object customizes or a format with multiple choices."
         },
         "formatValues": {
           "ItemPrimitiveTypes": [
@@ -40736,7 +40915,8 @@
             "boolean"
           ],
           "IsCollection": true,
-          "SingularName": "formatValue"
+          "SingularName": "formatValue",
+          "Description": "Specifies values for a format with multiple choices. Should be used with the formatName."
         },
         "html": {
           "PrimitiveTypes": [
@@ -41519,6 +41699,11 @@
       "Description": "A validation rule that demands that the validated field match the Email pattern.",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "message": {
           "PrimitiveTypes": [
             "string"
@@ -41744,7 +41929,8 @@
         "type": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the type of gauge indicators."
         },
         "verticalOrientation": {
           "PrimitiveTypes": [
@@ -41764,6 +41950,11 @@
       "Description": "A validation rule that demands that the validated field has a numeric value.",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "message": {
           "PrimitiveTypes": [
             "string"
@@ -41782,6 +41973,11 @@
       "Description": "A validation rule that demands that the validated field match a specified pattern.",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "message": {
           "PrimitiveTypes": [
             "string"
@@ -44079,6 +44275,11 @@
       "Description": "A validation rule that demands the target value be within the specified value range (including the range's end points).",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "max": {
           "PrimitiveTypes": [
             "Date",
@@ -44162,6 +44363,11 @@
       "Description": "A validation rule that demands the target value length be within the specified value range (including the range's end points).",
       "IsCollection": true,
       "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ]
+        },
         "max": {
           "PrimitiveTypes": [
             "number"

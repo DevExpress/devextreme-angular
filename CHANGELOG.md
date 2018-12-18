@@ -1,3 +1,8 @@
+## 18.2.4-beta.2 (2018-12-18)
+
+### Bug Fixes
+- Fix master detail rendering for virtual mode of DataGrid [#915](https://github.com/DevExpress/devextreme-angular/pull/915)
+
 ## 18.2.4-beta.1 (2018-11-22)
 
 ### Bug Fixes
