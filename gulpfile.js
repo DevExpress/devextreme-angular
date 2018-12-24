@@ -58,7 +58,7 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 
 gulp.task('clean.generatedComponents', function () {
     var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-    
+
     return del([outputFolderPath + "/**/*.*"]);
 });
 
@@ -123,7 +123,7 @@ gulp.task('build.ngc', function(done) {
     var config = buildConfig.components,
         buildPath = path.join(config.outputPath, 'tsconfig.json'),
         task = shell.task(['ngc -p ' + buildPath ]);
-    
+
     task(done);
 });
 
@@ -243,7 +243,7 @@ gulp.task('watch.spec', function() {
 var getKarmaConfig = function(testsPath) {
     const preprocessors = {};
     preprocessors[testsPath] = [ 'webpack' ];
-    return karmaConfig.parseConfig(path.resolve('./karma.conf.js'), { 
+    return karmaConfig.parseConfig(path.resolve('./karma.conf.js'), {
         files: [{ pattern: testsPath, watched: false }],
         preprocessors: preprocessors
     });
@@ -300,9 +300,6 @@ gulp.task('test.tools', function(done) {
                     verbosity: 1,
                     color: true,
                     showStack: true
-                }),
-                new jasmineReporters.JUnitXmlReporter({
-                    savePath: 'shippable/testresults/tools'
                 })
             ]
         }));

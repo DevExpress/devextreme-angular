@@ -23,7 +23,6 @@ module.exports = function(config) {
         ],
 
         junitReporter: {
-            outputDir: 'shippable/testresults/',
             outputFile: 'test-results.xml'
         },
 
@@ -31,7 +30,6 @@ module.exports = function(config) {
         plugins: [
             require('karma-jasmine'),
             require('karma-chrome-launcher'),
-            require('karma-phantomjs-launcher'),
             require('karma-junit-reporter'),
             require('karma-webpack')
         ],
