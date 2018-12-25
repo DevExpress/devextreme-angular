@@ -21,7 +21,7 @@ class TestContainerComponent {
     value = {startValue: 0, endValue: 10};
     count = 0;
     @ViewChild('rangeSelector') rangeSelector: DxRangeSelectorComponent;
-    onChanged(e) {
+    onChanged() {
         this.count++;
     }
 }
