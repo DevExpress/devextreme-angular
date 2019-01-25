@@ -1,3 +1,9 @@
+## 18.2.5 (2019-01-24)
+
+### Features
+- Update `devextreme` version to 18.2.5
+- Update version of @angular-devkit/schematics [#925](https://github.com/DevExpress/devextreme-angular/pull/925)
+
 ## 18.2.4-beta.2 (2018-12-18)
 
 ### Bug Fixes
