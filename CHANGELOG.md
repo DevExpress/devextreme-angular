@@ -1,4 +1,4 @@
-## 18.2.5
+## 18.2.5 (2019-01-24)
 
 ### Features
 - Update `devextreme` version to 18.2.5
