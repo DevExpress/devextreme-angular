@@ -1,3 +1,11 @@
+## 18.2.5
+
+### Features
+- Update `devextreme` version to 18.2.5
+- Cleanup repo from shippable and phantomjs [#921](https://github.com/DevExpress/devextreme-angular/pull/921)
+- Use puppeteer instead of Chrome browser [#924](https://github.com/DevExpress/devextreme-angular/pull/924)
+- Update version of @angular-devkit/schematics [#925](https://github.com/DevExpress/devextreme-angular/pull/925)
+
 ## 18.2.4-beta.2 (2018-12-18)
 
 ### Bug Fixes
