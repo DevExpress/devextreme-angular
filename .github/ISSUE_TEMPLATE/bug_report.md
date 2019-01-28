@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 <!-- *************************************************************************************************
-To help us expedite the issue processing, please search opened and closed tickets in our support center (https://www.devexpress.com/Support/Center/Question/List/1) before you submit a new issue. The tickets can contain resolutions, workarounds, or information about the progress in fixing.
+To reduce the time it takes to process issues, search opened and closed tickets in our support center (https://www.devexpress.com/Support/Center/Question/List/1) before you submit a new issue. The tickets can contain resolutions, workarounds, or information about fixes.
 
 You can also find information that can help you to resolve the issue in the following resources:
 
@@ -26,7 +26,7 @@ You can also find information that can help you to resolve the issue in the foll
     devextreme-angular version:
 
 **Steps to reproduce:**
-<!-- Provide a sample application that illustrates the bug if possible. Do it using: 
+<!-- Provide a sample application that illustrates the bug if possible. You can use the following services: 
     - GitHub
     - StackBlitz (https://stackblitz.com/edit/angular-c2djgn)
     - Plunker (http://next.plnkr.co/edit/XuAPDd?preview)
