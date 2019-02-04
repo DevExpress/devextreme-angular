@@ -331,8 +331,7 @@ or vice versa from the widget to the bindingProperty:
 
 ### <a name="custom-templates"></a>Custom Templates ###
 
-In case you want to customize the rendering of a DevExtreme widget, we support custom templates. For instance, we can specify
-the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
+In case you want to customize the rendering of a DevExtreme widget, we support custom templates. Custom templates should be placed at the root level of a DevExtreme component. For instance, we can specify the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
 and [groupTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate)
 of the dxList widget as follows:
 
