@@ -2498,7 +2498,7 @@
       }
     },
     "dxButtonGroup": {
-      "Description": "The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.",
+      "Description": "The ButtonGroup is a widget that contains a set of toggle buttons and can be used as a mode switcher.",
       "Module": "ui/button_group",
       "Options": {
         "accessKey": {
@@ -6813,7 +6813,8 @@
             "visualRangeUpdateMode": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies how the axis's visual range should behave when chart data is updated."
             },
             "wholeRange": {
               "PrimitiveTypes": [
@@ -8825,7 +8826,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Customizes data before export. You can use the exporting.customizeExcelCell function instead."
+          "Description": "Customizes data before export. You can use the export.customizeExcelCell function instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -35731,7 +35732,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Allows you to load nodes manually."
+          "Description": "Allows you to load nodes. Applies if the dataStructure is \"plain\" and the dataSource and items are undefined."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -36488,7 +36489,7 @@
           "Description": "Specifies the geographical coordinates of the center for a map."
         },
         "controlBar": {
-          "Description": "Specifies the options of the control bar.",
+          "Description": "Configures the control bar.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
