@@ -9370,12 +9370,14 @@
             "shading": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to shade the widget when the load panel is shown."
             },
             "shadingColor": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the shading color. Applies only if shading is true."
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -11592,7 +11594,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the value passed to the name attribute of the underlying input element."
+          "Description": "Specifies the value passed to the name attribute of the underlying input element. Required to access uploaded files on the server."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -15632,6 +15634,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "rtlEnabled": {
@@ -23077,6 +23080,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "An object defining widget positioning options."
         },
         "rtlEnabled": {
@@ -23494,6 +23498,7 @@
             "PositionConfig"
           ],
           "IsFunc": true,
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "resizeEnabled": {
@@ -26363,6 +26368,13 @@
           "IsChangeable": true,
           "Description": "Specifies the currently displayed view. Accepts the view's name or type."
         },
+        "customizeDateNavigatorText": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes the date navigator's text."
+        },
         "dataCellTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -26474,7 +26486,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies an end hour in the scheduler view's time interval."
+          "Description": "Specifies the last hour in the time scale. Cannot be greater than 24."
         },
         "firstDayOfWeek": {
           "PrimitiveTypes": [
@@ -26612,7 +26624,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when an appointment's edit form is created."
+          "Description": "A function that is executed before an appointment details form is opened."
         },
         "onAppointmentRendered": {
           "PrimitiveTypes": [
@@ -26836,7 +26848,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Specifies a start hour in the scheduler view's time interval."
+          "Description": "Specifies the first hour in the time scale."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -26932,7 +26944,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The end hour of the view time scale."
+              "Description": "Specifies the last hour in the view's time scale."
             },
             "firstDayOfWeek": {
               "PrimitiveTypes": [
@@ -26993,7 +27005,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "The start hour of the view time scale."
+              "Description": "Specifies the start hour in the view's time scale. Cannot be greater than 24."
             },
             "timeCellTemplate": {
               "PrimitiveTypes": [
@@ -31352,6 +31364,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "Positions the widget."
         },
         "rtlEnabled": {
@@ -31875,6 +31888,7 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
+          "IsChangeable": true,
           "Description": "An object defining widget positioning options."
         },
         "rtlEnabled": {
@@ -32653,12 +32667,14 @@
             "shading": {
               "PrimitiveTypes": [
                 "boolean"
-              ]
+              ],
+              "Description": "Specifies whether to shade the widget when the load panel is shown."
             },
             "shadingColor": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies the shading color. Applies only if shading is true."
             },
             "showIndicator": {
               "PrimitiveTypes": [
@@ -40620,7 +40636,8 @@
         "type": {
           "PrimitiveTypes": [
             "string"
-          ]
+          ],
+          "Description": "Specifies the type of gauge indicators."
         },
         "verticalOrientation": {
           "PrimitiveTypes": [
