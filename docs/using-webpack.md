@@ -19,10 +19,18 @@ Go to *webpack.config.js* and configure loaders for css and fonts as follows:
 
 ```js
 ...
-  loaders: [
+  rules: [
     ...
-    { test: /\.css$/, loader: "style-loader!css-loader" },
-    { test: /\.(ttf|eot|woff)$/, loader: "file-loader?name=/[name].[ext]" }
+    { 
+      test: /\.css$/,
+      use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" }]
+    },
+    { 
+      test: /\.(eot|svg|ttf|woff|woff2)$/, 
+      use: "url-loader?name=[name].[ext]"
+    }
   ]
 ...
 ```
