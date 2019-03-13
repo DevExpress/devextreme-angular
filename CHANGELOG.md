@@ -1,3 +1,8 @@
+## 17.2.13 (2019-03-13)
+
+### Features
+- Update `devextreme` version to 17.2.13
+
 ## 17.2.12 (2019-02-20)
 
 ### Features
