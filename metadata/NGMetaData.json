@@ -1056,7 +1056,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -2498,7 +2498,7 @@
       }
     },
     "dxButtonGroup": {
-      "Description": "The ButtonGroup is a widget that contains a set of toggle buttons, and can be used as a mode switcher.",
+      "Description": "The ButtonGroup is a widget that contains a set of toggle buttons and can be used as a mode switcher.",
       "Module": "ui/button_group",
       "Options": {
         "accessKey": {
@@ -2917,19 +2917,19 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's height small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container height at which the layout begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not point labels should be kept when the layout is adapting."
+              "Description": "Specifies whether point labels should be kept when the widget adapts the layout."
             },
             "width": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's width small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container width at which the layout begins to adapt."
             }
           }
         },
@@ -3599,7 +3599,7 @@
                 "number",
                 "string"
               ],
-              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
+              "Description": "",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -6417,7 +6417,7 @@
                 "number",
                 "string"
               ],
-              "Description": "A class describing various time intervals. Inherited by tick intervals in Chart and RangeSelector.",
+              "Description": "",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -6813,7 +6813,8 @@
             "visualRangeUpdateMode": {
               "PrimitiveTypes": [
                 "string"
-              ]
+              ],
+              "Description": "Specifies how the axis's visual range should behave when chart data is updated."
             },
             "wholeRange": {
               "PrimitiveTypes": [
@@ -8338,7 +8339,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -8825,7 +8826,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Customizes data before export. You can use the exporting.customizeExcelCell function instead."
+          "Description": "Customizes data before export. You can use the export.customizeExcelCell function instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -9050,25 +9051,25 @@
               "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
             },
             "texts": {
-              "Description": "Contains options that specify texts for the export-related commands and hints.",
+              "Description": "Configures the texts of export commands, buttons, and hints.",
               "Options": {
                 "exportAll": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the text of the command that exports all data."
+                  "Description": "The text or hint of the command that exports all data."
                 },
                 "exportSelectedRows": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the text of the drop-down menu command that exports selected rows."
+                  "Description": "The text of the command that exports selected rows. Applies when allowExportSelectedData option is true."
                 },
                 "exportTo": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the hint of the Export button when the allowExportSelectedData option is true."
+                  "Description": "The hint of the Export button when the allowExportSelectedData option is true."
                 }
               }
             }
@@ -9671,7 +9672,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before an editor is created."
+          "Description": "A function that is executed before a cell's editor is created. Not executed for cells with an editCellTemplate."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -10344,13 +10345,13 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the summary item text."
+                  "Description": "Specifies the summary item's text."
                 },
                 "name": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the identifier of a summary item."
+                  "Description": "Specifies the group summary item's identifier."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -10496,13 +10497,13 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies a pattern for the summary item text."
+                  "Description": "Specifies the summary item's text."
                 },
                 "name": {
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the identifier of a summary item."
+                  "Description": "Specifies the total summary item's identifier."
                 },
                 "showInColumn": {
                   "PrimitiveTypes": [
@@ -11452,7 +11453,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "dropDownButtonTemplate": {
           "PrimitiveTypes": [
@@ -11562,6 +11563,13 @@
               "Description": "Specifies whether or not a widget item must be displayed."
             }
           }
+        },
+        "maxLength": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
         "name": {
           "PrimitiveTypes": [
@@ -11797,7 +11805,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -12752,19 +12760,19 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's height small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container height at which the layout begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether item labels should be kept when the layout is adapting."
+              "Description": "Specifies whether item labels should be kept when the widget adapts the layout."
             },
             "width": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's width small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container width at which the layout begins to adapt."
             }
           }
         },
@@ -15239,6 +15247,14 @@
           ],
           "Description": "Specifies whether the widget responds to user interaction."
         },
+        "displayExpr": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the data field whose values should be displayed. Defaults to \"text\" when the data source contains objects."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -16207,7 +16223,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "displayValue": {
           "PrimitiveTypes": [
@@ -16692,7 +16708,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -17168,7 +17184,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -18638,19 +18654,19 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's height small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container height at which the layout begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not point labels should be kept when the layout is adapting."
+              "Description": "Specifies whether point labels should be kept when the widget adapts the layout."
             },
             "width": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's width small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container width at which the layout begins to adapt."
             }
           }
         },
@@ -20724,19 +20740,19 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's height small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container height at which the layout begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not point labels should be kept when the layout is adapting."
+              "Description": "Specifies whether point labels should be kept when the widget adapts the layout."
             },
             "width": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the widget's width small enough for the layout to begin adapting."
+              "Description": "Specifies the minimum container width at which the layout begins to adapt."
             }
           }
         },
@@ -23510,7 +23526,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "The target element associated with a popover."
+          "Description": "The target element associated with the widget."
         },
         "title": {
           "PrimitiveTypes": [
@@ -23531,7 +23547,7 @@
           ],
           "IsCollection": true,
           "SingularName": "toolbarItem",
-          "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
+          "Description": "Configures toolbar items.",
           "Options": {
             "disabled": {
               "PrimitiveTypes": [
@@ -23935,7 +23951,7 @@
           ],
           "IsCollection": true,
           "SingularName": "toolbarItem",
-          "Description": "Specifies items displayed on the top or bottom toolbar of the popup window.",
+          "Description": "Configures toolbar items.",
           "Options": {
             "disabled": {
               "PrimitiveTypes": [
@@ -24220,7 +24236,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -24404,7 +24420,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -26689,7 +26705,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum container height at which the widget begins to adapt."
+              "Description": "Specifies the minimum container height at which the layout begins to adapt."
             },
             "keepLabels": {
               "PrimitiveTypes": [
@@ -26701,7 +26717,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum container width at which the widget begins to adapt."
+              "Description": "Specifies the minimum container width at which the layout begins to adapt."
             }
           }
         },
@@ -28121,7 +28137,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the resource object field whose value is displayed by the Resource editor in the Appointment popup window."
+              "Description": "Specifies which field from the resource data objects provides values to be displayed in the resource editor."
             },
             "fieldExpr": {
               "PrimitiveTypes": [
@@ -28617,7 +28633,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "displayValue": {
           "PrimitiveTypes": [
@@ -29086,7 +29102,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -31129,7 +31145,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "dropDownButtonTemplate": {
           "PrimitiveTypes": [
@@ -31262,6 +31278,13 @@
             "number"
           ],
           "Description": "Specifies the limit on displayed tags. On exceeding it, the widget replaces all tags with a single multi-tag that displays the number of selected items."
+        },
+        "maxLength": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Specifies the maximum number of characters you can enter into the textbox."
         },
         "minSearchLength": {
           "PrimitiveTypes": [
@@ -31609,7 +31632,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides the widget's value. When this option is not set, the value is the entire data object."
+          "Description": "Specifies which data field provides unique values to the widget's value. When the data field is not set, the value is the entire data object."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -33350,7 +33373,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "The target element associated with a popover."
+          "Description": "The target element associated with the widget."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -34256,7 +34279,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before an editor is created."
+          "Description": "A function that is executed before a cell's editor is created. Not executed for cells with an editCellTemplate."
         },
         "onFocusedCellChanged": {
           "PrimitiveTypes": [
@@ -35731,7 +35754,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Allows you to load nodes manually."
+          "Description": "Allows you to load nodes. Applies if the dataStructure is \"plain\" and the dataSource and items are undefined."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -35772,7 +35795,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies the name of the data source item field whose value is displayed by the widget."
+          "Description": "Specifies the data field whose values should be displayed."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -36488,7 +36511,7 @@
           "Description": "Specifies the geographical coordinates of the center for a map."
         },
         "controlBar": {
-          "Description": "Specifies the options of the control bar.",
+          "Description": "Configures the control bar.",
           "Options": {
             "borderColor": {
               "PrimitiveTypes": [
@@ -38536,7 +38559,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of the lines that indicate the error bar edges."
+              "Description": "Specifies the length of the lines that indicate error bar edges."
             },
             "highValueField": {
               "PrimitiveTypes": [
@@ -39372,7 +39395,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of the lines that indicate the error bar edges."
+              "Description": "Specifies the length of the lines that indicate error bar edges."
             },
             "highValueField": {
               "PrimitiveTypes": [
@@ -39483,7 +39506,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether empty values are valid."
+          "Description": "Specifies whether the validationCallback should be called for null and undefined values."
         },
         "message": {
           "PrimitiveTypes": [
@@ -40368,7 +40391,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the data source field whose values are displayed."
+              "Description": "Specifies the data field whose values should be displayed."
             },
             "valueExpr": {
               "PrimitiveTypes": [
@@ -41920,7 +41943,7 @@
       }
     },
     "GaugeIndicator": {
-      "Description": "A base object for gauge value and subvalue indicators. Includes the options of indicators of all types.",
+      "Description": "",
       "Options": {
         "arrowLength": {
           "PrimitiveTypes": [
@@ -43545,7 +43568,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of the lines that indicate the error bar edges."
+              "Description": "Specifies the length of the lines that indicate error bar edges."
             },
             "highValueField": {
               "PrimitiveTypes": [
@@ -44220,7 +44243,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of the lines that indicate the error bar edges."
+              "Description": "Specifies the length of the lines that indicate error bar edges."
             },
             "highValueField": {
               "PrimitiveTypes": [
@@ -44533,6 +44556,7 @@
       }
     },
     "VizRange": {
+      "Description": "",
       "Options": {
         "endValue": {
           "PrimitiveTypes": [
