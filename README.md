@@ -360,6 +360,67 @@ The widgets that support the **template** option (**Button**, **Popup**, **Drawe
 </dx-button>
 ```
 
+#### External Templates ####
+
+Declare an external template markup inside the `ng-template` located outside the widget. To use this markup for a widget element, declare another `ng-template` inside the element's [dxTemplate](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/Markup_Components/dxTemplate/). For this `ng-template`, reference the markup in the [ngTemplateOutlet](https://angular.io/api/common/NgTemplateOutlet) directive and specify a context object in the **ngTemplateOutletContext** directive. In the following code, an external `customTemplate` is declared for [List](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/) items:
+
+```html
+<ng-template #customTemplate let-item="item">
+    <b>{{item.itemProperty}}</b>
+</ng-template>
+
+<dx-list [items]="items" itemTemplate="item">
+    <div *dxTemplate="let item of 'item'">
+        <ng-template 
+            [ngTemplateOutlet]="customTemplate" 
+            [ngTemplateOutletContext]="{ item: item }">
+        </ng-template>
+    </div>
+</dx-list>
+```
+
+If you declare a widget in a separate component (for example, `custom-list` component), you can pass the template markup to it from a parent component. For this, declare an input property in the `custom-list` component. In the parent component, specify the markup within the `ng-template` and bind its reference variable to the input property:
+
+```js
+// custom-list.component.ts
+import { Component, Input, TemplateRef } from '@angular/core';
+
+@Component({
+    selector: 'devextreme-list',
+    templateUrl: './custom-list.component.html'
+})
+
+export class CustomListComponent {
+    @Input() templateInput: TemplateRef<any>
+    // ...
+}
+```
+
+```html
+<!-- custom-list.component.html -->
+<dx-list ...
+    itemTemplate="item">
+    <div *dxTemplate="let item of 'item'">
+        <ng-template 
+            [ngTemplateOutlet]="templateInput" 
+            [ngTemplateOutletContext]="{ item: item }">
+        </ng-template>
+    </div>
+</dx-list>
+```
+```html
+<!-- parent.component.html -->
+<!-- ... -->
+<ng-template #customTemplate let-item="item">
+    <b>{{item.itemProperty}}</b>
+</ng-template>
+
+<devextreme-list 
+    <!-- Binds the markup to the custom-list.component's input property. -->
+    [templateInput]="customTemplate"> 
+</devextreme-list>
+```
+
 ### <a name="data-layer"></a>Data Layer ###
 
 The DevExtreme framework includes a data layer, which is a set of complementary components that enable you to read and write data.
