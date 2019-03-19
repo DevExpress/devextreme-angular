@@ -386,7 +386,7 @@ If you declare a widget in a separate component (for example, `custom-list` comp
 import { Component, Input, TemplateRef } from '@angular/core';
 
 @Component({
-    selector: 'devextreme-list',
+    selector: 'custom-list',
     templateUrl: './custom-list.component.html'
 })
 
@@ -415,10 +415,10 @@ export class CustomListComponent {
     <b>{{item.itemProperty}}</b>
 </ng-template>
 
-<devextreme-list 
+<custom-list 
     <!-- Binds the markup to the custom-list.component's input property. -->
     [templateInput]="customTemplate"> 
-</devextreme-list>
+</custom-list>
 ```
 
 ### <a name="data-layer"></a>Data Layer ###
