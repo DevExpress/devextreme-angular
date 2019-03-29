@@ -23,7 +23,7 @@ Open the `global.scss` file in the `src` folder and import `dx.common.css` and a
 
 ## <a name="configuration"></a>Register 3-rd Party Dependencies
 
-Refer to [Third-Party Dependencies Registration](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
+Refer to [Third-Party Dependencies Registration](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md).
 
 
 ## Import DevExtreme Modules and Add Components
