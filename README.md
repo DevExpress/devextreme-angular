@@ -109,7 +109,7 @@ The further configuration steps depend on which build tool, bundler or module lo
     - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
 * [Configuring Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md#configuration)
 * [Configuring Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md#configuration)
-* [Configuring Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md#configuration)
+* [Configuring Ionic 4](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic4.md#stylesheets)
 
 #### <a name="import-modules"></a>Import DevExtreme Modules ####
 
@@ -158,7 +158,7 @@ Depending on your requirements you can choose one of the following ways to start
     - [Third-party dependencies registration in Angular CLI 6+](https://github.com/DevExpress/devextreme-angular/blob/master/docs/setup-3rd-party-dependencies.md)
 * [Start with Webpack](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-webpack.md)
 * [Start with Rollup](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-rollup.md)
-* [Start with Ionic 2](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic2.md)
+* [Start with Ionic 4](https://github.com/DevExpress/devextreme-angular/blob/master/docs/using-ionic4.md)
 
 ### <a name="server-side-rendering"></a>Server-side Rendering ###
 
