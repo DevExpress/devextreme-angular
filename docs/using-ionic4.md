@@ -2,7 +2,7 @@
 
 ## Create an Application
 
-Create an Ionic 4 application as described in [Getting Started with Ionic 4](https://ionicacademy.com/getting-started-with-ionic-4/).
+Create an Ionic 4 application as described in [Getting Started with Ionic 4](https://ionicframework.com/docs/installation/cli).
 
 ## Install DevExtreme
 
