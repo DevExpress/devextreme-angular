@@ -350,7 +350,7 @@ render the data where you need inside the template.
 
 The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
 
-**NOTE**: The **dxTemplate** directive should be assigned to an HTML element not an Angular-specific element. 
+**NOTE**: The **dxTemplate** directive cannot be used on custom markup elements.
 
 The widgets that support the **template** option (**Button**, **Popup**, **Drawer** and others) also allow you to put the markup directly into the widget element to customize their content:
 
