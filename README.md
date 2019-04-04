@@ -331,35 +331,99 @@ or vice versa from the widget to the bindingProperty:
 
 ### <a name="custom-templates"></a>Custom Templates ###
 
-In case you want to customize the rendering of a DevExtreme widget, we support custom templates. Custom templates should be placed at the root level of a DevExtreme component. For instance, we can specify the [itemTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate)
-and [groupTemplate](http://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate)
-of the dxList widget as follows:
+Templates allow you to customize widget elements. In the following code, an [itemTemplate](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#itemTemplate) called `listItem` and a [groupTemplate](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxList/Configuration/#groupTemplate) called `listGroup` customize items and groups in the [List](https://js.devexpress.com/Demos/WidgetsGallery/Demo/List/GroupedList/Angular/Light/) widget. Inside the templates, the `itemData` and `groupData` variables expose item and group data objects; the `itemIndex` variable gives access to the item index.
 
 ```html
-<dx-list [grouped]="true" [items]="grouppedItems">
-    <div *dxTemplate="let itemData of 'item'; let itemIndex = index">
-        {{itemIndex}} - {{itemData.someProperty}}
+<dx-list
+    [items]="groupedItems"
+    [grouped]="true"
+    itemTemplate="listItem"
+    groupTemplate="listGroup">
+    <div *dxTemplate="let itemData of 'listItem'; let itemIndex = index">
+        {{itemIndex}} - {{itemData.itemProperty}}
     </div>
-    <div *dxTemplate="let groupData of 'group'">
-        {{groupData.someProperty}}
+    <div *dxTemplate="let groupData of 'listGroup'">
+        {{groupData.groupProperty}}
     </div>
 </dx-list>
 ```
-The local 'itemData' and 'groupData' variables (that are declared via the 'let' keyword) expose the corresponding item data object. You can use it to
-render the data where you need inside the template.
 
-The 'item' and 'group' names are default template names for the 'itemTemplate' and 'groupTemplate' options of the dxList widget.
+**NOTE**: The `dxTemplate` attribute directive cannot be used on custom markup elements. 
 
-**NOTE**: The **dxTemplate** directive cannot be used on custom markup elements.
+Refer to the common [Custom Templates](https://js.devexpress.com/Documentation/Guide/Widgets/Common/Templates/#Custom_Templates) article for more information.
 
-The widgets that support the **template** option (**Button**, **Popup**, **Drawer** and others) also allow you to put the markup directly into the widget element to customize their content:
+Angular has a built-in `template` directive. This causes an error when you try to specify an eponymous property on a configuration component (for instance, on `dxo-master-detail`). In this case, use the following syntax:
 
 ```html
-<dx-button (onClick)="foo($event)">
-    <i style="color:green">
-        Refresh
-    </i> 
-</dx-button>
+<dxo-master-detail [template]="'masterDetail'"></dxo-master-detail>
+```
+
+Widgets like [Resizable](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxResizable/), [ScrollView](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxScrollView/), [ValidationGroup](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidationGroup/), [Button](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxButton/), and [Darwer](https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxDrawer/) allow you to declare their content directly in the markup. The following is an example with **ScrollView**:
+
+```html
+<dx-scroll-view>
+    <div>Some scrollable content</div>
+</dx-scroll-view>
+```
+
+#### <a name="external-templates"></a>External Templates ####
+
+External templates are created using the [`ng-template`](https://angular.io/guide/structural-directives#the-ng-template) element. The following code replicates the example above, but here the **itemTemplate** is the external template. The **groupTemplate** is omitted.
+
+The [`ngTemplateOutlet`](https://angular.io/api/common/NgTemplateOutlet) directive uses a [template reference variable](https://angular.io/guide/template-syntax#template-reference-variables--var-) to reference the external template. The `ngTemplateOutletContext` directive specifies variables that are accessible in the template.
+
+```html
+<dx-list [items]="items" itemTemplate="listItem">
+    <div *dxTemplate="let itemData of 'listItem'; let itemIndex = index">
+        <ng-template 
+            [ngTemplateOutlet]="customItemTemplate" 
+            [ngTemplateOutletContext]="{ itemData: itemData, itemIndex: itemIndex }">
+        </ng-template>
+    </div>
+</dx-list>
+
+<ng-template #customItemTemplate let-data="itemData" let-index="itemIndex">
+    {{index}} - {{data.itemProperty}}
+</ng-template>
+```
+
+In the previous code, the external template is used in the same component in which it is declared. The following code illustrates the case when the external template is declared in another component. The `ngTemplateOutlet` directive should be set to an [input property](https://angular.io/guide/template-syntax#input-and-output-properties) in this case:
+
+```html
+<!-- parent.component.html -->
+<ng-template #customItemTemplate let-data="itemData" let-index="itemIndex">
+    {{index}} - {{data.itemProperty}}
+</ng-template>
+
+<custom-list
+    [externalItemTemplate]="customItemTemplate"> 
+</custom-list>
+```
+
+```html
+<!-- custom-list.component.html -->
+<dx-list ...
+    itemTemplate="listItem">
+    <div *dxTemplate="let itemData of 'listItem'; let itemIndex = index">
+        <ng-template 
+            [ngTemplateOutlet]="externalItemTemplate" 
+            [ngTemplateOutletContext]="{ itemData: itemData, itemIndex: itemIndex }">
+        </ng-template>
+    </div>
+</dx-list>
+```
+
+```ts
+// custom-list.component.ts
+import { Component, Input, TemplateRef } from '@angular/core';
+@Component({
+    selector: 'custom-list',
+    templateUrl: './custom-list.component.html'
+})
+export class CustomListComponent {
+    @Input() externalItemTemplate: TemplateRef<any>
+    // ...
+}
 ```
 
 ### <a name="data-layer"></a>Data Layer ###
