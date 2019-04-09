@@ -172,7 +172,7 @@ describe('DxDataGrid', () => {
         fixture.detectChanges();
         const column = fixture.componentInstance.innerWidgets.first.columns[0];
 
-        if(typeof column === 'string') {
+        if (typeof column === 'string') {
             fail();
         } else {
             expect(column.columns).toContain({ dataField: 'Field' });
