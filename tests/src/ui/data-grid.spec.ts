@@ -170,8 +170,13 @@ describe('DxDataGrid', () => {
 
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
-        const columns = fixture.componentInstance.innerWidgets.first.instance.option('columns');
-        expect(columns[0].columns).toContain({ dataField: 'Field' });
+        const column = fixture.componentInstance.innerWidgets.first.columns[0];
+
+        if(typeof column === 'string') {
+            fail();
+        } else {
+            expect(column.columns).toContain({ dataField: 'Field' });
+        }
     });
 
     it('should create rows only once when value of cells is an object', () => {
