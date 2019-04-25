@@ -39,7 +39,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -351,7 +351,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -608,7 +608,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -773,7 +773,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -1528,7 +1528,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -1755,7 +1755,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "direction": {
           "PrimitiveTypes": [
@@ -3599,7 +3599,7 @@
                 "number",
                 "string"
               ],
-              "Description": "",
+              "Description": "Specifies the minimum length of the visual range.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -4811,7 +4811,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the widget's data origin."
+          "Description": "Binds the widget to data."
         },
         "defaultPane": {
           "PrimitiveTypes": [
@@ -5645,7 +5645,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -6417,7 +6417,7 @@
                 "number",
                 "string"
               ],
-              "Description": "",
+              "Description": "Specifies the minimum length of the visual range.",
               "Options": {
                 "days": {
                   "PrimitiveTypes": [
@@ -7703,7 +7703,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -8043,7 +8043,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -8317,7 +8317,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -8819,7 +8819,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Specifies a function that customizes grid columns after they are created."
+          "Description": "Customizes columns after they are created."
         },
         "customizeExportData": {
           "PrimitiveTypes": [
@@ -8838,7 +8838,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Binds the widget to data."
         },
         "dateSerializationFormat": {
           "PrimitiveTypes": [
@@ -10787,7 +10787,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -11328,6 +11328,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
+          "IsChangeable": true,
           "Description": "Specifies whether the drawer is opened."
         },
         "openedStateMode": {
@@ -11433,7 +11434,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -11583,7 +11584,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -12688,7 +12689,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Specifies the function returning the screen factor depending on the screen width."
+          "Description": "Specifies a function that categorizes screens by their width."
         },
         "scrollingEnabled": {
           "PrimitiveTypes": [
@@ -12804,7 +12805,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the widget's data origin."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -13630,7 +13631,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -13860,7 +13861,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -14984,7 +14985,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -15239,7 +15240,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -16203,7 +16204,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -17162,7 +17163,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -17518,7 +17519,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -17770,7 +17771,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -18161,7 +18162,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -18430,7 +18431,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -18735,7 +18736,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the widget's data origin."
+          "Description": "Binds the widget to data."
         },
         "diameter": {
           "PrimitiveTypes": [
@@ -19371,7 +19372,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -19606,7 +19607,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -19870,7 +19871,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies a data source for the pivot grid."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -21761,7 +21762,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the widget's data origin."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -22414,7 +22415,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -24222,7 +24223,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -25780,7 +25781,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -26433,7 +26434,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -26742,7 +26743,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the widget's data source."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -27449,7 +27450,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -27745,7 +27746,7 @@
             "SchedulerAppointment"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Binds the widget to data."
         },
         "dateCellTemplate": {
           "PrimitiveTypes": [
@@ -28129,7 +28130,7 @@
                 "any"
               ],
               "IsDataSource": true,
-              "Description": "A data source used to fetch resources to be available in the scheduler."
+              "Description": "Specifies available resource instances."
             },
             "displayExpr": {
               "PrimitiveTypes": [
@@ -28613,7 +28614,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -28793,7 +28794,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -29149,7 +29150,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -29824,7 +29825,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies a data source for the sparkline."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -30463,7 +30464,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -30796,7 +30797,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -31125,7 +31126,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data the widget should display."
+          "Description": "Binds the widget to data."
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -31316,7 +31317,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onClosed": {
           "PrimitiveTypes": [
@@ -31758,7 +31759,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -32082,7 +32083,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the widget loses focus after the content has been changed."
+          "Description": "A function that is executed when the widget loses focus after the text field's content was changed using the keyboard."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -32346,7 +32347,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "direction": {
           "PrimitiveTypes": [
@@ -32862,7 +32863,7 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -33592,13 +33593,13 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Binds the widget to data."
         },
         "dataStructure": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Notifies the widget of your data structure."
+          "Description": "Notifies the widget of the used data structure."
         },
         "dateSerializationFormat": {
           "PrimitiveTypes": [
@@ -34941,7 +34942,7 @@
             "any"
           ],
           "IsDataSource": true,
-          "Description": "Specifies the origin of data for the widget."
+          "Description": "Binds the widget to data."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -35530,7 +35531,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -35767,13 +35768,13 @@
             "DevExpress.ui.CollectionWidgetItem"
           ],
           "IsDataSource": true,
-          "Description": "A data source used to fetch data to be displayed by the widget."
+          "Description": "Binds the widget to data."
         },
         "dataStructure": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies whether a nested or plain array is used as a data source."
+          "Description": "Notifies the widget of the used data structure."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -37311,7 +37312,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the minimum height that the title occupies."
+              "Description": "Reserves a pixel-measured space for the title."
             },
             "subtitle": {
               "PrimitiveTypes": [
@@ -40543,7 +40544,7 @@
           "Description": "The count of columns in the group layout."
         },
         "colCountByScreen": {
-          "Description": "Specifies dependency between the screen factor and the count of columns in the group layout.",
+          "Description": "Specifies the relation between the screen size qualifier and the number of columns in the grouped layout.",
           "Options": {
             "lg": {
               "PrimitiveTypes": [
@@ -40660,7 +40661,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies configuration options for the editor widget of the current form item."
+          "Description": "Configures the form item's editor."
         },
         "editorType": {
           "PrimitiveTypes": [
@@ -40836,7 +40837,7 @@
               "Description": "The count of columns in the tab layout."
             },
             "colCountByScreen": {
-              "Description": "Specifies dependency between the screen factor and the count of columns in the tab layout.",
+              "Description": "Specifies the relation between the screen size qualifier and the number of columns in the tabbed layout.",
               "Options": {
                 "lg": {
                   "PrimitiveTypes": [
