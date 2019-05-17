@@ -13,16 +13,14 @@ This project allows you to use [DevExtreme widgets](http://js.devexpress.com/Dem
     * [Golf Club](https://github.com/DevExpress/golfclub)
     * [DX Election](https://github.com/DevExpress/dx-election)
 * [API Reference](http://js.devexpress.com/Documentation/ApiReference/)
-* [License](#license)
-* [Support & Feedback](#support-feedback)
 
-## <a name="license"></a>License ##
+## License ##
 
 **DevExtreme Angular UI Components are released as a MIT-licensed (free and open-source) add-on to DevExtreme.**
 
 Familiarize yourself with the [DevExtreme License](https://js.devexpress.com/Licensing/). [Free trial is available!](http://js.devexpress.com/Buy/)
 
-## <a name="support-feedback"></a>Support & Feedback ##
+## Support & Feedback ##
 
 If you have questions regarding Angular functionality, consult [Angular docs](https://angular.io/docs).
 
