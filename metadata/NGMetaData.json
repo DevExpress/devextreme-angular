@@ -600,10 +600,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -8621,10 +8621,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -11356,10 +11356,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -12171,10 +12171,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -12811,6 +12811,12 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed when an item is selected or selection is canceled. In effect when useSelectMode is true."
+        },
+        "opened": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down menu is opened."
         },
         "rtlEnabled": {
           "PrimitiveTypes": [
@@ -15355,7 +15361,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": ""
+          "Description": "Allows you to customize Quill and 3rd-party modules."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -17428,18 +17434,6 @@
           ],
           "Description": "Specifies the way an end-user applies the selected value."
         },
-        "buttons": {
-          "ItemPrimitiveTypes": [
-            "string",
-            "DevExpress.ui.dxActionButton"
-          ],
-          "ItemComplexTypes": [
-            "ActionButton"
-          ],
-          "IsCollection": true,
-          "SingularName": "button",
-          "Description": "Allows you to add custom buttons to the input text field."
-        },
         "cancelButtonText": {
           "PrimitiveTypes": [
             "string"
@@ -19341,10 +19335,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -22029,6 +22023,12 @@
                   ],
                   "Description": "Specifies an opacity for the minor ticks."
                 },
+                "shift": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Shifts minor ticks from the reference position."
+                },
                 "visible": {
                   "PrimitiveTypes": [
                     "boolean"
@@ -22227,6 +22227,12 @@
                     "number"
                   ],
                   "Description": "Specifies tick opacity."
+                },
+                "shift": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Shifts ticks from the reference position."
                 },
                 "visible": {
                   "PrimitiveTypes": [
@@ -29735,10 +29741,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -31385,7 +31391,7 @@
       }
     },
     "dxSpeedDialAction": {
-      "Description": "",
+      "Description": "The SpeedDialAction is a button that performs a custom action. It can be represented by a Floating Action Button (FAB) or a button in a speed dial menu opened with the FAB.",
       "Module": "ui/speed_dial_action",
       "Options": {
         "accessKey": {
@@ -31428,7 +31434,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the icon the FAB or speed dial action button displays."
         },
         "onClick": {
           "PrimitiveTypes": [
@@ -31436,7 +31442,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": ""
+          "Description": "A function that is executed when the FAB or speed dial action button is clicked or tapped."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -32359,10 +32365,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -32928,18 +32934,6 @@
           ],
           "Description": "A Boolean value specifying whether or not the auto resizing mode is enabled."
         },
-        "buttons": {
-          "ItemPrimitiveTypes": [
-            "string",
-            "DevExpress.ui.dxActionButton"
-          ],
-          "ItemComplexTypes": [
-            "ActionButton"
-          ],
-          "IsCollection": true,
-          "SingularName": "button",
-          "Description": "Allows you to add custom buttons to the input text field."
-        },
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -33251,10 +33245,10 @@
         "buttons": {
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.dxActionButton"
+            "DevExpress.ui.dxTextEditorButton"
           ],
           "ItemComplexTypes": [
-            "ActionButton"
+            "TextEditorButton"
           ],
           "IsCollection": true,
           "SingularName": "button",
@@ -41062,31 +41056,6 @@
         }
       }
     },
-    "ActionButton": {
-      "Options": {
-        "location": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies whether to place the button before or after the input text field."
-        },
-        "name": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies the button's name."
-        },
-        "options": {
-          "PrimitiveTypes": [
-            "DevExpress.ui.dxButtonOptions"
-          ],
-          "ComplexTypes": [
-            "dxButtonOptions"
-          ],
-          "Description": "Configures the Button widget used as the action button."
-        }
-      }
-    },
     "ButtonGroupItem": {
       "Description": "This section describes object fields that can be used in the default item template.",
       "Options": {
@@ -41286,7 +41255,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series. Useful for a multi-series chart."
+          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series."
         },
         "shadow": {
           "Description": "Configures the annotation's shadows.",
@@ -41329,6 +41298,12 @@
           ],
           "Description": "Specifies the annotation's text. Applies only if the type is \"text\"."
         },
+        "textOverflow": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies what to do with the annotation's text when it overflows the allocated space after applying wordWrap: hide, truncate it and display an ellipsis, or do nothing."
+        },
         "tooltipEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -41355,17 +41330,23 @@
           ],
           "Description": "Specifies the annotation's width in pixels."
         },
+        "wordWrap": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to wrap the annotation's text if it does not fit into a single line."
+        },
         "x": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner."
+          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         },
         "y": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner."
+          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         }
       }
     },
@@ -41514,7 +41495,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series. Useful for a multi-series chart."
+          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series."
         },
         "shadow": {
           "Description": "Configures the annotation's shadows.",
@@ -41557,6 +41538,12 @@
           ],
           "Description": "Specifies the annotation's text. Applies only if the type is \"text\"."
         },
+        "textOverflow": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies what to do with the annotation's text when it overflows the allocated space after applying wordWrap: hide, truncate it and display an ellipsis, or do nothing."
+        },
         "tooltipEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -41583,17 +41570,23 @@
           ],
           "Description": "Specifies the annotation's width in pixels."
         },
+        "wordWrap": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to wrap the annotation's text if it does not fit into a single line."
+        },
         "x": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner."
+          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         },
         "y": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner."
+          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         }
       }
     },
@@ -43334,6 +43327,31 @@
             "boolean"
           ],
           "Description": "Specifies whether or not an appointment must be displayed."
+        }
+      }
+    },
+    "TextEditorButton": {
+      "Options": {
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether to place the button before or after the input text field."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the button's name."
+        },
+        "options": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxButtonOptions"
+          ],
+          "ComplexTypes": [
+            "dxButtonOptions"
+          ],
+          "Description": "Configures the Button widget used as the action button."
         }
       }
     },
