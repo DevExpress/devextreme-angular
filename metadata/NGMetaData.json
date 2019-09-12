@@ -1478,7 +1478,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -1493,13 +1493,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -1977,7 +1977,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -2586,7 +2586,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -5588,7 +5588,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -5603,13 +5603,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -6395,7 +6395,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -8533,7 +8533,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -9430,8 +9430,7 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ],
-          "Description": "Specifies whether columns should adjust their widths to the content."
+          ]
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -9593,7 +9592,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
+          "Description": "Specifies the format in which date-time values should be sent to the server. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -10232,7 +10231,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to highlight rows and cells whose data changed."
+          "Description": "Specifies whether to highlight rows and cells with edited data. repaintChangesOnly should be true."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -10456,7 +10455,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after an editor is created."
+          "Description": "A function that is executed after an editor is created. Not executed for cells with an editCellTemplate."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -10464,7 +10463,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before a cell's editor is created. Not executed for cells with an editCellTemplate."
+          "Description": "A function used to customize or replace default editors. Not executed for cells with an editCellTemplate."
         },
         "onExported": {
           "PrimitiveTypes": [
@@ -10845,7 +10844,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
+              "Description": "Specifies whether the widget should load adjacent pages. Applies only if scrolling.mode is \"virtual\" or \"infinite\"."
             },
             "rowRenderingMode": {
               "PrimitiveTypes": [
@@ -12916,7 +12915,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether the arrow icon should be displayed."
         },
         "splitButton": {
           "PrimitiveTypes": [
@@ -14496,7 +14495,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -14511,13 +14510,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -15031,7 +15030,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -15441,7 +15440,7 @@
       }
     },
     "dxHtmlEditor": {
-      "Description": "[tags] ctp HtmlEditor is a WYSIWYG text editor build on top of Quill, designed to support HTML and Markdown output formats. #include common-ctp-note with { component: \"HtmlEditor\" }",
+      "Description": "[tags] ctp HtmlEditor is a WYSIWYG editor that allows you to format textual and visual content and to output it in HTML or Markdown. HtmlEditor is built on top of and requires Quill. #include common-ctp-note with { component: \"HtmlEditor\" }",
       "IsTranscludedContent": true,
       "Module": "ui/html_editor",
       "IsEditor": true,
@@ -16454,7 +16453,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -17452,7 +17451,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the widget is active."
+          "Description": "Specifies whether to shade the background when the widget is active."
         },
         "shadingColor": {
           "PrimitiveTypes": [
@@ -20144,7 +20143,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -20159,13 +20158,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -20754,7 +20753,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -23094,7 +23093,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -23109,13 +23108,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -23726,7 +23725,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -24695,7 +24694,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the widget is active."
+          "Description": "Specifies whether to shade the background when the widget is active."
         },
         "shadingColor": {
           "PrimitiveTypes": [
@@ -25120,7 +25119,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the widget is active."
+          "Description": "Specifies whether to shade the background when the widget is active."
         },
         "shadingColor": {
           "PrimitiveTypes": [
@@ -28847,7 +28846,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeLinkTooltip": {
               "PrimitiveTypes": [
@@ -29569,7 +29568,7 @@
           ],
           "IsCollection": true,
           "SingularName": "view",
-          "Description": "Configures individual views.",
+          "Description": "Specifies and configures the views to be available in the view switcher.",
           "Options": {
             "agendaDuration": {
               "PrimitiveTypes": [
@@ -31449,7 +31448,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -33489,7 +33488,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The editor mask that specifies the format of the entered string."
+          "Description": "The editor mask that specifies the custom format of the entered string."
         },
         "maskChar": {
           "PrimitiveTypes": [
@@ -34261,7 +34260,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the widget is active."
+          "Description": "Specifies whether to shade the background when the widget is active."
         },
         "shadingColor": {
           "PrimitiveTypes": [
@@ -34792,7 +34791,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the widget is active."
+          "Description": "Specifies whether to shade the background when the widget is active."
         },
         "shadingColor": {
           "PrimitiveTypes": [
@@ -34895,8 +34894,7 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ],
-          "Description": "Specifies whether columns should adjust their widths to the content."
+          ]
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -35057,7 +35055,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies date-time values' serialization format. Use it only if you do not specify the dataSource at design time."
+          "Description": "Specifies the format in which date-time values should be sent to the server. Use it only if you do not specify the dataSource at design time."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -35568,7 +35566,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to highlight rows and cells whose data changed."
+          "Description": "Specifies whether to highlight rows and cells with edited data. repaintChangesOnly should be true."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -35773,7 +35771,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after an editor is created."
+          "Description": "A function that is executed after an editor is created. Not executed for cells with an editCellTemplate."
         },
         "onEditorPreparing": {
           "PrimitiveTypes": [
@@ -35781,7 +35779,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before a cell's editor is created. Not executed for cells with an editCellTemplate."
+          "Description": "A function used to customize or replace default editors. Not executed for cells with an editCellTemplate."
         },
         "onFocusedCellChanged": {
           "PrimitiveTypes": [
@@ -36132,7 +36130,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether the widget should load pages adjacent to the current page. Applies only if scrolling.mode is \"virtual\"."
+              "Description": "Specifies whether the widget should load adjacent pages. Applies only if scrolling.mode is \"virtual\" or \"infinite\"."
             },
             "rowRenderingMode": {
               "PrimitiveTypes": [
@@ -37195,7 +37193,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -37325,7 +37323,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Allows you to load nodes. Applies if the dataStructure is \"plain\" and the dataSource and items are undefined."
+          "Description": "Allows you to load nodes on demand."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -37704,7 +37702,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies if the virtual mode is enabled."
+          "Description": "Enables the virtual mode in which nodes are loaded on demand. Use it to enhance the performance on large datasets."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -38632,7 +38630,7 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": ""
+                  "Description": "Along with verticalAlignment, specifies the legend title's position."
                 },
                 "margin": {
                   "Description": "Generates space around the legend title.",
@@ -38647,13 +38645,13 @@
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's left margin."
                     },
                     "right": {
                       "PrimitiveTypes": [
                         "number"
                       ],
-                      "Description": ""
+                      "Description": "Specifies the legend title's right margin."
                     },
                     "top": {
                       "PrimitiveTypes": [
@@ -39124,7 +39122,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes all the tooltip's corners rounded."
             },
             "customizeTooltip": {
               "PrimitiveTypes": [
@@ -41361,7 +41359,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes the annotation's corners rounded."
             },
             "dashStyle": {
               "PrimitiveTypes": [
@@ -41631,7 +41629,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": ""
+              "Description": "Makes the annotation's corners rounded."
             },
             "dashStyle": {
               "PrimitiveTypes": [
@@ -42110,7 +42108,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies options for the underlain editor."
+          "Description": "Configures the default widget used for editing and filtering in the filter row."
         },
         "encodeHtml": {
           "PrimitiveTypes": [
@@ -42673,7 +42671,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": ""
+          "Description": "Specifies the field's name. Use it to distinguish the field from other fields when they have identical dataField values."
         },
         "trueText": {
           "PrimitiveTypes": [
@@ -43784,7 +43782,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies options for the underlain editor."
+          "Description": "Configures the default widget used for editing and filtering in the filter row."
         },
         "encodeHtml": {
           "PrimitiveTypes": [
@@ -46978,6 +46976,7 @@
             "number",
             "string"
           ],
+          "IsChangeable": true,
           "Description": "The range's end value."
         },
         "length": {
@@ -47049,6 +47048,7 @@
             "number",
             "string"
           ],
+          "IsChangeable": true,
           "Description": "The range's start value."
         }
       }
