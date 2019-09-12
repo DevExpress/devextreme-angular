@@ -1,9 +1,9 @@
 import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
-import { ɵgetDOM as getDOM } from '@angular/platform-browser';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 import { getElement } from './utils';
 
+import * as render from 'devextreme/core/renderer';
 import * as events from 'devextreme/events';
 
 const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
@@ -157,7 +157,7 @@ export interface IOptionWithTemplate extends BaseNestedOption {
 let triggerShownEvent = function(element) {
     let changeHandlers = [];
 
-    if (getDOM().hasClass(element, VISIBILITY_CHANGE_SELECTOR)) {
+    if (!render(element).hasClass(VISIBILITY_CHANGE_SELECTOR)) {
         changeHandlers.push(element);
     }
 
