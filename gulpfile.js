@@ -140,7 +140,7 @@ gulp.task('build.remove-unusable-variable', function() {
     var config = buildConfig.components;
 
     return gulp.src(path.join(config.outputPath, '**/*.js'))
-        .pipe(replace(/var.+devextreme\/bundles\/dx\.all.+/g, ''))
+        .pipe(replace(/import DevExpress from \'devextreme\/bundles\/dx\.all\';/g, ''))
         .pipe(gulp.dest(config.outputPath));
 });
 
