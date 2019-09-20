@@ -1,6 +1,5 @@
 [![CircleCI](https://img.shields.io/circleci/project/github/DevExpress/devextreme-angular/master.svg)](https://circleci.com/gh/DevExpress/devextreme-angular) [![npm version](https://badge.fury.io/js/devextreme-angular.svg)](https://badge.fury.io/js/devextreme-angular)
 
-### If you are looking for the v18.2 branch, please follow this link: [https://github.com/DevExpress/devextreme-angular/tree/18.2](https://github.com/DevExpress/devextreme-angular/tree/18.2).
 
 # DevExtreme Angular UI Components #
 
