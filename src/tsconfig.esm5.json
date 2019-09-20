@@ -1,23 +1,26 @@
 {
     "compilerOptions": {
+        "rootDir": ".",
         "target": "ES5",
-        "module": "commonjs",
+        "module": "es2015",
         "moduleResolution": "node",
         "emitDecoratorMetadata": true,
         "experimentalDecorators": true,
-        "sourceMap": true,
+        "inlineSourceMap": true,
         "inlineSources": true,
         "removeComments": false,
-        "declaration": true,
+        "declaration": false,
         "noUnusedParameters": true,
         "noUnusedLocals": true,
-        "lib": ["es2015", "es2015.iterable", "dom"]
+        "lib": ["es2015", "es2015.iterable", "dom"],
+        "outDir": "./esm5/"
     },
     "filesGlob": [
         "**/*.ts"
     ],
     "angularCompilerOptions": {
         "skipTemplateCodegen": true,
-        "fullTemplateTypeCheck": true
+        "fullTemplateTypeCheck": true,
+        "skipMetadataEmit": true
     }
 }
