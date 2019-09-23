@@ -28,7 +28,9 @@ module.exports = {
                 './src/index.ts': {
                     sourceDirectories: [
                         './src/core',
-                        './src/ui'
+                        './src/ui',
+                        './src/ui/nested',
+                        './src/ui/nested/base',
                     ]
                 }
             }

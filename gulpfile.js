@@ -121,8 +121,10 @@ gulp.task('clean.dist', function () {
 
 gulp.task('build.ngc', function(done) {
     var config = buildConfig.components,
-        buildPath = path.join(config.outputPath, 'tsconfig.json'),
-        task = shell.task(['ngc -p ' + buildPath ]);
+        task = shell.task([
+            'ngc -p ' + path.join(config.outputPath, 'tsconfig.esm5.json'),
+            'ngc -p ' + path.join(config.outputPath, 'tsconfig.json'),
+        ]);
 
     task(done);
 });
@@ -141,6 +143,7 @@ gulp.task('build.remove-unusable-variable', function() {
 
     return gulp.src(path.join(config.outputPath, '**/*.js'))
         .pipe(replace(/var.+devextreme\/bundles\/dx\.all.+/g, ''))
+        .pipe(replace(/import DevExpress from \'devextreme\/bundles\/dx\.all\';/g, ''))
         .pipe(gulp.dest(config.outputPath));
 });
 
