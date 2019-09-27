@@ -14,7 +14,7 @@ jobs:
           name: Install packages
           command: npm install --unsafe-perm
       - run:
-          name: Build and run tests with Angular 5
+          name: Build and run tests with Angular 6
           command: npx gulp test
       - run:
           name: Install Angular 7
