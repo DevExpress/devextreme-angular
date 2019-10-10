@@ -170,7 +170,7 @@ export default class DXComponentMetadataGenerator {
         return {
             emit: `${name}Change`,
             type: `EventEmitter<${type}>`,
-            description: `A handler for the ${name}Change event.`
+            description: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
         };
     }
 
