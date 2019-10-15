@@ -12,7 +12,8 @@
     "build": "gulp build",
     "lite": "lite-server",
     "test": "gulp test",
-    "pack": "gulp npm.pack"
+    "pack": "gulp npm.pack",
+    "packgr": "node --max_old_space_size=8048 ./node_modules/.bin/ng-packagr -p ./dist/package.json"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -66,6 +67,7 @@
     "karma-webpack": "^2.0.9",
     "lite-server": "^2.2.0",
     "mkdirp": "^0.5.1",
+    "ng-packagr": "^5.6.1",
     "puppeteer": "^1.11.0",
     "run-sequence": "^1.2.2",
     "rxjs": "^6.0.0",

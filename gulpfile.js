@@ -15,6 +15,7 @@ var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
 var fs = require('fs');
+var ngPackagr = require('ng-packagr');
 
 //------------Main------------
 
@@ -57,9 +58,8 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 });
 
 gulp.task('clean.generatedComponents', function () {
-    var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-
-    return del([outputFolderPath + "/**/*.*"]);
+    var { outputFolderPath } = buildConfig.tools.componentGenerator;
+    del.sync([outputFolderPath + "/**"]);
 });
 
 gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponents'], function () {
@@ -119,14 +119,11 @@ gulp.task('clean.dist', function () {
     return del([buildConfig.components.outputPath]);
 });
 
-gulp.task('build.ngc', function(done) {
-    var config = buildConfig.components,
-        task = shell.task([
-            'ngc -p ' + path.join(config.outputPath, 'tsconfig.esm5.json'),
-            'ngc -p ' + path.join(config.outputPath, 'tsconfig.json'),
-        ]);
-
-    task(done);
+gulp.task('build.ngc', function() {
+    var config = buildConfig.components;
+    return ngPackagr.build({
+        project: path.join(config.outputPath, 'package.json')
+    });
 });
 
 gulp.task('build.copy-sources', ['clean.dist'], function() {

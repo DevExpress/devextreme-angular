@@ -1,14 +1,13 @@
 /* tslint:disable:max-line-length */
-
-<# var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name); #>
-<# var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root); #>
-<# var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent'; #>
-
-<# var implementedInterfaces = ['OnDestroy']; #>
-
-<# it.isEditor && implementedInterfaces.push('OnInit') && implementedInterfaces.push('AfterViewInit'); #>
-<# it.isEditor && implementedInterfaces.push('ControlValueAccessor'); #>
-<# collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck'); #>
+<# 
+    var collectionProperties = it.properties.filter(item => item.isCollection).map(item => item.name);
+    var collectionNestedComponents = it.nestedComponents.filter(item => item.isCollection && item.root);
+    var baseClass = it.isExtension ? 'DxComponentExtension' : 'DxComponent';
+    var implementedInterfaces = ['OnDestroy'];
+    it.isEditor && implementedInterfaces.push('OnInit') && implementedInterfaces.push('AfterViewInit');
+    it.isEditor && implementedInterfaces.push('ControlValueAccessor');
+    collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck');
+#>
 
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { TransferState } from '@angular/platform-browser';
@@ -42,24 +41,26 @@ import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
-import { DxValidatorComponent } from './validator';
+import { DxValidatorComponent } from 'devextreme-angular/ui/validator';
 
 import {
     ControlValueAccessor,
     NG_VALUE_ACCESSOR
 } from '@angular/forms';<#?#>
 
-import { <#= baseClass #> } from '../core/component';
-import { DxTemplateHost } from '../core/template-host';
-import { DxIntegrationModule } from '../core/integration';
-import { DxTemplateModule } from '../core/template';
-import { NestedOptionHost } from '../core/nested-option';
-import { WatcherHelper } from '../core/watcher-helper';
-<#? collectionProperties.length #>import { IterableDifferHelper } from '../core/iterable-differ-helper';<#?#>
+import {
+    <#= baseClass #>,
+    DxTemplateHost,
+    DxIntegrationModule,
+    DxTemplateModule,
+    NestedOptionHost,<#? collectionProperties.length #>
+    IterableDifferHelper,<#?#>
+    WatcherHelper
+} from 'devextreme-angular/core';
 
-<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from './nested/<#= component.path #>';
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from 'devextreme-angular/ui/nested';
 <#~#>
-<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from './nested/<#= component.path #>';
+<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from 'devextreme-angular/ui/nested';
 <#~#>
 
 <#? it.isEditor #>

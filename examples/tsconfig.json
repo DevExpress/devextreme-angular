@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "target": "ES5",
     "module": "system",
     "moduleResolution": "node",
@@ -9,7 +10,11 @@
     "removeComments": true,
     "declaration": true,
     "outDir": "./",
-    "lib": ["es2015", "dom"]
+    "lib": ["es2015", "dom"],
+    "paths": {
+      "devextreme-angular": [ "../../dist/devextreme-angular"],
+      "devextreme-angular/*": [ "../../dist/devextreme-angular/*"]
+    }
   },
   "exclude": [
     "node_modules"

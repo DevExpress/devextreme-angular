@@ -486,7 +486,7 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalPropertyType.className).toBe('DxoExternalPropertyType');
             expect(metas.DxoExternalPropertyType.path).toBe('external-property-type');
             expect(metas.DxoExternalPropertyType.baseClass).toBe('NestedOption');
-            expect(metas.DxoExternalPropertyType.basePath).toBe('../../../core/nested-option');
+            expect(metas.DxoExternalPropertyType.basePath).toBe('devextreme-angular/core');
         });
 
         it("should generate proper properties of base collection components", function() {
@@ -494,7 +494,7 @@ describe("metadata-generator", function() {
             expect(metas.DxiExternalPropertyType.className).toBe('DxiExternalPropertyType');
             expect(metas.DxiExternalPropertyType.path).toBe('external-property-type-dxi');
             expect(metas.DxiExternalPropertyType.baseClass).toBe('CollectionNestedOption');
-            expect(metas.DxiExternalPropertyType.basePath).toBe('../../../core/nested-option');
+            expect(metas.DxiExternalPropertyType.basePath).toBe('devextreme-angular/core');
         });
 
         it("should generate proper properties of collection nested components with base class", function() {

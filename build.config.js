@@ -27,10 +27,7 @@ module.exports = {
             facades: {
                 './src/index.ts': {
                     sourceDirectories: [
-                        './src/core',
-                        './src/ui',
-                        './src/ui/nested',
-                        './src/ui/nested/base',
+                        './metadata/generated'
                     ]
                 }
             }
@@ -43,7 +40,7 @@ module.exports = {
                         './src/ui'
                     ],
                     additionalImports: {
-                        'DxTemplateModule': 'import { DxTemplateModule } from \'../core/template\''
+                        'DxTemplateModule': 'import { DxTemplateModule } from \'devextreme-angular/core\''
                     }
                 }
             }
@@ -72,6 +69,7 @@ module.exports = {
         path: 'examples',
         appPath: 'examples/app',
         tsc: {
+            "baseUrl": ".",
             "target": "ES5",
             "module": "system",
             "moduleResolution": "node",
@@ -80,7 +78,11 @@ module.exports = {
             "sourceMap": true,
             "removeComments": true,
             "declaration": true,
-            "lib": ["es2015", "dom"]
+            "lib": ["es2015", "dom"],
+            "paths": {
+                "devextreme-angular": [ "../../../dist/devextreme-angular"],
+                "devextreme-angular/*": [ "../../../dist/devextreme-angular/*"]
+            }
         }
     },
     tests: {

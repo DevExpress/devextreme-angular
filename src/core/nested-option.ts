@@ -3,7 +3,7 @@ import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
 import { getElement } from './utils';
 
-import * as render from 'devextreme/core/renderer';
+import render from 'devextreme/core/renderer';
 import * as events from 'devextreme/events';
 
 const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';

@@ -460,7 +460,7 @@ export default class DXComponentMetadataGenerator {
                         className: component.baseClass,
                         path: this.getBaseComponentPath(component),
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
-                        basePath: '../../../core/nested-option',
+                        basePath: 'devextreme-angular/core',
                         isDevExpressRequired: component.isDevExpressRequired
                     });
                 }
@@ -487,7 +487,7 @@ export default class DXComponentMetadataGenerator {
                     component.basePath = `./base/${this.getBaseComponentPath(component)}`;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
-                    component.basePath = '../../core/nested-option';
+                    component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
                 }
 

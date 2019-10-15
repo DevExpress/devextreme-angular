@@ -6,16 +6,16 @@ let doT = require('dot');
 
 doT.templateSettings = {
   evaluate:    /\<#([\s\S]+?)#\>/g,
-  interpolate: /\<#=([\s\S]+?)#\>/g,
+    interpolate: /\<#=([\s\S]+?)#\>/g,
   encode:      /\<#!([\s\S]+?)#\>/g,
   use:         /\<##([\s\S]+?)#\>/g,
   define:      /\<###\s*([\w\.$]+)\s*(\:|=)([\s\S]+?)##\>/g,
-  conditional: /\<#\?(\?)?\s*([\s\S]*?)\s*#\>/g,
+    conditional: /\<#\?(\?)?\s*([\s\S]*?)\s*#\>/g,
   iterate:     /\<#~\s*(?:#\>|([\s\S]+?)\s*\:\s*([\w$]+)\s*(?:\:\s*([\w$]+))?\s*#\>)/g,
-  varname: 'it',
-  strip: false,
-  append: true,
-  selfcontained: false
+    varname: 'it',
+    strip: false,
+    append: true,
+    selfcontained: false
 };
 
 export default class DoTGenerator {
@@ -28,7 +28,8 @@ export default class DoTGenerator {
     generate(config) {
         this.generateTemplate(config.templateFilePath,
             config.metadataFolderPath,
-            config.outputFolderPath);
+            config.outputFolderPath,
+            true);
 
         this.generateTemplate(config.nestedTemplateFilePath,
             path.join(config.metadataFolderPath, config.nestedPathPart),
@@ -37,13 +38,16 @@ export default class DoTGenerator {
         this.generateTemplate(config.baseNestedTemplateFilePath,
             path.join(config.metadataFolderPath, config.nestedPathPart, config.basePathPart),
             path.join(config.outputFolderPath, config.nestedPathPart, config.basePathPart));
+
+        this.createEntryPoint(config.outputFolderPath, 'nested');
     }
 
-    private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string) {
+    private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string, isSecondaryEntryPoint: boolean = false) {
         let template = this.createTemplate(templateFilePath);
         mkdirp.sync(outputFolderPath);
 
         logger('List directory: ' + metadataFolderPath);
+        const names = [];
         fs.readdirSync(metadataFolderPath)
             .filter(fileName => fs.lstatSync(path.join(metadataFolderPath, fileName)).isFile())
             .forEach(fileName => {
@@ -53,10 +57,39 @@ export default class DoTGenerator {
                 let data = fs.readFileSync(filePath, this._encoding);
                 logger('Apply template');
                 let result = template(JSON.parse(data));
-                let resultFileName = path.parse(filePath).name + '.ts';
-                let resultFilePath = path.join(outputFolderPath, resultFileName);
+                const widgetName = path.parse(filePath).name;
+                names.push(widgetName);
+                let resultFilePath;
+                if (isSecondaryEntryPoint) {
+                    fs.mkdirSync(path.join(outputFolderPath, widgetName));
+                    resultFilePath = path.join(outputFolderPath, widgetName + '/index.ts');
+
+                    this.createEntryPoint(outputFolderPath, widgetName);
+                } else {
+                    resultFilePath = path.join(outputFolderPath, widgetName + '.ts');
+                }
+
                 logger('Write result to ' + resultFilePath);
                 fs.writeFileSync(resultFilePath, result, { encoding: this._encoding });
             });
+
+        if (!isSecondaryEntryPoint) {
+            fs.writeFileSync(
+                outputFolderPath + '/index.ts',
+                names.map(name => `export * from './${name}';`).join('\n'),
+                { encoding: this._encoding }
+            );
+        }
+    }
+
+    private createEntryPoint(outputFolderPath: string, entryPoint: string) {
+        fs.writeFileSync(path.join(outputFolderPath, entryPoint + '/package.json'),
+            JSON.stringify({
+                ngPackage: {
+                    lib: {
+                        entryFile: "index.ts"
+                    }
+                }
+            }, null, "  "), { encoding: this._encoding });
     }
 }
