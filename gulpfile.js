@@ -20,8 +20,7 @@ var fs = require('fs');
 
 gulp.task('build', [
     'build.tools',
-    'build.components',
-    'build.examples'
+    'build.components'
     ]
 );
 
@@ -199,25 +198,6 @@ gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
 });
 
 gulp.task('npm.pack', ['npm.content', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
-
-
-//------------Examples------------
-
-gulp.task('build.examples', ['build.components'], function () {
-    var config = buildConfig.examples;
-
-    return gulp.src([config.appPath + '/*.ts', '!' + config.appPath + '/**/*.d.ts'])
-        .pipe(sourcemaps.init())
-        .pipe(typescript(config.tsc))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(config.appPath));
-});
-
-gulp.task('watch.examples', function() {
-    var config = buildConfig.examples;
-
-    gulp.watch([config.appPath + '/*.ts', '!' + config.appPath + '/*.d.ts'], ['build.examples']);
-});
 
 
 //------------Testing------------

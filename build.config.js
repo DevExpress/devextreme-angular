@@ -67,22 +67,6 @@ module.exports = {
         outputPath: 'dist',
         bundleName: bundleName
     },
-    examples: {
-        srcFilesPattern: ['examples/**/*.ts', '!examples/**/*.d.ts'],
-        path: 'examples',
-        appPath: 'examples/app',
-        tsc: {
-            "target": "ES5",
-            "module": "system",
-            "moduleResolution": "node",
-            "emitDecoratorMetadata": true,
-            "experimentalDecorators": true,
-            "sourceMap": true,
-            "removeComments": true,
-            "declaration": true,
-            "lib": ["es2015", "dom"]
-        }
-    },
     tests: {
         tsConfigPath: "tests/src/tsconfig.json"
     },
