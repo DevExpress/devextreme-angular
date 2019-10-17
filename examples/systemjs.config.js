@@ -1,10 +1,23 @@
 (function (global) {
   System.config({
+    transpiler: 'ts',
+    typescriptOptions: {
+        module: "commonjs",
+        emitDecoratorMetadata: true,
+        experimentalDecorators: true
+    },
+    meta: {
+        'typescript': {
+            "exports": "ts"
+        }
+    },
     paths: {
       // paths serve as alias
       'npm:': '../node_modules/'
     },
     map: {
+      'ts': 'npm:plugin-typescript/lib/plugin.js',
+      'typescript': 'npm:typescript/lib/typescript.js',
       // our app is within the app folder
       app: 'app',
       // angular bundles
@@ -27,8 +40,8 @@
     },
     packages: {
       app: {
-        main: './main.js',
-        defaultExtension: 'js'
+        main: './main.ts',
+        defaultExtension: 'ts'
       },
       rxjs: {
         main: 'index.js',
