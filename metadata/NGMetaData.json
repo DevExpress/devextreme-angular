@@ -8946,6 +8946,12 @@
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
+        "showClearButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to display the Clear button in the widget."
+        },
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
@@ -9430,7 +9436,8 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether columns should adjust their widths to the content."
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -12177,7 +12184,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "Specifies the target element associated with the drawer. Applies only when the openedStateMode is \"overlap\"."
+          "Description": "Specifies a CSS selector for the element in which the drawer should be rendered. Applies only when the openedStateMode is \"overlap\"."
         },
         "template": {
           "PrimitiveTypes": [
@@ -24477,12 +24484,6 @@
             }
           }
         },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
-        },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
             "boolean",
@@ -24871,12 +24872,6 @@
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
           }
-        },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
         },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
@@ -29167,7 +29162,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
+          "Description": "If true, appointments are grouped by date first and then by resource; opposite if false. Applies only if appointments are grouped and groupOrientation is \"horizontal\"."
         },
         "groups": {
           "ItemPrimitiveTypes": [
@@ -29641,7 +29636,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
+              "Description": "If true, appointments are grouped by date first and then by resource; opposite if false. Applies only if appointments are grouped and groupOrientation is \"horizontal\"."
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -34055,12 +34050,6 @@
             }
           }
         },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
-        },
         "closeOnClick": {
           "PrimitiveTypes": [
             "boolean"
@@ -34582,12 +34571,6 @@
             }
           }
         },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
-        },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
             "boolean",
@@ -34894,7 +34877,8 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether columns should adjust their widths to the content."
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -44307,7 +44291,7 @@
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Specifies a custom format."
+          "Description": "A function that converts numeric or date-time values to a string."
         },
         "parser": {
           "PrimitiveTypes": [
