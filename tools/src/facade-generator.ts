@@ -11,6 +11,7 @@ export default class FacadeGenerator {
                 resultContent = '';
 
             resultContent += `export * from 'devextreme-angular/core'\n`;
+            resultContent += `export * from './ui/all'\n`;
             fs.readdirSync(facadeConfig.sourceDirectories[0])
                 .filter(fileName => fs.lstatSync(path.join(facadeConfig.sourceDirectories[0], fileName)).isFile())
                 .forEach(fileName => {
