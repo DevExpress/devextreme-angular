@@ -29,7 +29,7 @@ import{
 } from './owner.service';
 import{
     DxPopoverComponent
-} from 'devextreme-angular/ui/popover';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'my-app',

@@ -3,16 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 
-import { DxButtonModule } from 'devextreme-angular/ui/button';
-import { DxTextBoxModule } from 'devextreme-angular/ui/text-box';
+import { DevExtremeModule } from 'devextreme-angular';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
-    DxButtonModule,
-    DxTextBoxModule
+    DevExtremeModule
   ],
   bootstrap: [AppComponent],
 })
