@@ -88,5 +88,13 @@
   "dependencies": {
     "@angular-devkit/schematics": "^7.2.2",
     "devextreme-schematics": "latest"
+  },
+  "schematics": "./schematics/collection.json",
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../npm/dist"
   }
 }

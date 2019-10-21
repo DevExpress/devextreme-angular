@@ -127,10 +127,8 @@ gulp.task('build.ngc', function() {
 
 gulp.task('build.copy-sources', ['clean.dist'], function() {
     var config = buildConfig.components;
-
-    return gulp.src([path.join(config.sourcePath, '**/*.*')])
+    return gulp.src([path.join(config.sourcePath, '**/*.*'), 'package.json'])
         .pipe(gulp.dest(config.outputPath));
-
 });
 
 // Note: workaround for https://github.com/angular/angular-cli/issues/4874
