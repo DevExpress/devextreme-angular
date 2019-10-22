@@ -151,22 +151,15 @@ gulp.task('build.components', ['generate.facades'], function(done) {
 
 //------------npm------------
 
-gulp.task('npm.content', function() {
-    var config = buildConfig.npm;
-
-    return gulp.src(config.content)
-        .pipe(gulp.dest(config.distPath));
-});
-
-gulp.task('npm.modules', ['build.components'], function() {
+gulp.task('npm.content', ['build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src([path.join(cmpConfig.outputPath, '**/collection.json')])
+    return gulp.src([path.join(cmpConfig.outputPath, '**/collection.json'), ...npmConfig.content])
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
-gulp.task('npm.pack', ['npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
+gulp.task('npm.pack', ['npm.content'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Testing------------
