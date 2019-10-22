@@ -9,11 +9,11 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "serve": "http-server -c-1 -o -p 8875 .",
-    "build": "gulp build",
     "lite": "lite-server",
-    "test": "gulp test",
-    "pack": "gulp npm.pack",
-    "packgr": "node --max_old_space_size=8048 ./node_modules/.bin/ng-packagr -p ./dist/package.json"
+    "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
+    "build": "npm run gulp -- build",
+    "test": "npm run gulp -- test",
+    "pack": "npm run gulp -- npm.pack"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -96,6 +96,8 @@
       "entryFile": "index.ts"
     },
     "dest": "../npm/dist",
-    "whitelistedNonPeerDependencies": ["."]
+    "whitelistedNonPeerDependencies": [
+      "."
+    ]
   }
 }

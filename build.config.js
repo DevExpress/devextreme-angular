@@ -73,7 +73,6 @@ module.exports = {
     npm: {
         distPath: "npm/dist",
         sourcesTargetFolder: "ts",
-        content: [ "LICENSE", "README.md" ],
-        package: [ "package.json", "npm/package.json" ]
+        content: [ "LICENSE", "README.md" ]
     }
 };

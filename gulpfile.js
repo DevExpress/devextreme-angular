@@ -9,12 +9,10 @@ var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
-var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
-var fs = require('fs');
 var ngPackagr = require('ng-packagr');
 
 //------------Main------------
@@ -22,8 +20,7 @@ var ngPackagr = require('ng-packagr');
 gulp.task('build', [
     'build.tools',
     'build.components'
-    ]
-);
+]);
 
 gulp.task('default', ['build']);
 
@@ -154,36 +151,22 @@ gulp.task('build.components', ['generate.facades'], function(done) {
 
 //------------npm------------
 
-gulp.task('npm.clean', function() {
-    var config = buildConfig.npm;
-
-    return del([config.distPath + '/**/*']);
-});
-
-gulp.task('npm.content.package', ['npm.clean'], function() {
-    var config = buildConfig.npm;
-
-    return gulp.src(config.package)
-        .pipe(mergeJson('package.json'))
-        .pipe(gulp.dest(config.distPath));
-});
-
-gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
+gulp.task('npm.content', function() {
     var config = buildConfig.npm;
 
     return gulp.src(config.content)
         .pipe(gulp.dest(config.distPath));
 });
 
-gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
+gulp.task('npm.modules', ['build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src([path.join(cmpConfig.outputPath, '**/{*.{js,d.ts,js.map,metadata.json},collection.json}')])
+    return gulp.src([path.join(cmpConfig.outputPath, '**/collection.json')])
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
-gulp.task('npm.pack', ['npm.content', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
+gulp.task('npm.pack', ['npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Testing------------
