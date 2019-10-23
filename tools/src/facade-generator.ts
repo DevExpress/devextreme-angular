@@ -15,8 +15,8 @@ export default class FacadeGenerator {
             fs.readdirSync(facadeConfig.sourceDirectories[0])
                 .filter(fileName => fs.lstatSync(path.join(facadeConfig.sourceDirectories[0], fileName)).isFile())
                 .forEach(fileName => {
-                    const widgetName = path.parse(path.join(facadeConfig.sourceDirectories[0], fileName)).name
-                    resultContent += `export * from 'devextreme-angular/ui/${widgetName}'\n`;
+                    const { name } = path.parse(path.join(facadeConfig.sourceDirectories[0], fileName));
+                    resultContent += `export * from 'devextreme-angular/ui/${name}'\n`;
                 });
 
             logger('Write result to ' + facadeFilePath);

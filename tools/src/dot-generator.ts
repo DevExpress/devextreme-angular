@@ -42,7 +42,12 @@ export default class DoTGenerator {
         this.createEntryPoint(config.outputFolderPath, 'nested');
     }
 
-    private generateTemplate(templateFilePath: string, metadataFolderPath: string, outputFolderPath: string, isSecondaryEntryPoint: boolean = false) {
+    private generateTemplate(
+        templateFilePath: string,
+        metadataFolderPath: string,
+        outputFolderPath: string,
+        isSecondaryEntryPoint = false
+    ) {
         let template = this.createTemplate(templateFilePath);
         mkdirp.sync(outputFolderPath);
 
@@ -76,7 +81,7 @@ export default class DoTGenerator {
         if (!isSecondaryEntryPoint) {
             fs.writeFileSync(
                 outputFolderPath + '/index.ts',
-                names.map(name => `export * from './${name}';`).join('\n'),
+                names.map(name => `export * from './${name}';\n`).join('') + '\n',
                 { encoding: this._encoding }
             );
         }
@@ -87,9 +92,9 @@ export default class DoTGenerator {
             JSON.stringify({
                 ngPackage: {
                     lib: {
-                        entryFile: "index.ts"
+                        entryFile: 'index.ts'
                     }
                 }
-            }, null, "  "), { encoding: this._encoding });
+            }, null, '  '), { encoding: this._encoding });
     }
 }
