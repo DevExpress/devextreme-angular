@@ -48,7 +48,7 @@ module.exports = {
         componentNamesGenerator: {
             importFrom: './tools/dist/component-names-generator',
             componentFilesPath: './src/ui/',
-            excludedFileNames: [ 'all.ts', 'validation-group.ts', 'validation-summary.ts', 'validator.ts' ],
+            excludedFileNames: [ 'nested', 'validation-group', 'validation-summary', 'validator' ],
             outputFileName: 'tests/src/server/component-names.ts'
         },
         tsConfigPath: "tsconfig.json",
