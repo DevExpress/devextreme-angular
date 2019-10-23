@@ -68,7 +68,7 @@ module.exports = {
       srcFilesPattern: ['examples/**/*.ts']
     },
     tests: {
-        tsConfigPath: "tests/src/tsconfig.json"
+        tsConfigPath: "tsconfig.json"
     },
     npm: {
         distPath: "npm/dist",
