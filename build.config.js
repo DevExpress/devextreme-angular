@@ -51,7 +51,7 @@ module.exports = {
             excludedFileNames: [ 'all.ts', 'validation-group.ts', 'validation-summary.ts', 'validator.ts' ],
             outputFileName: 'tests/src/server/component-names.ts'
         },
-        tsConfigPath: "tools/src/tsconfig.json",
+        tsConfigPath: "tsconfig.json",
         tests: {
             srcFilesPattern: 'tools/spec/tests/*.spec.js'
         }

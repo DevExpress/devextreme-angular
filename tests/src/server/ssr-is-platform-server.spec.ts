@@ -9,15 +9,14 @@ import { isPlatformServer } from '@angular/common';
 
 import { TransferState } from '@angular/platform-browser';
 
-import { IS_PLATFORM_SERVER } from '../../../dist';
-
 import {
     TestBed
 } from '@angular/core/testing';
 
 import {
-    DxDataGridModule
-} from '../../../dist';
+    DxDataGridModule,
+    IS_PLATFORM_SERVER
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

@@ -26,7 +26,7 @@ import {
     DxTemplateModule,
     DxTemplateDirective,
     WatcherHelper
-} from '../../../dist';
+} from 'devextreme-angular';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
 import DxButton from 'devextreme/ui/button';

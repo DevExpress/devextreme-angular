@@ -12,7 +12,7 @@ import {
 import {
     DxResponsiveBoxModule,
     DxResponsiveBoxComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

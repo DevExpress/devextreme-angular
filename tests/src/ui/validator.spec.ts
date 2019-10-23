@@ -14,7 +14,7 @@ import {
     DxTextBoxComponent,
     DxValidatorModule,
     DxValidatorComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

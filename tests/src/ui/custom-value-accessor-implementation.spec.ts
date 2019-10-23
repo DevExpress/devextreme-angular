@@ -20,7 +20,7 @@ import DxTextBox from 'devextreme/ui/text_box';
 
 import {
     DxTextBoxModule
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

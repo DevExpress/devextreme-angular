@@ -12,7 +12,7 @@ import {
 import {
     DxTagBoxModule,
     DxTagBoxComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',
