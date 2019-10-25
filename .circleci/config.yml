@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:10.12-browsers
+      - image: circleci/node:8-browsers
 
     steps:
       - checkout
@@ -14,8 +14,14 @@ jobs:
           name: Install packages
           command: npm install --unsafe-perm
       - run:
-          name: Build and run tests with Angular 6
-          command: npm run test
+          name: Build with Angular 6
+          command: npm run build
+      - run:
+          name: Build tests with Angular 6
+          command: npx gulp build.tests
+      - run:
+          name: Run tests with Angular 6
+          command: npx gulp run.tests
       - run:
           name: Install Angular 7
           command: npm install @angular/animations@^7.0.0 @angular/core@^7.0.0  @angular/common@^7.0.0 @angular/compiler@^7.0.0 @angular/forms@^7.0.0 @angular/http@^7.0.0 @angular/platform-browser@^7.0.0 @angular/platform-server@^7.0.0 @angular/platform-browser-dynamic@^7.0.0 @angular/compiler-cli@^7.0.0 --unsafe-perm
