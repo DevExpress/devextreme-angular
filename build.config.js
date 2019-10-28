@@ -1,5 +1,3 @@
-var bundleName = "devextreme-angular";
-
 module.exports = {
     tools: {
         srcFilesPattern: ['tools/src/**/*.ts'],
@@ -61,8 +59,7 @@ module.exports = {
         tsTestSrc: ['tests/src/**/*.spec.ts', 'tests/src/**/component-names.ts'],
         testsPath: 'tests/dist',
         sourcePath: 'src',
-        outputPath: 'dist',
-        bundleName: bundleName
+        outputPath: 'dist'
     },
     examples: {	
       srcFilesPattern: ['examples/**/*.ts']
