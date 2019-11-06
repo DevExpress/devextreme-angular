@@ -1,86 +1,4 @@
 (function (global) {
-  const widgets = [
-      'accordion',
-      'action-sheet',
-      'autocomplete',
-      'bar-gauge',
-      'box',
-      'bullet',
-      'button',
-      'button-group',
-      'calendar',
-      'chart',
-      'check-box',
-      'circular-gauge',
-      'color-box',
-      'context-menu',
-      'data-grid',
-      'date-box',
-      'defer-rendering',
-      'drawer',
-      'drop-down-box',
-      'drop-down-button',
-      'file-uploader',
-      'filter-builder',
-      'form',
-      'funnel',
-      'gallery',
-      'html-editor',
-      'linear-gauge',
-      'list',
-      'load-indicator',
-      'load-panel',
-      'lookup',
-      'map',
-      'menu',
-      'multi-view',
-      'nav-bar',
-      'nested',
-      'number-box',
-      'pie-chart',
-      'pivot-grid',
-      'pivot-grid-field-chooser',
-      'polar-chart',
-      'popover',
-      'popup',
-      'progress-bar',
-      'radio-group',
-      'range-selector',
-      'range-slider',
-      'recurrence-editor',
-      'resizable',
-      'responsive-box',
-      'sankey',
-      'scheduler',
-      'scroll-view',
-      'select-box',
-      'slide-out',
-      'slide-out-view',
-      'slider',
-      'sparkline',
-      'speed-dial-action',
-      'switch',
-      'tab-panel',
-      'tabs',
-      'tag-box',
-      'text-area',
-      'text-box',
-      'tile-view',
-      'toast',
-      'toolbar',
-      'tooltip',
-      'tree-list',
-      'tree-map',
-      'tree-view',
-      'validation-group',
-      'validation-summary',
-      'validator',
-      'vector-map'
-  ].reduce((acc, item) => {
-    acc[`devextreme-angular/ui/${item}`] = `../npm/dist/bundles/devextreme-angular-ui-${item}.umd.js`;
-    return acc;
-  }, {});
-
   System.config({
     transpiler: 'ts',
     typescriptOptions: {
@@ -112,9 +30,8 @@
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
 
-      'devextreme-angular': '../npm/dist/bundles/devextreme-angular.umd.js',
-      'devextreme-angular/core': '../npm/dist/bundles/devextreme-angular-core.umd.js',
-      ...widgets,
+      'devextreme-angular': '../npm/dist',
+
       // devextreme & devextreme deps
       'devextreme': 'npm:devextreme',
       'jszip': 'npm:jszip/dist/jszip.min.js',
@@ -139,6 +56,11 @@
       'devextreme': {
         defaultExtension: 'js'
       }
-    }
+    },
+    packageConfigPaths: [
+      '../npm/*/package.json',
+      '../npm/dist/*/package.json',
+      '../npm/dist/ui/*/package.json',
+    ]
   });
 })(this);
