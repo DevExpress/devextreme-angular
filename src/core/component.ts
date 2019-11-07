@@ -44,7 +44,6 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     instance: any;
     isLinked = true;
     changedOptions = {};
-    createInstanceOnInit = true;
     widgetUpdateLocked = false;
 
     private _initTemplates() {
@@ -155,12 +154,8 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         this._initPlatform();
         this._initOptions();
 
-        let createInstanceOnInit = this.createInstanceOnInit;
-
         this._initialOptions.onInitializing = function () {
-            if (createInstanceOnInit) {
-                this.beginUpdate();
-            }
+            this.beginUpdate();
         };
         this.instance = this._createInstance(element, this._initialOptions);
         this._initEvents();
@@ -198,9 +193,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     ngOnInit() {
-        if (this.createInstanceOnInit) {
-            this._createWidget(this.element.nativeElement);
-        }
+        this._createWidget(this.element.nativeElement);
     }
 
     ngDoCheck() {
@@ -214,9 +207,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
     ngAfterViewInit() {
         this._initTemplates();
-        if (this.createInstanceOnInit) {
-            this.instance.endUpdate();
-        }
+        this.instance.endUpdate();
     }
 
     applyOptions() {
@@ -237,8 +228,16 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 }
 
-export abstract class DxComponentExtension extends DxComponent {
+export abstract class DxComponentExtension extends DxComponent implements OnInit, AfterViewInit {
     createInstance(element: any) {
         this._createWidget(element);
+    }
+
+    ngOnInit() {
+    }
+
+    ngAfterViewInit() {
+        this._createWidget(this.element.nativeElement);
+        this.instance.endUpdate();
     }
 }
