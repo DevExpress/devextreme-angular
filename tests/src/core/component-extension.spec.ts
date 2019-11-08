@@ -23,10 +23,11 @@ import {
 } from '../../../dist';
 
 import DxButton from 'devextreme/ui/button';
-let DxTestExtension = DxButton['inherit']({
-    _render() {
-        this.callBase();
-        this.element().classList.add('dx-test-extension');
+let DxTestExtension = DxButton;
+
+DxTestExtension.defaultOptions({
+    options: {
+        elementAttr: { class: 'dx-test-extension' }
     }
 });
 
