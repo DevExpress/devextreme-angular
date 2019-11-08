@@ -29,17 +29,13 @@ import {
 } from '../../../dist';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-import DxButton from 'devextreme/ui/button';
-let DxTestWidget = DxButton['inherit']({
-    _render() {
-        this.callBase();
-        this.element().classList.add('dx-test-widget');
-    }
-});
+import dxButton from 'devextreme/ui/button';
+let DxTestWidget = dxButton;
 
 DxTestWidget.defaultOptions({
     options: {
-        text: 'test text'
+        text: 'test text',
+        elementAttr: { class: 'dx-test-widget' }
     }
 });
 

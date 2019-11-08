@@ -45,10 +45,10 @@ import * as events from 'devextreme/events';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
 import DxButton from 'devextreme/ui/button';
-let DxTestWidget = DxButton['inherit']({
-    _render() {
-        this.callBase();
-        this.element().classList.add('dx-test-widget');
+let DxTestWidget = DxButton;
+DxTestWidget.defaultOptions({
+    options: {
+        elementAttr: { class: 'dx-test-widget' }
     }
 });
 
