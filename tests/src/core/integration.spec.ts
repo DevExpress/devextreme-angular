@@ -16,7 +16,7 @@ class SingletonModule {
 
 describe('Integration module', () => {
     it('domAdapter should be injected once', () => {
-        const spy = spyOn(domAdapter, 'inject');
+        const spy = spyOn(domAdapter, 'inject').and.callThrough();
 
         TestBed.configureTestingModule({
             imports: [ SingletonModule ]
