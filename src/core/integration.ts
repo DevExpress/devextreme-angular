@@ -20,61 +20,71 @@ readyCallbacks.inject({
     }
 });
 
-@NgModule({})
-export class DxIntegrationModule {
-    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone, @Optional() xhrFactory: XhrFactory) {
-        domAdapter.inject({
-            _document: document,
+let doInjections = (document: any, ngZone: NgZone, xhrFactory: XhrFactory) => {
+    domAdapter.inject({
+        _document: document,
 
-            listen: function(...args) {
-                const eventName = args[1];
-                if (outsideZoneEvents.indexOf(eventName) !== -1) {
-                    return ngZone.runOutsideAngular(() => {
-                        return this.callBase.apply(this, args);
-                    });
-                }
-
-                if (ngZone.isStable && insideZoneEvents.indexOf(eventName) !== -1) {
-                    return ngZone.run(() => {
-                        return this.callBase.apply(this, args);
-                    });
-                }
-
-                return this.callBase.apply(this, args);
-            },
-
-            isElementNode: function(element) {
-                return element && element.nodeType === 1;
-            },
-
-            isTextNode: function(element) {
-                return element && element.nodeType === 3;
-            },
-
-            isDocument: function(element) {
-                return element && element.nodeType === 9;
+        listen: function(...args) {
+            const eventName = args[1];
+            if (outsideZoneEvents.indexOf(eventName) !== -1) {
+                return ngZone.runOutsideAngular(() => {
+                    return this.callBase.apply(this, args);
+                });
             }
-        });
 
-        httpRequest.inject({
-            getXhr: function() {
-                if (!xhrFactory) {
-                    return this.callBase.apply(this);
-                }
-                let _xhr = xhrFactory.build();
-                if (!('withCredentials' in _xhr)) {
-                    _xhr['withCredentials'] = false;
-                }
-
-                return _xhr;
+            if (ngZone.isStable && insideZoneEvents.indexOf(eventName) !== -1) {
+                return ngZone.run(() => {
+                    return this.callBase.apply(this, args);
+                });
             }
-        });
 
+            return this.callBase.apply(this, args);
+        },
+
+        isElementNode: function(element) {
+            return element && element.nodeType === 1;
+        },
+
+        isTextNode: function(element) {
+            return element && element.nodeType === 3;
+        },
+
+        isDocument: function(element) {
+            return element && element.nodeType === 9;
+        }
+    });
+
+    httpRequest.inject({
+        getXhr: function() {
+            if (!xhrFactory) {
+                return this.callBase.apply(this);
+            }
+            let _xhr = xhrFactory.build();
+            if (!('withCredentials' in _xhr)) {
+                _xhr['withCredentials'] = false;
+            }
+
+            return _xhr;
+        }
+    });
+
+    const runReadyCallbacksInZone = () => {
         ngZone.run(() => {
             eventsEngine.set({});
             callbacks.forEach(callback => originalAdd.call(null, callback));
             callbacks = [];
             readyCallbacks.fire();
         });
+    };
+
+    runReadyCallbacksInZone();
+
+    doInjections = runReadyCallbacksInZone;
+};
+
+@NgModule({})
+export class DxIntegrationModule {
+    constructor(@Inject(DOCUMENT) document: any, ngZone: NgZone, @Optional() xhrFactory: XhrFactory) {
+        doInjections(document, ngZone, xhrFactory);
     }
 }
