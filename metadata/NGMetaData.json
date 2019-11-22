@@ -704,7 +704,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -1041,13 +1041,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -1084,6 +1098,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        },
+        "wrapItemText": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether text that exceeds the drop-down list width should be wrapped."
         }
       }
     },
@@ -1195,7 +1215,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -1428,6 +1456,13 @@
                 "number"
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
             },
             "orientation": {
               "PrimitiveTypes": [
@@ -1972,6 +2007,13 @@
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
+            },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
             },
             "cornerRadius": {
               "PrimitiveTypes": [
@@ -2582,6 +2624,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for tooltips."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -2832,7 +2881,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the button must submit an HTML form."
+          "Description": "Specifies whether the button submits an HTML form."
         },
         "validationGroup": {
           "PrimitiveTypes": [
@@ -2872,6 +2921,13 @@
             "boolean"
           ],
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "buttonTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template for all the buttons in the group."
         },
         "disabled": {
           "PrimitiveTypes": [
@@ -2927,8 +2983,9 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsDeprecated": true,
           "IsTemplate": true,
-          "Description": "Specifies a custom button template."
+          "Description": "Use the buttonTemplate option instead."
         },
         "keyExpr": {
           "PrimitiveTypes": [
@@ -3137,7 +3194,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "max": {
           "PrimitiveTypes": [
@@ -3233,13 +3290,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -3354,11 +3425,17 @@
         "argumentAxis": {
           "Description": "Configures the argument axis.",
           "Options": {
+            "aggregateByCategory": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Aggregates series points that fall into the same category."
+            },
             "aggregationGroupWidth": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of aggregation intervals in pixels. May be ignored in favor of the aggregationInterval option."
+              "Description": "Specifies the length of aggregation intervals in pixels. Does not apply if aggregateByCategory is true. May be ignored in favor of the aggregationInterval option."
             },
             "aggregationInterval": {
               "PrimitiveTypes": [
@@ -3822,6 +3899,12 @@
                   "Description": "Specifies how to wrap texts that do not fit into a single line."
                 }
               }
+            },
+            "linearThreshold": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a value used to calculate the range on a logarithmic axis within which the axis should be linear. Applies only if the data source contains negative values or zeroes."
             },
             "logarithmBase": {
               "PrimitiveTypes": [
@@ -5375,7 +5458,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -5532,6 +5623,13 @@
                 "number"
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
             },
             "orientation": {
               "PrimitiveTypes": [
@@ -6030,6 +6128,13 @@
                 }
               }
             },
+            "height": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "Specifies the pane's height (or width when the chart is rotated) in a multi-pane chart."
+            },
             "name": {
               "PrimitiveTypes": [
                 "string"
@@ -6055,6 +6160,12 @@
             "boolean"
           ],
           "Description": "Specifies whether to redraw the widget when the size of the parent browser window changes or a mobile device rotates."
+        },
+        "resizePanesOnZoom": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether panes can be resized if other chart elements require more space after zooming or panning."
         },
         "resolveLabelOverlapping": {
           "PrimitiveTypes": [
@@ -6391,6 +6502,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -6492,7 +6610,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies the kind of information to display in a tooltip."
+              "Description": "Specifies whether the tooltip is shared across all series points with the same argument."
             },
             "zIndex": {
               "PrimitiveTypes": [
@@ -6900,6 +7018,12 @@
                   "Description": "Specifies how to wrap texts that do not fit into a single line."
                 }
               }
+            },
+            "linearThreshold": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a value used to calculate the range on a logarithmic axis within which the axis should be linear. Applies only if the data source contains negative values or zeroes."
             },
             "logarithmBase": {
               "PrimitiveTypes": [
@@ -7661,7 +7785,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "name": {
           "PrimitiveTypes": [
@@ -7737,13 +7861,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -7859,7 +7997,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -8529,6 +8675,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -8771,7 +8924,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "keyStep": {
           "PrimitiveTypes": [
@@ -8946,6 +9099,12 @@
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
+        "showClearButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to display the Clear button in the widget."
+        },
         "stylingMode": {
           "PrimitiveTypes": [
             "string"
@@ -8969,13 +9128,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -9415,6 +9588,12 @@
           ],
           "Description": "Specifies whether a user can resize columns."
         },
+        "autoNavigateToFocusedRow": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Automatically scrolls to the focused row when the focusedRowKey is changed."
+        },
         "cacheEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -9430,7 +9609,8 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether columns should adjust their widths to the content."
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -9808,7 +9988,8 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
             },
             "texts": {
               "Description": "Configures the texts of export commands, buttons, and hints.",
@@ -10253,6 +10434,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether users can enter a new cell value on a key press. Applies if editing.mode is \"cell\" or \"batch\"."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables keyboard navigation."
             },
             "enterKeyAction": {
               "PrimitiveTypes": [
@@ -10812,6 +10999,180 @@
           ],
           "Description": "Specifies whether rows should be shaded differently."
         },
+        "rowDragging": {
+          "Description": "Configures row reordering using drag and drop gestures.",
+          "Options": {
+            "allowDropInsideItem": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows dropping a row inside another row."
+            },
+            "allowReordering": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows row reordering using drag and drop gestures."
+            },
+            "autoScroll": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables automatic scrolling while dragging a row beyond the viewport."
+            },
+            "boundary": {
+              "PrimitiveTypes": [
+                "Element",
+                "JQuery"
+              ],
+              "Description": "Specifies a DOM element that limits the dragging area."
+            },
+            "container": {
+              "PrimitiveTypes": [
+                "Element",
+                "JQuery"
+              ],
+              "Description": "Specifies a custom container in which the draggable row should be rendered."
+            },
+            "cursorOffset": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the cursor offset from the dragged row.",
+              "Options": {
+                "x": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the horizontal cursor offset from the dragged row in pixels."
+                },
+                "y": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the vertical cursor offset from the dragged row in pixels."
+                }
+              }
+            },
+            "data": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": "A container for custom data."
+            },
+            "dragDirection": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the directions in which a row can be dragged."
+            },
+            "dragTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies custom markup to be shown instead of the item being dragged."
+            },
+            "dropFeedbackMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how to highlight the row's drop position."
+            },
+            "filter": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a CSS selector for draggable rows."
+            },
+            "group": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Allows you to group several widgets so that users can drag and drop rows between them."
+            },
+            "handle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a CSS selector (ID or class) for the element(s) that should act as the drag handle(s)."
+            },
+            "onAdd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a new row is added."
+            },
+            "onDragChange": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the dragged row's position is changed."
+            },
+            "onDragEnd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the drag gesture is finished."
+            },
+            "onDragMove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called every time a draggable row is moved."
+            },
+            "onDragStart": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the drag gesture is initialized."
+            },
+            "onRemove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a draggable row is removed."
+            },
+            "onReorder": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the draggable rows are reordered."
+            },
+            "scrollSensitivity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the distance in pixels from the edge of viewport at which scrolling should start. Applies only if autoScroll is true."
+            },
+            "scrollSpeed": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the scrolling speed when dragging a row beyond the viewport. Applies only if autoScroll is true."
+            },
+            "showDragIcons": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Shows or hides row dragging icons."
+            }
+          }
+        },
         "rowTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -11057,6 +11418,12 @@
                 "string"
               ],
               "Description": "Specifies the sorting mode."
+            },
+            "showSortIndexes": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to display sort indexes in column headers. Applies only when sorting.mode is \"multiple\" and data is sorted by two or more columns."
             }
           }
         },
@@ -11547,7 +11914,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "max": {
           "PrimitiveTypes": [
@@ -11832,13 +12199,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -12035,6 +12416,1084 @@
         }
       }
     },
+    "dxDiagram": {
+      "Description": "[tags] ctp The Diagram widget provides a visual interface to help you design new and modify existing diagrams. #include common-ctp-note with { component: \"Diagram\" }",
+      "Module": "ui/diagram",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "autoZoom": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether the Diagram widget automatically zooms the work area."
+        },
+        "contextMenu": {
+          "Description": "Configures the context menu's settings.",
+          "Options": {
+            "commands": {
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "command",
+              "Description": "Lists commands in the context menu."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the context menu is enabled."
+            }
+          }
+        },
+        "customShapes": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "customShape",
+          "Description": "Provide access to an array of custom shapes.",
+          "Options": {
+            "allowEditImage": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the shape's image can be edited."
+            },
+            "allowEditText": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the shape's text can be edited."
+            },
+            "backgroundImageHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape background image's fractional height."
+            },
+            "backgroundImageLeft": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape background image's left offset."
+            },
+            "backgroundImageTop": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape background image's top offset."
+            },
+            "backgroundImageUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the shape background image's URL."
+            },
+            "backgroundImageWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape background image's fractional width."
+            },
+            "baseType": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the base shape type for the custom shape."
+            },
+            "category": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a category to which the custom shape belongs."
+            },
+            "connectionPoints": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsCollection": true,
+              "SingularName": "connectionPoint",
+              "Description": "An array of the shape's connection points.",
+              "Options": {
+                "x": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the horizontal offset."
+                },
+                "y": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the vertical offset."
+                }
+              }
+            },
+            "defaultHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the initial height of the shape."
+            },
+            "defaultImageUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the shape image's URL."
+            },
+            "defaultText": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the initial text of the shape."
+            },
+            "defaultWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the initial width of the shape."
+            },
+            "imageHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape image's fractional height."
+            },
+            "imageLeft": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape image's left offset."
+            },
+            "imageTop": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape image's top offset."
+            },
+            "imageWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape image's fractional width."
+            },
+            "textHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape text container's height."
+            },
+            "textLeft": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape text's left offset."
+            },
+            "textTop": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape text's top offset."
+            },
+            "textWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape text container's width."
+            },
+            "title": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the shape's tooltip in the toolbox panel."
+            },
+            "type": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the shape's type."
+            }
+          }
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "edges": {
+          "Description": "Allows you to bind the collection of diagram edges to a data source.",
+          "Options": {
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the edges collection to the specified data."
+            },
+            "fromExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's start node key."
+            },
+            "fromLineEndExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's line start tip."
+            },
+            "fromPointIndexExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an index of a shape connection point where an edge starts."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides edge keys."
+            },
+            "lineTypeExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's line type."
+            },
+            "lockedExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression whose values indicate whether an edge is locked."
+            },
+            "pointsExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's key points."
+            },
+            "styleExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge style."
+            },
+            "textExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides edge texts."
+            },
+            "textStyleExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's text style."
+            },
+            "toExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's end node key."
+            },
+            "toLineEndExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's line end tip."
+            },
+            "toPointIndexExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an index of a shape connection point where an edge ends."
+            },
+            "zIndexExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides an edge's z-index."
+            }
+          }
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "export": {
+          "Description": "Configures export settings.",
+          "Options": {
+            "fileName": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the name of the file to which the diagram is exported."
+            },
+            "proxyUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            }
+          }
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "fullScreen": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not to display the widget in full-screen mode."
+        },
+        "gridSize": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the grid pitch.",
+          "Options": {
+            "items": {
+              "ItemPrimitiveTypes": [
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "item",
+              "Description": "An array that specifies the _Grid Size_ combobox items on 'Properties' panel."
+            },
+            "value": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the grid's pitch."
+            }
+          }
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "nodes": {
+          "Description": "Allows you to bind the collection of diagram nodes to a data source.",
+          "Options": {
+            "autoLayout": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies an auto-layout algorithm that the widget uses to build a diagram.",
+              "Options": {
+                "orientation": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the diagram layout orientation."
+                },
+                "type": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the diagram layout type."
+                }
+              }
+            },
+            "childrenExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a container's nested items."
+            },
+            "containerKeyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a key of a node's parent container node."
+            },
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the nodes collection to the specified data."
+            },
+            "heightExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node's height."
+            },
+            "imageUrlExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node image's URL."
+            },
+            "itemsExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node's nested items."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides node keys."
+            },
+            "leftExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides the x-coordinate of a node's left border."
+            },
+            "lockedExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression whose values indicate whether a node is locked."
+            },
+            "parentKeyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a parent node ID for a node."
+            },
+            "styleExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node style."
+            },
+            "textExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides node texts."
+            },
+            "textStyleExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node's text style."
+            },
+            "topExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides the y-coordinate of a node's top border."
+            },
+            "typeExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides the shape type for a node."
+            },
+            "widthExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node's width."
+            },
+            "zIndexExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the name of a data source field or an expression that provides a node's z-index."
+            }
+          }
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onDataChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the diagram's data changes."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function used in JavaScript frameworks to save the widget instance."
+        },
+        "onItemClick": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a shape or connector is clicked."
+        },
+        "onItemDblClick": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a shape or connector is double-clicked."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onSelectionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after the selection is changed in the Diagram."
+        },
+        "pageColor": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the color of a diagram page."
+        },
+        "pageOrientation": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the page orientation."
+        },
+        "pageSize": {
+          "Description": "Specifies a size of pages.",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the page height."
+            },
+            "items": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsCollection": true,
+              "SingularName": "item",
+              "Description": "An array that specifies the page size items in the _Paze Size_ combobox on 'Properties' panel.",
+              "Options": {
+                "height": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the page height."
+                },
+                "text": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the display text."
+                },
+                "width": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the page width."
+                }
+              }
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the page width."
+            }
+          }
+        },
+        "propertiesPanel": {
+          "Description": "Provides access to Properties panel settings.",
+          "Options": {
+            "collapsible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the Properties panel can be collapsed."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the Properties panel is available."
+            },
+            "groups": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsCollection": true,
+              "SingularName": "group",
+              "Description": "Contains an array of command groups in the Properties panel.",
+              "Options": {
+                "commands": {
+                  "ItemPrimitiveTypes": [
+                    "string"
+                  ],
+                  "IsCollection": true,
+                  "SingularName": "command",
+                  "Description": "Lists commands in a group."
+                }
+              }
+            }
+          }
+        },
+        "readOnly": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the diagram is read-only."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "showGrid": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether grid lines are visible."
+        },
+        "simpleView": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switch the Diagram widget to simple view mode."
+        },
+        "snapToGrid": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether diagram elements should snap to grid lines."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "toolbar": {
+          "Description": "Provides access to toolbar settings.",
+          "Options": {
+            "commands": {
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "command",
+              "Description": "Lists commands in the toolbar."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the toolbar's visibility."
+            }
+          }
+        },
+        "toolbox": {
+          "Description": "Provides access to toolbox settings.",
+          "Options": {
+            "groups": {
+              "ItemPrimitiveTypes": [
+                "any",
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "group",
+              "Description": "Lists toolbox groups.",
+              "Options": {
+                "category": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the category of shapes that are displayed in the group."
+                },
+                "displayMode": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies how shapes are displayed in the toolbox."
+                },
+                "expanded": {
+                  "PrimitiveTypes": [
+                    "boolean"
+                  ],
+                  "Description": "Specifies whether the group is expanded."
+                },
+                "shapes": {
+                  "ItemPrimitiveTypes": [
+                    "string"
+                  ],
+                  "IsCollection": true,
+                  "SingularName": "shape",
+                  "Description": "Lists the shapes in the group."
+                },
+                "title": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the group title in the toolbox."
+                }
+              }
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the toolbox's visibility."
+            }
+          }
+        },
+        "units": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the unit for measurement options (for example, defaultHeight, gridSize, leftExpr)."
+        },
+        "viewUnits": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the measurement unit that is displayed in user interface elements."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        },
+        "zoomLevel": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the zoom level.",
+          "Options": {
+            "items": {
+              "ItemPrimitiveTypes": [
+                "number"
+              ],
+              "IsCollection": true,
+              "SingularName": "item",
+              "Description": "An array that specifies the zoom level items in the _Zoom Level_ combobox on 'Properties' panel."
+            },
+            "value": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the zoom level."
+            }
+          }
+        }
+      }
+    },
+    "dxDraggable": {
+      "Description": "Draggable is a user interface utility that allows widget elements to be dragged and dropped.",
+      "IsTranscludedContent": true,
+      "Module": "ui/draggable",
+      "Options": {
+        "autoScroll": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Enables automatic scrolling while dragging an item beyond the viewport."
+        },
+        "boundary": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies a DOM element that limits the dragging area."
+        },
+        "clone": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Allows a user to drag clones of items instead of actual items."
+        },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies a custom container in which the draggable item should be rendered."
+        },
+        "cursorOffset": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the cursor offset from the dragged item.",
+          "Options": {
+            "x": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the horizontal cursor offset from the dragged item in pixels."
+            },
+            "y": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the vertical cursor offset from the dragged item in pixels."
+            }
+          }
+        },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
+        },
+        "dragDirection": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the directions in which an item can be dragged."
+        },
+        "dragTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies custom markup to be shown instead of the item being dragged."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "group": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Allows you to group several widgets, so that users can drag and drop items between them."
+        },
+        "handle": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS selector (ID or class) that should act as the drag handle(s) for the item(s)."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onDragEnd": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when drag gesture is finished."
+        },
+        "onDragMove": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called every time a draggable item is moved."
+        },
+        "onDragStart": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when the drag gesture is initialized."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function used in JavaScript frameworks to save the widget instance."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "scrollSensitivity": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the distance in pixels from the edge of viewport at which scrolling should start. Applies only if autoScroll is true."
+        },
+        "scrollSpeed": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the scrolling speed when dragging an item beyond the viewport. Applies only if autoScroll is true."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
     "dxDrawer": {
       "Description": "The Drawer is a dismissible or permanently visible panel used for navigation in responsive web application layouts.",
       "IsTranscludedContent": true,
@@ -12177,7 +13636,7 @@
             "Element",
             "JQuery"
           ],
-          "Description": "Specifies the target element associated with the drawer. Applies only when the openedStateMode is \"overlap\"."
+          "Description": "Specifies a CSS selector for the element in which the drawer should be rendered. Applies only when the openedStateMode is \"overlap\"."
         },
         "template": {
           "PrimitiveTypes": [
@@ -12279,6 +13738,13 @@
           "IsFunc": true,
           "Description": "Specifies the data field whose values should be displayed."
         },
+        "displayValueFormatter": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes text before it is displayed in the input field."
+        },
         "dropDownButtonTemplate": {
           "PrimitiveTypes": [
             "any"
@@ -12345,7 +13811,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -12603,13 +14069,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -12961,6 +14441,289 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        },
+        "wrapItemText": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether text that exceeds the drop-down list width should be wrapped."
+        }
+      }
+    },
+    "dxFileManager": {
+      "Description": "[tags] ctp The FileManager is a widget that allows users to upload, select, and manage files and directories in different file storages. #include common-ctp-note with { component: \"FileManager\" }",
+      "Module": "ui/file_manager",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "allowedFileExtensions": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "allowedFileExtension",
+          "Description": "Specifies the allowed upload file extensions."
+        },
+        "contextMenu": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerContextMenu"
+          ],
+          "ComplexTypes": [
+            "FileManagerContextMenu"
+          ],
+          "Description": "Configures the context menu settings."
+        },
+        "currentPath": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the path that is used when the FileManager is initialized."
+        },
+        "customizeDetailColumns": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes columns in details view. Applies only if itemView.mode is \"details\"."
+        },
+        "customizeThumbnail": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Allows you to provide custom icons to be used as thumbnails."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "fileProvider": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the file provider."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "itemView": {
+          "Description": "Configures the file and folder view.",
+          "Options": {
+            "mode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the file system representation mode."
+            },
+            "showFolders": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to display folders in the view. When this option is false, folders are displayed in the navigation pane only."
+            },
+            "showParentFolder": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to display the parent folder in the view."
+            }
+          }
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onCurrentDirectoryChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the current directory is changed."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function used in JavaScript frameworks to save the widget instance."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onSelectedFileOpened": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the selected file is opened."
+        },
+        "permissions": {
+          "Description": "Specifies actions that a user is allowed to perform on files and folders.",
+          "Options": {
+            "copy": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to copy files and folders."
+            },
+            "create": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to create files and folders."
+            },
+            "download": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to download files and folders."
+            },
+            "move": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to move files and folders."
+            },
+            "remove": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to remove files and folders."
+            },
+            "rename": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to rename files and folders."
+            },
+            "upload": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to upload files."
+            }
+          }
+        },
+        "rootFolderName": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the root folder name."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "selectionMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether a user can select a single or multiple files and folders in the item view simultaneously."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "toolbar": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerToolbar"
+          ],
+          "ComplexTypes": [
+            "FileManagerToolbar"
+          ],
+          "Description": "Configures toolbar settings."
+        },
+        "upload": {
+          "Description": "Configures upload settings.",
+          "Options": {
+            "maxFileSize": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the maximum upload file size."
+            }
+          }
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
         }
       }
     },
@@ -12968,6 +14731,13 @@
       "Description": "The FileUploader widget enables an end user to upload files to the server. An end user can select files in the file explorer or drag and drop files to the FileUploader area on the page.",
       "Module": "ui/file_uploader",
       "Options": {
+        "abortUpload": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "A function that cancels the file upload."
+        },
         "accept": {
           "PrimitiveTypes": [
             "string"
@@ -13067,7 +14837,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "labelText": {
           "PrimitiveTypes": [
@@ -13227,6 +14997,13 @@
           ],
           "Description": "The text displayed on the button that starts uploading."
         },
+        "uploadChunk": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "A function that uploads a file in chunks."
+        },
         "uploadedMessage": {
           "PrimitiveTypes": [
             "string"
@@ -13238,6 +15015,13 @@
             "string"
           ],
           "Description": "The message displayed by the widget on uploading failure."
+        },
+        "uploadFile": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "A function that uploads a file."
         },
         "uploadHeaders": {
           "PrimitiveTypes": [
@@ -13267,7 +15051,21 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "ItemPrimitiveTypes": [
@@ -14003,7 +15801,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -14445,6 +16251,13 @@
                 "number"
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
             },
             "orientation": {
               "PrimitiveTypes": [
@@ -15026,6 +16839,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -15287,6 +17107,12 @@
           ],
           "Description": "A Boolean value specifying whether or not to scroll back to the first item after the last item is swiped."
         },
+        "noDataText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "The text or HTML markup displayed by the widget if the item collection is empty."
+        },
         "onContentReady": {
           "PrimitiveTypes": [
             "Function"
@@ -15439,6 +17265,433 @@
         }
       }
     },
+    "dxGantt": {
+      "Description": "[tags] ctp The Gantt is a widget that displays the task flow and dependencies between tasks. #include common-ctp-note with { component: \"Gantt\" }",
+      "Module": "ui/gantt",
+      "Options": {
+        "accessKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the shortcut key that sets focus on the widget."
+        },
+        "activeStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
+        },
+        "allowSelection": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether users can select tasks in the Gantt."
+        },
+        "columns": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxTreeListColumn",
+            "string"
+          ],
+          "ItemComplexTypes": [
+            "TreeListColumn"
+          ],
+          "IsCollection": true,
+          "SingularName": "column",
+          "Description": "An array of columns in the Gantt."
+        },
+        "dependencies": {
+          "Description": "Configures dependencies.",
+          "Options": {
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the widget to the data source which contains dependencies."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides keys for dependencies."
+            },
+            "predecessorIdExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides predecessor IDs."
+            },
+            "successorIdExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides successor IDs."
+            },
+            "typeExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides dependency types."
+            }
+          }
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget responds to user interaction."
+        },
+        "editing": {
+          "Description": "Configures edit options.",
+          "Options": {
+            "allowDependencyAdding": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can add dependencies."
+            },
+            "allowDependencyDeleting": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can delete dependencies."
+            },
+            "allowDependencyUpdating": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can update dependencies."
+            },
+            "allowResourceAdding": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can add resources."
+            },
+            "allowResourceDeleting": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can delete resources."
+            },
+            "allowResourceUpdating": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can update resources."
+            },
+            "allowTaskAdding": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can add tasks."
+            },
+            "allowTaskDeleting": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can delete tasks."
+            },
+            "allowTaskUpdating": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can update tasks."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user can edit tasks, resources and dependencies."
+            }
+          }
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "focusStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget can be focused using keyboard navigation."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "hint": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        },
+        "hoverStateEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "onContentReady": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function used in JavaScript frameworks to save the widget instance."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onSelectionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after users select a task or clear its selection."
+        },
+        "resourceAssignments": {
+          "Description": "Configures resource assignments.",
+          "Options": {
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the widget to the data source, which contains resource assignments."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides keys for resource assignments."
+            },
+            "resourceIdExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides resource IDs."
+            },
+            "taskIdExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides task IDs."
+            }
+          }
+        },
+        "resources": {
+          "Description": "Configures task resources.",
+          "Options": {
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the widget to the data source, which contains resources."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides keys for resources."
+            },
+            "textExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides resource texts."
+            }
+          }
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "scaleType": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the zoom level of tasks in the Gantt chart."
+        },
+        "selectedRowKey": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Allows you to select a row or determine which row is selected."
+        },
+        "showResources": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to display task resources."
+        },
+        "showRowLines": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether to show/hide horizontal faint lines that separate tasks."
+        },
+        "tabIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "taskListWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the width of the task list in pixels."
+        },
+        "tasks": {
+          "Description": "Configures tasks.",
+          "Options": {
+            "dataSource": {
+              "PrimitiveTypes": [
+                "DevExpress.data.DataSource",
+                "DevExpress.data.DataSourceOptions"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsDataSource": true,
+              "Description": "Binds the widget to the data source which contains tasks."
+            },
+            "endExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides tasks' end dates."
+            },
+            "keyExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides keys for tasks."
+            },
+            "parentIdExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides tasks' parent IDs."
+            },
+            "progressExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides tasks' progress."
+            },
+            "startExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides tasks' start dates."
+            },
+            "titleExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides task titles."
+            }
+          }
+        },
+        "taskTitlePosition": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a task's title position."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
     "dxHtmlEditor": {
       "Description": "[tags] ctp HtmlEditor is a WYSIWYG editor that allows you to format textual and visual content and to output it in HTML or Markdown. HtmlEditor is built on top of and requires Quill. #include common-ctp-note with { component: \"HtmlEditor\" }",
       "IsTranscludedContent": true,
@@ -15507,7 +17760,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "mediaResizing": {
           "PrimitiveTypes": [
@@ -15628,13 +17881,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -15765,7 +18032,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -16449,6 +18724,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -16589,7 +18871,8 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a user can reorder list items. Grouped items cannot be moved from one group to another."
+          "IsDeprecated": true,
+          "Description": "Use the itemDragging option instead."
         },
         "bounceEnabled": {
           "PrimitiveTypes": [
@@ -16687,6 +18970,15 @@
             "string"
           ],
           "Description": "Specifies the way a user can delete items from the list."
+        },
+        "itemDragging": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxSortableOptions"
+          ],
+          "ComplexTypes": [
+            "dxSortableOptions"
+          ],
+          "Description": "Configures item reordering using drag and drop gestures."
         },
         "itemHoldTimeout": {
           "PrimitiveTypes": [
@@ -17676,7 +19968,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -18056,13 +20348,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -18099,6 +20405,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        },
+        "wrapItemText": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether text that exceeds the drop-down list width should be wrapped."
         }
       }
     },
@@ -19516,7 +21828,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "max": {
           "PrimitiveTypes": [
@@ -19735,13 +22047,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -19831,6 +22157,13 @@
               "Description": "Specifies how many series points the widget should have before the animation will be disabled."
             }
           }
+        },
+        "centerTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for content in the pie's center."
         },
         "commonSeriesSettings": {
           "PrimitiveTypes": [
@@ -19930,7 +22263,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -20093,6 +22434,13 @@
                 "number"
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
             },
             "orientation": {
               "PrimitiveTypes": [
@@ -20749,6 +23097,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -20839,6 +23194,12 @@
                   "Description": "Specifies the transparency of a tooltip's shadow."
                 }
               }
+            },
+            "shared": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the tooltip is shared across all series points with the same argument."
             },
             "zIndex": {
               "PrimitiveTypes": [
@@ -20938,7 +23299,8 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
             }
           }
         },
@@ -22098,6 +24460,12 @@
                 }
               }
             },
+            "linearThreshold": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a value used to calculate the range on a logarithmic axis within which the axis should be linear. Applies only if the data source contains negative values or zeroes."
+            },
             "logarithmBase": {
               "PrimitiveTypes": [
                 "number"
@@ -22886,7 +25254,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -23043,6 +25419,13 @@
                 "number"
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
+            },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
             },
             "orientation": {
               "PrimitiveTypes": [
@@ -23417,6 +25800,22 @@
           "IsEvent": true,
           "Description": "A function that is executed when a tooltip appears."
         },
+        "onZoomEnd": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when zooming or panning ends."
+        },
+        "onZoomStart": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when zooming or panning begins."
+        },
         "palette": {
           "PrimitiveTypes": [
             "string"
@@ -23720,6 +26119,13 @@
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
+            },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
             },
             "cornerRadius": {
               "PrimitiveTypes": [
@@ -24083,6 +26489,12 @@
                 }
               }
             },
+            "linearThreshold": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a value used to calculate the range on a logarithmic axis within which the axis should be linear. Applies only if the data source contains negative values or zeroes."
+            },
             "logarithmBase": {
               "PrimitiveTypes": [
                 "number"
@@ -24233,6 +26645,69 @@
                 "number"
               ],
               "Description": "Specifies a coefficient that determines the spacing between the minimum series point and the axis."
+            },
+            "minVisualRangeLength": {
+              "PrimitiveTypes": [
+                "number",
+                "string"
+              ],
+              "Description": "Specifies the minimum length of the visual range.",
+              "Options": {
+                "days": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in days. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "hours": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in hours. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "milliseconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in milliseconds. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "minutes": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in minutes. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "months": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in months. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "quarters": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in quarters. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "seconds": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in seconds. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "weeks": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in weeks. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                },
+                "years": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the time interval measured in years. Accepts integer values. Available only for an axis/scale that displays date-time values."
+                }
+              }
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -24439,6 +26914,45 @@
               ],
               "Description": "Indicates whether or not the line that represents an axis in a chart is visible."
             },
+            "visualRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
+              "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+              ],
+              "IsCollection": true,
+              "IsChangeable": true,
+              "SingularName": "visualRange",
+              "Description": "Defines the axis' displayed range. Cannot be wider than the wholeRange."
+            },
+            "visualRangeUpdateMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how the axis's visual range should behave when the PolarChart data is updated."
+            },
+            "wholeRange": {
+              "PrimitiveTypes": [
+                "DevExpress.viz.VizRange"
+              ],
+              "ComplexTypes": [
+                "VizRange"
+              ],
+              "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+              ],
+              "IsCollection": true,
+              "SingularName": "wholeRange",
+              "Description": "Defines the range where the axis can be zoomed."
+            },
             "width": {
               "PrimitiveTypes": [
                 "number"
@@ -24476,12 +26990,6 @@
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
           }
-        },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
         },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
@@ -24871,12 +27379,6 @@
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
           }
-        },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
         },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
@@ -25283,7 +27785,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "max": {
           "PrimitiveTypes": [
@@ -25375,13 +27877,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -25488,7 +28004,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -25612,13 +28128,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -26007,7 +28537,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -26189,11 +28727,17 @@
         "scale": {
           "Description": "Specifies options of the range selector's scale.",
           "Options": {
+            "aggregateByCategory": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Aggregates series points that fall into the same category."
+            },
             "aggregationGroupWidth": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the length of aggregation intervals in pixels. May be ignored in favor of the aggregationInterval option."
+              "Description": "Specifies the length of aggregation intervals in pixels. Does not apply if aggregateByCategory is true. May be ignored in favor of the aggregationInterval option."
             },
             "aggregationInterval": {
               "PrimitiveTypes": [
@@ -26380,6 +28924,12 @@
                   "Description": "Specifies whether or not the scale's labels are visible."
                 }
               }
+            },
+            "linearThreshold": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a value used to calculate the range on a logarithmic scale within which the scale should be linear. Applies only if the data source contains negative values or zeroes."
             },
             "logarithmBase": {
               "PrimitiveTypes": [
@@ -27171,7 +29721,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "keyStep": {
           "PrimitiveTypes": [
@@ -27337,13 +29887,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "ItemPrimitiveTypes": [
@@ -27431,7 +29995,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "onContentReady": {
           "PrimitiveTypes": [
@@ -27495,13 +30059,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -28062,7 +30640,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -28887,6 +31473,20 @@
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
             },
+            "linkTooltipTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a link's tooltip."
+            },
+            "nodeTooltipTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a node's tooltip."
+            },
             "opacity": {
               "PrimitiveTypes": [
                 "number"
@@ -28983,7 +31583,82 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an appointment collector's custom template."
+          "Description": "Specifies a custom template for cell overflow indicators."
+        },
+        "appointmentDragging": {
+          "Description": "Configures appointment reordering using drag and drop gestures.",
+          "Options": {
+            "autoScroll": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables automatic scrolling while dragging an appointment beyond the viewport."
+            },
+            "data": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": "A container for custom data."
+            },
+            "group": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Allows you to group several widgets so that users can drag and drop appointments between them."
+            },
+            "onAdd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a new appointment is added."
+            },
+            "onDragEnd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the dragged appointment's position is changed."
+            },
+            "onDragMove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called every time a draggable appointment is moved."
+            },
+            "onDragStart": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the drag gesture is initialized."
+            },
+            "onRemove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a draggable appointment is removed."
+            },
+            "scrollSensitivity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the distance in pixels from the edge of viewport at which scrolling should start. Applies only if autoScroll is true."
+            },
+            "scrollSpeed": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the scrolling speed when dragging an appointment beyond the viewport. Applies only if autoScroll is true."
+            }
+          }
         },
         "appointmentTemplate": {
           "PrimitiveTypes": [
@@ -28997,7 +31672,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for appointment tooltips and appointments in the appointment collector's drop-down list."
+          "Description": "Specifies a custom template for tooltips displayed when users click an appointment or cell overflow indicator."
         },
         "cellDuration": {
           "PrimitiveTypes": [
@@ -29085,8 +31760,9 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsDeprecated": true,
           "IsTemplate": true,
-          "Description": "Specifies a custom template for appointments in the appointment collector's drop-down list."
+          "Description": "Use the appointmentTooltipTemplate option instead."
         },
         "editing": {
           "PrimitiveTypes": [
@@ -29167,7 +31843,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
+          "Description": "If true, appointments are grouped by date first and then by resource; opposite if false. Applies only if appointments are grouped and groupOrientation is \"horizontal\"."
         },
         "groups": {
           "ItemPrimitiveTypes": [
@@ -29581,7 +32257,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an appointment collector's custom template."
+              "Description": "Specifies a custom template for cell overflow indicators in this view."
             },
             "appointmentTemplate": {
               "PrimitiveTypes": [
@@ -29595,7 +32271,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies a custom template for appointment tooltips and appointments in the appointment collector's drop-down list."
+              "Description": "Specifies a custom template for tooltips displayed when users click an appointment or cell overflow indicator in this view."
             },
             "cellDuration": {
               "PrimitiveTypes": [
@@ -29621,8 +32297,9 @@
               "PrimitiveTypes": [
                 "any"
               ],
+              "IsDeprecated": true,
               "IsTemplate": true,
-              "Description": "Specifies a custom template for appointments in the appointment collector's drop-down list."
+              "Description": "Use the views.appointmentTooltipTemplate option instead."
             },
             "endDayHour": {
               "PrimitiveTypes": [
@@ -29641,7 +32318,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to group appointments by date first. Applies only if groupOrientation is \"horizontal\"."
+              "Description": "If true, appointments are grouped by date first and then by resource; opposite if false. Applies only if appointments are grouped and groupOrientation is \"horizontal\"."
             },
             "groupOrientation": {
               "PrimitiveTypes": [
@@ -30033,7 +32710,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -30396,13 +33073,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -30439,6 +33130,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        },
+        "wrapItemText": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether text that exceeds the drop-down list width should be wrapped."
         }
       }
     },
@@ -30921,7 +33618,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "keyStep": {
           "PrimitiveTypes": [
@@ -31081,13 +33778,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -31101,6 +33812,242 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget is visible."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's width."
+        }
+      }
+    },
+    "dxSortable": {
+      "Description": "Sortable is a user interface utility that allows a widget's items to be reordered via drag and drop gestures.",
+      "IsTranscludedContent": true,
+      "Module": "ui/sortable",
+      "Options": {
+        "allowDropInsideItem": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Allows a user to drop an item inside another item."
+        },
+        "allowReordering": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Allows a user to reorder sortable items."
+        },
+        "autoScroll": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Enables automatic scrolling while dragging an item beyond the viewport."
+        },
+        "boundary": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies a DOM element that limits the dragging area."
+        },
+        "container": {
+          "PrimitiveTypes": [
+            "Element",
+            "JQuery"
+          ],
+          "Description": "Specifies a custom container in which the draggable item should be rendered."
+        },
+        "cursorOffset": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the cursor offset from the dragged item.",
+          "Options": {
+            "x": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the horizontal cursor offset from the dragged item in pixels."
+            },
+            "y": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the vertical cursor offset from the dragged item in pixels."
+            }
+          }
+        },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
+        },
+        "dragDirection": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the directions in which an item can be dragged."
+        },
+        "dragTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies custom markup to be shown instead of the item being dragged."
+        },
+        "dropFeedbackMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to highlight the item's drop position."
+        },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be attached to the widget's root element."
+        },
+        "filter": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS selector for the items that can be dragged."
+        },
+        "group": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Allows you to group several widgets, so that users can drag and drop items between them."
+        },
+        "handle": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS selector (ID or class) that should act as the drag handle(s) for the item(s)."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the widget's height."
+        },
+        "itemOrientation": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Notifies the widget of the items' orientation."
+        },
+        "moveItemOnDrop": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Moves an element in the HTML markup when it is dropped."
+        },
+        "onAdd": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when a new item is added."
+        },
+        "onDisposing": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onDragChange": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when the dragged item's position in the list is changed."
+        },
+        "onDragEnd": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when the drag gesture is finished."
+        },
+        "onDragMove": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called every time a draggable item is moved."
+        },
+        "onDragStart": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when drag gesture is initialized."
+        },
+        "onInitialized": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function used in JavaScript frameworks to save the widget instance."
+        },
+        "onOptionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed after a widget option is changed."
+        },
+        "onRemove": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when a draggable item is removed."
+        },
+        "onReorder": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is called when the draggable items are reordered."
+        },
+        "rtlEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Switches the widget to a right-to-left representation."
+        },
+        "scrollSensitivity": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the distance in pixels from the edge of viewport at which scrolling should start. Applies only if autoScroll is true."
+        },
+        "scrollSpeed": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the scrolling speed when dragging an item beyond the viewport. Applies only if autoScroll is true."
         },
         "width": {
           "PrimitiveTypes": [
@@ -31444,6 +34391,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for tooltips."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -31615,6 +34569,18 @@
           ],
           "Description": "Specifies the icon the FAB or speed dial action button displays."
         },
+        "index": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Allows you to reorder action buttons in the speed dial menu."
+        },
+        "label": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text label displayed inside the FAB or near the speed dial action button."
+        },
         "onClick": {
           "PrimitiveTypes": [
             "Function"
@@ -31666,6 +34632,12 @@
             "number"
           ],
           "Description": "Specifies the number of the element when the Tab key is used for navigating."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Allows you to hide the FAB from the view or the action from the speed dial menu."
         }
       }
     },
@@ -31729,7 +34701,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "name": {
           "PrimitiveTypes": [
@@ -31825,13 +34797,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -32662,7 +35648,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -33046,13 +36032,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "ItemPrimitiveTypes": [
@@ -33087,6 +36087,12 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the widget's width."
+        },
+        "wrapItemText": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether text that exceeds the drop-down list width should be wrapped."
         }
       }
     },
@@ -33162,7 +36168,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "maxHeight": {
           "PrimitiveTypes": [
@@ -33366,13 +36372,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -33482,7 +36502,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the editor's value is valid."
+          "Description": "Specifies or indicates whether the editor's value is valid."
         },
         "mask": {
           "PrimitiveTypes": [
@@ -33494,7 +36514,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies a mask placeholder character."
+          "Description": "Specifies a mask placeholder. A single character is recommended."
         },
         "maskInvalidMessage": {
           "PrimitiveTypes": [
@@ -33720,13 +36740,27 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies information on the validation error when using a custom validation engine. Should be changed at runtime along with the isValid option."
+          "Description": "Information on the broken validation rule. Contains the first item from the validationErrors array."
+        },
+        "validationErrors": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "validationError",
+          "Description": "An array of the validation rules that failed."
         },
         "validationMessageMode": {
           "PrimitiveTypes": [
             "string"
           ],
           "Description": "Specifies how the message about the validation rules that are not satisfied by this editor's value is displayed."
+        },
+        "validationStatus": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Indicates or specifies the current validation status."
         },
         "value": {
           "PrimitiveTypes": [
@@ -34054,12 +37088,6 @@
               "Description": "An object that defines the animation options used when the widget is being shown."
             }
           }
-        },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
         },
         "closeOnClick": {
           "PrimitiveTypes": [
@@ -34582,12 +37610,6 @@
             }
           }
         },
-        "closeOnBackButton": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "A Boolean value specifying whether or not the widget is closed if a user presses the Back hardware button."
-        },
         "closeOnOutsideClick": {
           "PrimitiveTypes": [
             "boolean",
@@ -34879,6 +37901,12 @@
           ],
           "Description": "Specifies whether all rows are expanded initially."
         },
+        "autoNavigateToFocusedRow": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Automatically scrolls to the focused row when the focusedRowKey is changed."
+        },
         "cacheEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -34894,7 +37922,8 @@
         "columnAutoWidth": {
           "PrimitiveTypes": [
             "boolean"
-          ]
+          ],
+          "Description": "Specifies whether columns should adjust their widths to the content."
         },
         "columnChooser": {
           "Description": "Configures the column chooser.",
@@ -35266,7 +38295,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies whether to show filtered rows with ancestors and descendants (full branch) or with ancestors only."
+          "Description": "Specifies whether filter and search results should include matching rows only, matching rows with ancestors, or matching rows with ancestors and descendants (full branch)."
         },
         "filterPanel": {
           "Description": "Configures the filter panel.",
@@ -35596,6 +38625,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether users can enter a new cell value on a key press. Applies if editing.mode is \"cell\" or \"batch\"."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables keyboard navigation."
             },
             "enterKeyAction": {
               "PrimitiveTypes": [
@@ -36105,6 +39140,180 @@
           ],
           "Description": "Specifies whether rows should be shaded differently."
         },
+        "rowDragging": {
+          "Description": "Configures row reordering using drag and drop gestures.",
+          "Options": {
+            "allowDropInsideItem": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows dropping a row inside another row."
+            },
+            "allowReordering": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows row reordering using drag and drop gestures."
+            },
+            "autoScroll": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables automatic scrolling while dragging a row beyond the viewport."
+            },
+            "boundary": {
+              "PrimitiveTypes": [
+                "Element",
+                "JQuery"
+              ],
+              "Description": "Specifies a DOM element that limits the dragging area."
+            },
+            "container": {
+              "PrimitiveTypes": [
+                "Element",
+                "JQuery"
+              ],
+              "Description": "Specifies a custom container in which the draggable row should be rendered."
+            },
+            "cursorOffset": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the cursor offset from the dragged row.",
+              "Options": {
+                "x": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the horizontal cursor offset from the dragged row in pixels."
+                },
+                "y": {
+                  "PrimitiveTypes": [
+                    "number"
+                  ],
+                  "Description": "Specifies the vertical cursor offset from the dragged row in pixels."
+                }
+              }
+            },
+            "data": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": "A container for custom data."
+            },
+            "dragDirection": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the directions in which a row can be dragged."
+            },
+            "dragTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies custom markup to be shown instead of the item being dragged."
+            },
+            "dropFeedbackMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how to highlight the row's drop position."
+            },
+            "filter": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a CSS selector for draggable rows."
+            },
+            "group": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Allows you to group several widgets so that users can drag and drop rows between them."
+            },
+            "handle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a CSS selector (ID or class) for the element(s) that should act as the drag handle(s)."
+            },
+            "onAdd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a new row is added."
+            },
+            "onDragChange": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the dragged row's position is changed."
+            },
+            "onDragEnd": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the drag gesture is finished."
+            },
+            "onDragMove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called every time a draggable row is moved."
+            },
+            "onDragStart": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the drag gesture is initialized."
+            },
+            "onRemove": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when a draggable row is removed."
+            },
+            "onReorder": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "Description": "A function that is called when the draggable rows are reordered."
+            },
+            "scrollSensitivity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the distance in pixels from the edge of viewport at which scrolling should start. Applies only if autoScroll is true."
+            },
+            "scrollSpeed": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the scrolling speed when dragging a row beyond the viewport. Applies only if autoScroll is true."
+            },
+            "showDragIcons": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Shows or hides row dragging icons."
+            }
+          }
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -36294,6 +39503,12 @@
                 "string"
               ],
               "Description": "Specifies the sorting mode."
+            },
+            "showSortIndexes": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to display sort indexes in column headers. Applies only when sorting.mode is \"multiple\" and data is sorted by two or more columns."
             }
           }
         },
@@ -36508,7 +39723,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -37188,6 +40411,13 @@
                 "JQuery"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
+            },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
             },
             "cornerRadius": {
               "PrimitiveTypes": [
@@ -38015,7 +41245,8 @@
             "DevExpress.ui.CustomRule",
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
-            "DevExpress.ui.EmailRule"
+            "DevExpress.ui.EmailRule",
+            "DevExpress.ui.AsyncRule"
           ],
           "ItemComplexTypes": [
             "RequiredRule",
@@ -38025,7 +41256,8 @@
             "CustomRule",
             "CompareRule",
             "PatternRule",
-            "EmailRule"
+            "EmailRule",
+            "AsyncRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -38183,7 +41415,15 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the URL of the server-side proxy that streams the resulting file to the end user to enable exporting in the Safari browser."
+              "IsDeprecated": true,
+              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+            },
+            "svgToCanvas": {
+              "PrimitiveTypes": [
+                "Function"
+              ],
+              "IsFunc": true,
+              "Description": "A function that renders SVG markup on the HTML canvas. Required to export custom SVG elements (for example, markerTemplate)."
             }
           }
         },
@@ -38564,6 +41804,13 @@
               ],
               "Description": "Specifies the marker's size in a legend item in pixels."
             },
+            "markerTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an SVG element that serves as a custom legend item marker."
+            },
             "orientation": {
               "PrimitiveTypes": [
                 "string"
@@ -38896,7 +42143,12 @@
         },
         "projection": {
           "PrimitiveTypes": [
-            "any"
+            "any",
+            "DevExpress.viz.VectorMapProjectionConfig",
+            "string"
+          ],
+          "ComplexTypes": [
+            "VectorMapProjectionConfig"
           ],
           "Description": "Specifies the map projection."
         },
@@ -39118,6 +42370,13 @@
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
+            "contentTemplate": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for a tooltip."
+            },
             "cornerRadius": {
               "PrimitiveTypes": [
                 "number"
@@ -39303,6 +42562,42 @@
             "string"
           ],
           "Description": "A string value specifying the animation type."
+        }
+      }
+    },
+    "AsyncRule": {
+      "Description": "A custom validation rule that is checked asynchronously. Use async rules for server-side validation.",
+      "Options": {
+        "ignoreEmptyValue": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "If set to true, empty values are valid."
+        },
+        "message": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the message that is shown if the rule is broken."
+        },
+        "reevaluate": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Indicates whether the rule should always be checked for the target value or only when the value changes."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the rule type. Set it to \"async\" to use the AsyncRule."
+        },
+        "validationCallback": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "A function that validates the target value."
         }
       }
     },
@@ -41211,7 +44506,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "reevaluate": {
           "PrimitiveTypes": [
@@ -41223,7 +44518,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"compare\" to use the CompareRule."
         }
       }
     },
@@ -41241,7 +44536,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "reevaluate": {
           "PrimitiveTypes": [
@@ -41253,7 +44548,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"custom\" to use the CustomRule."
         },
         "validationCallback": {
           "PrimitiveTypes": [
@@ -41318,7 +44613,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether users can drag and drop the annotation."
         },
         "argument": {
           "PrimitiveTypes": [
@@ -41399,6 +44694,12 @@
           ],
           "IsFunc": true,
           "Description": "Customizes the text and appearance of the annotation's tooltip."
+        },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
         },
         "description": {
           "PrimitiveTypes": [
@@ -41457,13 +44758,13 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Moves the annotation horizontally."
         },
         "offsetY": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Moves the annotation vertically."
         },
         "opacity": {
           "PrimitiveTypes": [
@@ -41508,13 +44809,13 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Moves the shadows horizontally from their initial positions."
+              "Description": "Moves the shadows horizontally."
             },
             "offsetY": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Moves the shadows vertically from their initial positions."
+              "Description": "Moves the shadows vertically."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -41523,6 +44824,13 @@
               "Description": "Specifies the opacity of the shadows."
             }
           }
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the annotation."
         },
         "text": {
           "PrimitiveTypes": [
@@ -41541,6 +44849,13 @@
             "boolean"
           ],
           "Description": "Specifies whether the annotation tooltip is enabled."
+        },
+        "tooltipTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for an annotation's tooltip."
         },
         "type": {
           "PrimitiveTypes": [
@@ -41588,7 +44903,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": ""
+          "Description": "Specifies whether users can drag and drop the annotation."
         },
         "argument": {
           "PrimitiveTypes": [
@@ -41670,6 +44985,12 @@
           "IsFunc": true,
           "Description": "Customizes the text and appearance of the annotation's tooltip."
         },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
+        },
         "description": {
           "PrimitiveTypes": [
             "string"
@@ -41721,13 +45042,13 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Moves the annotation horizontally."
         },
         "offsetY": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": ""
+          "Description": "Moves the annotation vertically."
         },
         "opacity": {
           "PrimitiveTypes": [
@@ -41772,13 +45093,13 @@
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Moves the shadows horizontally from their initial positions."
+              "Description": "Moves the shadows horizontally."
             },
             "offsetY": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Moves the shadows vertically from their initial positions."
+              "Description": "Moves the shadows vertically."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -41787,6 +45108,13 @@
               "Description": "Specifies the opacity of the shadows."
             }
           }
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the annotation."
         },
         "text": {
           "PrimitiveTypes": [
@@ -41805,6 +45133,13 @@
             "boolean"
           ],
           "Description": "Specifies whether the annotation tooltip is enabled."
+        },
+        "tooltipTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for an annotation's tooltip."
         },
         "type": {
           "PrimitiveTypes": [
@@ -42058,7 +45393,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells."
+          "Description": "Specifies a custom template for data cells."
         },
         "columns": {
           "ItemPrimitiveTypes": [
@@ -42102,7 +45437,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells in the editing state."
+          "Description": "Specifies a custom template for data cells in editing state."
         },
         "editorOptions": {
           "PrimitiveTypes": [
@@ -42165,7 +45500,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns[].fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -42191,7 +45526,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for group cells."
+          "Description": "Specifies a custom template for group cells (group rows)."
         },
         "groupIndex": {
           "PrimitiveTypes": [
@@ -42403,7 +45738,8 @@
             "DevExpress.ui.CustomRule",
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
-            "DevExpress.ui.EmailRule"
+            "DevExpress.ui.EmailRule",
+            "DevExpress.ui.AsyncRule"
           ],
           "ItemComplexTypes": [
             "RequiredRule",
@@ -42413,11 +45749,12 @@
             "CustomRule",
             "CompareRule",
             "PatternRule",
-            "EmailRule"
+            "EmailRule",
+            "AsyncRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
-          "Description": "Specifies validation rules to be checked on updating cell values."
+          "Description": "Specifies validation rules to be checked when cell values are updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -42498,6 +45835,205 @@
           ],
           "IsFunc": true,
           "Description": "Specifies the button's visibility."
+        }
+      }
+    },
+    "FileManagerContextMenu": {
+      "Description": "",
+      "Options": {
+        "items": {
+          "ItemPrimitiveTypes": [
+            "any",
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures context menu items' settings.",
+          "Options": {
+            "beginGroup": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a group separator is displayed over the item."
+            },
+            "closeMenuOnClick": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies if a menu is closed when a user clicks the item."
+            },
+            "disabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether or not the menu item is disabled."
+            },
+            "icon": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the menu item's icon."
+            },
+            "items": {
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
+              "IsCollection": true,
+              "SingularName": "item",
+              "Description": ""
+            },
+            "name": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the context menu item's name."
+            },
+            "selectable": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether or not a user can select a menu item."
+            },
+            "selected": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether or not the item is selected."
+            },
+            "template": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies an item template that should be used to render this item only."
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the text inserted into the item element."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the context menu item's visibility."
+            }
+          }
+        }
+      }
+    },
+    "FileManagerToolbar": {
+      "Description": "",
+      "Options": {
+        "fileSelectionItems": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerToolbarItem",
+            "string"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerToolbarItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "fileSelectionItem",
+          "Description": "Configures settings of the toolbar items that are visible when users select files."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerToolbarItem",
+            "string"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerToolbarItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures toolbar items' settings."
+        }
+      }
+    },
+    "FileManagerToolbarItem": {
+      "Description": "Configures the toolbar item.",
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a widget item should be disabled."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "locateInMenu": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display an item in the toolbar's overflow menu."
+        },
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the toolbar item's location."
+        },
+        "menuItemTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render a menu item."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the toolbar item's name."
+        },
+        "options": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+        },
+        "showText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display the text for the widget item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies an item template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies the toolbar item's visibility."
+        },
+        "widget": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "A widget that presents a toolbar item."
         }
       }
     },
@@ -42641,7 +46177,8 @@
             },
             "dataSource": {
               "PrimitiveTypes": [
-                "DevExpress.data.DataSourceOptions"
+                "DevExpress.data.DataSourceOptions",
+                "DevExpress.data.Store"
               ],
               "ItemPrimitiveTypes": [
                 "any"
@@ -43013,7 +46550,8 @@
             "DevExpress.ui.CustomRule",
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
-            "DevExpress.ui.EmailRule"
+            "DevExpress.ui.EmailRule",
+            "DevExpress.ui.AsyncRule"
           ],
           "ItemComplexTypes": [
             "RequiredRule",
@@ -43023,7 +46561,8 @@
             "CustomRule",
             "CompareRule",
             "PatternRule",
-            "EmailRule"
+            "EmailRule",
+            "AsyncRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
@@ -43311,12 +46850,13 @@
             "HtmlEditorToolbarItem"
           ],
           "IsCollection": true,
-          "SingularName": "item"
+          "SingularName": "item",
+          "Description": "Configures toolbar items. These items allow users to format text and execute commands."
         }
       }
     },
     "HtmlEditorToolbarItem": {
-      "Description": "Configures toolbar controls. These controls allow users to format text and execute commands.",
+      "Description": "This section lists the data source fields that are used in a default template for toolbar items.",
       "Options": {
         "cssClass": {
           "PrimitiveTypes": [
@@ -43334,7 +46874,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the built-in control that this object customizes or a format with multiple choices."
+          "Description": "Specifies the predefined item that this object customizes or a format with multiple choices."
         },
         "formatValues": {
           "ItemPrimitiveTypes": [
@@ -43732,7 +47272,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells."
+          "Description": "Specifies a custom template for data cells."
         },
         "columns": {
           "ItemPrimitiveTypes": [
@@ -43776,7 +47316,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies a custom template for column cells in the editing state."
+          "Description": "Specifies a custom template for data cells in editing state."
         },
         "editorOptions": {
           "PrimitiveTypes": [
@@ -43839,7 +47379,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns].[fixed is true."
+          "Description": "Specifies the widget's edge to which the column is fixed. Applies only if columns[].fixed is true."
         },
         "format": {
           "PrimitiveTypes": [
@@ -44057,7 +47597,8 @@
             "DevExpress.ui.CustomRule",
             "DevExpress.ui.CompareRule",
             "DevExpress.ui.PatternRule",
-            "DevExpress.ui.EmailRule"
+            "DevExpress.ui.EmailRule",
+            "DevExpress.ui.AsyncRule"
           ],
           "ItemComplexTypes": [
             "RequiredRule",
@@ -44067,11 +47608,12 @@
             "CustomRule",
             "CompareRule",
             "PatternRule",
-            "EmailRule"
+            "EmailRule",
+            "AsyncRule"
           ],
           "IsCollection": true,
           "SingularName": "validationRule",
-          "Description": "Specifies validation rules to be checked on updating cell values."
+          "Description": "Specifies validation rules to be checked when cell values are updated."
         },
         "visible": {
           "PrimitiveTypes": [
@@ -44247,13 +47789,13 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "type": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"email\" to use the EmailRule."
         }
       }
     },
@@ -44300,14 +47842,14 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the currency code. Applies only if the type is \"currency\"."
+          "Description": "Specifies a 3-letter ISO 4217 code for currency. Applies only if the type is \"currency\"."
         },
         "formatter": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
-          "Description": "Specifies a custom format."
+          "Description": "A function that converts numeric or date-time values to a string."
         },
         "parser": {
           "PrimitiveTypes": [
@@ -44499,13 +48041,13 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "type": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"numeric\" to use the NumericRule."
         }
       }
     },
@@ -44523,7 +48065,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "pattern": {
           "PrimitiveTypes": [
@@ -44536,7 +48078,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"pattern\" to use the PatternRule."
         }
       }
     },
@@ -46857,7 +50399,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown to end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "min": {
           "PrimitiveTypes": [
@@ -46876,7 +50418,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"range\" to use the RangeRule."
         }
       }
     },
@@ -46888,7 +50430,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "trim": {
           "PrimitiveTypes": [
@@ -46900,7 +50442,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"required\" to use the RequiredRule."
         }
       }
     },
@@ -46945,7 +50487,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the message that is shown for end-users if the current rule is broken."
+          "Description": "Specifies the message that is shown if the rule is broken."
         },
         "min": {
           "PrimitiveTypes": [
@@ -46963,7 +50505,31 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the type of the current rule."
+          "Description": "Specifies the rule type. Set it to \"stringLength\" to use the StringLengthRule."
+        }
+      }
+    },
+    "VectorMapProjectionConfig": {
+      "Options": {
+        "aspectRatio": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the projection's ratio of the width to the height."
+        },
+        "from": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Converts coordinates from [x, y] to [lon, lat]."
+        },
+        "to": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Converts coordinates from [lon, lat] to [x, y]."
         }
       }
     },
