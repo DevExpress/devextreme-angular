@@ -216,6 +216,10 @@ export class NestedOptionHost {
     private _host: INestedOptionContainer;
     private _optionPath: IOptionPathGetter;
 
+    getHost(): INestedOptionContainer {
+        return this._host;
+    }
+
     setHost(host: INestedOptionContainer, optionPath?: IOptionPathGetter) {
         this._host = host;
         this._optionPath = optionPath || (() => '');
