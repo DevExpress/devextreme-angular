@@ -38,7 +38,7 @@ export const getServerStateKey = () => {
   }
 
   return serverStateKey;
-}
+};
 
 export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterContentChecked, AfterViewInit,
     INestedOptionContainer, ICollectionNestedOptionContainer, IDxTemplateHost {
