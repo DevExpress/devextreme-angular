@@ -15,7 +15,7 @@ import {
 
 import {
     DxDataGridModule,
-    IS_PLATFORM_SERVER
+    getServerStateKey
 } from 'devextreme-angular';
 
 @Component({
@@ -54,8 +54,8 @@ describe('Universal', () => {
 
             const transferState: TransferState = TestBed.get(TransferState);
 
-            expect(transferState.hasKey(IS_PLATFORM_SERVER)).toBe(true);
-            expect(transferState.get(IS_PLATFORM_SERVER, null as any)).toEqual(true);
+            expect(transferState.hasKey(getServerStateKey())).toBe(true);
+            expect(transferState.get(getServerStateKey(), null as any)).toEqual(true);
         }
     });
 
@@ -69,7 +69,7 @@ describe('Universal', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         const transferState: TransferState = TestBed.get(TransferState);
 
-        transferState.set(IS_PLATFORM_SERVER, true as any);
+        transferState.set(getServerStateKey(), true as any);
 
         fixture.detectChanges();
 
