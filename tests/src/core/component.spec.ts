@@ -29,17 +29,13 @@ import {
 } from 'devextreme-angular';
 
 // TODO: Try to replace dxButton to Widget ('require' required)
-import DxButton from 'devextreme/ui/button';
-let DxTestWidget = DxButton['inherit']({
-    _render() {
-        this.callBase();
-        this.element().classList.add('dx-test-widget');
-    }
-});
+import dxButton from 'devextreme/ui/button';
+let DxTestWidget = dxButton;
 
 DxTestWidget.defaultOptions({
     options: {
-        text: 'test text'
+        text: 'test text',
+        elementAttr: { class: 'dx-test-widget' }
     }
 });
 
@@ -368,7 +364,14 @@ describe('DevExtreme Angular widget', () => {
         instance.on('unknownEvent', function() {
             expect(this).toBe(instance);
         });
-        instance.fireEvent('unknownEvent');
+
+        // NOTE: This fix was made to avoid this change https://github.com/DevExpress/DevExtreme/pull/10894
+        // TODO: Clean up after the first devextreme@20.1-unstable package will be published and 19.2 branch wll be forked
+        if (instance.fireEvent) {
+            instance.fireEvent('unknownEvent');
+        } else {
+            instance._eventsStrategy.fireEvent('unknownEvent');
+        }
     });
 
     it('ngZone onStable should not called recursively (T551347)', () => {
