@@ -63,7 +63,7 @@ export class DxIntegrationModule {
                 }
                 let _xhr = xhrFactory.build();
                 if (!('withCredentials' in _xhr)) {
-                    _xhr['withCredentials'] = false;
+                  (_xhr as any)['withCredentials'] = false;
                 }
 
                 return _xhr;
