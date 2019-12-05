@@ -29,12 +29,16 @@
       '@angular/platform-browser-dynamic': 'npm:@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       '@angular/http': 'npm:@angular/http/bundles/http.umd.js',
       '@angular/forms': 'npm:@angular/forms/bundles/forms.umd.js',
+
+      'devextreme-angular': '../npm/dist',
+
       // devextreme & devextreme deps
       'devextreme': 'npm:devextreme',
+      'devexpress-diagram': 'npm:devexpress-diagram',
+      'devexpress-gantt': 'npm:devexpress-gantt/dist/dx-gantt.js',
       'jszip': 'npm:jszip/dist/jszip.min.js',
       'quill-delta-to-html': 'npm:quill-delta-to-html/dist/browser/QuillDeltaToHtmlConverter.bundle.js',
       'quill': 'npm:quill/dist/quill.min.js',
-      '../../dist': '../../dist',
       // other libraries
       'rxjs': 'npm:rxjs'
     },
@@ -51,13 +55,14 @@
         main: 'index.js', 
         defaultExtension: 'js'
       },
-      '../../dist': {
-        main: 'index.js',
-        defaultExtension: 'js'
-      },
       'devextreme': {
         defaultExtension: 'js'
       }
-    }
+    },
+    packageConfigPaths: [
+      '../npm/*/package.json',
+      '../npm/dist/*/package.json',
+      '../npm/dist/ui/*/package.json',
+    ]
   });
 })(this);

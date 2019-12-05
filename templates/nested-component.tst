@@ -24,9 +24,13 @@ import {
 <#? it.isDevExpressRequired #>
 import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
-import { NestedOptionHost<#? it.hasTemplate #>, extractTemplate<#?#> } from '../../core/nested-option';<#? it.hasTemplate #>
-import { DxTemplateDirective } from '../../core/template';
-import { IDxTemplateHost, DxTemplateHost } from '../../core/template-host';<#?#>
+import {
+    NestedOptionHost,<#? it.hasTemplate #>
+    extractTemplate,<#?#><#? it.hasTemplate #>
+    DxTemplateDirective,
+    IDxTemplateHost,
+    DxTemplateHost<#?#>
+} from 'devextreme-angular/core';
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
 <#~ it.collectionNestedComponents :component:i #><#? component.className !== it.className #>import { <#= component.className #>Component } from './<#= component.path #>';
 <#?#><#~#>

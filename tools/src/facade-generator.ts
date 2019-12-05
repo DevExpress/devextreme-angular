@@ -10,20 +10,14 @@ export default class FacadeGenerator {
             let facadeConfig = config.facades[facadeFilePath],
                 resultContent = '';
 
-            facadeConfig.sourceDirectories.forEach(directoryPath => {
-                logger('List directory: ' + directoryPath);
-                let files = fs.readdirSync(directoryPath);
-                files
-                    .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile())
-                    .forEach(fileName => {
-                        let filePath = path.join(directoryPath, fileName),
-                            relativePath = path.relative(path.dirname(facadeFilePath), filePath),
-                            parsedPath = path.parse(relativePath),
-                            modulePath = path.join(parsedPath.dir, parsedPath.name);
-
-                        resultContent += 'export * from \'./' + modulePath.replace(/\\/g, '/') + '\'\n';
-                    });
-            });
+            resultContent += `export * from 'devextreme-angular/core'\n`;
+            resultContent += `export * from './ui/all'\n`;
+            fs.readdirSync(facadeConfig.sourceDirectories[0])
+                .filter(fileName => fs.lstatSync(path.join(facadeConfig.sourceDirectories[0], fileName)).isFile())
+                .forEach(fileName => {
+                    const { name } = path.parse(path.join(facadeConfig.sourceDirectories[0], fileName));
+                    resultContent += `export * from 'devextreme-angular/ui/${name}'\n`;
+                });
 
             logger('Write result to ' + facadeFilePath);
             fs.writeFileSync(facadeFilePath, resultContent, { encoding: this._encoding });

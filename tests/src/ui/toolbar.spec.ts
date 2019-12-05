@@ -12,7 +12,7 @@ import {
 import {
     DxToolbarModule,
     DxToolbarComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

@@ -9,20 +9,18 @@ var sourcemaps = require('gulp-sourcemaps');
 var jasmine = require('gulp-jasmine');
 var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
-var mergeJson = require('gulp-merge-json');
 var karmaServer = require('karma').Server;
 var karmaConfig = require('karma').config;
 var buildConfig = require('./build.config');
 var header = require('gulp-header');
-var fs = require('fs');
+var ngPackagr = require('ng-packagr');
 
 //------------Main------------
 
 gulp.task('build', [
     'build.tools',
     'build.components'
-    ]
-);
+]);
 
 gulp.task('default', ['build']);
 
@@ -56,9 +54,8 @@ gulp.task('generate.metadata', ['build.tools', 'clean.metadata'], function () {
 });
 
 gulp.task('clean.generatedComponents', function () {
-    var outputFolderPath = buildConfig.tools.componentGenerator.outputFolderPath;
-
-    return del([outputFolderPath + "/**/*.*"]);
+    var { outputFolderPath } = buildConfig.tools.componentGenerator;
+    del.sync([outputFolderPath + "/**"]);
 });
 
 gulp.task('generate.components', ['generate.metadata', 'clean.generatedComponents'], function () {
@@ -118,22 +115,17 @@ gulp.task('clean.dist', function () {
     return del([buildConfig.components.outputPath]);
 });
 
-gulp.task('build.ngc', function(done) {
-    var config = buildConfig.components,
-        task = shell.task([
-            'ngc -p ' + path.join(config.outputPath, 'tsconfig.esm5.json'),
-            'ngc -p ' + path.join(config.outputPath, 'tsconfig.json'),
-        ]);
-
-    task(done);
+gulp.task('build.ngc', function() {
+    var config = buildConfig.components;
+    return ngPackagr.build({
+        project: path.join(config.outputPath, 'package.json')
+    });
 });
 
 gulp.task('build.copy-sources', ['clean.dist'], function() {
     var config = buildConfig.components;
-
-    return gulp.src([path.join(config.sourcePath, '**/*.*')])
+    return gulp.src([path.join(config.sourcePath, '**/*.*'), 'package.json'])
         .pipe(gulp.dest(config.outputPath));
-
 });
 
 // Note: workaround for https://github.com/angular/angular-cli/issues/4874
@@ -146,21 +138,12 @@ gulp.task('build.remove-unusable-variable', function() {
         .pipe(gulp.dest(config.outputPath));
 });
 
-gulp.task('build.checkMetadata', function(done) {
-    if(fs.existsSync(path.resolve(buildConfig.components.outputPath, 'index.metadata.json'))) {
-        done();
-    } else {
-        done("Metadata not generated!");
-    }
-});
-
 gulp.task('build.components', ['generate.facades'], function(done) {
     runSequence(
         'build.copy-sources',
         'build.license-headers',
         'build.ngc',
         'build.remove-unusable-variable',
-        'build.checkMetadata',
         done
     );
 });
@@ -168,36 +151,15 @@ gulp.task('build.components', ['generate.facades'], function(done) {
 
 //------------npm------------
 
-gulp.task('npm.clean', function() {
-    var config = buildConfig.npm;
-
-    return del([config.distPath + '/**/*']);
-});
-
-gulp.task('npm.content.package', ['npm.clean'], function() {
-    var config = buildConfig.npm;
-
-    return gulp.src(config.package)
-        .pipe(mergeJson('package.json'))
-        .pipe(gulp.dest(config.distPath));
-});
-
-gulp.task('npm.content', ['npm.clean', 'npm.content.package'], function() {
-    var config = buildConfig.npm;
-
-    return gulp.src(config.content)
-        .pipe(gulp.dest(config.distPath));
-});
-
-gulp.task('npm.modules', ['npm.clean', 'build.components'], function() {
+gulp.task('npm.content', ['build.components'], function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src([path.join(cmpConfig.outputPath, '**/{*.{js,d.ts,js.map,metadata.json},collection.json}')])
+    return gulp.src([path.join(cmpConfig.outputPath, '**/collection.json'), ...npmConfig.content])
         .pipe(gulp.dest(npmConfig.distPath));
 });
 
-gulp.task('npm.pack', ['npm.content', 'npm.modules'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
+gulp.task('npm.pack', ['npm.content'], shell.task(['npm pack'], { cwd: buildConfig.npm.distPath }));
 
 
 //------------Testing------------
