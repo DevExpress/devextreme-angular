@@ -10,5 +10,10 @@ module.exports = {
             path.join(__dirname, '../tests'),
             {} 
         )
-    ]
+    ],
+    resolve: {
+        alias: {
+          'devextreme-angular': path.resolve(__dirname, 'npm/dist')
+        }
+      }
 };

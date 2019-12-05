@@ -12,7 +12,7 @@ import {
 import {
     DxTabPanelModule,
     DxTabPanelComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

@@ -11,7 +11,7 @@ import {
 
 import {
     DxChartModule, DxChartComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

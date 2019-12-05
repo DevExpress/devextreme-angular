@@ -4,7 +4,7 @@ import { Component, PLATFORM_ID } from '@angular/core';
 
 import { isPlatformServer } from '@angular/common';
 
-import { DxServerTransferStateModule } from '../../../dist';
+import { DxServerTransferStateModule } from 'devextreme-angular';
 
 import * as def from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';

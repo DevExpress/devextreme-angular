@@ -9,15 +9,14 @@ import { isPlatformServer } from '@angular/common';
 
 import { TransferState } from '@angular/platform-browser';
 
-import { IS_PLATFORM_SERVER } from '../../../dist';
-
 import {
     TestBed
 } from '@angular/core/testing';
 
 import {
-    DxDataGridModule
-} from '../../../dist';
+    DxDataGridModule,
+    getServerStateKey
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',
@@ -55,8 +54,8 @@ describe('Universal', () => {
 
             const transferState: TransferState = TestBed.get(TransferState);
 
-            expect(transferState.hasKey(IS_PLATFORM_SERVER)).toBe(true);
-            expect(transferState.get(IS_PLATFORM_SERVER, null as any)).toEqual(true);
+            expect(transferState.hasKey(getServerStateKey())).toBe(true);
+            expect(transferState.get(getServerStateKey(), null as any)).toEqual(true);
         }
     });
 
@@ -70,7 +69,7 @@ describe('Universal', () => {
         let fixture = TestBed.createComponent(TestContainerComponent);
         const transferState: TransferState = TestBed.get(TransferState);
 
-        transferState.set(IS_PLATFORM_SERVER, true as any);
+        transferState.set(getServerStateKey(), true as any);
 
         fixture.detectChanges();
 

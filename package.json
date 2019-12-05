@@ -9,10 +9,11 @@
   "scripts": {
     "start": "npm run build && npm run serve",
     "serve": "http-server -c-1 -o -p 8875 .",
-    "build": "gulp build",
     "lite": "lite-server",
-    "test": "gulp test",
-    "pack": "gulp npm.pack"
+    "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
+    "build": "npm run gulp -- build",
+    "test": "npm run gulp -- test",
+    "pack": "npm run gulp -- npm.pack"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -23,16 +24,16 @@
     "@angular/forms": ">6.0.0"
   },
   "devDependencies": {
-    "@angular/animations": "^6.0.0",
-    "@angular/common": "^6.0.0",
-    "@angular/compiler": "^6.0.0",
-    "@angular/compiler-cli": "^6.0.0",
-    "@angular/core": "^6.0.0",
-    "@angular/forms": "^6.0.0",
-    "@angular/http": "^6.0.0",
-    "@angular/platform-browser": "^6.0.0",
-    "@angular/platform-browser-dynamic": "^6.0.0",
-    "@angular/platform-server": "^6.0.0",
+    "@angular/animations": "~7.2.0",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/compiler-cli": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/http": "~7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/platform-server": "~7.2.0",
     "@types/dot": "^1.0.29",
     "@types/jasmine": "2.5.38",
     "@types/mkdirp": "^0.3.29",
@@ -42,6 +43,8 @@
     "core-js": "^2.4.1",
     "deepmerge": "^2.0.1",
     "del": "^2.2.0",
+    "devexpress-diagram": "^0.1.43",
+    "devexpress-gantt": "0.0.8",
     "devextreme": "~19.2.4",
     "dot": "^1.0.3",
     "gulp": "^3.9.1",
@@ -66,13 +69,14 @@
     "karma-webpack": "^2.0.9",
     "lite-server": "^2.2.0",
     "mkdirp": "^0.5.1",
+    "ng-packagr": "^5.6.1",
     "plugin-typescript": "^8.0.0",
     "puppeteer": "^1.11.0",
     "run-sequence": "^1.2.2",
     "rxjs": "^6.0.0",
-    "systemjs": "0.19.39",
+    "systemjs": "0.21.6",
     "tslint": "^4.5.1",
-    "typescript": "~2.8.0",
+    "typescript": "~3.1.0",
     "webpack": "^3.8.1",
     "yargs": "^6.0.0",
     "zone.js": "^0.8.25"
@@ -86,5 +90,16 @@
   "dependencies": {
     "@angular-devkit/schematics": "^7.2.2",
     "devextreme-schematics": "latest"
+  },
+  "schematics": "./schematics/collection.json",
+  "ngPackage": {
+    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
+    "lib": {
+      "entryFile": "index.ts"
+    },
+    "dest": "../npm/dist",
+    "whitelistedNonPeerDependencies": [
+      "."
+    ]
   }
 }

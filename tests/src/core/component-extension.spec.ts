@@ -20,7 +20,7 @@ import {
     DxComponentExtension,
     DxTemplateHost,
     WatcherHelper
-} from '../../../dist';
+} from 'devextreme-angular';
 
 import DxButton from 'devextreme/ui/button';
 let DxTestExtension = DxButton;
