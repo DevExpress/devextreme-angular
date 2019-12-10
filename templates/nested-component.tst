@@ -41,8 +41,7 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
     ]<#?#>
 })
-export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit,
-    <#? !it.isCollection #>OnDestroy,<#?#>
+export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit,<#? !it.isCollection #> OnDestroy,<#?#>
     IDxTemplateHost<#?#><#? !it.isCollection && !it.hasTemplate #> implements OnDestroy <#?#> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {

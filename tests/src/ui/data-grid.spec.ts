@@ -227,11 +227,11 @@ describe('DxDataGrid', () => {
         jasmine.clock().tick(101);
         let testComponent = fixture.componentInstance;
         const instance = testComponent.innerWidgets.last.instance;
-        expect(instance.option("columnChooser").enabled).toBe(true);
+        expect(instance.option('columnChooser').enabled).toBe(true);
 
         testComponent.showComponent = false;
         fixture.detectChanges();
-        expect(instance.option("columnChooser").enabled).toBe(false);
+        expect(instance.option('columnChooser').enabled).toBe(false);
         jasmine.clock().uninstall();
     });
 
