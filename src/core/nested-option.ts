@@ -64,6 +64,10 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         }
     }
 
+    protected _resetOption(name: string) {
+        this.instance.resetOption(name);
+    }
+
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
         this._host = host;
         this._hostOptionPath = optionPath;

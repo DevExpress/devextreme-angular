@@ -3,7 +3,8 @@
 <#? it.inputs #>/* tslint:disable:use-input-property-decorator */
 <#?#>
 import {
-    Component,
+    Component,<#? !it.isCollection #>
+    OnDestroy,<#?#>
     NgModule,
     Host,<#? it.hasTemplate #>
     ElementRef,
@@ -40,7 +41,9 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
     ]<#?#>
 })
-export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit, IDxTemplateHost<#?#> {<#~ it.properties :prop:i #>
+export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit,
+    <#? !it.isCollection #>OnDestroy,<#?#>
+    IDxTemplateHost<#?#><#? !it.isCollection && !it.hasTemplate #> implements OnDestroy <#?#> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -97,6 +100,11 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     }
     ngAfterViewInit() {
         extractTemplate(this, this.element, this.renderer, this.document);
+    }
+<#?#>
+<#? !it.isCollection #>
+    ngOnDestroy() {
+        this._resetOption(this._optionPath);
     }
 <#?#>
 }
