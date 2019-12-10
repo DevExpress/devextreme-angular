@@ -22,6 +22,7 @@ import DxDataGrid from 'devextreme/ui/data_grid';
     template: ''
 })
 class TestContainerComponent {
+    showComponent = true;
     dataSource = [{
         id: 1,
         string: 'String',
@@ -113,8 +114,8 @@ describe('DxDataGrid', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-                <dx-data-grid 
-                    [columns]="['obj.field']" 
+                <dx-data-grid
+                    [columns]="['obj.field']"
                     [dataSource]="dataSourceWithUndefined">
                 </dx-data-grid>`
             }
@@ -206,6 +207,34 @@ describe('DxDataGrid', () => {
         jasmine.clock().uninstall();
     });
 
+    it('should reset nested option', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-data-grid [dataSource]="[{text: 'text'}]">
+                    <dxo-column-chooser *ngIf="showComponent" [enabled]="true"></dxo-column-chooser>
+                    <dxi-column dataField="text"></dxi-column>
+                </dx-data-grid>`
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+
+        fixture.detectChanges();
+
+        jasmine.clock().tick(101);
+        let testComponent = fixture.componentInstance;
+        const instance = testComponent.innerWidgets.last.instance;
+        expect(instance.option('columnChooser').enabled).toBe(true);
+
+        testComponent.showComponent = false;
+        fixture.detectChanges();
+        expect(instance.option('columnChooser').enabled).toBe(false);
+        jasmine.clock().uninstall();
+    });
+
     it('should destroy devextreme components in template correctly', () => {
         @Component({
             selector: 'test-container-component',
@@ -274,7 +303,7 @@ describe('Nested DxDataGrid', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-                    <dx-data-grid 
+                    <dx-data-grid
                         [dataSource]="dataSource"
                         keyExpr="id"
                         [masterDetail]="{ enabled: true, template: 'detail' }"
@@ -295,7 +324,7 @@ describe('Nested DxDataGrid', () => {
                         <dxi-column dataField="string"></dxi-column>
                         <dxi-column dataField="string"></dxi-column>
                         <dxi-column dataField="string"></dxi-column>
-                        
+
                         <div *dxTemplate="let data of 'detail'">
                             <dx-data-grid [dataSource]="dataSource">
                                 <dxi-column dataField="number"></dxi-column>
