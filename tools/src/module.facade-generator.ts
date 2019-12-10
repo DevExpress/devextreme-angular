@@ -26,13 +26,12 @@ export default class FacadeGenerator {
                 let files = fs.readdirSync(directoryPath);
 
                 files
-                    .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile())
+                    .filter(fileName => !fs.lstatSync(path.join(directoryPath, fileName)).isFile() && fileName !== 'nested')
                     .forEach(fileName => {
-                        fileName = fileName.substring(0, fileName.length - 3);
                         let moduleName = this.prepareModuleName(fileName);
 
-                        moduleNamesString += '\n    ' + moduleName + ',';
-                        importModuleString += `import { ` + moduleName + ` } from './` + fileName + `';\n`;
+                        moduleNamesString += `\n    ${moduleName},`;
+                        importModuleString += `import { ${moduleName} } from 'devextreme-angular/ui/${fileName}';\n`;
                     });
             });
 

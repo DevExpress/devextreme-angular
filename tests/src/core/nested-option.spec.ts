@@ -28,18 +28,15 @@ import {
     ComponentFixture
 } from '@angular/core/testing';
 
-import { WatcherHelper } from '../../../dist/core/watcher-helper';
 import {
+    WatcherHelper,
     DxComponent,
-    DxTemplateHost
-} from '../../../dist';
-
-import {
+    DxTemplateHost,
     NestedOption,
     CollectionNestedOption,
     NestedOptionHost,
     extractTemplate
-} from '../../../dist/core/nested-option';
+} from 'devextreme-angular';
 
 import * as events from 'devextreme/events';
 

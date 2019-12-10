@@ -13,7 +13,7 @@ import {
 import {
     DxDataGridModule,
     DxDataGridComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 import DxDataGrid from 'devextreme/ui/data_grid';
 

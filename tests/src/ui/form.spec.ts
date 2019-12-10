@@ -14,7 +14,7 @@ import {
     DxFormModule,
     DxTagBoxModule,
     DxFormComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',

@@ -9,7 +9,7 @@ import {
 
 import {
     DevExtremeModule
-} from '../../../dist';
+} from 'devextreme-angular';
 
 import {
     componentNames

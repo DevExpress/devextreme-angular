@@ -22,7 +22,7 @@ export default class ComponentNamesGenerator {
         let directoryPath = this._config.componentFilesPath;
         let files = fs.readdirSync(directoryPath);
         let fileList = files
-            .filter(fileName => fs.lstatSync(path.join(directoryPath, fileName)).isFile() && this.validateFileName(fileName))
+            .filter(fileName => !fs.lstatSync(path.join(directoryPath, fileName)).isFile() && this.validateFileName(fileName))
             .map(fileName => this.prepareTagName(fileName))
             .join(',\n');
         let resultContent = `export const componentNames = [\n${fileList}\n];\n`;

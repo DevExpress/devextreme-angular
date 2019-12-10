@@ -1,7 +1,7 @@
 import { NgModule, NgZone } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import * as domAdapter from 'devextreme/core/dom_adapter';
-import { DxIntegrationModule } from '../../../dist/core/integration';
+import { DxIntegrationModule } from 'devextreme-angular/core';
 
 @NgModule({
     imports: [

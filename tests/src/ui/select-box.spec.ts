@@ -13,7 +13,7 @@ import {
     DxSelectBoxModule,
     DxTextBoxModule,
     DxSelectBoxComponent
-} from '../../../dist';
+} from 'devextreme-angular';
 
 @Component({
     selector: 'test-container-component',
