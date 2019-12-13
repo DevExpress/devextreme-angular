@@ -134,7 +134,7 @@ gulp.task('build.remove-unusable-variable', function() {
 
     return gulp.src(path.join(config.distPath, '**/*.js'))
         .pipe(replace(/DevExpress\.[\w\.]+/g, 'Object'))
-        .pipe(gulp.dest(config.outputPath));
+        .pipe(gulp.dest(config.distPath));
 });
 
 gulp.task('build.components', ['generate.facades'], function(done) {
