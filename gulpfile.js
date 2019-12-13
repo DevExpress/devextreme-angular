@@ -132,7 +132,7 @@ gulp.task('build.copy-sources', ['clean.dist'], function() {
 gulp.task('build.remove-unusable-variable', function() {
     var config = buildConfig.npm;
 
-    return gulp.src(path.join(config.outputPath, '**/*.js'))
+    return gulp.src(path.join(config.distPath, '**/*.js'))
         .pipe(replace(/DevExpress\.[\w\.]+/g, 'Object'))
         .pipe(gulp.dest(config.outputPath));
 });
