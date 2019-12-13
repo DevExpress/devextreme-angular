@@ -130,11 +130,10 @@ gulp.task('build.copy-sources', ['clean.dist'], function() {
 
 // Note: workaround for https://github.com/angular/angular-cli/issues/4874
 gulp.task('build.remove-unusable-variable', function() {
-    var config = buildConfig.components;
+    var config = buildConfig.npm;
 
     return gulp.src(path.join(config.outputPath, '**/*.js'))
-        .pipe(replace(/var.+devextreme\/bundles\/dx\.all.+/g, ''))
-        .pipe(replace(/import DevExpress from \'devextreme\/bundles\/dx\.all\';/g, ''))
+        .pipe(replace(/DevExpress\.[\w\.]+/g, 'Object'))
         .pipe(gulp.dest(config.outputPath));
 });
 
