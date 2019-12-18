@@ -22,13 +22,19 @@ export class NgEventsStrategy {
         }
     }
 
-    on(name, handler) {
-        let eventSubscriptions = this.subscriptions[name] || [],
-            subcription = this.getEmitter(name).subscribe(handler.bind(this.instance)),
-            unsubscribe = subcription.unsubscribe.bind(subcription);
+    on(name: string | Object, handler?: Function) {
+        if (typeof name === 'string') {
+            let eventSubscriptions = this.subscriptions[name] || [],
+                subcription = this.getEmitter(name).subscribe(handler.bind(this.instance)),
+                unsubscribe = subcription.unsubscribe.bind(subcription);
 
-        eventSubscriptions.push({ handler, unsubscribe });
-        this.subscriptions[name] = eventSubscriptions;
+            eventSubscriptions.push({ handler, unsubscribe });
+            this.subscriptions[name] = eventSubscriptions;
+        } else {
+            let handlersObj = name;
+
+            Object.keys(handlersObj).forEach(event => this.on(event, handlersObj[event]));
+        }
     }
 
     off(name, handler) {
