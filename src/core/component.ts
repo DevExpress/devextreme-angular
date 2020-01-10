@@ -230,11 +230,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     resetOptions() {
-        if (this.removedOptions.length) {
+        if (this.instance) {
             this.removedOptions.forEach(option => {
-                if (this.instance) {
-                    this.instance.resetOption(option);
-                }
+                this.instance.resetOption(option);
             });
             this.removedOptions = [];
         }
