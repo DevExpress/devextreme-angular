@@ -182,9 +182,9 @@ describe('DxChart', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
                 template: `
-                <dx-chart [dataSource]="[{ ID: 1, Text: "A", Value: "2" }]" (onDisposing)="onDisposing()">
-                    <dxi-series argumentField="Text" valueField="Value" type="bar" color="#f9ce2d">
-                        <dxo-label [visible]="false"> </dxo-label>
+                <dx-chart [dataSource]="[{ ID: 1, Text: 'A', Value: '2' }]" (onDisposing)='onDisposing()'>
+                    <dxi-series argumentField='Text' valueField='Value' type='bar' color='#f9ce2d'>
+                        <dxo-label [visible]='false'> </dxo-label>
                     </dxi-series>
                 </dx-chart>`
             }
