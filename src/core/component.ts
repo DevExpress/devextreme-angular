@@ -51,6 +51,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     instance: any;
     isLinked = true;
     changedOptions = {};
+    removedOptions = [];
     widgetUpdateLocked = false;
 
     private _initTemplates() {
@@ -172,6 +173,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     protected _destroyWidget() {
         if (this.instance) {
             let element = this.instance.element();
+            this.removedOptions = [];
             events.triggerHandler(element, 'dxremove', { _angularIntegration: true });
             this.instance.dispose();
             domAdapter.removeElement(element);
@@ -209,6 +211,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
     ngAfterContentChecked() {
         this.applyOptions();
+        this.resetOptions();
         this.unlockWidgetUpdate();
     }
 
@@ -223,6 +226,17 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
                 this.instance.option(this._optionsToUpdate);
             }
             this._optionsToUpdate = {};
+        }
+    }
+
+    resetOptions() {
+        if(this.removedOptions.length) {
+            this.removedOptions.forEach(option => {
+                if (this.instance) {
+                    this.instance.resetOption(option);
+                }
+            });
+            this.removedOptions = [];
         }
     }
 

@@ -11,6 +11,7 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 export interface INestedOptionContainer {
     instance: any;
     isLinked: boolean;
+    removedOptions: string[];
     optionChangedHandlers: EventEmitter<any>;
 }
 
@@ -64,8 +65,10 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         }
     }
 
-    protected _resetOption(name: string) {
-        this.instance.resetOption(name);
+    protected _addRemovedOption(name: string) {
+        if (this.instance && this.removedOptions) {
+            this.removedOptions.push(name);
+        }
     }
 
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
@@ -84,6 +87,10 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     get instance() {
         return this._host && this._host.instance;
+    }
+
+    get removedOptions() {
+        return this._host && this._host.removedOptions;
     }
 
     get isLinked() {
