@@ -23,6 +23,7 @@ import DxDataGrid from 'devextreme/ui/data_grid';
 })
 class TestContainerComponent {
     showComponent = true;
+    selection = 0;
     dataSource = [{
         id: 1,
         string: 'String',
@@ -55,6 +56,10 @@ class TestContainerComponent {
         if (e.name === 'columns') {
             this.columsChanged++;
         }
+    }
+
+    selectionChanged() {
+        this.selection++;
     }
 }
 
@@ -232,6 +237,35 @@ describe('DxDataGrid', () => {
         testComponent.showComponent = false;
         fixture.detectChanges();
         expect(instance.option('columnChooser').enabled).toBe(false);
+        jasmine.clock().uninstall();
+    });
+
+    it('should not call onSelectionChanged when selection is resetting', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `<dx-data-grid *ngIf="showComponent"
+                    [dataSource]="[{id: 1, text: 'text'}, {id: 2, text: 'text2'}]"
+                    keyExpr="id"
+                    [selectedRowKeys]="[2]"
+                    (onSelectionChanged)="selectionChanged()">
+                    <dxo-selection mode="single"></dxo-selection>
+                    <dxi-column dataField="text"></dxi-column>
+                </dx-data-grid>`
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+
+        fixture.detectChanges();
+
+        jasmine.clock().tick(101);
+        let testComponent = fixture.componentInstance;
+        testComponent.showComponent = false;
+        fixture.detectChanges();
+        expect(testComponent.selection).toBe(0);
         jasmine.clock().uninstall();
     });
 
