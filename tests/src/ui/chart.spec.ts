@@ -23,7 +23,7 @@ class TestContainerComponent {
     }];
     @ViewChild(DxChartComponent) chart: DxChartComponent;
     dataSource = [];
-    disposing = false;
+    disposed = false;
     commonSeriesSettings = {
         argumentField: undefined
     };
@@ -33,7 +33,7 @@ class TestContainerComponent {
     };
 
     onDisposing() {
-        this.disposing = true;
+        this.disposed = true;
     }
 }
 
@@ -151,33 +151,6 @@ describe('DxChart', () => {
         expect(instance.option('argumentAxis.strips[0].label.text')).toBe('label2');
     });
 
-    it('should change strip', () => {
-        TestBed.overrideComponent(TestContainerComponent, {
-            set: {
-                template: `
-                <dx-chart [dataSource]="[]" >
-                    <dxo-argument-axis>
-                         <dxi-strip *ngFor="let strip of strips">
-                             <dxo-label [text]="strip.label">
-                             </dxo-label>
-                         </dxi-strip>
-                    </dxo-argument-axis>
-                </dx-chart>`
-            }
-        });
-        let fixture = TestBed.createComponent(TestContainerComponent);
-        fixture.detectChanges();
-
-        let instance = fixture.componentInstance.chart.instance;
-
-        expect(instance.option('argumentAxis.strips[0].label.text')).toBe('label1');
-
-        fixture.componentInstance.strips[0].label = 'label2';
-        fixture.detectChanges();
-
-        expect(instance.option('argumentAxis.strips[0].label.text')).toBe('label2');
-    });
-
     it('should remove component by dispose method', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
@@ -199,7 +172,8 @@ describe('DxChart', () => {
         const instance = testComponent.chart.instance;
         instance.dispose();
         fixture.detectChanges();
-        expect(testComponent.disposing).toBe(true);
+        fixture.destroy();
+        expect(testComponent.disposed);
         jasmine.clock().uninstall();
 
     });

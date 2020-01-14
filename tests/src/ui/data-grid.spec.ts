@@ -23,7 +23,7 @@ import DxDataGrid from 'devextreme/ui/data_grid';
 })
 class TestContainerComponent {
     showComponent = true;
-    selection = 0;
+    selectionCount = 0;
     dataSource = [{
         id: 1,
         string: 'String',
@@ -59,7 +59,7 @@ class TestContainerComponent {
     }
 
     selectionChanged() {
-        this.selection++;
+        this.selectionCount++;
     }
 }
 
@@ -265,7 +265,7 @@ describe('DxDataGrid', () => {
         let testComponent = fixture.componentInstance;
         testComponent.showComponent = false;
         fixture.detectChanges();
-        expect(testComponent.selection).toBe(0);
+        expect(testComponent.selectionCount).toBe(0);
         jasmine.clock().uninstall();
     });
 
