@@ -171,9 +171,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _destroyWidget() {
+        this.removedOptions = [];
         if (this.instance) {
             let element = this.instance.element();
-            this.removedOptions = [];
             events.triggerHandler(element, 'dxremove', { _angularIntegration: true });
             this.instance.dispose();
             domAdapter.removeElement(element);
