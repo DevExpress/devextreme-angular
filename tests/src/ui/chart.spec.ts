@@ -10,7 +10,7 @@ import {
 } from '@angular/core/testing';
 
 import {
-    DxChartModule, DxChartComponent
+    DxChartModule, DxChartComponent, DxScrollViewModule
 } from 'devextreme-angular';
 
 @Component({
@@ -23,6 +23,7 @@ class TestContainerComponent {
     }];
     @ViewChild(DxChartComponent) chart: DxChartComponent;
     dataSource = [];
+    disposed = false;
     commonSeriesSettings = {
         argumentField: undefined
     };
@@ -30,6 +31,10 @@ class TestContainerComponent {
     seriesAsObject = {
         valueField: undefined
     };
+
+    onDisposing() {
+        this.disposed = true;
+    }
 }
 
 describe('DxChart', () => {
@@ -38,7 +43,7 @@ describe('DxChart', () => {
         TestBed.configureTestingModule(
             {
                 declarations: [TestContainerComponent],
-                imports: [DxChartModule]
+                imports: [DxChartModule, DxScrollViewModule]
             });
     });
 
@@ -62,7 +67,7 @@ describe('DxChart', () => {
     it('should not repainting twice in change detection cycle after applying options directly', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: `<dx-chart 
+                template: `<dx-chart
                     [dataSource]="dataSource"
                     [series]="seriesAsArray"
                     [commonSeriesSettings]="{ argumentField: 'name' }"
@@ -92,7 +97,7 @@ describe('DxChart', () => {
     it('should not repainting twice in change detection cycle after detect changes in arrays', () => {
         TestBed.overrideComponent(TestContainerComponent, {
             set: {
-                template: `<dx-chart 
+                template: `<dx-chart
                     [dataSource]="dataSource"
                     [series]="seriesAsArray"
                     [commonSeriesSettings]="{ argumentField: 'name' }"
@@ -144,5 +149,32 @@ describe('DxChart', () => {
         fixture.detectChanges();
 
         expect(instance.option('argumentAxis.strips[0].label.text')).toBe('label2');
+    });
+
+    it('should remove component by dispose method', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                <dx-chart [dataSource]="[{ ID: 1, Text: 'A', Value: '2' }]" (onDisposing)='onDisposing()'>
+                    <dxi-series argumentField='Text' valueField='Value' type='bar' color='#f9ce2d'>
+                        <dxo-label [visible]='false'> </dxo-label>
+                    </dxi-series>
+                </dx-chart>`
+            }
+        });
+
+        jasmine.clock().uninstall();
+        jasmine.clock().install();
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        const testComponent = fixture.componentInstance;
+        const instance = testComponent.chart.instance;
+        instance.dispose();
+        fixture.detectChanges();
+        fixture.destroy();
+        expect(testComponent.disposed);
+        jasmine.clock().uninstall();
+
     });
 });
