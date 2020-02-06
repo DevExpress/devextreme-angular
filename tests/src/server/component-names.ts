@@ -16,6 +16,7 @@ export const componentNames = [
     'data-grid',
     'date-box',
     'defer-rendering',
+    'diagram',
     'draggable',
     'drawer',
     'drop-down-box',
