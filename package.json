@@ -13,7 +13,8 @@
     "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
-    "pack": "npm run gulp -- npm.pack"
+    "pack": "npm run gulp -- npm.pack",
+    "update-meta": "dx-tools update-meta"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -89,6 +90,7 @@
   ],
   "dependencies": {
     "@angular-devkit/schematics": "^7.2.2",
+    "devextreme-internal-tools": "^1.2.50",
     "devextreme-schematics": "latest"
   },
   "schematics": "./schematics/collection.json",
