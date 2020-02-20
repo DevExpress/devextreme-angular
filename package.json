@@ -13,7 +13,8 @@
     "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
-    "pack": "npm run gulp -- npm.pack"
+    "pack": "npm run gulp -- npm.pack",
+    "update-integration-meta": "dx-tools update-meta"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -46,6 +47,7 @@
     "devexpress-diagram": "^0.2.12",
     "devexpress-gantt": "0.0.8",
     "devextreme": "20.1-next",
+    "devextreme-internal-tools": "^1.0.0",
     "dot": "^1.0.3",
     "gulp": "^3.9.1",
     "gulp-header": "^1.8.8",
