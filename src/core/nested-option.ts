@@ -1,7 +1,7 @@
 import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import { getElement } from './utils';
+import { getElement, clearArrayValue } from './utils';
 
 import render from 'devextreme/core/renderer';
 import * as events from 'devextreme/events';
@@ -59,7 +59,9 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     protected _setOption(name: string, value: any) {
         if (this.isLinked) {
-            this.instance.option(this._fullOptionPath() + name, value);
+            const fullPath = this._fullOptionPath() + name;
+            clearArrayValue(this.removedOptions, fullPath);
+            this.instance.option(fullPath, value);
         } else {
             this._initialOptions[name] = value;
         }

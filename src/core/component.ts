@@ -21,6 +21,7 @@ import { DxTemplateDirective } from './template';
 import { IDxTemplateHost, DxTemplateHost } from './template-host';
 import { EmitterHelper, NgEventsStrategy } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
+import { clearArrayValue } from './utils';
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as events from 'devextreme/events';
 
@@ -142,6 +143,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _setOption(name: string, value: any) {
+        clearArrayValue(this.removedOptions, name);
         this.lockWidgetUpdate();
 
         if (!this._shouldOptionChange(name, value)) {
@@ -232,7 +234,9 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     resetOptions() {
         if (this.instance) {
             this.removedOptions.forEach(option => {
-                this.instance.resetOption(option);
+                if (option) {
+                    this.instance.resetOption(option);
+                }
             });
             this.removedOptions = [];
         }
