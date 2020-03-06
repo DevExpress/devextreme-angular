@@ -1,5 +1,4 @@
 var gulp = require('gulp');
-var runSequence = require("run-sequence");
 var path = require('path');
 var typescript = require('gulp-typescript');
 var tslint = require('gulp-tslint');
@@ -151,6 +150,34 @@ gulp.task('npm.content', gulp.series('build.components', function() {
 
 gulp.task('npm.pack', gulp.series('npm.content', shell.task(['npm pack'], { cwd: buildConfig.npm.distPath })));
 
+//------------TSLint------------
+
+gulp.task('lint', function() {
+    return gulp.src([buildConfig.components.tsSourcesGlob]
+            .concat(buildConfig.components.tsTestSrc)
+            .concat(buildConfig.examples.srcFilesPattern)
+            .concat(buildConfig.tools.srcFilesPattern)
+        )
+        .pipe(tslint({
+            formatter: 'prose',
+            tslint: require('tslint').default,
+            rulesDirectory: null,
+            configuration: 'tslint.json'
+        }))
+        .pipe(tslint.report());
+});
+
+
+//------------Main------------
+
+var buildTask = gulp.series(
+    'build.tools',
+    'build.components'
+);
+
+gulp.task('build', buildTask);
+gulp.task('default', buildTask);
+
 
 //------------Testing------------
 
@@ -193,13 +220,6 @@ var getKarmaConfig = function(testsPath) {
     });
 };
 
-gulp.task('test.components', function(done) {
-    runSequence(
-        'test.components.server',
-        'test.components.client',
-        done);
-});
-
 gulp.task('test.components.client', gulp.series('build.tests', function(done) {
     new karmaServer(getKarmaConfig('./karma.test.shim.js'), done).start();
 }));
@@ -207,6 +227,8 @@ gulp.task('test.components.client', gulp.series('build.tests', function(done) {
 gulp.task('test.components.server', gulp.series('build.tests', function(done) {
     new karmaServer(getKarmaConfig('./karma.server.test.shim.js'), done).start();
 }));
+
+gulp.task('test.components', gulp.series('test.components.server', 'test.components.client'));
 
 gulp.task('test.components.client.debug', function(done) {
     var config = getKarmaConfig('./karma.test.shim.js');
@@ -240,50 +262,12 @@ gulp.task('test.tools', function(done) {
         }));
 });
 
-gulp.task('run.tests', function(done) {
-    runSequence(
-        ['test.tools', 'test.components'],
-        'lint',
-        done);
-});
+gulp.task('run.tests', gulp.series(gulp.parallel('test.tools', 'test.components')));
 
-gulp.task('test', function(done) {
-    runSequence(
-        'build', 'build.tests', 'run.tests',
-        done);
-});
+gulp.task('test', gulp.series('build', 'build.tests', 'run.tests'));
 
 gulp.task('watch.test', function(done) {
     new karmaServer({
         configFile: __dirname + '/karma.conf.js'
     }, done).start();
 });
-
-
-//------------TSLint------------
-
-gulp.task('lint', function() {
-    return gulp.src([buildConfig.components.tsSourcesGlob]
-            .concat(buildConfig.components.tsTestSrc)
-            .concat(buildConfig.examples.srcFilesPattern)
-            .concat(buildConfig.tools.srcFilesPattern)
-        )
-        .pipe(tslint({
-            formatter: 'prose',
-            tslint: require('tslint').default,
-            rulesDirectory: null,
-            configuration: 'tslint.json'
-        }))
-        .pipe(tslint.report());
-});
-
-
-//------------Main------------
-
-var buildTask = gulp.series(
-    'build.tools',
-    'build.components'
-);
-
-gulp.task('build', buildTask);
-gulp.task('default', buildTask);
