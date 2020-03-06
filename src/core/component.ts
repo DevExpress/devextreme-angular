@@ -21,7 +21,6 @@ import { DxTemplateDirective } from './template';
 import { IDxTemplateHost, DxTemplateHost } from './template-host';
 import { EmitterHelper, NgEventsStrategy } from './events-strategy';
 import { WatcherHelper } from './watcher-helper';
-import { clearArrayValue } from './utils';
 import * as domAdapter from 'devextreme/core/dom_adapter';
 import * as events from 'devextreme/events';
 
@@ -52,7 +51,8 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     instance: any;
     isLinked = true;
     changedOptions = {};
-    removedOptions = [];
+    removedNestedComponents = [];
+    recreatedNestedComponents: any[];
     widgetUpdateLocked = false;
 
     private _initTemplates() {
@@ -143,7 +143,6 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _setOption(name: string, value: any) {
-        clearArrayValue(this.removedOptions, name);
         this.lockWidgetUpdate();
 
         if (!this._shouldOptionChange(name, value)) {
@@ -173,7 +172,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _destroyWidget() {
-        this.removedOptions = [];
+        this.removedNestedComponents = [];
         if (this.instance) {
             let element = this.instance.element();
             events.triggerHandler(element, 'dxremove', { _angularIntegration: true });
@@ -220,6 +219,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     ngAfterViewInit() {
         this._initTemplates();
         this.instance.endUpdate();
+        this.recreatedNestedComponents = [];
     }
 
     applyOptions() {
@@ -233,13 +233,28 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
     resetOptions() {
         if (this.instance) {
-            this.removedOptions.forEach(option => {
-                if (option) {
+            this.removedNestedComponents.forEach(option => {
+                if (option && !this.isRecreated(option)) {
                     this.instance.resetOption(option);
                 }
             });
-            this.removedOptions = [];
+            this.removedNestedComponents = [];
+            this.recreatedNestedComponents = [];
         }
+    }
+
+    isRecreated(name: string): boolean {
+        if (!this.recreatedNestedComponents && !this.recreatedNestedComponents.length) {
+            return;
+        }
+
+        for (let i = 0; i < this.recreatedNestedComponents.length; i++) {
+            const fullPath = this.recreatedNestedComponents[i].getFullPath();
+            if (fullPath === name) {
+                return true;
+            }
+        }
+        return false;
     }
 
     setTemplate(template: DxTemplateDirective) {

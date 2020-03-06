@@ -1,7 +1,7 @@
 import { QueryList, ElementRef, Renderer2, EventEmitter } from '@angular/core';
 
 import { DX_TEMPLATE_WRAPPER_CLASS } from './template';
-import { getElement, clearArrayValue } from './utils';
+import { getElement } from './utils';
 
 import render from 'devextreme/core/renderer';
 import * as events from 'devextreme/events';
@@ -11,8 +11,9 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 export interface INestedOptionContainer {
     instance: any;
     isLinked: boolean;
-    removedOptions: string[];
+    removedNestedComponents: string[];
     optionChangedHandlers: EventEmitter<any>;
+    recreatedNestedComponents: any[];
 }
 
 export interface IOptionPathGetter { (): string; }
@@ -60,7 +61,6 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     protected _setOption(name: string, value: any) {
         if (this.isLinked) {
             const fullPath = this._fullOptionPath() + name;
-            clearArrayValue(this.removedOptions, fullPath);
             this.instance.option(fullPath, value);
         } else {
             this._initialOptions[name] = value;
@@ -68,8 +68,14 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     }
 
     protected _addRemovedOption(name: string) {
-        if (this.instance && this.removedOptions) {
-            this.removedOptions.push(name);
+        if (this.instance && this.removedNestedComponents) {
+            this.removedNestedComponents.push(name);
+        }
+    }
+
+    protected _addRecreatedComponent() {
+        if (this.instance && this.recreatedNestedComponents) {
+            this.recreatedNestedComponents.push({ getFullPath: () =>  this._fullOptionPath().slice(0, -1) });
         }
     }
 
@@ -91,8 +97,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         return this._host && this._host.instance;
     }
 
-    get removedOptions() {
-        return this._host && this._host.removedOptions;
+    get removedNestedComponents() {
+        return this._host && this._host.removedNestedComponents;
+    }
+
+    get recreatedNestedComponents() {
+        return this._host && this._host.recreatedNestedComponents;
     }
 
     get isLinked() {
