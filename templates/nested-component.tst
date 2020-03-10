@@ -4,6 +4,7 @@
 <#?#>
 import {
     Component,<#? !it.isCollection #>
+    OnInit,
     OnDestroy,<#?#>
     NgModule,
     Host,<#? it.hasTemplate #>
@@ -45,8 +46,8 @@ import { <#= it.baseClass #> } from '<#= it.basePath #>';
         '<#= input.name #>'<#? i < it.inputs.length-1 #>,<#?#><#~#>
     ]<#?#>
 })
-export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit,<#? !it.isCollection #> OnDestroy,<#?#>
-    IDxTemplateHost<#?#><#? !it.isCollection && !it.hasTemplate #> implements OnDestroy <#?#> {<#~ it.properties :prop:i #>
+export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasTemplate #> implements AfterViewInit,<#? !it.isCollection #> OnDestroy, OnInit,<#?#>
+    IDxTemplateHost<#?#><#? !it.isCollection && !it.hasTemplate #> implements OnDestroy, OnInit <#?#> {<#~ it.properties :prop:i #>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -106,8 +107,12 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     }
 <#?#>
 <#? !it.isCollection #>
+    ngOnInit() {
+        this._addRecreatedComponent();
+    }
+
     ngOnDestroy() {
-        this._addRemovedOption(this._fullOptionPath().slice(0, -1));
+        this._addRemovedOption(this._getOptionPath());
     }
 <#?#>
 }

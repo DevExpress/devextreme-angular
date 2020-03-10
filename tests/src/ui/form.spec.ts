@@ -25,6 +25,8 @@ class TestContainerComponent {
         name: 'Unknown',
         date: new Date()
     };
+    labelValues = [{ name: 'label1' }, { name: 'label2' }];
+    formData1 = { labels: this.labelValues };
     @ViewChild(DxFormComponent) formComponent: DxFormComponent;
 
     validateForm() {
@@ -174,7 +176,7 @@ describe('DxForm', () => {
                                 <dxi-validation-rule type="custom" [validationCallback]="validateForm">
                                 </dxi-validation-rule>
                             </dxi-item>
-                        </dxi-item>      
+                        </dxi-item>
                     </dx-form>
                 `
             }
@@ -185,6 +187,60 @@ describe('DxForm', () => {
 
         let formInstance = getWidget(fixture);
         expect(formInstance.validate()).toBeDefined();
+    });
+
+    it('should not call resetOption for rerendered nested collection components', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form [formData]="formData1">
+                        <dxi-item itemType="group"
+                            name="label-container">
+                            <dxi-item [dataField]="'labels[' + i + ']'" *ngFor="let labelValue of labelValues; let i = index">
+                                <dxo-label [text]="labelValue.name"></dxo-label>
+                            </dxi-item>
+                        </dxi-item>
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+        let formInstance = getWidget(fixture);
+        let spy = spyOn(formInstance, 'resetOption');
+
+        fixture.componentInstance.labelValues = [{ name: 'label1' }, { name: 'label2' }, { name: 'label3' }];
+        fixture.detectChanges();
+
+        expect(spy.calls.count()).toBe(0);
+        expect(formInstance.option('items[0].items[0].label.text')).toBe('label1');
+    });
+
+    it('should not call resetOption for rerendered nested components', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form [formData]="formData1">
+                        <dxi-item [dataField]="'labels[' + i + ']'"  *ngFor="let labelValue of labelValues; let i = index">
+                            <dxo-label [text]="labelValue.name"></dxo-label>
+                        </dxi-item>
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let spy = spyOn(formInstance, 'resetOption');
+
+        fixture.componentInstance.labelValues = [{ name: 'label1' }, { name: 'label2' }, { name: 'label3' }];
+        fixture.detectChanges();
+
+        expect(spy.calls.count()).toBe(0);
+        expect(formInstance.option('items[0].label.text')).toBe('label1');
     });
 
     it('should change the value of dxDateBox', () => {
