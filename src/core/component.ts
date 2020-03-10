@@ -51,7 +51,8 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     instance: any;
     isLinked = true;
     changedOptions = {};
-    removedOptions = [];
+    removedNestedComponents = [];
+    recreatedNestedComponents: any[];
     widgetUpdateLocked = false;
 
     private _initTemplates() {
@@ -171,7 +172,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     protected _destroyWidget() {
-        this.removedOptions = [];
+        this.removedNestedComponents = [];
         if (this.instance) {
             let element = this.instance.element();
             events.triggerHandler(element, 'dxremove', { _angularIntegration: true });
@@ -218,6 +219,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     ngAfterViewInit() {
         this._initTemplates();
         this.instance.endUpdate();
+        this.recreatedNestedComponents = [];
     }
 
     applyOptions() {
@@ -231,11 +233,19 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
     resetOptions() {
         if (this.instance) {
-            this.removedOptions.forEach(option => {
-                this.instance.resetOption(option);
+            this.removedNestedComponents.forEach(option => {
+                if (option && !this.isRecreated(option)) {
+                    this.instance.resetOption(option);
+                }
             });
-            this.removedOptions = [];
+            this.removedNestedComponents = [];
+            this.recreatedNestedComponents = [];
         }
+    }
+
+    isRecreated(name: string): boolean {
+        return this.recreatedNestedComponents &&
+                this.recreatedNestedComponents.some(nestedComponent => nestedComponent.getOptionPath() === name);
     }
 
     setTemplate(template: DxTemplateDirective) {
