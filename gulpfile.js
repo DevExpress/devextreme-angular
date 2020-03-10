@@ -99,7 +99,7 @@ gulp.task('build.license-headers', function() {
         '\n' // This new line is necessary to keep the header after TS compilation
         ].join('\n');
 
-    return gulp.src(path.join(config.outputPath, config.srcFilesPattern))
+    return gulp.src(`${config.outputPath}/${config.srcFilesPattern}`)
         .pipe(header(banner, data))
         .pipe(gulp.dest(config.outputPath));
 });
@@ -126,7 +126,7 @@ gulp.task('build.copy-sources', gulp.series('clean.dist', function() {
 gulp.task('build.remove-unusable-variable', function() {
     var config = buildConfig.npm;
 
-    return gulp.src(path.join(config.distPath, '**/*.js'))
+    return gulp.src(config.distPath + '/**/*.js')
         .pipe(replace(/DevExpress\.[\w\.]+/g, 'Object'))
         .pipe(gulp.dest(config.distPath));
 });
@@ -144,7 +144,7 @@ gulp.task('npm.content', gulp.series('build.components', function() {
     var npmConfig = buildConfig.npm,
         cmpConfig = buildConfig.components;
 
-    return gulp.src([path.join(cmpConfig.outputPath, '**/collection.json'), ...npmConfig.content])
+    return gulp.src([cmpConfig.outputPath + '/**/collection.json', ...npmConfig.content])
         .pipe(gulp.dest(npmConfig.distPath));
 }));
 
