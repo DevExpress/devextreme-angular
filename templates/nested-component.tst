@@ -112,7 +112,7 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     }
 
     ngOnDestroy() {
-        this._addRemovedOption(this._fullOptionPath().slice(0, -1));
+        this._addRemovedOption(this._getFullOptionPath());
     }
 <#?#>
 }

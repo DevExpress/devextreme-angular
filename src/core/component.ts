@@ -244,17 +244,8 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     isRecreated(name: string): boolean {
-        if (!this.recreatedNestedComponents && !this.recreatedNestedComponents.length) {
-            return;
-        }
-
-        for (let i = 0; i < this.recreatedNestedComponents.length; i++) {
-            const fullPath = this.recreatedNestedComponents[i].getFullPath();
-            if (fullPath === name) {
-                return true;
-            }
-        }
-        return false;
+        return this.recreatedNestedComponents &&
+                this.recreatedNestedComponents.some(nestedComponent => nestedComponent.getFullPath() === name);
     }
 
     setTemplate(template: DxTemplateDirective) {

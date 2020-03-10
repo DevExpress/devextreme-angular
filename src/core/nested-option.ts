@@ -75,8 +75,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     protected _addRecreatedComponent() {
         if (this.instance && this.recreatedNestedComponents) {
-            this.recreatedNestedComponents.push({ getFullPath: () =>  this._fullOptionPath().slice(0, -1) });
+            this.recreatedNestedComponents.push({ getFullPath: () =>  this._getFullOptionPath() });
         }
+    }
+
+    protected _getFullOptionPath() {
+        return this._hostOptionPath() + this._optionPath;
     }
 
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
@@ -148,7 +152,7 @@ export abstract class NestedOption extends BaseNestedOption {
     }
 
     protected _fullOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '.';
+        return this._getFullOptionPath() + '.';
     }
 }
 
@@ -161,7 +165,7 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
     _index: number;
 
     protected _fullOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
+        return this._getFullOptionPath() + '[' + this._index + ']' + '.';
     }
 
     get _value() {
