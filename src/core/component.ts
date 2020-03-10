@@ -245,7 +245,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
 
     isRecreated(name: string): boolean {
         return this.recreatedNestedComponents &&
-                this.recreatedNestedComponents.some(nestedComponent => nestedComponent.getFullPath() === name);
+                this.recreatedNestedComponents.some(nestedComponent => nestedComponent.getOptionPath() === name);
     }
 
     setTemplate(template: DxTemplateDirective) {
