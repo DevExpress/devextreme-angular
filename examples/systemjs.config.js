@@ -62,7 +62,7 @@
         main: 'index'
       },
       'devextreme/events': {
-          main: 'index'
+        main: 'index'
       },
     },
     packageConfigPaths: [
