@@ -58,7 +58,8 @@ module.exports = {
         srcFilesPattern: '**/*.ts',
         tsTestSrc: ['tests/src/**/*.spec.ts', 'tests/src/**/component-names.ts'],
         testsPath: 'tests/dist',
-        sourcePath: 'src',
+        sourcesGlobs: ['src/**/*.*', './package.json'],
+        tsSourcesGlob: 'src/**/*.ts',
         outputPath: 'dist'
     },
     examples: {	
