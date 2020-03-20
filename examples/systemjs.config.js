@@ -57,7 +57,13 @@
       },
       'devextreme': {
         defaultExtension: 'js'
-      }
+      },
+      'devextreme/events/utils': {
+        main: 'index'
+      },
+      'devextreme/events': {
+        main: 'index'
+      },
     },
     packageConfigPaths: [
       '../npm/*/package.json',
