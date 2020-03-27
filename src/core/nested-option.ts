@@ -11,8 +11,9 @@ const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 export interface INestedOptionContainer {
     instance: any;
     isLinked: boolean;
-    removedOptions: string[];
+    removedNestedComponents: string[];
     optionChangedHandlers: EventEmitter<any>;
+    recreatedNestedComponents: any[];
 }
 
 export interface IOptionPathGetter { (): string; }
@@ -59,16 +60,27 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     protected _setOption(name: string, value: any) {
         if (this.isLinked) {
-            this.instance.option(this._fullOptionPath() + name, value);
+            const fullPath = this._fullOptionPath() + name;
+            this.instance.option(fullPath, value);
         } else {
             this._initialOptions[name] = value;
         }
     }
 
     protected _addRemovedOption(name: string) {
-        if (this.instance && this.removedOptions) {
-            this.removedOptions.push(name);
+        if (this.instance && this.removedNestedComponents) {
+            this.removedNestedComponents.push(name);
         }
+    }
+
+    protected _addRecreatedComponent() {
+        if (this.instance && this.recreatedNestedComponents) {
+            this.recreatedNestedComponents.push({ getOptionPath: () =>  this._getOptionPath() });
+        }
+    }
+
+    protected _getOptionPath() {
+        return this._hostOptionPath() + this._optionPath;
     }
 
     setHost(host: INestedOptionContainer, optionPath: IOptionPathGetter) {
@@ -89,8 +101,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         return this._host && this._host.instance;
     }
 
-    get removedOptions() {
-        return this._host && this._host.removedOptions;
+    get removedNestedComponents() {
+        return this._host && this._host.removedNestedComponents;
+    }
+
+    get recreatedNestedComponents() {
+        return this._host && this._host.recreatedNestedComponents;
     }
 
     get isLinked() {
@@ -136,7 +152,7 @@ export abstract class NestedOption extends BaseNestedOption {
     }
 
     protected _fullOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '.';
+        return this._getOptionPath() + '.';
     }
 }
 
@@ -149,7 +165,7 @@ export abstract class CollectionNestedOption extends BaseNestedOption implements
     _index: number;
 
     protected _fullOptionPath() {
-        return this._hostOptionPath() + this._optionPath + '[' + this._index + ']' + '.';
+        return `${this._getOptionPath()}[${this._index}].`;
     }
 
     get _value() {
