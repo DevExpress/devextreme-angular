@@ -84,6 +84,7 @@ export default class DXComponentMetadataGenerator {
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
+                let subt = `@name ${option.Subt}`;
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
@@ -91,8 +92,9 @@ export default class DXComponentMetadataGenerator {
                     events.push({
                         emit: optionName,
                         subscribe: eventName,
-                        description: option.Description,
-                        type: 'EventEmitter<any>'
+                        type: 'EventEmitter<any>',
+                        isDeprecated: option.IsDeprecated,
+                        subt
                     });
                 } else {
                     let typesDescription = this.getTypesDescription(option);
@@ -104,7 +106,8 @@ export default class DXComponentMetadataGenerator {
                         name: optionName,
                         type: finalizedType,
                         typesDescription: typesDescription,
-                        description: option.Description
+                        isDeprecated: option.IsDeprecated,
+                        subt
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -142,6 +145,7 @@ export default class DXComponentMetadataGenerator {
                 }, []);
 
             let widgetMetadata = {
+                subt: `@name ${widget.Subt}`,
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
@@ -153,7 +157,6 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
                 isDevExpressRequired: isDevExpressRequired,
-                description: widget.Description,
                 nestedComponents: widgetNestedComponents
             };
 
@@ -170,7 +173,7 @@ export default class DXComponentMetadataGenerator {
         return {
             emit: `${name}Change`,
             type: `EventEmitter<${type}>`,
-            description: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
+            subt: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
         };
     }
 
@@ -321,6 +324,7 @@ export default class DXComponentMetadataGenerator {
             path = inflector.dasherize(underscorePlural);
 
         let complexOptionMetadata: any = {
+            subt: `@name ${option.Subt}`,
             className: inflector.camelize(underscoreSelector),
             selector: selector,
             optionName: optionName,

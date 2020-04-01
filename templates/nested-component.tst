@@ -55,10 +55,9 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this._setOption('<#= prop.name #>', value);
     }
 <#~#>
-<#~ it.events :event:i #><#? event.description #>
-    /**
-     * <#= event.description #>
-     */<#?#>
+<#~ it.events :event:i #>
+    <#? event.isDeprecated #>/** @deprecated */<#?#>
+    <#? event.subt #>/** <#= event.subt #> */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
     protected get _optionPath() {
