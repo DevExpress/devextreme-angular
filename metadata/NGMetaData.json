@@ -110,7 +110,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -171,7 +171,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "multiple": {
           "PrimitiveTypes": [
@@ -414,7 +414,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "icon": {
               "PrimitiveTypes": [
@@ -554,7 +554,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the element the action sheet popover points at. Applies only if usePopover is true."
         },
@@ -726,7 +727,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -1164,7 +1165,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -1224,7 +1225,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -2012,7 +2013,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -2235,7 +2237,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -2385,7 +2387,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -2632,7 +2634,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -3160,7 +3163,7 @@
           "IsCollection": true,
           "IsFunc": true,
           "SingularName": "disabledDate",
-          "Description": "Specifies dates to be disabled."
+          "Description": "Specifies dates that users cannot select."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -5410,7 +5413,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -5471,7 +5474,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -6510,7 +6513,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -7956,7 +7960,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -8010,7 +8014,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -8683,7 +8687,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -9093,6 +9098,12 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -9116,6 +9127,12 @@
             "boolean"
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
+        },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
         },
         "stylingMode": {
           "PrimitiveTypes": [
@@ -9552,7 +9569,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the context menu."
         },
@@ -10003,7 +10021,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "texts": {
               "Description": "Configures the texts of export commands, buttons, and hints.",
@@ -10222,7 +10240,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
@@ -10239,7 +10258,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the index of the column focused initially or currently in the data row area."
+          "Description": "The index of the column that contains the focused data cell."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -10478,14 +10497,15 @@
           ],
           "IsCollection": true,
           "SingularName": "keyExpr",
-          "Description": "Specifies which data field provides keys for data items. Applies only if data is a simple array."
+          "Description": "Specifies the key property (or properties) that provide(s) key values to access data items. Each key value must be unique. This option applies only if data is a simple array."
         },
         "loadPanel": {
           "Description": "Configures the load panel.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Enables displaying the load panel automatically."
             },
@@ -10696,7 +10716,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused cell changes."
+          "Description": "A function that is executed after the focused cell changes. Applies only to cells in data or group rows."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
@@ -10704,7 +10724,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused cell changes."
+          "Description": "A function that is executed before the focused cell changes. Applies only to cells in data or group rows."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
@@ -10712,7 +10732,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed after the focused row changes. Applies only to data or group rows. focusedRowEnabled should be true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
@@ -10720,7 +10740,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed before the focused row changes. Applies only to data or group rows. focusedRowEnabled should be true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -10887,6 +10907,9 @@
           "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
@@ -10920,7 +10943,8 @@
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the pager is visible."
             }
@@ -10953,7 +10977,8 @@
         },
         "remoteOperations": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Notifies the DataGrid of the server's data processing operations.",
           "Options": {
@@ -11020,7 +11045,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows dropping a row inside another row."
+              "Description": "Allows users to drop a row inside another row."
             },
             "allowReordering": {
               "PrimitiveTypes": [
@@ -11037,14 +11062,16 @@
             "boundary": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a DOM element that limits the dragging area."
             },
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a custom container in which the draggable row should be rendered."
             },
@@ -11247,7 +11274,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -11854,7 +11882,7 @@
           "IsCollection": true,
           "IsFunc": true,
           "SingularName": "disabledDate",
-          "Description": "Specifies dates to be disabled. Applies only if pickerType is \"calendar\"."
+          "Description": "Specifies dates that users cannot select. Applies only if pickerType is \"calendar\"."
         },
         "displayFormat": {
           "PrimitiveTypes": [
@@ -12795,7 +12823,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             }
           }
         },
@@ -12958,7 +12986,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the name of a data source field or an expression that provides a parent node ID for a node."
+              "Description": "Specifies the name of a data source field or an expression that provides a parent node key for a node."
             },
             "styleExpr": {
               "PrimitiveTypes": [
@@ -13348,7 +13376,8 @@
         "boundary": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a DOM element that limits the dragging area."
         },
@@ -13361,7 +13390,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a custom container in which the draggable item should be rendered."
         },
@@ -13648,7 +13678,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a CSS selector for the element in which the drawer should be rendered. Applies only when the openedStateMode is \"overlap\"."
         },
@@ -13839,7 +13870,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -14267,7 +14298,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -15765,7 +15796,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -15819,7 +15850,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -16852,7 +16883,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -17080,7 +17112,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -17584,12 +17616,6 @@
             }
           }
         },
-        "rtlEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Switches the widget to a right-to-left representation."
-        },
         "scaleType": {
           "PrimitiveTypes": [
             "string"
@@ -18000,7 +18026,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -18054,7 +18080,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -18741,7 +18767,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -19031,7 +19058,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -19091,7 +19118,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "menuItems": {
           "ItemPrimitiveTypes": [
@@ -19584,7 +19611,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the widget's container."
         },
@@ -19995,6 +20023,12 @@
           ],
           "Description": "Specifies or indicates whether the editor's value is valid."
         },
+        "itemCenteringEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
+        },
         "items": {
           "ItemPrimitiveTypes": [
             "any"
@@ -20007,7 +20041,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -21303,7 +21337,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -21559,7 +21593,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -21607,7 +21641,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -22245,7 +22279,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -22299,7 +22333,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -23128,7 +23162,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -23335,7 +23370,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             }
           }
         },
@@ -23727,7 +23762,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether or not the widget uses native scrolling."
             }
@@ -25229,7 +25265,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -25290,7 +25326,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -26151,7 +26187,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -27037,9 +27074,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -27280,7 +27318,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the widget."
         },
@@ -27309,7 +27348,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a toolbar item should be disabled."
+              "Description": "Specifies whether the toolbar item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -27426,9 +27465,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -27471,7 +27511,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not to display the widget in full-screen mode."
+          "Description": "Specifies whether to display the Popup in full-screen mode."
         },
         "height": {
           "PrimitiveTypes": [
@@ -27707,7 +27747,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a toolbar item should be disabled."
+              "Description": "Specifies whether the toolbar item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -28053,7 +28093,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -28519,7 +28559,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -28573,7 +28613,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -30360,7 +30400,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -30626,7 +30666,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -30680,7 +30720,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -31463,7 +31503,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -32466,7 +32507,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not the widget can respond to user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -32763,7 +32804,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -33265,7 +33306,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -33893,14 +33934,16 @@
         "boundary": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a DOM element that limits the dragging area."
         },
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a custom container in which the draggable item should be rendered."
         },
@@ -34141,7 +34184,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -34430,7 +34473,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -34996,7 +35040,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -35327,7 +35371,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -35375,7 +35419,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -35713,7 +35757,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -36915,8 +36959,10 @@
         "height": {
           "PrimitiveTypes": [
             "number",
+            "Function",
             "string"
           ],
+          "IsFunc": true,
           "Description": "Specifies the widget's height."
         },
         "hint": {
@@ -36957,7 +37003,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "heightRatio": {
               "PrimitiveTypes": [
@@ -37461,7 +37507,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -37680,9 +37726,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -37903,7 +37950,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the widget."
         },
@@ -38530,7 +38578,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
@@ -38547,7 +38596,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the index of the column focused initially or currently in the data row area."
+          "Description": "The index of the column that contains the focused data cell."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -38711,14 +38760,15 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for nodes."
+          "Description": "Specifies the key property (or properties) that provide(s) key values to access data items. Each key value must be unique."
         },
         "loadPanel": {
           "Description": "Configures the load panel.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Enables displaying the load panel automatically."
             },
@@ -38881,7 +38931,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused cell changes."
+          "Description": "A function that is executed after the focused cell changes. Applies only to cells in data rows."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
@@ -38889,7 +38939,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused cell changes."
+          "Description": "A function that is executed before the focused cell changes. Applies only to cells in data rows."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
@@ -38897,7 +38947,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that executed when the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that executed when the focused row changes. Applies only to data rows. focusedRowEnabled should be true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
@@ -38905,7 +38955,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed before the focused row changes. Applies only to data rows. focusedRowEnabled should be true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -39080,6 +39130,9 @@
           "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
@@ -39113,7 +39166,8 @@
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the pager is visible."
             }
@@ -39153,6 +39207,9 @@
           "Description": "Specifies which data field provides parent keys."
         },
         "remoteOperations": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "Description": "Notifies the TreeList of the server's data processing operations. Applies only if data has a plain structure.",
           "Options": {
             "filtering": {
@@ -39206,7 +39263,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows dropping a row inside another row."
+              "Description": "Allows users to drop a row inside another row."
             },
             "allowReordering": {
               "PrimitiveTypes": [
@@ -39223,14 +39280,16 @@
             "boundary": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a DOM element that limits the dragging area."
             },
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a custom container in which the draggable row should be rendered."
             },
@@ -39426,7 +39485,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -39729,7 +39789,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -39783,7 +39843,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -40467,7 +40527,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -41097,7 +41158,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -41423,7 +41484,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -41477,7 +41538,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "[important] Since v10, Safari browser supports API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -42427,7 +42488,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -44626,7 +44688,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -44673,7 +44735,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -44733,7 +44795,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -44780,7 +44842,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -45413,7 +45475,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the menu item is disabled."
+          "Description": "Specifies whether the menu item responds to user interaction."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -46026,7 +46088,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the button is clicked or tapped."
+          "Description": "A function that is executed when the button is clicked or tapped. Not executed if a template is used."
         },
         "template": {
           "PrimitiveTypes": [
@@ -46063,7 +46125,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -46099,90 +46161,96 @@
       }
     },
     "FileManagerContextMenu": {
-      "Description": "",
+      "Description": "Configures the context menu.",
       "Options": {
         "items": {
           "ItemPrimitiveTypes": [
-            "any",
+            "DevExpress.ui.dxFileManagerContextMenuItem",
             "string"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerContextMenuItem"
           ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Configures context menu items' settings.",
-          "Options": {
-            "beginGroup": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether a group separator is displayed over the item."
-            },
-            "closeMenuOnClick": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies if a menu is closed when a user clicks the item."
-            },
-            "disabled": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not the menu item is disabled."
-            },
-            "icon": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the menu item's icon."
-            },
-            "items": {
-              "ItemPrimitiveTypes": [
-                "DevExpress.ui.dxContextMenuItem"
-              ],
-              "ItemComplexTypes": [
-                "ContextMenuItem"
-              ],
-              "IsCollection": true,
-              "SingularName": "item",
-              "Description": "Specifies nested menu items."
-            },
-            "name": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the context menu item's name."
-            },
-            "selectable": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not a user can select a menu item."
-            },
-            "selected": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not the item is selected."
-            },
-            "template": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsTemplate": true,
-              "Description": "Specifies a template that should be used to render this item only."
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the text inserted into the item element."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies the context menu item's visibility."
-            }
-          }
+          "Description": "Configures context menu items' settings."
+        }
+      }
+    },
+    "FileManagerContextMenuItem": {
+      "Description": "Configures the context menu item.",
+      "Options": {
+        "beginGroup": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a group separator is displayed over the item."
+        },
+        "closeMenuOnClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies if a menu is closed when a user clicks the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the menu item responds to user interaction."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the menu item's icon."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerContextMenuItem"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerContextMenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures settings for context menu items' subitems."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the context menu item's name."
+        },
+        "selectable": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a user can select a menu item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the item is selected."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text inserted into the item element."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies the context menu item's visibility."
         }
       }
     },
@@ -46228,7 +46296,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -46940,7 +47008,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "A Boolean value specifying whether or not the tab can respond to user interaction."
+              "Description": "Specifies whether the tab responds to user interaction."
             },
             "icon": {
               "PrimitiveTypes": [
@@ -47009,7 +47077,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47141,7 +47209,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the container in which to place the toolbar."
         },
@@ -47171,7 +47240,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "formatName": {
           "PrimitiveTypes": [
@@ -47292,7 +47361,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47357,7 +47426,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the menu item is disabled."
+          "Description": "Specifies whether the menu item responds to user interaction."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -47415,7 +47484,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47444,7 +47513,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47514,6 +47583,7 @@
       }
     },
     "SchedulerAppointment": {
+      "Description": "An object that describes an appointment in the Scheduler widget.",
       "Options": {
         "allDay": {
           "PrimitiveTypes": [
@@ -47531,7 +47601,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether an appointment should be disabled."
+          "Description": "Specifies whether the appointment responds to user interaction."
         },
         "endDate": {
           "PrimitiveTypes": [
@@ -47602,7 +47672,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47650,7 +47720,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47704,7 +47774,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47770,7 +47840,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "heightRatio": {
           "PrimitiveTypes": [
@@ -47823,7 +47893,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -48404,7 +48474,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the button is clicked or tapped."
+          "Description": "A function that is executed when the button is clicked or tapped. Not executed if a template is used."
         },
         "template": {
           "PrimitiveTypes": [
@@ -48435,7 +48505,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "expanded": {
           "PrimitiveTypes": [
@@ -51015,6 +51085,7 @@
           "PrimitiveTypes": [
             "Element",
             "JQuery",
+            "string",
             "Window"
           ],
           "Description": "The element within which the widget is positioned."
@@ -51083,6 +51154,7 @@
           "PrimitiveTypes": [
             "Element",
             "JQuery",
+            "string",
             "Window"
           ],
           "Description": "The target element that the widget is positioned against."
