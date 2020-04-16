@@ -1,5 +1,5 @@
 
-import { NgModule, Inject, NgZone, Optional } from '@angular/core';
+import { NgModule, Inject, NgZone, Optional, VERSION } from '@angular/core';
 import { XhrFactory } from '@angular/common/http';
 import * as httpRequest from 'devextreme/core/http_request';
 import { DOCUMENT } from '@angular/common';
@@ -21,6 +21,10 @@ readyCallbacks.inject({
 });
 
 let doInjections = (document: any, ngZone: NgZone, xhrFactory: XhrFactory) => {
+    if (Number(VERSION.major) < 7) {
+        console.warn('Your version of Angular is not supported (https://supportcenter.devexpress.com/ticket/details/t879496). Please update your project to version 7 or later. Please refer to the Angular Update Guide for more information: https://update.angular.io');
+    }
+
     domAdapter.inject({
         _document: document,
 
