@@ -13,7 +13,8 @@
     "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
-    "pack": "npm run gulp -- npm.pack"
+    "pack": "npm run gulp -- npm.pack",
+    "update-integration-meta": "dx-tools update-meta --output-path=./metadata/NGMetaData.json --version=20_1"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
