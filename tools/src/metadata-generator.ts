@@ -80,11 +80,12 @@ export default class DXComponentMetadataGenerator {
                 changeEvents = [],
                 properties = [],
                 isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1,
-                isDevExpressRequired = false;
+                isDevExpressRequired = false,
+                widgetSubt = widget.Subt ? `@name ${widget.Subt}` : undefined;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
-                let subt = `@name ${option.Subt}`;
+                let optionSubt = option.Subt ? `@name ${option.Subt}` : undefined;
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
@@ -94,7 +95,7 @@ export default class DXComponentMetadataGenerator {
                         subscribe: eventName,
                         type: 'EventEmitter<any>',
                         isDeprecated: option.IsDeprecated,
-                        subt
+                        subt: optionSubt
                     });
                 } else {
                     let typesDescription = this.getTypesDescription(option);
@@ -107,7 +108,7 @@ export default class DXComponentMetadataGenerator {
                         type: finalizedType,
                         typesDescription: typesDescription,
                         isDeprecated: option.IsDeprecated,
-                        subt
+                        subt: optionSubt
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -145,7 +146,7 @@ export default class DXComponentMetadataGenerator {
                 }, []);
 
             let widgetMetadata = {
-                subt: `@name ${widget.Subt}`,
+                subt: widgetSubt,
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
@@ -321,10 +322,11 @@ export default class DXComponentMetadataGenerator {
             prefix = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX).toLocaleLowerCase() + '_',
             underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
             selector = inflector.dasherize(underscoreSelector),
-            path = inflector.dasherize(underscorePlural);
+            path = inflector.dasherize(underscorePlural),
+            optionSubt = option.Subt ? `@name ${option.Subt}` : undefined;
 
         let complexOptionMetadata: any = {
-            subt: `@name ${option.Subt}`,
+            subt: optionSubt,
             className: inflector.camelize(underscoreSelector),
             selector: selector,
             optionName: optionName,
