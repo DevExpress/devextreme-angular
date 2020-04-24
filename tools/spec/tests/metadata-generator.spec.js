@@ -125,7 +125,6 @@ describe("metadata-generator", function() {
         });
         
         it("should generate proper widget subt", function() {
-            console.log(metas.DxTestWidget);
             expect(metas.DxTestWidget.subt).toBe('@name dxTestWidget');
         });
 
