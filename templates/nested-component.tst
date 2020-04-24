@@ -56,8 +56,8 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     }
 <#~#>
 <#~ it.events :event:i #>
-    <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.subt #>/** <#= event.subt #> */<#?#>
+<#? event.isDeprecated #>    /** @deprecated */<#?#>
+<#? event.subt #>    /** <#= event.subt #> */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
     protected get _optionPath() {

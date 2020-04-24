@@ -87,8 +87,8 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
 export class <#= it.className #>Component extends <#= baseClass #> <#? implementedInterfaces.length #>implements <#= implementedInterfaces.join(', ') #> <#?#>{
     instance: <#= it.className #>;
 <#~ it.properties :prop:i #>
-    <#? prop.isDeprecated #>/** @deprecated */<#?#>
-    <#? prop.subt #>/** <#= prop.subt #> */<#?#>
+<#? prop.isDeprecated #>    /** @deprecated */<#?#>
+<#? prop.subt #>    /** <#= prop.subt #> */<#?#>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -99,8 +99,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#?#><#~#>
 <#~ it.events :event:i #>
-    <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.subt #>/** <#= event.subt #> */<#?#>
+<#? event.isDeprecated #>    /** @deprecated */<#?#>
+<#? event.subt #>    /** <#= event.subt #> */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
 
