@@ -36,7 +36,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxAccordionItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "AccordionItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -106,7 +110,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -125,7 +129,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -167,7 +171,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "multiple": {
           "PrimitiveTypes": [
@@ -348,7 +352,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxActionSheetItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "ActionSheetItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -406,7 +414,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "icon": {
               "PrimitiveTypes": [
@@ -428,7 +436,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -546,7 +554,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the element the action sheet popover points at. Applies only if usePopover is true."
         },
@@ -648,6 +657,15 @@
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down button."
         },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -718,7 +736,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -731,7 +749,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -887,9 +905,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -1156,7 +1175,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -1216,7 +1235,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -2004,7 +2023,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -2149,7 +2169,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxBoxItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "BoxItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -2223,7 +2247,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -2248,7 +2272,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -2373,7 +2397,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -2620,7 +2644,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -3148,7 +3173,7 @@
           "IsCollection": true,
           "IsFunc": true,
           "SingularName": "disabledDate",
-          "Description": "Specifies dates to be disabled."
+          "Description": "Specifies dates that users cannot select."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -3745,6 +3770,20 @@
                 }
               }
             },
+            "customPosition": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "Description": "Specifies the position of the argument axis on the value axis."
+            },
+            "customPositionAxis": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the name of a value axis on which the argument axis should be positioned. Applies only to multi-axis charts."
+            },
             "discreteAxisDivisionMode": {
               "PrimitiveTypes": [
                 "string"
@@ -4143,6 +4182,12 @@
                   "Description": "Specifies the time interval measured in years. Accepts integer values. Available only for an axis/scale that displays date-time values."
                 }
               }
+            },
+            "offset": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shift in pixels of the argument axis."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -5398,7 +5443,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -5459,7 +5504,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -6498,7 +6543,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -6879,6 +6925,14 @@
                   "Description": "Specifies the width of constant lines in pixels."
                 }
               }
+            },
+            "customPosition": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "Description": "Specifies the position of the value axis on the argument axis."
             },
             "discreteAxisDivisionMode": {
               "PrimitiveTypes": [
@@ -7280,6 +7334,12 @@
                 "string"
               ],
               "Description": "Specifies the name of the value axis."
+            },
+            "offset": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shift in pixels of the value axis."
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -7944,7 +8004,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -7998,7 +8058,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -8671,7 +8731,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -8868,6 +8929,15 @@
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down button."
         },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
+        },
         "editAlphaChannel": {
           "PrimitiveTypes": [
             "boolean"
@@ -9030,9 +9100,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -9081,6 +9152,12 @@
           "IsChangeable": true,
           "Description": "Specifies whether or not the drop-down editor is displayed."
         },
+        "openOnFieldClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a user can open the drop-down list by clicking a text field."
+        },
         "placeholder": {
           "PrimitiveTypes": [
             "string"
@@ -9104,6 +9181,12 @@
             "boolean"
           ],
           "Description": "Specifies whether to display the Clear button in the widget."
+        },
+        "showDropDownButton": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the drop-down button is visible."
         },
         "stylingMode": {
           "PrimitiveTypes": [
@@ -9234,8 +9317,10 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxContextMenuItem"
+          ],
+          "ItemComplexTypes": [
+            "ContextMenuItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -9538,7 +9623,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the context menu."
         },
@@ -9561,7 +9647,7 @@
       }
     },
     "dxDataGrid": {
-      "Description": "The DataGrid is a widget that represents data from a local or remote source in the form of a grid. This widget offers such basic features as sorting, grouping, filtering, as well as more advanced capabilities, like state storing, export to Excel, master-detail interface, and many others.",
+      "Description": "The DataGrid is a widget that represents data from a local or remote source in the form of a grid. This widget offers such basic features as sorting, grouping, filtering, as well as more advanced capabilities, like state storing, client-side exporting, master-detail interface, and many others.",
       "Module": "ui/data_grid",
       "Options": {
         "accessKey": {
@@ -9753,8 +9839,9 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
-          "Description": "Customizes data before export. You can use the export.customizeExcelCell function instead."
+          "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -9804,6 +9891,12 @@
               ],
               "IsFunc": true,
               "Description": "Specifies whether a user can update rows. It is called for each data row when defined as a function."
+            },
+            "confirmDelete": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies if confirmation is required when a user deletes a row."
             },
             "form": {
               "PrimitiveTypes": [
@@ -9945,51 +10038,56 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows an end user to export selected rows only."
+              "Description": "Allows users to export selected rows only."
             },
             "customizeExcelCell": {
               "PrimitiveTypes": [
                 "Function"
               ],
+              "IsDeprecated": true,
               "IsFunc": true,
-              "Description": "Customizes an Excel cell after it is created."
+              "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
             },
             "enabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Enables the client-side exporting."
+              "Description": "Adds the Export button to the DataGrid's toolbar."
             },
             "excelFilterEnabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to enable Excel filtering for the exported data in the resulting XLSX file."
+              "IsDeprecated": true,
+              "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
             },
             "excelWrapTextEnabled": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether to enable word wrapping for the exported data in the resulting XLSX file."
+              "IsDeprecated": true,
+              "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
             },
             "fileName": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies a default name for the file to which grid data is exported."
+              "IsDeprecated": true,
+              "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
             },
             "ignoreExcelErrors": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether Excel should hide warnings if there are errors in the exported document."
+              "IsDeprecated": true,
+              "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
             },
             "proxyUrl": {
               "PrimitiveTypes": [
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "texts": {
               "Description": "Configures the texts of export commands, buttons, and hints.",
@@ -10208,7 +10306,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
@@ -10225,7 +10324,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the index of the column focused initially or currently in the data row area."
+          "Description": "The index of the column that contains the focused data cell. This index is taken from the columns array."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -10238,7 +10337,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the initially or currently focused grid row's index. Use it when focusedRowEnabled is true."
+          "Description": "Specifies or indicates the focused data row's index. Use this option when focusedRowEnabled is true."
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
@@ -10464,14 +10563,15 @@
           ],
           "IsCollection": true,
           "SingularName": "keyExpr",
-          "Description": "Specifies which data field provides keys for data items. Applies only if data is a simple array."
+          "Description": "Specifies the key property (or properties) that provide(s) key values to access data items. Each key value must be unique. This option applies only if data is a simple array."
         },
         "loadPanel": {
           "Description": "Configures the load panel.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Enables displaying the load panel automatically."
             },
@@ -10656,9 +10756,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after data is exported."
+          "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
         },
         "onExporting": {
           "PrimitiveTypes": [
@@ -10672,9 +10773,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before a file with exported data is saved to the user's local storage."
+          "Description": "Since v20.1, we recommend ExcelJS-based export which does not use this option."
         },
         "onFocusedCellChanged": {
           "PrimitiveTypes": [
@@ -10682,7 +10784,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused cell changes."
+          "Description": "A function that is executed after the focused cell changes. Applies only to cells in data or group rows."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
@@ -10690,7 +10792,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused cell changes."
+          "Description": "A function that is executed before the focused cell changes. Applies only to cells in data or group rows."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
@@ -10698,7 +10800,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed after the focused row changes. Applies only to data or group rows. focusedRowEnabled should be true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
@@ -10706,7 +10808,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed before the focused row changes. Applies only to data or group rows. focusedRowEnabled should be true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -10873,6 +10975,9 @@
           "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
@@ -10906,7 +11011,8 @@
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the pager is visible."
             }
@@ -10939,7 +11045,8 @@
         },
         "remoteOperations": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Notifies the DataGrid of the server's data processing operations.",
           "Options": {
@@ -10977,7 +11084,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether or not summaries calculation must be performed on the server."
+              "Description": "Specifies whether or not summaries summaries are calculated on the server-side."
             }
           }
         },
@@ -11006,7 +11113,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows dropping a row inside another row."
+              "Description": "Allows users to drop a row inside another row."
             },
             "allowReordering": {
               "PrimitiveTypes": [
@@ -11023,14 +11130,16 @@
             "boundary": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a DOM element that limits the dragging area."
             },
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a custom container in which the draggable row should be rendered."
             },
@@ -11233,7 +11342,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -11840,7 +11950,7 @@
           "IsCollection": true,
           "IsFunc": true,
           "SingularName": "disabledDate",
-          "Description": "Specifies dates to be disabled. Applies only if pickerType is \"calendar\"."
+          "Description": "Specifies dates that users cannot select. Applies only if pickerType is \"calendar\"."
         },
         "displayFormat": {
           "PrimitiveTypes": [
@@ -11858,6 +11968,15 @@
           ],
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down button."
+        },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -12059,9 +12178,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -12417,33 +12537,25 @@
       }
     },
     "dxDiagram": {
-      "Description": "[tags] ctp The Diagram widget provides a visual interface to help you design new and modify existing diagrams. #include common-ctp-note with { component: \"Diagram\" }",
+      "Description": "The Diagram widget provides a visual interface to help you design new and modify existing diagrams.",
       "Module": "ui/diagram",
       "Options": {
-        "accessKey": {
+        "autoZoomMode": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shortcut key that sets focus on the widget."
-        },
-        "activeStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether or not the widget changes its state when interacting with a user."
-        },
-        "autoZoom": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies whether the Diagram widget automatically zooms the work area."
+          "Description": "Specifies how the Diagram widget automatically zooms the work area."
         },
         "contextMenu": {
           "Description": "Configures the context menu's settings.",
           "Options": {
             "commands": {
               "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
                 "string"
+              ],
+              "ItemComplexTypes": [
+                "DiagramCustomCommand"
               ],
               "IsCollection": true,
               "SingularName": "command",
@@ -12454,6 +12566,37 @@
                 "boolean"
               ],
               "Description": "Specifies whether the context menu is enabled."
+            }
+          }
+        },
+        "contextToolbox": {
+          "Description": "Configures the context toolbox's settings.",
+          "Options": {
+            "category": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the category of shapes that are displayed in the context toolbox."
+            },
+            "displayMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies how shapes are displayed in the context toolbox."
+            },
+            "enabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the context toolbox's availability."
+            },
+            "shapes": {
+              "ItemPrimitiveTypes": [
+                "string"
+              ],
+              "IsCollection": true,
+              "SingularName": "shape",
+              "Description": "Lists the shapes that are displayed in the context toolbox. The built-in shape types are shown in the Shape Types section."
             }
           }
         },
@@ -12477,6 +12620,12 @@
               ],
               "Description": "Specifies whether the shape's text can be edited."
             },
+            "allowResize": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether the shape can be resized."
+            },
             "backgroundImageHeight": {
               "PrimitiveTypes": [
                 "number"
@@ -12488,6 +12637,12 @@
                 "number"
               ],
               "Description": "Specifies the shape background image's left offset."
+            },
+            "backgroundImageToolboxUrl": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies a shape image displayed in a toolbox."
             },
             "backgroundImageTop": {
               "PrimitiveTypes": [
@@ -12511,7 +12666,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the base shape type for the custom shape."
+              "Description": "Specifies the base shape type for the custom shape. The built-in shape types are shown in the Shape Types section."
             },
             "category": {
               "PrimitiveTypes": [
@@ -12589,6 +12744,61 @@
               ],
               "Description": "Specifies the shape image's fractional width."
             },
+            "maxHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the maximum height of the shape."
+            },
+            "maxWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the maximum width of the shape."
+            },
+            "minHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the maximum height of the shape."
+            },
+            "minWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the minimum width of the shape."
+            },
+            "template": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "Description": "Specifies a custom template for the shape."
+            },
+            "templateHeight": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape template's fractional height."
+            },
+            "templateLeft": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape template's left offset."
+            },
+            "templateTop": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape template's top offset."
+            },
+            "templateWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the shape template's fractional width."
+            },
             "textHeight": {
               "PrimitiveTypes": [
                 "number"
@@ -12627,6 +12837,48 @@
             }
           }
         },
+        "customShapeTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for shapes."
+        },
+        "defaultItemProperties": {
+          "Description": "",
+          "Options": {
+            "connectorLineEnd": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "connectorLineStart": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "connectorLineType": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": ""
+            },
+            "style": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": ""
+            },
+            "textStyle": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "Description": ""
+            }
+          }
+        },
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -12634,7 +12886,7 @@
           "Description": "Specifies whether the widget responds to user interaction."
         },
         "edges": {
-          "Description": "Allows you to bind the collection of diagram edges to a data source.",
+          "Description": "Allows you to bind the collection of diagram edges to a data source. For more information, see the Data Binding section.",
           "Options": {
             "dataSource": {
               "PrimitiveTypes": [
@@ -12645,7 +12897,7 @@
                 "any"
               ],
               "IsDataSource": true,
-              "Description": "Binds the edges collection to the specified data."
+              "Description": "Binds the edges collection to the specified data. Specify this option if you use node and edge data sources."
             },
             "fromExpr": {
               "PrimitiveTypes": [
@@ -12781,15 +13033,9 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             }
           }
-        },
-        "focusStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget can be focused using keyboard navigation."
         },
         "fullScreen": {
           "PrimitiveTypes": [
@@ -12819,6 +13065,12 @@
             }
           }
         },
+        "hasChanges": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Indicates whether diagram content has been changed."
+        },
         "height": {
           "PrimitiveTypes": [
             "number",
@@ -12828,20 +13080,54 @@
           "IsFunc": true,
           "Description": "Specifies the widget's height."
         },
-        "hint": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "Description": "Specifies text for a hint that appears when a user pauses on the widget."
+        "historyToolbar": {
+          "Description": "Configures the history toolbar's settings.",
+          "Options": {
+            "commands": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+              ],
+              "ItemComplexTypes": [
+                "DiagramCustomCommand"
+              ],
+              "IsCollection": true,
+              "SingularName": "command",
+              "Description": "Lists commands in the history toolbar."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the history toolbar's visibility."
+            }
+          }
         },
-        "hoverStateEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        "mainToolbar": {
+          "Description": "Configures the main toolbar settings.",
+          "Options": {
+            "commands": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+              ],
+              "ItemComplexTypes": [
+                "DiagramCustomCommand"
+              ],
+              "IsCollection": true,
+              "SingularName": "command",
+              "Description": "Lists commands in the toolbar."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the toolbar's visibility."
+            }
+          }
         },
         "nodes": {
-          "Description": "Allows you to bind the collection of diagram nodes to a data source.",
+          "Description": "Allows you to bind the collection of diagram nodes to a data source. For more information, see the Data Binding section.",
           "Options": {
             "autoLayout": {
               "PrimitiveTypes": [
@@ -12859,11 +13145,11 @@
                   "PrimitiveTypes": [
                     "string"
                   ],
-                  "Description": "Specifies the diagram layout type."
+                  "Description": "Specifies an auto-layout algorithm that is used to automatically arrange shapes."
                 }
               }
             },
-            "childrenExpr": {
+            "containerChildrenExpr": {
               "PrimitiveTypes": [
                 "Function",
                 "string"
@@ -12888,7 +13174,7 @@
                 "any"
               ],
               "IsDataSource": true,
-              "Description": "Binds the nodes collection to the specified data."
+              "Description": "Binds the nodes collection to the specified data. For more information, see the Data Binding section."
             },
             "heightExpr": {
               "PrimitiveTypes": [
@@ -12912,7 +13198,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the name of a data source field or an expression that provides a node's nested items."
+              "Description": "Specifies the name of a data source field or an expression that provides a node's child items."
             },
             "keyExpr": {
               "PrimitiveTypes": [
@@ -12944,7 +13230,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the name of a data source field or an expression that provides a parent node ID for a node."
+              "Description": "Specifies the name of a data source field or an expression that provides a parent node key for a node."
             },
             "styleExpr": {
               "PrimitiveTypes": [
@@ -13012,13 +13298,13 @@
           "IsEvent": true,
           "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
         },
-        "onDataChanged": {
+        "onCustomCommand": {
           "PrimitiveTypes": [
             "Function"
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the diagram's data changes."
+          "Description": "A function that is executed after a custom command item was clicked and allows you to implement the custom command's logic."
         },
         "onDisposing": {
           "PrimitiveTypes": [
@@ -13095,7 +13381,7 @@
               ],
               "IsCollection": true,
               "SingularName": "item",
-              "Description": "An array that specifies the page size items in the _Paze Size_ combobox on 'Properties' panel.",
+              "Description": "An array that specifies the page size items in the _Page Size_ combobox on _Properties Panel_.",
               "Options": {
                 "height": {
                   "PrimitiveTypes": [
@@ -13126,37 +13412,69 @@
           }
         },
         "propertiesPanel": {
-          "Description": "Provides access to Properties panel settings.",
+          "Description": "Configures the Properties panel settings.",
           "Options": {
-            "collapsible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether the Properties panel can be collapsed."
-            },
-            "enabled": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether the Properties panel is available."
-            },
-            "groups": {
+            "tabs": {
               "ItemPrimitiveTypes": [
                 "any"
               ],
               "IsCollection": true,
-              "SingularName": "group",
-              "Description": "Contains an array of command groups in the Properties panel.",
+              "SingularName": "tab",
+              "Description": "Contains an array of tabs in the Properties panel.",
               "Options": {
                 "commands": {
                   "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
                     "string"
+                  ],
+                  "ItemComplexTypes": [
+                    "DiagramCustomCommand"
                   ],
                   "IsCollection": true,
                   "SingularName": "command",
-                  "Description": "Lists commands in a group."
+                  "Description": "Lists commands in a tab."
+                },
+                "groups": {
+                  "ItemPrimitiveTypes": [
+                    "any"
+                  ],
+                  "IsCollection": true,
+                  "SingularName": "group",
+                  "Description": "Contains an array of command groups in the tab.",
+                  "Options": {
+                    "commands": {
+                      "ItemPrimitiveTypes": [
+                        "DevExpress.ui.dxDiagramCustomCommand",
+                        "string"
+                      ],
+                      "ItemComplexTypes": [
+                        "DiagramCustomCommand"
+                      ],
+                      "IsCollection": true,
+                      "SingularName": "command",
+                      "Description": "Lists commands in a group."
+                    },
+                    "title": {
+                      "PrimitiveTypes": [
+                        "string"
+                      ],
+                      "Description": "Specifies a title of the group."
+                    }
+                  }
+                },
+                "title": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": "Specifies the tab's title."
                 }
               }
+            },
+            "visibility": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the panel's visibility."
             }
           }
         },
@@ -13190,33 +13508,8 @@
           ],
           "Description": "Specifies whether diagram elements should snap to grid lines."
         },
-        "tabIndex": {
-          "PrimitiveTypes": [
-            "number"
-          ],
-          "Description": "Specifies the number of the element when the Tab key is used for navigating."
-        },
-        "toolbar": {
-          "Description": "Provides access to toolbar settings.",
-          "Options": {
-            "commands": {
-              "ItemPrimitiveTypes": [
-                "string"
-              ],
-              "IsCollection": true,
-              "SingularName": "command",
-              "Description": "Lists commands in the toolbar."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies the toolbar's visibility."
-            }
-          }
-        },
         "toolbox": {
-          "Description": "Provides access to toolbox settings.",
+          "Description": "Configures the toolbox settings.",
           "Options": {
             "groups": {
               "ItemPrimitiveTypes": [
@@ -13251,7 +13544,7 @@
                   ],
                   "IsCollection": true,
                   "SingularName": "shape",
-                  "Description": "Lists the shapes in the group."
+                  "Description": "Lists the shapes in the group. The built-in shape types are shown in the Shape Types section."
                 },
                 "title": {
                   "PrimitiveTypes": [
@@ -13261,11 +13554,11 @@
                 }
               }
             },
-            "visible": {
+            "visibility": {
               "PrimitiveTypes": [
-                "boolean"
+                "string"
               ],
-              "Description": "Specifies the toolbox's visibility."
+              "Description": "Specifies the toolbar's visibility."
             }
           }
         },
@@ -13274,6 +13567,29 @@
             "string"
           ],
           "Description": "Specifies the unit for measurement options (for example, defaultHeight, gridSize, leftExpr)."
+        },
+        "viewToolbar": {
+          "Description": "Configures the view toolbar settings.",
+          "Options": {
+            "commands": {
+              "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+              ],
+              "ItemComplexTypes": [
+                "DiagramCustomCommand"
+              ],
+              "IsCollection": true,
+              "SingularName": "command",
+              "Description": "Lists commands in the toolbar."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the view toolbar's visibility."
+            }
+          }
         },
         "viewUnits": {
           "PrimitiveTypes": [
@@ -13334,7 +13650,8 @@
         "boundary": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a DOM element that limits the dragging area."
         },
@@ -13347,7 +13664,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a custom container in which the draggable item should be rendered."
         },
@@ -13634,7 +13952,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a CSS selector for the element in which the drawer should be rendered. Applies only when the openedStateMode is \"overlap\"."
         },
@@ -13825,7 +14144,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -13838,7 +14157,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -13959,9 +14278,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -14151,8 +14471,11 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "DevExpress.ui.CollectionWidgetItem",
+            "DevExpress.ui.dxDropDownButtonItem",
             "any"
+          ],
+          "ItemComplexTypes": [
+            "DropDownButtonItem"
           ],
           "IsDataSource": true,
           "Description": "Provides data for the drop-down menu."
@@ -14250,7 +14573,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -14269,7 +14592,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -14451,7 +14774,7 @@
       }
     },
     "dxFileManager": {
-      "Description": "[tags] ctp The FileManager is a widget that allows users to upload, select, and manage files and directories in different file storages. #include common-ctp-note with { component: \"FileManager\" }",
+      "Description": "The FileManager is a widget that allows users to upload, select, and manage files and directories in different file storages.",
       "Module": "ui/file_manager",
       "Options": {
         "accessKey": {
@@ -14489,6 +14812,14 @@
           ],
           "Description": "Specifies the path that is used when the FileManager is initialized."
         },
+        "currentPathKeys": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "currentPathKey",
+          "Description": "Specifies an array of path keys to the current location."
+        },
         "customizeDetailColumns": {
           "PrimitiveTypes": [
             "Function"
@@ -14515,11 +14846,17 @@
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
         },
-        "fileProvider": {
+        "fileSystemProvider": {
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies the file provider."
+          "Description": "Specifies the file system provider."
+        },
+        "focusedItemKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a key of the initially or currently focused item."
         },
         "focusStateEnabled": {
           "PrimitiveTypes": [
@@ -14551,6 +14888,23 @@
         "itemView": {
           "Description": "Configures the file and folder view.",
           "Options": {
+            "details": {
+              "Description": "Configures the \"Details\" file system representation mode.",
+              "Options": {
+                "columns": {
+                  "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFileManagerDetailsColumn",
+                    "string"
+                  ],
+                  "ItemComplexTypes": [
+                    "FileManagerDetailsColumn"
+                  ],
+                  "IsCollection": true,
+                  "SingularName": "column",
+                  "Description": "Configures the columns."
+                }
+              }
+            },
             "mode": {
               "PrimitiveTypes": [
                 "string"
@@ -14579,6 +14933,14 @@
           "IsEvent": true,
           "Description": "A function that is executed when the widget's content is ready and each time the content is changed."
         },
+        "onContextMenuItemClick": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when a context menu item is clicked."
+        },
         "onCurrentDirectoryChanged": {
           "PrimitiveTypes": [
             "Function"
@@ -14594,6 +14956,22 @@
           "IsFunc": true,
           "IsEvent": true,
           "Description": "A function that is executed before the widget is disposed of."
+        },
+        "onErrorOccurred": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when an error occurs."
+        },
+        "onFocusedItemChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when the focused item is changed."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -14619,6 +14997,22 @@
           "IsEvent": true,
           "Description": "A function that is executed when the selected file is opened."
         },
+        "onSelectionChanged": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when a file system item is selected or selection is canceled."
+        },
+        "onToolbarItemClick": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A function that is executed when a toolbar item is clicked."
+        },
         "permissions": {
           "Description": "Specifies actions that a user is allowed to perform on files and folders.",
           "Options": {
@@ -14634,23 +15028,23 @@
               ],
               "Description": "Specifies whether a user is allowed to create files and folders."
             },
+            "delete": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether a user is allowed to delete files and folders."
+            },
             "download": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a user is allowed to download files and folders."
+              "Description": "Specifies whether a user is allowed to download files."
             },
             "move": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "Description": "Specifies whether a user is allowed to move files and folders."
-            },
-            "remove": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether a user is allowed to remove files and folders."
             },
             "rename": {
               "PrimitiveTypes": [
@@ -14678,6 +15072,14 @@
           ],
           "Description": "Switches the widget to a right-to-left representation."
         },
+        "selectedItemKeys": {
+          "ItemPrimitiveTypes": [
+            "string"
+          ],
+          "IsCollection": true,
+          "SingularName": "selectedItemKey",
+          "Description": "Contains an array of initially or currently selected files and directories' keys."
+        },
         "selectionMode": {
           "PrimitiveTypes": [
             "string"
@@ -14702,6 +15104,12 @@
         "upload": {
           "Description": "Configures upload settings.",
           "Options": {
+            "chunkSize": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies a chunk size in bytes."
+            },
             "maxFileSize": {
               "PrimitiveTypes": [
                 "number"
@@ -15748,7 +16156,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -15802,7 +16210,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -16835,7 +17243,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -16983,7 +17392,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxGalleryItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "GalleryItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -17059,7 +17472,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -17084,7 +17497,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -17266,7 +17679,7 @@
       }
     },
     "dxGantt": {
-      "Description": "[tags] ctp The Gantt is a widget that displays the task flow and dependencies between tasks. #include common-ctp-note with { component: \"Gantt\" }",
+      "Description": "The Gantt is a widget that displays the task flow and dependencies between tasks.",
       "Module": "ui/gantt",
       "Options": {
         "accessKey": {
@@ -17367,12 +17780,6 @@
                 "boolean"
               ],
               "Description": "Specifies whether a user can delete dependencies."
-            },
-            "allowDependencyUpdating": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether a user can update dependencies."
             },
             "allowResourceAdding": {
               "PrimitiveTypes": [
@@ -17534,6 +17941,14 @@
         "resources": {
           "Description": "Configures task resources.",
           "Options": {
+            "colorExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides resources' color."
+            },
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSource",
@@ -17563,12 +17978,6 @@
             }
           }
         },
-        "rtlEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "Description": "Switches the widget to a right-to-left representation."
-        },
         "scaleType": {
           "PrimitiveTypes": [
             "string"
@@ -17593,6 +18002,17 @@
           ],
           "Description": "Specifies whether to show/hide horizontal faint lines that separate tasks."
         },
+        "stripLines": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxGanttStripLine"
+          ],
+          "ItemComplexTypes": [
+            "GanttStripLine"
+          ],
+          "IsCollection": true,
+          "SingularName": "stripLine",
+          "Description": "Configures strip lines."
+        },
         "tabIndex": {
           "PrimitiveTypes": [
             "number"
@@ -17608,6 +18028,14 @@
         "tasks": {
           "Description": "Configures tasks.",
           "Options": {
+            "colorExpr": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "Description": "Specifies the data field that provides tasks' color."
+            },
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSource",
@@ -17674,6 +18102,32 @@
             "string"
           ],
           "Description": "Specifies a task's title position."
+        },
+        "toolbar": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxGanttToolbar"
+          ],
+          "ComplexTypes": [
+            "GanttToolbar"
+          ],
+          "Description": "Configures toolbar settings."
+        },
+        "validation": {
+          "Description": "Configures validation options.",
+          "Options": {
+            "autoUpdateParentTasks": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether to recalculate the parent task's duration and progress when its child tasks are modified."
+            },
+            "validateDependencies": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Enables task dependencies validation."
+            }
+          }
         },
         "visible": {
           "PrimitiveTypes": [
@@ -17979,7 +18433,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -18033,7 +18487,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -18720,7 +19174,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -18894,7 +19349,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxListItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "ListItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -19006,7 +19465,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -19037,7 +19496,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -19066,7 +19525,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "menuItems": {
           "ItemPrimitiveTypes": [
@@ -19559,7 +20018,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the widget's container."
         },
@@ -19749,7 +20209,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showIndicator": {
           "PrimitiveTypes": [
@@ -19799,7 +20259,8 @@
           "Description": "Specifies whether or not the widget changes its state when interacting with a user."
         },
         "animation": {
-          "Description": "Configures widget visibility animations. This object contains two fields: show and hide.",
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead.",
           "Options": {
             "hide": {
               "PrimitiveTypes": [
@@ -19856,8 +20317,9 @@
             "boolean",
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
-          "Description": "Specifies whether to close the drop-down menu if a user clicks outside it."
+          "Description": "Use the dropDownOptions option instead."
         },
         "dataSource": {
           "PrimitiveTypes": [
@@ -19899,6 +20361,15 @@
           "IsReadonly": true,
           "Description": "Returns the value currently displayed by the widget."
         },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopoverOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopoverOptions"
+          ],
+          "Description": "Configures the drop-down field."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -19922,7 +20393,8 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not to display the lookup in full-screen mode."
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead."
         },
         "grouped": {
           "PrimitiveTypes": [
@@ -19970,6 +20442,12 @@
           ],
           "Description": "Specifies or indicates whether the editor's value is valid."
         },
+        "itemCenteringEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": ""
+        },
         "items": {
           "ItemPrimitiveTypes": [
             "any"
@@ -19982,7 +20460,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -19995,7 +20473,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -20134,9 +20612,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the drop-down list's title is rendered."
+          "Description": "Use the dropDownOptions option instead."
         },
         "onValueChanged": {
           "PrimitiveTypes": [
@@ -20177,8 +20656,9 @@
             "Function",
             "string"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
-          "Description": "Specifies the popup element's height. Applies only if fullScreen is false."
+          "Description": "Use the dropDownOptions option instead."
         },
         "popupWidth": {
           "PrimitiveTypes": [
@@ -20186,8 +20666,9 @@
             "Function",
             "string"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
-          "Description": "Specifies the popup element's width. Applies only if fullScreen is false."
+          "Description": "Use the dropDownOptions option instead."
         },
         "position": {
           "PrimitiveTypes": [
@@ -20196,7 +20677,8 @@
           "ComplexTypes": [
             "PositionConfig"
           ],
-          "Description": "An object defining widget positioning options."
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead."
         },
         "pulledDownText": {
           "PrimitiveTypes": [
@@ -20274,7 +20756,8 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether to shade the container when the lookup is active. Applies only if usePopover is false."
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead."
         },
         "showCancelButton": {
           "PrimitiveTypes": [
@@ -20298,7 +20781,8 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not to display the title in the popup window."
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead."
         },
         "stylingMode": {
           "PrimitiveTypes": [
@@ -20323,14 +20807,16 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The title of the lookup window."
+          "IsDeprecated": true,
+          "Description": "Use the dropDownOptions option instead."
         },
         "titleTemplate": {
           "PrimitiveTypes": [
             "any"
           ],
+          "IsDeprecated": true,
           "IsTemplate": true,
-          "Description": "Specifies a custom template for the title."
+          "Description": "Use the dropDownOptions option instead."
         },
         "useNativeScrolling": {
           "PrimitiveTypes": [
@@ -20845,8 +21331,10 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxMenuItem"
+          ],
+          "ItemComplexTypes": [
+            "MenuItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -21202,7 +21690,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxMultiViewItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "MultiViewItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -21272,7 +21764,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -21285,7 +21777,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -21454,7 +21946,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxTabsItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "TabsItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -21524,7 +22020,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -21543,7 +22039,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -21572,7 +22068,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -21946,9 +22442,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -22210,7 +22707,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -22264,7 +22761,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -23093,7 +23590,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -23300,7 +23798,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             }
           }
         },
@@ -23692,7 +24190,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether or not the widget uses native scrolling."
             }
@@ -24190,6 +24689,18 @@
               "Description": "Specifies how many series points the widget should have before the animation will be disabled."
             }
           }
+        },
+        "annotations": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.viz.dxPolarChartAnnotationConfig",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "PolarChartAnnotationConfig"
+          ],
+          "IsCollection": true,
+          "SingularName": "annotation",
+          "Description": "Specifies the annotation collection."
         },
         "argumentAxis": {
           "Description": "Specifies argument axis options for the PolarChart widget.",
@@ -24849,6 +25360,15 @@
           "IsDeprecated": true,
           "Description": "Use CommonPolarChartSeries.barPadding instead."
         },
+        "commonAnnotationSettings": {
+          "PrimitiveTypes": [
+            "DevExpress.viz.dxPolarChartCommonAnnotationConfig"
+          ],
+          "ComplexTypes": [
+            "PolarChartCommonAnnotationConfig"
+          ],
+          "Description": "Specifies settings common for all annotations in the PolarChart."
+        },
         "commonAxisSettings": {
           "Description": "An object defining the configuration options that are common for all axes of the PolarChart widget.",
           "Options": {
@@ -25139,6 +25659,13 @@
           ],
           "Description": "Specifies the color of the parent page element."
         },
+        "customizeAnnotation": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes an individual annotation."
+        },
         "customizeLabel": {
           "PrimitiveTypes": [
             "Function"
@@ -25194,7 +25721,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -25255,7 +25782,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -26116,7 +26643,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -27002,9 +27530,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -27208,7 +27737,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showCloseButton": {
           "PrimitiveTypes": [
@@ -27245,7 +27774,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the widget."
         },
@@ -27274,7 +27804,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a toolbar item should be disabled."
+              "Description": "Specifies whether the toolbar item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -27292,14 +27822,14 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+              "Description": "Configures the DevExtreme widget used as a toolbar item."
             },
             "template": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -27391,9 +27921,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -27436,7 +27967,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not to display the widget in full-screen mode."
+          "Description": "Specifies whether to display the Popup in full-screen mode."
         },
         "height": {
           "PrimitiveTypes": [
@@ -27627,7 +28158,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showCloseButton": {
           "PrimitiveTypes": [
@@ -27672,7 +28203,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a toolbar item should be disabled."
+              "Description": "Specifies whether the toolbar item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -27690,14 +28221,14 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+              "Description": "Configures the DevExtreme widget used as a toolbar item."
             },
             "template": {
               "PrimitiveTypes": [
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -28018,7 +28549,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -28031,7 +28562,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -28484,7 +29015,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -28538,7 +29069,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -30269,7 +30800,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxResponsiveBoxItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "ResponsiveBoxItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -30321,7 +30856,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -30374,7 +30909,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -30587,7 +31122,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -30641,7 +31176,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -31424,7 +31959,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -31787,6 +32323,12 @@
                 "boolean"
               ],
               "Description": "Specifies whether or not an end-user can drag appointments."
+            },
+            "allowEditingTimeZones": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether users can edit appointment time zones."
             },
             "allowResizing": {
               "PrimitiveTypes": [
@@ -32226,7 +32768,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the widget."
+          "Description": "Specifies the widget's time zone."
         },
         "useDropDownViewSwitcher": {
           "PrimitiveTypes": [
@@ -32427,7 +32969,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "A Boolean value specifying whether or not the widget can respond to user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -32647,6 +33189,15 @@
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down button."
         },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -32724,7 +33275,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -32737,7 +33288,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -32901,9 +33452,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -33164,7 +33716,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxSlideOutItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "SlideOutItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -33222,7 +33778,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -33242,7 +33798,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -33850,14 +34406,16 @@
         "boundary": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a DOM element that limits the dragging area."
         },
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies a custom container in which the draggable item should be rendered."
         },
@@ -34098,7 +34656,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -34387,7 +34945,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -34873,7 +35432,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxTabPanelItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "TabPanelItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -34949,7 +35512,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -34975,7 +35538,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -35206,7 +35769,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxTabsItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "TabsItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -35276,7 +35843,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -35295,7 +35862,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -35324,7 +35891,7 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for widget items."
+          "Description": "Specifies the key property that provides key values to access data items. Each key value must be unique."
         },
         "noDataText": {
           "PrimitiveTypes": [
@@ -35579,6 +36146,15 @@
           "IsTemplate": true,
           "Description": "Specifies a custom template for the drop-down button."
         },
+        "dropDownOptions": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxPopupOptions"
+          ],
+          "ComplexTypes": [
+            "dxPopupOptions"
+          ],
+          "Description": "Configures the drop-down field which holds the content."
+        },
         "elementAttr": {
           "PrimitiveTypes": [
             "any"
@@ -35662,7 +36238,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -35675,7 +36251,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -35835,9 +36411,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -36289,9 +36866,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -36639,9 +37217,10 @@
           "PrimitiveTypes": [
             "Function"
           ],
+          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a user presses a key on the keyboard."
+          "Description": "The `keyPress` event is removed from the web standards and will be deprecated in modern browsers soon. Refer to the MDN topic for details."
         },
         "onKeyUp": {
           "PrimitiveTypes": [
@@ -36828,7 +37407,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxTileViewItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "TileViewItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -36860,8 +37443,10 @@
         "height": {
           "PrimitiveTypes": [
             "number",
+            "Function",
             "string"
           ],
+          "IsFunc": true,
           "Description": "Specifies the widget's height."
         },
         "hint": {
@@ -36902,7 +37487,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "heightRatio": {
               "PrimitiveTypes": [
@@ -36921,7 +37506,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -37294,7 +37879,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -37338,7 +37923,11 @@
           ],
           "ItemPrimitiveTypes": [
             "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxToolbarItem",
+            "any"
+          ],
+          "ItemComplexTypes": [
+            "ToolbarItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -37402,7 +37991,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -37433,7 +38022,7 @@
               "PrimitiveTypes": [
                 "any"
               ],
-              "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+              "Description": "Configures the DevExtreme widget used as a toolbar item."
             },
             "showText": {
               "PrimitiveTypes": [
@@ -37446,7 +38035,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -37464,7 +38053,7 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "A widget that presents a toolbar item."
+              "Description": "A widget that presents a toolbar item. To configure it, use the options object."
             }
           }
         },
@@ -37621,9 +38210,10 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
-          "Description": "Specifies the container in which to place the widget."
+          "Description": "Specifies the container in which to render the widget."
         },
         "contentTemplate": {
           "PrimitiveTypes": [
@@ -37819,7 +38409,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showEvent": {
           "PrimitiveTypes": [
@@ -37844,7 +38434,8 @@
         "target": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "The target element associated with the widget."
         },
@@ -38118,6 +38709,12 @@
               ],
               "IsFunc": true,
               "Description": "Specifies whether a user can update rows. It is called for each data row when defined as a function"
+            },
+            "confirmDelete": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies if confirmation is required when a user deletes a row."
             },
             "form": {
               "PrimitiveTypes": [
@@ -38471,7 +39068,8 @@
         },
         "filterSyncEnabled": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "Description": "Specifies whether to synchronize the filter row, header filter, and filter builder. The synchronized filter expression is stored in the filterValue option."
         },
@@ -38488,7 +39086,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the index of the column focused initially or currently in the data row area."
+          "Description": "The index of the column that contains the focused data cell. This index is taken from the columns array."
         },
         "focusedRowEnabled": {
           "PrimitiveTypes": [
@@ -38501,7 +39099,7 @@
             "number"
           ],
           "IsChangeable": true,
-          "Description": "Specifies the initially or currently focused grid row's index. Use it when focusedRowEnabled is true."
+          "Description": "Specifies or indicates the focused data row's index. Use this option when focusedRowEnabled is true."
         },
         "focusedRowKey": {
           "PrimitiveTypes": [
@@ -38652,14 +39250,15 @@
             "string"
           ],
           "IsFunc": true,
-          "Description": "Specifies which data field provides keys for nodes."
+          "Description": "Specifies the key property (or properties) that provide(s) key values to access data items. Each key value must be unique."
         },
         "loadPanel": {
           "Description": "Configures the load panel.",
           "Options": {
             "enabled": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Enables displaying the load panel automatically."
             },
@@ -38822,7 +39421,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed after the focused cell changes."
+          "Description": "A function that is executed after the focused cell changes. Applies only to cells in data rows."
         },
         "onFocusedCellChanging": {
           "PrimitiveTypes": [
@@ -38830,7 +39429,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused cell changes."
+          "Description": "A function that is executed before the focused cell changes. Applies only to cells in data rows."
         },
         "onFocusedRowChanged": {
           "PrimitiveTypes": [
@@ -38838,7 +39437,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that executed when the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that executed when the focused row changes. Applies only to data rows. focusedRowEnabled should be true."
         },
         "onFocusedRowChanging": {
           "PrimitiveTypes": [
@@ -38846,7 +39445,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed before the focused row changes. Applies only when focusedRowEnabled is true."
+          "Description": "A function that is executed before the focused row changes. Applies only to data rows. focusedRowEnabled should be true."
         },
         "onInitialized": {
           "PrimitiveTypes": [
@@ -39021,6 +39620,9 @@
           "Description": "Configures the pager.",
           "Options": {
             "allowedPageSizes": {
+              "PrimitiveTypes": [
+                "string"
+              ],
               "ItemPrimitiveTypes": [
                 "number"
               ],
@@ -39054,7 +39656,8 @@
             },
             "visible": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the pager is visible."
             }
@@ -39094,6 +39697,9 @@
           "Description": "Specifies which data field provides parent keys."
         },
         "remoteOperations": {
+          "PrimitiveTypes": [
+            "string"
+          ],
           "Description": "Notifies the TreeList of the server's data processing operations. Applies only if data has a plain structure.",
           "Options": {
             "filtering": {
@@ -39147,7 +39753,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Allows dropping a row inside another row."
+              "Description": "Allows users to drop a row inside another row."
             },
             "allowReordering": {
               "PrimitiveTypes": [
@@ -39164,14 +39770,16 @@
             "boundary": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a DOM element that limits the dragging area."
             },
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies a custom container in which the draggable row should be rendered."
             },
@@ -39367,7 +39975,8 @@
             },
             "useNative": {
               "PrimitiveTypes": [
-                "boolean"
+                "boolean",
+                "string"
               ],
               "Description": "Specifies whether the widget should use native or simulated scrolling."
             }
@@ -39670,7 +40279,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -39724,7 +40333,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -40408,7 +41017,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -40562,8 +41172,10 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "string",
-            "DevExpress.ui.CollectionWidgetItem"
+            "DevExpress.ui.dxTreeViewItem"
+          ],
+          "ItemComplexTypes": [
+            "TreeViewItem"
           ],
           "IsDataSource": true,
           "Description": "Binds the widget to data."
@@ -40788,7 +41400,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a tree view item is selected or selection is canceled."
+          "Description": "A function that is executed when a single TreeView item is selected or selection is canceled."
         },
         "onOptionChanged": {
           "PrimitiveTypes": [
@@ -40812,7 +41424,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when a tree view item is selected or selection is canceled."
+          "Description": "A function that is executed when a TreeView item is selected or selection is canceled."
         },
         "parentIdExpr": {
           "PrimitiveTypes": [
@@ -40894,7 +41506,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not an item becomes selected if a user clicks it."
+          "Description": "Specifies whether an item becomes selected if a user clicks it."
         },
         "selectedExpr": {
           "PrimitiveTypes": [
@@ -40908,19 +41520,19 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies item selection mode."
+          "Description": "Specifies item selection mode. Applies only if selection is enabled."
         },
         "selectNodesRecursive": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not to select nodes recursively."
+          "Description": "Specifies whether all child nodes should be selected when their parent node is selected. Applies only if the selectionMode is \"multiple\"."
         },
         "showCheckBoxesMode": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the current check boxes display mode."
+          "Description": "Specifies the checkbox display mode."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -41036,7 +41648,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a widget item should be disabled."
+              "Description": "Specifies whether the widget item responds to user interaction."
             },
             "html": {
               "PrimitiveTypes": [
@@ -41049,7 +41661,7 @@
                 "any"
               ],
               "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
+              "Description": "Specifies a template that should be used to render this item only."
             },
             "text": {
               "PrimitiveTypes": [
@@ -41362,7 +41974,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the widget responds to the user interaction."
+          "Description": "Specifies whether the widget responds to user interaction."
         },
         "elementAttr": {
           "PrimitiveTypes": [
@@ -41416,7 +42028,7 @@
                 "string"
               ],
               "IsDeprecated": true,
-              "Description": "Safari now supports the API for saving files, and this option is no longer required."
+              "Description": "Since v10, Safari browser supports API for saving files, and this option is no longer required."
             },
             "svgToCanvas": {
               "PrimitiveTypes": [
@@ -42366,7 +42978,8 @@
             "container": {
               "PrimitiveTypes": [
                 "Element",
-                "JQuery"
+                "JQuery",
+                "string"
               ],
               "Description": "Specifies the container in which to draw tooltips. The default container is the HTML DOM `` element."
             },
@@ -42572,7 +43185,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "If set to true, empty values are valid."
+          "Description": "If true, the validationCallback is not executed for null, undefined, false, and empty strings."
         },
         "message": {
           "PrimitiveTypes": [
@@ -44523,14 +45136,14 @@
       }
     },
     "CustomRule": {
-      "Description": "A validation rule with custom validation logic.",
+      "Description": "A rule with custom validation logic.",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether the validationCallback should be called for null and undefined values."
+          "Description": "If true, the validationCallback is not executed for null, undefined, false, and empty strings."
         },
         "message": {
           "PrimitiveTypes": [
@@ -44559,14 +45172,167 @@
         }
       }
     },
-    "ButtonGroupItem": {
-      "Description": "This section describes object fields that can be used in the default item template.",
+    "AccordionItem": {
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the icon to be displayed in the panel's title."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "title": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item title."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
+    "ActionSheetItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the icon to be displayed on the action sheet button."
+        },
+        "onClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "Description": "A handler for the click event raised for the button representing the given action sheet button."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the type of the button that represents an action sheet item."
+        }
+      }
+    },
+    "BoxItem": {
+      "Options": {
+        "baseSize": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Specifies the base size of an item element along the main direction."
+        },
+        "box": {
+          "PrimitiveTypes": [
+            "DevExpress.ui.dxBoxOptions"
+          ],
+          "ComplexTypes": [
+            "dxBoxOptions"
+          ],
+          "Description": "Holds a Box configuration object for the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "ratio": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the ratio value used to count the item element size along the main direction."
+        },
+        "shrink": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "A factor that defines how much an item shrinks relative to the rest of the items in the container."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
+    "ButtonGroupItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "hint": {
           "PrimitiveTypes": [
@@ -44585,7 +45351,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -44608,6 +45374,7 @@
       }
     },
     "ChartAnnotationConfig": {
+      "Description": "",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -44705,7 +45472,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the annotation's description displayed in the tooltip."
+          "Description": "Specifies the annotation's description in the tooltip."
         },
         "font": {
           "PrimitiveTypes": [
@@ -44714,7 +45481,7 @@
           "ComplexTypes": [
             "VizFont"
           ],
-          "Description": "Specifies the annotation's font options. Applies only to text annotations."
+          "Description": "Specifies the annotation's font options. Applies to text annotations only."
         },
         "height": {
           "PrimitiveTypes": [
@@ -44776,7 +45543,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with paddingTopBottom, generates an empty space around the annotation's text or image; specified in pixels."
+          "Description": "Used with paddingTopBottom to generate an empty space around the annotation's text or image (specified in pixels)."
         },
         "paddingTopBottom": {
           "PrimitiveTypes": [
@@ -44861,7 +45628,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies whether the annotation displays a text or an image. This is a required setting."
+          "Description": "Specifies whether the annotation displays text or an image. This is a required setting."
         },
         "value": {
           "PrimitiveTypes": [
@@ -44887,17 +45654,18 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+          "Description": "Used with y to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         },
         "y": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+          "Description": "Used with x to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         }
       }
     },
     "ChartCommonAnnotationConfig": {
+      "Description": "",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -44995,7 +45763,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the annotation's description displayed in the tooltip."
+          "Description": "Specifies the annotation's description in the tooltip."
         },
         "font": {
           "PrimitiveTypes": [
@@ -45004,7 +45772,7 @@
           "ComplexTypes": [
             "VizFont"
           ],
-          "Description": "Specifies the annotation's font options. Applies only to text annotations."
+          "Description": "Specifies the annotation's font options. Applies to text annotations only."
         },
         "height": {
           "PrimitiveTypes": [
@@ -45060,7 +45828,7 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with paddingTopBottom, generates an empty space around the annotation's text or image; specified in pixels."
+          "Description": "Used with paddingTopBottom to generate an empty space around the annotation's text or image (specified in pixels)."
         },
         "paddingTopBottom": {
           "PrimitiveTypes": [
@@ -45145,7 +45913,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies whether the annotation displays a text or an image. This is a required setting."
+          "Description": "Specifies whether the annotation displays text or an image. This is a required setting."
         },
         "value": {
           "PrimitiveTypes": [
@@ -45171,18 +45939,17 @@
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with y, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+          "Description": "Used with y to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         },
         "y": {
           "PrimitiveTypes": [
             "number"
           ],
-          "Description": "Along with x, positions the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+          "Description": "Used with x to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
         }
       }
     },
     "ContextMenuItem": {
-      "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
         "beginGroup": {
           "PrimitiveTypes": [
@@ -45200,7 +45967,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the menu item is disabled."
+          "Description": "Specifies whether the menu item responds to user interaction."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -45217,7 +45984,7 @@
           ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "Description": "Specifies nested menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -45236,7 +46003,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -45609,7 +46376,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a user can nullify values of the lookup column."
+              "Description": "Specifies whether to display the Clear button in lookup column cells while they are being edited."
             },
             "dataSource": {
               "PrimitiveTypes": [
@@ -45813,7 +46580,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the button is clicked or tapped."
+          "Description": "A function that is executed when the button is clicked or tapped. Not executed if a template is used."
         },
         "template": {
           "PrimitiveTypes": [
@@ -45838,93 +46605,255 @@
         }
       }
     },
-    "FileManagerContextMenu": {
-      "Description": "",
+    "DiagramCustomCommand": {
+      "Description": "An object that provides information about a custom command in the Diagram widget.",
       "Options": {
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the custom command's icon."
+        },
         "items": {
           "ItemPrimitiveTypes": [
-            "any",
-            "string"
+            "DevExpress.ui.dxDiagramCustomCommand"
+          ],
+          "ItemComplexTypes": [
+            "DiagramCustomCommand"
           ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Configures context menu items' settings.",
-          "Options": {
-            "beginGroup": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether a group separator is displayed over the item."
-            },
-            "closeMenuOnClick": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies if a menu is closed when a user clicks the item."
-            },
-            "disabled": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not the menu item is disabled."
-            },
-            "icon": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the menu item's icon."
-            },
-            "items": {
-              "ItemPrimitiveTypes": [
-                "any"
-              ],
-              "IsCollection": true,
-              "SingularName": "item",
-              "Description": ""
-            },
-            "name": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the context menu item's name."
-            },
-            "selectable": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not a user can select a menu item."
-            },
-            "selected": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies whether or not the item is selected."
-            },
-            "template": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsTemplate": true,
-              "Description": "Specifies an item template that should be used to render this item only."
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "Description": "Specifies the text inserted into the item element."
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "Description": "Specifies the context menu item's visibility."
-            }
-          }
+          "Description": "Lists command sub items."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the custom command's identifier."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the custom command's text and tooltip text."
+        }
+      }
+    },
+    "DropDownButtonItem": {
+      "Options": {
+        "badge": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text of a badge displayed for the list item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the list item's icon."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
+    "FileManagerContextMenu": {
+      "Description": "Configures the context menu.",
+      "Options": {
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerContextMenuItem",
+            "string"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerContextMenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures context menu items' settings."
+        }
+      }
+    },
+    "FileManagerContextMenuItem": {
+      "Description": "Configures the context menu item.",
+      "Options": {
+        "beginGroup": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether a group separator is displayed over the item."
+        },
+        "closeMenuOnClick": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies if a menu is closed when a user clicks the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the menu item responds to user interaction."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the menu item's icon."
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxFileManagerContextMenuItem"
+          ],
+          "ItemComplexTypes": [
+            "FileManagerContextMenuItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures settings of a context menu item's subitems."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the context menu item's name."
+        },
+        "selectable": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a user can select a menu item."
+        },
+        "selected": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not the item is selected."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text inserted into the item element."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies the context menu item's visibility."
+        }
+      }
+    },
+    "FileManagerDetailsColumn": {
+      "Description": "Configures the column.",
+      "Options": {
+        "alignment": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the column alignment."
+        },
+        "caption": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the column caption."
+        },
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to the column."
+        },
+        "dataField": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies which data field provides data for the column."
+        },
+        "dataType": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Casts column values to a specific data type."
+        },
+        "hidingPriority": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the order in which columns are hidden when the widget adapts to the screen or container size."
+        },
+        "sortIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the order in which the column is sorted."
+        },
+        "sortOrder": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the sort order of column values."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies the column visibility."
+        },
+        "visibleIndex": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the position of the column in the resulting widget."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": "Specifies the column width."
         }
       }
     },
     "FileManagerToolbar": {
-      "Description": "",
+      "Description": "Configures the toolbar.",
       "Options": {
         "fileSelectionItems": {
           "ItemPrimitiveTypes": [
@@ -45965,7 +46894,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "html": {
           "PrimitiveTypes": [
@@ -46002,7 +46931,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+          "Description": "Configures the DevExtreme widget used as a toolbar item."
         },
         "showText": {
           "PrimitiveTypes": [
@@ -46015,7 +46944,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -46033,7 +46962,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "A widget that presents a toolbar item."
+          "Description": "A widget that presents a toolbar item. To configure it, use the options object."
         }
       }
     },
@@ -46173,7 +47102,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a user can nullify the lookup values. Set to true only if your data source accepts null values."
+              "Description": "Specifies whether to display the Clear button in the lookup field while it is being edited."
             },
             "dataSource": {
               "PrimitiveTypes": [
@@ -46677,7 +47606,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "A Boolean value specifying whether or not the tab can respond to user interaction."
+              "Description": "Specifies whether the tab responds to user interaction."
             },
             "icon": {
               "PrimitiveTypes": [
@@ -46737,6 +47666,186 @@
             "number"
           ],
           "Description": "Specifies the sequence number of the item in a form, group or tab."
+        }
+      }
+    },
+    "GalleryItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "imageAlt": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text passed to the alt attribute of the image markup element."
+        },
+        "imageSrc": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the URL of the image displayed by the item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        }
+      }
+    },
+    "GanttStripLine": {
+      "Description": "Configures a strip line.",
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the cascading style sheet (CSS) class associated with the strip line."
+        },
+        "end": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the end point of the strip line."
+        },
+        "start": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "Description": "Specifies the start point of the strip line."
+        },
+        "title": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the strip line's title."
+        }
+      }
+    },
+    "GanttToolbar": {
+      "Description": "Configures the toolbar.",
+      "Options": {
+        "items": {
+          "ItemPrimitiveTypes": [
+            "DevExpress.ui.dxGanttToolbarItem",
+            "string"
+          ],
+          "ItemComplexTypes": [
+            "GanttToolbarItem"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "Description": "Configures toolbar items' settings."
+        }
+      }
+    },
+    "GanttToolbarItem": {
+      "Description": "Configures the toolbar item.",
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "locateInMenu": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display an item in the toolbar's overflow menu."
+        },
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the toolbar item's location."
+        },
+        "menuItemTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render a menu item."
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the toolbar item's name."
+        },
+        "options": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Configures the DevExtreme widget used as a toolbar item."
+        },
+        "showText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display the text for the widget item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        },
+        "widget": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "A widget that presents a toolbar item. To configure it, use the options object."
         }
       }
     },
@@ -46837,7 +47946,8 @@
         "container": {
           "PrimitiveTypes": [
             "Element",
-            "JQuery"
+            "JQuery",
+            "string"
           ],
           "Description": "Specifies the container in which to place the toolbar."
         },
@@ -46852,11 +47962,16 @@
           "IsCollection": true,
           "SingularName": "item",
           "Description": "Configures toolbar items. These items allow users to format text and execute commands."
+        },
+        "multiline": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not items are arranged into multiple lines when their combined width exceeds the toolbar width."
         }
       }
     },
     "HtmlEditorToolbarItem": {
-      "Description": "This section lists the data source fields that are used in a default template for toolbar items.",
       "Options": {
         "cssClass": {
           "PrimitiveTypes": [
@@ -46868,7 +47983,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "formatName": {
           "PrimitiveTypes": [
@@ -46915,7 +48030,7 @@
           "PrimitiveTypes": [
             "any"
           ],
-          "Description": "Specifies a configuration object for the widget that presents a toolbar item."
+          "Description": "Configures the DevExtreme widget used as a toolbar item."
         },
         "showText": {
           "PrimitiveTypes": [
@@ -46928,7 +48043,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -46946,7 +48061,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "A widget that presents a toolbar item."
+          "Description": "A widget that presents a toolbar item. To configure it, use the options object."
         }
       }
     },
@@ -46977,8 +48092,66 @@
         }
       }
     },
+    "ListItem": {
+      "Options": {
+        "badge": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the text of a badge displayed for the list item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the list item's icon."
+        },
+        "key": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the name of the list items group in a grouped list."
+        },
+        "showChevron": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not to display a chevron for the list item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
     "MenuItem": {
-      "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
         "beginGroup": {
           "PrimitiveTypes": [
@@ -46996,7 +48169,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the menu item is disabled."
+          "Description": "Specifies whether the menu item responds to user interaction."
         },
         "icon": {
           "PrimitiveTypes": [
@@ -47013,7 +48186,7 @@
           ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Holds an array of menu items."
+          "Description": "Specifies nested menu items."
         },
         "selectable": {
           "PrimitiveTypes": [
@@ -47032,7 +48205,7 @@
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -47048,8 +48221,700 @@
         }
       }
     },
+    "MultiViewItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        }
+      }
+    },
+    "PolarChartAnnotationConfig": {
+      "Description": "",
+      "Options": {
+        "allowDragging": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether users can drag and drop the annotation."
+        },
+        "angle": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the angle between the startAngle and the radius."
+        },
+        "argument": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Positions the annotation relative to a specific argument."
+        },
+        "arrowLength": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the length of the annotation's arrow in pixels."
+        },
+        "arrowWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the width of the annotation's arrow at its junction with the annotation rectangle."
+        },
+        "border": {
+          "Description": "Configures the appearance of the annotation's border.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the annotation's border."
+            },
+            "cornerRadius": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Makes the annotation's corners rounded."
+            },
+            "dashStyle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the dash style of the annotation's border."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the opacity of the annotation's border."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the visibility of the annotation's border."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the width of the annotation's border in pixels."
+            }
+          }
+        },
+        "color": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the color that fills the annotation."
+        },
+        "customizeTooltip": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes the text and appearance of the annotation's tooltip."
+        },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
+        },
+        "description": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the annotation's description in the tooltip."
+        },
+        "font": {
+          "PrimitiveTypes": [
+            "DevExpress.viz.Font"
+          ],
+          "ComplexTypes": [
+            "VizFont"
+          ],
+          "Description": "Specifies the annotation's font options. Applies to text annotations only."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's height in pixels."
+        },
+        "image": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Configures the image to be displayed in the annotation. Applies only if the type is \"image\".",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the image's height in pixels."
+            },
+            "url": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the image's URL."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the image's width in pixels."
+            }
+          }
+        },
+        "name": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the annotation's name."
+        },
+        "offsetX": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Moves the annotation horizontally."
+        },
+        "offsetY": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Moves the annotation vertically."
+        },
+        "opacity": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's opacity."
+        },
+        "paddingLeftRight": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with paddingTopBottom to generate an empty space around the annotation's text or image (specified in pixels)."
+        },
+        "paddingTopBottom": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Along with paddingLeftRight, generates an empty space around the annotation's text or image; specified in pixels."
+        },
+        "radius": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Places an annotation at the specified distance from the center of the widget."
+        },
+        "series": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series."
+        },
+        "shadow": {
+          "Description": "Configures the annotation's shadows.",
+          "Options": {
+            "blur": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the blur distance of the shadows. A larger value increases the blur distance."
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the annotation's shadows."
+            },
+            "offsetX": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the shadows horizontally."
+            },
+            "offsetY": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the shadows vertically."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the opacity of the shadows."
+            }
+          }
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the annotation."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the annotation's text. Applies only if the type is \"text\"."
+        },
+        "textOverflow": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies what to do with the annotation's text when it overflows the allocated space after applying wordWrap: hide, truncate it and display an ellipsis, or do nothing."
+        },
+        "tooltipEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the annotation tooltip is enabled."
+        },
+        "tooltipTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for an annotation's tooltip."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether the annotation displays text or an image. This is a required setting."
+        },
+        "value": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Positions the annotation relative to a value on the specified value axis."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's width in pixels."
+        },
+        "wordWrap": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to wrap the annotation's text if it does not fit into a single line."
+        },
+        "x": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with y to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+        },
+        "y": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with x to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+        }
+      }
+    },
+    "PolarChartCommonAnnotationConfig": {
+      "Description": "",
+      "Options": {
+        "allowDragging": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether users can drag and drop the annotation."
+        },
+        "angle": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the angle between the startAngle and the radius."
+        },
+        "argument": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Positions the annotation relative to a specific argument."
+        },
+        "arrowLength": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the length of the annotation's arrow in pixels."
+        },
+        "arrowWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the width of the annotation's arrow at its junction with the annotation rectangle."
+        },
+        "border": {
+          "Description": "Configures the appearance of the annotation's border.",
+          "Options": {
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the annotation's border."
+            },
+            "cornerRadius": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Makes the annotation's corners rounded."
+            },
+            "dashStyle": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the dash style of the annotation's border."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the opacity of the annotation's border."
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies the visibility of the annotation's border."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the width of the annotation's border in pixels."
+            }
+          }
+        },
+        "color": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the color that fills the annotation."
+        },
+        "customizeTooltip": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "Description": "Customizes the text and appearance of the annotation's tooltip."
+        },
+        "data": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "A container for custom data."
+        },
+        "description": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the annotation's description in the tooltip."
+        },
+        "font": {
+          "PrimitiveTypes": [
+            "DevExpress.viz.Font"
+          ],
+          "ComplexTypes": [
+            "VizFont"
+          ],
+          "Description": "Specifies the annotation's font options. Applies to text annotations only."
+        },
+        "height": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's height in pixels."
+        },
+        "image": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Configures the image to be displayed in the annotation. Applies only if the type is \"image\".",
+          "Options": {
+            "height": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the image's height in pixels."
+            },
+            "url": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Specifies the image's URL."
+            },
+            "width": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the image's width in pixels."
+            }
+          }
+        },
+        "offsetX": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Moves the annotation horizontally."
+        },
+        "offsetY": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Moves the annotation vertically."
+        },
+        "opacity": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's opacity."
+        },
+        "paddingLeftRight": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with paddingTopBottom to generate an empty space around the annotation's text or image (specified in pixels)."
+        },
+        "paddingTopBottom": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Along with paddingLeftRight, generates an empty space around the annotation's text or image; specified in pixels."
+        },
+        "radius": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Places an annotation at the specified distance from the center of the widget."
+        },
+        "series": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Anchors the annotation to a series point. Accepts the name of the point's series."
+        },
+        "shadow": {
+          "Description": "Configures the annotation's shadows.",
+          "Options": {
+            "blur": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the blur distance of the shadows. A larger value increases the blur distance."
+            },
+            "color": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Colors the annotation's shadows."
+            },
+            "offsetX": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the shadows horizontally."
+            },
+            "offsetY": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Moves the shadows vertically."
+            },
+            "opacity": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies the opacity of the shadows."
+            }
+          }
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for the annotation."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the annotation's text. Applies only if the type is \"text\"."
+        },
+        "textOverflow": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies what to do with the annotation's text when it overflows the allocated space after applying wordWrap: hide, truncate it and display an ellipsis, or do nothing."
+        },
+        "tooltipEnabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the annotation tooltip is enabled."
+        },
+        "tooltipTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a custom template for an annotation's tooltip."
+        },
+        "type": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies whether the annotation displays text or an image. This is a required setting."
+        },
+        "value": {
+          "PrimitiveTypes": [
+            "Date",
+            "number",
+            "string"
+          ],
+          "Description": "Positions the annotation relative to a value on the specified value axis."
+        },
+        "width": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies the annotation's width in pixels."
+        },
+        "wordWrap": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies how to wrap the annotation's text if it does not fit into a single line."
+        },
+        "x": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with y to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+        },
+        "y": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Used with x to position the annotation's center at a specific pixel coordinate. (0, 0) is the upper left corner of the chart."
+        }
+      }
+    },
+    "ResponsiveBoxItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "location": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "location",
+          "Description": "Specifies the item location and size against the widget grid.",
+          "Options": {
+            "col": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies which column the element should occupy. Accepts an index from the cols array."
+            },
+            "colspan": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies how many columns the element should span."
+            },
+            "row": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies which row the element should occupy. Accepts an index from the rows array."
+            },
+            "rowspan": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "Description": "Specifies how many rows the element should span."
+            },
+            "screen": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "Description": "Decides on which screens the current location settings should be applied to the element."
+            }
+          }
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
     "SchedulerAppointment": {
-      "Description": "This section lists the fields that are used in a default template for scheduler appointments.",
+      "Description": "An object that describes an appointment in the Scheduler widget.",
       "Options": {
         "allDay": {
           "PrimitiveTypes": [
@@ -47067,7 +48932,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether an appointment should be disabled."
+          "Description": "Specifies whether the appointment responds to user interaction."
         },
         "endDate": {
           "PrimitiveTypes": [
@@ -47079,7 +48944,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the appointment end date. Applies only if timeZone is not specified."
+          "Description": "Specifies the time zone for an appointment's endDate. Applies only if the timeZone option is unspecified."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47109,14 +48974,14 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the appointment start date. Applies only if timeZone is not specified."
+          "Description": "Specifies the time zone for an appointment's startDate. Applies only if the timeZone option is unspecified."
         },
         "template": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an appointment template that should be used to render this appointment only."
+          "Description": "Specifies a template that should be used to render this appointment only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -47129,6 +48994,149 @@
             "boolean"
           ],
           "Description": "Specifies whether or not an appointment must be displayed."
+        }
+      }
+    },
+    "SlideOutItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "menuTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render a menu item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        }
+      }
+    },
+    "TabPanelItem": {
+      "Options": {
+        "badge": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a badge text for the tab."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the icon to be displayed in the tab's title."
+        },
+        "tabTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render the tab for this item only."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "title": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the item title text displayed on a corresponding tab."
+        }
+      }
+    },
+    "TabsItem": {
+      "Options": {
+        "badge": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a badge text for the tab."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "icon": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies the icon to be displayed on the tab."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
         }
       }
     },
@@ -47154,6 +49162,131 @@
             "dxButtonOptions"
           ],
           "Description": "Configures the Button widget used as the action button."
+        }
+      }
+    },
+    "TileViewItem": {
+      "Options": {
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "heightRatio": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a multiplier for the baseItemHeight option value (for the purpose of obtaining the actual item height)."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        },
+        "widthRatio": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "Description": "Specifies a multiplier for the baseItemWidth option value (for the purpose of obtaining the actual item width)."
+        }
+      }
+    },
+    "ToolbarItem": {
+      "Options": {
+        "cssClass": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a CSS class to be applied to the item."
+        },
+        "disabled": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether the widget item responds to user interaction."
+        },
+        "html": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies html code inserted into the widget item element."
+        },
+        "locateInMenu": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display an item in the toolbar's overflow menu."
+        },
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies a location for the item on the toolbar."
+        },
+        "menuItemTemplate": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render a menu item."
+        },
+        "options": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Configures the DevExtreme widget used as a toolbar item."
+        },
+        "showText": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies when to display the text for the widget item."
+        },
+        "template": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "IsTemplate": true,
+          "Description": "Specifies a template that should be used to render this item only."
+        },
+        "text": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "Specifies text displayed for the widget item."
+        },
+        "visible": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "Description": "Specifies whether or not a widget item must be displayed."
+        },
+        "widget": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "Description": "A widget that presents a toolbar item. To configure it, use the options object."
         }
       }
     },
@@ -47474,7 +49607,7 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether a user can nullify values of the lookup column."
+              "Description": "Specifies whether to display the Clear button in lookup column cells while they are being edited."
             },
             "dataSource": {
               "PrimitiveTypes": [
@@ -47672,7 +49805,7 @@
           ],
           "IsFunc": true,
           "IsEvent": true,
-          "Description": "A function that is executed when the button is clicked or tapped."
+          "Description": "A function that is executed when the button is clicked or tapped. Not executed if a template is used."
         },
         "template": {
           "PrimitiveTypes": [
@@ -47698,13 +49831,12 @@
       }
     },
     "TreeViewItem": {
-      "Description": "This section lists the data source fields that are used in a default item template.",
       "Options": {
         "disabled": {
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether a widget item should be disabled."
+          "Description": "Specifies whether the widget item responds to user interaction."
         },
         "expanded": {
           "PrimitiveTypes": [
@@ -47739,7 +49871,7 @@
           ],
           "IsCollection": true,
           "SingularName": "item",
-          "Description": "Holds an array of tree view items."
+          "Description": "Specifies nested tree view items."
         },
         "parentId": {
           "PrimitiveTypes": [
@@ -47752,14 +49884,14 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "Description": "Specifies whether or not the tree view item is displayed selected."
+          "Description": "Specifies whether the TreeView item should be displayed as selected."
         },
         "template": {
           "PrimitiveTypes": [
             "any"
           ],
           "IsTemplate": true,
-          "Description": "Specifies an item template that should be used to render this item only."
+          "Description": "Specifies a template that should be used to render this item only."
         },
         "text": {
           "PrimitiveTypes": [
@@ -50258,25 +52390,25 @@
       }
     },
     "PositionConfig": {
-      "Description": "The position object specifies the widget positioning options.",
+      "Description": "Configures the position of an overlay element.",
       "Options": {
         "at": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The target element position that the widget is positioned against.",
+          "Description": "Specifies the target element's side or corner where the overlay element should be positioned.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the horizontal position specifier."
+              "Description": "Specifies a position in the horizontal direction (for left, right, or center alignment)."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the vertical position specifier."
+              "Description": "Specifies a position in the vertical direction (for top, bottom, or center alignment)."
             }
           }
         },
@@ -50284,27 +52416,28 @@
           "PrimitiveTypes": [
             "Element",
             "JQuery",
+            "string",
             "Window"
           ],
-          "Description": "The element within which the widget is positioned."
+          "Description": "A boundary element in which the overlay element must be positioned."
         },
         "boundaryOffset": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the horizontal and vertical offset from the window's boundaries.",
+          "Description": "Specifies the offset of boundaries from the boundary element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the horizontal offset."
+              "Description": "Specifies a horizontal offset."
             },
             "y": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the vertical offset."
+              "Description": "Specifies a vertical offset."
             }
           }
         },
@@ -50312,19 +52445,19 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies how to move the widget if it overflows the screen.",
+          "Description": "Specifies how to resolve collisions - when the overlay element exceeds the boundary element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the horizontal collision handler."
+              "Description": "Specifies how to resolve horizontal collisions."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the vertical collision handler."
+              "Description": "Specifies how to resolve vertical collisions."
             }
           }
         },
@@ -50332,19 +52465,19 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The position of the widget to align against the target element.",
+          "Description": "Specifies the overlay element's side or corner to align with a target element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the horizontal position specifier."
+              "Description": "Specifies a position in the horizontal direction (for left, right, or center alignment)."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the vertical position specifier."
+              "Description": "Specifies a position in the vertical direction (for top, bottom, or center alignment)."
             }
           }
         },
@@ -50352,27 +52485,28 @@
           "PrimitiveTypes": [
             "Element",
             "JQuery",
+            "string",
             "Window"
           ],
-          "Description": "The target element that the widget is positioned against."
+          "Description": "The target element relative to which the overlay element should be positioned."
         },
         "offset": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies horizontal and vertical offset in pixels.",
+          "Description": "Specifies the overlay element's offset from a specified position.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the horizontal offset."
+              "Description": "Specifies a horizontal offset."
             },
             "y": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the vertical offset."
+              "Description": "Specifies a vertical offset."
             }
           }
         }
