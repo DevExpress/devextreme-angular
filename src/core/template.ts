@@ -14,6 +14,7 @@ import {
 import { DxTemplateHost } from './template-host';
 import { getElement } from './utils';
 import * as events from 'devextreme/events';
+import * as domAdapter from 'devextreme/core/dom_adapter';
 
 export const DX_TEMPLATE_WRAPPER_CLASS = 'dx-template-wrapper';
 
@@ -73,7 +74,7 @@ export class DxTemplateDirective {
 
         childView.rootNodes.forEach((element) => {
             if (element.nodeType === 1) {
-                this.renderer.addClass(element, DX_TEMPLATE_WRAPPER_CLASS);
+                domAdapter.setClass(element, DX_TEMPLATE_WRAPPER_CLASS, true);
             }
 
             events.one(element, 'dxremove', ({}, params) => {
