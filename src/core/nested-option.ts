@@ -5,6 +5,7 @@ import { getElement } from './utils';
 
 import render from 'devextreme/core/renderer';
 import * as events from 'devextreme/events';
+import * as domAdapter from 'devextreme/core/dom_adapter';
 
 const VISIBILITY_CHANGE_SELECTOR = 'dx-visibility-change-handler';
 
@@ -217,7 +218,7 @@ export function extractTemplate(option: IOptionWithTemplate, element: ElementRef
         render: (renderData) => {
             let result = element.nativeElement;
 
-            renderer.addClass(result, DX_TEMPLATE_WRAPPER_CLASS);
+            domAdapter.setClass(result, DX_TEMPLATE_WRAPPER_CLASS, true);
 
             if (renderData.container) {
                 let container = getElement(renderData.container);
