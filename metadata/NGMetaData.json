@@ -14863,6 +14863,12 @@
           ],
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
         },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": ""
+        },
         "invalidFileExtensionMessage": {
           "PrimitiveTypes": [
             "string"
@@ -19802,7 +19808,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showIndicator": {
           "PrimitiveTypes": [
@@ -27281,7 +27287,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showCloseButton": {
           "PrimitiveTypes": [
@@ -27702,7 +27708,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showCloseButton": {
           "PrimitiveTypes": [
@@ -32306,7 +32312,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the widget."
+          "Description": "Specifies the widget's time zone."
         },
         "useDropDownViewSwitcher": {
           "PrimitiveTypes": [
@@ -37395,7 +37401,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "tabIndex": {
           "PrimitiveTypes": [
@@ -37925,7 +37931,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the shading color."
+          "Description": "Specifies the shading color. Applies only if shading is enabled."
         },
         "showEvent": {
           "PrimitiveTypes": [
@@ -41608,6 +41614,9 @@
                 "DevExpress.data.DataSource",
                 "DevExpress.data.DataSourceOptions",
                 "string"
+              ],
+              "ItemPrimitiveTypes": [
+                "any"
               ],
               "IsDataSource": true,
               "Description": "Specifies a data source for the layer."
@@ -47613,7 +47622,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the appointment end date. Applies only if timeZone is not specified."
+          "Description": "Specifies the time zone for an appointment's endDate. Applies only if the timeZone option is unspecified."
         },
         "html": {
           "PrimitiveTypes": [
@@ -47643,7 +47652,7 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the timezone of the appointment start date. Applies only if timeZone is not specified."
+          "Description": "Specifies the time zone for an appointment's startDate. Applies only if the timeZone option is unspecified."
         },
         "template": {
           "PrimitiveTypes": [
@@ -51059,25 +51068,25 @@
       }
     },
     "PositionConfig": {
-      "Description": "The position object specifies the widget positioning options.",
+      "Description": "Configures the position of an overlay element.",
       "Options": {
         "at": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The target element position that the widget is positioned against.",
+          "Description": "Specifies the target element's side or corner where the overlay element should be positioned.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the horizontal position specifier."
+              "Description": "Specifies a position in the horizontal direction (for left, right, or center alignment)."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the vertical position specifier."
+              "Description": "Specifies a position in the vertical direction (for top, bottom, or center alignment)."
             }
           }
         },
@@ -51088,25 +51097,25 @@
             "string",
             "Window"
           ],
-          "Description": "The element within which the widget is positioned."
+          "Description": "A boundary element in which the overlay element must be positioned."
         },
         "boundaryOffset": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies the horizontal and vertical offset from the window's boundaries.",
+          "Description": "Specifies the offset of boundaries from the boundary element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the horizontal offset."
+              "Description": "Specifies a horizontal offset."
             },
             "y": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the vertical offset."
+              "Description": "Specifies a vertical offset."
             }
           }
         },
@@ -51114,19 +51123,19 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies how to move the widget if it overflows the screen.",
+          "Description": "Specifies how to resolve collisions - when the overlay element exceeds the boundary element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the horizontal collision handler."
+              "Description": "Specifies how to resolve horizontal collisions."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Specifies the vertical collision handler."
+              "Description": "Specifies how to resolve vertical collisions."
             }
           }
         },
@@ -51134,19 +51143,19 @@
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "The position of the widget to align against the target element.",
+          "Description": "Specifies the overlay element's side or corner to align with a target element.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the horizontal position specifier."
+              "Description": "Specifies a position in the horizontal direction (for left, right, or center alignment)."
             },
             "y": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": "Holds the vertical position specifier."
+              "Description": "Specifies a position in the vertical direction (for top, bottom, or center alignment)."
             }
           }
         },
@@ -51157,25 +51166,25 @@
             "string",
             "Window"
           ],
-          "Description": "The target element that the widget is positioned against."
+          "Description": "The target element relative to which the overlay element should be positioned."
         },
         "offset": {
           "PrimitiveTypes": [
             "string"
           ],
-          "Description": "Specifies horizontal and vertical offset in pixels.",
+          "Description": "Specifies the overlay element's offset from a specified position.",
           "Options": {
             "x": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the horizontal offset."
+              "Description": "Specifies a horizontal offset."
             },
             "y": {
               "PrimitiveTypes": [
                 "number"
               ],
-              "Description": "Specifies the vertical offset."
+              "Description": "Specifies a vertical offset."
             }
           }
         }
