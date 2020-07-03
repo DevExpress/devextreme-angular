@@ -34,7 +34,7 @@
 
       // devextreme & devextreme deps
       'devextreme': 'npm:devextreme',
-      'devexpress-diagram': 'npm:devexpress-diagram',
+      'devexpress-diagram': 'npm:devexpress-diagram/dist/dx-diagram.js',
       'devexpress-gantt': 'npm:devexpress-gantt/dist/dx-gantt.js',
       'jszip': 'npm:jszip/dist/jszip.min.js',
       'quill-delta-to-html': 'npm:quill-delta-to-html/dist/browser/QuillDeltaToHtmlConverter.bundle.js',
