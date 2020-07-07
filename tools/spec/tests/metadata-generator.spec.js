@@ -46,17 +46,18 @@ describe("metadata-generator", function() {
                     dxTestWidget: {
                         Options: {
                             onTestEvent: {
+                                FullName: 'Widget.Options.onTestEvent',
                                 IsEvent: true,
-                                Description: 'onTestEvent description'
+                                IsDepricated: true,
                             },
                             testTemplate: {
                                 IsTemplate: true,
                             },
                             testProperty: {
-                                Description: 'testProperty description'
+                                FullName: 'Widget.Options.testProperty'
                             }
                         },
-                        Description: 'widget description',
+                        FullName: 'dxTestWidget',
                         Module: 'test_widget'
                     },
                     dxEditorWidget: {
@@ -123,8 +124,8 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.widgetName).toBe("dxTestWidget");
         });
         
-        it("should generate proper widget description", function() {
-            expect(metas.DxTestWidget.description).toBe('widget description');
+        it("should generate proper widget fullName", function() {
+            expect(metas.DxTestWidget.fullName).toBe('@name dxTestWidget');
         });
 
         it("should generate proper events emit field", function() {
@@ -144,17 +145,23 @@ describe("metadata-generator", function() {
             .toEqual(['testEvent']);
         });
                 
-        it("should generate proper events description field", function() {
+        it("should generate proper events fullName field", function() {
             expect(metas.DxTestWidget.events
                 .filter(p => p.emit === 'onTestEvent')
-                .map(p => p.description))
-            .toEqual(['onTestEvent description']);
+                .map(p => p.fullName))
+            .toEqual(['@name Widget.Options.onTestEvent']);
         });
-        
-                
-        it("should generate proper events description field", function() {
+
+        it("should generate proper events deprication field", function() {
             expect(metas.DxTestWidget.events
-                .filter(p => p.emit !== "onTestEvent" && p.description !== undefined).length)
+                .filter(p => p.emit === 'onTestEvent')
+                .map(p => p.isDeprecated))
+            .toEqual([true]);
+        });
+
+        it("should generate proper events fullName field", function() {
+            expect(metas.DxTestWidget.events
+                .filter(p => p.emit !== "onTestEvent" && p.fullName !== undefined).length)
             .toEqual(2);
         });
 
@@ -165,10 +172,10 @@ describe("metadata-generator", function() {
             ]);
         });
         
-        it("should generate proper properties description", function() {
-            expect(metas.DxTestWidget.properties.map(p => p.description)).toEqual([
+        it("should generate proper properties fullName", function() {
+            expect(metas.DxTestWidget.properties.map(p => p.fullName)).toEqual([
                 undefined,
-                'testProperty description'
+                '@name Widget.Options.testProperty'
             ]);
         });
 

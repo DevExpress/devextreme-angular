@@ -80,15 +80,19 @@ export default class DXComponentMetadataGenerator {
                 changeEvents = [],
                 properties = [],
                 isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1,
-                isDevExpressRequired = false;
+                isDevExpressRequired = false,
+                widgetFullName = widget.FullName ? `@name ${widget.FullName}` : undefined;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
+                let optionFullName = option.FullName ? `@name ${option.FullName}` : undefined;
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
+                        fullName: optionFullName,
+                        isDepricated: option.isDepricated,
                         emit: optionName,
                         subscribe: eventName,
                         description: option.Description,
@@ -103,8 +107,7 @@ export default class DXComponentMetadataGenerator {
                     let property: any = {
                         name: optionName,
                         type: finalizedType,
-                        typesDescription: typesDescription,
-                        description: option.Description
+                        typesDescription: typesDescription
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -142,6 +145,7 @@ export default class DXComponentMetadataGenerator {
                 }, []);
 
             let widgetMetadata = {
+                fullName: widgetFullName,
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
@@ -170,7 +174,7 @@ export default class DXComponentMetadataGenerator {
         return {
             emit: `${name}Change`,
             type: `EventEmitter<${type}>`,
-            description: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
+            fullName: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
         };
     }
 
@@ -318,9 +322,11 @@ export default class DXComponentMetadataGenerator {
             prefix = (option.IsCollection ? ITEM_COMPONENT_PREFIX : OPTION_COMPONENT_PREFIX).toLocaleLowerCase() + '_',
             underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
             selector = inflector.dasherize(underscoreSelector),
-            path = inflector.dasherize(underscorePlural);
+            path = inflector.dasherize(underscorePlural),
+            optionFullName = option.FullName ? `@name ${option.FullName}` : undefined;
 
         let complexOptionMetadata: any = {
+            fullName: optionFullName,
             className: inflector.camelize(underscoreSelector),
             selector: selector,
             optionName: optionName,
