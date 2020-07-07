@@ -92,10 +92,9 @@ export default class DXComponentMetadataGenerator {
 
                     events.push({
                         fullName: optionFullName,
-                        isDepricated: option.isDepricated,
+                        isDeprecated: option.IsDeprecated,
                         emit: optionName,
                         subscribe: eventName,
-                        description: option.Description,
                         type: 'EventEmitter<any>'
                     });
                 } else {
@@ -105,6 +104,8 @@ export default class DXComponentMetadataGenerator {
                     isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
 
                     let property: any = {
+                        fullName: optionFullName,
+                        isDeprecated: option.IsDeprecated,
                         name: optionName,
                         type: finalizedType,
                         typesDescription: typesDescription
@@ -146,6 +147,7 @@ export default class DXComponentMetadataGenerator {
 
             let widgetMetadata = {
                 fullName: widgetFullName,
+                isDeprecated: widget.IsDeprecated,
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
@@ -157,7 +159,6 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
                 isDevExpressRequired: isDevExpressRequired,
-                description: widget.Description,
                 nestedComponents: widgetNestedComponents
             };
 
@@ -172,9 +173,9 @@ export default class DXComponentMetadataGenerator {
 
     private createEvent(name, type) {
         return {
+            fullName: `This member supports the internal infrastructure and is not intended to be used directly from your code.`,
             emit: `${name}Change`,
-            type: `EventEmitter<${type}>`,
-            fullName: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
+            type: `EventEmitter<${type}>`
         };
     }
 
@@ -327,6 +328,7 @@ export default class DXComponentMetadataGenerator {
 
         let complexOptionMetadata: any = {
             fullName: optionFullName,
+            isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
             selector: selector,
             optionName: optionName,
@@ -346,10 +348,13 @@ export default class DXComponentMetadataGenerator {
             let optionMetadata = nestedOptions[optName];
             let typesDescription = this.getTypesDescription(optionMetadata);
             let propertyType = this.getType(typesDescription);
+            let optionFullName = optionMetadata.FullName ? `@name ${optionMetadata.FullName}` : undefined;
 
             isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
-
+            
             let property: any = {
+                fullName: optionFullName,
+                isDeprecated: optionMetadata.IsDeprecated,
                 name: optName,
                 type: propertyType,
                 typesDescription: typesDescription
