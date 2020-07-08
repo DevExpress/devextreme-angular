@@ -71,7 +71,7 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
 };<#?#>
 
 <#? it.isDeprecated #>/** @deprecated */<#?#>
-<#? it.fullName #>/** <#= it.fullName #> */<#?#>
+<#? it.docID #>/** <#= it.docID #> */<#?#>
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
@@ -88,7 +88,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     instance: <#= it.className #>;
 <#~ it.properties :prop:i #>
     <#? prop.isDeprecated #>/** @deprecated */<#?#>
-    <#? prop.fullName #>/** <#= prop.fullName #> */<#?#>
+    <#? prop.docID #>/** <#= prop.docID #> */<#?#>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -100,7 +100,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#?#><#~#>
 <#~ it.events :event:i #>
     <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.fullName #>/** <#= event.fullName #> */<#?#>
+    <#? event.docID #>/** <#= event.docID #> */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
 

@@ -46,46 +46,57 @@ describe("metadata-generator", function() {
                     dxTestWidget: {
                         Options: {
                             onTestEvent: {
-                                FullName: 'Widget.Options.onTestEvent',
+                                DocID: 'Widget.Options.onTestEvent',
                                 IsEvent: true,
                                 IsDepricated: true,
                             },
                             testTemplate: {
+                                DocID: 'Widget.Options.testTemplate',
                                 IsTemplate: true,
                             },
                             testProperty: {
-                                FullName: 'Widget.Options.testProperty'
+                                DocID: 'Widget.Options.testProperty'
                             }
                         },
-                        FullName: 'dxTestWidget',
+                        DocID: 'dxTestWidget',
                         Module: 'test_widget'
                     },
                     dxEditorWidget: {
                         Options: {
-                            onValueChanged: {}
+                            onValueChanged: {
+                                DocID: 'Widget.Options.onValueChanged',
+                            }
                         },
+                        DocID: 'dxEditorWidget',
                         Module: 'test_widget'
                     },
                     dxCollectionWidget: {
                         Options: {
                             collectionProperty: {
+                                DocID: 'Widget.Options.collectionProperty',
                                 IsCollection: true
                             },
                             dataSourceProperty: {
+                                DocID: 'Widget.Options.dataSourceProperty',
                                 IsDataSource: true
                             }
                         },
+                        DocID: 'dxCollectionWidget',
                         Module: 'test_widget'
                     },
                     dxExtensionWidget: {
                         IsExtensionComponent: true,
                         Options: {},
+                        DocID: 'dxExtensionWidget',
                         Module: 'test_widget'
                     },
                     dxVizWidget: {
                         Options: {
-                            value: {}
+                            value: {
+                                DocID: 'Widget.Options.value',
+                            }
                         },
+                        DocID: 'dxVizWidget',
                         Module: 'viz/test_widget'
                     }
                 }
@@ -124,8 +135,8 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.widgetName).toBe("dxTestWidget");
         });
         
-        it("should generate proper widget fullName", function() {
-            expect(metas.DxTestWidget.fullName).toBe('@name dxTestWidget');
+        it("should generate proper widget docID", function() {
+            expect(metas.DxTestWidget.docID).toBe('@name dxTestWidget');
         });
 
         it("should generate proper events emit field", function() {
@@ -145,10 +156,10 @@ describe("metadata-generator", function() {
             .toEqual(['testEvent']);
         });
                 
-        it("should generate proper events fullName field", function() {
+        it("should generate proper events docID field", function() {
             expect(metas.DxTestWidget.events
                 .filter(p => p.emit === 'onTestEvent')
-                .map(p => p.fullName))
+                .map(p => p.docID))
             .toEqual(['@name Widget.Options.onTestEvent']);
         });
 
@@ -159,9 +170,9 @@ describe("metadata-generator", function() {
             .toEqual([true]);
         });
 
-        it("should generate proper events fullName field", function() {
+        it("should generate proper events docID field", function() {
             expect(metas.DxTestWidget.events
-                .filter(p => p.emit !== "onTestEvent" && p.fullName !== undefined).length)
+                .filter(p => p.emit !== "onTestEvent" && p.docID !== undefined).length)
             .toEqual(2);
         });
 
@@ -172,8 +183,8 @@ describe("metadata-generator", function() {
             ]);
         });
         
-        it("should generate proper properties fullName", function() {
-            expect(metas.DxTestWidget.properties.map(p => p.fullName)).toEqual([
+        it("should generate proper properties docID", function() {
+            expect(metas.DxTestWidget.properties.map(p => p.docID)).toEqual([
                 undefined,
                 '@name Widget.Options.testProperty'
             ]);

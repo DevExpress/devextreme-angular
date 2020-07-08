@@ -81,17 +81,17 @@ export default class DXComponentMetadataGenerator {
                 properties = [],
                 isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1,
                 isDevExpressRequired = false,
-                widgetFullName = widget.FullName ? `@name ${widget.FullName}` : undefined;
+                widgetDocID = widget.DocID ? `@name ${widget.DocID}` : undefined;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
-                let optionFullName = option.FullName ? `@name ${option.FullName}` : undefined;
+                let optionDocID = option.DocID ? `@name ${option.DocID}` : undefined;
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
-                        fullName: optionFullName,
+                        docID: optionDocID,
                         isDeprecated: option.IsDeprecated,
                         emit: optionName,
                         subscribe: eventName,
@@ -104,7 +104,7 @@ export default class DXComponentMetadataGenerator {
                     isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
 
                     let property: any = {
-                        fullName: optionFullName,
+                        docID: optionDocID,
                         isDeprecated: option.IsDeprecated,
                         name: optionName,
                         type: finalizedType,
@@ -146,7 +146,7 @@ export default class DXComponentMetadataGenerator {
                 }, []);
 
             let widgetMetadata = {
-                fullName: widgetFullName,
+                docID: widgetDocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
                 widgetName: widgetName,
@@ -173,7 +173,7 @@ export default class DXComponentMetadataGenerator {
 
     private createEvent(name, type) {
         return {
-            fullName: `This member supports the internal infrastructure and is not intended to be used directly from your code.`,
+            docID: `This member supports the internal infrastructure and is not intended to be used directly from your code.`,
             emit: `${name}Change`,
             type: `EventEmitter<${type}>`
         };
@@ -324,10 +324,10 @@ export default class DXComponentMetadataGenerator {
             underscoreSelector = prefix + (option.IsCollection ? underscoreSingular : underscorePlural),
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural),
-            optionFullName = option.FullName ? `@name ${option.FullName}` : undefined;
+            optionDocID = option.DocID ? `@name ${option.DocID}` : undefined;
 
         let complexOptionMetadata: any = {
-            fullName: optionFullName,
+            docID: optionDocID,
             isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
             selector: selector,
@@ -348,12 +348,12 @@ export default class DXComponentMetadataGenerator {
             let optionMetadata = nestedOptions[optName];
             let typesDescription = this.getTypesDescription(optionMetadata);
             let propertyType = this.getType(typesDescription);
-            let optionFullName = optionMetadata.FullName ? `@name ${optionMetadata.FullName}` : undefined;
+            let optionDocID = optionMetadata.DocID ? `@name ${optionMetadata.DocID}` : undefined;
 
             isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
             
             let property: any = {
-                fullName: optionFullName,
+                docID: optionDocID,
                 isDeprecated: optionMetadata.IsDeprecated,
                 name: optName,
                 type: propertyType,
