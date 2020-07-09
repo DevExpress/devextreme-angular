@@ -347,7 +347,7 @@ export default class DXComponentMetadataGenerator {
             let propertyType = this.getType(typesDescription);
 
             isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
-            
+
             let property: any = {
                 docID: optionMetadata.DocID,
                 isDeprecated: optionMetadata.IsDeprecated,
