@@ -149,8 +149,8 @@ gulp.task('npm.content', gulp.series('build.components', function() {
 }));
 
 gulp.task('npm.pack', gulp.series(
-    shell.task('npm run inject-descriptions'),
     'npm.content',
+    shell.task('npm run inject-descriptions'),
     shell.task(['npm pack'], { cwd: buildConfig.npm.distPath })
 ));
 
