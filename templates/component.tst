@@ -71,7 +71,7 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
 };<#?#>
 
 <#? it.isDeprecated #>/** @deprecated */<#?#>
-<#? it.docID #>/** <#= it.docID #> */<#?#>
+<#? it.docID #>/** @name <#= it.docID #> */<#?#>
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
@@ -88,7 +88,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     instance: <#= it.className #>;
 <#~ it.properties :prop:i #>
     <#? prop.isDeprecated #>/** @deprecated */<#?#>
-    <#? prop.docID #>/** <#= prop.docID #> */<#?#>
+    <#? prop.docID #>/** @name <#= prop.docID #> */<#?#>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -100,7 +100,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 <#?#><#~#>
 <#~ it.events :event:i #>
     <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.docID #>/** <#= event.docID #> */<#?#>
+    <#? event.docID #>/** @name <#= event.docID #> */<#?#>
+    <#? event.isInternal #>/** This member supports the internal infrastructure and is not intended to be used directly from your code. */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
 
