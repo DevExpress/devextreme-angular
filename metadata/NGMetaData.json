@@ -2073,6 +2073,12 @@
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
             },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
+            },
             "opacity": {
               "PrimitiveTypes": [
                 "number"
@@ -2693,6 +2699,12 @@
                 "Format"
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
+            },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -3907,6 +3919,12 @@
                   ],
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
                 },
+                "position": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
+                },
                 "rotationAngle": {
                   "PrimitiveTypes": [
                     "number"
@@ -4781,6 +4799,12 @@
                     "string"
                   ],
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
+                },
+                "position": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
                 },
                 "rotationAngle": {
                   "PrimitiveTypes": [
@@ -6593,6 +6617,12 @@
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
             },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows users to interact with the tooltip content."
+            },
             "location": {
               "PrimitiveTypes": [
                 "string"
@@ -7040,6 +7070,12 @@
                     "string"
                   ],
                   "Description": "Decides how to arrange axis labels when there is not enough space to keep all of them."
+                },
+                "position": {
+                  "PrimitiveTypes": [
+                    "string"
+                  ],
+                  "Description": ""
                 },
                 "rotationAngle": {
                   "PrimitiveTypes": [
@@ -8780,6 +8816,12 @@
                 "Format"
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
+            },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -12845,37 +12887,37 @@
           "Description": "Specifies a custom template for shapes."
         },
         "defaultItemProperties": {
-          "Description": "",
+          "Description": "Configures default item properties.",
           "Options": {
             "connectorLineEnd": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the default tip of a connector's end point."
             },
             "connectorLineStart": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the default tip of a connector's start point."
             },
             "connectorLineType": {
               "PrimitiveTypes": [
                 "string"
               ],
-              "Description": ""
+              "Description": "Specifies the default type of a connector."
             },
             "style": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "Description": ""
+              "Description": "Specifies a default item style."
             },
             "textStyle": {
               "PrimitiveTypes": [
                 "any"
               ],
-              "Description": ""
+              "Description": "Specifies an item's default text style."
             }
           }
         },
@@ -13190,7 +13232,7 @@
                 "string"
               ],
               "IsFunc": true,
-              "Description": "Specifies the name of a data source field or an expression that provides a node image's URL."
+              "Description": "Specifies the name of a data source field or expression that provides an image URL or Base64 encoded image for a node."
             },
             "itemsExpr": {
               "PrimitiveTypes": [
@@ -13955,7 +13997,7 @@
             "JQuery",
             "string"
           ],
-          "Description": "Specifies a CSS selector for the element in which the drawer should be rendered. Applies only when the openedStateMode is \"overlap\"."
+          "IsDeprecated": true
         },
         "template": {
           "PrimitiveTypes": [
@@ -15222,6 +15264,12 @@
             "boolean"
           ],
           "Description": "Specifies whether the widget changes its state when a user pauses on it."
+        },
+        "inputAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "Description": "Specifies the attributes to be passed on to the underlying `` element of the `file` type."
         },
         "invalidFileExtensionMessage": {
           "PrimitiveTypes": [
@@ -17831,6 +17879,13 @@
           ],
           "Description": "Specifies the attributes to be attached to the widget's root element."
         },
+        "firstDayOfWeek": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "Description": ""
+        },
         "focusStateEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -19223,6 +19278,12 @@
                 "Format"
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
+            },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -23640,6 +23701,12 @@
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
             },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows users to interact with the tooltip content."
+            },
             "opacity": {
               "PrimitiveTypes": [
                 "number"
@@ -24731,7 +24798,7 @@
               ],
               "IsCollection": true,
               "SingularName": "category",
-              "Description": "Specifies the order in which arguments (categories) are arranged on the discrete argument axis."
+              "Description": "Specifies the order of categories on an axis of the \"discrete\" type."
             },
             "color": {
               "PrimitiveTypes": [
@@ -26693,6 +26760,12 @@
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
             },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Allows users to interact with the tooltip content."
+            },
             "opacity": {
               "PrimitiveTypes": [
                 "number"
@@ -26789,7 +26862,7 @@
               ],
               "IsCollection": true,
               "SingularName": "category",
-              "Description": "Specifies the order in which discrete values are arranged on the value axis."
+              "Description": "Specifies the order of categories on an axis of the \"discrete\" type."
             },
             "color": {
               "PrimitiveTypes": [
@@ -32328,13 +32401,20 @@
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "Description": "Specifies whether users can edit appointment time zones."
+              "IsDeprecated": true,
+              "Description": "Use the editing.allowTimeZoneEditing option instead."
             },
             "allowResizing": {
               "PrimitiveTypes": [
                 "boolean"
               ],
               "Description": "Specifies whether or not an end-user can change an appointment duration."
+            },
+            "allowTimeZoneEditing": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": "Specifies whether users can edit appointment time zones."
             },
             "allowUpdating": {
               "PrimitiveTypes": [
@@ -34994,6 +35074,12 @@
                 "Format"
               ],
               "Description": "Formats a value before it is displayed it in a tooltip."
+            },
+            "interactive": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "Description": ""
             },
             "opacity": {
               "PrimitiveTypes": [
@@ -37950,8 +38036,8 @@
             "Function",
             "string"
           ],
-          "IsFunc": true,
-          "Description": "Specifies the widget's height."
+          "IsDeprecated": true,
+          "IsFunc": true
         },
         "hint": {
           "PrimitiveTypes": [
@@ -42099,6 +42185,9 @@
                 "DevExpress.data.DataSourceOptions",
                 "string"
               ],
+              "ItemPrimitiveTypes": [
+                "any"
+              ],
               "IsDataSource": true,
               "Description": "Specifies a data source for the layer."
             },
@@ -46225,9 +46314,6 @@
           "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
         },
         "filterOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
           "ItemPrimitiveTypes": [
             "string"
           ],
@@ -46328,7 +46414,7 @@
               ],
               "IsFunc": true,
               "IsDataSource": true,
-              "Description": "Specifies a data source for the header filter."
+              "Description": "Specifies the header filter's data source."
             },
             "groupInterval": {
               "PrimitiveTypes": [
@@ -49470,9 +49556,6 @@
           "Description": "In a boolean column, replaces all false items with a specified text. Applies only if showEditorAlways option is false."
         },
         "filterOperations": {
-          "PrimitiveTypes": [
-            "string"
-          ],
           "ItemPrimitiveTypes": [
             "string"
           ],
@@ -49559,7 +49642,7 @@
               ],
               "IsFunc": true,
               "IsDataSource": true,
-              "Description": "Specifies a data source for the header filter."
+              "Description": "Specifies the header filter's data source."
             },
             "groupInterval": {
               "PrimitiveTypes": [
