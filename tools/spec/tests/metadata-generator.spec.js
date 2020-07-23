@@ -48,7 +48,7 @@ describe("metadata-generator", function() {
                             onTestEvent: {
                                 DocID: 'Widget.Options.onTestEvent',
                                 IsEvent: true,
-                                IsDepricated: true,
+                                IsDeprecated: true,
                             },
                             testTemplate: {
                                 DocID: 'Widget.Options.testTemplate',
@@ -136,7 +136,7 @@ describe("metadata-generator", function() {
         });
         
         it("should generate proper widget docID", function() {
-            expect(metas.DxTestWidget.docID).toBe('@name dxTestWidget');
+            expect(metas.DxTestWidget.docID).toBe('dxTestWidget');
         });
 
         it("should generate proper events emit field", function() {
@@ -160,7 +160,7 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.events
                 .filter(p => p.emit === 'onTestEvent')
                 .map(p => p.docID))
-            .toEqual(['@name Widget.Options.onTestEvent']);
+            .toEqual(['Widget.Options.onTestEvent']);
         });
 
         it("should generate proper events deprication field", function() {
@@ -172,7 +172,7 @@ describe("metadata-generator", function() {
 
         it("should generate proper events docID field", function() {
             expect(metas.DxTestWidget.events
-                .filter(p => p.emit !== "onTestEvent" && p.docID !== undefined).length)
+                .filter(p => p.emit !== "onTestEvent" && p.docID === undefined && p.isInternal === true).length)
             .toEqual(2);
         });
 
@@ -185,8 +185,8 @@ describe("metadata-generator", function() {
         
         it("should generate proper properties docID", function() {
             expect(metas.DxTestWidget.properties.map(p => p.docID)).toEqual([
-                undefined,
-                '@name Widget.Options.testProperty'
+                'Widget.Options.testTemplate',
+                'Widget.Options.testProperty'
             ]);
         });
 
