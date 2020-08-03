@@ -20,8 +20,53 @@ function trimPrefix(prefix: string, value: string) {
     return value;
 }
 
+interface TypeDescription {
+    primitiveTypes: string[];
+    arrayTypes: string[];
+    isDevExpressRequired?: boolean;
+    dxtypes?: string[];
+    typeImports?: { Name: string, File: String };
+}
+
+interface Option {
+    PrimitiveTypes: string[];
+    ItemPrimitiveTypes: string[];
+    IsDataSource?: boolean;
+    IsPromise?: boolean;
+    IsDeprecated?: boolean;
+    IsCollection?: boolean;
+    IsChangeable?: boolean;
+    SingularName?: string;
+    IsEvent?: boolean;
+    IsFunc?: boolean;
+    DocID: string;
+    TsType: {
+        Name: string;
+        File: string;
+    },
+    Options: {
+        [optionName: string]: Option;
+    }
+}
+
+interface Metadata {
+    Widgets: {
+        [widgetName: string]: {
+            DocID: string;
+            Module: string;
+            IsTranscludedContent?: boolean;
+            IsExtensionComponent?: boolean;
+            IsDeprecated?: boolean;
+            Options: {
+                [optionName: string]: Option;
+            }
+        }
+    };
+    ExtraObjects: any[];
+}
+
 export interface IObjectStore {
-    read(name: string): Object;
+    read(name: string): Metadata;
     write(name: string, data: Object): void;
 }
 
@@ -177,7 +222,7 @@ export default class DXComponentMetadataGenerator {
         };
     }
 
-    private getTypesDescription(optionMetadata) {
+    private getTypesDescription(optionMetadata: Option): TypeDescription {
         let typeParts = this.getTypeParts(optionMetadata);
 
         return {
@@ -187,7 +232,7 @@ export default class DXComponentMetadataGenerator {
         };
     }
 
-    private getTypeParts(optionMetadata) {
+    private getTypeParts(optionMetadata: Option): { primitiveTypes: string[]; arrayTypes: string[] } {
         let primitiveTypes = optionMetadata.PrimitiveTypes ? optionMetadata.PrimitiveTypes.slice(0) : [];
         let arrayTypes = [];
 
@@ -227,7 +272,7 @@ export default class DXComponentMetadataGenerator {
         return '';
     }
 
-    private getType(typesDescription) {
+    private getType(typesDescription: TypeDescription) {
         let primitiveTypes = typesDescription.primitiveTypes.slice(0);
         let result = 'any';
 
@@ -275,7 +320,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
+    private generateComplexOptionByType(metadata: Metadata, option: Option, optionName: string, complexTypes: string[]) {
         let optionComplexTypes = option[option.IsCollection ? 'ItemComplexTypes' : 'ComplexTypes'];
         if (option.Options) {
             return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
@@ -305,7 +350,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOption(metadata, nestedOptions, optionName, complexTypes, option) {
+    private generateComplexOption(metadata: Metadata, nestedOptions, optionName, complexTypes, option) {
         if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
