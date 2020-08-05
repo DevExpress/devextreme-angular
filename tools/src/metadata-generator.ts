@@ -3,6 +3,9 @@ import path = require('path');
 import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
+import { Metadata, Option, NestedOptions } from './metadata-model';
+import { buildImports, FileImport, getValues } from './types-helper';
+
 let inflector = require('inflector-js');
 
 const OPTION_COMPONENT_PREFIX = 'Dxo';
@@ -20,49 +23,17 @@ function trimPrefix(prefix: string, value: string) {
     return value;
 }
 
+interface FileDescriptor {
+    imports: FileImport[];
+    [key: string] : any;
+}
+
 interface TypeDescription {
     primitiveTypes: string[];
     arrayTypes: string[];
     isDevExpressRequired?: boolean;
     dxtypes?: string[];
     typeImports?: { Name: string, File: String };
-}
-
-interface Option {
-    PrimitiveTypes: string[];
-    ItemPrimitiveTypes: string[];
-    IsDataSource?: boolean;
-    IsPromise?: boolean;
-    IsDeprecated?: boolean;
-    IsCollection?: boolean;
-    IsChangeable?: boolean;
-    SingularName?: string;
-    IsEvent?: boolean;
-    IsFunc?: boolean;
-    DocID: string;
-    TsType: {
-        Name: string;
-        File: string;
-    },
-    Options: {
-        [optionName: string]: Option;
-    }
-}
-
-interface Metadata {
-    Widgets: {
-        [widgetName: string]: {
-            DocID: string;
-            Module: string;
-            IsTranscludedContent?: boolean;
-            IsExtensionComponent?: boolean;
-            IsDeprecated?: boolean;
-            Options: {
-                [optionName: string]: Option;
-            }
-        }
-    };
-    ExtraObjects: any[];
 }
 
 export interface IObjectStore {
@@ -188,7 +159,13 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            let widgetMetadata = {
+            const imports = buildImports(getValues(widget.Options));
+            const bundlePath = "devextreme/" + "bundles/dx.all";
+
+            if(isDevExpressRequired && imports.every(i => i.path !== bundlePath))
+                imports.push({ path: bundlePath, importString: "DevExpress" });
+
+            const widgetMetadata: FileDescriptor = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
@@ -201,7 +178,7 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
-                isDevExpressRequired: isDevExpressRequired,
+                imports,
                 nestedComponents: widgetNestedComponents
             };
 
@@ -368,7 +345,7 @@ export default class DXComponentMetadataGenerator {
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);
 
-        let complexOptionMetadata: any = {
+        let complexOptionMetadata: FileDescriptor = {
             docID: option.DocID,
             isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
@@ -380,7 +357,8 @@ export default class DXComponentMetadataGenerator {
             propertyName: optionName,
             isCollection: option.IsCollection,
             hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate,
-            collectionNestedComponents: []
+            collectionNestedComponents: [],
+            imports: []
         };
 
         let nestedComponents = [complexOptionMetadata];
@@ -434,6 +412,8 @@ export default class DXComponentMetadataGenerator {
             complexOptionMetadata.collectionNestedComponents.push
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
+
+        complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
 
         return nestedComponents;
     }
