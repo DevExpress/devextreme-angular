@@ -298,7 +298,7 @@ export default class DXComponentMetadataGenerator {
             .indexOf('.') > -1);
     }
 
-    private getExternalObjectInfo(metadata, typeName) {
+    private getExternalObjectInfo(metadata: Metadata, typeName) {
         let externalObject = metadata.ExtraObjects[typeName];
 
         if (!externalObject) {
@@ -350,7 +350,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOption(metadata: Metadata, nestedOptions, optionName, complexTypes, option) {
+    private generateComplexOption(metadata: Metadata, nestedOptions: NestedOptions, optionName, complexTypes, option: Option) {
         if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
