@@ -5,17 +5,17 @@ export interface FileImport {
     importString: string;
 }
 
-export function buildImports(options: Option[]): FileImport[] {
+export function buildImports(imports: Import[]): FileImport[] {
 
-    const importsByPath = extractImports(options).reduce(
-        (s, {path, name, alias}) => {
-            if(!s[path])
-                s[path] = {};
+    const importsByPath = imports.reduce(
+        (s, {Path, Name, Alias}) => {
+            if(!s[Path])
+                s[Path] = {};
 
-            s[path][`${name}+${alias}`] = { name, alias };
+            s[Path][`${Name}+${Alias}`] = { Name, Alias };
 
             return s;
-        }, {}
+        }, {} as Record<string, Record<string, ImportName>>
     );
 
     return Object.keys(importsByPath)
@@ -27,7 +27,7 @@ export function buildImports(options: Option[]): FileImport[] {
                 importParts.push(defaultImport);
 
             if(names.length)
-                importParts.push(`{ ${names.map(({name, alias}) => alias ? `${name} as ${alias}` : name).join(", ")} }`)
+                importParts.push(`{ ${names.map(({Name, Alias}) => Alias ? `${Name} as ${Alias}` : Name).join(", ")} }`)
 
             return {
                 path: `devextreme/${path}`,
@@ -37,7 +37,7 @@ export function buildImports(options: Option[]): FileImport[] {
         .sort((a, b) => a.path.localeCompare(b.path));
 }
 
-function extractImports(options: Option[]): Import[] {
+export function extractImports(options: Option[]): Import[] {
     if(!options || !options.length)
         return [];
 
@@ -54,10 +54,11 @@ function extractDefaultImport(imports: ImportName[]): { defaultImport?: string; 
     const result: ReturnType<typeof extractDefaultImport> = { defaultImport: undefined, names: [] };
 
     for(const i of imports) {
-        if(i.name.toLowerCase() === "default") {
-            result.defaultImport = i.alias;
 
-            if(!i.alias)
+        if(i.Name.toLowerCase() === "default") {
+            result.defaultImport = i.Alias;
+
+            if(!i.Alias)
                 throw new Error("default export must have an alias: " + JSON.stringify(i));
         } else {
             result.names.push(i);

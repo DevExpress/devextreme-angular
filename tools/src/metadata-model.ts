@@ -1,10 +1,10 @@
 export interface ImportName {
-    name: string;
-    alias?: string;
+    Name: string;
+    Alias?: string;
 }
 
 export interface Import extends ImportName {
-    path: string;
+    Path: string;
 }
 
 export interface NestedOptions{

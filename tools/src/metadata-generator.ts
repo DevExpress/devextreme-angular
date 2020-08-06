@@ -3,8 +3,8 @@ import path = require('path');
 import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
-import { Metadata, Option, NestedOptions } from './metadata-model';
-import { buildImports, FileImport, getValues } from './types-helper';
+import { Metadata, Option, NestedOptions, Import } from './metadata-model';
+import { buildImports, FileImport, getValues, extractImports } from './types-helper';
 
 let inflector = require('inflector-js');
 
@@ -21,6 +21,11 @@ function trimPrefix(prefix: string, value: string) {
         return value.substr(prefix.length);
     }
     return value;
+}
+
+interface FileMetaDescriptor {
+    importsMeta: Import[];
+    [key: string] : any;
 }
 
 interface FileDescriptor {
@@ -159,13 +164,10 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const imports = buildImports(getValues(widget.Options));
-            const bundlePath = "devextreme/" + "bundles/dx.all";
+            const importsMeta = extractImports(getValues(widget.Options));
+            const imports = buildImports(importsMeta);
 
-            if(isDevExpressRequired && imports.every(i => i.path !== bundlePath))
-                imports.push({ path: bundlePath, importString: "DevExpress" });
-
-            const widgetMetadata: FileDescriptor = {
+            const widgetMetadata: FileDescriptor & FileMetaDescriptor = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
@@ -179,6 +181,7 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
                 imports,
+                importsMeta,
                 nestedComponents: widgetNestedComponents
             };
 
@@ -345,7 +348,7 @@ export default class DXComponentMetadataGenerator {
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);
 
-        let complexOptionMetadata: FileDescriptor = {
+        let complexOptionMetadata: FileDescriptor & FileMetaDescriptor = {
             docID: option.DocID,
             isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
@@ -358,7 +361,8 @@ export default class DXComponentMetadataGenerator {
             isCollection: option.IsCollection,
             hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate,
             collectionNestedComponents: [],
-            imports: []
+            imports: [],
+            importsMeta: []
         };
 
         let nestedComponents = [complexOptionMetadata];
@@ -413,7 +417,8 @@ export default class DXComponentMetadataGenerator {
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
-        complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
+        complexOptionMetadata.importsMeta = extractImports(getValues(nestedOptions));
+        complexOptionMetadata.imports = buildImports(complexOptionMetadata.importsMeta);
 
         return nestedComponents;
     }
@@ -422,10 +427,10 @@ export default class DXComponentMetadataGenerator {
         return component.basePath + (component.isCollection ? '-dxi' : '');
     }
 
-    private generateNestedOptions(config, metadata) {
-        let normalizedMetadata = metadata
-            .reduce((result, component) => {
-                let existingComponent = result.filter(c => c.className === component.className)[0];
+    private generateNestedOptions(config, metadata: any[]) {
+        let normalizedMetadata: FileMetaDescriptor[] = metadata
+            .reduce((result, component: FileMetaDescriptor) => {
+                let existingComponent = result.filter(c => c.className === component.className)[0] as FileMetaDescriptor;
 
                 if (!existingComponent) {
                     result.push(component);
@@ -468,6 +473,8 @@ export default class DXComponentMetadataGenerator {
                     existingComponent.isDevExpressRequired = existingComponent.isDevExpressRequired || component.isDevExpressRequired;
                     existingComponent.collectionNestedComponents.push
                         .apply(existingComponent.collectionNestedComponents, component.collectionNestedComponents);
+    
+                    existingComponent.importsMeta.push(...component.importsMeta);
                 }
 
                 return result;
@@ -493,8 +500,9 @@ export default class DXComponentMetadataGenerator {
                         path: this.getBaseComponentPath(component),
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
                         basePath: 'devextreme-angular/core',
-                        isDevExpressRequired: component.isDevExpressRequired
-                    });
+                        isDevExpressRequired: component.isDevExpressRequired,
+                        imports: buildImports(component.importsMeta)
+                    } as FileDescriptor);
                 }
 
                 return result;
@@ -522,6 +530,8 @@ export default class DXComponentMetadataGenerator {
                     component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
                 }
+
+                component.imports = buildImports(component.importsMeta);
 
                 return component;
             })
