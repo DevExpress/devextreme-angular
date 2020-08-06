@@ -69,9 +69,14 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     useExisting: forwardRef(() => <#= it.className #>Component),
     multi: true
 };<#?#>
-
-<#? it.isDeprecated #>/** @deprecated */<#?#>
-<#? it.docID #>/** @name <#= it.docID #> */<#?#>
+<#? it.isDeprecated #>
+/**
+ * <-<#= it.docID #>->
+ * @deprecated <-<#= it.docID #>:depNote->
+ */
+<#?? it.docID #>
+/** <-<#= it.docID #>-> */
+<#?#>
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
@@ -87,8 +92,14 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
 export class <#= it.className #>Component extends <#= baseClass #> <#? implementedInterfaces.length #>implements <#= implementedInterfaces.join(', ') #> <#?#>{
     instance: <#= it.className #>;
 <#~ it.properties :prop:i #>
-    <#? prop.isDeprecated #>/** @deprecated */<#?#>
-    <#? prop.docID #>/** @name <#= prop.docID #> */<#?#>
+    <#? prop.isDeprecated #>
+    /**
+     * <-<#= prop.docID #>->
+     * @deprecated <-<#= prop.docID #>:depNote->
+     */
+    <#?? prop.docID #>
+    /** <-<#= prop.docID #>-> */
+    <#?#>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -99,9 +110,16 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#?#><#~#>
 <#~ it.events :event:i #>
-    <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.docID #>/** @name <#= event.docID #> */<#?#>
-    <#? event.isInternal #>/** This member supports the internal infrastructure and is not intended to be used directly from your code. */<#?#>
+    <#? event.isInternal #>
+    /** This member supports the internal infrastructure and is not intended to be used directly from your code. */
+    <#?? event.isDeprecated #>
+    /**
+     * <-<#= event.docID #>->
+     * @deprecated <-<#= event.docID #>:depNote->
+     */
+    <#?? event.docID #>
+    /** <-<#= event.docID #>-> */
+    <#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
 

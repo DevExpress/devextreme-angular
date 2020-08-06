@@ -57,9 +57,16 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     }
 <#~#>
 <#~ it.events :event:i #>
-    <#? event.isDeprecated #>/** @deprecated */<#?#>
-    <#? event.docID #>/** @name <#= event.docID #> */<#?#>
-    <#? event.isInternal #>/** This member supports the internal infrastructure and is not intended to be used directly from your code. */<#?#>
+    <#? event.isInternal #>
+    /** This member supports the internal infrastructure and is not intended to be used directly from your code. */
+    <#?? event.isDeprecated #>
+    /**
+     * <-<#= event.docID #>->
+     * @deprecated <-<#= event.docID #>:depNote->
+     */
+    <#?? event.docID #>
+    /** <-<#= event.docID #>-> */
+    <#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
     protected get _optionPath() {
