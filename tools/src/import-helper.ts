@@ -5,9 +5,9 @@ export interface FileImport {
     importString: string;
 }
 
-export function buildImports(imports: Import[]): FileImport[] {
+export function buildImports(options: Option[]): FileImport[] {
 
-    const importsByPath = imports.reduce(
+    const importsByPath = extractImports(options).reduce(
         (r, {Path, Name, Alias}) => {
             if(!r[Path])
                 r[Path] = {};
@@ -21,23 +21,23 @@ export function buildImports(imports: Import[]): FileImport[] {
     return Object.keys(importsByPath)
         .map(path => {
             const {defaultImport, names} = extractDefaultImport(getValues(importsByPath[path]));
-            const importParts = [];
+            const parts = [];
 
             if(defaultImport)
-                importParts.push(defaultImport);
+                parts.push(defaultImport);
 
             if(names.length)
-                importParts.push(`{ ${names.map(({Name, Alias}) => Alias ? `${Name} as ${Alias}` : Name).join(", ")} }`)
+                parts.push(`{ ${names.map(({Name, Alias}) => Alias ? `${Name} as ${Alias}` : Name).join(", ")} }`)
 
             return {
                 path: `devextreme/${path}`,
-                importString: importParts.join(", ")
+                importString: parts.join(", ")
             } as FileImport;
         })
         .sort((a, b) => a.path.localeCompare(b.path));
 }
 
-export function extractImports(options: Option[]): Import[] {
+function extractImports(options: Option[]): Import[] {
     if(!options || !options.length)
         return [];
 

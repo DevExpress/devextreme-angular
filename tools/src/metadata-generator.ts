@@ -4,7 +4,7 @@ import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
 import { Metadata, Option, NestedOptions } from './metadata-model';
-import { buildImports, FileImport, getValues, extractImports } from './types-helper';
+import { buildImports, FileImport, getValues } from './import-helper';
 
 let inflector = require('inflector-js');
 
@@ -190,8 +190,6 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const imports = buildImports(extractImports(getValues(widget.Options)));
-
             const widgetMetadata: FileDescriptor = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
@@ -205,7 +203,7 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
-                imports,
+                imports: buildImports(getValues(widget.Options)),
                 nestedComponents: widgetNestedComponents
             };
 
@@ -442,7 +440,7 @@ export default class DXComponentMetadataGenerator {
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
-        complexOptionMetadata.imports = buildImports(extractImports(getValues(nestedOptions)));
+        complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
 
         return nestedComponents;
     }
@@ -525,7 +523,7 @@ export default class DXComponentMetadataGenerator {
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
                         basePath: 'devextreme-angular/core',
                         isDevExpressRequired: component.isDevExpressRequired,
-                        imports: buildImports(extractImports(component.options))
+                        imports: buildImports(component.options)
                     } as FileDescriptor);
                 }
 
@@ -551,13 +549,13 @@ export default class DXComponentMetadataGenerator {
                     component.basePath = `./base/${this.getBaseComponentPath(component)}`;
 
                     component.imports = component.events
-                        ? component.imports = buildImports(extractImports(component.events.map((e: Event) => e.option)))
+                        ? component.imports = buildImports(component.events.map((e: Event) => e.option))
                         : undefined;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
-                    component.imports = buildImports(extractImports(component.options));
+                    component.imports = buildImports(component.options);
                 }
 
                 return component;
