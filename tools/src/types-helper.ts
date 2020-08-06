@@ -8,13 +8,13 @@ export interface FileImport {
 export function buildImports(imports: Import[]): FileImport[] {
 
     const importsByPath = imports.reduce(
-        (s, {Path, Name, Alias}) => {
-            if(!s[Path])
-                s[Path] = {};
+        (r, {Path, Name, Alias}) => {
+            if(!r[Path])
+                r[Path] = {};
 
-            s[Path][`${Name}+${Alias}`] = { Name, Alias };
+            r[Path][`${Name}+${Alias}`] = { Name, Alias };
 
-            return s;
+            return r;
         }, {} as Record<string, Record<string, ImportName>>
     );
 
@@ -42,10 +42,12 @@ export function extractImports(options: Option[]): Import[] {
         return [];
 
     return options.reduce(
-        (s, e) => {
-            s.push(...e.TypeImports);
-            s.push(...extractImports(getValues(e.Options)));
-            return s;
+        (r, option) => {
+            if(option) {
+                r.push(...option.TypeImports);
+                r.push(...extractImports(getValues(option.Options)));
+            }
+            return r;
         }, [] as Import[]
     );
 }

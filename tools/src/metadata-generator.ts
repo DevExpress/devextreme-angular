@@ -3,7 +3,7 @@ import path = require('path');
 import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
-import { Metadata, Option, NestedOptions, Import } from './metadata-model';
+import { Metadata, Option, NestedOptions } from './metadata-model';
 import { buildImports, FileImport, getValues, extractImports } from './types-helper';
 
 let inflector = require('inflector-js');
@@ -24,6 +24,7 @@ function trimPrefix(prefix: string, value: string) {
 }
 
 interface Property {
+    option?: Option;
     docID: string;
     isDeprecated: boolean;
     name: string;
@@ -33,25 +34,28 @@ interface Property {
 };
 
 interface Event {
+    option?: Option;
     emit: string;
     type: string;
-    option?: Option;
     docID?: string;
     isDeprecated?: boolean;
     isInternal?: boolean;
     subscribe?: string;
 }
 
-interface FileMetaDescriptor {
-    importsMeta: Import[];
+interface Component {
+    properties: Property[];
     events: Event[];
     [key: string] : any;
 }
 
 interface FileDescriptor {
     imports: FileImport[];
-    properties: Property[];
     [key: string] : any;
+}
+
+interface MergedComponent extends Component {
+    options: Option[];
 }
 
 interface TypeDescription {
@@ -148,7 +152,8 @@ export default class DXComponentMetadataGenerator {
                         isDeprecated: option.IsDeprecated,
                         name: optionName,
                         type: finalizedType,
-                        typesDescription: typesDescription
+                        typesDescription: typesDescription,
+                        option
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -185,10 +190,9 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const importsMeta = extractImports(getValues(widget.Options));
-            const imports = buildImports(importsMeta);
+            const imports = buildImports(extractImports(getValues(widget.Options)));
 
-            const widgetMetadata: FileDescriptor & FileMetaDescriptor = {
+            const widgetMetadata: FileDescriptor = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
@@ -202,7 +206,6 @@ export default class DXComponentMetadataGenerator {
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
                 imports,
-                importsMeta,
                 nestedComponents: widgetNestedComponents
             };
 
@@ -370,7 +373,7 @@ export default class DXComponentMetadataGenerator {
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);
 
-        let complexOptionMetadata: FileDescriptor & FileMetaDescriptor = {
+        let complexOptionMetadata: FileDescriptor & Component = {
             docID: option.DocID,
             isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
@@ -383,36 +386,36 @@ export default class DXComponentMetadataGenerator {
             isCollection: option.IsCollection,
             hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate,
             collectionNestedComponents: [],
-            imports: [],
-            importsMeta: []
+            imports: []
         };
 
         let nestedComponents = [complexOptionMetadata];
         let isDevExpressRequired = false;
 
         for (let optName in nestedOptions) {
-            let optionMetadata = nestedOptions[optName];
-            let typesDescription = this.getTypesDescription(optionMetadata);
+            let nestedOption = nestedOptions[optName];
+            let typesDescription = this.getTypesDescription(nestedOption);
             let propertyType = this.getType(typesDescription);
 
             isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
 
             let property: Property = {
-                docID: optionMetadata.DocID,
-                isDeprecated: optionMetadata.IsDeprecated,
+                docID: nestedOption.DocID,
+                isDeprecated: nestedOption.IsDeprecated,
                 name: optName,
                 type: propertyType,
-                typesDescription: typesDescription
+                typesDescription: typesDescription,
+                option: nestedOption
             };
 
-            if (optionMetadata.IsCollection) {
+            if (nestedOption.IsCollection) {
                 property.isCollection = true;
             }
 
             complexOptionMetadata.properties.push(property);
 
-            if (optionMetadata.IsChangeable || optionMetadata.IsReadonly) {
-                complexOptionMetadata.events.push(this.createEvent(optName, propertyType, optionMetadata));
+            if (nestedOption.IsChangeable || nestedOption.IsReadonly) {
+                complexOptionMetadata.events.push(this.createEvent(optName, propertyType, nestedOption));
             }
 
             complexOptionMetadata.isDevExpressRequired = isDevExpressRequired;
@@ -439,8 +442,7 @@ export default class DXComponentMetadataGenerator {
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
-        complexOptionMetadata.importsMeta = extractImports(getValues(nestedOptions));
-        complexOptionMetadata.imports = buildImports(complexOptionMetadata.importsMeta);
+        complexOptionMetadata.imports = buildImports(extractImports(getValues(nestedOptions)));
 
         return nestedComponents;
     }
@@ -449,12 +451,12 @@ export default class DXComponentMetadataGenerator {
         return component.basePath + (component.isCollection ? '-dxi' : '');
     }
 
-    private generateNestedOptions(config, metadata: any[]) {
-        let normalizedMetadata: FileMetaDescriptor[] = metadata
-            .reduce((result, component: FileMetaDescriptor) => {
-                let existingComponent = result.filter(c => c.className === component.className)[0] as FileMetaDescriptor;
-
+    private generateNestedOptions(config, metadata: Component[]) {
+        let normalizedMetadata: (MergedComponent)[] = metadata
+            .reduce((result, component: MergedComponent) => {
+                let existingComponent = result.filter(c => c.className === component.className)[0] as MergedComponent;
                 if (!existingComponent) {
+                    component.options = component.properties.map(p => p.option);
                     result.push(component);
                 } else {
                     existingComponent.properties = existingComponent.properties
@@ -496,7 +498,7 @@ export default class DXComponentMetadataGenerator {
                     existingComponent.collectionNestedComponents.push
                         .apply(existingComponent.collectionNestedComponents, component.collectionNestedComponents);
     
-                    existingComponent.importsMeta.push(...component.importsMeta);
+                    existingComponent.options.push(...component.properties.map(p => p.option));
                 }
 
                 return result;
@@ -523,7 +525,7 @@ export default class DXComponentMetadataGenerator {
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
                         basePath: 'devextreme-angular/core',
                         isDevExpressRequired: component.isDevExpressRequired,
-                        imports: buildImports(component.importsMeta)
+                        imports: buildImports(extractImports(component.options))
                     } as FileDescriptor);
                 }
 
@@ -536,7 +538,7 @@ export default class DXComponentMetadataGenerator {
             });
 
         normalizedMetadata
-            .map((component) => {
+            .map((component: MergedComponent & FileDescriptor) => {
                 if (component.events && !component.events.length) {
                     delete component.events;
                 }
@@ -549,13 +551,13 @@ export default class DXComponentMetadataGenerator {
                     component.basePath = `./base/${this.getBaseComponentPath(component)}`;
 
                     component.imports = component.events
-                        ? component.imports = buildImports(extractImports(component.events.map((e: Event) => e.option).filter(o => o)))
+                        ? component.imports = buildImports(extractImports(component.events.map((e: Event) => e.option)))
                         : undefined;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
-                    component.imports = buildImports(component.importsMeta);
+                    component.imports = buildImports(extractImports(component.options));
                 }
 
                 return component;
