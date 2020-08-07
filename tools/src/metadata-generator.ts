@@ -43,19 +43,56 @@ interface Event {
     subscribe?: string;
 }
 
-interface Component {
+interface Container {
+    className: string;
     properties: Property[];
     events: Event[];
-    [key: string] : any;
 }
 
-interface ComponentMetadata {
-    imports: FileImport[];
-    [key: string] : any;
+interface ComponentMeta {
+    docID: string;
+    isDeprecated: boolean;
+    selector: string;
+}
+
+interface WidgetComponent extends ComponentMeta, Container {
+    widgetName: string;
+    module: string;
+    nestedComponents: any[];
+    isTranscludedContent: boolean;
+    isViz: boolean;
+    isExtension: boolean;
+    isEditor: boolean;
+}
+
+interface Component extends ComponentMeta, Container {
+    baseClass: string;
+    basePath: string;
+    collectionNestedComponents: NestedComponent[];
+    isCollection: boolean;
+}
+
+interface NestedComponent extends ComponentMeta, Container {
+    optionName: string;
+    path: string;
+    propertyName: string;
+    isCollection: boolean;
+    hasTemplate: boolean;
+    collectionNestedComponents: NestedComponent[];
+}
+
+interface BaseNestedComponent extends Container {
+    baseClass: string;
+    basePath: string;
+    path: string;
 }
 
 interface MergedComponent extends Component {
     options: Option[];
+}
+
+interface File {
+    imports: FileImport[];
 }
 
 interface TypeDescription {
@@ -186,7 +223,7 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const widgetMetadata: ComponentMetadata = {
+            const widgetMetadata: WidgetComponent & File = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
@@ -203,10 +240,8 @@ export default class DXComponentMetadataGenerator {
                 nestedComponents: widgetNestedComponents
             };
 
-            normalizeMetadata(widgetMetadata);
-
             logger('Write metadata to file ' + outputFilePath);
-            this._store.write(outputFilePath, widgetMetadata);
+            this._store.write(outputFilePath, normalizeMeta(widgetMetadata));
 
             allNestedComponents = allNestedComponents.concat(...nestedComponents);
         }
@@ -362,7 +397,7 @@ export default class DXComponentMetadataGenerator {
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);
 
-        let complexOptionMetadata: ComponentMetadata & Component = {
+        let complexOptionMetadata: NestedComponent & File = {
             docID: option.DocID,
             isDeprecated: option.IsDeprecated,
             className: inflector.camelize(underscoreSelector),
@@ -427,7 +462,6 @@ export default class DXComponentMetadataGenerator {
         }
 
         complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
-        normalizeMetadata(complexOptionMetadata);
 
         return nestedComponents;
     }
@@ -501,7 +535,7 @@ export default class DXComponentMetadataGenerator {
             .reduce((result, component) => {
                 let existingComponent = result.filter(c => c.className === component.baseClass)[0];
                 if (!existingComponent && component.baseClass) {
-                    const nestedComponent = {
+                    const nestedComponent : BaseNestedComponent & File = {
                         properties: component.properties,
                         events: component.events,
                         className: component.baseClass,
@@ -511,8 +545,6 @@ export default class DXComponentMetadataGenerator {
                         imports: buildImports(component.options)
                     };
 
-                    normalizeMetadata(nestedComponent);
-
                     result.push(nestedComponent);
                 }
 
@@ -521,11 +553,16 @@ export default class DXComponentMetadataGenerator {
             .forEach(componet => {
                 let outputFilePath = path.join(config.outputFolderPath,
                     config.nestedPathPart, config.basePathPart, componet.path + '.json');
-                this._store.write(outputFilePath, componet);
+                this._store.write(outputFilePath, normalizeMeta(componet));
             });
 
+        interface NestedComponentFile {
+            inputs: Property[];
+            hasSimpleBaseClass: true
+        }
+
         normalizedMetadata
-            .map((component: MergedComponent & ComponentMetadata) => {
+            .map((component: MergedComponent & NestedComponent & File & NestedComponentFile) => {
                 if (component.events && !component.events.length) {
                     delete component.events;
                 }
@@ -544,18 +581,26 @@ export default class DXComponentMetadataGenerator {
                     component.imports = buildImports(component.options);
                 }
 
-                normalizeMetadata(component);
-
                 return component;
             })
             .forEach(componet => {
                 let outputFilePath = path.join(config.outputFolderPath, config.nestedPathPart, componet.path + '.json');
-                this._store.write(outputFilePath, componet);
+                this._store.write(outputFilePath, normalizeMeta(componet));
             });
     }
 }
 
-function normalizeMetadata(meta: ComponentMetadata): void {
-    if(!meta.imports || !meta.imports.length)
-        delete meta.imports;
+function normalizeMeta(meta: Container & File): Container & File {
+    const result: Container & File = {
+        ...meta,
+        properties: meta.properties && meta.properties.map(({option, ...rest}) => ({ ...rest })),
+        events: meta.events && meta.events.map(({option, ...rest}) => ({ ...rest }))
+    };
+
+    if(!result.imports || !result.imports.length){
+        result.imports = undefined;
+        delete result.imports;
+    }
+
+    return result
 }
