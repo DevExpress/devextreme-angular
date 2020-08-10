@@ -1,4 +1,5 @@
 import { Import, ImportName, Option } from './metadata-model';
+import { getValues, byKeyComparer } from './helpers';
 
 export interface FileImport {
     path: string;
@@ -7,37 +8,43 @@ export interface FileImport {
 
 export function buildImports(options: Option[]): FileImport[] {
 
-    const importsByPath = extractImports(options).reduce(
-        (r, {Path, Name, Alias}) => {
-            if(!r[Path])
-                r[Path] = {};
+    const importsByPath = extractImportsMeta(options).reduce(
+        (importsByPath, {Path, Name, Alias}) => {
+            if(!importsByPath[Path])
+                importsByPath[Path] = {};
 
-            r[Path][`${Name}+${Alias}`] = { Name, Alias };
+            importsByPath[Path][`${Name}+${Alias}`] = { Name, Alias };
 
-            return r;
+            return importsByPath;
         }, {} as Record<string, Record<string, ImportName>>
     );
 
     return Object.keys(importsByPath)
         .map(path => {
-            const {defaultImport, names} = extractDefaultImport(getValues(importsByPath[path]));
+            const {defaultImport, namedImports} = extractDefaultImport(getValues(importsByPath[path]));
             const parts = [];
 
             if(defaultImport)
                 parts.push(defaultImport);
 
-            if(names.length)
-                parts.push(`{ ${names.map(({Name, Alias}) => Alias ? `${Name} as ${Alias}` : Name).join(", ")} }`)
+            if(namedImports.length) {
+                const namedImportsString = namedImports
+                    .sort(byKeyComparer(i => i.Name))
+                    .map(({Name, Alias}) => Alias ? `${Name} as ${Alias}` : Name)
+                    .join(", ");
+
+                parts.push(`{ ${namedImportsString} }`)
+            }
 
             return {
                 path: `devextreme/${path}`,
                 importString: parts.join(", ")
             } as FileImport;
         })
-        .sort((a, b) => a.path.localeCompare(b.path));
+        .sort(byKeyComparer(i => i.path));
 }
 
-function extractImports(options: Option[]): Import[] {
+function extractImportsMeta(options: Option[]): Import[] {
     if(!options || !options.length)
         return [];
 
@@ -45,31 +52,30 @@ function extractImports(options: Option[]): Import[] {
         (r, option) => {
             if(option) {
                 r.push(...option.TypeImports);
-                r.push(...extractImports(getValues(option.Options)));
+                r.push(...extractImportsMeta(getValues(option.Options)));
             }
             return r;
         }, [] as Import[]
     );
 }
 
-function extractDefaultImport(imports: ImportName[]): { defaultImport?: string; names: ImportName[] } {
-    const result: ReturnType<typeof extractDefaultImport> = { defaultImport: undefined, names: [] };
+function extractDefaultImport(imports: ImportName[]): { defaultImport?: string; namedImports: ImportName[] } {
+    const result: ReturnType<typeof extractDefaultImport> = { defaultImport: undefined, namedImports: [] };
 
-    for(const i of imports) {
+    for(const entry of imports) {
+        if(isDefaultImport(entry)) {
+            if(!entry.Alias)
+                throw new Error("default export must have an alias: " + JSON.stringify(entry));
 
-        if(i.Name.toLowerCase() === "default") {
-            result.defaultImport = i.Alias;
-
-            if(!i.Alias)
-                throw new Error("default export must have an alias: " + JSON.stringify(i));
+            result.defaultImport = entry.Alias;
         } else {
-            result.names.push(i);
+            result.namedImports.push(entry);
         }
     }
 
     return result;
 }
 
-export function getValues<T>(obj: Record<string, T>) {
-    return obj ? Object.keys(obj).map(k => obj[k]) : undefined;
+function isDefaultImport(importName: ImportName): boolean {
+    return importName.Name.toLowerCase() === "default";
 }

@@ -4,7 +4,8 @@ import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
 import { Metadata, Option, NestedOptions } from './metadata-model';
-import { buildImports, FileImport, getValues } from './import-helper';
+import { buildImports, FileImport } from './import-helper';
+import { getValues } from './helpers';
 
 let inflector = require('inflector-js');
 

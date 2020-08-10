@@ -974,7 +974,7 @@ describe("metadata-generator", function() {
             expect(metas.DxoProperty.imports).toEqual([
                 {
                     path: "devextreme/ui/dx_complex_types",
-                    importString: "{ dxComplexType2, dxComplexType1 }",
+                    importString: "{ dxComplexType1, dxComplexType2 }",
                 },
                 {
                     path: "devextreme/ui/dx_other_complex_types",
