@@ -23,9 +23,9 @@ import {
 
 <#? it.hasTemplate #>import { DOCUMENT } from '@angular/common';<#?#>
 
-<#? it.isDevExpressRequired #>
-import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
+<#? it.imports #><#~ it.imports :file #>import <#= file.importString #> from '<#= file.path #>';
+<#~#><#?#>
 import {
     NestedOptionHost,<#? it.hasTemplate #>
     extractTemplate,<#?#><#? it.hasTemplate #>

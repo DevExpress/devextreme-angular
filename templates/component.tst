@@ -37,9 +37,9 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
-<#? it.isDevExpressRequired #>
-import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
+<#? it.imports #><#~ it.imports :file #>import <#= file.importString #> from '<#= file.path #>';
+<#~#><#?#>
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
 import {
