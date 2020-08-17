@@ -2,7 +2,7 @@ import { NgEventsStrategy } from 'devextreme-angular';
 
 describe('Events strategy API', () => {
     it('should allow to pass object with event handlers in the "on" method', () => {
-        const eventsStrategy = new NgEventsStrategy({});
+        const eventsStrategy = new NgEventsStrategy({}, null);
         const handlers = [
             jasmine.createSpy('first'),
             jasmine.createSpy('second'),

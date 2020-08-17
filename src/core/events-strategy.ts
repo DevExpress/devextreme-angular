@@ -9,7 +9,7 @@ export class NgEventsStrategy {
     private subscriptions: { [key: string]: IEventSubscription[] } = {};
     private events: { [key: string]: EventEmitter<any> } = {};
 
-    constructor(private instance: any) { }
+    constructor(private instance: any, private zone: NgZone) { }
 
     hasEvent(name: string) {
         return this.getEmitter(name).observers.length !== 0;
@@ -18,7 +18,11 @@ export class NgEventsStrategy {
     fireEvent(name, args) {
         let emitter = this.getEmitter(name);
         if (emitter.observers.length) {
-            emitter.next(args && args[0]);
+            const internalSubs = this.subscriptions[name] || [];
+            if (internalSubs.length === emitter.observers.length)
+                emitter.next(args && args[0]);
+            else
+                this.zone.run(() => emitter.next(args && args[0]));
         }
     }
 
