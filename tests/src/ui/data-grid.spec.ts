@@ -181,7 +181,7 @@ describe('DxDataGrid', () => {
         if (typeof column === 'string') {
             fail();
         } else {
-            expect(column.columns).toContain({ dataField: 'Field' });
+            expect(column.columns).toContain({ dataField: 'Field', name: 'Field' });
         }
     });
 
