@@ -301,7 +301,8 @@
 
 <dx-chart
     class="full-width"
-    [dataSource]="oranges">
+    [dataSource]="oranges"
+    (onPointHoverChanged)="seriesHoverChanged($event)">
     <dxi-series
         argumentField="day"
         valueField="oranges"
@@ -312,6 +313,8 @@
     <dxo-size
         [height]="300"></dxo-size>
 </dx-chart>
+
+Hovered chart item: {{chartItem}}
 
 <h2>dxDataGrid</h2>
 

@@ -144,6 +144,7 @@ export class AppComponent implements OnInit, AfterViewInit {
             content: 'Find tab content'
         }
     ];
+    chartItem: string;
     tabPanelItems: Customer[];
     tabContent: string;
     constructor(private orangeService: OrangeService,
@@ -232,6 +233,9 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
     selectTab(e) {
         this.tabContent = this.tabs[e.itemIndex].content;
+    }
+    seriesHoverChanged(e) {
+      this.chartItem = e.target.argument;
     }
 }
 
