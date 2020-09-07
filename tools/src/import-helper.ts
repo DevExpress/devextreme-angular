@@ -6,7 +6,7 @@ export interface FileImport {
     importString: string;
 }
 
-export function buildImports(options: Option[]): FileImport[] {
+export function buildImports(options: Option[], widgetPackageName: string): FileImport[] {
 
     const importsByPath = extractImportsMeta(options).reduce(
         (importsByPath, {Path, Name, Alias}) => {
@@ -37,7 +37,7 @@ export function buildImports(options: Option[]): FileImport[] {
             }
 
             return {
-                path: `devextreme/${path}`,
+                path: `${widgetPackageName}/${path}`,
                 importString: parts.join(", ")
             } as FileImport;
         })

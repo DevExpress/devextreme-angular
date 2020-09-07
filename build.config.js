@@ -8,7 +8,9 @@ module.exports = {
             deprecatedMetadataFilePath: './metadata/DeprecatedComponentsMetadata.json',
             outputFolderPath: './metadata/generated',
             nestedPathPart: 'nested',
-            basePathPart: 'base'
+            basePathPart: 'base',
+            widgetPackageName: "devextreme",
+            currentPackageName: 'devextreme-angular'
         },
         componentGenerator: {
             importFrom: './tools/dist/dot-generator',

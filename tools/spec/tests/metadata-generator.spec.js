@@ -11,7 +11,9 @@ describe("metadata-generator", function() {
         deprecatedMetadataFilePath: "deprecated-path",
         outputFolderPath: "output-path",
         nestedPathPart: 'nested',
-        basePathPart: 'base'
+        basePathPart: 'base',
+        widgetPackageName: "widgetPackageName",
+        currentPackageName: 'currentPackageName'
     };
 
     var store,
@@ -203,7 +205,7 @@ describe("metadata-generator", function() {
         });
 
         it("should generate proper module name", function() {
-            expect(metas.DxTestWidget.module).toBe("devextreme/test_widget");
+            expect(metas.DxTestWidget.module).toBe("widgetPackageName/test_widget");
         });
 
         it("should detect editors", function() {
@@ -343,11 +345,11 @@ describe("metadata-generator", function() {
             expect(metas.DxTypedWidget.imports).toEqual([
                 {
                     importString: "DevExpress",
-                    path: "devextreme/bundles/dx.all",
+                    path: "widgetPackageName/bundles/dx.all",
                 },
                 {
                     importString: "{ dxComplexType1, dxComplexType2 }",
-                    path: "devextreme/ui/dx_complex_types",
+                    path: "widgetPackageName/ui/dx_complex_types",
                 }
             ]);
         });
@@ -793,11 +795,11 @@ describe("metadata-generator", function() {
             expect(metas.DxoExternalProperty.imports).toEqual([
                 {
                     importString: "DevExpress",
-                    path: "devextreme/bundles/dx.all",
+                    path: "widgetPackageName/bundles/dx.all",
                 },
                 {
                     importString: "{ dxComplexType1, dxComplexType2 }",
-                    path: "devextreme/ui/dx_complex_types",
+                    path: "widgetPackageName/ui/dx_complex_types",
                 }
             ]);
         });
@@ -973,25 +975,25 @@ describe("metadata-generator", function() {
 
             expect(metas.DxoProperty.imports).toEqual([
                 {
-                    path: "devextreme/ui/dx_complex_types",
+                    path: "widgetPackageName/ui/dx_complex_types",
                     importString: "{ dxComplexType1, dxComplexType2 }",
                 },
                 {
-                    path: "devextreme/ui/dx_other_complex_types",
+                    path: "widgetPackageName/ui/dx_other_complex_types",
                     importString: "{ dxComplexType3 }",
                 }
             ]);
 
             expect(metas.DxoNested.imports).toEqual([
                 {
-                    path: "devextreme/ui/dx_complex_types",
+                    path: "widgetPackageName/ui/dx_complex_types",
                     importString: "{ dxComplexType1 }",
                 }
             ]);
 
             expect(metas.DxoExternalPropertyType.imports).toEqual([
                 {
-                    path: "devextreme/ui/dx_other_complex_types",
+                    path: "widgetPackageName/ui/dx_other_complex_types",
                     importString: "{ dxComplexType4 }",
                 }
             ]);

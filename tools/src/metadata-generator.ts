@@ -64,6 +64,7 @@ interface WidgetComponent extends ComponentMeta, Container {
     isViz: boolean;
     isExtension: boolean;
     isEditor: boolean;
+    packageName: string;
 }
 
 interface Component extends ComponentMeta, Container {
@@ -198,7 +199,7 @@ export default class DXComponentMetadataGenerator {
 
                     changeEvents.push(this.createEvent(optionName, finalizedType, option));
 
-                    let components = this.generateComplexOptionByType(metadata, option, optionName, []);
+                    let components = this.generateComplexOptionByType(metadata, option, optionName, [], config);
                     nestedComponents = nestedComponents.concat(...components);
                 }
             }
@@ -236,8 +237,9 @@ export default class DXComponentMetadataGenerator {
                 events: allEvents,
                 properties: properties,
                 isEditor: isEditor,
-                module: 'devextreme/' + widget.Module,
-                imports: buildImports(getValues(widget.Options)),
+                module: config.widgetPackageName + '/' + widget.Module,
+                packageName: config.currentPackageName,
+                imports: buildImports(getValues(widget.Options), config.widgetPackageName),
                 nestedComponents: widgetNestedComponents
             };
 
@@ -350,10 +352,10 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOptionByType(metadata: Metadata, option: Option, optionName: string, complexTypes: string[]) {
+    private generateComplexOptionByType(metadata: Metadata, option: Option, optionName: string, complexTypes: string[], config: any) {
         let optionComplexTypes = option[option.IsCollection ? 'ItemComplexTypes' : 'ComplexTypes'];
         if (option.Options) {
-            return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
+            return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option, config);
         } else if (optionComplexTypes && optionComplexTypes.length > 0) {
             if (complexTypes.indexOf(complexTypes[complexTypes.length - 1]) !== complexTypes.length - 1) {
                 return;
@@ -365,7 +367,7 @@ export default class DXComponentMetadataGenerator {
                     let nestedOptions = externalObjectInfo.Options,
                         nestedComplexTypes = complexTypes.concat(externalObjectInfo.typeName);
 
-                    result.push.apply(result, this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option));
+                    result.push.apply(result, this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option, config));
                 }
             });
             if (optionComplexTypes.length === 1) {
@@ -380,7 +382,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOption(metadata: Metadata, nestedOptions: NestedOptions, optionName, complexTypes, option: Option) {
+    private generateComplexOption(metadata: Metadata, nestedOptions: NestedOptions, optionName, complexTypes, option: Option, config: any) {
         if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
@@ -440,7 +442,7 @@ export default class DXComponentMetadataGenerator {
                 complexOptionMetadata.events.push(this.createEvent(optName, propertyType, nestedOption));
             }
 
-            let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes) || [];
+            let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes, config) || [];
 
             nestedComponents = nestedComponents.concat(...components);
 
@@ -462,7 +464,7 @@ export default class DXComponentMetadataGenerator {
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
-        complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
+        complexOptionMetadata.imports = buildImports(getValues(nestedOptions), config.widgetPackageName);
 
         return nestedComponents;
     }
@@ -543,7 +545,7 @@ export default class DXComponentMetadataGenerator {
                         path: this.getBaseComponentPath(component),
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
                         basePath: 'devextreme-angular/core',
-                        imports: buildImports(component.options)
+                        imports: buildImports(component.options, config.widgetPackageName)
                     };
 
                     result.push(nestedComponent);
@@ -573,13 +575,13 @@ export default class DXComponentMetadataGenerator {
                     component.basePath = `./base/${this.getBaseComponentPath(component)}`;
 
                     component.imports = component.events
-                        ? component.imports = buildImports(component.events.map((e: Event) => e.option))
+                        ? component.imports = buildImports(component.events.map((e: Event) => e.option), config.widgetPackageName)
                         : undefined;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
-                    component.imports = buildImports(component.options);
+                    component.imports = buildImports(component.options, config.widgetPackageName);
                 }
 
                 return component;
