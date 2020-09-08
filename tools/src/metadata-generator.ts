@@ -238,7 +238,7 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: config.widgetPackageName + '/' + widget.Module,
-                packageName: config.currentPackageName,
+                packageName: config.wrapperPackageName,
                 imports: buildImports(getValues(widget.Options), config.widgetPackageName),
                 nestedComponents: widgetNestedComponents
             };

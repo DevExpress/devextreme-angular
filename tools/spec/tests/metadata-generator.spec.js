@@ -13,7 +13,7 @@ describe("metadata-generator", function() {
         nestedPathPart: 'nested',
         basePathPart: 'base',
         widgetPackageName: "widgetPackageName",
-        currentPackageName: 'currentPackageName'
+        wrapperPackageName: 'wrapperPackageName'
     };
 
     var store,
