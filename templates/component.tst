@@ -57,9 +57,9 @@ import {
     WatcherHelper
 } from 'devextreme-angular/core';
 
-<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from 'devextreme-angular/ui/nested';
+<#~ it.nestedComponents :component:i #>import { <#= component.className #>Module } from '<#= it.packageName #>/ui/nested';
 <#~#>
-<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from 'devextreme-angular/ui/nested';
+<#~ collectionNestedComponents :component:i #>import { <#= component.className #>Component } from '<#= it.packageName #>/ui/nested';
 <#~#>
 
 <#? it.isEditor #>
