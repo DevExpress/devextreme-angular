@@ -107,6 +107,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 
 <#?#><#~#>
 <#~ it.events :event:i #>
+    /**
     <#? event.isInternal #>
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     <#??#>
