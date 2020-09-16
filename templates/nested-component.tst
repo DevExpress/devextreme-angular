@@ -61,9 +61,9 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
     <#? event.isInternal #>
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     <#??#>
-     * <-<#= event.docID #>->
+     * [descr:<#= event.docID #>]
     <#? event.isDeprecated #>
-     * @deprecated <-<#= event.docID #>:depNote->
+     * @deprecated [depNote:<#= event.docID #>]
     <#?#>
     <#?#>
      */

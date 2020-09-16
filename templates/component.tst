@@ -70,9 +70,9 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     multi: true
 };<#?#>
 /**
- * <-<#= it.docID #>->
+ * [descr:<#= it.docID #>]
 <#? it.isDeprecated #>
- * @deprecated <-<#= it.docID #>:depNote->
+ * @deprecated [depNote:<#= it.docID #>]
 <#?#>
  */
 @Component({
@@ -91,9 +91,9 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     instance: <#= it.className #>;
 <#~ it.properties :prop:i #>
     /**
-     * <-<#= prop.docID #>->
+     * [descr:<#= prop.docID #>]
     <#? prop.isDeprecated #>
-     * @deprecated <-<#= prop.docID #>:depNote->
+     * @deprecated [depNote:<#= prop.docID #>]
     <#?#>
      */
     @Input()
@@ -110,9 +110,9 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     <#? event.isInternal #>
      * This member supports the internal infrastructure and is not intended to be used directly from your code.
     <#??#>
-     * <-<#= event.docID #>->
+     * [descr:<#= event.docID #>]
     <#? event.isDeprecated #>
-     * @deprecated <-<#= event.docID #>:depNote->
+     * @deprecated [depNote:<#= event.docID #>]
     <#?#>
     <#?#>
      */
