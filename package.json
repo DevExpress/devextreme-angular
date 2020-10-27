@@ -14,8 +14,7 @@
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
     "pack": "npm run gulp -- npm.pack",
-    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 19_2",
-    "inject-descriptions": "dx-tools inject-descriptions-to-bundle --js-scripts ./npm/dist"
+    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 19_2"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
@@ -48,7 +47,7 @@
     "devexpress-diagram": "^0.1.43",
     "devexpress-gantt": "0.0.8",
     "devextreme": "~19.2.5-build-19347-0331",
-    "devextreme-internal-tools": "^2.0.0-beta.14",
+    "devextreme-internal-tools": "stable",
     "dot": "^1.0.3",
     "gulp": "^4.0.0",
     "gulp-header": "^1.8.8",

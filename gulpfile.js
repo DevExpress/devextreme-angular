@@ -148,11 +148,7 @@ gulp.task('npm.content', gulp.series('build.components', function() {
         .pipe(gulp.dest(npmConfig.distPath));
 }));
 
-gulp.task('npm.pack', gulp.series(
-    'npm.content',
-    shell.task('npm run inject-descriptions'),
-    shell.task(['npm pack'], { cwd: buildConfig.npm.distPath })
-));
+gulp.task('npm.pack', gulp.series('npm.content', shell.task(['npm pack'], { cwd: buildConfig.npm.distPath })));
 
 //------------TSLint------------
 

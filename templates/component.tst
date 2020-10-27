@@ -37,9 +37,9 @@ import {
     QueryList<#?#>
 } from '@angular/core';
 
+<#? it.isDevExpressRequired #>
+import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
-<#? it.imports #><#~ it.imports :file #>import <#= file.importString #> from '<#= file.path #>';
-<#~#><#?#>
 import <#= it.className #> from '<#= it.module #>';
 <#? it.isEditor #>
 import {
@@ -70,12 +70,9 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
     multi: true
 };<#?#>
 
-/**
- * [descr:<#= it.docID #>]
-<#? it.isDeprecated #>
- * @deprecated [depNote:<#= it.docID #>]
-<#?#>
- */
+<#? it.description #>/**
+ * <#= it.description #>
+ */<#?#>
 @Component({
     selector: '<#= it.selector #>',
     template: '<#? it.isTranscludedContent #><ng-content></ng-content><#?#>',<#? it.isViz #>
@@ -90,13 +87,10 @@ const CUSTOM_VALUE_ACCESSOR_PROVIDER = {
 })
 export class <#= it.className #>Component extends <#= baseClass #> <#? implementedInterfaces.length #>implements <#= implementedInterfaces.join(', ') #> <#?#>{
     instance: <#= it.className #>;
-<#~ it.properties :prop:i #>
+<#~ it.properties :prop:i #><#? prop.description #>
     /**
-     * [descr:<#= prop.docID #>]
-    <#? prop.isDeprecated #>
-     * @deprecated [depNote:<#= prop.docID #>]
-    <#?#>
-     */
+     * <#= prop.description #>
+     */<#?#>
     @Input()
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');
@@ -106,17 +100,10 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
     }<#? i < it.properties.length-1 #>
 
 <#?#><#~#>
-<#~ it.events :event:i #>
+<#~ it.events :event:i #><#? event.description #>
     /**
-    <#? event.isInternal #>
-     * This member supports the internal infrastructure and is not intended to be used directly from your code.
-    <#??#>
-     * [descr:<#= event.docID #>]
-    <#? event.isDeprecated #>
-     * @deprecated [depNote:<#= event.docID #>]
-    <#?#>
-    <#?#>
-     */
+     * <#= event.description #>
+     */<#?#>
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
 
