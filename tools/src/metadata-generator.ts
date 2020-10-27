@@ -3,10 +3,6 @@ import path = require('path');
 import mkdirp = require('mkdirp');
 import merge = require('deepmerge');
 import logger from './logger';
-import { Metadata, Option, NestedOptions } from './metadata-model';
-import { buildImports, FileImport } from './import-helper';
-import { getValues } from './helpers';
-
 let inflector = require('inflector-js');
 
 const OPTION_COMPONENT_PREFIX = 'Dxo';
@@ -24,87 +20,8 @@ function trimPrefix(prefix: string, value: string) {
     return value;
 }
 
-interface Property {
-    option?: Option;
-    docID: string;
-    isDeprecated: boolean;
-    name: string;
-    type: string;
-    typesDescription: TypeDescription;
-    isCollection?: boolean;
-};
-
-interface Event {
-    option?: Option;
-    emit: string;
-    type: string;
-    docID?: string;
-    isDeprecated?: boolean;
-    isInternal?: boolean;
-    subscribe?: string;
-}
-
-interface Container {
-    className: string;
-    properties: Property[];
-    events: Event[];
-}
-
-interface ComponentMeta {
-    docID: string;
-    isDeprecated: boolean;
-    selector: string;
-}
-
-interface WidgetComponent extends ComponentMeta, Container {
-    widgetName: string;
-    module: string;
-    nestedComponents: any[];
-    isTranscludedContent: boolean;
-    isViz: boolean;
-    isExtension: boolean;
-    isEditor: boolean;
-}
-
-interface Component extends ComponentMeta, Container {
-    baseClass: string;
-    basePath: string;
-    collectionNestedComponents: NestedComponent[];
-    isCollection: boolean;
-}
-
-interface NestedComponent extends ComponentMeta, Container {
-    optionName: string;
-    path: string;
-    propertyName: string;
-    isCollection: boolean;
-    hasTemplate: boolean;
-    collectionNestedComponents: NestedComponent[];
-}
-
-interface BaseNestedComponent extends Container {
-    baseClass: string;
-    basePath: string;
-    path: string;
-}
-
-interface MergedComponent extends Component {
-    options: Option[];
-}
-
-interface File {
-    imports: FileImport[];
-}
-
-interface TypeDescription {
-    primitiveTypes: string[];
-    arrayTypes: string[];
-    dxtypes?: string[];
-    typeImports?: { Name: string, File: String };
-}
-
 export interface IObjectStore {
-    read(name: string): Metadata;
+    read(name: string): Object;
     write(name: string, data: Object): void;
 }
 
@@ -159,10 +76,11 @@ export default class DXComponentMetadataGenerator {
                 className = inflector.camelize(widgetName),
                 dasherizedWidgetName = inflector.dasherize(inflector.underscore(widgetName)),
                 outputFilePath = path.join(config.outputFolderPath, trimDx(dasherizedWidgetName) + '.json'),
-                events: Event[] = [],
+                events = [],
                 changeEvents = [],
-                properties: Property[] = [],
-                isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1;
+                properties = [],
+                isEditor = Object.keys(widget.Options).indexOf('onValueChanged') !== -1,
+                isDevExpressRequired = false;
 
             for (let optionName in widget.Options) {
                 let option = widget.Options[optionName];
@@ -171,23 +89,22 @@ export default class DXComponentMetadataGenerator {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
 
                     events.push({
-                        docID: option.DocID,
-                        isDeprecated: option.IsDeprecated,
                         emit: optionName,
                         subscribe: eventName,
+                        description: option.Description,
                         type: 'EventEmitter<any>'
                     });
                 } else {
                     let typesDescription = this.getTypesDescription(option);
                     let finalizedType = this.getType(typesDescription);
 
-                    let property: Property = {
-                        docID: option.DocID,
-                        isDeprecated: option.IsDeprecated,
+                    isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
+
+                    let property: any = {
                         name: optionName,
                         type: finalizedType,
                         typesDescription: typesDescription,
-                        option
+                        description: option.Description
                     };
 
                     if (!!option.IsCollection || !!option.IsDataSource) {
@@ -196,7 +113,7 @@ export default class DXComponentMetadataGenerator {
 
                     properties.push(property);
 
-                    changeEvents.push(this.createEvent(optionName, finalizedType, option));
+                    changeEvents.push(this.createEvent(optionName, finalizedType));
 
                     let components = this.generateComplexOptionByType(metadata, option, optionName, []);
                     nestedComponents = nestedComponents.concat(...components);
@@ -224,9 +141,7 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const widgetMetadata: WidgetComponent & File = {
-                docID: widget.DocID,
-                isDeprecated: widget.IsDeprecated,
+            let widgetMetadata = {
                 className: className,
                 widgetName: widgetName,
                 isTranscludedContent: isTranscludedContent,
@@ -237,12 +152,13 @@ export default class DXComponentMetadataGenerator {
                 properties: properties,
                 isEditor: isEditor,
                 module: 'devextreme/' + widget.Module,
-                imports: buildImports(getValues(widget.Options)),
+                isDevExpressRequired: isDevExpressRequired,
+                description: widget.Description,
                 nestedComponents: widgetNestedComponents
             };
 
             logger('Write metadata to file ' + outputFilePath);
-            this._store.write(outputFilePath, normalizeMeta(widgetMetadata));
+            this._store.write(outputFilePath, widgetMetadata);
 
             allNestedComponents = allNestedComponents.concat(...nestedComponents);
         }
@@ -250,25 +166,25 @@ export default class DXComponentMetadataGenerator {
         this.generateNestedOptions(config, allNestedComponents);
     }
 
-    private createEvent(name, type, option: Option): Event {
+    private createEvent(name, type) {
         return {
-            isInternal: true,
             emit: `${name}Change`,
             type: `EventEmitter<${type}>`,
-            option
+            description: `This member supports the internal infrastructure and is not intended to be used directly from your code.`
         };
     }
 
-    private getTypesDescription(optionMetadata: Option): TypeDescription {
+    private getTypesDescription(optionMetadata) {
         let typeParts = this.getTypeParts(optionMetadata);
 
         return {
             primitiveTypes: typeParts.primitiveTypes,
-            arrayTypes: typeParts.arrayTypes
+            arrayTypes: typeParts.arrayTypes,
+            isDevExpressRequired: this.detectComplexTypes(typeParts.primitiveTypes) || this.detectComplexTypes(typeParts.arrayTypes)
         };
     }
 
-    private getTypeParts(optionMetadata: Option): { primitiveTypes: string[]; arrayTypes: string[] } {
+    private getTypeParts(optionMetadata) {
         let primitiveTypes = optionMetadata.PrimitiveTypes ? optionMetadata.PrimitiveTypes.slice(0) : [];
         let arrayTypes = [];
 
@@ -308,7 +224,7 @@ export default class DXComponentMetadataGenerator {
         return '';
     }
 
-    private getType(typesDescription: TypeDescription) {
+    private getType(typesDescription) {
         let primitiveTypes = typesDescription.primitiveTypes.slice(0);
         let result = 'any';
 
@@ -328,7 +244,13 @@ export default class DXComponentMetadataGenerator {
         return [].concat(array1, newTypes);
     }
 
-    private getExternalObjectInfo(metadata: Metadata, typeName) {
+    private detectComplexTypes(types) {
+        return types.some(type =>
+            (type.type ? type.type : type)
+            .indexOf('.') > -1);
+    }
+
+    private getExternalObjectInfo(metadata, typeName) {
         let externalObject = metadata.ExtraObjects[typeName];
 
         if (!externalObject) {
@@ -350,7 +272,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOptionByType(metadata: Metadata, option: Option, optionName: string, complexTypes: string[]) {
+    private generateComplexOptionByType(metadata, option, optionName, complexTypes) {
         let optionComplexTypes = option[option.IsCollection ? 'ItemComplexTypes' : 'ComplexTypes'];
         if (option.Options) {
             return this.generateComplexOption(metadata, option.Options, optionName, complexTypes, option);
@@ -380,7 +302,7 @@ export default class DXComponentMetadataGenerator {
         }
     }
 
-    private generateComplexOption(metadata: Metadata, nestedOptions: NestedOptions, optionName, complexTypes, option: Option) {
+    private generateComplexOption(metadata, nestedOptions, optionName, complexTypes, option) {
         if (!nestedOptions || !Object.keys(nestedOptions).length) {
             return;
         }
@@ -398,9 +320,7 @@ export default class DXComponentMetadataGenerator {
             selector = inflector.dasherize(underscoreSelector),
             path = inflector.dasherize(underscorePlural);
 
-        let complexOptionMetadata: NestedComponent & File = {
-            docID: option.DocID,
-            isDeprecated: option.IsDeprecated,
+        let complexOptionMetadata: any = {
             className: inflector.camelize(underscoreSelector),
             selector: selector,
             optionName: optionName,
@@ -410,35 +330,36 @@ export default class DXComponentMetadataGenerator {
             propertyName: optionName,
             isCollection: option.IsCollection,
             hasTemplate: option.Options && option.Options.template && option.Options.template.IsTemplate,
-            collectionNestedComponents: [],
-            imports: []
+            collectionNestedComponents: []
         };
 
         let nestedComponents = [complexOptionMetadata];
+        let isDevExpressRequired = false;
 
         for (let optName in nestedOptions) {
-            let nestedOption = nestedOptions[optName];
-            let typesDescription = this.getTypesDescription(nestedOption);
+            let optionMetadata = nestedOptions[optName];
+            let typesDescription = this.getTypesDescription(optionMetadata);
             let propertyType = this.getType(typesDescription);
 
-            let property: Property = {
-                docID: nestedOption.DocID,
-                isDeprecated: nestedOption.IsDeprecated,
+            isDevExpressRequired = isDevExpressRequired || typesDescription.isDevExpressRequired;
+
+            let property: any = {
                 name: optName,
                 type: propertyType,
-                typesDescription: typesDescription,
-                option: nestedOption
+                typesDescription: typesDescription
             };
 
-            if (nestedOption.IsCollection) {
+            if (optionMetadata.IsCollection) {
                 property.isCollection = true;
             }
 
             complexOptionMetadata.properties.push(property);
 
-            if (nestedOption.IsChangeable || nestedOption.IsReadonly) {
-                complexOptionMetadata.events.push(this.createEvent(optName, propertyType, nestedOption));
+            if (optionMetadata.IsChangeable || optionMetadata.IsReadonly) {
+                complexOptionMetadata.events.push(this.createEvent(optName, propertyType));
             }
+
+            complexOptionMetadata.isDevExpressRequired = isDevExpressRequired;
 
             let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes) || [];
 
@@ -462,8 +383,6 @@ export default class DXComponentMetadataGenerator {
                 .apply(complexOptionMetadata.collectionNestedComponents, ownCollectionNestedComponents);
         }
 
-        complexOptionMetadata.imports = buildImports(getValues(nestedOptions));
-
         return nestedComponents;
     }
 
@@ -471,12 +390,12 @@ export default class DXComponentMetadataGenerator {
         return component.basePath + (component.isCollection ? '-dxi' : '');
     }
 
-    private generateNestedOptions(config, metadata: Component[]) {
-        let normalizedMetadata: (MergedComponent)[] = metadata
-            .reduce((result, component: MergedComponent) => {
-                let existingComponent = result.filter(c => c.className === component.className)[0] as MergedComponent;
+    private generateNestedOptions(config, metadata) {
+        let normalizedMetadata = metadata
+            .reduce((result, component) => {
+                let existingComponent = result.filter(c => c.className === component.className)[0];
+
                 if (!existingComponent) {
-                    component.options = component.properties.map(p => p.option);
                     result.push(component);
                 } else {
                     existingComponent.properties = existingComponent.properties
@@ -514,10 +433,9 @@ export default class DXComponentMetadataGenerator {
 
                     existingComponent.baseClass = existingComponent.baseClass || component.baseClass;
                     existingComponent.basePath = existingComponent.basePath || component.basePath;
+                    existingComponent.isDevExpressRequired = existingComponent.isDevExpressRequired || component.isDevExpressRequired;
                     existingComponent.collectionNestedComponents.push
                         .apply(existingComponent.collectionNestedComponents, component.collectionNestedComponents);
-    
-                    existingComponent.options.push(...component.properties.map(p => p.option));
                 }
 
                 return result;
@@ -536,17 +454,15 @@ export default class DXComponentMetadataGenerator {
             .reduce((result, component) => {
                 let existingComponent = result.filter(c => c.className === component.baseClass)[0];
                 if (!existingComponent && component.baseClass) {
-                    const nestedComponent : BaseNestedComponent & File = {
+                    result.push({
                         properties: component.properties,
                         events: component.events,
                         className: component.baseClass,
                         path: this.getBaseComponentPath(component),
                         baseClass: component.isCollection ? 'CollectionNestedOption' : 'NestedOption',
                         basePath: 'devextreme-angular/core',
-                        imports: buildImports(component.options)
-                    };
-
-                    result.push(nestedComponent);
+                        isDevExpressRequired: component.isDevExpressRequired
+                    });
                 }
 
                 return result;
@@ -554,54 +470,32 @@ export default class DXComponentMetadataGenerator {
             .forEach(componet => {
                 let outputFilePath = path.join(config.outputFolderPath,
                     config.nestedPathPart, config.basePathPart, componet.path + '.json');
-                this._store.write(outputFilePath, normalizeMeta(componet));
+                this._store.write(outputFilePath, componet);
             });
 
-        interface NestedComponentFile {
-            inputs: Property[];
-            hasSimpleBaseClass: true
-        }
-
         normalizedMetadata
-            .map((component: MergedComponent & NestedComponent & File & NestedComponentFile) => {
+            .map((component) => {
                 if (component.events && !component.events.length) {
                     delete component.events;
                 }
                 if (component.baseClass) {
                     component.inputs = component.properties;
                     delete component.properties;
+                    component.isDevExpressRequired = component.events ?
+                        this.detectComplexTypes(component.events) :
+                        false;
                     component.basePath = `./base/${this.getBaseComponentPath(component)}`;
-
-                    component.imports = component.events
-                        ? component.imports = buildImports(component.events.map((e: Event) => e.option))
-                        : undefined;
                 } else {
                     component.baseClass = component.isCollection ? 'CollectionNestedOption' : 'NestedOption';
                     component.basePath = 'devextreme-angular/core';
                     component.hasSimpleBaseClass = true;
-                    component.imports = buildImports(component.options);
                 }
 
                 return component;
             })
             .forEach(componet => {
                 let outputFilePath = path.join(config.outputFolderPath, config.nestedPathPart, componet.path + '.json');
-                this._store.write(outputFilePath, normalizeMeta(componet));
+                this._store.write(outputFilePath, componet);
             });
     }
-}
-
-function normalizeMeta(meta: Container & File): Container & File {
-    const result: Container & File = {
-        ...meta,
-        properties: meta.properties && meta.properties.map(({option, ...rest}) => ({ ...rest })),
-        events: meta.events && meta.events.map(({option, ...rest}) => ({ ...rest }))
-    };
-
-    if(!result.imports || !result.imports.length){
-        result.imports = undefined;
-        delete result.imports;
-    }
-
-    return result
 }
