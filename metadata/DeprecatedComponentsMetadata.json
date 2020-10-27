@@ -132,11 +132,17 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.format",
+                "format",
                 "string"
               ],
               "ComplexTypes": [
                 "Format"
+              ],
+              "TypeImports": [
+                {
+                  "Name": "format",
+                  "Path": "ui/widget/ui.widget"
+                }
               ],
               "Description": "Specifies a display format for field values."
             },
@@ -345,13 +351,33 @@
         },
         "store": {
           "PrimitiveTypes": [
-            "DevExpress.data.Store",
-            "DevExpress.data.StoreOptions",
-            "DevExpress.data.XmlaStore",
-            "DevExpress.data.XmlaStoreOptions"
+            "Store",
+            "StoreOptions",
+            "XmlaStore",
+            "XmlaStoreOptions"
           ],
           "ItemPrimitiveTypes": [
             "any"
+          ],
+          "TypeImports": [
+            {
+              "Name": "default",
+              "Alias": "Store",
+              "Path": "data/abstract_store"
+            },
+            {
+              "Name": "StoreOptions",
+              "Path": "data/abstract_store"
+            },
+            {
+              "Name": "default",
+              "Alias": "XmlaStore",
+              "Path": "ui/pivot_grid/xmla_store"
+            },
+            {
+              "Name": "XmlaStoreOptions",
+              "Path": "ui/pivot_grid/xmla_store"
+            }
           ],
           "Description": "Specifies the underlying Store instance used to access data.",
           "Options": {
