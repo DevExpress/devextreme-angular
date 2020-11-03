@@ -14,7 +14,8 @@
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
     "pack": "npm run gulp -- npm.pack",
-    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 19_2"
+    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 19_2",
+    "inject-descriptions": "dx-tools inject-descriptions-to-bundle --js-scripts ./npm/dist"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",

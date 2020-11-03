@@ -1,9 +1,9 @@
 /* tslint:disable:max-line-length */
 
 import { <#= it.baseClass #> } from '<#= it.basePath #>';
-<#? it.isDevExpressRequired #>
-import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
+<#? it.imports #><#~ it.imports :file #>import <#= file.importString #> from '<#= file.path #>';
+<#~#><#?#>
 export abstract class <#= it.className #> extends <#= it.baseClass #> {<#~ it.properties :prop:i #>
     get <#= prop.name #>(): <#= prop.type #> {
         return this._getOption('<#= prop.name #>');

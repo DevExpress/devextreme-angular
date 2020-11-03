@@ -23,9 +23,9 @@ import {
 
 <#? it.hasTemplate #>import { DOCUMENT } from '@angular/common';<#?#>
 
-<#? it.isDevExpressRequired #>
-import DevExpress from 'devextreme/bundles/dx.all';<#?#>
 
+<#? it.imports #><#~ it.imports :file #>import <#= file.importString #> from '<#= file.path #>';
+<#~#><#?#>
 import {
     NestedOptionHost,<#? it.hasTemplate #>
     extractTemplate,<#?#><#? it.hasTemplate #>
@@ -56,10 +56,17 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this._setOption('<#= prop.name #>', value);
     }
 <#~#>
-<#~ it.events :event:i #><#? event.description #>
+<#~ it.events :event:i #>
     /**
-     * <#= event.description #>
-     */<#?#>
+    <#? event.isInternal #>
+     * This member supports the internal infrastructure and is not intended to be used directly from your code.
+    <#??#>
+     * [descr:<#= event.docID #>]
+    <#? event.isDeprecated #>
+     * @deprecated [depNote:<#= event.docID #>]
+    <#?#>
+    <#?#>
+     */
     @Output() <#= event.emit #>: <#= event.type #>;<#? i < it.events.length-1 #>
 <#?#><#~#>
     protected get _optionPath() {
