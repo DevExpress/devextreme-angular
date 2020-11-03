@@ -46,45 +46,57 @@ describe("metadata-generator", function() {
                     dxTestWidget: {
                         Options: {
                             onTestEvent: {
+                                DocID: 'Widget.Options.onTestEvent',
                                 IsEvent: true,
-                                Description: 'onTestEvent description'
+                                IsDeprecated: true,
                             },
                             testTemplate: {
+                                DocID: 'Widget.Options.testTemplate',
                                 IsTemplate: true,
                             },
                             testProperty: {
-                                Description: 'testProperty description'
+                                DocID: 'Widget.Options.testProperty'
                             }
                         },
-                        Description: 'widget description',
+                        DocID: 'dxTestWidget',
                         Module: 'test_widget'
                     },
                     dxEditorWidget: {
                         Options: {
-                            onValueChanged: {}
+                            onValueChanged: {
+                                DocID: 'Widget.Options.onValueChanged',
+                            }
                         },
+                        DocID: 'dxEditorWidget',
                         Module: 'test_widget'
                     },
                     dxCollectionWidget: {
                         Options: {
                             collectionProperty: {
+                                DocID: 'Widget.Options.collectionProperty',
                                 IsCollection: true
                             },
                             dataSourceProperty: {
+                                DocID: 'Widget.Options.dataSourceProperty',
                                 IsDataSource: true
                             }
                         },
+                        DocID: 'dxCollectionWidget',
                         Module: 'test_widget'
                     },
                     dxExtensionWidget: {
                         IsExtensionComponent: true,
                         Options: {},
+                        DocID: 'dxExtensionWidget',
                         Module: 'test_widget'
                     },
                     dxVizWidget: {
                         Options: {
-                            value: {}
+                            value: {
+                                DocID: 'Widget.Options.value',
+                            }
                         },
+                        DocID: 'dxVizWidget',
                         Module: 'viz/test_widget'
                     }
                 }
@@ -123,8 +135,8 @@ describe("metadata-generator", function() {
             expect(metas.DxTestWidget.widgetName).toBe("dxTestWidget");
         });
         
-        it("should generate proper widget description", function() {
-            expect(metas.DxTestWidget.description).toBe('widget description');
+        it("should generate proper widget docID", function() {
+            expect(metas.DxTestWidget.docID).toBe('dxTestWidget');
         });
 
         it("should generate proper events emit field", function() {
@@ -144,17 +156,23 @@ describe("metadata-generator", function() {
             .toEqual(['testEvent']);
         });
                 
-        it("should generate proper events description field", function() {
+        it("should generate proper events docID field", function() {
             expect(metas.DxTestWidget.events
                 .filter(p => p.emit === 'onTestEvent')
-                .map(p => p.description))
-            .toEqual(['onTestEvent description']);
+                .map(p => p.docID))
+            .toEqual(['Widget.Options.onTestEvent']);
         });
-        
-                
-        it("should generate proper events description field", function() {
+
+        it("should generate proper events deprication field", function() {
             expect(metas.DxTestWidget.events
-                .filter(p => p.emit !== "onTestEvent" && p.description !== undefined).length)
+                .filter(p => p.emit === 'onTestEvent')
+                .map(p => p.isDeprecated))
+            .toEqual([true]);
+        });
+
+        it("should generate proper events docID field", function() {
+            expect(metas.DxTestWidget.events
+                .filter(p => p.emit !== "onTestEvent" && p.docID === undefined && p.isInternal === true).length)
             .toEqual(2);
         });
 
@@ -165,10 +183,10 @@ describe("metadata-generator", function() {
             ]);
         });
         
-        it("should generate proper properties description", function() {
-            expect(metas.DxTestWidget.properties.map(p => p.description)).toEqual([
-                undefined,
-                'testProperty description'
+        it("should generate proper properties docID", function() {
+            expect(metas.DxTestWidget.properties.map(p => p.docID)).toEqual([
+                'Widget.Options.testTemplate',
+                'Widget.Options.testProperty'
             ]);
         });
 
@@ -223,7 +241,13 @@ describe("metadata-generator", function() {
                             },
                             complexTypedProperty: {
                                 PrimitiveTypes: [
-                                    "DevExpress.ui.ComplexType"
+                                    "dxComplexType1"
+                                ],
+                                TypeImports: [
+                                    {
+                                        Name: "dxComplexType1",
+                                        Path: "ui/dx_complex_types"
+                                    }
                                 ]
                             },
                             collectionTypedProperty: {
@@ -236,7 +260,13 @@ describe("metadata-generator", function() {
                                 IsCollection: true,
                                 ItemPrimitiveTypes: [
                                     "string",
-                                    "DevExpress.ui.ComplexType"
+                                    "dxComplexType2"
+                                ],
+                                TypeImports: [
+                                    {
+                                      Name: "dxComplexType2",
+                                      Path: "ui/dx_complex_types"
+                                    }
                                 ]
                             },
                             dataSourceProperty: {
@@ -247,6 +277,13 @@ describe("metadata-generator", function() {
                                 ],
                                 ItemPrimitiveTypes: [
                                     "any"
+                                ],
+                                TypeImports: [
+                                    {
+                                        Name: "default",
+                                        Alias: "DevExpress",
+                                        Path: "bundles/dx.all"
+                                    }
                                 ]
                             }
                         },
@@ -258,7 +295,7 @@ describe("metadata-generator", function() {
                                 IsPromise: true,
                                 PrimitiveTypes: [
                                     'boolean'
-                                ],                                
+                                ],
                                 ItemPrimitiveTypes: [
                                     'void'
                                 ]
@@ -279,9 +316,9 @@ describe("metadata-generator", function() {
             expect(metas.DxTypedWidget.properties.map(p => p.type)).toEqual([
                 'boolean',
                 'string' + TYPES_SEPORATOR + 'number',
-                'DevExpress.ui.ComplexType',
+                'dxComplexType1',
                 'Array<string>',
-                'Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>',
+                'Array<string' + TYPES_SEPORATOR + 'dxComplexType2>',
                 'DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>'
             ]);
             expect(metas.DxWidgetWithPromise.properties.map(p => p.type)).toEqual([
@@ -295,15 +332,24 @@ describe("metadata-generator", function() {
                 'EventEmitter<any>',
                 'EventEmitter<boolean>',
                 'EventEmitter<string' + TYPES_SEPORATOR + 'number>',
-                'EventEmitter<DevExpress.ui.ComplexType>',
+                'EventEmitter<dxComplexType1>',
                 'EventEmitter<Array<string>>',
-                'EventEmitter<Array<string' + TYPES_SEPORATOR + 'DevExpress.ui.ComplexType>>',
+                'EventEmitter<Array<string' + TYPES_SEPORATOR + 'dxComplexType2>>',
                 'EventEmitter<DevExpress.ui.DataSource' + TYPES_SEPORATOR + 'DevExpress.ui.DataSourceConfig' + TYPES_SEPORATOR + 'Array<any>>'
             ]);
         });
 
-        it("should detect the DevExpress namespace import necessary", function() {
-            expect(metas.DxTypedWidget.isDevExpressRequired).toBe(true);
+        it("should generate type imports", function() {
+            expect(metas.DxTypedWidget.imports).toEqual([
+                {
+                    importString: "DevExpress",
+                    path: "devextreme/bundles/dx.all",
+                },
+                {
+                    importString: "{ dxComplexType1, dxComplexType2 }",
+                    path: "devextreme/ui/dx_complex_types",
+                }
+            ]);
         });
     });
 
@@ -647,12 +693,30 @@ describe("metadata-generator", function() {
                                 },
                                 PrimitiveTypes: [
                                     'boolean',
-                                    'DevExpress.ui.dxComplexType'
+                                    'DevExpress.ui.dxComplexType',
+                                    'dxComplexType1'
+                                ],
+                                TypeImports: [
+                                    {
+                                        Name: "dxComplexType1",
+                                        Path: "ui/dx_complex_types"
+                                    },
+                                    {
+                                        Name: "default",
+                                        Alias: "DevExpress",
+                                        Path: "bundles/dx.all"
+                                    }
                                 ]
                             },
                             property1: {
                                 PrimitiveTypes: [
                                     'string'
+                                ],
+                                TypeImports: [
+                                    {
+                                        Name: "dxComplexType2",
+                                        Path: "ui/dx_complex_types"
+                                    }
                                 ]
                             },
                             property3: {
@@ -716,7 +780,7 @@ describe("metadata-generator", function() {
                     'string' + TYPES_SEPORATOR +
                     '{ nestedProperty1?: number }' + TYPES_SEPORATOR +
                     'boolean' + TYPES_SEPORATOR + 
-                    'DevExpress.ui.dxComplexType' + TYPES_SEPORATOR +
+                    'DevExpress.ui.dxComplexType' + TYPES_SEPORATOR + "dxComplexType1" + TYPES_SEPORATOR + 
                     '{ nestedProperty2?: string }',
                     'string', 
                     'any', 
@@ -724,9 +788,18 @@ describe("metadata-generator", function() {
                     'any'
                 ]);
         });
-        
-        it("should generate nested components with merged isDevExpressRequired", function() {
-            expect(metas.DxoExternalProperty.isDevExpressRequired).toBe(true);
+
+        it("should generate type imports for merged nested components", function() {
+            expect(metas.DxoExternalProperty.imports).toEqual([
+                {
+                    importString: "DevExpress",
+                    path: "devextreme/bundles/dx.all",
+                },
+                {
+                    importString: "{ dxComplexType1, dxComplexType2 }",
+                    path: "devextreme/ui/dx_complex_types",
+                }
+            ]);
         });
     });
 
@@ -745,10 +818,16 @@ describe("metadata-generator", function() {
                                             deep: {
                                                 PrimitiveTypes: [
                                                     "boolean",
-                                                    "DevExpress.ui.ComplexType"
+                                                    "dxComplexType1"
                                                 ],                    
                                                 ComplexTypes: [
                                                     'ExternalPropertyType'
+                                                ],
+                                                TypeImports: [
+                                                    {
+                                                        Name: "dxComplexType1",
+                                                        Path: "ui/dx_complex_types"
+                                                    }
                                                 ]
                                             },
                                             collectionDeeps : {
@@ -777,10 +856,16 @@ describe("metadata-generator", function() {
                                         },
                                         PrimitiveTypes: [
                                             "string",
-                                            "DevExpress.ui.ComplexType"
+                                            "dxComplexType2"
                                         ],                    
                                         ComplexTypes: [
                                             'ExternalPropertyType'
+                                        ],
+                                        TypeImports: [
+                                            {
+                                                Name: "dxComplexType2",
+                                                Path: "ui/dx_complex_types"
+                                            }
                                         ]
                                     },
                                     nestedItems: { // DxiNestedItem
@@ -793,10 +878,16 @@ describe("metadata-generator", function() {
                                         },
                                         ItemPrimitiveTypes: [
                                             "string",
-                                            "DevExpress.ui.ComplexType"
+                                            "dxComplexType3"
                                         ],
                                         IsCollection: true,
-                                        SingularName: "nestedItem"
+                                        SingularName: "nestedItem",
+                                        TypeImports: [
+                                            {
+                                                Name: "dxComplexType3",
+                                                Path: "ui/dx_other_complex_types"
+                                            }
+                                        ]
                                     }
                                 },
                                 PrimitiveTypes: [
@@ -834,10 +925,16 @@ describe("metadata-generator", function() {
                         Options: {
                             nestedExternalProperty: { // DxoNestedExternalProperty
                                 PrimitiveTypes: [
-                                  'DevExpress.ui.ComplexType'  
+                                  'dxComplexType4'  
                                 ],
                                 ComplexTypes: [
                                     'ExternalPropertyType'
+                                ],
+                                TypeImports: [
+                                    {
+                                        Name: "dxComplexType4",
+                                        Path: "ui/dx_other_complex_types"
+                                    }
                                 ]
                             }
                         }
@@ -863,25 +960,49 @@ describe("metadata-generator", function() {
 
         it("should generate proper typed properties", function() {
             expect(metas.DxoProperty.properties.map(p => p.type)).toEqual([
-                `string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}` +
-                `{ deep?: boolean${TYPES_SEPORATOR}DevExpress.ui.ComplexType, ` +
+                `string${TYPES_SEPORATOR}dxComplexType2${TYPES_SEPORATOR}` +
+                `{ deep?: boolean${TYPES_SEPORATOR}dxComplexType1, ` +
                 `collectionDeeps?: boolean${TYPES_SEPORATOR}Array<number${TYPES_SEPORATOR}{ value?: string }>, ` +
                 `deepWithPromise?: Promise<boolean> & JQueryPromise<boolean> }`,
 
-                `Array<string${TYPES_SEPORATOR}DevExpress.ui.ComplexType${TYPES_SEPORATOR}{ deep?: string }>`
+                `Array<string${TYPES_SEPORATOR}dxComplexType3${TYPES_SEPORATOR}{ deep?: string }>`
             ]);
         });
 
-        it("should detect the DevExpress namespace import necessary", function() {
-            expect(metas.DxoProperty.isDevExpressRequired).toBe(true);
-            expect(metas.DxoNested.isDevExpressRequired).toBe(true);
-            expect(metas.DxiNestedItem.isDevExpressRequired).toBe(false);
-            expect(metas.DxiCollectionItem.isDevExpressRequired).toBe(false);
-            expect(metas.DxoCollectionItem.isDevExpressRequired).toBe(false);
-            
-            expect(metas.DxoExternalPropertyType.isDevExpressRequired).toBe(true);
-            expect(metas.DxoNestedExternalProperty.isDevExpressRequired).toBe(false);
-            expect(metas.DxoDeep.isDevExpressRequired).toBe(false);
+        it("should generate type imports", function() {
+
+            expect(metas.DxoProperty.imports).toEqual([
+                {
+                    path: "devextreme/ui/dx_complex_types",
+                    importString: "{ dxComplexType1, dxComplexType2 }",
+                },
+                {
+                    path: "devextreme/ui/dx_other_complex_types",
+                    importString: "{ dxComplexType3 }",
+                }
+            ]);
+
+            expect(metas.DxoNested.imports).toEqual([
+                {
+                    path: "devextreme/ui/dx_complex_types",
+                    importString: "{ dxComplexType1 }",
+                }
+            ]);
+
+            expect(metas.DxoExternalPropertyType.imports).toEqual([
+                {
+                    path: "devextreme/ui/dx_other_complex_types",
+                    importString: "{ dxComplexType4 }",
+                }
+            ]);
+        });
+
+        it("should not generate type imports if not required", function() {
+            expect(metas.DxiNestedItem.imports).toBeUndefined()
+            expect(metas.DxiCollectionItem.imports).toBeUndefined()
+            expect(metas.DxoCollectionItem.imports).toBeUndefined()
+            expect(metas.DxoNestedExternalProperty.imports).toBeUndefined()
+            expect(metas.DxoDeep.imports).toBeUndefined()
         });
     });
     
