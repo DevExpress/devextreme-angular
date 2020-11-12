@@ -74,6 +74,12 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         }
     }
 
+    protected _deleteRemovedOptions(name: string) {
+        if (this.instance && this.removedNestedComponents) {
+            this._host.removedNestedComponents = this.removedNestedComponents.filter((x) => !x.startsWith(name));
+        }
+    }
+
     protected _addRecreatedComponent() {
         if (this.instance && this.recreatedNestedComponents) {
             this.recreatedNestedComponents.push({ getOptionPath: () =>  this._getOptionPath() });
@@ -116,6 +122,10 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
 
     get optionChangedHandlers() {
         return this._host && this._host.optionChangedHandlers;
+    }
+
+    ngOnDestroy() {
+        console.log(this._getOptionPath());
     }
 }
 

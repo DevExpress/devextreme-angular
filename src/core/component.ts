@@ -254,6 +254,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        this.resetOptions(); // TODO: reset only props that start with propertyName
         return this._collectionContainerImpl.setChildren(propertyName, items);
     }
 }
