@@ -142,10 +142,6 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     get optionChangedHandlers() {
         return this._host && this._host.optionChangedHandlers;
     }
-
-    ngOnDestroy() {
-        console.log(this._getOptionPath());
-    }
 }
 
 export interface ICollectionNestedOptionContainer {
