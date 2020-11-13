@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Update npm
-          command: 'sudo npm install -g npm@latest'
+          command: "sudo npm install -g npm@latest"
       - run:
           name: Install packages
           command: npm install --unsafe-perm
@@ -40,3 +40,5 @@ jobs:
       - run:
           name: Run tests with Angular Next
           command: npx gulp run.tests
+      - store_artifacts:
+          path: ./dist/core
