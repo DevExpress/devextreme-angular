@@ -111,11 +111,11 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         return this._host && this._host.instance;
     }
 
-    get resetOptions(){
+    get resetOptions() {
         return this._host && this._host.resetOptions;
     }
 
-    get isRecreated(){
+    get isRecreated() {
         return this._host && this._host.isRecreated;
     }
 
@@ -131,7 +131,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         return this._host && this._host.recreatedNestedComponents;
     }
 
-    set recreatedNestedComponents(value){
+    set recreatedNestedComponents(value) {
         this._host.recreatedNestedComponents = value;
     }
 
