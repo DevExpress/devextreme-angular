@@ -122,6 +122,11 @@ export class <#= it.className #>Component extends <#= it.baseClass #><#? it.hasT
         this._addRemovedOption(this._getOptionPath());
     }
 <#?#>
+<#? it.isCollection #>
+    ngOnDestroy() {
+        this._deleteRemovedOptions(this._fullOptionPath());
+    }
+<#?#>
 }
 
 @NgModule({

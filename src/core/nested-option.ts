@@ -15,6 +15,8 @@ export interface INestedOptionContainer {
     removedNestedComponents: string[];
     optionChangedHandlers: EventEmitter<any>;
     recreatedNestedComponents: any[];
+    resetOptions: (collectionName?: string) => void;
+    isRecreated: (name: string) => boolean;
 }
 
 export interface IOptionPathGetter { (): string; }
@@ -74,9 +76,15 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         }
     }
 
+    protected _deleteRemovedOptions(name: string) {
+        if (this.instance && this.removedNestedComponents) {
+            this.removedNestedComponents = this.removedNestedComponents.filter((x) => !x.startsWith(name));
+        }
+    }
+
     protected _addRecreatedComponent() {
         if (this.instance && this.recreatedNestedComponents) {
-            this.recreatedNestedComponents.push({ getOptionPath: () =>  this._getOptionPath() });
+            this.recreatedNestedComponents.push({ getOptionPath: () => this._getOptionPath() });
         }
     }
 
@@ -91,6 +99,7 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        this.resetOptions(propertyName);
         return this._collectionContainerImpl.setChildren(propertyName, items);
     }
 
@@ -102,12 +111,28 @@ export abstract class BaseNestedOption implements INestedOptionContainer, IColle
         return this._host && this._host.instance;
     }
 
+    get resetOptions() {
+        return this._host && this._host.resetOptions;
+    }
+
+    get isRecreated() {
+        return this._host && this._host.isRecreated;
+    }
+
     get removedNestedComponents() {
         return this._host && this._host.removedNestedComponents;
     }
 
+    set removedNestedComponents(value) {
+        this._host.removedNestedComponents = value;
+    }
+
     get recreatedNestedComponents() {
         return this._host && this._host.recreatedNestedComponents;
+    }
+
+    set recreatedNestedComponents(value) {
+        this._host.recreatedNestedComponents = value;
     }
 
     get isLinked() {
@@ -126,7 +151,7 @@ export interface ICollectionNestedOptionContainer {
 export class CollectionNestedOptionContainerImpl implements ICollectionNestedOptionContainer {
     private _activatedQueries = {};
 
-    constructor(private _setOption: Function, private _filterItems?: Function) {}
+    constructor(private _setOption: Function, private _filterItems?: Function) { }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
         if (this._filterItems) {
