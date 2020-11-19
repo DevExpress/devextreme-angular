@@ -232,13 +232,15 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
         }
     }
 
-    resetOptions() {
+    resetOptions(collectionName?: string) {
         if (this.instance) {
-            this.removedNestedComponents.forEach(option => {
-                if (option && !this.isRecreated(option)) {
-                    this.instance.resetOption(option);
-                }
-            });
+            this.removedNestedComponents.filter(option => option &&
+                !this.isRecreated(option) &&
+                collectionName ? option.startsWith(collectionName) : true)
+            .forEach(option => {
+                this.instance.resetOption(option);
+            })
+
             this.removedNestedComponents = [];
             this.recreatedNestedComponents = [];
         }
@@ -254,6 +256,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     setChildren<T extends ICollectionNestedOption>(propertyName: string, items: QueryList<T>) {
+        this.resetOptions(propertyName);
         return this._collectionContainerImpl.setChildren(propertyName, items);
     }
 }

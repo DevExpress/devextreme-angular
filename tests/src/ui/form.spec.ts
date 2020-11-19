@@ -26,7 +26,9 @@ class TestContainerComponent {
         date: new Date()
     };
     labelValues = [{ name: 'label1' }, { name: 'label2' }];
+    labelValuesSecond = [{ name: 'label1' }, { name: 'label2' }, { name: 'label3' }];
     formData1 = { labels: this.labelValues };
+    condition = true;
     @ViewChild(DxFormComponent) formComponent: DxFormComponent;
 
     validateForm() {
@@ -241,6 +243,106 @@ describe('DxForm', () => {
 
         expect(spy.calls.count()).toBe(0);
         expect(formInstance.option('items[0].label.text')).toBe('label1');
+    });
+
+    it('should not call resetOption for rerendered nested components (delete item)', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form >
+                        <dxi-item *ngFor="let labelValue of labelValuesSecond">
+                            <dxo-label text="{{ labelValue.name }}"></dxo-label>
+                        </dxi-item>
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let spy = spyOn(formInstance, 'resetOption');
+
+        fixture.componentInstance.labelValuesSecond.splice(1, 1);
+        fixture.detectChanges();
+
+        expect(spy.calls.count()).toBe(0);
+        expect(formInstance.option('items[1].label.text')).toBe('label3');
+    });
+
+    it('should delete collection nested item with ordinary nested', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form >
+                        <dxi-item *ngFor="let labelValue of labelValuesSecond">
+                            <dxo-label text="{{ labelValue.name }}"></dxo-label>
+                        </dxi-item>
+                        <dxi-item>
+                            <dxo-label text="label4" *ngIf="condition"></dxo-label>
+                        </dxi-item>
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let spy = spyOn(formInstance, 'resetOption').and.callThrough();
+
+        fixture.componentInstance.labelValuesSecond.splice(1, 1);
+        fixture.componentInstance.condition = false;
+        fixture.detectChanges();
+
+        expect(spy.calls.count()).toBe(1);
+        expect(formInstance.option('items[1].label.text')).toBe('label3');
+        expect(formInstance.option('items[2].label.text')).toBe(undefined);
+    });
+
+    it('should delete collection nested item with ordinary nested in two groups', () => {
+        TestBed.overrideComponent(TestContainerComponent, {
+            set: {
+                template: `
+                    <dx-form>
+                        <dxi-item caption="First Group" itemType="group">
+                            <dxi-item *ngFor="let labelValue of labelValues">
+                                <dxo-label text="{{ labelValue.name }}"></dxo-label>
+                            </dxi-item>
+                            <dxi-item>
+                                <dxo-label text="label3" *ngIf="condition"></dxo-label>
+                            </dxi-item>
+                        </dxi-item>
+                        <dxi-item caption="Second Group" itemType="group">
+                            <dxi-item>
+                                <dxo-label text="label0" *ngIf="condition"></dxo-label>
+                            </dxi-item>
+                            <dxi-item *ngFor="let labelValue of labelValuesSecond">
+                                <dxo-label text="{{ labelValue.name }}"></dxo-label>
+                            </dxi-item>
+                        </dxi-item>
+                    </dx-form>
+                `
+            }
+        });
+
+        let fixture = TestBed.createComponent(TestContainerComponent);
+        fixture.detectChanges();
+
+        let formInstance = getWidget(fixture);
+        let spy = spyOn(formInstance, 'resetOption').and.callThrough();
+
+        fixture.componentInstance.labelValues.splice(1, 1);
+        fixture.componentInstance.labelValuesSecond.splice(1, 1);
+        fixture.componentInstance.condition = false;
+        fixture.detectChanges();
+
+        expect(spy.calls.count()).toBe(2);
+        expect(formInstance.option('items[0].items[1].label.text')).toBe(undefined);
+        expect(formInstance.option('items[1].items[2].label.text')).toBe('label3');
+        expect(formInstance.option('items[1].items[3].label.text')).toBe(undefined);
     });
 
     it('should change the value of dxDateBox', () => {
