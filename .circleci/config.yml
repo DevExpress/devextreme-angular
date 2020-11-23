@@ -23,13 +23,13 @@ jobs:
           name: Run tests with Angular 7
           command: npx gulp run.tests
       - run:
-          name: Install Angular 10
-          command: npm install @angular/animations@10 @angular/core@10  @angular/common@10 @angular/compiler@10 @angular/forms@10 @angular/platform-browser@10 @angular/platform-server@10 @angular/platform-browser-dynamic@10 @angular/compiler-cli@10 --unsafe-perm
+          name: Install Angular latest
+          command: npm install @angular/animations@latest @angular/core@latest  @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
       - run:
-          name: Build tests with Angular 10
+          name: Build tests with Angular latest
           command: npx gulp build.tests
       - run:
-          name: Run tests with Angular 10
+          name: Run tests with Angular latest
           command: npx gulp run.tests
       - run:
           name: Install Angular Next
