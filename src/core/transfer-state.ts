@@ -31,7 +31,7 @@ export class DxServerTransferStateModule {
                     return result;
                 } else {
                     if (cachedData) {
-                        let d = Deferred();
+                        let d = (Deferred as any)();
                         d.resolve(cachedData.data, cachedData.status);
                         that.state.set(key, null as any);
 

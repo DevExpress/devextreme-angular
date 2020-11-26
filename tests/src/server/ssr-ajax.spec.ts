@@ -18,7 +18,7 @@ import {
 
 let mockSendRequest = {
     callBase: function() {
-        let d = Deferred();
+        let d = (Deferred as any)();
         d.resolve('test', 'success');
 
         return d.promise();
