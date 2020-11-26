@@ -6,7 +6,7 @@ import { isPlatformServer } from '@angular/common';
 
 import { DxServerTransferStateModule } from 'devextreme-angular';
 
-import * as def from 'devextreme/core/utils/deferred';
+import { Deferred } from 'devextreme/core/utils/deferred';
 import * as ajax from 'devextreme/core/utils/ajax';
 
 import { ServerModule, ServerTransferStateModule } from '@angular/platform-server';
@@ -18,7 +18,7 @@ import {
 
 let mockSendRequest = {
     callBase: function() {
-        let d = new def.Deferred();
+        let d = (Deferred as any)();
         d.resolve('test', 'success');
 
         return d.promise();

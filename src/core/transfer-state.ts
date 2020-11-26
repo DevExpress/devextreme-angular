@@ -1,7 +1,7 @@
 import { PLATFORM_ID, Inject, NgModule } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 import * as ajax from 'devextreme/core/utils/ajax';
-import * as deferred from 'devextreme/core/utils/deferred';
+import { Deferred } from 'devextreme/core/utils/deferred';
 import { TransferState, makeStateKey, BrowserTransferStateModule } from '@angular/platform-browser';
 
 @NgModule({
@@ -31,7 +31,7 @@ export class DxServerTransferStateModule {
                     return result;
                 } else {
                     if (cachedData) {
-                        let d = new deferred.Deferred();
+                        let d = (Deferred as any)();
                         d.resolve(cachedData.data, cachedData.status);
                         that.state.set(key, null as any);
 
