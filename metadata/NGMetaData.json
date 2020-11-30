@@ -4146,11 +4146,29 @@
               ],
               "DocID": "dxChart.Options.argumentAxis.logarithmBase"
             },
+            "max": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxChart.Options.argumentAxis.max"
+            },
             "maxValueMargin": {
               "PrimitiveTypes": [
                 "number"
               ],
               "DocID": "dxChart.Options.commonAxisSettings.maxValueMargin"
+            },
+            "min": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxChart.Options.argumentAxis.min"
             },
             "minorGrid": {
               "DocID": "dxChart.Options.commonAxisSettings.minorGrid",
@@ -4792,6 +4810,13 @@
             "number"
           ],
           "DocID": "dxChart.Options.barGroupWidth"
+        },
+        "barWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxChart.Options.barWidth"
         },
         "commonAnnotationSettings": {
           "PrimitiveTypes": [
@@ -5738,6 +5763,13 @@
           ],
           "DocID": "DOMComponent.Options.elementAttr"
         },
+        "equalBarWidth": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxChart.Options.equalBarWidth"
+        },
         "export": {
           "DocID": "BaseWidget.Options.export",
           "Options": {
@@ -6577,6 +6609,13 @@
             }
           }
         },
+        "scrollingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxChart.Options.scrollingMode"
+        },
         "series": {
           "PrimitiveTypes": [
             "any"
@@ -7001,6 +7040,13 @@
               "DocID": "BaseWidget.Options.tooltip.zIndex"
             }
           }
+        },
+        "useAggregation": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxChart.Options.useAggregation"
         },
         "valueAxis": {
           "ItemPrimitiveTypes": [
@@ -7451,6 +7497,15 @@
               ],
               "DocID": "dxChart.Options.valueAxis.logarithmBase"
             },
+            "max": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxChart.Options.valueAxis.max"
+            },
             "maxAutoBreakCount": {
               "PrimitiveTypes": [
                 "number"
@@ -7462,6 +7517,15 @@
                 "number"
               ],
               "DocID": "dxChart.Options.commonAxisSettings.maxValueMargin"
+            },
+            "min": {
+              "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxChart.Options.valueAxis.min"
             },
             "minorGrid": {
               "DocID": "dxChart.Options.commonAxisSettings.minorGrid",
@@ -8155,6 +8219,13 @@
               "DocID": "dxChart.Options.zoomAndPan.valueAxis"
             }
           }
+        },
+        "zoomingMode": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxChart.Options.zoomingMode"
         }
       }
     },
@@ -13149,12 +13220,6 @@
               ],
               "DocID": "dxDiagram.Options.contextToolbox.enabled"
             },
-            "shapeIconsPerRow": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "DocID": "dxDiagram.Options.contextToolbox.shapeIconsPerRow"
-            },
             "shapes": {
               "ItemPrimitiveTypes": [
                 "string"
@@ -13162,12 +13227,6 @@
               "IsCollection": true,
               "SingularName": "shape",
               "DocID": "dxDiagram.Options.contextToolbox.shapes"
-            },
-            "width": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "DocID": "dxDiagram.Options.contextToolbox.width"
             }
           }
         },
@@ -13400,19 +13459,6 @@
               ],
               "DocID": "dxDiagram.Options.customShapes.title"
             },
-            "toolboxTemplate": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsTemplate": true,
-              "DocID": "dxDiagram.Options.customShapes.toolboxTemplate"
-            },
-            "toolboxWidthToHeightRatio": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "DocID": "dxDiagram.Options.customShapes.toolboxWidthToHeightRatio"
-            },
             "type": {
               "PrimitiveTypes": [
                 "string"
@@ -13427,13 +13473,6 @@
           ],
           "IsTemplate": true,
           "DocID": "dxDiagram.Options.customShapeTemplate"
-        },
-        "customShapeToolboxTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "DocID": "dxDiagram.Options.customShapeToolboxTemplate"
         },
         "defaultItemProperties": {
           "DocID": "dxDiagram.Options.defaultItemProperties",
@@ -13479,14 +13518,6 @@
         "edges": {
           "DocID": "dxDiagram.Options.edges",
           "Options": {
-            "customDataExpr": {
-              "PrimitiveTypes": [
-                "Function",
-                "string"
-              ],
-              "IsFunc": true,
-              "DocID": "dxDiagram.Options.edges.customDataExpr"
-            },
             "dataSource": {
               "PrimitiveTypes": [
                 "DevExpress.data.DataSource",
@@ -13784,14 +13815,6 @@
               ],
               "IsFunc": true,
               "DocID": "dxDiagram.Options.nodes.containerKeyExpr"
-            },
-            "customDataExpr": {
-              "PrimitiveTypes": [
-                "Function",
-                "string"
-              ],
-              "IsFunc": true,
-              "DocID": "dxDiagram.Options.nodes.customDataExpr"
             },
             "dataSource": {
               "PrimitiveTypes": [
@@ -14203,29 +14226,11 @@
                 }
               }
             },
-            "shapeIconsPerRow": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "DocID": "dxDiagram.Options.toolbox.shapeIconsPerRow"
-            },
-            "showSearch": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "DocID": "dxDiagram.Options.toolbox.showSearch"
-            },
             "visibility": {
               "PrimitiveTypes": [
                 "string"
               ],
               "DocID": "dxDiagram.Options.toolbox.visibility"
-            },
-            "width": {
-              "PrimitiveTypes": [
-                "number"
-              ],
-              "DocID": "dxDiagram.Options.toolbox.width"
             }
           }
         },
@@ -14827,47 +14832,6 @@
           ],
           "DocID": "Editor.Options.isValid"
         },
-        "items": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "SingularName": "item",
-          "DocID": "DataExpressionMixin.Options.items",
-          "Options": {
-            "disabled": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "DocID": "CollectionWidgetItem.disabled"
-            },
-            "html": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "DocID": "CollectionWidgetItem.html"
-            },
-            "template": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsTemplate": true,
-              "DocID": "CollectionWidgetItem.template"
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "DocID": "CollectionWidgetItem.text"
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "DocID": "CollectionWidgetItem.visible"
-            }
-          }
-        },
         "maxLength": {
           "PrimitiveTypes": [
             "number",
@@ -15294,6 +15258,15 @@
                 "string"
               ],
               "DocID": "dxListItem.icon"
+            },
+            "onClick": {
+              "PrimitiveTypes": [
+                "Function",
+                "string"
+              ],
+              "IsFunc": true,
+              "IsEvent": true,
+              "DocID": "dxDropDownButtonItem.onClick"
             },
             "template": {
               "PrimitiveTypes": [
@@ -21384,6 +21357,12 @@
           "IsReadonly": true,
           "DocID": "dxDropDownList.Options.displayValue"
         },
+        "dropDownCentered": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "DocID": "dxLookup.Options.dropDownCentered"
+        },
         "dropDownOptions": {
           "PrimitiveTypes": [
             "dxPopoverOptions"
@@ -21470,12 +21449,6 @@
             "boolean"
           ],
           "DocID": "Editor.Options.isValid"
-        },
-        "itemCenteringEnabled": {
-          "PrimitiveTypes": [
-            "boolean"
-          ],
-          "DocID": "dxLookup.Options.itemCenteringEnabled"
         },
         "items": {
           "ItemPrimitiveTypes": [
@@ -24954,14 +24927,12 @@
               "PrimitiveTypes": [
                 "string"
               ],
-              "IsDeprecated": true,
               "DocID": "dxPivotGrid.Options.export.fileName"
             },
             "ignoreExcelErrors": {
               "PrimitiveTypes": [
                 "boolean"
               ],
-              "IsDeprecated": true,
               "DocID": "dxPivotGrid.Options.export.ignoreExcelErrors"
             },
             "proxyUrl": {
@@ -25314,7 +25285,6 @@
           "PrimitiveTypes": [
             "Function"
           ],
-          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxPivotGrid.Options.onExported"
@@ -25331,7 +25301,6 @@
           "PrimitiveTypes": [
             "Function"
           ],
-          "IsDeprecated": true,
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxPivotGrid.Options.onFileSaving"
@@ -26588,6 +26557,13 @@
           ],
           "DocID": "dxPolarChart.Options.barGroupWidth"
         },
+        "barWidth": {
+          "PrimitiveTypes": [
+            "number"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxPolarChart.Options.barWidth"
+        },
         "commonAnnotationSettings": {
           "PrimitiveTypes": [
             "dxPolarChartCommonAnnotationConfig"
@@ -26987,6 +26963,13 @@
             "any"
           ],
           "DocID": "DOMComponent.Options.elementAttr"
+        },
+        "equalBarWidth": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxPolarChart.Options.equalBarWidth"
         },
         "export": {
           "DocID": "BaseWidget.Options.export",
@@ -30217,6 +30200,13 @@
               ],
               "DocID": "dxRangeSelector.Options.chart.barGroupWidth"
             },
+            "barWidth": {
+              "PrimitiveTypes": [
+                "number"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxRangeSelector.Options.chart.barWidth"
+            },
             "bottomIndent": {
               "PrimitiveTypes": [
                 "number"
@@ -30256,6 +30246,13 @@
                   "DocID": "dxRangeSelector.Options.chart.dataPrepareSettings.sortingMethod"
                 }
               }
+            },
+            "equalBarWidth": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxRangeSelector.Options.chart.equalBarWidth"
             },
             "maxBubbleSize": {
               "PrimitiveTypes": [
@@ -30332,6 +30329,13 @@
                 "number"
               ],
               "DocID": "dxRangeSelector.Options.chart.topIndent"
+            },
+            "useAggregation": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "IsDeprecated": true,
+              "DocID": "dxRangeSelector.Options.chart.useAggregation"
             },
             "valueAxis": {
               "DocID": "dxRangeSelector.Options.chart.valueAxis",
@@ -39838,6 +39842,12 @@
           "IsEvent": true,
           "DocID": "DOMComponent.Options.onOptionChanged"
         },
+        "renderAs": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "DocID": "dxToolbar.Options.renderAs"
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -42447,6 +42457,13 @@
           ],
           "DocID": "BaseWidget.Options.redrawOnResize"
         },
+        "resolveLabelOverflow": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "IsDeprecated": true,
+          "DocID": "dxTreeMap.Options.resolveLabelOverflow"
+        },
         "rtlEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -43591,6 +43608,9 @@
               "DocID": "dxValidator.Options.adapter.reset"
             },
             "validationRequestsCallbacks": {
+              "PrimitiveTypes": [
+                "any"
+              ],
               "ItemPrimitiveTypes": [
                 "Function"
               ],
@@ -48670,6 +48690,15 @@
             "string"
           ],
           "DocID": "dxListItem.icon"
+        },
+        "onClick": {
+          "PrimitiveTypes": [
+            "Function",
+            "string"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxDropDownButtonItem.onClick"
         },
         "template": {
           "PrimitiveTypes": [
