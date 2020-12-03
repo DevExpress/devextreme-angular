@@ -14992,47 +14992,6 @@
           ],
           "DocID": "Editor.Options.isValid"
         },
-        "items": {
-          "ItemPrimitiveTypes": [
-            "any"
-          ],
-          "IsCollection": true,
-          "SingularName": "item",
-          "DocID": "DataExpressionMixin.Options.items",
-          "Options": {
-            "disabled": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "DocID": "CollectionWidgetItem.disabled"
-            },
-            "html": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "DocID": "CollectionWidgetItem.html"
-            },
-            "template": {
-              "PrimitiveTypes": [
-                "any"
-              ],
-              "IsTemplate": true,
-              "DocID": "CollectionWidgetItem.template"
-            },
-            "text": {
-              "PrimitiveTypes": [
-                "string"
-              ],
-              "DocID": "CollectionWidgetItem.text"
-            },
-            "visible": {
-              "PrimitiveTypes": [
-                "boolean"
-              ],
-              "DocID": "CollectionWidgetItem.visible"
-            }
-          }
-        },
         "maxLength": {
           "PrimitiveTypes": [
             "number",
@@ -18907,6 +18866,12 @@
               ],
               "DocID": "dxGantt.Options.editing.allowTaskDeleting"
             },
+            "allowTaskResourceUpdating": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "dxGantt.Options.editing.allowTaskResourceUpdating"
+            },
             "allowTaskUpdating": {
               "PrimitiveTypes": [
                 "boolean"
@@ -22328,6 +22293,32 @@
           ],
           "DocID": "Widget.Options.activeStateEnabled"
         },
+        "apiKey": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "DocID": "dxMap.Options.apiKey",
+          "Options": {
+            "bing": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxMap.Options.apiKey.bing"
+            },
+            "google": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxMap.Options.apiKey.google"
+            },
+            "googleStatic": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxMap.Options.apiKey.googleStatic"
+            }
+          }
+        },
         "autoAdjust": {
           "PrimitiveTypes": [
             "boolean"
@@ -22409,6 +22400,7 @@
           "PrimitiveTypes": [
             "string"
           ],
+          "IsDeprecated": true,
           "DocID": "dxMap.Options.key",
           "Options": {
             "bing": {
@@ -37513,7 +37505,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "DocID": "dxTabPanel.Options.focusStateEnabled"
+          "DocID": "dxMultiView.Options.focusStateEnabled"
         },
         "height": {
           "PrimitiveTypes": [
