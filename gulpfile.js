@@ -111,9 +111,12 @@ gulp.task('clean.dist', function() {
 
 gulp.task('build.ngc', function() {
     var config = buildConfig.components;
-    return ngPackagr.build({
-        project: path.join(config.outputPath, 'package.json')
-    });
+
+   return ngPackagr
+        .ngPackagr()
+        .forProject(path.join(config.outputPath, 'package.json'))
+        .withTsConfig('tsconfig.lib.json')
+        .build()
 });
 
 gulp.task('build.copy-sources', gulp.series('clean.dist', function() {
