@@ -25,7 +25,6 @@ class TestContainerComponent {
 
 describe('global events', () => {
 
-    // spec
     it('should be subscribed within Angular Zone', () => {
         let readyCallbacksCalls = 0;
         readyCallbacks.fire();
@@ -34,7 +33,6 @@ describe('global events', () => {
             readyCallbacksCalls++;
             NgZone.assertInAngularZone();
         });
-        expect(readyCallbacksCalls).toBe(0);
 
         TestBed.configureTestingModule({
             declarations: [TestContainerComponent],
@@ -47,6 +45,12 @@ describe('global events', () => {
 
         TestBed.createComponent(TestContainerComponent);
         expect(readyCallbacksCalls).toBe(1);
+
+        readyCallbacks.add(() => {
+            readyCallbacksCalls++;
+            NgZone.assertInAngularZone();
+        });
+        expect(readyCallbacksCalls).toBe(2);
     });
 
 });
