@@ -12,11 +12,17 @@ const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout'];
 const insideZoneEvents = ['mouseup', 'click', 'mousedown', 'transitionend', 'wheel'];
 
 let originalAdd;
+let readyCallbackAdd = function(callback) {
+    if (!originalAdd) {
+        originalAdd = this.callBase.bind(this);
+    }
+    callbacks.push(callback);
+};
+
 let callbacks = [];
 readyCallbacks.inject({
     add: function(callback) {
-        originalAdd = this.callBase.bind(this);
-        callbacks.push(callback);
+        return readyCallbackAdd.call(this, callback);
     }
 });
 
@@ -83,6 +89,7 @@ let doInjections = (document: any, ngZone: NgZone, xhrFactory: XhrFactory) => {
 
     runReadyCallbacksInZone();
 
+    readyCallbackAdd = (callback) => ngZone.run(() => callback());
     doInjections = runReadyCallbacksInZone;
 };
 
