@@ -8389,7 +8389,8 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "IsChangeable": true,
           "DocID": "dxCheckBox.Options.value"
@@ -14831,6 +14832,47 @@
             "boolean"
           ],
           "DocID": "Editor.Options.isValid"
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "DocID": "DataExpressionMixin.Options.items",
+          "Options": {
+            "disabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.disabled"
+            },
+            "html": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.html"
+            },
+            "template": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "DocID": "CollectionWidgetItem.template"
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.text"
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.visible"
+            }
+          }
         },
         "maxLength": {
           "PrimitiveTypes": [
