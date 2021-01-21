@@ -8331,7 +8331,8 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "string"
           ],
           "IsChangeable": true,
           "DocID": "dxCheckBox.Options.value"
@@ -14992,6 +14993,47 @@
           ],
           "DocID": "Editor.Options.isValid"
         },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "DocID": "DataExpressionMixin.Options.items",
+          "Options": {
+            "disabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.disabled"
+            },
+            "html": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.html"
+            },
+            "template": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "DocID": "CollectionWidgetItem.template"
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.text"
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.visible"
+            }
+          }
+        },
         "maxLength": {
           "PrimitiveTypes": [
             "number",
@@ -18950,6 +18992,14 @@
           "IsEvent": true,
           "DocID": "dxGantt.Options.onCustomCommand"
         },
+        "onDependencyDeleted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onDependencyDeleted"
+        },
         "onDependencyDeleting": {
           "PrimitiveTypes": [
             "Function"
@@ -18957,6 +19007,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxGantt.Options.onDependencyDeleting"
+        },
+        "onDependencyInserted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onDependencyInserted"
         },
         "onDependencyInserting": {
           "PrimitiveTypes": [
@@ -18990,6 +19048,14 @@
           "IsEvent": true,
           "DocID": "DOMComponent.Options.onOptionChanged"
         },
+        "onResourceAssigned": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onResourceAssigned"
+        },
         "onResourceAssigning": {
           "PrimitiveTypes": [
             "Function"
@@ -18997,6 +19063,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxGantt.Options.onResourceAssigning"
+        },
+        "onResourceDeleted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onResourceDeleted"
         },
         "onResourceDeleting": {
           "PrimitiveTypes": [
@@ -19006,6 +19080,14 @@
           "IsEvent": true,
           "DocID": "dxGantt.Options.onResourceDeleting"
         },
+        "onResourceInserted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onResourceInserted"
+        },
         "onResourceInserting": {
           "PrimitiveTypes": [
             "Function"
@@ -19013,6 +19095,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxGantt.Options.onResourceInserting"
+        },
+        "onResourceUnassigned": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onResourceUnassigned"
         },
         "onResourceUnassigning": {
           "PrimitiveTypes": [
@@ -19046,6 +19136,14 @@
           "IsEvent": true,
           "DocID": "dxGantt.Options.onTaskDblClick"
         },
+        "onTaskDeleted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onTaskDeleted"
+        },
         "onTaskDeleting": {
           "PrimitiveTypes": [
             "Function"
@@ -19062,6 +19160,14 @@
           "IsEvent": true,
           "DocID": "dxGantt.Options.onTaskEditDialogShowing"
         },
+        "onTaskInserted": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onTaskInserted"
+        },
         "onTaskInserting": {
           "PrimitiveTypes": [
             "Function"
@@ -19077,6 +19183,14 @@
           "IsFunc": true,
           "IsEvent": true,
           "DocID": "dxGantt.Options.onTaskMoving"
+        },
+        "onTaskUpdated": {
+          "PrimitiveTypes": [
+            "Function"
+          ],
+          "IsFunc": true,
+          "IsEvent": true,
+          "DocID": "dxGantt.Options.onTaskUpdated"
         },
         "onTaskUpdating": {
           "PrimitiveTypes": [
