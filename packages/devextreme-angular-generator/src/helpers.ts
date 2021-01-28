@@ -1,5 +1,5 @@
 
-export function byKeyComparer<T>(getter: (obj: T) => string): Parameters<Array<T>["sort"]>[0] {
+export function byKeyComparer<T>(getter: (obj: T) => string): Parameters<Array<T>['sort']>[0] {
     return (objA: T, objB: T) => getter(objA).localeCompare(getter(objB));
 }
 
