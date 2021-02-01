@@ -33,12 +33,16 @@
       'devextreme-angular': '../npm/dist',
 
       // devextreme & devextreme deps
-      'devextreme': 'npm:devextreme',
+      'devextreme': 'npm:devextreme/cjs',
       'devexpress-diagram': 'npm:devexpress-diagram/dist/dx-diagram.js',
       'devexpress-gantt': 'npm:devexpress-gantt/dist/dx-gantt.js',
       'jszip': 'npm:jszip/dist/jszip.min.js',
       'quill-delta-to-html': 'npm:quill-delta-to-html/dist/browser/QuillDeltaToHtmlConverter.bundle.js',
       'quill': 'npm:quill/dist/quill.min.js',
+      'devextreme-quill': 'npm:devextreme-quill/dist/dx-quill.min.js',
+      'preact': 'npm:preact/dist/preact.js',
+      'preact/hooks': 'npm:preact/hooks/dist/hooks.js',
+      'rrule': 'npm:rrule/dist/es5/rrule.js',
       // other libraries
       'rxjs': 'npm:rxjs'
     },
