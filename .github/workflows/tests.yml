@@ -12,7 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Install gulp
-      run: npm install -g gulp
+      run: sudo npm install -g gulp
 
     - name: Clone devextreme repo
       run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
