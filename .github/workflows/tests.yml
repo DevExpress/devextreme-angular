@@ -1,0 +1,58 @@
+name: Tests
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+    - name: Get sources
+      uses: actions/checkout@v2
+
+    - name: Clone devextreme repo
+      run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
+
+    - name: Install packages in devextreme repo
+      run: |
+        cd devextreme-repo
+        npm install --no-package-lock --no-audit --no-fund
+
+    - name: Build devextreme repo
+      run: |
+        cd devextreme-repo
+        npm run build-dist
+
+    - name: Install devextreme package
+      run: npm install --save-dev ./devextreme-repo/artifacts/npm/devextreme
+
+    - name: Run npm install
+      run: npm install --no-package-lock --no-audit --no-fund
+
+    - name: Build with Angular 7
+      run: npm run build
+
+    - name: Build tests with Angular 7
+      run: npx gulp build.tests
+
+    - name: Run tests with Angular 7
+      run: npx gulp run.tests
+
+    - name: Install Angular latest
+      run: npm install @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
+
+    - name: Build tests with Angular latest
+      run: npx gulp build.tests
+
+    - name: Run tests with Angular latest
+      run: npx gulp run.tests
+
+    - name: Install Angular Next
+      run: npm install @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
+
+    - name: Build tests with Angular Next
+      run: npx gulp build.tests
+
+    - name: Run tests with Angular Next
+      run: npx gulp run.tests

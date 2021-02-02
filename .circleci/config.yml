@@ -11,22 +11,6 @@ jobs:
           name: Update npm
           command: "sudo npm install -g npm@latest"
       - run:
-          name: Clone devextreme repo
-          command: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
-      - run:
-          name: Install packages in devextreme repo
-          command: |
-            cd devextreme-repo
-            npm install --unsafe-perm
-      - run:
-          name: Build devextreme repo 
-          command: |
-            cd devextreme-repo
-            npm run build-dist
-      - run:
-          name: Install packages
-          command: npm install --unsafe-perm --save-dev ./devextreme-repo/artifacts/npm/devextreme
-      - run:
           name: Install packages
           command: npm install --unsafe-perm
       - run:
