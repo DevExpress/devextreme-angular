@@ -12,7 +12,9 @@
     "lite": "lite-server",
     "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
     "build": "npm run gulp -- build",
+    "build:test": "npm run gulp -- build.tests",
     "test": "npm run gulp -- test",
+    "test:run": "npm run gulp -- run.tests",
     "pack": "npm run gulp -- npm.pack",
     "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 20_1",
     "inject-descriptions": "dx-tools inject-descriptions-to-bundle --js-scripts ./npm/dist"
