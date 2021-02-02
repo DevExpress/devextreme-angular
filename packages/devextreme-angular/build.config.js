@@ -12,9 +12,6 @@ module.exports = {
         },
         componentGenerator: {
             importFrom: 'devextreme-angular-generator/dist/dot-generator',
-            templateFilePath: './templates/component.tst',
-            nestedTemplateFilePath: './templates/nested-component.tst',
-            baseNestedTemplateFilePath: './templates/base-nested-component.tst',
             metadataFolderPath: './metadata/generated/',
             outputFolderPath: './src/ui/',
             nestedPathPart: 'nested',

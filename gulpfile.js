@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var tslint = require('gulp-tslint');
 
-const srcFilesPattern = ['packages/*/src/**/*.ts', '!packages/*/src/ui/**/*', '!packages/*/src/metadata-model.ts'];
+const srcFilesPattern = ['packages/*/src/**/*.ts', '!packages/*/src/ui/**', '!packages/*/src/metadata-model.ts'];
 const sandboxSrcFilesPattern = 'packages/sandbox/**/*.ts';
 const testsFilesPattern = ['packages/*/tests/src/**/*.spec.ts', 'packages/*/tests/src/**/component-names.ts'];
 

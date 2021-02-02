@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var path = require('path');
 var typescript = require('gulp-typescript');
 var shell = require('gulp-shell');
 var sourcemaps = require('gulp-sourcemaps');
@@ -7,6 +8,7 @@ var jasmineReporters = require('jasmine-reporters');
 var del = require('del');
 
 const SRC_FILES_PATTERN = './src/**/*.ts';
+const TEMPLATES_FILES_PATTERN = './src/templates/*.tst';
 const DIST_PATH = './dist';
 
 //------------npm------------
@@ -19,13 +21,14 @@ gulp.task('npm.pack', gulp.series(
 
 //------------Main------------
 
-var buildTask = function() {
-    return gulp.src(SRC_FILES_PATTERN)
+var buildTask = gulp.series(
+    () => gulp.src(TEMPLATES_FILES_PATTERN).pipe(gulp.dest(path.join(DIST_PATH, 'templates'))),
+    () => gulp.src(SRC_FILES_PATTERN)
         .pipe(sourcemaps.init())
         .pipe(typescript('tsconfig.json'))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(DIST_PATH));
-};
+        .pipe(gulp.dest(DIST_PATH))
+);
 
 gulp.task('build', buildTask);
 gulp.task('default', buildTask);
