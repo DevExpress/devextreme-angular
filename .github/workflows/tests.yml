@@ -11,24 +11,21 @@ jobs:
     - name: Get sources
       uses: actions/checkout@v2
 
-    - name: Install gulp
-      run: sudo npm install -g gulp
+    # - name: Clone devextreme repo
+    #   run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
 
-    - name: Clone devextreme repo
-      run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
+    # - name: Install packages in devextreme repo
+    #   run: |
+    #     cd devextreme-repo
+    #     npm install --no-package-lock --no-audit --no-fund
 
-    - name: Install packages in devextreme repo
-      run: |
-        cd devextreme-repo
-        npm install --no-package-lock --no-audit --no-fund
+    # - name: Build devextreme repo
+    #   run: |
+    #     cd devextreme-repo
+    #     npm run build-dist:esm
 
-    - name: Build devextreme repo
-      run: |
-        cd devextreme-repo
-        npm run build-dist:esm
-
-    - name: Install devextreme package
-      run: npm install --save-dev ./devextreme-repo/artifacts/npm/devextreme-esm
+    # - name: Install devextreme package
+    #   run: npm install --save-dev ./devextreme-repo/artifacts/npm/devextreme-esm
 
     - name: Run npm install
       run: npm install --no-package-lock --no-audit --no-fund
@@ -37,25 +34,25 @@ jobs:
       run: npm run build
 
     - name: Build tests with Angular 7
-      run: gulp build.tests
+      run: npx gulp build.tests
 
     - name: Run tests with Angular 7
-      run: gulp run.tests
+      run: npx gulp run.tests
 
     - name: Install Angular latest
-      run: npm install @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
+      run: npm install --save-dev @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
 
     - name: Build tests with Angular latest
-      run: gulp build.tests
+      run: npx gulp build.tests
 
     - name: Run tests with Angular latest
-      run: gulp run.tests
+      run: npx gulp run.tests
 
     - name: Install Angular Next
-      run: npm install @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
+      run: npm install --save-dev @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
 
     - name: Build tests with Angular Next
-      run: gulp build.tests
+      run: npx gulp build.tests
 
     - name: Run tests with Angular Next
-      run: gulp run.tests
+      run: npx gulp run.tests
