@@ -36,8 +36,8 @@ jobs:
     - name: Build tests with Angular 7
       run: npm run gulp -- build.tests
 
-    - name: Run tests with Angular 7
-      run: npm run gulp -- run.tests
+    # - name: Run tests with Angular 7
+    #   run: npm run gulp -- run.tests
 
     - name: Install Angular latest
       run: npm install --save-dev @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
