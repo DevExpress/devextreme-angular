@@ -36,11 +36,11 @@ jobs:
     - name: Build tests with Angular 7
       run: npm run gulp -- build.tests
 
-    # - name: Run tests with Angular 7
-    #   run: npm run gulp -- run.tests
+    - name: Run tests with Angular 7
+      run: npm run gulp -- run.tests
 
     - name: Install Angular latest
-      run: npm install --save-dev @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
+      run: npm install --save-dev @angular/animations@latest @angular/core@latest @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest
 
     - name: Build tests with Angular latest
       run: npm run gulp -- build.tests
@@ -49,7 +49,7 @@ jobs:
       run: npm run gulp -- run.tests
 
     - name: Install Angular Next
-      run: npm install --save-dev @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
+      run: npm install --save-dev @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next
 
     - name: Build tests with Angular Next
       run: npm run gulp -- build.tests
