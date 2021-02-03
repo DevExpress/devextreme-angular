@@ -15,12 +15,13 @@ jobs:
       run: |
         echo ${GITHUB_REF}
         echo ${GITHUB_HEAD_REF}
+        npm -v 
 
     - name: Clone devextreme repo
       run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
 
     - name: Update npm
-      run: sudo npm install -g npm@latest
+      run: sudo npm install -g npm@6
 
     - name: Install packages in devextreme repo
       run: |
