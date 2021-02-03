@@ -9,7 +9,7 @@ jobs:
 
       - run:
           name: Update npm
-          command: "sudo npm install -g npm@latest"
+          command: "sudo npm install -g npm@6.14.11"
       - run:
           name: Install packages
           command: npm install --unsafe-perm
