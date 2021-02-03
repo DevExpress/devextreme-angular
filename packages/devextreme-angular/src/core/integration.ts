@@ -1,4 +1,4 @@
-
+/* tslint:disable:max-line-length */
 import { NgModule, Inject, NgZone, Optional, VERSION } from '@angular/core';
 import { XhrFactory } from '@angular/common/http';
 import * as httpRequest from 'devextreme/core/http_request';
@@ -12,6 +12,7 @@ const outsideZoneEvents = ['mousemove', 'mouseover', 'mouseout'];
 const insideZoneEvents = ['mouseup', 'click', 'mousedown', 'transitionend', 'wheel'];
 
 let originalAdd;
+let callbacks = [];
 let readyCallbackAdd = function(callback) {
     if (!originalAdd) {
         originalAdd = this.callBase.bind(this);
@@ -19,7 +20,6 @@ let readyCallbackAdd = function(callback) {
     callbacks.push(callback);
 };
 
-let callbacks = [];
 readyCallbacks.inject({
     add: function(callback) {
         return readyCallbackAdd.call(this, callback);
@@ -28,7 +28,7 @@ readyCallbacks.inject({
 
 let doInjections = (document: any, ngZone: NgZone, xhrFactory: XhrFactory) => {
     if (Number(VERSION.major) < 7) {
-        console.warn('Your version of Angular is not supported (https://supportcenter.devexpress.com/ticket/details/t879496). Please update your project to version 7 or later. Please refer to the Angular Update Guide for more information: https://update.angular.io');
+        console.warn(`Your version of Angular is not supported (https://supportcenter.devexpress.com/ticket/details/t879496). Please update your project to version 7 or later. Please refer to the Angular Update Guide for more information: https://update.angular.io`);
     }
 
     domAdapter.inject({

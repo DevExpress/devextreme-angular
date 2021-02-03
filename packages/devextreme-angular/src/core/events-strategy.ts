@@ -19,10 +19,11 @@ export class NgEventsStrategy {
         let emitter = this.getEmitter(name);
         if (emitter.observers.length) {
             const internalSubs = this.subscriptions[name] || [];
-            if (internalSubs.length === emitter.observers.length)
+            if (internalSubs.length === emitter.observers.length) {
                 emitter.next(args && args[0]);
-            else
+            } else {
                 this.zone.run(() => emitter.next(args && args[0]));
+            }
         }
     }
 

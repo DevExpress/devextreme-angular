@@ -1,9 +1,7 @@
 module.exports = {
     tools: {
-        srcFilesPattern: ['tools/src/**/*.ts'],
-        distPath: 'tools/dist',
         metadataGenerator: {
-            importFrom: './tools/dist/metadata-generator',
+            importFrom: 'devextreme-angular-generator/dist/metadata-generator',
             sourceMetadataFilePath: './metadata/NGMetaData.json',
             deprecatedMetadataFilePath: './metadata/DeprecatedComponentsMetadata.json',
             outputFolderPath: './metadata/generated',
@@ -13,17 +11,14 @@ module.exports = {
             wrapperPackageName: 'devextreme-angular'
         },
         componentGenerator: {
-            importFrom: './tools/dist/dot-generator',
-            templateFilePath: './templates/component.tst',
-            nestedTemplateFilePath: './templates/nested-component.tst',
-            baseNestedTemplateFilePath: './templates/base-nested-component.tst',
+            importFrom: 'devextreme-angular-generator/dist/dot-generator',
             metadataFolderPath: './metadata/generated/',
             outputFolderPath: './src/ui/',
             nestedPathPart: 'nested',
             basePathPart: 'base'
         },
         facadeGenerator: {
-            importFrom: './tools/dist/facade-generator',
+            importFrom: 'devextreme-angular-generator/dist/facade-generator',
             facades: {
                 './src/index.ts': {
                     sourceDirectories: [
@@ -33,7 +28,7 @@ module.exports = {
             }
         },
         moduleFacadeGenerator: {
-            importFrom: './tools/dist/module.facade-generator',
+            importFrom: 'devextreme-angular-generator/dist/module.facade-generator',
             moduleFacades: {
                 './src/ui/all.ts': {
                     sourceComponentDirectories: [
@@ -46,14 +41,10 @@ module.exports = {
             }
         },
         componentNamesGenerator: {
-            importFrom: './tools/dist/component-names-generator',
+            importFrom: 'devextreme-angular-generator/dist/component-names-generator',
             componentFilesPath: './src/ui/',
             excludedFileNames: [ 'nested', 'validation-group', 'validation-summary', 'validator' ],
             outputFileName: 'tests/src/server/component-names.ts'
-        },
-        tsConfigPath: "tsconfig.json",
-        tests: {
-            srcFilesPattern: 'tools/spec/tests/*.spec.js'
         }
     },
     components: {
@@ -64,15 +55,11 @@ module.exports = {
         tsSourcesGlob: 'src/**/*.ts',
         outputPath: 'dist'
     },
-    examples: {	
-      srcFilesPattern: ['examples/**/*.ts']
-    },
     tests: {
         tsConfigPath: "tsconfig.json"
     },
     npm: {
         distPath: "npm/dist",
-        sourcesTargetFolder: "ts",
-        content: [ "LICENSE", "README.md" ]
+        content: [ "../../LICENSE", "../../README.md" ]
     }
 };

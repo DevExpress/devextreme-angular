@@ -26,16 +26,16 @@ export default class DoTGenerator {
         return doT.template(templateString);
     }
     generate(config) {
-        this.generateTemplate(config.templateFilePath,
+        this.generateTemplate(config.templateFilePath || path.join(__dirname, './templates/component.tst'),
             config.metadataFolderPath,
             config.outputFolderPath,
             true);
 
-        this.generateTemplate(config.nestedTemplateFilePath,
+        this.generateTemplate(config.nestedTemplateFilePath || path.join(__dirname, './templates/nested-component.tst'),
             path.join(config.metadataFolderPath, config.nestedPathPart),
             path.join(config.outputFolderPath, config.nestedPathPart));
 
-        this.generateTemplate(config.baseNestedTemplateFilePath,
+        this.generateTemplate(config.baseNestedTemplateFilePath || path.join(__dirname, './templates/base-nested-component.tst'),
             path.join(config.metadataFolderPath, config.nestedPathPart, config.basePathPart),
             path.join(config.outputFolderPath, config.nestedPathPart, config.basePathPart));
 

@@ -239,7 +239,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
                 collectionName ? option.startsWith(collectionName) : true)
             .forEach(option => {
                 this.instance.resetOption(option);
-            })
+            });
 
             this.removedNestedComponents = [];
             this.recreatedNestedComponents = [];
