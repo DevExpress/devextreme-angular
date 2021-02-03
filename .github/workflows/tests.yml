@@ -25,7 +25,7 @@ jobs:
     - name: Install packages in devextreme repo
       run: |
         cd devextreme-repo
-        npm install --no-package-lock --no-audit --no-fund
+        npm install --no-package-lock --no-audit --no-fund --force
 
     - name: Build devextreme repo
       run: |
