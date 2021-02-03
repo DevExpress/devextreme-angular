@@ -11,8 +11,16 @@ jobs:
     - name: Get sources
       uses: actions/checkout@v2
 
+    - name: OUTPUT REF
+      run: |
+        echo ${GITHUB_REF}
+        echo ${GITHUB_HEAD_REF}
+
     - name: Clone devextreme repo
       run: git clone -b 21_1 https://github.com/devexpress/devextreme devextreme-repo
+
+    - name: Update npm
+      run: sudo npm install -g npm@latest
 
     - name: Install packages in devextreme repo
       run: |
