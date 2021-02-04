@@ -46,9 +46,6 @@ jobs:
     - name: Build with Angular 7
       run: npm run build
 
-    - name: Build tests with Angular 7
-      run: npm run gulp -- build.tests
-
     - name: Run tests with Angular 7
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
 
