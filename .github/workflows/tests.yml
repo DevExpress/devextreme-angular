@@ -51,34 +51,16 @@ jobs:
 
     - name: Install Angular latest
       run: |
-        npx lerna clean --yes
-        npx lerna add @angular/animations@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npm run bootstrap --no-ci
+        cd ./packages/devextreme-angular
+        npm install @angular/animations@latest @angular/core@latest  @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
 
     - name: Run tests with Angular latest
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
 
     - name: Install Angular Next
       run: |
-        npx lerna clean --yes
-        npx lerna add @angular/animations@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npm run bootstrap --no-ci
+        cd ./packages/devextreme-angular
+        npm install @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
 
     - name: Run tests with Angular Next
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
