@@ -28,6 +28,7 @@ jobs:
       - run:
           name: Install Angular latest
           command: |
+              npx lerna clean --yes
               npx lerna add @angular/animations@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/core@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/common@latest packages/devextreme-angular --dev --exact --no-bootstrap
@@ -37,12 +38,14 @@ jobs:
               npx lerna add @angular/platform-server@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/platform-browser-dynamic@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/compiler-cli@latest packages/devextreme-angular --dev --exact --no-bootstrap
+              npx lerna bootstrap --no-ci
       - run:
           name: Run tests with Angular latest
           command: npx lerna run --scope devextreme-angular gulp -- run.tests
       - run:
           name: Install Angular Next
           command: |
+              npx lerna clean --yes
               npx lerna add @angular/animations@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/core@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/common@next packages/devextreme-angular --dev --exact --no-bootstrap
@@ -52,6 +55,7 @@ jobs:
               npx lerna add @angular/platform-server@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/platform-browser-dynamic@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/compiler-cli@next packages/devextreme-angular --dev --exact --no-bootstrap
+              npx lerna bootstrap --no-ci
       - run:
           name: Run tests with Angular Next
           command: npx lerna run --scope devextreme-angular gulp -- run.tests
