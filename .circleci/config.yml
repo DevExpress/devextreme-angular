@@ -37,6 +37,7 @@ jobs:
               npx lerna add @angular/platform-server@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/platform-browser-dynamic@latest packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/compiler-cli@latest packages/devextreme-angular --dev --exact --no-bootstrap
+              npm run bootstrap
       - run:
           name: Run tests with Angular latest
           command: npx lerna run --scope devextreme-angular gulp -- run.tests
@@ -52,6 +53,7 @@ jobs:
               npx lerna add @angular/platform-server@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/platform-browser-dynamic@next packages/devextreme-angular --dev --exact --no-bootstrap
               npx lerna add @angular/compiler-cli@next packages/devextreme-angular --dev --exact --no-bootstrap
+              npm run bootstrap
       - run:
           name: Run tests with Angular Next
           command: npx lerna run --scope devextreme-angular gulp -- run.tests
