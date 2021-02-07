@@ -1,110 +1,35 @@
 {
-  "name": "devextreme-angular",
-  "version": "20.2.4",
+  "name": "root",
+  "private": true,
+  "version": "0.0.0",
   "description": "Angular UI and visualization components based on DevExtreme widgets",
   "repository": {
     "type": "git",
     "url": "https://github.com/DevExpress/devextreme-angular.git"
   },
   "scripts": {
-    "start": "npm run build && npm run serve",
-    "serve": "http-server -c-1 -o -p 8875 .",
-    "lite": "lite-server",
-    "gulp": "node --max_old_space_size=8048 node_modules/gulp/bin/gulp.js",
-    "build": "npm run gulp -- build",
-    "test": "npm run gulp -- test",
-    "pack": "npm run gulp -- npm.pack",
-    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 20_1",
-    "inject-descriptions": "dx-tools inject-descriptions-to-bundle --js-scripts ./npm/dist"
+    "postinstall": "npm run bootstrap",
+    "bootstrap": "lerna bootstrap --no-ci --hoist",
+    "start": "npm run build && lerna run --scope devextreme-angular-sandbox start",
+    "lite": "lerna run --scope devextreme-angular-sandbox lite",
+    "build": "lerna run build",
+    "test": "lerna run test",
+    "pack": "lerna run pack",
+    "lint": "gulp lint",
+    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 20_1"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
-  "peerDependencies": {
-    "devextreme": "~20.2.4",
-    "@angular/core": ">7.0.0",
-    "@angular/common": ">7.0.0",
-    "@angular/forms": ">7.0.0"
-  },
   "devDependencies": {
-    "@angular/animations": "~7.2.0",
-    "@angular/common": "~7.2.0",
-    "@angular/compiler": "~7.2.0",
-    "@angular/compiler-cli": "~7.2.0",
-    "@angular/core": "~7.2.0",
-    "@angular/forms": "~7.2.0",
-    "@angular/http": "~7.2.0",
-    "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0",
-    "@angular/platform-server": "~7.2.0",
-    "@types/dot": "^1.0.29",
-    "@types/jasmine": "2.5.38",
-    "@types/mkdirp": "^0.3.29",
-    "@types/node": "^6.0.51",
-    "@types/yargs": "^6.3.2",
-    "codelyzer": "2.0.0-beta.4",
-    "core-js": "^2.4.1",
-    "deepmerge": "^2.0.1",
-    "del": "^2.2.0",
-    "devexpress-diagram": "^1.0.0",
-    "devexpress-gantt": "^1.0.0",
-    "devextreme": "~20.2.4-0",
     "devextreme-internal-tools": "^3.0.0",
-    "dot": "^1.0.3",
     "gulp": "^4.0.0",
-    "gulp-header": "^1.8.8",
-    "gulp-jasmine": "^2.3.0",
-    "gulp-merge-json": "^0.6.0",
-    "gulp-replace": "^0.6.1",
-    "gulp-shell": "^0.5.2",
-    "gulp-sourcemaps": "^2.0.0-alpha",
     "gulp-tslint": "^7.0.1",
-    "gulp-typescript": "^3.0.1",
-    "http-server": "^0.12.3",
-    "inflector-js": "^1.0.1",
-    "jasmine": "2.5.2",
-    "jasmine-core": "2.5.2",
-    "jasmine-reporters": "2.2.0",
-    "jszip": "^3.1.2",
-    "karma": "^2.0.0",
-    "karma-chrome-launcher": "^2.0.0",
-    "karma-jasmine": "^1.0.2",
-    "karma-junit-reporter": "^1.1.0",
-    "karma-webpack": "^2.0.9",
-    "lite-server": "^2.2.0",
-    "mkdirp": "^0.5.1",
-    "ng-packagr": "5.5.1",
-    "plugin-typescript": "^8.0.0",
-    "puppeteer": "^1.11.0",
-    "rxjs": "^6.0.0",
-    "systemjs": "0.21.6",
-    "tslint": "^4.5.1",
-    "typescript": "~3.1.0",
-    "webpack": "^3.8.1",
-    "yargs": "^6.0.0",
-    "zone.js": "^0.8.25",
-    "devextreme-quill": "^0.9.8",
-    "preact": "^10.5.12",
-    "rrule": "^2.6.6"
+    "lerna": "^3.22.1",
+    "tslint": "^4.5.1"
   },
-  "main": "./src/index.ts",
   "keywords": [
     "angular",
     "devextreme",
     "devexpress"
-  ],
-  "dependencies": {
-    "@angular-devkit/schematics": "^8.0.0",
-    "devextreme-schematics": "latest"
-  },
-  "schematics": "./schematics/collection.json",
-  "ngPackage": {
-    "$schema": "./node_modules/ng-packagr/ng-package.schema.json",
-    "lib": {
-      "entryFile": "index.ts"
-    },
-    "dest": "../npm/dist",
-    "whitelistedNonPeerDependencies": [
-      "."
-    ]
-  }
+  ]
 }

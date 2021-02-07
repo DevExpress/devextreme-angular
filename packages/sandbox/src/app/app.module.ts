@@ -6,12 +6,15 @@ import { AppComponent } from './app.component';
 import { DevExtremeModule } from 'devextreme-angular';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     DevExtremeModule
   ],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
-export class MyAppModule {}
+export class AppModule { }

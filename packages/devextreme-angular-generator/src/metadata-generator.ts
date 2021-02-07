@@ -367,7 +367,14 @@ export default class DXComponentMetadataGenerator {
                     let nestedOptions = externalObjectInfo.Options,
                         nestedComplexTypes = complexTypes.concat(externalObjectInfo.typeName);
 
-                    result.push.apply(result, this.generateComplexOption(metadata, nestedOptions, optionName, nestedComplexTypes, option, config));
+                    result.push.apply(result, this.generateComplexOption(
+                        metadata,
+                        nestedOptions,
+                        optionName,
+                        nestedComplexTypes,
+                        option,
+                        config
+                    ));
                 }
             });
             if (optionComplexTypes.length === 1) {
@@ -518,7 +525,7 @@ export default class DXComponentMetadataGenerator {
                     existingComponent.basePath = existingComponent.basePath || component.basePath;
                     existingComponent.collectionNestedComponents.push
                         .apply(existingComponent.collectionNestedComponents, component.collectionNestedComponents);
-    
+
                     existingComponent.options.push(...component.properties.map(p => p.option));
                 }
 
@@ -538,7 +545,7 @@ export default class DXComponentMetadataGenerator {
             .reduce((result, component) => {
                 let existingComponent = result.filter(c => c.className === component.baseClass)[0];
                 if (!existingComponent && component.baseClass) {
-                    const nestedComponent : BaseNestedComponent & File = {
+                    const nestedComponent: BaseNestedComponent & File = {
                         properties: component.properties,
                         events: component.events,
                         className: component.baseClass,
@@ -561,7 +568,7 @@ export default class DXComponentMetadataGenerator {
 
         interface NestedComponentFile {
             inputs: Property[];
-            hasSimpleBaseClass: true
+            hasSimpleBaseClass: true;
         }
 
         normalizedMetadata
@@ -600,10 +607,10 @@ function normalizeMeta(meta: Container & File): Container & File {
         events: meta.events && meta.events.map(({option, ...rest}) => ({ ...rest }))
     };
 
-    if(!result.imports || !result.imports.length){
+    if (!result.imports || !result.imports.length) {
         result.imports = undefined;
         delete result.imports;
     }
 
-    return result
+    return result;
 }
