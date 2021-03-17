@@ -8389,7 +8389,8 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "boolean"
+            "boolean",
+            "undefined"
           ],
           "IsChangeable": true,
           "DocID": "dxCheckBox.Options.value"
@@ -14718,7 +14719,6 @@
             "string"
           ],
           "ItemPrimitiveTypes": [
-            "DevExpress.ui.CollectionWidgetItem",
             "any"
           ],
           "TypeImports": [
@@ -14729,7 +14729,7 @@
             }
           ],
           "IsDataSource": true,
-          "DocID": "DataExpressionMixin.Options.dataSource"
+          "DocID": "dxDropDownBox.Options.dataSource"
         },
         "deferRendering": {
           "PrimitiveTypes": [
@@ -14831,6 +14831,47 @@
             "boolean"
           ],
           "DocID": "Editor.Options.isValid"
+        },
+        "items": {
+          "ItemPrimitiveTypes": [
+            "any"
+          ],
+          "IsCollection": true,
+          "SingularName": "item",
+          "DocID": "dxDropDownBox.Options.items",
+          "Options": {
+            "disabled": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.disabled"
+            },
+            "html": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.html"
+            },
+            "template": {
+              "PrimitiveTypes": [
+                "any"
+              ],
+              "IsTemplate": true,
+              "DocID": "CollectionWidgetItem.template"
+            },
+            "text": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "CollectionWidgetItem.text"
+            },
+            "visible": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "CollectionWidgetItem.visible"
+            }
+          }
         },
         "maxLength": {
           "PrimitiveTypes": [
@@ -48808,13 +48849,6 @@
           ],
           "DocID": "dxMenuBaseItem.selected"
         },
-        "template": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "DocID": "CollectionWidgetItem.template"
-        },
         "text": {
           "PrimitiveTypes": [
             "string"
@@ -48959,12 +48993,6 @@
           ],
           "DocID": "CollectionWidgetItem.disabled"
         },
-        "html": {
-          "PrimitiveTypes": [
-            "string"
-          ],
-          "DocID": "CollectionWidgetItem.html"
-        },
         "locateInMenu": {
           "PrimitiveTypes": [
             "string"
@@ -48976,13 +49004,6 @@
             "string"
           ],
           "DocID": "dxFileManagerToolbarItem.location"
-        },
-        "menuItemTemplate": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "DocID": "dxToolbarItem.menuItemTemplate"
         },
         "name": {
           "PrimitiveTypes": [
@@ -49001,13 +49022,6 @@
             "string"
           ],
           "DocID": "dxToolbarItem.showText"
-        },
-        "template": {
-          "PrimitiveTypes": [
-            "any"
-          ],
-          "IsTemplate": true,
-          "DocID": "CollectionWidgetItem.template"
         },
         "text": {
           "PrimitiveTypes": [
@@ -51105,7 +51119,8 @@
         },
         "endDate": {
           "PrimitiveTypes": [
-            "Date"
+            "Date",
+            "string"
           ],
           "DocID": "dxSchedulerAppointment.endDate"
         },
@@ -51135,7 +51150,8 @@
         },
         "startDate": {
           "PrimitiveTypes": [
-            "Date"
+            "Date",
+            "string"
           ],
           "DocID": "dxSchedulerAppointment.startDate"
         },
