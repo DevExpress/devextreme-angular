@@ -430,8 +430,8 @@ describe('Nested DxDataGrid', () => {
 
         setTimeout(() => {
             let instance = fixture.componentInstance.innerWidgets.first.instance;
-            let element = instance.element().querySelector(".my-template");
-            expect(element.textContent).toBe("String");
+            let element = instance.element().querySelector('.my-template');
+            expect(element.textContent).toBe('String');
             done();
         }, 1000);
     });
