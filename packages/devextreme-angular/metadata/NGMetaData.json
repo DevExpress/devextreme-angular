@@ -19617,6 +19617,12 @@
               ],
               "DocID": "dxGanttOptions.validation.autoUpdateParentTasks"
             },
+            "enablePredecessorGap": {
+              "PrimitiveTypes": [
+                "boolean"
+              ],
+              "DocID": "dxGanttOptions.validation.enablePredecessorGap"
+            },
             "validateDependencies": {
               "PrimitiveTypes": [
                 "boolean"
@@ -23651,6 +23657,7 @@
     },
     "dxNavBar": {
       "DocID": "dxNavBar",
+      "isDepricated": true,
       "Module": "ui/nav_bar",
       "Options": {
         "accessKey": {
@@ -36013,6 +36020,7 @@
     },
     "dxSlideOut": {
       "DocID": "dxSlideOut",
+      "isDepricated": true,
       "Module": "ui/slide_out",
       "Options": {
         "activeStateEnabled": {
@@ -36321,6 +36329,7 @@
     },
     "dxSlideOutView": {
       "DocID": "dxSlideOutView",
+      "isDepricated": true,
       "IsTranscludedContent": true,
       "Module": "ui/slide_out_view",
       "Options": {
@@ -53716,6 +53725,13 @@
             "string"
           ],
           "DocID": "dxTreeViewItem.icon"
+        },
+        "id": {
+          "PrimitiveTypes": [
+            "number",
+            "string"
+          ],
+          "DocID": "dxTreeViewItem.id"
         },
         "items": {
           "ItemPrimitiveTypes": [
