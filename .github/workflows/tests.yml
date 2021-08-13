@@ -1,6 +1,13 @@
 name: Tests
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+    - master
+    - '[12][0-9].[12]'
+  pull_request:
+    branches:
+      - '**'
 
 jobs:
   test:
