@@ -11,21 +11,21 @@ import { renderToString } from 'inferno-server';
 })
 export class DxServerModule {
     constructor(@Inject(PLATFORM_ID) platformId: any) {
-        if(isPlatformServer(platformId)) {
+        if (isPlatformServer(platformId)) {
             infernoRenderer.inject({
                 render: (
                 component,
                 props,
                 container,
             ) => {
-                const el = infernoRenderer.createElement(component,props);
+                const el = infernoRenderer.createElement(component, props);
                 const document = container.ownerDocument;
                 const temp = document.createElement(container.tagName);
                 temp.innerHTML = renderToString(el);
                 const mainElement = temp.childNodes[0];
                 const childString = mainElement.innerHTML;
 
-                for (var i = 0; i < mainElement.attributes.length; i++) {
+                for (let i = 0; i < mainElement.attributes.length; i++) {
                     temp.setAttribute(mainElement.attributes[i].name, mainElement.attributes[i].value);
                 }
                 temp.innerHTML = childString;
