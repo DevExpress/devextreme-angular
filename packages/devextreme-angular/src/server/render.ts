@@ -1,7 +1,7 @@
 import { NgModule, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformServer } from '@angular/common';
 
-import infernoRenderer from 'devextreme/esm/renovation/component_wrapper/common/renderer';
+import infernoRenderer from 'devextreme/core/inferno_renderer';
 import { renderToString } from 'inferno-server';
 
 @NgModule({
