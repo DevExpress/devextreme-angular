@@ -47,7 +47,10 @@ module.exports = {
                 'nested',
                 'validation-group',
                 'validation-summary',
-                'validator' ],
+                'validator',
+                'button-group',
+                'drop-down-button',
+                'file-manager' ],
             outputFileName: 'tests/src/server/component-names.ts'
         }
     },
