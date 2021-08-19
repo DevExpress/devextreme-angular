@@ -21,28 +21,32 @@ jobs:
     - name: Clone devextreme repo from PR author fork
       continue-on-error: true
       if: github.event_name == 'pull_request'
-      run: git clone -b ${{github.event.pull_request.head.ref}} https://github.com/${{github.event.pull_request.user.login}}/devextreme ../devextreme-repo
+      run: git clone -b ${{github.event.pull_request.head.ref}} https://github.com/${{github.event.pull_request.user.login}}/devextreme ../devextreme
 
     - name: Clone devextreme repo
-      run: test -d ../devextreme-repo || git clone -b 21_1 https://github.com/devexpress/devextreme ../devextreme-repo
+      run: test -d ../devextreme || git clone -b 21_2 https://github.com/devexpress/devextreme ../devextreme
 
     - name: Install packages in devextreme repo
       run: |
-        cd ../devextreme-repo
+        cd ../devextreme
         npm install --no-audit --no-fund
 
     - name: Build devextreme repo
       run: |
-        cd ../devextreme-repo
+        cd ../devextreme
         npm run build-dist
 
     - name: Install devextreme package
       run: |
         cd ./packages/devextreme-angular
-        npm install --save-dev ../../../devextreme-repo/artifacts/npm/devextreme
+        npm install --save-dev ../../../devextreme/artifacts/npm/devextreme
 
     - name: Run npm install
       run: npm install --no-audit --no-fund
+
+    - name: Update metadata
+      run: |
+        npm run update-integration-meta
 
     - name: Run devextreme-angular-generator tests
       run: npx lerna run --scope devextreme-angular-generator test

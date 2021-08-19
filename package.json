@@ -16,12 +16,12 @@
     "test": "lerna run test",
     "pack": "lerna run pack",
     "lint": "gulp lint",
-    "update-integration-meta": "dx-tools update-meta --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 21_1"
+    "update-integration-meta": "dx-tools update-meta --js-scripts ../devextreme/js --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 21_1"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
   "devDependencies": {
-    "devextreme-internal-tools": "^5.0.0-beta.6",
+    "devextreme-internal-tools": "^7.0.0-beta.3",
     "gulp": "^4.0.0",
     "gulp-tslint": "^7.0.1",
     "lerna": "^3.22.1",
