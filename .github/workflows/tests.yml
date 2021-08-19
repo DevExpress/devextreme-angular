@@ -36,10 +36,6 @@ jobs:
         cd ../devextreme
         npm run build-dist
 
-    - name: Update metadata
-      run: |
-        npm run update-integration-meta
-
     - name: Install devextreme package
       run: |
         cd ./packages/devextreme-angular
@@ -47,6 +43,10 @@ jobs:
 
     - name: Run npm install
       run: npm install --no-audit --no-fund
+
+    - name: Update metadata
+      run: |
+        npm run update-integration-meta
 
     - name: Run devextreme-angular-generator tests
       run: npx lerna run --scope devextreme-angular-generator test
