@@ -16251,7 +16251,7 @@
           "PrimitiveTypes": [
             "boolean"
           ],
-          "DocID": "WidgetOptions.hoverStateEnabled"
+          "DocID": "dxFileUploaderOptions.hoverStateEnabled"
         },
         "inputAttr": {
           "PrimitiveTypes": [
@@ -30560,6 +30560,7 @@
         },
         "value": {
           "PrimitiveTypes": [
+            "boolean",
             "number"
           ],
           "IsChangeable": true,
@@ -44230,6 +44231,12 @@
           ],
           "DocID": "WidgetOptions.tabIndex"
         },
+        "useNativeScrolling": {
+          "PrimitiveTypes": [
+            "boolean"
+          ],
+          "DocID": "dxTreeViewOptions.useNativeScrolling"
+        },
         "virtualModeEnabled": {
           "PrimitiveTypes": [
             "boolean"
@@ -45921,6 +45928,7 @@
   "ExtraObjects": {
     "AnimationConfig": {
       "DocID": "animationConfig",
+      "Module": "animation/fx",
       "Options": {
         "complete": {
           "PrimitiveTypes": [
@@ -45992,6 +46000,7 @@
     },
     "AsyncRule": {
       "DocID": "AsyncRule",
+      "Module": "ui/validation_rules",
       "Options": {
         "ignoreEmptyValue": {
           "PrimitiveTypes": [
@@ -47082,6 +47091,7 @@
     },
     "ChartSeries": {
       "DocID": "ChartSeries",
+      "Module": "viz/common",
       "IsCollection": true,
       "Options": {
         "aggregation": {
@@ -47942,6 +47952,7 @@
     },
     "CompareRule": {
       "DocID": "CompareRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "comparisonTarget": {
@@ -47985,6 +47996,7 @@
     },
     "CustomRule": {
       "DocID": "CustomRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -48022,6 +48034,7 @@
     },
     "DataChange": {
       "DocID": "DataChange",
+      "Module": "ui/data_grid",
       "Options": {
         "data": {
           "PrimitiveTypes": [
@@ -48227,6 +48240,12 @@
           ],
           "DocID": "CollectionWidgetItem.disabled"
         },
+        "elementAttr": {
+          "PrimitiveTypes": [
+            "any"
+          ],
+          "DocID": "dxButtonGroupItem.elementAttr"
+        },
         "hint": {
           "PrimitiveTypes": [
             "string"
@@ -48268,6 +48287,7 @@
     },
     "ChartAnnotationConfig": {
       "DocID": "dxChartAnnotationConfig",
+      "Module": "viz/chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -48565,6 +48585,7 @@
     },
     "ChartCommonAnnotationConfig": {
       "DocID": "dxChartCommonAnnotationConfig",
+      "Module": "viz/chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -49572,6 +49593,7 @@
     },
     "DiagramCustomCommand": {
       "DocID": "dxDiagramCustomCommand",
+      "Module": "ui/diagram",
       "Options": {
         "icon": {
           "PrimitiveTypes": [
@@ -49670,6 +49692,7 @@
     },
     "FileManagerContextMenu": {
       "DocID": "dxFileManagerContextMenu",
+      "Module": "ui/file_manager",
       "Options": {
         "items": {
           "ItemPrimitiveTypes": [
@@ -49771,6 +49794,7 @@
     },
     "FileManagerDetailsColumn": {
       "DocID": "dxFileManagerDetailsColumn",
+      "Module": "ui/file_manager",
       "Options": {
         "alignment": {
           "PrimitiveTypes": [
@@ -49843,6 +49867,7 @@
     },
     "FileManagerToolbar": {
       "DocID": "dxFileManagerToolbar",
+      "Module": "ui/file_manager",
       "Options": {
         "fileSelectionItems": {
           "ItemPrimitiveTypes": [
@@ -49957,6 +49982,7 @@
     },
     "FilterBuilderCustomOperation": {
       "DocID": "dxFilterBuilderCustomOperation",
+      "Module": "ui/filter_builder",
       "Options": {
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -50015,6 +50041,7 @@
     },
     "FilterBuilderField": {
       "DocID": "dxFilterBuilderField",
+      "Module": "ui/filter_builder",
       "Options": {
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -50742,6 +50769,7 @@
     },
     "GanttContextMenu": {
       "DocID": "dxGanttContextMenu",
+      "Module": "ui/gantt",
       "Options": {
         "enabled": {
           "PrimitiveTypes": [
@@ -50843,6 +50871,7 @@
     },
     "GanttStripLine": {
       "DocID": "dxGanttStripLine",
+      "Module": "ui/gantt",
       "Options": {
         "cssClass": {
           "PrimitiveTypes": [
@@ -50880,6 +50909,7 @@
     },
     "GanttToolbar": {
       "DocID": "dxGanttToolbar",
+      "Module": "ui/gantt",
       "Options": {
         "items": {
           "ItemPrimitiveTypes": [
@@ -50989,6 +51019,7 @@
     },
     "HtmlEditorMediaResizing": {
       "DocID": "dxHtmlEditorMediaResizing",
+      "Module": "ui/html_editor",
       "Options": {
         "allowedTargets": {
           "ItemPrimitiveTypes": [
@@ -51008,6 +51039,7 @@
     },
     "HtmlEditorMention": {
       "DocID": "dxHtmlEditorMention",
+      "Module": "ui/html_editor",
       "Options": {
         "dataSource": {
           "PrimitiveTypes": [
@@ -51093,6 +51125,7 @@
     },
     "HtmlEditorToolbar": {
       "DocID": "dxHtmlEditorToolbar",
+      "Module": "ui/html_editor",
       "Options": {
         "container": {
           "PrimitiveTypes": [
@@ -51249,6 +51282,7 @@
     },
     "HtmlEditorVariables": {
       "DocID": "dxHtmlEditorVariables",
+      "Module": "ui/html_editor",
       "Options": {
         "dataSource": {
           "PrimitiveTypes": [
@@ -51453,6 +51487,7 @@
     },
     "PieChartAnnotationConfig": {
       "DocID": "dxPieChartAnnotationConfig",
+      "Module": "viz/pie_chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -51742,6 +51777,7 @@
     },
     "PieChartCommonAnnotationConfig": {
       "DocID": "dxPieChartCommonAnnotationConfig",
+      "Module": "viz/pie_chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -52025,6 +52061,7 @@
     },
     "PolarChartAnnotationConfig": {
       "DocID": "dxPolarChartAnnotationConfig",
+      "Module": "viz/polar_chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -52328,6 +52365,7 @@
     },
     "PolarChartCommonAnnotationConfig": {
       "DocID": "dxPolarChartCommonAnnotationConfig",
+      "Module": "viz/polar_chart",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -52787,6 +52825,7 @@
     },
     "SchedulerScrolling": {
       "DocID": "dxSchedulerScrolling",
+      "Module": "ui/scheduler",
       "Options": {
         "mode": {
           "PrimitiveTypes": [
@@ -52944,6 +52983,7 @@
     },
     "TextEditorButton": {
       "DocID": "dxTextEditorButton",
+      "Module": "ui/text_box/ui.text_editor.base",
       "Options": {
         "location": {
           "PrimitiveTypes": [
@@ -53787,6 +53827,7 @@
     },
     "VectorMapAnnotationConfig": {
       "DocID": "dxVectorMapAnnotationConfig",
+      "Module": "viz/vector_map",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -54064,6 +54105,7 @@
     },
     "VectorMapCommonAnnotationConfig": {
       "DocID": "dxVectorMapCommonAnnotationConfig",
+      "Module": "viz/vector_map",
       "Options": {
         "allowDragging": {
           "PrimitiveTypes": [
@@ -54335,6 +54377,7 @@
     },
     "EmailRule": {
       "DocID": "EmailRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -54359,6 +54402,7 @@
     },
     "VizFont": {
       "DocID": "Font",
+      "Module": "viz/core/base_widget",
       "Options": {
         "color": {
           "PrimitiveTypes": [
@@ -54395,6 +54439,7 @@
     },
     "Format": {
       "DocID": "format",
+      "Module": "ui/widget/ui.widget",
       "Options": {
         "currency": {
           "PrimitiveTypes": [
@@ -54432,6 +54477,7 @@
     },
     "GaugeIndicator": {
       "DocID": "GaugeIndicator",
+      "Module": "viz/gauges/base_gauge",
       "Options": {
         "arrowLength": {
           "PrimitiveTypes": [
@@ -54599,6 +54645,7 @@
     },
     "NumericRule": {
       "DocID": "NumericRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -54623,6 +54670,7 @@
     },
     "PatternRule": {
       "DocID": "PatternRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -55062,6 +55110,7 @@
     },
     "PieChartSeries": {
       "DocID": "PieChartSeries",
+      "Module": "viz/pie_chart",
       "IsCollection": true,
       "Options": {
         "argumentField": {
@@ -56208,6 +56257,7 @@
     },
     "PolarChartSeries": {
       "DocID": "PolarChartSeries",
+      "Module": "viz/polar_chart",
       "IsCollection": true,
       "Options": {
         "argumentField": {
@@ -56901,6 +56951,7 @@
     },
     "PositionConfig": {
       "DocID": "positionConfig",
+      "Module": "animation/position",
       "Options": {
         "at": {
           "PrimitiveTypes": [
@@ -57034,6 +57085,7 @@
     },
     "RangeRule": {
       "DocID": "RangeRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -57078,6 +57130,7 @@
     },
     "RequiredRule": {
       "DocID": "RequiredRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "message": {
@@ -57102,6 +57155,7 @@
     },
     "VizScaleBreak": {
       "DocID": "ScaleBreak",
+      "Module": "viz/common",
       "Options": {
         "endValue": {
           "PrimitiveTypes": [
@@ -57123,6 +57177,7 @@
     },
     "StringLengthRule": {
       "DocID": "StringLengthRule",
+      "Module": "ui/validation_rules",
       "IsCollection": true,
       "Options": {
         "ignoreEmptyValue": {
@@ -57165,6 +57220,7 @@
     },
     "VectorMapProjectionConfig": {
       "DocID": "VectorMapProjectionConfig",
+      "Module": "viz/vector_map/projection",
       "Options": {
         "aspectRatio": {
           "PrimitiveTypes": [
@@ -57190,6 +57246,7 @@
     },
     "VizRange": {
       "DocID": "VizRange",
+      "Module": "viz/common",
       "Options": {
         "endValue": {
           "PrimitiveTypes": [
