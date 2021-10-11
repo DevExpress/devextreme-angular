@@ -17,11 +17,6 @@ jobs:
     steps:
     - name: Get sources
       uses: actions/checkout@v2
-      
-    - name: Use specific Node.js version
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14.17'
 
     - name: Clone devextreme repo from PR author fork
       continue-on-error: true
@@ -86,7 +81,7 @@ jobs:
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
 
     - name: Install Angular Next
-      if: true
+      if: false
       run: |
         npx lerna clean --yes
         npx lerna add @angular/animations@next packages/devextreme-angular --dev --exact --no-bootstrap
@@ -101,9 +96,9 @@ jobs:
         npx lerna bootstrap --no-ci
 
     - name: Build tests with Angular next
-      if: true
+      if: false
       run: npx lerna run --scope devextreme-angular gulp -- build.tests
 
     - name: Run tests with Angular Next
-      if: true
+      if: false
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
