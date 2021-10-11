@@ -81,6 +81,7 @@ jobs:
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
 
     - name: Install Angular Next
+      if: false
       run: |
         npx lerna clean --yes
         npx lerna add @angular/animations@next packages/devextreme-angular --dev --exact --no-bootstrap
@@ -95,7 +96,9 @@ jobs:
         npx lerna bootstrap --no-ci
 
     - name: Build tests with Angular next
+      if: false
       run: npx lerna run --scope devextreme-angular gulp -- build.tests
 
     - name: Run tests with Angular Next
+      if: false
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
