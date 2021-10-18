@@ -210,7 +210,7 @@ describe("metadata-generator", function() {
         });
 
         it("should generate proper optionsTypeParams", function() {
-            expect(metas.DxTestWidget.optionsTypeParams).toBe(["T1", "T2"]);
+            expect(metas.DxTestWidget.optionsTypeParams).toEqual(["T1", "T2"]);
         });
 
         it("should detect editors", function() {
@@ -294,7 +294,8 @@ describe("metadata-generator", function() {
                                 ]
                             }
                         },
-                        Module: 'typed_widget'
+                        Module: 'typed_widget',
+                        Reexports: ['OnClickEvent', 'OnChangeEvent', 'default'],
                     },
                     dxWidgetWithPromise: {
                         Options: {
@@ -358,6 +359,12 @@ describe("metadata-generator", function() {
                 }
             ]);
         });
+
+        it("should generate reexports", function(){
+            expect(metas.DxTypedWidget.reexports).toEqual([
+                'OnClickEvent', 'OnChangeEvent', 'default'
+            ])
+        })
     });
 
     describe("complex widgets", function() {
