@@ -1,6 +1,7 @@
 import fs = require('fs');
 import path = require('path');
 import logger from './logger';
+import inflector = require('inflector-js');
 
 export default class FacadeGenerator {
     private _encoding = 'utf8';
@@ -29,11 +30,7 @@ export default class FacadeGenerator {
 
 function formatName(name: string): string {
     if (!name.includes('-')) {
-        return capFirst(name);
+        return inflector.camelize(name);
     }
-    return name.split('-').map(capFirst).join('');
-}
-
-function capFirst(name: string): string {
-    return name[0].toUpperCase() + name.substr(1);
+    return name.split('-').map((n) => inflector.camelize(n)).join('');
 }
