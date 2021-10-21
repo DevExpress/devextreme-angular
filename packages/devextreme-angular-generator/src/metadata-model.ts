@@ -45,7 +45,6 @@ export interface Metadata {
                 [optionName: string]: Option;
             };
             OptionsTypeParams: string[];
-            Reexports: string[];
         }
     };
     ExtraObjects: any[];
