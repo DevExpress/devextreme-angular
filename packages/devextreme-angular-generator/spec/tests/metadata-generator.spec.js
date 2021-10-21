@@ -295,7 +295,6 @@ describe("metadata-generator", function() {
                             }
                         },
                         Module: 'typed_widget'
-                       
                     },
                     dxWidgetWithPromise: {
                         Options: {

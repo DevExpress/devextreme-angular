@@ -18,7 +18,8 @@ export default class FacadeGenerator {
                 .forEach(fileName => {
                     const { name } = path.parse(path.join(facadeConfig.sourceDirectories[0], fileName));
                     const formattedName = formatName(name);
-                    resultContent += `export { Dx${formattedName}Component, Dx${formattedName}Module } from 'devextreme-angular/ui/${name}';\n`;
+                    const where = `'devextreme-angular/ui/${name}'`;
+                    resultContent += `export { Dx${formattedName}Component, Dx${formattedName}Module } from ${where};\n`;
                 });
 
             logger('Write result to ' + facadeFilePath);
