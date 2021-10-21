@@ -9,7 +9,16 @@ var implementedInterfaces = ['OnDestroy'];
 
 it.isEditor && implementedInterfaces.push('ControlValueAccessor');
 collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck');
+
+var reexports = it.reexports?.filter(n => n !== 'default');
+var reexportStr = reexports?.join(',\n  ');
 #>
+
+<#? reexports?.length #>
+export {
+  <#= reexportStr #>,
+} from '<#= it.module #>';
+<#?#>
 
 import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { TransferState } from '@angular/platform-browser';
