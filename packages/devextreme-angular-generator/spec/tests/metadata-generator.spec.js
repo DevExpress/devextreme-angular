@@ -294,8 +294,8 @@ describe("metadata-generator", function() {
                                 ]
                             }
                         },
-                        Module: 'typed_widget'
-                       
+                        Module: 'typed_widget',
+                        Reexports: ['OnClickEvent', 'OnChangeEvent', 'default'],
                     },
                     dxWidgetWithPromise: {
                         Options: {
@@ -359,6 +359,12 @@ describe("metadata-generator", function() {
                 }
             ]);
         });
+
+        it("should generate reexports", function(){
+            expect(metas.DxTypedWidget.reexports).toEqual([
+                'OnClickEvent', 'OnChangeEvent', 'default'
+            ])
+        })
     });
 
     describe("complex widgets", function() {
