@@ -26,6 +26,11 @@ jobs:
     - name: Clone devextreme repo
       run: test -d ../devextreme || git clone -b 21_2 https://github.com/devexpress/devextreme ../devextreme
 
+    - name: Use Node.js 15
+      uses: actions/setup-node@v2
+      with:
+        node-version: '15'
+
     - name: Install packages in devextreme repo
       run: |
         cd ../devextreme
@@ -34,7 +39,12 @@ jobs:
     - name: Build devextreme repo
       run: |
         cd ../devextreme
-        npm run build-dist
+        npm run build-npm-devextreme
+
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
 
     - name: Install devextreme package
       run: |
@@ -63,15 +73,15 @@ jobs:
     - name: Install Angular latest
       run: |
         npx lerna clean --yes
-        npx lerna add @angular/animations@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@latest packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@latest packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/animations@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/core@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/common@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/compiler@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/forms@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-browser@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-server@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-browser-dynamic@12 packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/compiler-cli@12 packages/devextreme-angular --dev --exact --no-bootstrap
         npx lerna bootstrap --no-ci
 
     - name: Build tests with Angular latest
