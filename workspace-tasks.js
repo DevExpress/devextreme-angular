@@ -11,7 +11,6 @@ const fs = require('fs');
 const { resolve, join } = require('path');
 const { hideBin } = require('yargs/helpers');
 const { spawnSync } = require('child_process');
-const { version: dxVersion } = require('os');
 
 const { framework, metadataFileName, metadataGenerator } = parseJSON(join(__dirname, 'package.json')).workspaceTaskOptions;
 
@@ -25,7 +24,7 @@ const metadataLocation = resolve(customMetadataLocation || defaultMetadataLocati
 
 const argv = yargs(hideBin(process.argv))
     .alias('c', 'clone-devextreme')
-    .alias('m', 'generate-metadata')
+    .alias('g', 'generate-metadata')
     .argv;
 
 const dxVersion = getVersion();

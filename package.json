@@ -12,12 +12,12 @@
     "bootstrap": "lerna bootstrap --no-ci --hoist",
     "start": "npm run build && lerna run --scope devextreme-angular-sandbox start",
     "lite": "lerna run --scope devextreme-angular-sandbox lite",
-    "build": "lerna run build",
+    "build": "npm run update-meta && lerna run build",
     "test": "lerna run test",
-    "pack": "lerna run pack",
+    "pack": "npm run update-meta && lerna run pack",
     "lint": "gulp lint",
     "internal-tool": "dx-tools",
-    "update-integration-meta": "dx-tools update-meta --js-scripts ../devextreme/js --exclude ../devextreme/js/renovation/ --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 21_1"
+    "update-meta": "node ./workspace-tasks.js -cg"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
