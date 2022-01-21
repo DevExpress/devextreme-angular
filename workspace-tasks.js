@@ -54,7 +54,7 @@ async function generateMetadata() {
             throw new Error('Metadata file and DevExtreme repo do not exist');
         }
         if (!runOptions({}).run(
-            `npm.cmd run internal-tool -- discover --js-scripts ${devextremeLocation}/js --exclude js/renovation/ --output-path ${metadataLocation}`,
+            `npm.cmd run internal-tool -- discover --js-scripts ${devextremeLocation}/js --exclude js/renovation/ --artifacts ${metadataLocation}`,
             `npm.cmd run internal-tool -- integration-data-generator --js-scripts ${devextremeLocation}/js --declarations-path ${metadataLocation}/Declarations.json --output-path ${metadataLocation}/integration-data.json`,
             metadataGenerator && `npm.cmd run internal-tool -- ${metadataGenerator} --js-scripts ${devextremeLocation}/js --declarations-path ${metadataLocation}/Declarations.json --output-path ${sourceMetadataAbsoluteFileName} --version ${dxVersion}`
         )) {
