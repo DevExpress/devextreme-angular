@@ -12,16 +12,16 @@
     "bootstrap": "lerna bootstrap --no-ci --hoist",
     "start": "npm run build && lerna run --scope devextreme-angular-sandbox start",
     "lite": "lerna run --scope devextreme-angular-sandbox lite",
-    "build": "lerna run build",
+    "build": "npm run update-integration-meta && lerna run build",
     "test": "lerna run test",
-    "pack": "lerna run pack",
+    "pack": "npm run update-integration-meta && lerna run pack",
     "lint": "gulp lint",
-    "update-integration-meta": "dx-tools update-meta --js-scripts ../devextreme/js --exclude ../devextreme/js/renovation/ --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 21_1"
+    "update-integration-meta": "dx-tools generate-ng-smd --js-scripts ../devextreme/js --declarations-path ../../../devextreme/artifacts/internal-tools/Declarations.json --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 22_1"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
   "devDependencies": {
-    "devextreme-internal-tools": "^7.6.0",
+    "devextreme-internal-tools": "^7.7.0",
     "gulp": "^4.0.0",
     "gulp-tslint": "^7.0.1",
     "lerna": "^3.22.1",
