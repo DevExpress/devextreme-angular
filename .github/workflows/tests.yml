@@ -116,3 +116,10 @@ jobs:
     - name: Run tests with Angular Next
       if: false
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
+    
+    - name: Archive internal-tools artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: internal-tools-artifacts
+        path: artifacts/internal-tools/
+        retention-days: 7
