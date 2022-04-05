@@ -25,7 +25,6 @@ jobs:
           uses: ./.github/actions/detect-generator-changes
 
         - name: Detect version generator bump
-          if:  steps.filesChange.outputs.changed
           id: versionBump
           uses: ./.github/actions/detect-version-generator-bump
 
