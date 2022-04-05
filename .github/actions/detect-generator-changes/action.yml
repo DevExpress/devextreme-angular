@@ -12,6 +12,10 @@ runs:
         diffFiles=$( git diff --name-only -- packages/devextreme-angular-generator )
         diffFilesStructure=$( git ls-files --other --exclude-standard -- packages/devextreme-angular-generator )
 
+        echo "${{diffFiles}}"
+        echo "${{diffFilesStructure}}"
+        echo "${{diffFiles || diffFilesStructure}}"
+
         if ! [[ $diffFiles ]] || ! [[ $diffFilesStructure ]]
         then
           echo "Files generator didn't changed"
