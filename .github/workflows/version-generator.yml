@@ -1,0 +1,49 @@
+name: Version Generator
+on:
+  pull_request:
+    paths:
+      - package.json
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+
+jobs:
+  version-bump:
+      runs-on: ubuntu-latest
+      name: Bump
+      steps:
+
+        - name: Checkout
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 2
+
+        - name: Detect version generator bump
+          id: filesChange
+          uses: ./.github/actions/detect-generator-changes
+
+        - name: Detect version generator bump
+          if:  steps.filesChange.outputs.changed
+          id: versionBump
+          uses: ./.github/actions/detect-version-generator-bump
+
+        - name: Check version generator bump PR
+          if:  steps.versionBump.outputs.changed
+          run: |
+              errCount=0
+
+              if [[ $title != $version ]]
+              then
+                echo "::error::PR title should match new version: $version"
+                ((errCount+=1))
+              fi
+
+              if ! [[ $(git diff HEAD^ HEAD --shortstat) =~ (1 *file *changed.*1 *insertion.*1 *deletion) ]]
+              then
+                echo "::error::PR with version bump should have no other changes"
+                ((errCount+=1))
+              fi
+
+              exit $errCount
