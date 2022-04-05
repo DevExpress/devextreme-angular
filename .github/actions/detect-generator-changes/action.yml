@@ -12,7 +12,7 @@ runs:
         diffFiles=$( git diff --name-only -- packages/devextreme-angular-generator )
         diffFilesStructure=$( git ls-files --other --exclude-standard -- packages/devextreme-angular-generator )
 
-        if [ ${{diffFiles}} == "" ] || [ ${{diffFilesStructure}} == "" ]
+        if [ $diffFiles == "" ] || [ $diffFilesStructure == "" ]
         then
           echo "Files generator didn't changed"
           exit 0
