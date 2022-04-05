@@ -9,8 +9,11 @@ runs:
     - shell: bash
       id: detection
       run: |
-        diffFiles=$( git diff --name-only -- packages/devextreme-angular-generator )
-        diffFilesStructure=$( git ls-files --other --exclude-standard -- packages/devextreme-angular-generator )
+        diffFiles=$( git diff --name-only )
+        diffFilesStructure=$( git ls-files --other --exclude-standard )
+
+        echo "$diffFiles"
+        echo "$diffFilesStructure"
 
         if [ "$diffFiles" == "" ] && [ "$diffFilesStructure" == "" ]
         then
