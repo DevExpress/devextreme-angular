@@ -2,7 +2,7 @@ name: Version Generator
 on:
   pull_request:
     paths:
-      - package.json
+      - packages/devextreme-angular-generator
     types:
       - opened
       - reopened
@@ -30,19 +30,12 @@ jobs:
           uses: ./.github/actions/detect-version-generator-bump
 
         - name: Check version generator bump PR
-          if:  steps.versionBump.outputs.changed
           run: |
               errCount=0
 
-              if [[ $title != $version ]]
+              if [[ steps.filesChange.outputs.changed ]] && ! [[ steps.versionBump.outputs.changed ]]
               then
-                echo "::error::PR title should match new version: $version"
-                ((errCount+=1))
-              fi
-
-              if ! [[ $(git diff HEAD^ HEAD --shortstat) =~ (1 *file *changed.*1 *insertion.*1 *deletion) ]]
-              then
-                echo "::error::PR with version bump should have no other changes"
+                echo "::error::Generator changed, but version is not bumped"
                 ((errCount+=1))
               fi
 
