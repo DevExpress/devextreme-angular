@@ -14,7 +14,7 @@ runs:
 
         if ! [[ $diffFiles ]] || ! [[ $diffFilesStructure ]]
         then
-          echo "Generator didn't change"
+          echo "Files generator didn't changed"
           exit 0
         fi
 

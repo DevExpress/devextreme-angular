@@ -1,4 +1,5 @@
 name: Version Generator
+
 on:
   pull_request:
     paths:
@@ -10,32 +11,32 @@ on:
       - edited
 
 jobs:
-  version-bump:
-      runs-on: ubuntu-latest
-      name: Bump
-      steps:
+  generator-changes:
+    runs-on: ubuntu-latest
+    name: Bump
 
-        - name: Checkout
-          uses: actions/checkout@v2
-          with:
-            fetch-depth: 2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
 
-        - name: Detect version generator bump
-          id: filesChange
-          uses: ./.github/actions/detect-generator-changes
+      - name: Detect files generator changed
+        id: filesChange
+        uses: ./.github/actions/detect-generator-changes
 
-        - name: Detect version generator bump
-          id: versionBump
-          uses: ./.github/actions/detect-version-generator-bump
+      - name: Detect version generator bump
+        id: versionBump
+        uses: ./.github/actions/detect-version-generator-bump
 
-        - name: Check version generator bump PR
-          run: |
-              errCount=0
+      - name: Check version generator bump PR
+        run: |
+            errCount=0
 
-              if [[ steps.filesChange.outputs.changed ]] && ! [[ steps.versionBump.outputs.changed ]]
-              then
-                echo "::error::Generator changed, but version is not bumped"
-                ((errCount+=1))
-              fi
+            if [[ steps.filesChange.outputs.changed ]] && ! [[ steps.versionBump.outputs.changed ]]
+            then
+              echo "::error::Generator changed, but version is not bumped"
+              ((errCount+=1))
+            fi
 
-              exit $errCount
+            exit $errCount
