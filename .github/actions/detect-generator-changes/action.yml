@@ -14,7 +14,7 @@ runs:
         if [ "$diff" == "" ]
         then
           echo "::set-output name=changed::false"
-          echo "Generator files have no changes"
+          echo "The generator files have no changes"
           exit 0
         fi
 
