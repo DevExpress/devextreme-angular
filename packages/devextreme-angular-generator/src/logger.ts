@@ -9,4 +9,3 @@ export default function(...args) {
         console.log.apply(console, args);
     }
 };
-test
