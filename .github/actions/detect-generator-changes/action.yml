@@ -9,7 +9,7 @@ runs:
     - shell: bash
       id: detection
       run: |
-        diff=$( git diff --staged -- packages/devextreme-angular-generator )
+        diff=$( git diff HEAD^ --name-only -- packages/devextreme-angular-generator )
 
         if [ "$diff" == "" ]
         then
