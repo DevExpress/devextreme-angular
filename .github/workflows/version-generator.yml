@@ -33,10 +33,16 @@ jobs:
         run: |
             errCount=0
 
-            echo "Files: ${{steps.filesChange.outputs.changed}}"
-            echo "Version: ${{steps.versionBump.outputs.changed}}"
+            echo "Files changes: ${{steps.filesChange.outputs.changed}}"
+            echo "Version bumped: ${{steps.versionBump.outputs.changed}}"
 
-            if [[ ${{steps.filesChange.outputs.changed}} ]] && ! [[ ${{steps.versionBump.outputs.changed}} ]]
+            if [[ "${{steps.filesChange.outputs.changed}}" == "false" && "${{steps.versionBump.outputs.changed}}" == "false" ]]
+            then
+              echo "::message::Generator not changed"
+              exit $errCount
+            fi
+
+            if [[ "${{steps.filesChange.outputs.changed}}" == "true" && "${{steps.versionBump.outputs.changed}}" == "false" ]]
             then
               echo "::error::Generator changed, but version is not bumped"
               ((errCount+=1))

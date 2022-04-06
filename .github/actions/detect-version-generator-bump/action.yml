@@ -12,9 +12,10 @@ runs:
     - shell: bash
       id: detection
       run: |
-        versionDiff=$( git diff HEAD^ HEAD -U0 packages/devextreme-angular-generator/package.json )
+        versionDiff=$( git diff HEAD^ --staged -U0 -- packages/devextreme-angular-generator/package.json )
         if ! [[ $versionDiff ]] || ! [[ $versionDiff =~ (\+ *\"version\":) ]]
         then
+          echo "::set-output name=changed::false"
           echo "Version generator didn't change"
           exit 0
         fi
