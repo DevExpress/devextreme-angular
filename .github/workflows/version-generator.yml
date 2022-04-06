@@ -33,7 +33,7 @@ jobs:
         run: |
             errCount=0
 
-            if [[ steps.filesChange.outputs.changed ]] && ! [[ steps.versionBump.outputs.changed ]]
+            if [ "${{steps.filesChange.outputs.changed}} == "true" && "${{steps.versionBump.outputs.changed}} != "true" ]
             then
               echo "::error::Generator changed, but version is not bumped"
               ((errCount+=1))

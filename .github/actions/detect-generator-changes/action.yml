@@ -9,13 +9,9 @@ runs:
     - shell: bash
       id: detection
       run: |
-        diffFiles=$( git diff --name-only )
-        diffFilesStructure=$( git ls-files --other --exclude-standard )
+        diff=$( git diff --staged -- packages/devextreme-angular-generator )
 
-        echo "$diffFiles"
-        echo "$diffFilesStructure"
-
-        if [ "$diffFiles" == "" ] && [ "$diffFilesStructure" == "" ]
+        if [ "$diff" == "" ]
         then
           echo "Files generator didn't changed"
           exit 0
