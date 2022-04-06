@@ -1,10 +1,10 @@
 name: Detect Version Bump
 outputs:
   changed:
-    description: true if version is bumped
+    description: 'true' if the generator version is bumped
     value: ${{ steps.detection.outputs.changed }}
   version:
-    description: new version
+    description: New version
     value: ${{ steps.detection.outputs.version }}
 runs:
   using: composite
@@ -16,12 +16,12 @@ runs:
         if ! [[ $versionDiff ]] || ! [[ $versionDiff =~ (\+ *\"version\":) ]]
         then
           echo "::set-output name=changed::false"
-          echo "Version generator didn't change"
+          echo "The generator version is not changed"
           exit 0
         fi
 
         newVersion=$(echo $versionDiff | grep -oP "\+ *\"version\":.+," | grep -oP "\d+\.\d+.\d+(-beta\.\d+)?")
-        echo "Version generator changed to $newVersion"
+        echo "The generator version changed to $newVersion"
 
         echo "::set-output name=changed::true"
         echo "::set-output name=version::$newVersion"

@@ -1,4 +1,4 @@
-name: Version Generator
+name: Generator Version
 
 on:
   pull_request:
@@ -21,30 +21,30 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Detect files generator changed
+      - name: Detect changes in the generator files
         id: filesChange
         uses: ./.github/actions/detect-generator-changes
 
-      - name: Detect version generator bump
+      - name: Detect the generator version bump
         id: versionBump
         uses: ./.github/actions/detect-version-generator-bump
 
-      - name: Check version generator bump PR
+      - name: Check the generator version bump (PR)
         run: |
             errCount=0
 
-            echo "Files changes: ${{steps.filesChange.outputs.changed}}"
-            echo "Version bumped: ${{steps.versionBump.outputs.changed}}"
+            echo "Changed files: ${{steps.filesChange.outputs.changed}}"
+            echo "Bumped to version: ${{steps.versionBump.outputs.changed}}"
 
             if [[ "${{steps.filesChange.outputs.changed}}" == "false" && "${{steps.versionBump.outputs.changed}}" == "false" ]]
             then
-              echo "::message::Generator not changed"
+              echo "::message::The generator has no changes"
               exit $errCount
             fi
 
             if [[ "${{steps.filesChange.outputs.changed}}" == "true" && "${{steps.versionBump.outputs.changed}}" == "false" ]]
             then
-              echo "::error::Generator changed, but version is not bumped"
+              echo "::error:: The generator files are changed, but the version is not bumped"
               ((errCount+=1))
             fi
 

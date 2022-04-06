@@ -1,7 +1,7 @@
 name: Detect Geteneration Changes
 outputs:
   changed:
-    description: true if changed is detected
+    description: 'true' if changes in the generator are detected
     value: ${{ steps.detection.outputs.changed }}
 runs:
   using: composite
@@ -14,7 +14,7 @@ runs:
         if [ "$diff" == "" ]
         then
           echo "::set-output name=changed::false"
-          echo "Files generator didn't changed"
+          echo "Generator files have no changes"
           exit 0
         fi
 
