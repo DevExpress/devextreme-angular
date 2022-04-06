@@ -13,6 +13,7 @@ runs:
 
         if [ "$diff" == "" ]
         then
+          echo "::set-output name=changed::false"
           echo "Files generator didn't changed"
           exit 0
         fi
