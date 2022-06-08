@@ -353,7 +353,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxActionSheet": {
       "DocID": "dxActionSheet",
@@ -639,7 +643,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxAutocomplete": {
       "DocID": "dxAutocomplete",
@@ -1402,7 +1410,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -1410,9 +1418,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxBarGaugeOptions.label.format"
@@ -1543,7 +1550,7 @@
             },
             "itemTextFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -1551,9 +1558,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxBarGaugeOptions.legend.itemTextFormat"
@@ -2232,7 +2238,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -2240,9 +2246,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -2589,7 +2594,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxBullet": {
       "DocID": "dxBullet",
@@ -2905,7 +2914,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -2913,9 +2922,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -3694,6 +3702,12 @@
               ],
               "DocID": "dxChartOptions.argumentAxis.aggregateByCategory"
             },
+            "aggregatedPointsPosition": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxChartOptions.commonAxisSettings.aggregatedPointsPosition"
+            },
             "aggregationGroupWidth": {
               "PrimitiveTypes": [
                 "number"
@@ -4150,7 +4164,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -4158,9 +4172,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxChartOptions.argumentAxis.label.format"
@@ -4899,6 +4912,12 @@
         "commonAxisSettings": {
           "DocID": "dxChartOptions.commonAxisSettings",
           "Options": {
+            "aggregatedPointsPosition": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxChartOptions.commonAxisSettings.aggregatedPointsPosition"
+            },
             "allowDecimals": {
               "PrimitiveTypes": [
                 "boolean"
@@ -5540,7 +5559,7 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
-                        "DevExpress.ui.Format",
+                        "Format",
                         "string"
                       ],
                       "ComplexTypes": [
@@ -5548,9 +5567,8 @@
                       ],
                       "TypeImports": [
                         {
-                          "Name": "default",
-                          "Alias": "DevExpress",
-                          "Path": "bundles/dx.all"
+                          "Name": "Format",
+                          "Path": "localization"
                         }
                       ],
                       "DocID": "dxChartOptions.crosshair.horizontalLine.label.format"
@@ -5616,7 +5634,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -5624,9 +5642,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxChartOptions.crosshair.label.format"
@@ -5696,7 +5713,7 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
-                        "DevExpress.ui.Format",
+                        "Format",
                         "string"
                       ],
                       "ComplexTypes": [
@@ -5704,9 +5721,8 @@
                       ],
                       "TypeImports": [
                         {
-                          "Name": "default",
-                          "Alias": "DevExpress",
-                          "Path": "bundles/dx.all"
+                          "Name": "Format",
+                          "Path": "localization"
                         }
                       ],
                       "DocID": "dxChartOptions.crosshair.verticalLine.label.format"
@@ -6893,7 +6909,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -6901,9 +6917,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseChartOptions.tooltip.argumentFormat"
@@ -7011,7 +7026,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -7019,9 +7034,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -7113,6 +7127,12 @@
           "SingularName": "valueAxis",
           "DocID": "dxChartOptions.valueAxis",
           "Options": {
+            "aggregatedPointsPosition": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxChartOptions.commonAxisSettings.aggregatedPointsPosition"
+            },
             "allowDecimals": {
               "PrimitiveTypes": [
                 "boolean"
@@ -7478,7 +7498,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -7486,9 +7506,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxChartOptions.valueAxis.label.format"
@@ -8877,7 +8896,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -8885,9 +8904,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "BaseGaugeOptions.scale.label.format"
@@ -9308,7 +9326,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -9316,9 +9334,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -10261,7 +10278,10 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TKey"
+      ]
     },
     "dxDataGrid": {
       "DocID": "dxDataGrid",
@@ -12055,6 +12075,7 @@
           "PrimitiveTypes": [
             "any"
           ],
+          "IsDeprecated": true,
           "IsTemplate": true,
           "DocID": "dxDataGridOptions.rowTemplate"
         },
@@ -12430,7 +12451,7 @@
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -12438,9 +12459,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxDataGridOptions.summary.groupItems.valueFormat"
@@ -12583,7 +12603,7 @@
                 },
                 "valueFormat": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -12591,9 +12611,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxDataGridOptions.summary.totalItems.valueFormat"
@@ -12776,7 +12795,7 @@
         },
         "displayFormat": {
           "PrimitiveTypes": [
-            "DevExpress.ui.Format",
+            "Format",
             "string"
           ],
           "ComplexTypes": [
@@ -12784,9 +12803,8 @@
           ],
           "TypeImports": [
             {
-              "Name": "default",
-              "Alias": "DevExpress",
-              "Path": "bundles/dx.all"
+              "Name": "Format",
+              "Path": "localization"
             }
           ],
           "DocID": "dxDateBoxOptions.displayFormat"
@@ -14050,6 +14068,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "DocID": "dxDiagramOptions.gridSize.value"
             }
           }
@@ -14425,6 +14444,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "DocID": "dxDiagramOptions.pageSize.height"
             },
             "items": {
@@ -14459,6 +14479,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "DocID": "dxDiagramOptions.pageSize.width"
             }
           }
@@ -14727,6 +14748,7 @@
               "PrimitiveTypes": [
                 "number"
               ],
+              "IsChangeable": true,
               "DocID": "dxDiagramOptions.zoomLevel.value"
             }
           }
@@ -17923,7 +17945,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -17931,9 +17953,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxFunnelOptions.label.format"
@@ -18800,7 +18821,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -18808,9 +18829,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -19220,7 +19240,11 @@
           ],
           "DocID": "dxGalleryOptions.wrapAround"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxGantt": {
       "DocID": "dxGantt",
@@ -20888,7 +20912,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -20896,9 +20920,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "BaseGaugeOptions.scale.label.format"
@@ -21313,7 +21336,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -21321,9 +21344,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -23841,7 +23863,10 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TKey"
+      ]
     },
     "dxMultiView": {
       "DocID": "dxMultiView",
@@ -24131,7 +24156,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxNavBar": {
       "DocID": "dxNavBar",
@@ -24454,7 +24483,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxNumberBox": {
       "DocID": "dxNumberBox",
@@ -24512,7 +24545,7 @@
         },
         "format": {
           "PrimitiveTypes": [
-            "DevExpress.ui.Format",
+            "Format",
             "string"
           ],
           "ComplexTypes": [
@@ -24520,9 +24553,8 @@
           ],
           "TypeImports": [
             {
-              "Name": "default",
-              "Alias": "DevExpress",
-              "Path": "bundles/dx.all"
+              "Name": "Format",
+              "Path": "localization"
             }
           ],
           "DocID": "dxNumberBoxOptions.format"
@@ -25868,7 +25900,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -25876,9 +25908,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseChartOptions.tooltip.argumentFormat"
@@ -25986,7 +26017,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -25994,9 +26025,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -27376,7 +27406,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -27384,9 +27414,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxPolarChartOptions.argumentAxis.label.format"
@@ -29097,7 +29126,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -29105,9 +29134,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseChartOptions.tooltip.argumentFormat"
@@ -29215,7 +29243,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -29223,9 +29251,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -29550,7 +29577,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -29558,9 +29585,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxPolarChartOptions.valueAxis.label.format"
@@ -31144,8 +31170,8 @@
         },
         "value": {
           "PrimitiveTypes": [
-            "boolean",
-            "number"
+            "number",
+            "false"
           ],
           "IsChangeable": true,
           "DocID": "dxProgressBarOptions.value"
@@ -32129,6 +32155,12 @@
               "SingularName": "category",
               "DocID": "dxRangeSelectorOptions.scale.categories"
             },
+            "discreteAxisDivisionMode": {
+              "PrimitiveTypes": [
+                "string"
+              ],
+              "DocID": "dxRangeSelectorOptions.scale.discreteAxisDivisionMode"
+            },
             "endOnTick": {
               "PrimitiveTypes": [
                 "boolean"
@@ -32180,7 +32212,7 @@
                 },
                 "format": {
                   "PrimitiveTypes": [
-                    "DevExpress.ui.Format",
+                    "Format",
                     "string"
                   ],
                   "ComplexTypes": [
@@ -32188,9 +32220,8 @@
                   ],
                   "TypeImports": [
                     {
-                      "Name": "default",
-                      "Alias": "DevExpress",
-                      "Path": "bundles/dx.all"
+                      "Name": "Format",
+                      "Path": "localization"
                     }
                   ],
                   "DocID": "dxRangeSelectorOptions.scale.label.format"
@@ -32242,7 +32273,7 @@
                     },
                     "format": {
                       "PrimitiveTypes": [
-                        "DevExpress.ui.Format",
+                        "Format",
                         "string"
                       ],
                       "ComplexTypes": [
@@ -32250,9 +32281,8 @@
                       ],
                       "TypeImports": [
                         {
-                          "Name": "default",
-                          "Alias": "DevExpress",
-                          "Path": "bundles/dx.all"
+                          "Name": "Format",
+                          "Path": "localization"
                         }
                       ],
                       "DocID": "dxRangeSelectorOptions.scale.marker.label.format"
@@ -32761,7 +32791,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -32769,9 +32799,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxRangeSelectorOptions.sliderMarker.format"
@@ -33063,7 +33092,7 @@
           "Options": {
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -33071,9 +33100,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxSliderBaseOptions.label.format"
@@ -33197,7 +33225,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -33205,9 +33233,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxSliderBaseOptions.tooltip.format"
@@ -33900,7 +33927,11 @@
           "IsFunc": true,
           "DocID": "dxResponsiveBoxOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxSankey": {
       "DocID": "dxSankey",
@@ -34886,7 +34917,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -34894,9 +34925,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -37009,7 +37039,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxSlideOutView": {
       "DocID": "dxSlideOutView",
@@ -37208,7 +37242,7 @@
           "Options": {
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -37216,9 +37250,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxSliderBaseOptions.label.format"
@@ -37336,7 +37369,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -37344,9 +37377,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxSliderBaseOptions.tooltip.format"
@@ -38061,7 +38093,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -38069,9 +38101,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -38843,7 +38874,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxTabs": {
       "DocID": "dxTabs",
@@ -39177,7 +39212,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxTagBox": {
       "DocID": "dxTagBox",
@@ -40823,7 +40862,7 @@
         },
         "showScrollbar": {
           "PrimitiveTypes": [
-            "boolean"
+            "string"
           ],
           "DocID": "dxTileViewOptions.showScrollbar"
         },
@@ -40848,7 +40887,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxToast": {
       "DocID": "dxToast",
@@ -41434,7 +41477,11 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxTooltip": {
       "DocID": "dxTooltip",
@@ -44595,7 +44642,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -44603,9 +44650,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "BaseWidgetOptions.tooltip.format"
@@ -45149,7 +45195,10 @@
           "IsFunc": true,
           "DocID": "DOMComponentOptions.width"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TKey"
+      ]
     },
     "dxValidationGroup": {
       "DocID": "dxValidationGroup",
@@ -45318,7 +45367,11 @@
           ],
           "DocID": "dxValidationSummaryOptions.validationGroup"
         }
-      }
+      },
+      "OptionsTypeParams": [
+        "TItem",
+        "TKey"
+      ]
     },
     "dxValidator": {
       "DocID": "dxValidator",
@@ -47300,7 +47353,7 @@
             },
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -47308,9 +47361,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxChartSeriesTypes.CommonSeries.label.argumentFormat"
@@ -47397,7 +47449,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -47405,9 +47457,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxChartSeriesTypes.CommonSeries.label.format"
@@ -48277,7 +48328,7 @@
             },
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -48285,9 +48336,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxChartSeriesTypes.CommonSeries.label.argumentFormat"
@@ -48374,7 +48424,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -48382,9 +48432,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxChartSeriesTypes.CommonSeries.label.format"
@@ -50178,7 +50227,7 @@
         },
         "format": {
           "PrimitiveTypes": [
-            "DevExpress.ui.Format",
+            "Format",
             "string"
           ],
           "ComplexTypes": [
@@ -50186,9 +50235,8 @@
           ],
           "TypeImports": [
             {
-              "Name": "default",
-              "Alias": "DevExpress",
-              "Path": "bundles/dx.all"
+              "Name": "Format",
+              "Path": "localization"
             }
           ],
           "DocID": "GridBaseColumn.format"
@@ -50722,6 +50770,12 @@
           "SingularName": "item",
           "DocID": "dxDiagramCustomCommand.items"
         },
+        "location": {
+          "PrimitiveTypes": [
+            "string"
+          ],
+          "DocID": "dxDiagramCustomCommand.location"
+        },
         "name": {
           "PrimitiveTypes": [
             "string"
@@ -51084,7 +51138,6 @@
     },
     "FilterBuilderCustomOperation": {
       "DocID": "dxFilterBuilderCustomOperation",
-      "Module": "ui/filter_builder",
       "Options": {
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -51143,7 +51196,6 @@
     },
     "FilterBuilderField": {
       "DocID": "dxFilterBuilderField",
-      "Module": "ui/filter_builder",
       "Options": {
         "calculateFilterExpression": {
           "PrimitiveTypes": [
@@ -51206,7 +51258,7 @@
         },
         "format": {
           "PrimitiveTypes": [
-            "DevExpress.ui.Format",
+            "Format",
             "string"
           ],
           "ComplexTypes": [
@@ -51214,9 +51266,8 @@
           ],
           "TypeImports": [
             {
-              "Name": "default",
-              "Alias": "DevExpress",
-              "Path": "bundles/dx.all"
+              "Name": "Format",
+              "Path": "localization"
             }
           ],
           "DocID": "dxFilterBuilderField.format"
@@ -54865,7 +54916,7 @@
         },
         "format": {
           "PrimitiveTypes": [
-            "DevExpress.ui.Format",
+            "Format",
             "string"
           ],
           "ComplexTypes": [
@@ -54873,9 +54924,8 @@
           ],
           "TypeImports": [
             {
-              "Name": "default",
-              "Alias": "DevExpress",
-              "Path": "bundles/dx.all"
+              "Name": "Format",
+              "Path": "localization"
             }
           ],
           "DocID": "GridBaseColumn.format"
@@ -56229,7 +56279,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -56237,9 +56287,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "CommonIndicator.text.format"
@@ -56459,7 +56508,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -56467,9 +56516,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPieChartSeriesTypes.CommonPieChartSeries.label.argumentFormat"
@@ -56556,7 +56604,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -56564,9 +56612,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPieChartSeriesTypes.CommonPieChartSeries.label.format"
@@ -56871,7 +56918,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -56879,9 +56926,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPieChartSeriesTypes.CommonPieChartSeries.label.argumentFormat"
@@ -56968,7 +57014,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -56976,9 +57022,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPieChartSeriesTypes.CommonPieChartSeries.label.format"
@@ -57347,7 +57392,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -57355,9 +57400,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPolarChartSeriesTypes.CommonPolarChartSeries.label.argumentFormat"
@@ -57444,7 +57488,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -57452,9 +57496,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPolarChartSeriesTypes.CommonPolarChartSeries.label.format"
@@ -58058,7 +58101,7 @@
           "Options": {
             "argumentFormat": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -58066,9 +58109,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPolarChartSeriesTypes.CommonPolarChartSeries.label.argumentFormat"
@@ -58155,7 +58197,7 @@
             },
             "format": {
               "PrimitiveTypes": [
-                "DevExpress.ui.Format",
+                "Format",
                 "string"
               ],
               "ComplexTypes": [
@@ -58163,9 +58205,8 @@
               ],
               "TypeImports": [
                 {
-                  "Name": "default",
-                  "Alias": "DevExpress",
-                  "Path": "bundles/dx.all"
+                  "Name": "Format",
+                  "Path": "localization"
                 }
               ],
               "DocID": "dxPolarChartSeriesTypes.CommonPolarChartSeries.label.format"
