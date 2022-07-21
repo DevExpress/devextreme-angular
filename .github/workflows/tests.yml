@@ -61,22 +61,22 @@ jobs:
     - name: Run tests with Angular 7
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
 
-    - name: Install Angular 13
+    - name: Install Angular 12
       run: |
         npx lerna clean --yes
-        npx lerna add @angular/animations@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@v13-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/animations@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/core@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/common@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/compiler@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/forms@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-browser@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-server@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/platform-browser-dynamic@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
+        npx lerna add @angular/compiler-cli@v12-lts packages/devextreme-angular --dev --exact --no-bootstrap
         npx lerna bootstrap --no-ci
 
-    - name: Build tests with Angular 13
+    - name: Build tests with Angular 12
       run: npx lerna run --scope devextreme-angular gulp -- build.tests
 
-    - name: Run tests with Angular 13
+    - name: Run tests with Angular 12
       run: npx lerna run --scope devextreme-angular gulp -- run.tests
