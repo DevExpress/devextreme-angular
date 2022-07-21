@@ -36,6 +36,11 @@ jobs:
         cd ../devextreme-repo
         npm run build-dist
 
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
     - name: Install devextreme package
       run: |
         cd ./packages/devextreme-angular
