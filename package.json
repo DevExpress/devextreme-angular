@@ -16,7 +16,7 @@
     "test": "lerna run test",
     "pack": "npm run update-integration-meta && lerna run pack",
     "lint": "gulp lint",
-    "update-integration-meta": "dx-tools generate-ng-smd --js-scripts ../devextreme/js --artifacts ../devextreme/artifacts/internal-tools --output-path ./packages/devextreme-angular/metadata/NGMetaData.json --version 22_2"
+    "update-integration-meta": "dx-tools generate-ng-smd --artifacts ../devextreme/artifacts/internal-tools --output-path ./packages/devextreme-angular/metadata/NGMetaData.json"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
