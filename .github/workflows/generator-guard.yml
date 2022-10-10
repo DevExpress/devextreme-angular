@@ -1,0 +1,26 @@
+name: Guard - Up version generator if source files changed
+
+on:
+  push:
+    branches:
+    - master
+    - '[12][0-9].[12]'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+    - name: Get sources
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - name: Detect version bump
+      uses: DevExpress/github-actions/generator-version-guard@main
+      with:
+        generator_path: packages/devextreme-angular-generator
