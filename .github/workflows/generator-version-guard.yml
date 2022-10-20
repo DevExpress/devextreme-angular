@@ -17,7 +17,7 @@ jobs:
       with:
         fetch-depth: 2
 
-    - name: Run generator version guard
-      uses: DevExpress/github-actions/generator-version-guard@main
+    - name: Run check for version update
+      uses: DevExpress/github-actions/check-for-version-update@main
       with:
-        generator_path: packages/devextreme-angular-generator
+        path: packages/devextreme-angular-generator
