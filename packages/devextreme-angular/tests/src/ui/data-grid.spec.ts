@@ -358,7 +358,6 @@ describe('DxDataGrid', () => {
                 template: `
                 <dx-data-grid id="gridContainer" [dataSource]="dataSource" [repaintChangesOnly]="true">
                   <dxo-sorting mode="none"></dxo-sorting>
-                  <dxo-paging [pageSize]="10"></dxo-paging>
                 
                   <ng-container *ngFor="let col of columns">
                     <dxi-column [caption]="col.caption" [dataField]="col.field" [cellTemplate]="col.cellTemplateName">
@@ -366,10 +365,10 @@ describe('DxDataGrid', () => {
                 
                     <div *dxTemplate="let cell of col.cellTemplateName">
                       <div *ngIf="col.cellTemplateName === 'templateA'">
-                        {{col.cellTemplateName}} - a
+                        someTemplateA
                       </div>
                       <div *ngIf="col.cellTemplateName === 'templateB'">
-                        <div class="templBClass">{{col.cellTemplateName}} - b</div>
+                        <div class="templBClass">someTemplateB</div>
                       </div>
                     </div>
                 
