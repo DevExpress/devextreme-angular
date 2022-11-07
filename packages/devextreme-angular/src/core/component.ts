@@ -66,6 +66,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
                 initialTemplates[template.name] = template;
             });
             this.instance.option('integrationOptions.templates', initialTemplates);
+            this.templates = Object.values(initialTemplates);
         }
     }
 
