@@ -25,7 +25,7 @@ import {
     template: ''
 })
 class TestContainerComponent {
-    renderedOnServer: boolean = false;
+    renderedOnServer = false;
     initializedHandler(e) {
         this.renderedOnServer = e.component.option('integrationOptions.renderedOnServer');
     }
