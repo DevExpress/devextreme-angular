@@ -216,7 +216,7 @@ export abstract class DxComponent implements OnChanges, OnInit, DoCheck, AfterCo
     }
 
     ngAfterContentChecked() {
-        this._initTemplates()
+        this._initTemplates();
         this.applyOptions();
         this.resetOptions();
         this.unlockWidgetUpdate();
