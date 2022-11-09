@@ -119,12 +119,14 @@ export class DxTestComponent extends DxComponent implements AfterViewInit {
 export class TestContainerComponent {
     @ViewChild(DxTestWidgetComponent) widget: DxTestWidgetComponent;
     @ViewChild(DxTestComponent) testComponent: DxTestComponent;
+
+    @Output() onInnerElementClicked = new EventEmitter<any>();
+
     dynamicTemplateName: string;
 
     constructor() {
-        this.dynamicTemplateName = "start";
+        this.dynamicTemplateName = 'start';
     }
-    @Output() onInnerElementClicked = new EventEmitter<any>();
 
     testFunction() {
         this.onInnerElementClicked.next();
