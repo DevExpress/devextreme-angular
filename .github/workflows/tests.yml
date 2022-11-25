@@ -18,6 +18,11 @@ jobs:
     - name: Get sources
       uses: actions/checkout@v2
 
+    - name: Use Node.js 14
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
     - name: Run npm install
       run: npm install --no-audit --no-fund
 
