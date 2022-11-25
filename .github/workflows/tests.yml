@@ -24,7 +24,7 @@ jobs:
         node-version: '14'
 
     - name: install npm v.5
-      run: npm install npm@next-5
+      run: npm install npm@next-5 -g
 
     - name: Run npm install
       run: npm install --no-audit --no-fund
