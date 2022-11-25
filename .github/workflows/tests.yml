@@ -18,13 +18,16 @@ jobs:
     - name: Get sources
       uses: actions/checkout@v2
 
-    - name: Use Node.js 14
-      uses: actions/setup-node@v2
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
       with:
-        node-version: '14'
+        node-version: '18'
 
-    - name: install npm v.5
-      run: npm install npm@next-5 -g
+    - name: Show node version
+        run: node -v
+
+    - name: install npm v.8
+      run: npm install npm@next-8
 
     - name: Run npm install
       run: npm install --no-audit --no-fund
