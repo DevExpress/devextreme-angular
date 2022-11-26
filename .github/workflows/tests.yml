@@ -23,12 +23,6 @@ jobs:
       with:
         node-version: '18'
 
-    - name: Show node version
-      run: node -v
-
-    - name: Show npm version
-      run: npm -v
-
     - name: Install npm version 7
       run: npm install npm@next-7 -g
 
@@ -42,13 +36,4 @@ jobs:
       run: npx gulp build.tests
 
     - name: Run tests with Angular 7
-      run: npx gulp run.tests
-
-    - name: Install Angular latest
-      run: npm install @angular/animations@14.2.12 @angular/core@v14-lts  @angular/common@v14-lts @angular/compiler@v14-lts @angular/forms@v14-lts @angular/platform-browser@v14-lts @angular/platform-server@v14-lts @angular/platform-browser-dynamic@v14-lts @angular/compiler-cli@v14-lts ng-packagr@14.2.1 --unsafe-perm
-
-    - name: Build tests with Angular latest
-      run: npx gulp build.tests
-
-    - name: Run tests with Angular latest
       run: npx gulp run.tests
