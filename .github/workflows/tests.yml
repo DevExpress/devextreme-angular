@@ -24,10 +24,13 @@ jobs:
         node-version: '18'
 
     - name: Show node version
-        run: node -v
+      run: node -v
 
-    - name: install npm v.8
-      run: npm install npm@next-8
+    - name: Show npm version
+      run: npm -v
+
+    - name: Install npm version 7
+      run: npm install npm@next-7 -g
 
     - name: Run npm install
       run: npm install --no-audit --no-fund
