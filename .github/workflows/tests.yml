@@ -45,19 +45,10 @@ jobs:
       run: npx gulp run.tests
 
     - name: Install Angular latest
-      run: npm install @angular/animations@latest @angular/core@latest  @angular/common@latest @angular/compiler@latest @angular/forms@latest @angular/platform-browser@latest @angular/platform-server@latest @angular/platform-browser-dynamic@latest @angular/compiler-cli@latest --unsafe-perm
+      run: npm install @angular/animations@14.2.12 @angular/core@v14-lts  @angular/common@v14-lts @angular/compiler@v14-lts @angular/forms@v14-lts @angular/platform-browser@v14-lts @angular/platform-server@v14-lts @angular/platform-browser-dynamic@v14-lts @angular/compiler-cli@v14-lts ng-packagr@14.2.1 --unsafe-perm
 
     - name: Build tests with Angular latest
       run: npx gulp build.tests
 
     - name: Run tests with Angular latest
-      run: npx gulp run.tests
-
-    - name: Install Angular Next
-      run: npm install @angular/animations@next @angular/core@next  @angular/common@next @angular/compiler@next @angular/forms@next @angular/platform-browser@next @angular/platform-server@next @angular/platform-browser-dynamic@next @angular/compiler-cli@next --unsafe-perm
-
-    - name: Build tests with Angular latest
-      run: npx gulp build.tests
-
-    - name: Run tests with Angular Next
       run: npx gulp run.tests
