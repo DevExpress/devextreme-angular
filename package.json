@@ -14,16 +14,16 @@
     "build": "npm run gulp -- build",
     "test": "npm run gulp -- test",
     "pack": "npm run gulp -- npm.pack",
-    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 20_1",
+    "update-integration-meta": "dx-tools update-meta --output-path ./metadata/NGMetaData.json --version 20_2",
     "inject-descriptions": "dx-tools inject-descriptions-to-bundle --js-scripts ./npm/dist"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
   "peerDependencies": {
-    "devextreme": "~20.2.7",
-    "@angular/core": ">7.0.0",
-    "@angular/common": ">7.0.0",
-    "@angular/forms": ">7.0.0"
+    "devextreme": "20.2-stable",
+    "@angular/core": ">7.0.0 <=14.X.X",
+    "@angular/common": ">7.0.0 <=14.X.X",
+    "@angular/forms": ">7.0.0 <=14.X.X"
   },
   "devDependencies": {
     "@angular/animations": "~7.2.0",
@@ -47,7 +47,7 @@
     "del": "^2.2.0",
     "devexpress-diagram": "^1.0.0",
     "devexpress-gantt": "^1.0.0",
-    "devextreme": "~20.2.4-0",
+    "devextreme": "20.2-stable",
     "devextreme-internal-tools": "^3.0.0",
     "dot": "^1.0.3",
     "gulp": "^4.0.0",
@@ -77,6 +77,7 @@
     "puppeteer": "^1.11.0",
     "rxjs": "^6.0.0",
     "systemjs": "0.21.6",
+    "socket.io": "^2.5.0",
     "tslint": "^4.5.1",
     "typescript": "~3.1.0",
     "webpack": "^3.8.1",
