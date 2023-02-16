@@ -125,6 +125,10 @@ export class FSObjectStore implements IObjectStore {
     }
 }
 
+interface Reexports {
+    reexports: string[];
+}
+
 export default class DXComponentMetadataGenerator {
     constructor(private _store?: IObjectStore) {
         if (!this._store) {
@@ -226,7 +230,7 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const widgetMetadata: WidgetComponent & File = {
+            const widgetMetadata: WidgetComponent & File & Reexports = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
                 className: className,
@@ -243,6 +247,7 @@ export default class DXComponentMetadataGenerator {
                 imports: buildImports(getValues(widget.Options), config.widgetPackageName),
                 nestedComponents: widgetNestedComponents,
                 optionsTypeParams: widget.OptionsTypeParams,
+                reexports: widget['Reexports'].filter(item => item !== 'ExplicitTypes' && item !== 'default'),
             };
 
             logger('Write metadata to file ' + outputFilePath);
