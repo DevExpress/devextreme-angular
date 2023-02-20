@@ -50,7 +50,7 @@ jobs:
       run: npm run build-npm-devextreme
 
     - name: Link devextreme
-      run: npm link ../devextreme/artifacts/npm/devextreme
+      run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
 
     - name: Update metadata
       run: npm run update-integration-meta
