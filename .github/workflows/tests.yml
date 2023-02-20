@@ -36,7 +36,6 @@ jobs:
 
     - name: Restore devextreme npm cache
       uses: actions/cache@v3
-      working-directory: ../devextreme
       with:
         path: ${{ steps.npm-cache-dir.outputs.dir }}
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
