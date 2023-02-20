@@ -43,14 +43,17 @@ jobs:
 
     - name: Install packages in devextreme repo
       working-directory: ../devextreme
-      run: npm install --no-audit --no-fund
+      run: npm i --no-audit --no-fund
 
     - name: Build devextreme repo
       working-directory: ../devextreme
       run: npm run build-npm-devextreme
 
-    - name: Link devextreme
+    - name: Install devextreme package
       run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
+
+    - name: Run npm install
+      run: npm i --no-audit --no-fund
 
     - name: Update metadata
       run: npm run update-integration-meta
