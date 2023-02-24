@@ -233,13 +233,13 @@ export default class DXComponentMetadataGenerator {
 
             const hasExplicitTypes = !!widget.OptionsTypeParams?.length;
 
-            const filterReexports = (reexports?: string[]) : string[] => {
-                return reexports 
+            const filterReexports = (reexports?: string[]) : string[] => (
+                reexports
                     ? reexports.filter(
                         (item) => item !== 'default' && (hasExplicitTypes && item !== 'ExplicitTypes'),
                     )
-                    : [];
-            };
+                    : []
+            );
 
             const widgetMetadata: WidgetComponent & File & Reexports = {
                 docID: widget.DocID,
