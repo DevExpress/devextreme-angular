@@ -246,7 +246,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
   ]
 })
 export class <#= it.className #>Module { }
-export { 
-    <#~ it.reexports :reexport:i #><#= reexport #>,
-    <#~#>
+<#? it.reexports.length #>
+export {<#~ it.reexports :reexport:i #>
+    <#= reexport #>,<#~#>
 } from '<#= it.module #>';
+<#?#>

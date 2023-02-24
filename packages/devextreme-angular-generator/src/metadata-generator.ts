@@ -230,6 +230,17 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
+
+            const hasExplicitTypes = !!widget.OptionsTypeParams?.length;
+
+            const filterReexports = (reexports?: string[]) : string[] => {
+                return reexports 
+                    ? reexports.filter(
+                        (item) => item !== 'default' && (hasExplicitTypes && item !== 'ExplicitTypes'),
+                    )
+                    : [];
+            };
+
             const widgetMetadata: WidgetComponent & File & Reexports = {
                 docID: widget.DocID,
                 isDeprecated: widget.IsDeprecated,
@@ -247,7 +258,7 @@ export default class DXComponentMetadataGenerator {
                 imports: buildImports(getValues(widget.Options), config.widgetPackageName),
                 nestedComponents: widgetNestedComponents,
                 optionsTypeParams: widget.OptionsTypeParams,
-                reexports: widget['Reexports'].filter(item => item !== 'ExplicitTypes' && item !== 'default'),
+                reexports: filterReexports(widget['Reexports']),
             };
 
             logger('Write metadata to file ' + outputFilePath);
