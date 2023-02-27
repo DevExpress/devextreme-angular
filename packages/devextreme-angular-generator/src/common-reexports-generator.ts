@@ -1,6 +1,6 @@
-import { existsSync, mkdirSync, writeFileSync, readFileSync } from "fs";
-import { join as joinPaths } from "path";
-import { createTemplateFromString } from "./dot-generator";
+import { existsSync, mkdirSync, writeFileSync, readFileSync } from 'fs';
+import { join as joinPaths } from 'path';
+import { createTemplateFromString } from './dot-generator';
 
 const render: (model: { module: string, reexports: string[] }) => string = createTemplateFromString(`
 export {<#~ it.reexports :reExport #>
