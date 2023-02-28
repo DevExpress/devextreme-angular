@@ -258,7 +258,7 @@ export default class DXComponentMetadataGenerator {
                 imports: buildImports(getValues(widget.Options), config.widgetPackageName),
                 nestedComponents: widgetNestedComponents,
                 optionsTypeParams: widget.OptionsTypeParams,
-                reexports: filterReexports(widget['Reexports']),
+                reexports: config.generateReexports ? filterReexports(widget['Reexports']) : [],
             };
 
             logger('Write metadata to file ' + outputFilePath);
