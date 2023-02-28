@@ -6,11 +6,15 @@ const render: (model: { module: string, reexports: string[] }) => string = creat
 export {<#~ it.reexports :reExport #>
     <#= reExport #>,<#~#>
 } from "devextreme/<#= it.module #>";
-`.trim());
+`.trimLeft());
 
 export default class CommonReexportsGenerator {
   generate(config) {
     let metadata = JSON.parse(readFileSync(config.metadataPath).toString());
+
+    if (!metadata.CommonReexports) {
+      return;
+    }
 
     const commonPath = joinPaths(config.outputPath, 'common');
     if (!existsSync(commonPath)) {
