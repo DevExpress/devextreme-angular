@@ -230,9 +230,6 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-
-            const hasExplicitTypes = !!widget.OptionsTypeParams?.length;
-
             const filterReexports = (reexports?: string[]) : string[] => (
                 reexports
                     ? reexports.filter(
