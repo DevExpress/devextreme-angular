@@ -236,7 +236,7 @@ export default class DXComponentMetadataGenerator {
             const filterReexports = (reexports?: string[]) : string[] => (
                 reexports
                     ? reexports.filter(
-                        (item) => item !== 'default' && (hasExplicitTypes && item !== 'ExplicitTypes'),
+                        (item) => item !== 'default' && item !== 'ExplicitTypes',
                     )
                     : []
             );
