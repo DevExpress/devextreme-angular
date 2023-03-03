@@ -199,7 +199,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         });
         let fixture = TestBed.createComponent(TestContainerComponent);
         fixture.detectChanges();
-        
+
         let testComponent = fixture.componentInstance,
         innerComponent = testComponent.widget,
         templatesHash = innerComponent.instance.option('integrationOptions.templates'),
@@ -212,8 +212,7 @@ describe('DevExtreme Angular widget\'s template', () => {
         fixture.detectChanges();
 
         expect(container.children[0].classList.contains('dx-template-wrapper')).toBe(true);
-        
-    })
+    });
 
 
     it('should add template wrapper class as template has root container', () => {
