@@ -138,7 +138,7 @@ export class TestContainerComponent {
 }
 
 @Component({
-    selector: 'dx-imitate',
+    selector: 'dx-imitation',
     template: `
         <div *dxTemplate="let d of 'ImportedTemlate'">
             <div>123213</div>
@@ -192,7 +192,7 @@ describe('DevExtreme Angular widget\'s template', () => {
             set: {
                 template: `
                     <dx-test-widget testTemplate="ImportedTemlate">
-                        <dx-imitate></dx-imitate>
+                        <dx-imitation></dx-imitation>
                     </dx-test-widget>
                 `
             }
