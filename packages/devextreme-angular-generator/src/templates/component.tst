@@ -247,6 +247,6 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
 })
 export class <#= it.className #>Module { }
 <#? it.renderReexports #>
-export * as <#= it.component #>Types from "<#= it.widgetsPackage #>/<#= it.module #>_types";\n
+export * as <#= it.className #>Types from "<#= it.widgetsPackage #>/<#= it.module #>_types";\n
 <#?#>
 
