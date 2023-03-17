@@ -15,7 +15,7 @@ export default class FacadeGenerator {
             resultContent += `export * from './ui/all';\n`;
 
             config.commonImports.forEach(i => {
-                resultContent += `import '${i}';\n`
+                resultContent += `import '${i}';\n`;
             });
 
             fs.readdirSync(facadeConfig.sourceDirectories[0])
