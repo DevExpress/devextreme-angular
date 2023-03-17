@@ -230,7 +230,7 @@ export default class DXComponentMetadataGenerator {
                     return result;
                 }, []);
 
-            const containsReexports = !!widget.Reexports.filter((r) => r !== 'default').length;
+            const containsReexports = !!widget.Reexports?.filter((r) => r !== 'default').length;
 
             const widgetMetadata: WidgetComponent & File & Reexports = {
                 docID: widget.DocID,
