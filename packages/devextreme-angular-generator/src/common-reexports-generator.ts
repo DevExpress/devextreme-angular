@@ -16,13 +16,16 @@ export default class CommonReexportsGenerator {
       return;
     }
 
-    const commonPath = joinPaths(config.outputPath, 'common');
+    const commonTargetFolderName = 'common';
+    const commonPath = joinPaths(config.outputPath, commonTargetFolderName);
     if (!existsSync(commonPath)) {
       mkdirSync(commonPath);
     }
     Object.keys(metadata.CommonReexports).forEach((key) => {
+      const targetKey = key.replace(`${commonTargetFolderName}/`, '');
+      const targetFileName = `${targetKey === commonTargetFolderName ? 'index' : targetKey}.ts`;
       writeFileSync(
-        joinPaths(commonPath, `${key.replace('common/', '')}.ts`),
+        joinPaths(commonPath, targetFileName),
         this.generateReexports(key, metadata.CommonReexports[key]),
         { encoding: 'utf8' },
       );
