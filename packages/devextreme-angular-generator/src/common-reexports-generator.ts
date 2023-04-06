@@ -22,8 +22,7 @@ export default class CommonReexportsGenerator {
       mkdirSync(commonPath);
     }
     Object.keys(metadata.CommonReexports).forEach((key) => {
-      const targetKey = key.replace(`${commonTargetFolderName}/`, '');
-      const targetFileName = `${targetKey === commonTargetFolderName ? 'index' : targetKey}.ts`;
+      const targetFileName = key === commonTargetFolderName ? 'index.ts' : `${key.replace(`${commonTargetFolderName}/`, '')}.ts`;
       writeFileSync(
         joinPaths(commonPath, targetFileName),
         this.generateReexports(key, metadata.CommonReexports[key]),
