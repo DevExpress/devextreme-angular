@@ -175,13 +175,14 @@ export default class DXComponentMetadataGenerator {
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
+                    const eventType = option.TypeImports ? option.TypeImports[0].Name : 'any'
 
                     events.push({
                         docID: option.DocID,
                         isDeprecated: option.IsDeprecated,
                         emit: optionName,
                         subscribe: eventName,
-                        type: 'EventEmitter<any>'
+                        type: `EventEmitter<${eventType}>`
                     });
                 } else {
                     let typesDescription = this.getTypesDescription(option);
