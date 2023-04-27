@@ -321,7 +321,7 @@ export default class DXComponentMetadataGenerator {
     }
 
     private getEventType(typesDescription: TypeDescription, option?: Option) {
-        if (!(option?.IsEvent && option.IsFunc && option.TypeImports?.length)) {
+        if (!(option?.IsEvent && option.TypeImports?.length)) {
             return this.getType(typesDescription);
         }
         return `((e: ${option.TypeImports[0].Name}) => void)`;
