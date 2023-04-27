@@ -448,7 +448,7 @@ export default class DXComponentMetadataGenerator {
             let propertyType = this.getType(typesDescription);
 
             if (nestedOption.IsEvent && nestedOption.IsEvent && nestedOption.TypeImports?.length) {
-                propertyType = `((e: ${nestedOption.TypeImports[0].Name}) => void)`
+                propertyType = `((e: ${nestedOption.TypeImports[0].Name}) => void)`;
             }
 
             let property: Property = {
@@ -471,7 +471,7 @@ export default class DXComponentMetadataGenerator {
             }
 
             let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes, config) || [];
-            
+
             nestedComponents = nestedComponents.concat(...components);
 
             let ownCollectionNestedComponents = components
