@@ -175,7 +175,7 @@ export default class DXComponentMetadataGenerator {
 
                 if (option.IsEvent) {
                     let eventName = inflector.camelize(optionName.substr('on'.length), true);
-                    const eventType = option.TypeImports ? option.TypeImports[0].Name : 'any'
+                    const eventType = option.TypeImports?.length ? option.TypeImports[0].Name : 'any';
 
                     events.push({
                         docID: option.DocID,
@@ -320,6 +320,12 @@ export default class DXComponentMetadataGenerator {
         return '';
     }
 
+    private getEventType(typesDescription: TypeDescription, option?: Option) {
+        if (!(option?.IsEvent && option.IsFunc && option.TypeImports?.length)) {
+            return this.getType(typesDescription);
+        }
+        return `((e: ${option.TypeImports[0].Name}) => void)`;
+    }
     private getType(typesDescription: TypeDescription) {
         let primitiveTypes = typesDescription.primitiveTypes.slice(0);
         let result = 'any';
@@ -437,8 +443,13 @@ export default class DXComponentMetadataGenerator {
 
         for (let optName in nestedOptions) {
             let nestedOption = nestedOptions[optName];
+
             let typesDescription = this.getTypesDescription(nestedOption);
             let propertyType = this.getType(typesDescription);
+
+            if (nestedOption.IsEvent && nestedOption.IsEvent && nestedOption.TypeImports?.length) {
+                propertyType = `((e: ${nestedOption.TypeImports[0].Name}) => void)`
+            }
 
             let property: Property = {
                 docID: nestedOption.DocID,
@@ -460,7 +471,7 @@ export default class DXComponentMetadataGenerator {
             }
 
             let components = this.generateComplexOptionByType(metadata, nestedOptions[optName], optName, complexTypes, config) || [];
-
+            
             nestedComponents = nestedComponents.concat(...components);
 
             let ownCollectionNestedComponents = components
@@ -515,9 +526,10 @@ export default class DXComponentMetadataGenerator {
                                     typesDescription.arrayTypes,
                                     property.typesDescription.arrayTypes);
 
-                                existingProperty.type = this.getType(typesDescription);
+                                existingProperty.type = existingProperty.option?.IsEvent
+                                    ? this.getEventType(typesDescription, existingProperty.option)
+                                    : this.getType(typesDescription);
                             }
-
                             return properties;
                         }, []);
 
