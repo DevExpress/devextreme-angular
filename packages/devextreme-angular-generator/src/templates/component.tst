@@ -11,7 +11,6 @@ it.isEditor && implementedInterfaces.push('ControlValueAccessor');
 collectionProperties.length && implementedInterfaces.push('OnChanges', 'DoCheck');
 #>
 
-import { BrowserTransferStateModule } from '@angular/platform-browser';
 import { TransferState } from '@angular/platform-browser';
 
 import {
@@ -233,8 +232,7 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
   imports: [<#~ it.nestedComponents :component:i #>
     <#= component.className #>Module,<#~#>
     DxIntegrationModule,
-    DxTemplateModule,
-    BrowserTransferStateModule
+    DxTemplateModule
   ],
   declarations: [
     <#= it.className #>Component
@@ -246,3 +244,8 @@ export class <#= it.className #>Component extends <#= baseClass #> <#? implement
   ]
 })
 export class <#= it.className #>Module { }
+<#? it.renderReexports #>
+import type * as <#= it.className #>Types from "<#= it.module #>_types";
+export { <#= it.className #>Types };
+<#?#>
+

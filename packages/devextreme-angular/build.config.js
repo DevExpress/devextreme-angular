@@ -8,7 +8,8 @@ module.exports = {
             nestedPathPart: 'nested',
             basePathPart: 'base',
             widgetPackageName: "devextreme",
-            wrapperPackageName: 'devextreme-angular'
+            wrapperPackageName: 'devextreme-angular',
+            generateReexports: true,
         },
         componentGenerator: {
             importFrom: 'devextreme-angular-generator/dist/dot-generator',
@@ -25,7 +26,12 @@ module.exports = {
                         './metadata/generated'
                     ]
                 }
-            }
+            },
+            commonImports: [
+                './common',
+                './common/grids',
+                './common/charts',
+            ]
         },
         moduleFacadeGenerator: {
             importFrom: 'devextreme-angular-generator/dist/module.facade-generator',
@@ -52,7 +58,13 @@ module.exports = {
                 'drop-down-button',
                 'file-manager' ],
             outputFileName: 'tests/src/server/component-names.ts'
-        }
+        },
+        commonReexportsGenerator: {
+            importFrom: 'devextreme-angular-generator/dist/common-reexports-generator',
+            metadataPath: './metadata/NGMetaData.json',
+            outputPath: './src/'
+        },
+
     },
     components: {
         srcFilesPattern: '**/*.ts',
