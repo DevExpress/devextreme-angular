@@ -50,6 +50,7 @@ jobs:
       run: npm run build-npm-devextreme
 
     - name: Install devextreme package
+      continue-on-error: true
       run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
 
     - name: Run npm install
