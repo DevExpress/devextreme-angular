@@ -6,8 +6,6 @@ on:
     - master
     - '[12][0-9].[12]'
   pull_request:
-    branches:
-      - '**'
 
 jobs:
   test:
@@ -16,7 +14,7 @@ jobs:
 
     steps:
     - name: Get sources
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
     - name: Clone devextreme repo from PR author fork
       continue-on-error: true
@@ -26,96 +24,52 @@ jobs:
     - name: Clone devextreme repo
       run: test -d ../devextreme || git clone -b 23_1 https://github.com/devexpress/devextreme ../devextreme
 
-    - name: Use Node.js 15
-      uses: actions/setup-node@v2
+    - name: Use Node.js 18
+      uses: actions/setup-node@v3
       with:
-        node-version: '15'
+        node-version: '18'
+
+    - name: Get npm cache directory
+      id: npm-cache-dir
+      shell: bash
+      run: echo "dir=$(npm config get cache)" >> ${GITHUB_OUTPUT}
+
+    - name: Restore devextreme npm cache
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.npm-cache-dir.outputs.dir }}
+        key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: ${{ runner.os }}-node-modules
 
     - name: Install packages in devextreme repo
-      run: |
-        cd ../devextreme
-        npm install --no-audit --no-fund
+      working-directory: ../devextreme
+      run: npm i --no-audit --no-fund
 
     - name: Build devextreme repo
-      run: |
-        cd ../devextreme
-        npm run build-npm-devextreme
-
-    - name: Use Node.js 14
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
+      working-directory: ../devextreme
+      run: npm run build-npm-devextreme
 
     - name: Install devextreme package
-      run: |
-        cd ./packages/devextreme-angular
-        npm install --save-dev ../../../devextreme/artifacts/npm/devextreme
-        cd ../sandbox
-        npm install --save-dev ../../../devextreme/artifacts/npm/devextreme
-        cd ../../
-        npm install --save-dev ../devextreme/artifacts/npm/devextreme
+      continue-on-error: true
+      run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
 
     - name: Run npm install
-      run: npm install --no-audit --no-fund
+      run: npm i --no-audit --no-fund
 
     - name: Update metadata
-      run: |
-        npm run update-integration-meta
+      run: npm run update-integration-meta
 
     - name: Run devextreme-angular-generator tests
-      run: npx lerna run --scope devextreme-angular-generator test
+      run: npm run test --workspace=devextreme-angular-generator
 
     - name: Run lint
       run: npm run lint
 
-    - name: Build with Angular 7
+    - name: Build with Angular 12
       run: npm run build
 
-    - name: Run tests with Angular 7
-      run: npx lerna run --scope devextreme-angular gulp -- run.tests
-
-    - name: Install Angular latest
-      run: |
-        npx lerna clean --yes
-        npx lerna add @angular/animations@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@12 packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna bootstrap --no-ci
-
-    - name: Build tests with Angular latest
-      run: npx lerna run --scope devextreme-angular gulp -- build.tests
-
-    - name: Run tests with Angular latest
-      run: npx lerna run --scope devextreme-angular gulp -- run.tests
-
-    - name: Install Angular Next
-      if: false
-      run: |
-        npx lerna clean --yes
-        npx lerna add @angular/animations@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/core@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/common@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/forms@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-server@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/platform-browser-dynamic@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna add @angular/compiler-cli@next packages/devextreme-angular --dev --exact --no-bootstrap
-        npx lerna bootstrap --no-ci
-
-    - name: Build tests with Angular next
-      if: false
-      run: npx lerna run --scope devextreme-angular gulp -- build.tests
-
-    - name: Run tests with Angular Next
-      if: false
-      run: npx lerna run --scope devextreme-angular gulp -- run.tests
+    - name: Run tests with Angular 12
+      run: npm run test:dev --workspace=devextreme-angular
 
     - name: Archive internal-tools artifacts
       uses: actions/upload-artifact@v3
