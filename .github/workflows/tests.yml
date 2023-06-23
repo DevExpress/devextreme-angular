@@ -22,7 +22,7 @@ jobs:
       run: git clone -b ${{github.event.pull_request.head.ref}} https://github.com/${{github.event.pull_request.user.login}}/devextreme ../devextreme
 
     - name: Clone devextreme repo
-      run: test -d ../devextreme || git clone -b 23_1 https://github.com/devexpress/devextreme ../devextreme
+      run: test -d ../devextreme || git clone -b 23_2 https://github.com/devexpress/devextreme ../devextreme
 
     - name: Use Node.js 18
       uses: actions/setup-node@v3
