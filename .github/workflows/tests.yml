@@ -46,12 +46,16 @@ jobs:
       run: npm i --no-audit --no-fund
 
     - name: Build devextreme repo
-      working-directory: ../devextreme
+      working-directory: ../devextreme/packages/devextreme
       run: npm run build-npm-devextreme
+
+    - name: Build devextreme repo
+      working-directory: ../devextreme/packages/devextreme
+      run: npm run discover-declarations
 
     - name: Install devextreme package
       continue-on-error: true
-      run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
+      run: npm i --save-dev ../devextreme/packages/devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
 
     - name: Run npm install
       run: npm i --no-audit --no-fund
