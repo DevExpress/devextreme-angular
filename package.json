@@ -16,7 +16,7 @@
     "test:dev": "npm run test:dev --ws --if-present",
     "pack": "npm run update-integration-meta && npm run pack --ws --if-present",
     "lint": "gulp lint",
-    "update-integration-meta": "dx-tools generate-ng-smd --artifacts ../devextreme/packages/devextreme/artifacts/internal-tools --output-path ./packages/devextreme-angular/metadata/NGMetaData.json"
+    "update-integration-meta": "dx-tools generate-ng-smd --artifacts ../devextreme/artifacts/internal-tools --output-path ./packages/devextreme-angular/metadata/NGMetaData.json"
   },
   "author": "Developer Express Inc.",
   "license": "MIT",
