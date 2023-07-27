@@ -23,7 +23,7 @@ jobs:
 
     - name: Clone devextreme repo
       run: test -d ../devextreme_monorepo || git clone -b 23_2 https://github.com/devexpress/devextreme ../devextreme_monorepo
-
+#Check node 18.17
     - name: Use Node.js 18
       uses: actions/setup-node@v3
       with:
