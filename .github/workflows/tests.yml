@@ -82,6 +82,9 @@ jobs:
     - name: Run tests with Angular 12
       run: npm run test:dev --workspace=devextreme-angular
 
+    - name: Pack
+      run: npm run pack
+
     - name: Archive internal-tools artifacts
       uses: actions/upload-artifact@v3
       with:
