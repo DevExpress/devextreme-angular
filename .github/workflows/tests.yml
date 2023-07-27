@@ -23,7 +23,7 @@ jobs:
 
     - name: Clone devextreme repo
       run: test -d ../devextreme_monorepo || git clone -b 23_2 https://github.com/devexpress/devextreme ../devextreme_monorepo
-
+#Check node 18.17
     - name: Use Node.js 18
       uses: actions/setup-node@v3
       with:
@@ -81,6 +81,9 @@ jobs:
 
     - name: Run tests with Angular 12
       run: npm run test:dev --workspace=devextreme-angular
+
+    - name: Pack
+      run: npm run pack
 
     - name: Archive internal-tools artifacts
       uses: actions/upload-artifact@v3
