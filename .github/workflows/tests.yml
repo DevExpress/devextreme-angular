@@ -19,10 +19,10 @@ jobs:
     - name: Clone devextreme repo from PR author fork
       continue-on-error: true
       if: github.event_name == 'pull_request'
-      run: git clone -b ${{github.event.pull_request.head.ref}} https://github.com/${{github.event.pull_request.user.login}}/devextreme ../devextreme_monorepo
+      run: git clone -b ${{github.event.pull_request.head.ref}} https://github.com/${{github.event.pull_request.user.login}}/devextreme ../devextreme
 
     - name: Clone devextreme repo
-      run: test -d ../devextreme_monorepo || git clone -b 23_2 https://github.com/devexpress/devextreme ../devextreme_monorepo
+      run: test -d ../devextreme || git clone -b 23_2 https://github.com/devexpress/devextreme ../devextreme
 
     - name: Use Node.js 18
       uses: actions/setup-node@v3
@@ -41,28 +41,21 @@ jobs:
         key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
         restore-keys: ${{ runner.os }}-node-modules
 
-    - name: Install packages in devextreme monorepo
-      working-directory: ../devextreme_monorepo
+    - name: Install packages in devextreme repo
+      working-directory: ../devextreme
       run: npm i --no-audit --no-fund
 
     - name: Build devextreme repo
-      working-directory: ../devextreme_monorepo/packages/devextreme
+      working-directory: ../devextreme/packages/devextreme
       run: npm run build-npm-devextreme
 
-    - name: Move devextreme from packages
-      run: mv ../devextreme_monorepo/packages/devextreme ../devextreme
-
-    - name: Install packages in devextreme package
-      working-directory: ../devextreme
-      run: npm i --no-audit --no-fund
-
     - name: Discover declarations
-      working-directory: ../devextreme
+      working-directory: ../devextreme/packages/devextreme
       run: npm run discover-declarations
 
     - name: Install devextreme package
       continue-on-error: true
-      run: npm i --save-dev ../devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
+      run: npm i --save-dev ../devextreme/packages/devextreme/artifacts/npm/devextreme --workspace=devextreme-angular --workspace=devextreme-angular-sandbox
 
     - name: Run npm install
       run: npm i --no-audit --no-fund
