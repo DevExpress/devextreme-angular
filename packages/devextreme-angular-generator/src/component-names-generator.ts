@@ -2,7 +2,7 @@ import fs = require('fs');
 import path = require('path');
 
 export default class ComponentNamesGenerator {
-    private _encoding = 'utf8';
+    private _encoding: BufferEncoding = 'utf8';
 
     private _config;
 

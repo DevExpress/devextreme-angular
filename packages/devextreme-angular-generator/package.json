@@ -1,7 +1,7 @@
 {
   "author": "Developer Express Inc.",
   "name": "devextreme-angular-generator",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Angular UI and visualization components based on DevExtreme widgets",
   "repository": {
     "type": "git",
@@ -15,6 +15,7 @@
   "scripts": {
     "gulp": "npx --node-options='--max_old_space_size=8048' gulp",
     "build": "npm run gulp -- build",
+    "build:local": "npm run gulp -- build:local",
     "test": "npm run gulp -- test",
     "test:dev": "npm run gulp -- run.tests",
     "pack": "npm run gulp -- build && npm run gulp -- npm.pack"
@@ -36,7 +37,7 @@
     "@types/dot": "^1.1.5",
     "@types/jasmine": "2.8.19",
     "@types/mkdirp": "^0.5.2",
-    "@types/node": "~8.10.66",
+    "@types/node": "^18.17.5",
     "@types/yargs": "^6.6.0",
     "del": "^2.2.2",
     "gulp": "^4.0.2",

@@ -111,10 +111,10 @@ export interface IObjectStore {
 }
 
 export class FSObjectStore implements IObjectStore {
-    private _encoding = 'utf8';
+    private _encoding: BufferEncoding = 'utf8';
     read(filePath) {
         logger(`Read from file: ${filePath}`);
-        let dataString = fs.readFileSync(filePath, this._encoding);
+        let dataString = fs.readFileSync(filePath, { encoding: this._encoding });
         logger('Parse data');
         return JSON.parse(dataString);
     }

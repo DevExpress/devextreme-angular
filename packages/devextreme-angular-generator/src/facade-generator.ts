@@ -4,7 +4,7 @@ import logger from './logger';
 import inflector = require('inflector-js');
 
 export default class FacadeGenerator {
-    private _encoding = 'utf8';
+    private _encoding: BufferEncoding = 'utf8';
     generate(config) {
         Object.keys(config.facades).forEach(facadeFilePath => {
             logger('Generate facade: ' + facadeFilePath);

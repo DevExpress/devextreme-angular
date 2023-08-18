@@ -23,7 +23,7 @@ export function createTemplateFromString(templateString: string) {
 }
 
 export default class DoTGenerator {
-    private _encoding = 'utf8';
+    private _encoding: BufferEncoding = 'utf8';
     createTemplate(templateFilePath: string) {
         logger('Create doT template from ' + templateFilePath);
         let templateString = fs.readFileSync(templateFilePath, this._encoding);
@@ -63,7 +63,7 @@ export default class DoTGenerator {
                 let filePath = path.join(metadataFolderPath, fileName);
 
                 logger('Read data from ' + filePath);
-                let data = fs.readFileSync(filePath, this._encoding);
+                let data = fs.readFileSync(filePath, { encoding: this._encoding });
                 logger('Apply template');
                 let result = template(JSON.parse(data));
                 const widgetName = path.parse(filePath).name;
