@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "skipLibCheck": true,
+        "target": "ES5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "removeComments": false,
+        "declaration": true,
+        "noUnusedParameters": true,
+        "noUnusedLocals": true,
+        "lib": ["es2015", "es2015.iterable", "dom"],
+        "paths": {
+          "devextreme-angular": ["packages/devextreme-angular/src"],
+          "devextreme-angular/*": ["packages/devextreme-angular/src/*"]
+        }
+    }
+}

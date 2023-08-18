@@ -4,7 +4,7 @@ import logger from './logger';
 let inflector = require('inflector-js');
 
 export default class FacadeGenerator {
-    private _encoding = 'utf8';
+    private _encoding: BufferEncoding = 'utf8';
 
     prepareModuleName(fileName: string) {
         fileName = fileName.replace(/-/g, '_');

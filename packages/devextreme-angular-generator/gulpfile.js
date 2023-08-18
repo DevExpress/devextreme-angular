@@ -21,17 +21,18 @@ gulp.task('npm.pack', gulp.series(
 
 //------------Main------------
 
-var buildTask = gulp.series(
+var buildTask = (tsProject = 'tsconfig.json') => gulp.series(
     () => gulp.src(TEMPLATES_FILES_PATTERN).pipe(gulp.dest(path.join(DIST_PATH, 'templates'))),
     () => gulp.src(SRC_FILES_PATTERN)
         .pipe(sourcemaps.init())
-        .pipe(typescript('tsconfig.json'))
+        .pipe(typescript(tsProject))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(DIST_PATH))
 );
 
-gulp.task('build', buildTask);
-gulp.task('default', buildTask);
+gulp.task('build', buildTask());
+gulp.task('build:local', buildTask('tsconfig.local.json'));
+gulp.task('default', buildTask());
 
 
 //------------Testing------------
