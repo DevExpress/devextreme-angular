@@ -1,0 +1,190 @@
+{
+    "docID": "dxValidator",
+    "className": "DxValidator",
+    "widgetName": "dxValidator",
+    "isViz": false,
+    "isExtension": true,
+    "selector": "dx-validator",
+    "events": [
+        {
+            "docID": "DOMComponentOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "docID": "ComponentOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "docID": "DOMComponentOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "docID": "dxValidatorOptions.onValidated",
+            "emit": "onValidated",
+            "subscribe": "validated",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adapterChange",
+            "type": "EventEmitter<{ applyValidationResults?: Function, bypass?: Function, focus?: Function, getValue?: Function, reset?: Function, validationRequestsCallbacks?: Array<Function> }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationGroupChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationRulesChange",
+            "type": "EventEmitter<Array<DevExpress.common.RequiredRule | DevExpress.common.NumericRule | DevExpress.common.RangeRule | DevExpress.common.StringLengthRule | DevExpress.common.CustomRule | DevExpress.common.CompareRule | DevExpress.common.PatternRule | DevExpress.common.EmailRule | DevExpress.common.AsyncRule>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxValidatorOptions.adapter",
+            "name": "adapter",
+            "type": "{ applyValidationResults?: Function, bypass?: Function, focus?: Function, getValue?: Function, reset?: Function, validationRequestsCallbacks?: Array<Function> }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ applyValidationResults?: Function, bypass?: Function, focus?: Function, getValue?: Function, reset?: Function, validationRequestsCallbacks?: Array<Function> }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxValidatorOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxValidatorOptions.validationGroup",
+            "name": "validationGroup",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxValidatorOptions.validationRules",
+            "name": "validationRules",
+            "type": "Array<DevExpress.common.RequiredRule | DevExpress.common.NumericRule | DevExpress.common.RangeRule | DevExpress.common.StringLengthRule | DevExpress.common.CustomRule | DevExpress.common.CompareRule | DevExpress.common.PatternRule | DevExpress.common.EmailRule | DevExpress.common.AsyncRule>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.RequiredRule",
+                    "DevExpress.common.NumericRule",
+                    "DevExpress.common.RangeRule",
+                    "DevExpress.common.StringLengthRule",
+                    "DevExpress.common.CustomRule",
+                    "DevExpress.common.CompareRule",
+                    "DevExpress.common.PatternRule",
+                    "DevExpress.common.EmailRule",
+                    "DevExpress.common.AsyncRule"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/validator",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "adapter",
+            "propertyName": "adapter",
+            "className": "DxoAdapter",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "validation-rule-dxi",
+            "propertyName": "validationRules",
+            "className": "DxiValidationRule",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

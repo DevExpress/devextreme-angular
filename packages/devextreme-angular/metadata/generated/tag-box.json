@@ -1,0 +1,1456 @@
+{
+    "docID": "dxTagBox",
+    "className": "DxTagBox",
+    "widgetName": "dxTagBox",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-tag-box",
+    "events": [
+        {
+            "docID": "dxTagBoxOptions.onChange",
+            "emit": "onChange",
+            "subscribe": "change",
+            "type": "EventEmitter<ChangeEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onClosed",
+            "emit": "onClosed",
+            "subscribe": "closed",
+            "type": "EventEmitter<ClosedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onCustomItemCreating",
+            "emit": "onCustomItemCreating",
+            "subscribe": "customItemCreating",
+            "type": "EventEmitter<CustomItemCreatingEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onEnterKey",
+            "emit": "onEnterKey",
+            "subscribe": "enterKey",
+            "type": "EventEmitter<EnterKeyEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onFocusIn",
+            "emit": "onFocusIn",
+            "subscribe": "focusIn",
+            "type": "EventEmitter<FocusInEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onFocusOut",
+            "emit": "onFocusOut",
+            "subscribe": "focusOut",
+            "type": "EventEmitter<FocusOutEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onInput",
+            "emit": "onInput",
+            "subscribe": "input",
+            "type": "EventEmitter<InputEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onKeyDown",
+            "emit": "onKeyDown",
+            "subscribe": "keyDown",
+            "type": "EventEmitter<KeyDownEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onKeyUp",
+            "emit": "onKeyUp",
+            "subscribe": "keyUp",
+            "type": "EventEmitter<KeyUpEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onMultiTagPreparing",
+            "emit": "onMultiTagPreparing",
+            "subscribe": "multiTagPreparing",
+            "type": "EventEmitter<MultiTagPreparingEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onOpened",
+            "emit": "onOpened",
+            "subscribe": "opened",
+            "type": "EventEmitter<OpenedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onSelectAllValueChanged",
+            "emit": "onSelectAllValueChanged",
+            "subscribe": "selectAllValueChanged",
+            "type": "EventEmitter<SelectAllValueChangedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxTagBoxOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "acceptCustomValueChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "applyValueModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "buttonsChange",
+            "type": "EventEmitter<Array<string | DevExpress.common.TextEditorButton>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customItemCreateEventChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.CollectionWidgetItem | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "deferRenderingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "displayExprChange",
+            "type": "EventEmitter<Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownButtonTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownOptionsChange",
+            "type": "EventEmitter<dxPopupOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fieldTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideSelectedItemsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "inputAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isValidChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<any | { disabled?: boolean, html?: string, template?: any, text?: string, visible?: boolean }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxDisplayedTagsChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxFilterQueryLengthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxLengthChange",
+            "type": "EventEmitter<number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minSearchLengthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "multilineChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "noDataTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openOnFieldClickChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "placeholderChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchExprChange",
+            "type": "EventEmitter<Function | string | Array<Function | string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchTimeoutChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectAllModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectAllTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemsChange",
+            "type": "EventEmitter<Array<string | number | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showClearButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showDataBeforeSearchChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showDropDownButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showMultiTagOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showSelectionControlsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stylingModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tagTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "textChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useItemTextAsTitleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessageModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessagePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationStatusChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<Array<string | number | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChangeEventChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "wrapItemTextChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxSelectBoxOptions.acceptCustomValue",
+            "name": "acceptCustomValue",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.applyValueMode",
+            "name": "applyValueMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.buttons",
+            "name": "buttons",
+            "type": "Array<string | DevExpress.common.TextEditorButton>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.common.TextEditorButton"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSelectBoxOptions.customItemCreateEvent",
+            "name": "customItemCreateEvent",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DataExpressionMixinOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.CollectionWidgetItem | any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "DevExpress.ui.CollectionWidgetItem",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDropDownEditorOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DataExpressionMixinOptions.displayExpr",
+            "name": "displayExpr",
+            "type": "Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.dropDownButtonTemplate",
+            "name": "dropDownButtonTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSelectBoxOptions.dropDownOptions",
+            "name": "dropDownOptions",
+            "type": "dxPopupOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxPopupOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSelectBoxOptions.fieldTemplate",
+            "name": "fieldTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.grouped",
+            "name": "grouped",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.groupTemplate",
+            "name": "groupTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.hideSelectedItems",
+            "name": "hideSelectedItems",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.inputAttr",
+            "name": "inputAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DataExpressionMixinOptions.items",
+            "name": "items",
+            "type": "Array<any | { disabled?: boolean, html?: string, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ disabled?: boolean, html?: string, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DataExpressionMixinOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.label",
+            "name": "label",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.labelMode",
+            "name": "labelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.maxDisplayedTags",
+            "name": "maxDisplayedTags",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.maxFilterQueryLength",
+            "name": "maxFilterQueryLength",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.maxLength",
+            "name": "maxLength",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.minSearchLength",
+            "name": "minSearchLength",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.multiline",
+            "name": "multiline",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.noDataText",
+            "name": "noDataText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.opened",
+            "name": "opened",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSelectBoxOptions.openOnFieldClick",
+            "name": "openOnFieldClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSelectBoxOptions.placeholder",
+            "name": "placeholder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.searchEnabled",
+            "name": "searchEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.searchExpr",
+            "name": "searchExpr",
+            "type": "Function | string | Array<Function | string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "Function",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDropDownListOptions.searchMode",
+            "name": "searchMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.searchTimeout",
+            "name": "searchTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.selectAllMode",
+            "name": "selectAllMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.selectAllText",
+            "name": "selectAllText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.selectedItems",
+            "name": "selectedItems",
+            "type": "Array<string | number | any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "number",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxTextEditorOptions.showClearButton",
+            "name": "showClearButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.showDataBeforeSearch",
+            "name": "showDataBeforeSearch",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.showDropDownButton",
+            "name": "showDropDownButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.showMultiTagOnly",
+            "name": "showMultiTagOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSelectBoxOptions.showSelectionControls",
+            "name": "showSelectionControls",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.stylingMode",
+            "name": "stylingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.tagTemplate",
+            "name": "tagTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.text",
+            "name": "text",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.useItemTextAsTitle",
+            "name": "useItemTextAsTitle",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTagBoxOptions.value",
+            "name": "value",
+            "type": "Array<string | number | any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "number",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSelectBoxOptions.valueChangeEvent",
+            "isDeprecated": true,
+            "name": "valueChangeEvent",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DataExpressionMixinOptions.valueExpr",
+            "name": "valueExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownListOptions.wrapItemText",
+            "name": "wrapItemText",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/ui/tag_box",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/popup",
+            "importString": "{ Properties as dxPopupOptions }"
+        },
+        {
+            "path": "devextreme/ui/tag_box",
+            "importString": "{ ChangeEvent, ClosedEvent, ContentReadyEvent, CustomItemCreatingEvent, DisposingEvent, EnterKeyEvent, FocusInEvent, FocusOutEvent, InitializedEvent, InputEvent, ItemClickEvent, KeyDownEvent, KeyUpEvent, MultiTagPreparingEvent, OpenedEvent, OptionChangedEvent, SelectAllValueChangedEvent, SelectionChangedEvent, ValueChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "button-dxi",
+            "propertyName": "buttons",
+            "className": "DxiButton",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "options",
+            "propertyName": "options",
+            "className": "DxoOptions",
+            "events": []
+        },
+        {
+            "path": "drop-down-options",
+            "propertyName": "dropDownOptions",
+            "className": "DxoDropDownOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "positionChange",
+                    "type": "EventEmitter<DevExpress.PositionConfig | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.PositionConfig",
+                            "Function",
+                            "string"
+                        ],
+                        "ComplexTypes": [
+                            "PositionConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.position"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxOverlayOptions.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.width"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": []
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": []
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "toolbar-item-dxi",
+            "propertyName": "toolbarItems",
+            "className": "DxiToolbarItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true,
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

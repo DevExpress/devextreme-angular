@@ -1,0 +1,359 @@
+{
+    "docID": "dxRangeSelectorOptions.chart",
+    "className": "DxoChart",
+    "selector": "dxo-chart",
+    "optionName": "chart",
+    "properties": [
+        {
+            "docID": "dxRangeSelectorOptions.chart.barGroupPadding",
+            "name": "barGroupPadding",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.barGroupWidth",
+            "name": "barGroupWidth",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.bottomIndent",
+            "name": "bottomIndent",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.commonSeriesSettings",
+            "name": "commonSeriesSettings",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.dataPrepareSettings",
+            "name": "dataPrepareSettings",
+            "type": "{ checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.maxBubbleSize",
+            "name": "maxBubbleSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.minBubbleSize",
+            "name": "minBubbleSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.negativesAsZeroes",
+            "name": "negativesAsZeroes",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.series",
+            "name": "series",
+            "type": "any | undefined | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.seriesTemplate",
+            "name": "seriesTemplate",
+            "type": "{ customizeSeries?: Function, nameField?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customizeSeries?: Function, nameField?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.topIndent",
+            "name": "topIndent",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart.valueAxis",
+            "name": "valueAxis",
+            "type": "{ inverted?: boolean, logarithmBase?: number, max?: number | undefined, min?: number | undefined, type?: string | undefined, valueType?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ inverted?: boolean, logarithmBase?: number, max?: number | undefined, min?: number | undefined, type?: string | undefined, valueType?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "chart",
+    "propertyName": "chart",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiSeries",
+            "path": "series-dxi",
+            "propertyName": "series"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.barGroupPadding"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.barGroupWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.bottomIndent"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "ComplexTypes": [
+                "ChartCommonSeriesSettings"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.commonSeriesSettings"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.chart.dataPrepareSettings",
+            "Options": {
+                "checkTypeForAllData": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.dataPrepareSettings.checkTypeForAllData"
+                },
+                "convertToAxisDataType": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.dataPrepareSettings.convertToAxisDataType"
+                },
+                "sortingMethod": {
+                    "PrimitiveTypes": [
+                        "boolean",
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxRangeSelectorOptions.chart.dataPrepareSettings.sortingMethod"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.maxBubbleSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.minBubbleSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.negativesAsZeroes"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "palette",
+            "DocID": "dxRangeSelectorOptions.chart.palette"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.paletteExtensionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "ComplexTypes": [
+                "ChartSeries"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "ChartSeries"
+            ],
+            "IsCollection": true,
+            "SingularName": "series",
+            "DocID": "dxRangeSelectorOptions.chart.series"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.chart.seriesTemplate",
+            "Options": {
+                "customizeSeries": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxRangeSelectorOptions.chart.seriesTemplate.customizeSeries"
+                },
+                "nameField": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.seriesTemplate.nameField"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.chart.topIndent"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.chart.valueAxis",
+            "Options": {
+                "inverted": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.inverted"
+                },
+                "logarithmBase": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.logarithmBase"
+                },
+                "max": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.max"
+                },
+                "min": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.min"
+                },
+                "type": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.type"
+                },
+                "valueType": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.chart.valueAxis.valueType"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

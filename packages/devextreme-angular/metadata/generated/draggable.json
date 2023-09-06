@@ -1,0 +1,342 @@
+{
+    "docID": "dxDraggable",
+    "className": "DxDraggable",
+    "widgetName": "dxDraggable",
+    "isTranscludedContent": true,
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-draggable",
+    "events": [
+        {
+            "docID": "dxDraggableOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxDraggableOptions.onDragEnd",
+            "emit": "onDragEnd",
+            "subscribe": "dragEnd",
+            "type": "EventEmitter<DragEndEvent>"
+        },
+        {
+            "docID": "dxDraggableOptions.onDragMove",
+            "emit": "onDragMove",
+            "subscribe": "dragMove",
+            "type": "EventEmitter<DragMoveEvent>"
+        },
+        {
+            "docID": "dxDraggableOptions.onDragStart",
+            "emit": "onDragStart",
+            "subscribe": "dragStart",
+            "type": "EventEmitter<DragStartEvent>"
+        },
+        {
+            "docID": "dxDraggableOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxDraggableOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoScrollChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "boundaryChange",
+            "type": "EventEmitter<string | UserDefinedElement | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cloneChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "containerChange",
+            "type": "EventEmitter<string | UserDefinedElement | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cursorOffsetChange",
+            "type": "EventEmitter<string | { x?: number, y?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dragDirectionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dragTemplateChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "handleChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollSensitivityChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollSpeedChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "DraggableBaseOptions.autoScroll",
+            "name": "autoScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.boundary",
+            "name": "boundary",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDraggableOptions.clone",
+            "name": "clone",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.cursorOffset",
+            "name": "cursorOffset",
+            "type": "string | { x?: number, y?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ x?: number, y?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.data",
+            "name": "data",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.dragDirection",
+            "name": "dragDirection",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDraggableOptions.dragTemplate",
+            "name": "dragTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.group",
+            "name": "group",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.handle",
+            "name": "handle",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.scrollSensitivity",
+            "name": "scrollSensitivity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.scrollSpeed",
+            "name": "scrollSpeed",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/draggable",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/ui/draggable",
+            "importString": "{ DisposingEvent, DragEndEvent, DragMoveEvent, DragStartEvent, InitializedEvent, OptionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "cursor-offset",
+            "propertyName": "cursorOffset",
+            "className": "DxoCursorOffset",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

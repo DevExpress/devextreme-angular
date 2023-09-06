@@ -1,0 +1,603 @@
+{
+    "docID": "dxVectorMapOptions.layers",
+    "className": "DxiLayer",
+    "selector": "dxi-layer",
+    "optionName": "layers",
+    "properties": [
+        {
+            "docID": "dxVectorMapOptions.layers.borderColor",
+            "name": "borderColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.borderWidth",
+            "name": "borderWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.colorGroupingField",
+            "name": "colorGroupingField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.colorGroups",
+            "name": "colorGroups",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.customize",
+            "name": "customize",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.dataField",
+            "name": "dataField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.dataSource",
+            "name": "dataSource",
+            "type": "any | DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.elementType",
+            "name": "elementType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.hoveredBorderColor",
+            "name": "hoveredBorderColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.hoveredBorderWidth",
+            "name": "hoveredBorderWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.hoveredColor",
+            "name": "hoveredColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.hoverEnabled",
+            "name": "hoverEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.label",
+            "name": "label",
+            "type": "{ dataField?: string, enabled?: boolean, font?: Font }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ dataField?: string, enabled?: boolean, font?: Font }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.maxSize",
+            "name": "maxSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.minSize",
+            "name": "minSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.opacity",
+            "name": "opacity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.paletteIndex",
+            "name": "paletteIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.paletteSize",
+            "name": "paletteSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.selectedBorderColor",
+            "name": "selectedBorderColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.selectedBorderWidth",
+            "name": "selectedBorderWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.selectedColor",
+            "name": "selectedColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.size",
+            "name": "size",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.sizeGroupingField",
+            "name": "sizeGroupingField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.sizeGroups",
+            "name": "sizeGroups",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.layers.type",
+            "name": "type",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "layer-dxi",
+    "propertyName": "layers",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.borderColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.borderWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxVectorMapOptions.layers.colorGroupingField"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "colorGroup",
+            "DocID": "dxVectorMapOptions.layers.colorGroups"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxVectorMapOptions.layers.customize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxVectorMapOptions.layers.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxVectorMapOptions.layers.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.elementType"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.hoveredBorderColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.hoveredBorderWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.hoveredColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxVectorMapOptions.layers.hoverEnabled"
+        },
+        {
+            "DocID": "dxVectorMapOptions.layers.label",
+            "Options": {
+                "dataField": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxVectorMapOptions.layers.label.dataField"
+                },
+                "enabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxVectorMapOptions.layers.label.enabled"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxVectorMapOptions.layers.label.font"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.maxSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.minSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.opacity"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "palette",
+            "DocID": "dxVectorMapOptions.layers.palette"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.paletteIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.paletteSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.selectedBorderColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.selectedBorderWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.selectedColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.selectionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxVectorMapOptions.layers.size"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxVectorMapOptions.layers.sizeGroupingField"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "sizeGroup",
+            "DocID": "dxVectorMapOptions.layers.sizeGroups"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.layers.type"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,61 @@
+{
+    "docID": "dxDiagramOptions.gridSize",
+    "className": "DxoGridSize",
+    "selector": "dxo-grid-size",
+    "optionName": "gridSize",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.gridSize.items",
+            "name": "items",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.gridSize.value",
+            "name": "value",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<number>"
+        }
+    ],
+    "path": "grid-size",
+    "propertyName": "gridSize",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxDiagramOptions.gridSize.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDiagramOptions.gridSize.value"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

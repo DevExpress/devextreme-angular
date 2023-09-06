@@ -1,0 +1,626 @@
+{
+    "docID": "dxTooltip",
+    "className": "DxTooltip",
+    "widgetName": "dxTooltip",
+    "isTranscludedContent": true,
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-tooltip",
+    "events": [
+        {
+            "docID": "dxTooltipOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onHidden",
+            "emit": "onHidden",
+            "subscribe": "hidden",
+            "type": "EventEmitter<HiddenEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onHiding",
+            "emit": "onHiding",
+            "subscribe": "hiding",
+            "type": "EventEmitter<HidingEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onShowing",
+            "emit": "onShowing",
+            "subscribe": "showing",
+            "type": "EventEmitter<ShowingEvent>"
+        },
+        {
+            "docID": "dxTooltipOptions.onShown",
+            "emit": "onShown",
+            "subscribe": "shown",
+            "type": "EventEmitter<ShownEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "animationChange",
+            "type": "EventEmitter<{ hide?: AnimationConfig, show?: AnimationConfig }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "closeOnOutsideClickChange",
+            "type": "EventEmitter<boolean | Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "containerChange",
+            "type": "EventEmitter<string | UserDefinedElement | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "contentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "copyRootClassesToWrapperChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "deferRenderingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideEventChange",
+            "type": "EventEmitter<string | undefined | { delay?: number | undefined, name?: string | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideOnOutsideClickChange",
+            "type": "EventEmitter<boolean | Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideOnParentScrollChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxHeightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxWidthChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minHeightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minWidthChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "positionChange",
+            "type": "EventEmitter<DevExpress.PositionConfig | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "shadingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "shadingColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showEventChange",
+            "type": "EventEmitter<string | undefined | { delay?: number | undefined, name?: string | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "targetChange",
+            "type": "EventEmitter<string | UserDefinedElement | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "wrapperAttrChange",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxPopoverOptions.animation",
+            "name": "animation",
+            "type": "{ hide?: AnimationConfig, show?: AnimationConfig }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ hide?: AnimationConfig, show?: AnimationConfig }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.closeOnOutsideClick",
+            "isDeprecated": true,
+            "name": "closeOnOutsideClick",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopupOptions.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.contentTemplate",
+            "name": "contentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.copyRootClassesToWrapper",
+            "isDeprecated": true,
+            "name": "copyRootClassesToWrapper",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.elementAttr",
+            "isDeprecated": true,
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.height",
+            "name": "height",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.hideEvent",
+            "name": "hideEvent",
+            "type": "string | undefined | { delay?: number | undefined, name?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined",
+                    "{ delay?: number | undefined, name?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.hideOnOutsideClick",
+            "name": "hideOnOutsideClick",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.hideOnParentScroll",
+            "name": "hideOnParentScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.maxHeight",
+            "name": "maxHeight",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.maxWidth",
+            "name": "maxWidth",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.minHeight",
+            "name": "minHeight",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.minWidth",
+            "name": "minWidth",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.position",
+            "name": "position",
+            "type": "DevExpress.PositionConfig | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.PositionConfig",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.shading",
+            "name": "shading",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.shadingColor",
+            "name": "shadingColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.showEvent",
+            "name": "showEvent",
+            "type": "string | undefined | { delay?: number | undefined, name?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined",
+                    "{ delay?: number | undefined, name?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.target",
+            "name": "target",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPopoverOptions.width",
+            "name": "width",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.wrapperAttr",
+            "name": "wrapperAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/tooltip",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/animation/fx",
+            "importString": "{ AnimationConfig }"
+        },
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/ui/tooltip",
+            "importString": "{ ContentReadyEvent, DisposingEvent, HiddenEvent, HidingEvent, InitializedEvent, OptionChangedEvent, ShowingEvent, ShownEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "hide-event",
+            "propertyName": "hideEvent",
+            "className": "DxoHideEvent",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "show-event",
+            "propertyName": "showEvent",
+            "className": "DxoShowEvent",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

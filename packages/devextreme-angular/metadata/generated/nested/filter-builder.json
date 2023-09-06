@@ -1,0 +1,1434 @@
+{
+    "docID": "GridBaseOptions.filterBuilder",
+    "className": "DxoFilterBuilder",
+    "selector": "dxo-filter-builder",
+    "optionName": "filterBuilder",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "path": "filter-builder",
+    "propertyName": "filterBuilder",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiCustomOperation",
+            "path": "custom-operation-dxi",
+            "propertyName": "customOperations"
+        },
+        {
+            "className": "DxiField",
+            "path": "field-dxi",
+            "propertyName": "fields"
+        }
+    ],
+    "baseClass": "DxoFilterBuilderOptions",
+    "basePath": "./base/filter-builder-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFilterBuilderOptions.allowHierarchicalFields"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFilterBuilderCustomOperation"
+            ],
+            "ItemComplexTypes": [
+                "FilterBuilderCustomOperation"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "customOperation",
+            "DocID": "dxFilterBuilderOptions.customOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFilterBuilderField"
+            ],
+            "ItemComplexTypes": [
+                "FilterBuilderField"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "field",
+            "DocID": "dxFilterBuilderOptions.fields"
+        },
+        {
+            "DocID": "dxFilterBuilderOptions.filterOperationDescriptions",
+            "Options": {
+                "between": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.between"
+                },
+                "contains": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.contains"
+                },
+                "endsWith": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.endsWith"
+                },
+                "equal": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.equal"
+                },
+                "greaterThan": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThan"
+                },
+                "greaterThanOrEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThanOrEqual"
+                },
+                "isBlank": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isBlank"
+                },
+                "isNotBlank": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isNotBlank"
+                },
+                "lessThan": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThan"
+                },
+                "lessThanOrEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThanOrEqual"
+                },
+                "notContains": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notContains"
+                },
+                "notEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notEqual"
+                },
+                "startsWith": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.startsWith"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.focusStateEnabled"
+        },
+        {
+            "DocID": "dxFilterBuilderOptions.groupOperationDescriptions",
+            "Options": {
+                "and": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.and"
+                },
+                "notAnd": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notAnd"
+                },
+                "notOr": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notOr"
+                },
+                "or": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.or"
+                }
+            }
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "groupOperation",
+            "DocID": "dxFilterBuilderOptions.groupOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderOptions.maxGroupLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EditorPreparedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "EditorPreparedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onEditorPrepared"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EditorPreparingEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "EditorPreparingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onEditorPreparing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsFilterExpr": true,
+            "IsChangeable": true,
+            "DocID": "dxFilterBuilderOptions.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFilterBuilderOptions.allowHierarchicalFields"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFilterBuilderCustomOperation"
+            ],
+            "ItemComplexTypes": [
+                "FilterBuilderCustomOperation"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "customOperation",
+            "DocID": "dxFilterBuilderOptions.customOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFilterBuilderField"
+            ],
+            "ItemComplexTypes": [
+                "FilterBuilderField"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "field",
+            "DocID": "dxFilterBuilderOptions.fields"
+        },
+        {
+            "DocID": "dxFilterBuilderOptions.filterOperationDescriptions",
+            "Options": {
+                "between": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.between"
+                },
+                "contains": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.contains"
+                },
+                "endsWith": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.endsWith"
+                },
+                "equal": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.equal"
+                },
+                "greaterThan": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThan"
+                },
+                "greaterThanOrEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThanOrEqual"
+                },
+                "isBlank": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isBlank"
+                },
+                "isNotBlank": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isNotBlank"
+                },
+                "lessThan": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThan"
+                },
+                "lessThanOrEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThanOrEqual"
+                },
+                "notContains": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notContains"
+                },
+                "notEqual": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notEqual"
+                },
+                "startsWith": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.startsWith"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.focusStateEnabled"
+        },
+        {
+            "DocID": "dxFilterBuilderOptions.groupOperationDescriptions",
+            "Options": {
+                "and": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.and"
+                },
+                "notAnd": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notAnd"
+                },
+                "notOr": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notOr"
+                },
+                "or": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.or"
+                }
+            }
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "groupOperation",
+            "DocID": "dxFilterBuilderOptions.groupOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderOptions.maxGroupLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EditorPreparedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "EditorPreparedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onEditorPrepared"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EditorPreparingEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "EditorPreparingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onEditorPreparing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/filter_builder"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFilterBuilderOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsFilterExpr": true,
+            "IsChangeable": true,
+            "DocID": "dxFilterBuilderOptions.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.activeStateEnabled"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.allowHierarchicalFields",
+            "name": "allowHierarchicalFields",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFilterBuilderOptions.allowHierarchicalFields"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.customOperations",
+            "name": "customOperations",
+            "type": "Array<DevExpress.ui.dxFilterBuilderCustomOperation>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFilterBuilderCustomOperation"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFilterBuilderCustomOperation"
+                ],
+                "ItemComplexTypes": [
+                    "FilterBuilderCustomOperation"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "customOperation",
+                "DocID": "dxFilterBuilderOptions.customOperations"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.fields",
+            "name": "fields",
+            "type": "Array<DevExpress.ui.dxFilterBuilderField>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFilterBuilderField"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFilterBuilderField"
+                ],
+                "ItemComplexTypes": [
+                    "FilterBuilderField"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "field",
+                "DocID": "dxFilterBuilderOptions.fields"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFilterBuilderOptions.filterOperationDescriptions",
+            "name": "filterOperationDescriptions",
+            "type": "{ between?: string, contains?: string, endsWith?: string, equal?: string, greaterThan?: string, greaterThanOrEqual?: string, isBlank?: string, isNotBlank?: string, lessThan?: string, lessThanOrEqual?: string, notContains?: string, notEqual?: string, startsWith?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ between?: string, contains?: string, endsWith?: string, equal?: string, greaterThan?: string, greaterThanOrEqual?: string, isBlank?: string, isNotBlank?: string, lessThan?: string, lessThanOrEqual?: string, notContains?: string, notEqual?: string, startsWith?: string }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxFilterBuilderOptions.filterOperationDescriptions",
+                "Options": {
+                    "between": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.between"
+                    },
+                    "contains": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.contains"
+                    },
+                    "endsWith": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.endsWith"
+                    },
+                    "equal": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.equal"
+                    },
+                    "greaterThan": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThan"
+                    },
+                    "greaterThanOrEqual": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.greaterThanOrEqual"
+                    },
+                    "isBlank": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isBlank"
+                    },
+                    "isNotBlank": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.isNotBlank"
+                    },
+                    "lessThan": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThan"
+                    },
+                    "lessThanOrEqual": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.lessThanOrEqual"
+                    },
+                    "notContains": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notContains"
+                    },
+                    "notEqual": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.notEqual"
+                    },
+                    "startsWith": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.filterOperationDescriptions.startsWith"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "WidgetOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.groupOperationDescriptions",
+            "name": "groupOperationDescriptions",
+            "type": "{ and?: string, notAnd?: string, notOr?: string, or?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ and?: string, notAnd?: string, notOr?: string, or?: string }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxFilterBuilderOptions.groupOperationDescriptions",
+                "Options": {
+                    "and": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.and"
+                    },
+                    "notAnd": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notAnd"
+                    },
+                    "notOr": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.notOr"
+                    },
+                    "or": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFilterBuilderOptions.groupOperationDescriptions.or"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.groupOperations",
+            "name": "groupOperations",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "groupOperation",
+                "DocID": "dxFilterBuilderOptions.groupOperations"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.maxGroupLevel",
+            "name": "maxGroupLevel",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "dxFilterBuilderOptions.maxGroupLevel"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "((e: ContentReadyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ContentReadyEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "ContentReadyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onEditorPrepared",
+            "name": "onEditorPrepared",
+            "type": "((e: EditorPreparedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "EditorPreparedEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "EditorPreparedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onEditorPrepared"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onEditorPreparing",
+            "name": "onEditorPreparing",
+            "type": "((e: EditorPreparingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "EditorPreparingEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "EditorPreparingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onEditorPreparing"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.onValueChanged",
+            "name": "onValueChanged",
+            "type": "((e: ValueChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ValueChangedEvent",
+                        "Path": "ui/filter_builder"
+                    }
+                ],
+                "EventArgName": "ValueChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFilterBuilderOptions.onValueChanged"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderOptions.value",
+            "name": "value",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsFilterExpr": true,
+                "IsChangeable": true,
+                "DocID": "dxFilterBuilderOptions.value"
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

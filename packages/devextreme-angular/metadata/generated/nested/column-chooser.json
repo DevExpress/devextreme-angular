@@ -1,0 +1,413 @@
+{
+    "docID": "GridBaseOptions.columnChooser",
+    "className": "DxoColumnChooser",
+    "selector": "dxo-column-chooser",
+    "optionName": "columnChooser",
+    "properties": [
+        {
+            "docID": "GridBaseOptions.columnChooser.allowSearch",
+            "isDeprecated": true,
+            "name": "allowSearch",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.emptyPanelText",
+            "name": "emptyPanelText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.height",
+            "name": "height",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.mode",
+            "name": "mode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.position",
+            "name": "position",
+            "type": "PositionConfig | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "PositionConfig",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.search",
+            "name": "search",
+            "type": "ColumnChooserSearchConfig",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "ColumnChooserSearchConfig"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.searchTimeout",
+            "isDeprecated": true,
+            "name": "searchTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.selection",
+            "name": "selection",
+            "type": "ColumnChooserSelectionConfig",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "ColumnChooserSelectionConfig"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.sortOrder",
+            "name": "sortOrder",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.title",
+            "name": "title",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "column-chooser",
+    "propertyName": "columnChooser",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/animation/position",
+            "importString": "{ PositionConfig }"
+        },
+        {
+            "path": "devextreme/common/grids",
+            "importString": "{ ColumnChooserSearchConfig, ColumnChooserSelectionConfig }"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.columnChooser.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.emptyPanelText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "PositionConfig",
+                "undefined"
+            ],
+            "ComplexTypes": [
+                "PositionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "PositionConfig",
+                    "Path": "animation/position"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "ColumnChooserSearchConfig"
+            ],
+            "ComplexTypes": [
+                "ColumnChooserSearchConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ColumnChooserSearchConfig",
+                    "Path": "common/grids"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.search"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.columnChooser.searchTimeout"
+        },
+        {
+            "PrimitiveTypes": [
+                "ColumnChooserSelectionConfig"
+            ],
+            "ComplexTypes": [
+                "ColumnChooserSelectionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ColumnChooserSelectionConfig",
+                    "Path": "common/grids"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.selection"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.columnChooser.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.emptyPanelText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "PositionConfig",
+                "undefined"
+            ],
+            "ComplexTypes": [
+                "PositionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "PositionConfig",
+                    "Path": "animation/position"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "ColumnChooserSearchConfig"
+            ],
+            "ComplexTypes": [
+                "ColumnChooserSearchConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ColumnChooserSearchConfig",
+                    "Path": "common/grids"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.search"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.columnChooser.searchTimeout"
+        },
+        {
+            "PrimitiveTypes": [
+                "ColumnChooserSelectionConfig"
+            ],
+            "ComplexTypes": [
+                "ColumnChooserSelectionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ColumnChooserSelectionConfig",
+                    "Path": "common/grids"
+                }
+            ],
+            "DocID": "GridBaseOptions.columnChooser.selection"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.columnChooser.width"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

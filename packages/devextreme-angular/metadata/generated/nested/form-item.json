@@ -1,0 +1,666 @@
+{
+    "docID": "GridBaseColumn.formItem",
+    "className": "DxoFormItem",
+    "selector": "dxo-form-item",
+    "optionName": "formItem",
+    "path": "form-item",
+    "propertyName": "formItem",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiValidationRule",
+            "path": "validation-rule-dxi",
+            "propertyName": "validationRules"
+        }
+    ],
+    "baseClass": "DxoFormSimpleItem",
+    "basePath": "./base/form-simple-item",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.colSpan"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFormSimpleItem.editorType"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.helpText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.isRequired"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFormSimpleItem.itemType"
+        },
+        {
+            "DocID": "dxFormSimpleItem.label",
+            "Options": {
+                "alignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.alignment"
+                },
+                "location": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.location"
+                },
+                "showColon": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.showColon"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxFormSimpleItem.label.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormSimpleItem.template"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "dxFormSimpleItem.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormSimpleItem.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.colSpan"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFormSimpleItem.editorType"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.helpText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.isRequired"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFormSimpleItem.itemType"
+        },
+        {
+            "DocID": "dxFormSimpleItem.label",
+            "Options": {
+                "alignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.alignment"
+                },
+                "location": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.location"
+                },
+                "showColon": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.showColon"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxFormSimpleItem.label.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFormSimpleItem.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormSimpleItem.template"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "dxFormSimpleItem.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormSimpleItem.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFormSimpleItem.visibleIndex"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxFormSimpleItem.colSpan",
+            "name": "colSpan",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.colSpan"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.cssClass",
+            "name": "cssClass",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.cssClass"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.dataField",
+            "name": "dataField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.dataField"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.editorOptions",
+            "name": "editorOptions",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.editorOptions"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.editorType",
+            "name": "editorType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFormSimpleItem.editorType"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.helpText",
+            "name": "helpText",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.helpText"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.isRequired",
+            "name": "isRequired",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.isRequired"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.itemType",
+            "name": "itemType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFormSimpleItem.itemType"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.label",
+            "name": "label",
+            "type": "{ alignment?: string, location?: string, showColon?: boolean, template?: any, text?: string | undefined, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ alignment?: string, location?: string, showColon?: boolean, template?: any, text?: string | undefined, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxFormSimpleItem.label",
+                "Options": {
+                    "alignment": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFormSimpleItem.label.alignment"
+                    },
+                    "location": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxFormSimpleItem.label.location"
+                    },
+                    "showColon": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxFormSimpleItem.label.showColon"
+                    },
+                    "template": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "dxFormSimpleItem.label.template"
+                    },
+                    "text": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "DocID": "dxFormSimpleItem.label.text"
+                    },
+                    "visible": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxFormSimpleItem.label.visible"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.name",
+            "name": "name",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.name"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.template",
+            "name": "template",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxFormSimpleItem.template"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.validationRules",
+            "name": "validationRules",
+            "type": "Array<DevExpress.common.RequiredRule | DevExpress.common.NumericRule | DevExpress.common.RangeRule | DevExpress.common.StringLengthRule | DevExpress.common.CustomRule | DevExpress.common.CompareRule | DevExpress.common.PatternRule | DevExpress.common.EmailRule | DevExpress.common.AsyncRule>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.RequiredRule",
+                    "DevExpress.common.NumericRule",
+                    "DevExpress.common.RangeRule",
+                    "DevExpress.common.StringLengthRule",
+                    "DevExpress.common.CustomRule",
+                    "DevExpress.common.CompareRule",
+                    "DevExpress.common.PatternRule",
+                    "DevExpress.common.EmailRule",
+                    "DevExpress.common.AsyncRule"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.common.RequiredRule",
+                    "DevExpress.common.NumericRule",
+                    "DevExpress.common.RangeRule",
+                    "DevExpress.common.StringLengthRule",
+                    "DevExpress.common.CustomRule",
+                    "DevExpress.common.CompareRule",
+                    "DevExpress.common.PatternRule",
+                    "DevExpress.common.EmailRule",
+                    "DevExpress.common.AsyncRule"
+                ],
+                "ItemComplexTypes": [
+                    "RequiredRule",
+                    "NumericRule",
+                    "RangeRule",
+                    "StringLengthRule",
+                    "CustomRule",
+                    "CompareRule",
+                    "PatternRule",
+                    "EmailRule",
+                    "AsyncRule"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "validationRule",
+                "DocID": "dxFormSimpleItem.validationRules"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFormSimpleItem.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFormSimpleItem.visible"
+            }
+        },
+        {
+            "docID": "dxFormSimpleItem.visibleIndex",
+            "name": "visibleIndex",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "dxFormSimpleItem.visibleIndex"
+            }
+        }
+    ]
+}

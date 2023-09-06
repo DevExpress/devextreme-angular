@@ -1,0 +1,101 @@
+{
+    "docID": "GridBaseOptions.paging",
+    "className": "DxoPaging",
+    "selector": "dxo-paging",
+    "optionName": "paging",
+    "properties": [
+        {
+            "docID": "GridBaseOptions.paging.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.paging.pageIndex",
+            "name": "pageIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.paging.pageSize",
+            "name": "pageSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "pageIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageSizeChange",
+            "type": "EventEmitter<number>"
+        }
+    ],
+    "path": "paging",
+    "propertyName": "paging",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.paging.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.paging.pageIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.paging.pageSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTreeListOptions.paging.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.paging.pageIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.paging.pageSize"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

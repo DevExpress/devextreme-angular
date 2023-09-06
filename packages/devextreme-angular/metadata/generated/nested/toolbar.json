@@ -1,0 +1,331 @@
+{
+    "docID": "dxDataGridOptions.toolbar",
+    "className": "DxoToolbar",
+    "selector": "dxo-toolbar",
+    "optionName": "toolbar",
+    "path": "toolbar",
+    "propertyName": "toolbar",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        },
+        {
+            "className": "DxiFileSelectionItem",
+            "path": "file-selection-item-dxi",
+            "propertyName": "fileSelectionItems"
+        }
+    ],
+    "baseClass": "DxoDataGridToolbar",
+    "basePath": "./base/data-grid-toolbar",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridToolbar.disabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDataGrid.dxDataGridToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DataGridToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxDataGridToolbar.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxDataGridToolbar.visible"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFileManagerToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "FileManagerToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "fileSelectionItem",
+            "DocID": "dxFileManagerToolbar.fileSelectionItems"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFileManagerToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "FileManagerToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFileManagerToolbar.items"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxGanttToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "GanttToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxGanttToolbar.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxHtmlEditorToolbar.container"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxHtmlEditorToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "HtmlEditorToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxHtmlEditorToolbar.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxHtmlEditorToolbar.multiline"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTreeListToolbar.disabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxTreeList.dxTreeListToolbarItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "TreeListToolbarItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxTreeListToolbar.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxTreeListToolbar.visible"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxDataGridToolbar.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDataGridToolbar.disabled"
+            }
+        },
+        {
+            "docID": "dxDataGridToolbar.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | string | DevExpress.ui.dxFileManagerToolbarItem | DevExpress.ui.dxGanttToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDataGrid.dxDataGridToolbarItem",
+                    "string",
+                    "DevExpress.ui.dxFileManagerToolbarItem",
+                    "DevExpress.ui.dxGanttToolbarItem",
+                    "DevExpress.ui.dxHtmlEditorToolbarItem",
+                    "DevExpress.ui.dxTreeList.dxTreeListToolbarItem"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxDataGrid.dxDataGridToolbarItem",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "DataGridToolbarItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "item",
+                "DocID": "dxDataGridToolbar.items"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDataGridToolbar.visible",
+            "name": "visible",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "DocID": "dxDataGridToolbar.visible"
+            }
+        },
+        {
+            "docID": "dxFileManagerToolbar.fileSelectionItems",
+            "name": "fileSelectionItems",
+            "type": "Array<DevExpress.ui.dxFileManagerToolbarItem | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFileManagerToolbarItem",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFileManagerToolbarItem",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "FileManagerToolbarItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "fileSelectionItem",
+                "DocID": "dxFileManagerToolbar.fileSelectionItems"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorToolbar.container",
+            "name": "container",
+            "type": "string | UserDefinedElement",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "dxHtmlEditorToolbar.container"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorToolbar.multiline",
+            "name": "multiline",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxHtmlEditorToolbar.multiline"
+            }
+        }
+    ]
+}

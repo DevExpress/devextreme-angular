@@ -1,0 +1,380 @@
+{
+    "docID": "dxResponsiveBox",
+    "className": "DxResponsiveBox",
+    "widgetName": "dxResponsiveBox",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-responsive-box",
+    "events": [
+        {
+            "docID": "dxResponsiveBoxOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onItemContextMenu",
+            "emit": "onItemContextMenu",
+            "subscribe": "itemContextMenu",
+            "type": "EventEmitter<ItemContextMenuEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onItemHold",
+            "emit": "onItemHold",
+            "subscribe": "itemHold",
+            "type": "EventEmitter<ItemHoldEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onItemRendered",
+            "emit": "onItemRendered",
+            "subscribe": "itemRendered",
+            "type": "EventEmitter<ItemRenderedEvent>"
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "colsChange",
+            "type": "EventEmitter<Array<any | { baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxResponsiveBoxItem | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemHoldTimeoutChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<string | any | { disabled?: boolean, html?: string, location?: Array<any | { col?: number, colspan?: number | undefined, row?: number, rowspan?: number | undefined, screen?: string | undefined }>, template?: any, text?: string, visible?: boolean }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rowsChange",
+            "type": "EventEmitter<Array<any | { baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "screenByWidthChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "singleColumnScreenChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxResponsiveBoxOptions.cols",
+            "name": "cols",
+            "type": "Array<any | { baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxResponsiveBoxItem | any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.ui.dxResponsiveBoxItem",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.height",
+            "name": "height",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemHoldTimeout",
+            "name": "itemHoldTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.items",
+            "name": "items",
+            "type": "Array<string | any | { disabled?: boolean, html?: string, location?: Array<any | { col?: number, colspan?: number | undefined, row?: number, rowspan?: number | undefined, screen?: string | undefined }>, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "any",
+                    "{ disabled?: boolean, html?: string, location?: Array<any | { col?: number, colspan?: number | undefined, row?: number, rowspan?: number | undefined, screen?: string | undefined }>, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.rows",
+            "name": "rows",
+            "type": "Array<any | { baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ baseSize?: number | string, ratio?: number, screen?: string | undefined, shrink?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.screenByWidth",
+            "name": "screenByWidth",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.singleColumnScreen",
+            "name": "singleColumnScreen",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResponsiveBoxOptions.width",
+            "name": "width",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/responsive_box",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/responsive_box",
+            "importString": "{ ContentReadyEvent, DisposingEvent, InitializedEvent, ItemClickEvent, ItemContextMenuEvent, ItemHoldEvent, ItemRenderedEvent, OptionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "col-dxi",
+            "propertyName": "cols",
+            "className": "DxiCol",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true,
+            "root": true
+        },
+        {
+            "path": "location-dxi",
+            "propertyName": "location",
+            "className": "DxiLocation",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "row-dxi",
+            "propertyName": "rows",
+            "className": "DxiRow",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        }
+    ],
+    "optionsTypeParams": [
+        "TItem",
+        "TKey"
+    ],
+    "renderReexports": true
+}

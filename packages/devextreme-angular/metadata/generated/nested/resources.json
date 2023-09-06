@@ -1,0 +1,133 @@
+{
+    "docID": "dxGanttOptions.resources",
+    "className": "DxoResources",
+    "selector": "dxo-resources",
+    "optionName": "resources",
+    "properties": [
+        {
+            "docID": "dxGanttOptions.resources.colorExpr",
+            "name": "colorExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.resources.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "dxGanttOptions.resources.keyExpr",
+            "name": "keyExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.resources.textExpr",
+            "name": "textExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "resources",
+    "propertyName": "resources",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.resources.colorExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxGanttOptions.resources.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.resources.keyExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.resources.textExpr"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

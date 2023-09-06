@@ -1,0 +1,571 @@
+{
+    "docID": "dxSlider",
+    "className": "DxSlider",
+    "widgetName": "dxSlider",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-slider",
+    "events": [
+        {
+            "docID": "dxSliderOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxSliderOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxSliderOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxSliderOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxSliderOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isValidChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keyStepChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<{ format?: Format | string, position?: string, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRangeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stepChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ enabled?: boolean, format?: Format | string, position?: string, showMode?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessageModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessagePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationStatusChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChangeModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.keyStep",
+            "name": "keyStep",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.label",
+            "name": "label",
+            "type": "{ format?: Format | string, position?: string, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ format?: Format | string, position?: string, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTrackBarOptions.max",
+            "name": "max",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTrackBarOptions.min",
+            "name": "min",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.showRange",
+            "name": "showRange",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.step",
+            "name": "step",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ enabled?: boolean, format?: Format | string, position?: string, showMode?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean, format?: Format | string, position?: string, showMode?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderOptions.value",
+            "name": "value",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSliderBaseOptions.valueChangeMode",
+            "name": "valueChangeMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/ui/slider",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/ui/slider",
+            "importString": "{ ContentReadyEvent, DisposingEvent, InitializedEvent, OptionChangedEvent, ValueChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

@@ -1,0 +1,312 @@
+{
+    "docID": "dxScrollView",
+    "className": "DxScrollView",
+    "widgetName": "dxScrollView",
+    "isTranscludedContent": true,
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-scroll-view",
+    "events": [
+        {
+            "docID": "dxScrollViewOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onPullDown",
+            "emit": "onPullDown",
+            "subscribe": "pullDown",
+            "type": "EventEmitter<PullDownEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onReachBottom",
+            "emit": "onReachBottom",
+            "subscribe": "reachBottom",
+            "type": "EventEmitter<ReachBottomEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onScroll",
+            "emit": "onScroll",
+            "subscribe": "scroll",
+            "type": "EventEmitter<ScrollEvent>"
+        },
+        {
+            "docID": "dxScrollViewOptions.onUpdated",
+            "emit": "onUpdated",
+            "subscribe": "updated",
+            "type": "EventEmitter<UpdatedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "bounceEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "directionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pulledDownTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pullingDownTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "reachBottomTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "refreshingTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollByContentChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollByThumbChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showScrollbarChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useNativeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxScrollableOptions.bounceEnabled",
+            "name": "bounceEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.direction",
+            "name": "direction",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollViewOptions.pulledDownText",
+            "name": "pulledDownText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollViewOptions.pullingDownText",
+            "name": "pullingDownText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollViewOptions.reachBottomText",
+            "name": "reachBottomText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollViewOptions.refreshingText",
+            "name": "refreshingText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.scrollByContent",
+            "name": "scrollByContent",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.scrollByThumb",
+            "name": "scrollByThumb",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.showScrollbar",
+            "name": "showScrollbar",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxScrollableOptions.useNative",
+            "name": "useNative",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/scroll_view",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/ui/scroll_view",
+            "importString": "{ DisposingEvent, InitializedEvent, OptionChangedEvent, PullDownEvent, ReachBottomEvent, ScrollEvent, UpdatedEvent }"
+        }
+    ],
+    "nestedComponents": [],
+    "renderReexports": true
+}

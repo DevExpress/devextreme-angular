@@ -1,0 +1,205 @@
+{
+    "docID": "dxSankeyOptions.node",
+    "className": "DxoNode",
+    "selector": "dxo-node",
+    "optionName": "node",
+    "properties": [
+        {
+            "docID": "dxSankeyOptions.node.border",
+            "name": "border",
+            "type": "{ color?: string, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node.color",
+            "name": "color",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node.hoverStyle",
+            "name": "hoverStyle",
+            "type": "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node.opacity",
+            "name": "opacity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node.padding",
+            "name": "padding",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "node",
+    "propertyName": "node",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "DocID": "dxSankeyOptions.node.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxSankeyOptions.node.border.color"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxSankeyOptions.node.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxSankeyOptions.node.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxSankeyOptions.node.color"
+        },
+        {
+            "DocID": "dxSankeyOptions.node.hoverStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxSankeyOptions.node.hoverStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.border.color"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean",
+                                "undefined"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.border.visible"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.border.width"
+                        }
+                    }
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxSankeyOptions.node.hoverStyle.color"
+                },
+                "hatching": {
+                    "DocID": "dxSankeyOptions.node.hoverStyle.hatching",
+                    "Options": {
+                        "direction": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.hatching.direction"
+                        },
+                        "opacity": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.hatching.opacity"
+                        },
+                        "step": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.hatching.step"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxSankeyOptions.node.hoverStyle.hatching.width"
+                        }
+                    }
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxSankeyOptions.node.hoverStyle.opacity"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxSankeyOptions.node.opacity"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxSankeyOptions.node.padding"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxSankeyOptions.node.width"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,994 @@
+{
+    "docID": "dxColorBox",
+    "className": "DxColorBox",
+    "widgetName": "dxColorBox",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-color-box",
+    "events": [
+        {
+            "docID": "dxColorBoxOptions.onChange",
+            "emit": "onChange",
+            "subscribe": "change",
+            "type": "EventEmitter<ChangeEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onClosed",
+            "emit": "onClosed",
+            "subscribe": "closed",
+            "type": "EventEmitter<ClosedEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onCopy",
+            "emit": "onCopy",
+            "subscribe": "copy",
+            "type": "EventEmitter<CopyEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onCut",
+            "emit": "onCut",
+            "subscribe": "cut",
+            "type": "EventEmitter<CutEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onEnterKey",
+            "emit": "onEnterKey",
+            "subscribe": "enterKey",
+            "type": "EventEmitter<EnterKeyEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onFocusIn",
+            "emit": "onFocusIn",
+            "subscribe": "focusIn",
+            "type": "EventEmitter<FocusInEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onFocusOut",
+            "emit": "onFocusOut",
+            "subscribe": "focusOut",
+            "type": "EventEmitter<FocusOutEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onInput",
+            "emit": "onInput",
+            "subscribe": "input",
+            "type": "EventEmitter<InputEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onKeyDown",
+            "emit": "onKeyDown",
+            "subscribe": "keyDown",
+            "type": "EventEmitter<KeyDownEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onKeyUp",
+            "emit": "onKeyUp",
+            "subscribe": "keyUp",
+            "type": "EventEmitter<KeyUpEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onOpened",
+            "emit": "onOpened",
+            "subscribe": "opened",
+            "type": "EventEmitter<OpenedEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onPaste",
+            "emit": "onPaste",
+            "subscribe": "paste",
+            "type": "EventEmitter<PasteEvent>"
+        },
+        {
+            "docID": "dxColorBoxOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "acceptCustomValueChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "applyButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "applyValueModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "buttonsChange",
+            "type": "EventEmitter<Array<string | DevExpress.common.TextEditorButton>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cancelButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "deferRenderingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownButtonTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownOptionsChange",
+            "type": "EventEmitter<dxPopupOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editAlphaChannelChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fieldTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "inputAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isValidChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keyStepChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openOnFieldClickChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "placeholderChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showClearButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showDropDownButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stylingModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "textChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessageModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessagePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationStatusChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxDropDownEditorOptions.acceptCustomValue",
+            "name": "acceptCustomValue",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.applyButtonText",
+            "name": "applyButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.applyValueMode",
+            "name": "applyValueMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.buttons",
+            "name": "buttons",
+            "type": "Array<string | DevExpress.common.TextEditorButton>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.common.TextEditorButton"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxColorBoxOptions.cancelButtonText",
+            "name": "cancelButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.dropDownButtonTemplate",
+            "name": "dropDownButtonTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.dropDownOptions",
+            "name": "dropDownOptions",
+            "type": "dxPopupOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxPopupOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.editAlphaChannel",
+            "name": "editAlphaChannel",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.fieldTemplate",
+            "name": "fieldTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.inputAttr",
+            "name": "inputAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.keyStep",
+            "name": "keyStep",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.label",
+            "name": "label",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.labelMode",
+            "name": "labelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.opened",
+            "name": "opened",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.openOnFieldClick",
+            "name": "openOnFieldClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.placeholder",
+            "name": "placeholder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.showClearButton",
+            "name": "showClearButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.showDropDownButton",
+            "name": "showDropDownButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.stylingMode",
+            "name": "stylingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.text",
+            "name": "text",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxColorBoxOptions.value",
+            "name": "value",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/ui/color_box",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/color_box",
+            "importString": "{ ChangeEvent, ClosedEvent, CopyEvent, CutEvent, DisposingEvent, EnterKeyEvent, FocusInEvent, FocusOutEvent, InitializedEvent, InputEvent, KeyDownEvent, KeyUpEvent, OpenedEvent, OptionChangedEvent, PasteEvent, ValueChangedEvent }"
+        },
+        {
+            "path": "devextreme/ui/popup",
+            "importString": "{ Properties as dxPopupOptions }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "button-dxi",
+            "propertyName": "buttons",
+            "className": "DxiButton",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "options",
+            "propertyName": "options",
+            "className": "DxoOptions",
+            "events": []
+        },
+        {
+            "path": "drop-down-options",
+            "propertyName": "dropDownOptions",
+            "className": "DxoDropDownOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "positionChange",
+                    "type": "EventEmitter<DevExpress.PositionConfig | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.PositionConfig",
+                            "Function",
+                            "string"
+                        ],
+                        "ComplexTypes": [
+                            "PositionConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.position"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxOverlayOptions.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.width"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": []
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": []
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "toolbar-item-dxi",
+            "propertyName": "toolbarItems",
+            "className": "DxiToolbarItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        }
+    ],
+    "renderReexports": true
+}

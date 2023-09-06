@@ -1,0 +1,77 @@
+{
+    "docID": "dxDataGridOptions.groupPanel",
+    "className": "DxoGroupPanel",
+    "selector": "dxo-group-panel",
+    "optionName": "groupPanel",
+    "properties": [
+        {
+            "docID": "dxDataGridOptions.groupPanel.allowColumnDragging",
+            "name": "allowColumnDragging",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.groupPanel.emptyPanelText",
+            "name": "emptyPanelText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.groupPanel.visible",
+            "name": "visible",
+            "type": "boolean | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean | string>"
+        }
+    ],
+    "path": "group-panel",
+    "propertyName": "groupPanel",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridOptions.groupPanel.allowColumnDragging"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDataGridOptions.groupPanel.emptyPanelText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDataGridOptions.groupPanel.visible"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

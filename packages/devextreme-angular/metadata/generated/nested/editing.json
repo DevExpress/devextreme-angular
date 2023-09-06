@@ -1,0 +1,1026 @@
+{
+    "docID": "dxDataGridOptions.editing",
+    "className": "DxoEditing",
+    "selector": "dxo-editing",
+    "optionName": "editing",
+    "properties": [
+        {
+            "docID": "dxDataGridOptions.editing.allowAdding",
+            "name": "allowAdding",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.editing.allowDeleting",
+            "name": "allowDeleting",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.editing.allowUpdating",
+            "name": "allowUpdating",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.changes",
+            "name": "changes",
+            "type": "Array<DevExpress.common.grids.DataChange>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.grids.DataChange"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseOptions.editing.confirmDelete",
+            "name": "confirmDelete",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.editColumnName",
+            "name": "editColumnName",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.editRowKey",
+            "name": "editRowKey",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.form",
+            "name": "form",
+            "type": "dxFormOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFormOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.mode",
+            "name": "mode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.editing.newRowPosition",
+            "name": "newRowPosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.popup",
+            "name": "popup",
+            "type": "dxPopupOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxPopupOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.refreshMode",
+            "name": "refreshMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.selectTextOnEditStart",
+            "name": "selectTextOnEditStart",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.startEditAction",
+            "name": "startEditAction",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.editing.texts",
+            "name": "texts",
+            "type": "{ addRow?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string } | { addRow?: string, addRowToNode?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ addRow?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }",
+                    "{ addRow?: string, addRowToNode?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.editing.useIcons",
+            "name": "useIcons",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowAddShape",
+            "name": "allowAddShape",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowChangeConnection",
+            "name": "allowChangeConnection",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowChangeConnectorPoints",
+            "name": "allowChangeConnectorPoints",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowChangeConnectorText",
+            "name": "allowChangeConnectorText",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowChangeShapeText",
+            "name": "allowChangeShapeText",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowDeleteConnector",
+            "name": "allowDeleteConnector",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowDeleteShape",
+            "name": "allowDeleteShape",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowMoveShape",
+            "name": "allowMoveShape",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing.allowResizeShape",
+            "name": "allowResizeShape",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowDependencyAdding",
+            "name": "allowDependencyAdding",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowDependencyDeleting",
+            "name": "allowDependencyDeleting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowResourceAdding",
+            "name": "allowResourceAdding",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowResourceDeleting",
+            "name": "allowResourceDeleting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowResourceUpdating",
+            "name": "allowResourceUpdating",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowTaskAdding",
+            "name": "allowTaskAdding",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowTaskDeleting",
+            "name": "allowTaskDeleting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowTaskResourceUpdating",
+            "name": "allowTaskResourceUpdating",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.allowTaskUpdating",
+            "name": "allowTaskUpdating",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.editing.allowDragging",
+            "name": "allowDragging",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.editing.allowResizing",
+            "name": "allowResizing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.editing.allowTimeZoneEditing",
+            "name": "allowTimeZoneEditing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "changesChange",
+            "type": "EventEmitter<Array<DevExpress.common.grids.DataChange>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editColumnNameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editRowKeyChange",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "path": "editing",
+    "propertyName": "editing",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiChange",
+            "path": "change-dxi",
+            "propertyName": "changes"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/form",
+            "importString": "{ dxFormOptions }"
+        },
+        {
+            "path": "devextreme/ui/popup",
+            "importString": "{ Properties as dxPopupOptions }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridOptions.editing.allowAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxDataGridOptions.editing.allowDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxDataGridOptions.editing.allowUpdating"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.grids.DataChange"
+            ],
+            "ItemComplexTypes": [
+                "DataChange"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "change",
+            "DocID": "GridBaseOptions.editing.changes"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.confirmDelete"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.editing.editColumnName"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.editing.editRowKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormOptions"
+            ],
+            "ComplexTypes": [
+                "dxFormOptions"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormOptions",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseOptions.editing.form"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDataGridOptions.editing.newRowPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxPopupOptions"
+            ],
+            "ComplexTypes": [
+                "dxPopupOptions"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Properties",
+                    "Alias": "dxPopupOptions",
+                    "Path": "ui/popup"
+                }
+            ],
+            "DocID": "GridBaseOptions.editing.popup"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.refreshMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.selectTextOnEditStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.startEditAction"
+        },
+        {
+            "DocID": "dxDataGridOptions.editing.texts",
+            "Options": {
+                "addRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.addRow"
+                },
+                "cancelAllChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.cancelAllChanges"
+                },
+                "cancelRowChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.cancelRowChanges"
+                },
+                "confirmDeleteMessage": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.confirmDeleteMessage"
+                },
+                "confirmDeleteTitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.confirmDeleteTitle"
+                },
+                "deleteRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.deleteRow"
+                },
+                "editRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.editRow"
+                },
+                "saveAllChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.saveAllChanges"
+                },
+                "saveRowChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.saveRowChanges"
+                },
+                "undeleteRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.undeleteRow"
+                },
+                "validationCancelChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.validationCancelChanges"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.useIcons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowAddShape"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowChangeConnection"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowChangeConnectorPoints"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowChangeConnectorText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowChangeShapeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowDeleteConnector"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowDeleteShape"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowMoveShape"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.editing.allowResizeShape"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowDependencyAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowDependencyDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowResourceAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowResourceDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowResourceUpdating"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowTaskAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowTaskDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowTaskResourceUpdating"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.allowTaskUpdating"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttOptions.editing.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowDragging"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowResizing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowTimeZoneEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSchedulerOptions.editing.allowUpdating"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxTreeListOptions.editing.allowAdding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxTreeListOptions.editing.allowDeleting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxTreeListOptions.editing.allowUpdating"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.grids.DataChange"
+            ],
+            "ItemComplexTypes": [
+                "DataChange"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "change",
+            "DocID": "GridBaseOptions.editing.changes"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.confirmDelete"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.editing.editColumnName"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.editing.editRowKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormOptions"
+            ],
+            "ComplexTypes": [
+                "dxFormOptions"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormOptions",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseOptions.editing.form"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxPopupOptions"
+            ],
+            "ComplexTypes": [
+                "dxPopupOptions"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Properties",
+                    "Alias": "dxPopupOptions",
+                    "Path": "ui/popup"
+                }
+            ],
+            "DocID": "GridBaseOptions.editing.popup"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.refreshMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.selectTextOnEditStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.editing.startEditAction"
+        },
+        {
+            "DocID": "dxTreeListOptions.editing.texts",
+            "Options": {
+                "addRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.addRow"
+                },
+                "addRowToNode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeListOptions.editing.texts.addRowToNode"
+                },
+                "cancelAllChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.cancelAllChanges"
+                },
+                "cancelRowChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.cancelRowChanges"
+                },
+                "confirmDeleteMessage": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.confirmDeleteMessage"
+                },
+                "confirmDeleteTitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.confirmDeleteTitle"
+                },
+                "deleteRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.deleteRow"
+                },
+                "editRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.editRow"
+                },
+                "saveAllChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.saveAllChanges"
+                },
+                "saveRowChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.saveRowChanges"
+                },
+                "undeleteRow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.undeleteRow"
+                },
+                "validationCancelChanges": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.editing.texts.validationCancelChanges"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.editing.useIcons"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,128 @@
+{
+    "docID": "dxDiagramOptions.propertiesPanel",
+    "className": "DxoPropertiesPanel",
+    "selector": "dxo-properties-panel",
+    "optionName": "propertiesPanel",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.tabs",
+            "name": "tabs",
+            "type": "Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, groups?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>, title?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, groups?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>, title?: string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.visibility",
+            "name": "visibility",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "properties-panel",
+    "propertyName": "propertiesPanel",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiTab",
+            "path": "tab-dxi",
+            "propertyName": "tabs"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "tab",
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs",
+            "Options": {
+                "commands": {
+                    "ItemPrimitiveTypes": [
+                        "DevExpress.ui.dxDiagramCustomCommand",
+                        "string"
+                    ],
+                    "ItemComplexTypes": [
+                        "DiagramCustomCommand"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "command",
+                    "DocID": "dxDiagramOptions.propertiesPanel.tabs.commands"
+                },
+                "groups": {
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "group",
+                    "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups",
+                    "Options": {
+                        "commands": {
+                            "ItemPrimitiveTypes": [
+                                "DevExpress.ui.dxDiagramCustomCommand",
+                                "string"
+                            ],
+                            "ItemComplexTypes": [
+                                "DiagramCustomCommand"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "default",
+                                    "Alias": "DevExpress",
+                                    "Path": "bundles/dx.all"
+                                }
+                            ],
+                            "IsCollection": true,
+                            "SingularName": "command",
+                            "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.commands"
+                        },
+                        "title": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.title"
+                        }
+                    }
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.propertiesPanel.tabs.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.propertiesPanel.visibility"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

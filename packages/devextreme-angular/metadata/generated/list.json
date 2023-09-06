@@ -1,0 +1,1144 @@
+{
+    "docID": "dxList",
+    "className": "DxList",
+    "widgetName": "dxList",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-list",
+    "events": [
+        {
+            "docID": "dxListOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxListOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxListOptions.onGroupRendered",
+            "emit": "onGroupRendered",
+            "subscribe": "groupRendered",
+            "type": "EventEmitter<GroupRenderedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemContextMenu",
+            "emit": "onItemContextMenu",
+            "subscribe": "itemContextMenu",
+            "type": "EventEmitter<ItemContextMenuEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemDeleted",
+            "emit": "onItemDeleted",
+            "subscribe": "itemDeleted",
+            "type": "EventEmitter<ItemDeletedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemDeleting",
+            "emit": "onItemDeleting",
+            "subscribe": "itemDeleting",
+            "type": "EventEmitter<ItemDeletingEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemHold",
+            "emit": "onItemHold",
+            "subscribe": "itemHold",
+            "type": "EventEmitter<ItemHoldEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemRendered",
+            "emit": "onItemRendered",
+            "subscribe": "itemRendered",
+            "type": "EventEmitter<ItemRenderedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemReordered",
+            "emit": "onItemReordered",
+            "subscribe": "itemReordered",
+            "type": "EventEmitter<ItemReorderedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onItemSwipe",
+            "emit": "onItemSwipe",
+            "subscribe": "itemSwipe",
+            "type": "EventEmitter<ItemSwipeEvent>"
+        },
+        {
+            "docID": "dxListOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onPageLoading",
+            "emit": "onPageLoading",
+            "subscribe": "pageLoading",
+            "type": "EventEmitter<PageLoadingEvent>"
+        },
+        {
+            "docID": "dxListOptions.onPullRefresh",
+            "emit": "onPullRefresh",
+            "subscribe": "pullRefresh",
+            "type": "EventEmitter<PullRefreshEvent>"
+        },
+        {
+            "docID": "dxListOptions.onScroll",
+            "emit": "onScroll",
+            "subscribe": "scroll",
+            "type": "EventEmitter<ScrollEvent>"
+        },
+        {
+            "docID": "dxListOptions.onSelectAllValueChanged",
+            "emit": "onSelectAllValueChanged",
+            "subscribe": "selectAllValueChanged",
+            "type": "EventEmitter<SelectAllValueChangedEvent>"
+        },
+        {
+            "docID": "dxListOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowItemDeletingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "bounceEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "collapsibleGroupsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxListItem | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "displayExprChange",
+            "type": "EventEmitter<Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "indicateLoadingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemDeleteModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemDraggingChange",
+            "type": "EventEmitter<dxSortableOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemHoldTimeoutChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, key?: string, showChevron?: boolean, template?: any, text?: string, visible?: boolean }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keyExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "menuItemsChange",
+            "type": "EventEmitter<Array<any | { action?: Function, text?: string }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "menuModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nextButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "noDataTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageLoadingTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageLoadModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pulledDownTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pullingDownTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pullRefreshEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "refreshingTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "repaintChangesOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollByContentChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollByThumbChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchEditorOptionsChange",
+            "type": "EventEmitter<dxTextBoxOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchExprChange",
+            "type": "EventEmitter<Function | string | Array<Function | string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchTimeoutChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchValueChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectAllModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectAllTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectByClickChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemKeysChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showScrollbarChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showSelectionControlsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useNativeScrollingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.allowItemDeleting",
+            "name": "allowItemDeleting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.bounceEnabled",
+            "name": "bounceEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.collapsibleGroups",
+            "name": "collapsibleGroups",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxListItem | any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.ui.dxListItem",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.displayExpr",
+            "name": "displayExpr",
+            "type": "Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.grouped",
+            "name": "grouped",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.groupTemplate",
+            "name": "groupTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.indicateLoading",
+            "name": "indicateLoading",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.itemDeleteMode",
+            "name": "itemDeleteMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.itemDragging",
+            "name": "itemDragging",
+            "type": "dxSortableOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxSortableOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemHoldTimeout",
+            "name": "itemHoldTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.items",
+            "name": "items",
+            "type": "Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, key?: string, showChevron?: boolean, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "any",
+                    "{ badge?: string, disabled?: boolean, html?: string, icon?: string, key?: string, showChevron?: boolean, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.keyExpr",
+            "name": "keyExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.menuItems",
+            "name": "menuItems",
+            "type": "Array<any | { action?: Function, text?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ action?: Function, text?: string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxListOptions.menuMode",
+            "name": "menuMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.nextButtonText",
+            "name": "nextButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.noDataText",
+            "name": "noDataText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.pageLoadingText",
+            "name": "pageLoadingText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.pageLoadMode",
+            "name": "pageLoadMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.pulledDownText",
+            "name": "pulledDownText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.pullingDownText",
+            "name": "pullingDownText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.pullRefreshEnabled",
+            "name": "pullRefreshEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.refreshingText",
+            "name": "refreshingText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.repaintChangesOnly",
+            "name": "repaintChangesOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.scrollByContent",
+            "name": "scrollByContent",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.scrollByThumb",
+            "name": "scrollByThumb",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.scrollingEnabled",
+            "name": "scrollingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchEditorOptions",
+            "name": "searchEditorOptions",
+            "type": "dxTextBoxOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxTextBoxOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchEnabled",
+            "name": "searchEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchExpr",
+            "name": "searchExpr",
+            "type": "Function | string | Array<Function | string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "Function",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchMode",
+            "name": "searchMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchTimeout",
+            "name": "searchTimeout",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "SearchBoxMixinOptions.searchValue",
+            "name": "searchValue",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.selectAllMode",
+            "name": "selectAllMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.selectAllText",
+            "name": "selectAllText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.selectByClick",
+            "name": "selectByClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.selectedItemKeys",
+            "name": "selectedItemKeys",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "CollectionWidgetOptions.selectedItems",
+            "name": "selectedItems",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxListOptions.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.showScrollbar",
+            "name": "showScrollbar",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.showSelectionControls",
+            "name": "showSelectionControls",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxListOptions.useNativeScrolling",
+            "name": "useNativeScrolling",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/list",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/list",
+            "importString": "{ ContentReadyEvent, DisposingEvent, GroupRenderedEvent, InitializedEvent, ItemClickEvent, ItemContextMenuEvent, ItemDeletedEvent, ItemDeletingEvent, ItemHoldEvent, ItemRenderedEvent, ItemReorderedEvent, ItemSwipeEvent, OptionChangedEvent, PageLoadingEvent, PullRefreshEvent, ScrollEvent, SelectAllValueChangedEvent, SelectionChangedEvent }"
+        },
+        {
+            "path": "devextreme/ui/sortable",
+            "importString": "{ dxSortableOptions }"
+        },
+        {
+            "path": "devextreme/ui/text_box",
+            "importString": "{ Properties as dxTextBoxOptions }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "item-dragging",
+            "propertyName": "itemDragging",
+            "className": "DxoItemDragging",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "cursor-offset",
+            "propertyName": "cursorOffset",
+            "className": "DxoCursorOffset",
+            "events": []
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true,
+            "root": true
+        },
+        {
+            "path": "menu-item-dxi",
+            "propertyName": "menuItems",
+            "className": "DxiMenuItem",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "search-editor-options",
+            "propertyName": "searchEditorOptions",
+            "className": "DxoSearchEditorOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "textChange",
+                    "type": "EventEmitter<string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsReadonly": true,
+                        "DocID": "dxTextEditorOptions.text"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxTextBoxOptions.value"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "button-dxi",
+            "propertyName": "buttons",
+            "className": "DxiButton",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "options",
+            "propertyName": "options",
+            "className": "DxoOptions",
+            "events": []
+        }
+    ],
+    "optionsTypeParams": [
+        "TItem",
+        "TKey"
+    ],
+    "renderReexports": true
+}

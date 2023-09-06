@@ -1,0 +1,310 @@
+{
+    "docID": "dxHtmlEditorOptions.mentions",
+    "className": "DxiMention",
+    "selector": "dxi-mention",
+    "optionName": "mentions",
+    "path": "mention-dxi",
+    "propertyName": "mentions",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "baseClass": "DxiHtmlEditorMention",
+    "basePath": "./base/html-editor-mention-dxi",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxHtmlEditorMention.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxHtmlEditorMention.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxHtmlEditorMention.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxHtmlEditorMention.marker"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxHtmlEditorMention.minSearchLength"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "searchExpr",
+            "DocID": "dxHtmlEditorMention.searchExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxHtmlEditorMention.searchTimeout"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxHtmlEditorMention.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxHtmlEditorMention.valueExpr"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxHtmlEditorMention.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DataSource",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Options",
+                        "Alias": "DataSourceOptions",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Store",
+                        "Path": "data"
+                    }
+                ],
+                "IsDataSource": true,
+                "DocID": "dxHtmlEditorMention.dataSource"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.displayExpr",
+            "name": "displayExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxHtmlEditorMention.displayExpr"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxHtmlEditorMention.itemTemplate"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.marker",
+            "name": "marker",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxHtmlEditorMention.marker"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.minSearchLength",
+            "name": "minSearchLength",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxHtmlEditorMention.minSearchLength"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.searchExpr",
+            "name": "searchExpr",
+            "type": "Function | string | Array<Function | string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "Function",
+                    "string"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "searchExpr",
+                "DocID": "dxHtmlEditorMention.searchExpr"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorMention.searchTimeout",
+            "name": "searchTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxHtmlEditorMention.searchTimeout"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.template",
+            "name": "template",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxHtmlEditorMention.template"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorMention.valueExpr",
+            "name": "valueExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxHtmlEditorMention.valueExpr"
+            }
+        }
+    ]
+}

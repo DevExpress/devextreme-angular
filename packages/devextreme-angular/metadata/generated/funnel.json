@@ -1,0 +1,744 @@
+{
+    "docID": "dxFunnel",
+    "className": "DxFunnel",
+    "widgetName": "dxFunnel",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-funnel",
+    "events": [
+        {
+            "docID": "dxFunnelOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onHoverChanged",
+            "emit": "onHoverChanged",
+            "subscribe": "hoverChanged",
+            "type": "EventEmitter<HoverChangedEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onLegendClick",
+            "emit": "onLegendClick",
+            "subscribe": "legendClick",
+            "type": "EventEmitter<LegendClickEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxFunnelOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptiveLayoutChange",
+            "type": "EventEmitter<{ height?: number, keepLabels?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "algorithmChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "argumentFieldChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "colorFieldChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "invertedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemChange",
+            "type": "EventEmitter<{ border?: { color?: string, visible?: boolean, width?: number }, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }, selectionStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } } }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<{ backgroundColor?: string, border?: { color?: string, dashStyle?: string, visible?: boolean, width?: number }, connector?: { color?: string | undefined, opacity?: number, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, format?: Format | string | undefined, horizontalAlignment?: string, horizontalOffset?: number, position?: string, showForZeroValues?: boolean, textOverflow?: string, visible?: boolean, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "legendChange",
+            "type": "EventEmitter<{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "marginChange",
+            "type": "EventEmitter<{ bottom?: number, left?: number, right?: number, top?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "neckHeightChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "neckWidthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteChange",
+            "type": "EventEmitter<string | Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteExtensionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resolveLabelOverlappingChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortDataChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueFieldChange",
+            "type": "EventEmitter<string>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxFunnelOptions.adaptiveLayout",
+            "name": "adaptiveLayout",
+            "type": "{ height?: number, keepLabels?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number, keepLabels?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.algorithm",
+            "name": "algorithm",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.argumentField",
+            "name": "argumentField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.colorField",
+            "name": "colorField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.hoverEnabled",
+            "name": "hoverEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.inverted",
+            "name": "inverted",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.item",
+            "name": "item",
+            "type": "{ border?: { color?: string, visible?: boolean, width?: number }, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }, selectionStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, visible?: boolean, width?: number }, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }, selectionStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } } }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.label",
+            "name": "label",
+            "type": "{ backgroundColor?: string, border?: { color?: string, dashStyle?: string, visible?: boolean, width?: number }, connector?: { color?: string | undefined, opacity?: number, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, format?: Format | string | undefined, horizontalAlignment?: string, horizontalOffset?: number, position?: string, showForZeroValues?: boolean, textOverflow?: string, visible?: boolean, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, border?: { color?: string, dashStyle?: string, visible?: boolean, width?: number }, connector?: { color?: string | undefined, opacity?: number, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, format?: Format | string | undefined, horizontalAlignment?: string, horizontalOffset?: number, position?: string, showForZeroValues?: boolean, textOverflow?: string, visible?: boolean, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.legend",
+            "name": "legend",
+            "type": "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.neckHeight",
+            "name": "neckHeight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.neckWidth",
+            "name": "neckWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFunnelOptions.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.resolveLabelOverlapping",
+            "name": "resolveLabelOverlapping",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.sortData",
+            "name": "sortData",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.valueField",
+            "name": "valueField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/viz/funnel",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        },
+        {
+            "path": "devextreme/viz/funnel",
+            "importString": "{ DisposingEvent, DrawnEvent, ExportedEvent, ExportingEvent, FileSavingEvent, HoverChangedEvent, IncidentOccurredEvent, InitializedEvent, ItemClickEvent, LegendClickEvent, OptionChangedEvent, SelectionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "adaptive-layout",
+            "propertyName": "adaptiveLayout",
+            "className": "DxoAdaptiveLayout",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "item",
+            "propertyName": "item",
+            "className": "DxoItem",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "hover-style",
+            "propertyName": "hoverStyle",
+            "className": "DxoHoverStyle",
+            "events": []
+        },
+        {
+            "path": "hatching",
+            "propertyName": "hatching",
+            "className": "DxoHatching",
+            "events": []
+        },
+        {
+            "path": "selection-style",
+            "propertyName": "selectionStyle",
+            "className": "DxoSelectionStyle",
+            "events": []
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "connector",
+            "propertyName": "connector",
+            "className": "DxoConnector",
+            "events": []
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "legend",
+            "propertyName": "legend",
+            "className": "DxoLegend",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "shadow",
+            "propertyName": "shadow",
+            "className": "DxoShadow",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

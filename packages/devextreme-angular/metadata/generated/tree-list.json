@@ -1,0 +1,2350 @@
+{
+    "docID": "dxTreeList",
+    "className": "DxTreeList",
+    "widgetName": "dxTreeList",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-tree-list",
+    "events": [
+        {
+            "docID": "dxTreeListOptions.onAdaptiveDetailRowPreparing",
+            "emit": "onAdaptiveDetailRowPreparing",
+            "subscribe": "adaptiveDetailRowPreparing",
+            "type": "EventEmitter<AdaptiveDetailRowPreparingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onCellClick",
+            "emit": "onCellClick",
+            "subscribe": "cellClick",
+            "type": "EventEmitter<CellClickEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onCellDblClick",
+            "emit": "onCellDblClick",
+            "subscribe": "cellDblClick",
+            "type": "EventEmitter<CellDblClickEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onCellHoverChanged",
+            "emit": "onCellHoverChanged",
+            "subscribe": "cellHoverChanged",
+            "type": "EventEmitter<CellHoverChangedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onCellPrepared",
+            "emit": "onCellPrepared",
+            "subscribe": "cellPrepared",
+            "type": "EventEmitter<CellPreparedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onContextMenuPreparing",
+            "emit": "onContextMenuPreparing",
+            "subscribe": "contextMenuPreparing",
+            "type": "EventEmitter<ContextMenuPreparingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onDataErrorOccurred",
+            "emit": "onDataErrorOccurred",
+            "subscribe": "dataErrorOccurred",
+            "type": "EventEmitter<DataErrorOccurredEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onEditCanceled",
+            "emit": "onEditCanceled",
+            "subscribe": "editCanceled",
+            "type": "EventEmitter<EditCanceledEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onEditCanceling",
+            "emit": "onEditCanceling",
+            "subscribe": "editCanceling",
+            "type": "EventEmitter<EditCancelingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onEditingStart",
+            "emit": "onEditingStart",
+            "subscribe": "editingStart",
+            "type": "EventEmitter<EditingStartEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onEditorPrepared",
+            "emit": "onEditorPrepared",
+            "subscribe": "editorPrepared",
+            "type": "EventEmitter<EditorPreparedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onEditorPreparing",
+            "emit": "onEditorPreparing",
+            "subscribe": "editorPreparing",
+            "type": "EventEmitter<EditorPreparingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onFocusedCellChanged",
+            "emit": "onFocusedCellChanged",
+            "subscribe": "focusedCellChanged",
+            "type": "EventEmitter<FocusedCellChangedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onFocusedCellChanging",
+            "emit": "onFocusedCellChanging",
+            "subscribe": "focusedCellChanging",
+            "type": "EventEmitter<FocusedCellChangingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onFocusedRowChanged",
+            "emit": "onFocusedRowChanged",
+            "subscribe": "focusedRowChanged",
+            "type": "EventEmitter<FocusedRowChangedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onFocusedRowChanging",
+            "emit": "onFocusedRowChanging",
+            "subscribe": "focusedRowChanging",
+            "type": "EventEmitter<FocusedRowChangingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onInitNewRow",
+            "emit": "onInitNewRow",
+            "subscribe": "initNewRow",
+            "type": "EventEmitter<InitNewRowEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onKeyDown",
+            "emit": "onKeyDown",
+            "subscribe": "keyDown",
+            "type": "EventEmitter<KeyDownEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onNodesInitialized",
+            "emit": "onNodesInitialized",
+            "subscribe": "nodesInitialized",
+            "type": "EventEmitter<NodesInitializedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowClick",
+            "emit": "onRowClick",
+            "subscribe": "rowClick",
+            "type": "EventEmitter<RowClickEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowCollapsed",
+            "emit": "onRowCollapsed",
+            "subscribe": "rowCollapsed",
+            "type": "EventEmitter<RowCollapsedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowCollapsing",
+            "emit": "onRowCollapsing",
+            "subscribe": "rowCollapsing",
+            "type": "EventEmitter<RowCollapsingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowDblClick",
+            "emit": "onRowDblClick",
+            "subscribe": "rowDblClick",
+            "type": "EventEmitter<RowDblClickEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowExpanded",
+            "emit": "onRowExpanded",
+            "subscribe": "rowExpanded",
+            "type": "EventEmitter<RowExpandedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowExpanding",
+            "emit": "onRowExpanding",
+            "subscribe": "rowExpanding",
+            "type": "EventEmitter<RowExpandingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowInserted",
+            "emit": "onRowInserted",
+            "subscribe": "rowInserted",
+            "type": "EventEmitter<RowInsertedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowInserting",
+            "emit": "onRowInserting",
+            "subscribe": "rowInserting",
+            "type": "EventEmitter<RowInsertingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowPrepared",
+            "emit": "onRowPrepared",
+            "subscribe": "rowPrepared",
+            "type": "EventEmitter<RowPreparedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowRemoved",
+            "emit": "onRowRemoved",
+            "subscribe": "rowRemoved",
+            "type": "EventEmitter<RowRemovedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowRemoving",
+            "emit": "onRowRemoving",
+            "subscribe": "rowRemoving",
+            "type": "EventEmitter<RowRemovingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowUpdated",
+            "emit": "onRowUpdated",
+            "subscribe": "rowUpdated",
+            "type": "EventEmitter<RowUpdatedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowUpdating",
+            "emit": "onRowUpdating",
+            "subscribe": "rowUpdating",
+            "type": "EventEmitter<RowUpdatingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onRowValidating",
+            "emit": "onRowValidating",
+            "subscribe": "rowValidating",
+            "type": "EventEmitter<RowValidatingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onSaved",
+            "emit": "onSaved",
+            "subscribe": "saved",
+            "type": "EventEmitter<SavedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onSaving",
+            "emit": "onSaving",
+            "subscribe": "saving",
+            "type": "EventEmitter<SavingEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxTreeListOptions.onToolbarPreparing",
+            "emit": "onToolbarPreparing",
+            "subscribe": "toolbarPreparing",
+            "type": "EventEmitter<ToolbarPreparingEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowColumnReorderingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowColumnResizingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoExpandAllChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoNavigateToFocusedRowChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cacheEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cellHintEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnAutoWidthChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnChooserChange",
+            "type": "EventEmitter<{ allowSearch?: boolean, container?: string | UserDefinedElement | undefined, emptyPanelText?: string, enabled?: boolean, height?: number, mode?: string, position?: PositionConfig | undefined, search?: ColumnChooserSearchConfig, searchTimeout?: number, selection?: ColumnChooserSelectionConfig, sortOrder?: string | undefined, title?: string, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnFixingChange",
+            "type": "EventEmitter<{ enabled?: boolean, texts?: { fix?: string, leftPosition?: string, rightPosition?: string, unfix?: string } }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnHidingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnMinWidthChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnResizingModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnsChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxTreeListColumn | string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnWidthChange",
+            "type": "EventEmitter<number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeColumnsChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataStructureChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dateSerializationFormatChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editingChange",
+            "type": "EventEmitter<{ allowAdding?: boolean | Function, allowDeleting?: boolean | Function, allowUpdating?: boolean | Function, changes?: Array<DevExpress.common.grids.DataChange>, confirmDelete?: boolean, editColumnName?: string, editRowKey?: any, form?: dxFormOptions, mode?: string, popup?: dxPopupOptions, refreshMode?: string, selectTextOnEditStart?: boolean, startEditAction?: string, texts?: { addRow?: string, addRowToNode?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }, useIcons?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "errorRowEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "expandedRowKeysChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "expandNodesOnFilteringChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterBuilderChange",
+            "type": "EventEmitter<dxFilterBuilderOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterBuilderPopupChange",
+            "type": "EventEmitter<dxPopupOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterPanelChange",
+            "type": "EventEmitter<{ customizeText?: Function, filterEnabled?: boolean, texts?: { clearFilter?: string, createFilter?: string, filterEnabledHint?: string }, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterRowChange",
+            "type": "EventEmitter<{ applyFilter?: string, applyFilterText?: string, betweenEndText?: string, betweenStartText?: string, operationDescriptions?: { between?: string, contains?: string, endsWith?: string, equal?: string, greaterThan?: string, greaterThanOrEqual?: string, lessThan?: string, lessThanOrEqual?: string, notContains?: string, notEqual?: string, startsWith?: string }, resetOperationText?: string, showAllText?: string, showOperationChooser?: boolean, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterSyncEnabledChange",
+            "type": "EventEmitter<boolean | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterValueChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusedColumnIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusedRowEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusedRowIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusedRowKeyChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hasItemsExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "headerFilterChange",
+            "type": "EventEmitter<{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, texts?: { cancel?: string, emptyValue?: string, ok?: string }, visible?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "highlightChangesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keyboardNavigationChange",
+            "type": "EventEmitter<{ editOnKeyPress?: boolean, enabled?: boolean, enterKeyAction?: string, enterKeyDirection?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keyExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadPanelChange",
+            "type": "EventEmitter<{ enabled?: boolean | string, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "noDataTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pagerChange",
+            "type": "EventEmitter<{ allowedPageSizes?: string | Array<number | string>, displayMode?: string, infoText?: string, label?: string, showInfo?: boolean, showNavigationButtons?: boolean, showPageSizeSelector?: boolean, visible?: boolean | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pagingChange",
+            "type": "EventEmitter<{ enabled?: boolean, pageIndex?: number, pageSize?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "parentIdExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "remoteOperationsChange",
+            "type": "EventEmitter<string | { filtering?: boolean, grouping?: boolean, sorting?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "renderAsyncChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "repaintChangesOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rootValueChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rowAlternationEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rowDraggingChange",
+            "type": "EventEmitter<{ allowDropInsideItem?: boolean, allowReordering?: boolean, autoScroll?: boolean, boundary?: string | UserDefinedElement | undefined, container?: string | UserDefinedElement | undefined, cursorOffset?: string | { x?: number, y?: number }, data?: any | undefined, dragDirection?: string, dragTemplate?: any | undefined, dropFeedbackMode?: string, filter?: string, group?: string | undefined, handle?: string, onAdd?: Function, onDragChange?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, onReorder?: Function, scrollSensitivity?: number, scrollSpeed?: number, showDragIcons?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollingChange",
+            "type": "EventEmitter<{ columnRenderingMode?: string, mode?: string, preloadEnabled?: boolean, renderAsync?: boolean | undefined, rowRenderingMode?: string, scrollByContent?: boolean, scrollByThumb?: boolean, showScrollbar?: string, useNative?: boolean | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "searchPanelChange",
+            "type": "EventEmitter<{ highlightCaseSensitive?: boolean, highlightSearchText?: boolean, placeholder?: string, searchVisibleColumnsOnly?: boolean, text?: string, visible?: boolean, width?: number | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedRowKeysChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectionChange",
+            "type": "EventEmitter<{ allowSelectAll?: boolean, mode?: string, recursive?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showBordersChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showColumnHeadersChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showColumnLinesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRowLinesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortingChange",
+            "type": "EventEmitter<{ ascendingText?: string, clearText?: string, descendingText?: string, mode?: string, showSortIndexes?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stateStoringChange",
+            "type": "EventEmitter<{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "syncLookupFilterValuesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "toolbarChange",
+            "type": "EventEmitter<DevExpress.ui.dxTreeList.dxTreeListToolbar | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "twoWayBindingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "wordWrapEnabledChange",
+            "type": "EventEmitter<boolean>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.allowColumnReordering",
+            "name": "allowColumnReordering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.allowColumnResizing",
+            "name": "allowColumnResizing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.autoExpandAll",
+            "name": "autoExpandAll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.autoNavigateToFocusedRow",
+            "name": "autoNavigateToFocusedRow",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.cacheEnabled",
+            "name": "cacheEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.cellHintEnabled",
+            "name": "cellHintEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnAutoWidth",
+            "name": "columnAutoWidth",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnChooser",
+            "name": "columnChooser",
+            "type": "{ allowSearch?: boolean, container?: string | UserDefinedElement | undefined, emptyPanelText?: string, enabled?: boolean, height?: number, mode?: string, position?: PositionConfig | undefined, search?: ColumnChooserSearchConfig, searchTimeout?: number, selection?: ColumnChooserSelectionConfig, sortOrder?: string | undefined, title?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, container?: string | UserDefinedElement | undefined, emptyPanelText?: string, enabled?: boolean, height?: number, mode?: string, position?: PositionConfig | undefined, search?: ColumnChooserSearchConfig, searchTimeout?: number, selection?: ColumnChooserSelectionConfig, sortOrder?: string | undefined, title?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnFixing",
+            "name": "columnFixing",
+            "type": "{ enabled?: boolean, texts?: { fix?: string, leftPosition?: string, rightPosition?: string, unfix?: string } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean, texts?: { fix?: string, leftPosition?: string, rightPosition?: string, unfix?: string } }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnHidingEnabled",
+            "name": "columnHidingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnMinWidth",
+            "name": "columnMinWidth",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.columnResizingMode",
+            "name": "columnResizingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.columns",
+            "name": "columns",
+            "type": "Array<DevExpress.ui.dxTreeListColumn | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxTreeListColumn",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseOptions.columnWidth",
+            "name": "columnWidth",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.customizeColumns",
+            "name": "customizeColumns",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxTreeListOptions.dataStructure",
+            "name": "dataStructure",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.dateSerializationFormat",
+            "name": "dateSerializationFormat",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.editing",
+            "name": "editing",
+            "type": "{ allowAdding?: boolean | Function, allowDeleting?: boolean | Function, allowUpdating?: boolean | Function, changes?: Array<DevExpress.common.grids.DataChange>, confirmDelete?: boolean, editColumnName?: string, editRowKey?: any, form?: dxFormOptions, mode?: string, popup?: dxPopupOptions, refreshMode?: string, selectTextOnEditStart?: boolean, startEditAction?: string, texts?: { addRow?: string, addRowToNode?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }, useIcons?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowAdding?: boolean | Function, allowDeleting?: boolean | Function, allowUpdating?: boolean | Function, changes?: Array<DevExpress.common.grids.DataChange>, confirmDelete?: boolean, editColumnName?: string, editRowKey?: any, form?: dxFormOptions, mode?: string, popup?: dxPopupOptions, refreshMode?: string, selectTextOnEditStart?: boolean, startEditAction?: string, texts?: { addRow?: string, addRowToNode?: string, cancelAllChanges?: string, cancelRowChanges?: string, confirmDeleteMessage?: string, confirmDeleteTitle?: string, deleteRow?: string, editRow?: string, saveAllChanges?: string, saveRowChanges?: string, undeleteRow?: string, validationCancelChanges?: string }, useIcons?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.errorRowEnabled",
+            "name": "errorRowEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.expandedRowKeys",
+            "name": "expandedRowKeys",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxTreeListOptions.expandNodesOnFiltering",
+            "name": "expandNodesOnFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterBuilder",
+            "name": "filterBuilder",
+            "type": "dxFilterBuilderOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFilterBuilderOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterBuilderPopup",
+            "name": "filterBuilderPopup",
+            "type": "dxPopupOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxPopupOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.filterMode",
+            "name": "filterMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterPanel",
+            "name": "filterPanel",
+            "type": "{ customizeText?: Function, filterEnabled?: boolean, texts?: { clearFilter?: string, createFilter?: string, filterEnabledHint?: string }, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customizeText?: Function, filterEnabled?: boolean, texts?: { clearFilter?: string, createFilter?: string, filterEnabledHint?: string }, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterRow",
+            "name": "filterRow",
+            "type": "{ applyFilter?: string, applyFilterText?: string, betweenEndText?: string, betweenStartText?: string, operationDescriptions?: { between?: string, contains?: string, endsWith?: string, equal?: string, greaterThan?: string, greaterThanOrEqual?: string, lessThan?: string, lessThanOrEqual?: string, notContains?: string, notEqual?: string, startsWith?: string }, resetOperationText?: string, showAllText?: string, showOperationChooser?: boolean, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ applyFilter?: string, applyFilterText?: string, betweenEndText?: string, betweenStartText?: string, operationDescriptions?: { between?: string, contains?: string, endsWith?: string, equal?: string, greaterThan?: string, greaterThanOrEqual?: string, lessThan?: string, lessThanOrEqual?: string, notContains?: string, notEqual?: string, startsWith?: string }, resetOperationText?: string, showAllText?: string, showOperationChooser?: boolean, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterSyncEnabled",
+            "name": "filterSyncEnabled",
+            "type": "boolean | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterValue",
+            "name": "filterValue",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.focusedColumnIndex",
+            "name": "focusedColumnIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.focusedRowEnabled",
+            "name": "focusedRowEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.focusedRowIndex",
+            "name": "focusedRowIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.focusedRowKey",
+            "name": "focusedRowKey",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.hasItemsExpr",
+            "name": "hasItemsExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.headerFilter",
+            "name": "headerFilter",
+            "type": "{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, texts?: { cancel?: string, emptyValue?: string, ok?: string }, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, texts?: { cancel?: string, emptyValue?: string, ok?: string }, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.highlightChanges",
+            "name": "highlightChanges",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.itemsExpr",
+            "name": "itemsExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.keyboardNavigation",
+            "name": "keyboardNavigation",
+            "type": "{ editOnKeyPress?: boolean, enabled?: boolean, enterKeyAction?: string, enterKeyDirection?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ editOnKeyPress?: boolean, enabled?: boolean, enterKeyAction?: string, enterKeyDirection?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.keyExpr",
+            "name": "keyExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.loadPanel",
+            "name": "loadPanel",
+            "type": "{ enabled?: boolean | string, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean | string, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.noDataText",
+            "name": "noDataText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.pager",
+            "name": "pager",
+            "type": "{ allowedPageSizes?: string | Array<number | string>, displayMode?: string, infoText?: string, label?: string, showInfo?: boolean, showNavigationButtons?: boolean, showPageSizeSelector?: boolean, visible?: boolean | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowedPageSizes?: string | Array<number | string>, displayMode?: string, infoText?: string, label?: string, showInfo?: boolean, showNavigationButtons?: boolean, showPageSizeSelector?: boolean, visible?: boolean | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.paging",
+            "name": "paging",
+            "type": "{ enabled?: boolean, pageIndex?: number, pageSize?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean, pageIndex?: number, pageSize?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.parentIdExpr",
+            "name": "parentIdExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.remoteOperations",
+            "name": "remoteOperations",
+            "type": "string | { filtering?: boolean, grouping?: boolean, sorting?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ filtering?: boolean, grouping?: boolean, sorting?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.renderAsync",
+            "name": "renderAsync",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.repaintChangesOnly",
+            "name": "repaintChangesOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.rootValue",
+            "name": "rootValue",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowAlternationEnabled",
+            "name": "rowAlternationEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging",
+            "name": "rowDragging",
+            "type": "{ allowDropInsideItem?: boolean, allowReordering?: boolean, autoScroll?: boolean, boundary?: string | UserDefinedElement | undefined, container?: string | UserDefinedElement | undefined, cursorOffset?: string | { x?: number, y?: number }, data?: any | undefined, dragDirection?: string, dragTemplate?: any | undefined, dropFeedbackMode?: string, filter?: string, group?: string | undefined, handle?: string, onAdd?: Function, onDragChange?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, onReorder?: Function, scrollSensitivity?: number, scrollSpeed?: number, showDragIcons?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowDropInsideItem?: boolean, allowReordering?: boolean, autoScroll?: boolean, boundary?: string | UserDefinedElement | undefined, container?: string | UserDefinedElement | undefined, cursorOffset?: string | { x?: number, y?: number }, data?: any | undefined, dragDirection?: string, dragTemplate?: any | undefined, dropFeedbackMode?: string, filter?: string, group?: string | undefined, handle?: string, onAdd?: Function, onDragChange?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, onReorder?: Function, scrollSensitivity?: number, scrollSpeed?: number, showDragIcons?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.scrolling",
+            "name": "scrolling",
+            "type": "{ columnRenderingMode?: string, mode?: string, preloadEnabled?: boolean, renderAsync?: boolean | undefined, rowRenderingMode?: string, scrollByContent?: boolean, scrollByThumb?: boolean, showScrollbar?: string, useNative?: boolean | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ columnRenderingMode?: string, mode?: string, preloadEnabled?: boolean, renderAsync?: boolean | undefined, rowRenderingMode?: string, scrollByContent?: boolean, scrollByThumb?: boolean, showScrollbar?: string, useNative?: boolean | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.searchPanel",
+            "name": "searchPanel",
+            "type": "{ highlightCaseSensitive?: boolean, highlightSearchText?: boolean, placeholder?: string, searchVisibleColumnsOnly?: boolean, text?: string, visible?: boolean, width?: number | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ highlightCaseSensitive?: boolean, highlightSearchText?: boolean, placeholder?: string, searchVisibleColumnsOnly?: boolean, text?: string, visible?: boolean, width?: number | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.selectedRowKeys",
+            "name": "selectedRowKeys",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxTreeListOptions.selection",
+            "name": "selection",
+            "type": "{ allowSelectAll?: boolean, mode?: string, recursive?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSelectAll?: boolean, mode?: string, recursive?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.showBorders",
+            "name": "showBorders",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.showColumnHeaders",
+            "name": "showColumnHeaders",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.showColumnLines",
+            "name": "showColumnLines",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.showRowLines",
+            "name": "showRowLines",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.sorting",
+            "name": "sorting",
+            "type": "{ ascendingText?: string, clearText?: string, descendingText?: string, mode?: string, showSortIndexes?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ ascendingText?: string, clearText?: string, descendingText?: string, mode?: string, showSortIndexes?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.stateStoring",
+            "name": "stateStoring",
+            "type": "{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.syncLookupFilterValues",
+            "name": "syncLookupFilterValues",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeListOptions.toolbar",
+            "name": "toolbar",
+            "type": "DevExpress.ui.dxTreeList.dxTreeListToolbar | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.ui.dxTreeList.dxTreeListToolbar",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.twoWayBindingEnabled",
+            "name": "twoWayBindingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.wordWrapEnabled",
+            "name": "wordWrapEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/tree_list",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/animation/position",
+            "importString": "{ PositionConfig }"
+        },
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/common/grids",
+            "importString": "{ ColumnChooserSearchConfig, ColumnChooserSelectionConfig, HeaderFilterSearchConfig }"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/filter_builder",
+            "importString": "{ dxFilterBuilderOptions }"
+        },
+        {
+            "path": "devextreme/ui/form",
+            "importString": "{ dxFormOptions }"
+        },
+        {
+            "path": "devextreme/ui/popup",
+            "importString": "{ Properties as dxPopupOptions }"
+        },
+        {
+            "path": "devextreme/ui/tree_list",
+            "importString": "{ AdaptiveDetailRowPreparingEvent, CellClickEvent, CellDblClickEvent, CellHoverChangedEvent, CellPreparedEvent, ContentReadyEvent, ContextMenuPreparingEvent, DataErrorOccurredEvent, DisposingEvent, EditCanceledEvent, EditCancelingEvent, EditingStartEvent, EditorPreparedEvent, EditorPreparingEvent, FocusedCellChangedEvent, FocusedCellChangingEvent, FocusedRowChangedEvent, FocusedRowChangingEvent, InitializedEvent, InitNewRowEvent, KeyDownEvent, NodesInitializedEvent, OptionChangedEvent, RowClickEvent, RowCollapsedEvent, RowCollapsingEvent, RowDblClickEvent, RowExpandedEvent, RowExpandingEvent, RowInsertedEvent, RowInsertingEvent, RowPreparedEvent, RowRemovedEvent, RowRemovingEvent, RowUpdatedEvent, RowUpdatingEvent, RowValidatingEvent, SavedEvent, SavingEvent, SelectionChangedEvent, ToolbarPreparingEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "column-chooser",
+            "propertyName": "columnChooser",
+            "className": "DxoColumnChooser",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": []
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "search",
+            "propertyName": "search",
+            "className": "DxoSearch",
+            "events": []
+        },
+        {
+            "path": "selection",
+            "propertyName": "selection",
+            "className": "DxoSelection",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "column-fixing",
+            "propertyName": "columnFixing",
+            "className": "DxoColumnFixing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "texts",
+            "propertyName": "texts",
+            "className": "DxoTexts",
+            "events": []
+        },
+        {
+            "path": "column-dxi",
+            "propertyName": "columns",
+            "className": "DxiColumn",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "filterValueChange",
+                    "type": "EventEmitter<any | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.filterValue"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "filterValuesChange",
+                    "type": "EventEmitter<Array<any>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "filterValue",
+                        "DocID": "GridBaseColumn.filterValues"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedFilterOperationChange",
+                    "type": "EventEmitter<string | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.selectedFilterOperation"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "sortIndexChange",
+                    "type": "EventEmitter<number | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.sortIndex"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "sortOrderChange",
+                    "type": "EventEmitter<string | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.sortOrder"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleIndexChange",
+                    "type": "EventEmitter<number | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.visibleIndex"
+                    }
+                }
+            ],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "button-dxi",
+            "propertyName": "buttons",
+            "className": "DxiButton",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "header-filter",
+            "propertyName": "headerFilter",
+            "className": "DxoHeaderFilter",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "lookup",
+            "propertyName": "lookup",
+            "className": "DxoLookup",
+            "events": []
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "form-item",
+            "propertyName": "formItem",
+            "className": "DxoFormItem",
+            "events": []
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "hasTemplate": true
+        },
+        {
+            "path": "validation-rule-dxi",
+            "propertyName": "validationRules",
+            "className": "DxiValidationRule",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "editing",
+            "propertyName": "editing",
+            "className": "DxoEditing",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "changesChange",
+                    "type": "EventEmitter<Array<DevExpress.common.grids.DataChange>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "DevExpress.common.grids.DataChange"
+                        ],
+                        "ItemComplexTypes": [
+                            "DataChange"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "change",
+                        "DocID": "GridBaseOptions.editing.changes"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "editColumnNameChange",
+                    "type": "EventEmitter<string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.editing.editColumnName"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "editRowKeyChange",
+                    "type": "EventEmitter<any>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.editing.editRowKey"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "change-dxi",
+            "propertyName": "changes",
+            "className": "DxiChange",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "form",
+            "propertyName": "form",
+            "className": "DxoForm",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "formDataChange",
+                    "type": "EventEmitter<any>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxFormOptions.formData"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "col-count-by-screen",
+            "propertyName": "colCountByScreen",
+            "className": "DxoColCountByScreen",
+            "events": []
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "tab-panel-options",
+            "propertyName": "tabPanelOptions",
+            "className": "DxoTabPanelOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "itemsChange",
+                    "type": "EventEmitter<Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, tabTemplate?: any, template?: any, text?: string, title?: string }>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "string",
+                            "any"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "item",
+                        "DocID": "dxTabPanelOptions.items",
+                        "Options": {
+                            "badge": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.badge"
+                            },
+                            "disabled": {
+                                "PrimitiveTypes": [
+                                    "boolean"
+                                ],
+                                "DocID": "CollectionWidgetItem.disabled"
+                            },
+                            "html": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "CollectionWidgetItem.html"
+                            },
+                            "icon": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.icon"
+                            },
+                            "tabTemplate": {
+                                "PrimitiveTypes": [
+                                    "any"
+                                ],
+                                "IsTemplate": true,
+                                "DocID": "dxTabPanelItem.tabTemplate"
+                            },
+                            "template": {
+                                "PrimitiveTypes": [
+                                    "any"
+                                ],
+                                "IsTemplate": true,
+                                "DocID": "CollectionWidgetItem.template"
+                            },
+                            "text": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "CollectionWidgetItem.text"
+                            },
+                            "title": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.title"
+                            }
+                        }
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedIndexChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxMultiViewOptions.selectedIndex"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedItemChange",
+                    "type": "EventEmitter<any>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "CollectionWidgetOptions.selectedItem"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "tab-dxi",
+            "propertyName": "tabs",
+            "className": "DxiTab",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "button-options",
+            "propertyName": "buttonOptions",
+            "className": "DxoButtonOptions",
+            "events": []
+        },
+        {
+            "path": "popup",
+            "propertyName": "popup",
+            "className": "DxoPopup",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "positionChange",
+                    "type": "EventEmitter<DevExpress.PositionConfig | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.PositionConfig",
+                            "Function",
+                            "string"
+                        ],
+                        "ComplexTypes": [
+                            "PositionConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.position"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxOverlayOptions.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.width"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": []
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "toolbar-item-dxi",
+            "propertyName": "toolbarItems",
+            "className": "DxiToolbarItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "filter-builder",
+            "propertyName": "filterBuilder",
+            "className": "DxoFilterBuilder",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<any>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsFilterExpr": true,
+                        "IsChangeable": true,
+                        "DocID": "dxFilterBuilderOptions.value"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "custom-operation-dxi",
+            "propertyName": "customOperations",
+            "className": "DxiCustomOperation",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "field-dxi",
+            "propertyName": "fields",
+            "className": "DxiField",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "filter-operation-descriptions",
+            "propertyName": "filterOperationDescriptions",
+            "className": "DxoFilterOperationDescriptions",
+            "events": []
+        },
+        {
+            "path": "group-operation-descriptions",
+            "propertyName": "groupOperationDescriptions",
+            "className": "DxoGroupOperationDescriptions",
+            "events": []
+        },
+        {
+            "path": "filter-builder-popup",
+            "propertyName": "filterBuilderPopup",
+            "className": "DxoFilterBuilderPopup",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "positionChange",
+                    "type": "EventEmitter<DevExpress.PositionConfig | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.PositionConfig",
+                            "Function",
+                            "string"
+                        ],
+                        "ComplexTypes": [
+                            "PositionConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.position"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxOverlayOptions.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.width"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "filter-panel",
+            "propertyName": "filterPanel",
+            "className": "DxoFilterPanel",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "filterEnabledChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.filterPanel.filterEnabled"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "filter-row",
+            "propertyName": "filterRow",
+            "className": "DxoFilterRow",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "operation-descriptions",
+            "propertyName": "operationDescriptions",
+            "className": "DxoOperationDescriptions",
+            "events": []
+        },
+        {
+            "path": "keyboard-navigation",
+            "propertyName": "keyboardNavigation",
+            "className": "DxoKeyboardNavigation",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "load-panel",
+            "propertyName": "loadPanel",
+            "className": "DxoLoadPanel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "pager",
+            "propertyName": "pager",
+            "className": "DxoPager",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "paging",
+            "propertyName": "paging",
+            "className": "DxoPaging",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "pageIndexChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.paging.pageIndex"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "pageSizeChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.paging.pageSize"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "remote-operations",
+            "propertyName": "remoteOperations",
+            "className": "DxoRemoteOperations",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "row-dragging",
+            "propertyName": "rowDragging",
+            "className": "DxoRowDragging",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "cursor-offset",
+            "propertyName": "cursorOffset",
+            "className": "DxoCursorOffset",
+            "events": []
+        },
+        {
+            "path": "scrolling",
+            "propertyName": "scrolling",
+            "className": "DxoScrolling",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "search-panel",
+            "propertyName": "searchPanel",
+            "className": "DxoSearchPanel",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "textChange",
+                    "type": "EventEmitter<string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseOptions.searchPanel.text"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "sorting",
+            "propertyName": "sorting",
+            "className": "DxoSorting",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "state-storing",
+            "propertyName": "stateStoring",
+            "className": "DxoStateStoring",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "toolbar",
+            "propertyName": "toolbar",
+            "className": "DxoToolbar",
+            "events": [],
+            "root": true
+        }
+    ],
+    "optionsTypeParams": [
+        "TRowData",
+        "TKey"
+    ],
+    "renderReexports": true
+}

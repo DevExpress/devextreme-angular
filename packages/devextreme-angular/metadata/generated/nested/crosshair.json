@@ -1,0 +1,394 @@
+{
+    "docID": "dxChartOptions.crosshair",
+    "className": "DxoCrosshair",
+    "selector": "dxo-crosshair",
+    "optionName": "crosshair",
+    "properties": [
+        {
+            "docID": "dxChartOptions.crosshair.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.dashStyle",
+            "name": "dashStyle",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.horizontalLine",
+            "name": "horizontalLine",
+            "type": "boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "{ color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.label",
+            "name": "label",
+            "type": "{ backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.opacity",
+            "name": "opacity",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.verticalLine",
+            "name": "verticalLine",
+            "type": "boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "{ color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "crosshair",
+    "propertyName": "crosshair",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.crosshair.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.crosshair.dashStyle"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.crosshair.enabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.crosshair.horizontalLine",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.color"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.dashStyle"
+                },
+                "label": {
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.label",
+                    "Options": {
+                        "backgroundColor": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.crosshair.horizontalLine.label.backgroundColor"
+                        },
+                        "customizeText": {
+                            "PrimitiveTypes": [
+                                "Function"
+                            ],
+                            "IsFunc": true,
+                            "DocID": "dxChartOptions.crosshair.horizontalLine.label.customizeText"
+                        },
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.crosshair.horizontalLine.label.font"
+                        },
+                        "format": {
+                            "PrimitiveTypes": [
+                                "Format",
+                                "string",
+                                "undefined"
+                            ],
+                            "ComplexTypes": [
+                                "Format"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Format",
+                                    "Path": "localization"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.crosshair.horizontalLine.label.format"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean"
+                            ],
+                            "DocID": "dxChartOptions.crosshair.horizontalLine.label.visible"
+                        }
+                    }
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.horizontalLine.width"
+                }
+            }
+        },
+        {
+            "DocID": "dxChartOptions.crosshair.label",
+            "Options": {
+                "backgroundColor": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.label.backgroundColor"
+                },
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxChartOptions.crosshair.label.customizeText"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.crosshair.label.font"
+                },
+                "format": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.crosshair.label.format"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.crosshair.opacity"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.crosshair.verticalLine",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.verticalLine.color"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.verticalLine.dashStyle"
+                },
+                "label": {
+                    "DocID": "dxChartOptions.crosshair.verticalLine.label",
+                    "Options": {
+                        "backgroundColor": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.crosshair.verticalLine.label.backgroundColor"
+                        },
+                        "customizeText": {
+                            "PrimitiveTypes": [
+                                "Function"
+                            ],
+                            "IsFunc": true,
+                            "DocID": "dxChartOptions.crosshair.verticalLine.label.customizeText"
+                        },
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.crosshair.verticalLine.label.font"
+                        },
+                        "format": {
+                            "PrimitiveTypes": [
+                                "Format",
+                                "string",
+                                "undefined"
+                            ],
+                            "ComplexTypes": [
+                                "Format"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Format",
+                                    "Path": "localization"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.crosshair.verticalLine.label.format"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean"
+                            ],
+                            "DocID": "dxChartOptions.crosshair.verticalLine.label.visible"
+                        }
+                    }
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.verticalLine.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.verticalLine.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.crosshair.verticalLine.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.crosshair.width"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

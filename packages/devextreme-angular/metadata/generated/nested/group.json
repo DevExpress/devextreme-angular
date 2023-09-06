@@ -1,0 +1,248 @@
+{
+    "docID": "dxTreeMapOptions.group",
+    "className": "DxoGroup",
+    "selector": "dxo-group",
+    "optionName": "group",
+    "properties": [
+        {
+            "docID": "dxTreeMapOptions.group.border",
+            "name": "border",
+            "type": "{ color?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.headerHeight",
+            "name": "headerHeight",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.hoverEnabled",
+            "name": "hoverEnabled",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.hoverStyle",
+            "name": "hoverStyle",
+            "type": "{ border?: { color?: string | undefined, width?: number | undefined }, color?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string | undefined, width?: number | undefined }, color?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.label",
+            "name": "label",
+            "type": "{ font?: Font, textOverflow?: string, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ font?: Font, textOverflow?: string, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.padding",
+            "name": "padding",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.group.selectionStyle",
+            "name": "selectionStyle",
+            "type": "{ border?: { color?: string, width?: number | undefined }, color?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, width?: number | undefined }, color?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "group",
+    "propertyName": "group",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "DocID": "dxTreeMapOptions.group.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.border.color"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTreeMapOptions.group.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxTreeMapOptions.group.headerHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxTreeMapOptions.group.hoverEnabled"
+        },
+        {
+            "DocID": "dxTreeMapOptions.group.hoverStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxTreeMapOptions.group.hoverStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.group.hoverStyle.border.color"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.group.hoverStyle.border.width"
+                        }
+                    }
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.hoverStyle.color"
+                }
+            }
+        },
+        {
+            "DocID": "dxTreeMapOptions.group.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxTreeMapOptions.group.label.font"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.label.textOverflow"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxTreeMapOptions.group.padding"
+        },
+        {
+            "DocID": "dxTreeMapOptions.group.selectionStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxTreeMapOptions.group.selectionStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxTreeMapOptions.group.selectionStyle.border.color"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.group.selectionStyle.border.width"
+                        }
+                    }
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxTreeMapOptions.group.selectionStyle.color"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

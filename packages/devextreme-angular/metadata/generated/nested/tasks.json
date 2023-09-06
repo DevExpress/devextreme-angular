@@ -1,0 +1,213 @@
+{
+    "docID": "dxGanttOptions.tasks",
+    "className": "DxoTasks",
+    "selector": "dxo-tasks",
+    "optionName": "tasks",
+    "properties": [
+        {
+            "docID": "dxGanttOptions.tasks.colorExpr",
+            "name": "colorExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.endExpr",
+            "name": "endExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.keyExpr",
+            "name": "keyExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.parentIdExpr",
+            "name": "parentIdExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.progressExpr",
+            "name": "progressExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.startExpr",
+            "name": "startExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks.titleExpr",
+            "name": "titleExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "tasks",
+    "propertyName": "tasks",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.colorExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxGanttOptions.tasks.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.endExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.keyExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.parentIdExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.progressExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.startExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.tasks.titleExpr"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

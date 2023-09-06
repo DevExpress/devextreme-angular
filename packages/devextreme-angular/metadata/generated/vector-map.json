@@ -1,0 +1,720 @@
+{
+    "docID": "dxVectorMap",
+    "className": "DxVectorMap",
+    "widgetName": "dxVectorMap",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-vector-map",
+    "events": [
+        {
+            "docID": "dxVectorMapOptions.onCenterChanged",
+            "emit": "onCenterChanged",
+            "subscribe": "centerChanged",
+            "type": "EventEmitter<CenterChangedEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onClick",
+            "emit": "onClick",
+            "subscribe": "click",
+            "type": "EventEmitter<ClickEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onTooltipHidden",
+            "emit": "onTooltipHidden",
+            "subscribe": "tooltipHidden",
+            "type": "EventEmitter<TooltipHiddenEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onTooltipShown",
+            "emit": "onTooltipShown",
+            "subscribe": "tooltipShown",
+            "type": "EventEmitter<TooltipShownEvent>"
+        },
+        {
+            "docID": "dxVectorMapOptions.onZoomFactorChanged",
+            "emit": "onZoomFactorChanged",
+            "subscribe": "zoomFactorChanged",
+            "type": "EventEmitter<ZoomFactorChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "annotationsChange",
+            "type": "EventEmitter<Array<DevExpress.viz.dxVectorMapAnnotationConfig | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "backgroundChange",
+            "type": "EventEmitter<{ borderColor?: string, color?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "boundsChange",
+            "type": "EventEmitter<Array<number>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "centerChange",
+            "type": "EventEmitter<Array<number>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "commonAnnotationSettingsChange",
+            "type": "EventEmitter<dxVectorMapCommonAnnotationConfig>"
+        },
+        {
+            "isInternal": true,
+            "emit": "controlBarChange",
+            "type": "EventEmitter<{ borderColor?: string, color?: string, enabled?: boolean, horizontalAlignment?: string, margin?: number, opacity?: number, panVisible?: boolean, verticalAlignment?: string, zoomVisible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeAnnotationChange",
+            "type": "EventEmitter<Function | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "layersChange",
+            "type": "EventEmitter<Array<any | { borderColor?: string, borderWidth?: number, color?: string, colorGroupingField?: string | undefined, colorGroups?: Array<number>, customize?: Function, dataField?: string | undefined, dataSource?: any | DataSource | DataSourceOptions | Store | null | string | Array<any>, elementType?: string, hoveredBorderColor?: string, hoveredBorderWidth?: number, hoveredColor?: string, hoverEnabled?: boolean, label?: { dataField?: string, enabled?: boolean, font?: Font }, maxSize?: number, minSize?: number, name?: string, opacity?: number, palette?: string | Array<string>, paletteIndex?: number, paletteSize?: number, selectedBorderColor?: string, selectedBorderWidth?: number, selectedColor?: string, selectionMode?: string, size?: number, sizeGroupingField?: string | undefined, sizeGroups?: Array<number>, type?: string }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "legendsChange",
+            "type": "EventEmitter<Array<any | { backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerColor?: string | undefined, markerShape?: string, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, source?: { grouping?: string, layer?: string }, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxZoomFactorChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "panningEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "projectionChange",
+            "type": "EventEmitter<any | DevExpress.viz.VectorMapProjectionConfig | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "touchEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "wheelEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomFactorChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxVectorMapOptions.annotations",
+            "name": "annotations",
+            "type": "Array<DevExpress.viz.dxVectorMapAnnotationConfig | any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.viz.dxVectorMapAnnotationConfig",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.background",
+            "name": "background",
+            "type": "{ borderColor?: string, color?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ borderColor?: string, color?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.bounds",
+            "name": "bounds",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.center",
+            "name": "center",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.commonAnnotationSettings",
+            "name": "commonAnnotationSettings",
+            "type": "dxVectorMapCommonAnnotationConfig",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxVectorMapCommonAnnotationConfig"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.controlBar",
+            "name": "controlBar",
+            "type": "{ borderColor?: string, color?: string, enabled?: boolean, horizontalAlignment?: string, margin?: number, opacity?: number, panVisible?: boolean, verticalAlignment?: string, zoomVisible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ borderColor?: string, color?: string, enabled?: boolean, horizontalAlignment?: string, margin?: number, opacity?: number, panVisible?: boolean, verticalAlignment?: string, zoomVisible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.customizeAnnotation",
+            "name": "customizeAnnotation",
+            "type": "Function | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.layers",
+            "name": "layers",
+            "type": "Array<any | { borderColor?: string, borderWidth?: number, color?: string, colorGroupingField?: string | undefined, colorGroups?: Array<number>, customize?: Function, dataField?: string | undefined, dataSource?: any | DataSource | DataSourceOptions | Store | null | string | Array<any>, elementType?: string, hoveredBorderColor?: string, hoveredBorderWidth?: number, hoveredColor?: string, hoverEnabled?: boolean, label?: { dataField?: string, enabled?: boolean, font?: Font }, maxSize?: number, minSize?: number, name?: string, opacity?: number, palette?: string | Array<string>, paletteIndex?: number, paletteSize?: number, selectedBorderColor?: string, selectedBorderWidth?: number, selectedColor?: string, selectionMode?: string, size?: number, sizeGroupingField?: string | undefined, sizeGroups?: Array<number>, type?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ borderColor?: string, borderWidth?: number, color?: string, colorGroupingField?: string | undefined, colorGroups?: Array<number>, customize?: Function, dataField?: string | undefined, dataSource?: any | DataSource | DataSourceOptions | Store | null | string | Array<any>, elementType?: string, hoveredBorderColor?: string, hoveredBorderWidth?: number, hoveredColor?: string, hoverEnabled?: boolean, label?: { dataField?: string, enabled?: boolean, font?: Font }, maxSize?: number, minSize?: number, name?: string, opacity?: number, palette?: string | Array<string>, paletteIndex?: number, paletteSize?: number, selectedBorderColor?: string, selectedBorderWidth?: number, selectedColor?: string, selectionMode?: string, size?: number, sizeGroupingField?: string | undefined, sizeGroups?: Array<number>, type?: string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxVectorMapOptions.legends",
+            "name": "legends",
+            "type": "Array<any | { backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerColor?: string | undefined, markerShape?: string, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, source?: { grouping?: string, layer?: string }, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerColor?: string | undefined, markerShape?: string, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, source?: { grouping?: string, layer?: string }, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseWidgetOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.maxZoomFactor",
+            "name": "maxZoomFactor",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.panningEnabled",
+            "name": "panningEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.projection",
+            "name": "projection",
+            "type": "any | DevExpress.viz.VectorMapProjectionConfig | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "DevExpress.viz.VectorMapProjectionConfig",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.touchEnabled",
+            "name": "touchEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.wheelEnabled",
+            "name": "wheelEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.zoomFactor",
+            "name": "zoomFactor",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.zoomingEnabled",
+            "name": "zoomingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/viz/vector_map",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        },
+        {
+            "path": "devextreme/viz/vector_map",
+            "importString": "{ CenterChangedEvent, ClickEvent, DisposingEvent, DrawnEvent, dxVectorMapCommonAnnotationConfig, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, OptionChangedEvent, SelectionChangedEvent, TooltipHiddenEvent, TooltipShownEvent, ZoomFactorChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "annotation-dxi",
+            "propertyName": "annotations",
+            "className": "DxiAnnotation",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "image",
+            "propertyName": "image",
+            "className": "DxoImage",
+            "events": []
+        },
+        {
+            "path": "shadow",
+            "propertyName": "shadow",
+            "className": "DxoShadow",
+            "events": []
+        },
+        {
+            "path": "background",
+            "propertyName": "background",
+            "className": "DxoBackground",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "common-annotation-settings",
+            "propertyName": "commonAnnotationSettings",
+            "className": "DxoCommonAnnotationSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "control-bar",
+            "propertyName": "controlBar",
+            "className": "DxoControlBar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "layer-dxi",
+            "propertyName": "layers",
+            "className": "DxiLayer",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": []
+        },
+        {
+            "path": "legend-dxi",
+            "propertyName": "legends",
+            "className": "DxiLegend",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": []
+        },
+        {
+            "path": "source",
+            "propertyName": "source",
+            "className": "DxoSource",
+            "events": []
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "projection",
+            "propertyName": "projection",
+            "className": "DxoProjection",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

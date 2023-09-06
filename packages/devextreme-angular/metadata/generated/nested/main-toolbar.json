@@ -1,0 +1,77 @@
+{
+    "docID": "dxDiagramOptions.mainToolbar",
+    "className": "DxoMainToolbar",
+    "selector": "dxo-main-toolbar",
+    "optionName": "mainToolbar",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.mainToolbar.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.mainToolbar.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "main-toolbar",
+    "propertyName": "mainToolbar",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiCommand",
+            "path": "command-dxi",
+            "propertyName": "commands"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DiagramCustomCommand"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "command",
+            "DocID": "dxDiagramOptions.mainToolbar.commands"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.mainToolbar.visible"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,653 @@
+{
+    "docID": "dxBarGauge",
+    "className": "DxBarGauge",
+    "widgetName": "dxBarGauge",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-bar-gauge",
+    "events": [
+        {
+            "docID": "dxBarGaugeOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onTooltipHidden",
+            "emit": "onTooltipHidden",
+            "subscribe": "tooltipHidden",
+            "type": "EventEmitter<TooltipHiddenEvent>"
+        },
+        {
+            "docID": "dxBarGaugeOptions.onTooltipShown",
+            "emit": "onTooltipShown",
+            "subscribe": "tooltipShown",
+            "type": "EventEmitter<TooltipShownEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "animationChange",
+            "type": "EventEmitter<{ duration?: number, easing?: string, enabled?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "backgroundColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "barSpacingChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "baseValueChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "centerTemplateChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "endValueChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "geometryChange",
+            "type": "EventEmitter<{ endAngle?: number, startAngle?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<{ connectorColor?: string | undefined, connectorWidth?: number, customizeText?: Function, font?: Font, format?: Format | string | undefined, indent?: number, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "legendChange",
+            "type": "EventEmitter<{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextFormat?: Format | string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "marginChange",
+            "type": "EventEmitter<{ bottom?: number, left?: number, right?: number, top?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteChange",
+            "type": "EventEmitter<string | Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteExtensionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "relativeInnerRadiusChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resolveLabelOverlappingChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "startValueChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valuesChange",
+            "type": "EventEmitter<Array<number>>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxBarGaugeOptions.animation",
+            "name": "animation",
+            "type": "{ duration?: number, easing?: string, enabled?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ duration?: number, easing?: string, enabled?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.backgroundColor",
+            "name": "backgroundColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.barSpacing",
+            "name": "barSpacing",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.baseValue",
+            "name": "baseValue",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.centerTemplate",
+            "name": "centerTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.endValue",
+            "name": "endValue",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.geometry",
+            "name": "geometry",
+            "type": "{ endAngle?: number, startAngle?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ endAngle?: number, startAngle?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.label",
+            "name": "label",
+            "type": "{ connectorColor?: string | undefined, connectorWidth?: number, customizeText?: Function, font?: Font, format?: Format | string | undefined, indent?: number, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ connectorColor?: string | undefined, connectorWidth?: number, customizeText?: Function, font?: Font, format?: Format | string | undefined, indent?: number, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend",
+            "name": "legend",
+            "type": "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextFormat?: Format | string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, itemsAlignment?: string | undefined, itemTextFormat?: Format | string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxBarGaugeOptions.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.relativeInnerRadius",
+            "name": "relativeInnerRadius",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.resolveLabelOverlapping",
+            "name": "resolveLabelOverlapping",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.startValue",
+            "name": "startValue",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.values",
+            "name": "values",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/viz/bar_gauge",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/bar_gauge",
+            "importString": "{ DisposingEvent, DrawnEvent, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, OptionChangedEvent, TooltipHiddenEvent, TooltipShownEvent }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "geometry",
+            "propertyName": "geometry",
+            "className": "DxoGeometry",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "legend",
+            "propertyName": "legend",
+            "className": "DxoLegend",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "item-text-format",
+            "propertyName": "itemTextFormat",
+            "className": "DxoItemTextFormat",
+            "events": []
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "shadow",
+            "propertyName": "shadow",
+            "className": "DxoShadow",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

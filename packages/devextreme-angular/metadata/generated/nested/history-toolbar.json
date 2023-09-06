@@ -1,0 +1,77 @@
+{
+    "docID": "dxDiagramOptions.historyToolbar",
+    "className": "DxoHistoryToolbar",
+    "selector": "dxo-history-toolbar",
+    "optionName": "historyToolbar",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.historyToolbar.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.historyToolbar.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "history-toolbar",
+    "propertyName": "historyToolbar",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiCommand",
+            "path": "command-dxi",
+            "propertyName": "commands"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DiagramCustomCommand"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "command",
+            "DocID": "dxDiagramOptions.historyToolbar.commands"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.historyToolbar.visible"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

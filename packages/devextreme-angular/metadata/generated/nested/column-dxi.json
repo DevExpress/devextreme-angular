@@ -1,0 +1,4280 @@
+{
+    "docID": "dxDataGridOptions.columns",
+    "className": "DxiColumn",
+    "selector": "dxi-column",
+    "optionName": "columns",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "filterValueChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterValuesChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupIndexChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedFilterOperationChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortIndexChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortOrderChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleIndexChange",
+            "type": "EventEmitter<number | undefined>"
+        }
+    ],
+    "path": "column-dxi",
+    "propertyName": "columns",
+    "isCollection": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiButton",
+            "path": "button-dxi",
+            "propertyName": "buttons"
+        },
+        {
+            "className": "DxiColumn",
+            "path": "column-dxi",
+            "propertyName": "columns"
+        },
+        {
+            "className": "DxiValidationRule",
+            "path": "validation-rule-dxi",
+            "propertyName": "validationRules"
+        }
+    ],
+    "baseClass": "DxiDataGridColumn",
+    "basePath": "./base/data-grid-column-dxi",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.allowExporting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFixing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.allowGrouping"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHeaderFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowResizing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSorting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.autoExpandGroup"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxDataGridColumnButton"
+            ],
+            "ItemComplexTypes": [
+                "DataGridColumnButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxDataGridColumn.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateDisplayValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxDataGridColumn.calculateGroupValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateSortValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.cellTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDataGridColumn",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DataGridColumn"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "column",
+            "DocID": "dxDataGridColumn.columns"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.editCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "GridBaseColumn.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.encodeHtml"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "GridBaseColumn.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.filterType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.filterValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "filterValue",
+            "DocID": "GridBaseColumn.filterValues"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.fixed"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.fixedPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "GridBaseColumn.format"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormSimpleItem"
+            ],
+            "ComplexTypes": [
+                "FormSimpleItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormSimpleItem",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseColumn.formItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.groupCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDataGridColumn.groupIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.headerCellTemplate"
+        },
+        {
+            "DocID": "GridBaseColumn.headerFilter",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                },
+                "allowSelectAll": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.headerFilter.dataSource"
+                },
+                "groupInterval": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.height"
+                },
+                "search": {
+                    "PrimitiveTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "ComplexTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "ColumnHeaderFilterSearchConfig",
+                            "Path": "common/grids"
+                        }
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.search"
+                },
+                "searchMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.searchMode"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.hidingPriority"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.isBand"
+        },
+        {
+            "DocID": "GridBaseColumn.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.allowClearing"
+                },
+                "calculateCellValue": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.calculateCellValue"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.ownerBand"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.renderAsync"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.selectedFilterOperation"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.setCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showEditorAlways"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showInColumnChooser"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.showWhenGrouped"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.sortingMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDataGridColumn.type"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "GridBaseColumn.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.allowExporting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFixing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.allowGrouping"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHeaderFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowResizing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSorting"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.autoExpandGroup"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxDataGridColumnButton"
+            ],
+            "ItemComplexTypes": [
+                "DataGridColumnButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxDataGridColumn.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateDisplayValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxDataGridColumn.calculateGroupValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateSortValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.cellTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDataGridColumn",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DataGridColumn"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "column",
+            "DocID": "dxDataGridColumn.columns"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.editCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "GridBaseColumn.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.encodeHtml"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "GridBaseColumn.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.filterType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.filterValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "filterValue",
+            "DocID": "GridBaseColumn.filterValues"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.fixed"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.fixedPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "GridBaseColumn.format"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormSimpleItem"
+            ],
+            "ComplexTypes": [
+                "FormSimpleItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormSimpleItem",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseColumn.formItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.groupCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDataGridColumn.groupIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxDataGridColumn.headerCellTemplate"
+        },
+        {
+            "DocID": "GridBaseColumn.headerFilter",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                },
+                "allowSelectAll": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.headerFilter.dataSource"
+                },
+                "groupInterval": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.height"
+                },
+                "search": {
+                    "PrimitiveTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "ComplexTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "ColumnHeaderFilterSearchConfig",
+                            "Path": "common/grids"
+                        }
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.search"
+                },
+                "searchMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.searchMode"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.hidingPriority"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.isBand"
+        },
+        {
+            "DocID": "GridBaseColumn.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.allowClearing"
+                },
+                "calculateCellValue": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.calculateCellValue"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.ownerBand"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.renderAsync"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.selectedFilterOperation"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.setCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showEditorAlways"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showInColumnChooser"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridColumn.showWhenGrouped"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.sortingMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDataGridColumn.type"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "GridBaseColumn.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.hidingPriority"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFileManagerDetailsColumn.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHeaderFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSorting"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateDisplayValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateSortValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.cellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.encodeHtml"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "GridBaseColumn.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.filterType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.filterValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "filterValue",
+            "DocID": "GridBaseColumn.filterValues"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "GridBaseColumn.format"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.headerCellTemplate"
+        },
+        {
+            "DocID": "GridBaseColumn.headerFilter",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                },
+                "allowSelectAll": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.headerFilter.dataSource"
+                },
+                "groupInterval": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.height"
+                },
+                "search": {
+                    "PrimitiveTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "ComplexTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "ColumnHeaderFilterSearchConfig",
+                            "Path": "common/grids"
+                        }
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.search"
+                },
+                "searchMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.searchMode"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.selectedFilterOperation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.sortingMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFixing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHeaderFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowResizing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSorting"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTreeListColumnButton"
+            ],
+            "ItemComplexTypes": [
+                "TreeListColumnButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxTreeListColumn.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateDisplayValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateSortValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.cellTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxTreeListColumn",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "TreeListColumn"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "column",
+            "DocID": "dxTreeListColumn.columns"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.editCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "GridBaseColumn.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.encodeHtml"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "GridBaseColumn.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.filterType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.filterValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "filterValue",
+            "DocID": "GridBaseColumn.filterValues"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.fixed"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.fixedPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "GridBaseColumn.format"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormSimpleItem"
+            ],
+            "ComplexTypes": [
+                "FormSimpleItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormSimpleItem",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseColumn.formItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.headerCellTemplate"
+        },
+        {
+            "DocID": "GridBaseColumn.headerFilter",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                },
+                "allowSelectAll": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.headerFilter.dataSource"
+                },
+                "groupInterval": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.height"
+                },
+                "search": {
+                    "PrimitiveTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "ComplexTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "ColumnHeaderFilterSearchConfig",
+                            "Path": "common/grids"
+                        }
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.search"
+                },
+                "searchMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.searchMode"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.hidingPriority"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.isBand"
+        },
+        {
+            "DocID": "GridBaseColumn.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.allowClearing"
+                },
+                "calculateCellValue": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.calculateCellValue"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.ownerBand"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.renderAsync"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.selectedFilterOperation"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.setCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showEditorAlways"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showInColumnChooser"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.sortingMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTreeListColumn.type"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "GridBaseColumn.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowFixing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHeaderFiltering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowResizing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.allowSorting"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTreeListColumnButton"
+            ],
+            "ItemComplexTypes": [
+                "TreeListColumnButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxTreeListColumn.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateDisplayValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.calculateSortValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.cellTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxTreeListColumn",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "TreeListColumn"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "column",
+            "DocID": "dxTreeListColumn.columns"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.cssClass"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.editCellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "GridBaseColumn.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.encodeHtml"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "GridBaseColumn.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.filterType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.filterValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "filterValue",
+            "DocID": "GridBaseColumn.filterValues"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.fixed"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.fixedPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "GridBaseColumn.format"
+        },
+        {
+            "PrimitiveTypes": [
+                "dxFormSimpleItem"
+            ],
+            "ComplexTypes": [
+                "FormSimpleItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFormSimpleItem",
+                    "Path": "ui/form"
+                }
+            ],
+            "DocID": "GridBaseColumn.formItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTreeListColumn.headerCellTemplate"
+        },
+        {
+            "DocID": "GridBaseColumn.headerFilter",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                },
+                "allowSelectAll": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.headerFilter.dataSource"
+                },
+                "groupInterval": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.height"
+                },
+                "search": {
+                    "PrimitiveTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "ComplexTypes": [
+                        "ColumnHeaderFilterSearchConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "ColumnHeaderFilterSearchConfig",
+                            "Path": "common/grids"
+                        }
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.search"
+                },
+                "searchMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsDeprecated": true,
+                    "DocID": "GridBaseColumn.headerFilter.searchMode"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.headerFilter.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.hidingPriority"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.isBand"
+        },
+        {
+            "DocID": "GridBaseColumn.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.allowClearing"
+                },
+                "calculateCellValue": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.calculateCellValue"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "Function",
+                        "null",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsFunc": true,
+                    "IsDataSource": true,
+                    "DocID": "GridBaseColumn.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "GridBaseColumn.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "GridBaseColumn.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.ownerBand"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.renderAsync"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.selectedFilterOperation"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.setCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showEditorAlways"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.showInColumnChooser"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.sortingMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.sortOrder"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseColumn.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTreeListColumn.type"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.RequiredRule",
+                "DevExpress.common.NumericRule",
+                "DevExpress.common.RangeRule",
+                "DevExpress.common.StringLengthRule",
+                "DevExpress.common.CustomRule",
+                "DevExpress.common.CompareRule",
+                "DevExpress.common.PatternRule",
+                "DevExpress.common.EmailRule",
+                "DevExpress.common.AsyncRule"
+            ],
+            "ItemComplexTypes": [
+                "RequiredRule",
+                "NumericRule",
+                "RangeRule",
+                "StringLengthRule",
+                "CustomRule",
+                "CompareRule",
+                "PatternRule",
+                "EmailRule",
+                "AsyncRule"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "validationRule",
+            "DocID": "GridBaseColumn.validationRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseColumn.visibleIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "GridBaseColumn.alignment",
+            "name": "alignment",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.alignment"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowEditing",
+            "name": "allowEditing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowEditing"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.allowExporting",
+            "name": "allowExporting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDataGridColumn.allowExporting"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowFiltering",
+            "name": "allowFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowFiltering"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowFixing",
+            "name": "allowFixing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowFixing"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.allowGrouping",
+            "name": "allowGrouping",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDataGridColumn.allowGrouping"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowHeaderFiltering",
+            "name": "allowHeaderFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowHeaderFiltering"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowHiding",
+            "name": "allowHiding",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowHiding"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowReordering",
+            "name": "allowReordering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowReordering"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowResizing",
+            "name": "allowResizing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowResizing"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowSearch",
+            "name": "allowSearch",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowSearch"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.allowSorting",
+            "name": "allowSorting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.allowSorting"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.autoExpandGroup",
+            "name": "autoExpandGroup",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDataGridColumn.autoExpandGroup"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.buttons",
+            "name": "buttons",
+            "type": "Array<string | DevExpress.ui.dxDataGridColumnButton | DevExpress.ui.dxTreeListColumnButton>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.ui.dxDataGridColumnButton",
+                    "DevExpress.ui.dxTreeListColumnButton"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "DevExpress.ui.dxDataGridColumnButton"
+                ],
+                "ItemComplexTypes": [
+                    "DataGridColumnButton"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "button",
+                "DocID": "dxDataGridColumn.buttons"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseColumn.calculateCellValue",
+            "name": "calculateCellValue",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.calculateCellValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.calculateDisplayValue",
+            "name": "calculateDisplayValue",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.calculateDisplayValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.calculateFilterExpression",
+            "name": "calculateFilterExpression",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.calculateFilterExpression"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.calculateGroupValue",
+            "name": "calculateGroupValue",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxDataGridColumn.calculateGroupValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.calculateSortValue",
+            "name": "calculateSortValue",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.calculateSortValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.caption",
+            "name": "caption",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.caption"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.cellTemplate",
+            "name": "cellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxDataGridColumn.cellTemplate"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.columns",
+            "name": "columns",
+            "type": "Array<DevExpress.ui.dxDataGridColumn | string | DevExpress.ui.dxTreeListColumn>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDataGridColumn",
+                    "string",
+                    "DevExpress.ui.dxTreeListColumn"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxDataGridColumn",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "DataGridColumn"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "column",
+                "DocID": "dxDataGridColumn.columns"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseColumn.cssClass",
+            "name": "cssClass",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.cssClass"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.customizeText",
+            "name": "customizeText",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.customizeText"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.dataField",
+            "name": "dataField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.dataField"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.dataType",
+            "name": "dataType",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.dataType"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.editCellTemplate",
+            "name": "editCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxDataGridColumn.editCellTemplate"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.editorOptions",
+            "name": "editorOptions",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "GridBaseColumn.editorOptions"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.encodeHtml",
+            "name": "encodeHtml",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.encodeHtml"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.falseText",
+            "name": "falseText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "GridBaseColumn.falseText"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.filterOperations",
+            "name": "filterOperations",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "filterOperation",
+                "DocID": "GridBaseColumn.filterOperations"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseColumn.filterType",
+            "name": "filterType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "GridBaseColumn.filterType"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.filterValue",
+            "name": "filterValue",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.filterValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.filterValues",
+            "name": "filterValues",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "IsChangeable": true,
+                "SingularName": "filterValue",
+                "DocID": "GridBaseColumn.filterValues"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseColumn.fixed",
+            "name": "fixed",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.fixed"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.fixedPosition",
+            "name": "fixedPosition",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.fixedPosition"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.format",
+            "name": "format",
+            "type": "Format | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Format",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Format",
+                    "string"
+                ],
+                "ComplexTypes": [
+                    "Format"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "Format",
+                        "Path": "localization"
+                    }
+                ],
+                "DocID": "GridBaseColumn.format"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.formItem",
+            "name": "formItem",
+            "type": "dxFormSimpleItem",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFormSimpleItem"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "dxFormSimpleItem"
+                ],
+                "ComplexTypes": [
+                    "FormSimpleItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "dxFormSimpleItem",
+                        "Path": "ui/form"
+                    }
+                ],
+                "DocID": "GridBaseColumn.formItem"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.groupCellTemplate",
+            "name": "groupCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxDataGridColumn.groupCellTemplate"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.groupIndex",
+            "name": "groupIndex",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxDataGridColumn.groupIndex"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.headerCellTemplate",
+            "name": "headerCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxDataGridColumn.headerCellTemplate"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter",
+            "name": "headerFilter",
+            "type": "{ allowSearch?: boolean, allowSelectAll?: boolean, dataSource?: DataSourceOptions | Store | Function | null | undefined | Array<any>, groupInterval?: number | string | undefined, height?: number | undefined, search?: ColumnHeaderFilterSearchConfig, searchMode?: string, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, allowSelectAll?: boolean, dataSource?: DataSourceOptions | Store | Function | null | undefined | Array<any>, groupInterval?: number | string | undefined, height?: number | undefined, search?: ColumnHeaderFilterSearchConfig, searchMode?: string, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "GridBaseColumn.headerFilter",
+                "Options": {
+                    "allowSearch": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsDeprecated": true,
+                        "DocID": "GridBaseColumn.headerFilter.allowSearch"
+                    },
+                    "allowSelectAll": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "GridBaseColumn.headerFilter.allowSelectAll"
+                    },
+                    "dataSource": {
+                        "PrimitiveTypes": [
+                            "DataSourceOptions",
+                            "Store",
+                            "Function",
+                            "null",
+                            "undefined"
+                        ],
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "Options",
+                                "Alias": "DataSourceOptions",
+                                "Path": "data/data_source"
+                            },
+                            {
+                                "Name": "Store",
+                                "Path": "data"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsDataSource": true,
+                        "DocID": "GridBaseColumn.headerFilter.dataSource"
+                    },
+                    "groupInterval": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "string",
+                            "undefined"
+                        ],
+                        "DocID": "GridBaseColumn.headerFilter.groupInterval"
+                    },
+                    "height": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "GridBaseColumn.headerFilter.height"
+                    },
+                    "search": {
+                        "PrimitiveTypes": [
+                            "ColumnHeaderFilterSearchConfig"
+                        ],
+                        "ComplexTypes": [
+                            "ColumnHeaderFilterSearchConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "ColumnHeaderFilterSearchConfig",
+                                "Path": "common/grids"
+                            }
+                        ],
+                        "DocID": "GridBaseColumn.headerFilter.search"
+                    },
+                    "searchMode": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsDeprecated": true,
+                        "DocID": "GridBaseColumn.headerFilter.searchMode"
+                    },
+                    "width": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "GridBaseColumn.headerFilter.width"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "GridBaseColumn.hidingPriority",
+            "name": "hidingPriority",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.hidingPriority"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.isBand",
+            "name": "isBand",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.isBand"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.lookup",
+            "name": "lookup",
+            "type": "{ allowClearing?: boolean, calculateCellValue?: Function, dataSource?: DataSourceOptions | Store | Function | null | undefined | Array<any>, displayExpr?: Function | string | undefined, valueExpr?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowClearing?: boolean, calculateCellValue?: Function, dataSource?: DataSourceOptions | Store | Function | null | undefined | Array<any>, displayExpr?: Function | string | undefined, valueExpr?: string | undefined }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "GridBaseColumn.lookup",
+                "Options": {
+                    "allowClearing": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "GridBaseColumn.lookup.allowClearing"
+                    },
+                    "calculateCellValue": {
+                        "PrimitiveTypes": [
+                            "Function"
+                        ],
+                        "IsFunc": true,
+                        "DocID": "GridBaseColumn.lookup.calculateCellValue"
+                    },
+                    "dataSource": {
+                        "PrimitiveTypes": [
+                            "DataSourceOptions",
+                            "Store",
+                            "Function",
+                            "null",
+                            "undefined"
+                        ],
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "Options",
+                                "Alias": "DataSourceOptions",
+                                "Path": "data/data_source"
+                            },
+                            {
+                                "Name": "Store",
+                                "Path": "data"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsDataSource": true,
+                        "DocID": "GridBaseColumn.lookup.dataSource"
+                    },
+                    "displayExpr": {
+                        "PrimitiveTypes": [
+                            "Function",
+                            "string",
+                            "undefined"
+                        ],
+                        "IsFunc": true,
+                        "DocID": "GridBaseColumn.lookup.displayExpr"
+                    },
+                    "valueExpr": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "DocID": "GridBaseColumn.lookup.valueExpr"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "GridBaseColumn.minWidth",
+            "name": "minWidth",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.minWidth"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.name",
+            "name": "name",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.name"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.ownerBand",
+            "name": "ownerBand",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.ownerBand"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.renderAsync",
+            "name": "renderAsync",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.renderAsync"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.selectedFilterOperation",
+            "name": "selectedFilterOperation",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.selectedFilterOperation"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.setCellValue",
+            "name": "setCellValue",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.setCellValue"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.showEditorAlways",
+            "name": "showEditorAlways",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.showEditorAlways"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.showInColumnChooser",
+            "name": "showInColumnChooser",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "GridBaseColumn.showInColumnChooser"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.showWhenGrouped",
+            "name": "showWhenGrouped",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDataGridColumn.showWhenGrouped"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.sortIndex",
+            "name": "sortIndex",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.sortIndex"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.sortingMethod",
+            "name": "sortingMethod",
+            "type": "Function | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "GridBaseColumn.sortingMethod"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.sortOrder",
+            "name": "sortOrder",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.sortOrder"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.trueText",
+            "name": "trueText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "GridBaseColumn.trueText"
+            }
+        },
+        {
+            "docID": "dxDataGridColumn.type",
+            "name": "type",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxDataGridColumn.type"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.validationRules",
+            "name": "validationRules",
+            "type": "Array<DevExpress.common.RequiredRule | DevExpress.common.NumericRule | DevExpress.common.RangeRule | DevExpress.common.StringLengthRule | DevExpress.common.CustomRule | DevExpress.common.CompareRule | DevExpress.common.PatternRule | DevExpress.common.EmailRule | DevExpress.common.AsyncRule>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.RequiredRule",
+                    "DevExpress.common.NumericRule",
+                    "DevExpress.common.RangeRule",
+                    "DevExpress.common.StringLengthRule",
+                    "DevExpress.common.CustomRule",
+                    "DevExpress.common.CompareRule",
+                    "DevExpress.common.PatternRule",
+                    "DevExpress.common.EmailRule",
+                    "DevExpress.common.AsyncRule"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.common.RequiredRule",
+                    "DevExpress.common.NumericRule",
+                    "DevExpress.common.RangeRule",
+                    "DevExpress.common.StringLengthRule",
+                    "DevExpress.common.CustomRule",
+                    "DevExpress.common.CompareRule",
+                    "DevExpress.common.PatternRule",
+                    "DevExpress.common.EmailRule",
+                    "DevExpress.common.AsyncRule"
+                ],
+                "ItemComplexTypes": [
+                    "RequiredRule",
+                    "NumericRule",
+                    "RangeRule",
+                    "StringLengthRule",
+                    "CustomRule",
+                    "CompareRule",
+                    "PatternRule",
+                    "EmailRule",
+                    "AsyncRule"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "validationRule",
+                "DocID": "GridBaseColumn.validationRules"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "GridBaseColumn.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.visible"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.visibleIndex",
+            "name": "visibleIndex",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "IsChangeable": true,
+                "DocID": "GridBaseColumn.visibleIndex"
+            }
+        },
+        {
+            "docID": "GridBaseColumn.width",
+            "name": "width",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "GridBaseColumn.width"
+            }
+        }
+    ]
+}

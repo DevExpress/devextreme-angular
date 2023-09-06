@@ -1,0 +1,5061 @@
+{
+    "docID": "dxFormSimpleItem.validationRules",
+    "className": "DxiValidationRule",
+    "selector": "dxi-validation-rule",
+    "optionName": "validationRules",
+    "properties": [
+        {
+            "docID": "RequiredRule.message",
+            "name": "message",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "RequiredRule.trim",
+            "name": "trim",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "RequiredRule.type",
+            "name": "type",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "NumericRule.ignoreEmptyValue",
+            "name": "ignoreEmptyValue",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "RangeRule.max",
+            "name": "max",
+            "type": "Date | number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "RangeRule.min",
+            "name": "min",
+            "type": "Date | number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "RangeRule.reevaluate",
+            "name": "reevaluate",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CustomRule.validationCallback",
+            "name": "validationCallback",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CompareRule.comparisonTarget",
+            "name": "comparisonTarget",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CompareRule.comparisonType",
+            "name": "comparisonType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "PatternRule.pattern",
+            "name": "pattern",
+            "type": "RegExp | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "RegExp",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "validation-rule-dxi",
+    "propertyName": "validationRules",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RequiredRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RequiredRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "NumericRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "NumericRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number"
+            ],
+            "DocID": "RangeRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "RangeRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "RangeRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "StringLengthRule.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "StringLengthRule.trim"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "StringLengthRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CustomRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CustomRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CustomRule.validationCallback"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "CompareRule.comparisonTarget"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.comparisonType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "CompareRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CompareRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "PatternRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "RegExp",
+                "string"
+            ],
+            "DocID": "PatternRule.pattern"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "PatternRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EmailRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EmailRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.ignoreEmptyValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.message"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "AsyncRule.reevaluate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "AsyncRule.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "AsyncRule.validationCallback"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,1559 @@
+{
+    "docID": "dxCircularGaugeOptions.scale",
+    "className": "DxoScale",
+    "selector": "dxo-scale",
+    "optionName": "scale",
+    "properties": [
+        {
+            "docID": "BaseGaugeOptions.scale.allowDecimals",
+            "name": "allowDecimals",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.customMinorTicks",
+            "name": "customMinorTicks",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.customTicks",
+            "name": "customTicks",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.endValue",
+            "name": "endValue",
+            "type": "number | Date | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Date",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxCircularGaugeOptions.scale.label",
+            "name": "label",
+            "type": "{ customizeText?: Function, font?: Font, format?: Format | string | undefined, hideFirstOrLast?: string, indentFromTick?: number, overlappingBehavior?: string, useRangeColors?: boolean, visible?: boolean } | { customizeText?: Function, font?: Font, format?: Format | string | undefined, indentFromTick?: number, overlappingBehavior?: string, useRangeColors?: boolean, visible?: boolean } | { customizeText?: Function, font?: Font, format?: Format | string | undefined, overlappingBehavior?: string, topIndent?: number, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customizeText?: Function, font?: Font, format?: Format | string | undefined, hideFirstOrLast?: string, indentFromTick?: number, overlappingBehavior?: string, useRangeColors?: boolean, visible?: boolean }",
+                    "{ customizeText?: Function, font?: Font, format?: Format | string | undefined, indentFromTick?: number, overlappingBehavior?: string, useRangeColors?: boolean, visible?: boolean }",
+                    "{ customizeText?: Function, font?: Font, format?: Format | string | undefined, overlappingBehavior?: string, topIndent?: number, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.minorTick",
+            "name": "minorTick",
+            "type": "{ color?: string, length?: number, opacity?: number, visible?: boolean, width?: number } | { color?: string, opacity?: number, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, length?: number, opacity?: number, visible?: boolean, width?: number }",
+                    "{ color?: string, opacity?: number, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.minorTickInterval",
+            "name": "minorTickInterval",
+            "type": "number | undefined | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxCircularGaugeOptions.scale.orientation",
+            "name": "orientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.scaleDivisionFactor",
+            "name": "scaleDivisionFactor",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.startValue",
+            "name": "startValue",
+            "type": "number | Date | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Date",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.tick",
+            "name": "tick",
+            "type": "{ color?: string, length?: number, opacity?: number, visible?: boolean, width?: number } | { color?: string, opacity?: number, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, length?: number, opacity?: number, visible?: boolean, width?: number }",
+                    "{ color?: string, opacity?: number, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.scale.tickInterval",
+            "name": "tickInterval",
+            "type": "number | undefined | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxLinearGaugeOptions.scale.horizontalOrientation",
+            "name": "horizontalOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxLinearGaugeOptions.scale.verticalOrientation",
+            "name": "verticalOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.aggregateByCategory",
+            "isDeprecated": true,
+            "name": "aggregateByCategory",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.aggregationGroupWidth",
+            "name": "aggregationGroupWidth",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.aggregationInterval",
+            "name": "aggregationInterval",
+            "type": "number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.breaks",
+            "name": "breaks",
+            "type": "Array<DevExpress.common.charts.ScaleBreak>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.charts.ScaleBreak"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.breakStyle",
+            "name": "breakStyle",
+            "type": "{ color?: string, line?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, line?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.categories",
+            "name": "categories",
+            "type": "Array<number | string | Date>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number",
+                    "string",
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.discreteAxisDivisionMode",
+            "name": "discreteAxisDivisionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.endOnTick",
+            "name": "endOnTick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.holidays",
+            "name": "holidays",
+            "type": "Array<Date | string | number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "Date",
+                    "string",
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.linearThreshold",
+            "name": "linearThreshold",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.logarithmBase",
+            "name": "logarithmBase",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.marker",
+            "name": "marker",
+            "type": "{ label?: { customizeText?: Function, format?: Format | string | undefined }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ label?: { customizeText?: Function, format?: Format | string | undefined }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.maxRange",
+            "name": "maxRange",
+            "type": "number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.minorTickCount",
+            "name": "minorTickCount",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.minRange",
+            "name": "minRange",
+            "type": "number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.placeholderHeight",
+            "name": "placeholderHeight",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.showCustomBoundaryTicks",
+            "name": "showCustomBoundaryTicks",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.singleWorkdays",
+            "name": "singleWorkdays",
+            "type": "Array<Date | string | number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "Date",
+                    "string",
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.type",
+            "name": "type",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.valueType",
+            "name": "valueType",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.workdaysOnly",
+            "name": "workdaysOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale.workWeek",
+            "name": "workWeek",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "path": "scale",
+    "propertyName": "scale",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiBreak",
+            "path": "break-dxi",
+            "propertyName": "breaks"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.allowDecimals"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "customMinorTick",
+            "DocID": "BaseGaugeOptions.scale.customMinorTicks"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "customTick",
+            "DocID": "BaseGaugeOptions.scale.customTicks"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.scale.endValue"
+        },
+        {
+            "DocID": "dxCircularGaugeOptions.scale.label",
+            "Options": {
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "BaseGaugeOptions.scale.label.customizeText"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.font"
+                },
+                "format": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.format"
+                },
+                "hideFirstOrLast": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxCircularGaugeOptions.scale.label.hideFirstOrLast"
+                },
+                "indentFromTick": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxCircularGaugeOptions.scale.label.indentFromTick"
+                },
+                "overlappingBehavior": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.overlappingBehavior"
+                },
+                "useRangeColors": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.useRangeColors"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.visible"
+                }
+            }
+        },
+        {
+            "DocID": "BaseGaugeOptions.scale.minorTick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.minorTickInterval"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCircularGaugeOptions.scale.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.scale.scaleDivisionFactor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.scale.startValue"
+        },
+        {
+            "DocID": "BaseGaugeOptions.scale.tick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.tickInterval"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.allowDecimals"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "customMinorTick",
+            "DocID": "BaseGaugeOptions.scale.customMinorTicks"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "customTick",
+            "DocID": "BaseGaugeOptions.scale.customTicks"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.scale.endValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxLinearGaugeOptions.scale.horizontalOrientation"
+        },
+        {
+            "DocID": "dxLinearGaugeOptions.scale.label",
+            "Options": {
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "BaseGaugeOptions.scale.label.customizeText"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.font"
+                },
+                "format": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.format"
+                },
+                "indentFromTick": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxLinearGaugeOptions.scale.label.indentFromTick"
+                },
+                "overlappingBehavior": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.overlappingBehavior"
+                },
+                "useRangeColors": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.useRangeColors"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.label.visible"
+                }
+            }
+        },
+        {
+            "DocID": "BaseGaugeOptions.scale.minorTick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.minorTick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.minorTickInterval"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxLinearGaugeOptions.scale.scaleDivisionFactor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.scale.startValue"
+        },
+        {
+            "DocID": "BaseGaugeOptions.scale.tick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.scale.tick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseGaugeOptions.scale.tickInterval"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxLinearGaugeOptions.scale.verticalOrientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsDeprecated": true,
+            "DocID": "dxRangeSelectorOptions.scale.aggregateByCategory"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.aggregationGroupWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.aggregationInterval",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.allowDecimals"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.charts.ScaleBreak"
+            ],
+            "ItemComplexTypes": [
+                "VizScaleBreak"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "break",
+            "DocID": "dxRangeSelectorOptions.scale.breaks"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.scale.breakStyle",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.breakStyle.color"
+                },
+                "line": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.breakStyle.line"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.breakStyle.width"
+                }
+            }
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+            ],
+            "IsCollection": true,
+            "SingularName": "category",
+            "DocID": "dxRangeSelectorOptions.scale.categories"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.discreteAxisDivisionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.endOnTick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.endValue"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "holiday",
+            "DocID": "dxRangeSelectorOptions.scale.holidays"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.scale.label",
+            "Options": {
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxRangeSelectorOptions.scale.label.customizeText"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.label.font"
+                },
+                "format": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.label.format"
+                },
+                "overlappingBehavior": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.label.overlappingBehavior"
+                },
+                "topIndent": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.label.topIndent"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.linearThreshold"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.logarithmBase"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.scale.marker",
+            "Options": {
+                "label": {
+                    "DocID": "dxRangeSelectorOptions.scale.marker.label",
+                    "Options": {
+                        "customizeText": {
+                            "PrimitiveTypes": [
+                                "Function"
+                            ],
+                            "IsFunc": true,
+                            "DocID": "dxRangeSelectorOptions.scale.marker.label.customizeText"
+                        },
+                        "format": {
+                            "PrimitiveTypes": [
+                                "Format",
+                                "string",
+                                "undefined"
+                            ],
+                            "ComplexTypes": [
+                                "Format"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Format",
+                                    "Path": "localization"
+                                }
+                            ],
+                            "DocID": "dxRangeSelectorOptions.scale.marker.label.format"
+                        }
+                    }
+                },
+                "separatorHeight": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.marker.separatorHeight"
+                },
+                "textLeftIndent": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.marker.textLeftIndent"
+                },
+                "textTopIndent": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.marker.textTopIndent"
+                },
+                "topIndent": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.marker.topIndent"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.marker.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.maxRange",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.scale.minorTick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.minorTick.color"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.minorTick.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.minorTick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.minorTick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.minorTickCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.minorTickInterval",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.minRange",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.placeholderHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.showCustomBoundaryTicks"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "Date",
+                "string",
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "singleWorkday",
+            "DocID": "dxRangeSelectorOptions.scale.singleWorkdays"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.startValue"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.scale.tick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.tick.color"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.tick.opacity"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.scale.tick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.tickInterval",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.valueType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxRangeSelectorOptions.scale.workdaysOnly"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "workWeek",
+            "DocID": "dxRangeSelectorOptions.scale.workWeek"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

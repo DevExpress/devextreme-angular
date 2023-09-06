@@ -1,0 +1,1303 @@
+{
+    "docID": "dxDateBox",
+    "className": "DxDateBox",
+    "widgetName": "dxDateBox",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-date-box",
+    "events": [
+        {
+            "docID": "dxDateBoxOptions.onChange",
+            "emit": "onChange",
+            "subscribe": "change",
+            "type": "EventEmitter<ChangeEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onClosed",
+            "emit": "onClosed",
+            "subscribe": "closed",
+            "type": "EventEmitter<ClosedEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onCopy",
+            "emit": "onCopy",
+            "subscribe": "copy",
+            "type": "EventEmitter<CopyEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onCut",
+            "emit": "onCut",
+            "subscribe": "cut",
+            "type": "EventEmitter<CutEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onEnterKey",
+            "emit": "onEnterKey",
+            "subscribe": "enterKey",
+            "type": "EventEmitter<EnterKeyEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onFocusIn",
+            "emit": "onFocusIn",
+            "subscribe": "focusIn",
+            "type": "EventEmitter<FocusInEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onFocusOut",
+            "emit": "onFocusOut",
+            "subscribe": "focusOut",
+            "type": "EventEmitter<FocusOutEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onInput",
+            "emit": "onInput",
+            "subscribe": "input",
+            "type": "EventEmitter<InputEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onKeyDown",
+            "emit": "onKeyDown",
+            "subscribe": "keyDown",
+            "type": "EventEmitter<KeyDownEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onKeyUp",
+            "emit": "onKeyUp",
+            "subscribe": "keyUp",
+            "type": "EventEmitter<KeyUpEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onOpened",
+            "emit": "onOpened",
+            "subscribe": "opened",
+            "type": "EventEmitter<OpenedEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onPaste",
+            "emit": "onPaste",
+            "subscribe": "paste",
+            "type": "EventEmitter<PasteEvent>"
+        },
+        {
+            "docID": "dxDateBoxOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "acceptCustomValueChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptivityEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "applyButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "applyValueModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "buttonsChange",
+            "type": "EventEmitter<Array<string | DevExpress.common.TextEditorButton>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "calendarOptionsChange",
+            "type": "EventEmitter<dxCalendarOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cancelButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dateOutOfRangeMessageChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dateSerializationFormatChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "deferRenderingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledDatesChange",
+            "type": "EventEmitter<Function | Array<Date>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "displayFormatChange",
+            "type": "EventEmitter<Format | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownButtonTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownOptionsChange",
+            "type": "EventEmitter<dxPopupOptions>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "inputAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "intervalChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "invalidDateMessageChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isValidChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxChange",
+            "type": "EventEmitter<Date | number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxLengthChange",
+            "type": "EventEmitter<number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minChange",
+            "type": "EventEmitter<Date | number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "openOnFieldClickChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pickerTypeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "placeholderChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showAnalogClockChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showClearButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showDropDownButtonChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "spellcheckChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stylingModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "textChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "todayButtonTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "typeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useMaskBehaviorChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessageModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessagePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationStatusChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<Date | number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChangeEventChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxDropDownEditorOptions.acceptCustomValue",
+            "name": "acceptCustomValue",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.adaptivityEnabled",
+            "name": "adaptivityEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.applyButtonText",
+            "name": "applyButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.applyValueMode",
+            "name": "applyValueMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.buttons",
+            "name": "buttons",
+            "type": "Array<string | DevExpress.common.TextEditorButton>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.common.TextEditorButton"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DateBoxBaseOptions.calendarOptions",
+            "name": "calendarOptions",
+            "type": "dxCalendarOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxCalendarOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.cancelButtonText",
+            "name": "cancelButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.dateOutOfRangeMessage",
+            "name": "dateOutOfRangeMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.dateSerializationFormat",
+            "name": "dateSerializationFormat",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.disabledDates",
+            "name": "disabledDates",
+            "type": "Function | Array<Date>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": [
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DateBoxBaseOptions.displayFormat",
+            "name": "displayFormat",
+            "type": "Format | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Format",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.dropDownButtonTemplate",
+            "name": "dropDownButtonTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.dropDownOptions",
+            "name": "dropDownOptions",
+            "type": "dxPopupOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxPopupOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.inputAttr",
+            "name": "inputAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.interval",
+            "name": "interval",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.invalidDateMessage",
+            "name": "invalidDateMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.label",
+            "name": "label",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.labelMode",
+            "name": "labelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.max",
+            "name": "max",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.maxLength",
+            "name": "maxLength",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.min",
+            "name": "min",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.opened",
+            "name": "opened",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.openOnFieldClick",
+            "name": "openOnFieldClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.pickerType",
+            "name": "pickerType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.placeholder",
+            "name": "placeholder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.showAnalogClock",
+            "name": "showAnalogClock",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.showClearButton",
+            "name": "showClearButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.showDropDownButton",
+            "name": "showDropDownButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.spellcheck",
+            "name": "spellcheck",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.stylingMode",
+            "name": "stylingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.text",
+            "name": "text",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.todayButtonText",
+            "name": "todayButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.type",
+            "name": "type",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DateBoxBaseOptions.useMaskBehavior",
+            "name": "useMaskBehavior",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDropDownEditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDateBoxOptions.value",
+            "name": "value",
+            "type": "Date | number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.valueChangeEvent",
+            "name": "valueChangeEvent",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/ui/date_box",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/ui/calendar",
+            "importString": "{ dxCalendarOptions }"
+        },
+        {
+            "path": "devextreme/ui/date_box",
+            "importString": "{ ChangeEvent, ClosedEvent, ContentReadyEvent, CopyEvent, CutEvent, DisposingEvent, EnterKeyEvent, FocusInEvent, FocusOutEvent, InitializedEvent, InputEvent, KeyDownEvent, KeyUpEvent, OpenedEvent, OptionChangedEvent, PasteEvent, ValueChangedEvent }"
+        },
+        {
+            "path": "devextreme/ui/popup",
+            "importString": "{ Properties as dxPopupOptions }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "button-dxi",
+            "propertyName": "buttons",
+            "className": "DxiButton",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "options",
+            "propertyName": "options",
+            "className": "DxoOptions",
+            "events": []
+        },
+        {
+            "path": "calendar-options",
+            "propertyName": "calendarOptions",
+            "className": "DxoCalendarOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<Date | number | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "Date",
+                            "number",
+                            "string"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxCalendarOptions.value"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "zoomLevelChange",
+                    "type": "EventEmitter<string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxCalendarOptions.zoomLevel"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "display-format",
+            "propertyName": "displayFormat",
+            "className": "DxoDisplayFormat",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "drop-down-options",
+            "propertyName": "dropDownOptions",
+            "className": "DxoDropDownOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "positionChange",
+                    "type": "EventEmitter<DevExpress.PositionConfig | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.PositionConfig",
+                            "Function",
+                            "string"
+                        ],
+                        "ComplexTypes": [
+                            "PositionConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.position"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxOverlayOptions.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number | Function | string>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "Function",
+                            "string"
+                        ],
+                        "IsFunc": true,
+                        "IsChangeable": true,
+                        "DocID": "dxPopupOptions.width"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": []
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": []
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "toolbar-item-dxi",
+            "propertyName": "toolbarItems",
+            "className": "DxiToolbarItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        }
+    ],
+    "renderReexports": true
+}

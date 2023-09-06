@@ -1,0 +1,88 @@
+{
+    "docID": "dxVectorMapOptions.projection",
+    "className": "DxoProjection",
+    "selector": "dxo-projection",
+    "optionName": "projection",
+    "path": "projection",
+    "propertyName": "projection",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoVectorMapProjectionConfig",
+    "basePath": "./base/vector-map-projection-config",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "VectorMapProjectionConfig.aspectRatio"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "VectorMapProjectionConfig.from"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "VectorMapProjectionConfig.to"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "VectorMapProjectionConfig.aspectRatio",
+            "name": "aspectRatio",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "VectorMapProjectionConfig.aspectRatio"
+            }
+        },
+        {
+            "docID": "VectorMapProjectionConfig.from",
+            "name": "from",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "VectorMapProjectionConfig.from"
+            }
+        },
+        {
+            "docID": "VectorMapProjectionConfig.to",
+            "name": "to",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "VectorMapProjectionConfig.to"
+            }
+        }
+    ]
+}

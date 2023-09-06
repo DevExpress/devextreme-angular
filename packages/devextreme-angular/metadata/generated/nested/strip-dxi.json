@@ -1,0 +1,353 @@
+{
+    "docID": "dxChartOptions.argumentAxis.strips",
+    "className": "DxiStrip",
+    "selector": "dxi-strip",
+    "optionName": "strips",
+    "properties": [
+        {
+            "docID": "dxChartOptions.argumentAxis.strips.color",
+            "name": "color",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.strips.endValue",
+            "name": "endValue",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.strips.label",
+            "name": "label",
+            "type": "{ font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string } | { font?: Font, text?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }",
+                    "{ font?: Font, text?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.stripStyle.paddingLeftRight",
+            "name": "paddingLeftRight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.stripStyle.paddingTopBottom",
+            "name": "paddingTopBottom",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.strips.startValue",
+            "name": "startValue",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "strip-dxi",
+    "propertyName": "strips",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.strips.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.strips.endValue"
+        },
+        {
+            "DocID": "dxChartOptions.argumentAxis.strips.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.horizontalAlignment"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.argumentAxis.strips.label.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.strips.startValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.strips.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.strips.endValue"
+        },
+        {
+            "DocID": "dxChartOptions.valueAxis.strips.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.horizontalAlignment"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.strips.label.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.strips.startValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.strips.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.strips.endValue"
+        },
+        {
+            "DocID": "dxPolarChartOptions.argumentAxis.strips.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.stripStyle.label.font"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxPolarChartOptions.argumentAxis.strips.label.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.strips.startValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.strips.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.strips.endValue"
+        },
+        {
+            "DocID": "dxPolarChartOptions.valueAxis.strips.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.stripStyle.label.font"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxPolarChartOptions.valueAxis.strips.label.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.strips.startValue"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

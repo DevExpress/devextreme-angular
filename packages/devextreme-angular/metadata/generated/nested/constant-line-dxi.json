@@ -1,0 +1,474 @@
+{
+    "docID": "dxChartOptions.argumentAxis.constantLines",
+    "className": "DxiConstantLine",
+    "selector": "dxi-constant-line",
+    "optionName": "constantLines",
+    "properties": [
+        {
+            "docID": "dxChartOptions.commonAxisSettings.constantLineStyle.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.constantLineStyle.dashStyle",
+            "name": "dashStyle",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.constantLines.displayBehindSeries",
+            "name": "displayBehindSeries",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.constantLines.extendAxis",
+            "name": "extendAxis",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.constantLines.label",
+            "name": "label",
+            "type": "{ font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean } | { font?: Font, text?: string | undefined, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }",
+                    "{ font?: Font, text?: string | undefined, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingLeftRight",
+            "name": "paddingLeftRight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingTopBottom",
+            "name": "paddingTopBottom",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis.constantLines.value",
+            "name": "value",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.constantLineStyle.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "constant-line-dxi",
+    "propertyName": "constantLines",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.constantLines.displayBehindSeries"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.constantLines.extendAxis"
+        },
+        {
+            "DocID": "dxChartOptions.argumentAxis.constantLines.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.argumentAxis.constantLines.label.horizontalAlignment"
+                },
+                "position": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.position"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.argumentAxis.constantLines.label.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.argumentAxis.constantLines.label.verticalAlignment"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.constantLines.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.valueAxis.constantLines.displayBehindSeries"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.valueAxis.constantLines.extendAxis"
+        },
+        {
+            "DocID": "dxChartOptions.valueAxis.constantLines.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.label.horizontalAlignment"
+                },
+                "position": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.position"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.label.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.label.verticalAlignment"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.constantLines.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.constantLines.displayBehindSeries"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.constantLines.extendAxis"
+        },
+        {
+            "DocID": "dxPolarChartOptions.argumentAxis.constantLines.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxPolarChartOptions.argumentAxis.constantLines.label.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.argumentAxis.constantLines.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.color"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.constantLines.displayBehindSeries"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.constantLines.extendAxis"
+        },
+        {
+            "DocID": "dxPolarChartOptions.valueAxis.constantLines.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxPolarChartOptions.valueAxis.constantLines.label.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxPolarChartOptions.valueAxis.constantLines.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxPolarChartOptions.commonAxisSettings.constantLineStyle.width"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,102 @@
+{
+    "docID": "dxRangeSelectorOptions.background",
+    "className": "DxoBackground",
+    "selector": "dxo-background",
+    "optionName": "background",
+    "properties": [
+        {
+            "docID": "dxRangeSelectorOptions.background.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.background.image",
+            "name": "image",
+            "type": "{ location?: string, url?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ location?: string, url?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.background.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxVectorMapOptions.background.borderColor",
+            "name": "borderColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "background",
+    "propertyName": "background",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxRangeSelectorOptions.background.color"
+        },
+        {
+            "DocID": "dxRangeSelectorOptions.background.image",
+            "Options": {
+                "location": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.background.image.location"
+                },
+                "url": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxRangeSelectorOptions.background.image.url"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxRangeSelectorOptions.background.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.background.borderColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxVectorMapOptions.background.color"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

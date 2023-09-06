@@ -1,0 +1,246 @@
+{
+    "docID": "dxResizable",
+    "className": "DxResizable",
+    "widgetName": "dxResizable",
+    "isTranscludedContent": true,
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-resizable",
+    "events": [
+        {
+            "docID": "dxResizableOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxResizableOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxResizableOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxResizableOptions.onResize",
+            "emit": "onResize",
+            "subscribe": "resize",
+            "type": "EventEmitter<ResizeEvent>"
+        },
+        {
+            "docID": "dxResizableOptions.onResizeEnd",
+            "emit": "onResizeEnd",
+            "subscribe": "resizeEnd",
+            "type": "EventEmitter<ResizeEndEvent>"
+        },
+        {
+            "docID": "dxResizableOptions.onResizeStart",
+            "emit": "onResizeStart",
+            "subscribe": "resizeStart",
+            "type": "EventEmitter<ResizeStartEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "areaChange",
+            "type": "EventEmitter<string | UserDefinedElement | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "handlesChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "keepAspectRatioChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxHeightChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxWidthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minHeightChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minWidthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxResizableOptions.area",
+            "name": "area",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.handles",
+            "name": "handles",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.height",
+            "name": "height",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.keepAspectRatio",
+            "name": "keepAspectRatio",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.maxHeight",
+            "name": "maxHeight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.maxWidth",
+            "name": "maxWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.minHeight",
+            "name": "minHeight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.minWidth",
+            "name": "minWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxResizableOptions.width",
+            "name": "width",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/resizable",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/ui/resizable",
+            "importString": "{ DisposingEvent, InitializedEvent, OptionChangedEvent, ResizeEndEvent, ResizeEvent, ResizeStartEvent }"
+        }
+    ],
+    "nestedComponents": [],
+    "renderReexports": true
+}

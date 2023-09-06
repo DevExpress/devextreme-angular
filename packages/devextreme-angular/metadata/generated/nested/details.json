@@ -1,0 +1,60 @@
+{
+    "docID": "dxFileManagerOptions.itemView.details",
+    "className": "DxoDetails",
+    "selector": "dxo-details",
+    "optionName": "details",
+    "properties": [
+        {
+            "docID": "dxFileManagerOptions.itemView.details.columns",
+            "name": "columns",
+            "type": "Array<DevExpress.ui.dxFileManagerDetailsColumn | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFileManagerDetailsColumn",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "path": "details",
+    "propertyName": "details",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiColumn",
+            "path": "column-dxi",
+            "propertyName": "columns"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFileManagerDetailsColumn",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "FileManagerDetailsColumn"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "column",
+            "DocID": "dxFileManagerOptions.itemView.details.columns"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

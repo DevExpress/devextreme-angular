@@ -1,0 +1,2155 @@
+{
+    "docID": "GridBaseOptions.editing.popup",
+    "className": "DxoPopup",
+    "selector": "dxo-popup",
+    "optionName": "popup",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "positionChange",
+            "type": "EventEmitter<DevExpress.PositionConfig | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string>"
+        }
+    ],
+    "path": "popup",
+    "propertyName": "popup",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiToolbarItem",
+            "path": "toolbar-item-dxi",
+            "propertyName": "toolbarItems"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "baseClass": "DxoPopupOptions",
+    "basePath": "./base/popup-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "DocID": "dxPopupOptions.animation",
+            "Options": {
+                "hide": {
+                    "PrimitiveTypes": [
+                        "AnimationConfig"
+                    ],
+                    "ComplexTypes": [
+                        "AnimationConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "AnimationConfig",
+                            "Path": "animation/fx"
+                        }
+                    ],
+                    "DocID": "dxPopupOptions.animation.hide"
+                },
+                "show": {
+                    "PrimitiveTypes": [
+                        "AnimationConfig"
+                    ],
+                    "ComplexTypes": [
+                        "AnimationConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "AnimationConfig",
+                            "Path": "animation/fx"
+                        }
+                    ],
+                    "DocID": "dxPopupOptions.animation.show"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsDeprecated": true,
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.closeOnOutsideClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxPopupOptions.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxOverlayOptions.contentTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsDeprecated": true,
+            "DocID": "dxOverlayOptions.copyRootClassesToWrapper"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxPopupOptions.dragAndResizeArea"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.dragEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.dragOutsideBoundary"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsDeprecated": true,
+            "DocID": "dxOverlayOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.enableBodyScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.fullScreen"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.hideOnOutsideClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.hideOnParentScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.maxHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.maxWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.minHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "WidgetOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "DOMComponentOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onHidden"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "ComponentOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "DOMComponentOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResize"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResizeEnd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResizeStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onShowing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onShown"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "DevExpress.PositionConfig",
+                "Function",
+                "string"
+            ],
+            "ComplexTypes": [
+                "PositionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.resizeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.restorePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.shading"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxOverlayOptions.shadingColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.showCloseButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.showTitle"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPopupOptions.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxPopupOptions.titleTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "toolbarItem",
+            "DocID": "dxPopupOptions.toolbarItems",
+            "Options": {
+                "cssClass": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxToolbarItem.cssClass"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "locateInMenu": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.locateInMenu"
+                },
+                "location": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.location"
+                },
+                "menuItemTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxToolbarItem.menuItemTemplate"
+                },
+                "options": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "DocID": "dxToolbarItem.options"
+                },
+                "showText": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.showText"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "toolbar": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxPopupToolbarItem.toolbar"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.visible"
+                },
+                "widget": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.widget"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxOverlayOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxOverlayOptions.wrapperAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "DocID": "dxPopupOptions.animation",
+            "Options": {
+                "hide": {
+                    "PrimitiveTypes": [
+                        "AnimationConfig"
+                    ],
+                    "ComplexTypes": [
+                        "AnimationConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "AnimationConfig",
+                            "Path": "animation/fx"
+                        }
+                    ],
+                    "DocID": "dxPopupOptions.animation.hide"
+                },
+                "show": {
+                    "PrimitiveTypes": [
+                        "AnimationConfig"
+                    ],
+                    "ComplexTypes": [
+                        "AnimationConfig"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "AnimationConfig",
+                            "Path": "animation/fx"
+                        }
+                    ],
+                    "DocID": "dxPopupOptions.animation.show"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsDeprecated": true,
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.closeOnOutsideClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxPopupOptions.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxOverlayOptions.contentTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsDeprecated": true,
+            "DocID": "dxOverlayOptions.copyRootClassesToWrapper"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxPopupOptions.dragAndResizeArea"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.dragEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.dragOutsideBoundary"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsDeprecated": true,
+            "DocID": "dxOverlayOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.enableBodyScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.fullScreen"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.hideOnOutsideClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.hideOnParentScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.maxHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.maxWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.minHeight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxOverlayOptions.minWidth"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "WidgetOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "DOMComponentOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onHidden"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onHiding"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "ComponentOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "DOMComponentOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResize"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResizeEnd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onResizeStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onShowing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxOverlayOptions.onShown"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxPopupOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "DevExpress.PositionConfig",
+                "Function",
+                "string"
+            ],
+            "ComplexTypes": [
+                "PositionConfig"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.resizeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.restorePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxOverlayOptions.shading"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxOverlayOptions.shadingColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.showCloseButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxPopupOptions.showTitle"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPopupOptions.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxPopupOptions.titleTemplate"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "toolbarItem",
+            "DocID": "dxPopupOptions.toolbarItems",
+            "Options": {
+                "cssClass": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxToolbarItem.cssClass"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "locateInMenu": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.locateInMenu"
+                },
+                "location": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.location"
+                },
+                "menuItemTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxToolbarItem.menuItemTemplate"
+                },
+                "options": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "DocID": "dxToolbarItem.options"
+                },
+                "showText": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.showText"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "toolbar": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxPopupToolbarItem.toolbar"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.visible"
+                },
+                "widget": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxToolbarItem.widget"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxOverlayOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "IsChangeable": true,
+            "DocID": "dxPopupOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxOverlayOptions.wrapperAttr"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.animation",
+            "name": "animation",
+            "type": "{ hide?: AnimationConfig, show?: AnimationConfig }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ hide?: AnimationConfig, show?: AnimationConfig }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxPopupOptions.animation",
+                "Options": {
+                    "hide": {
+                        "PrimitiveTypes": [
+                            "AnimationConfig"
+                        ],
+                        "ComplexTypes": [
+                            "AnimationConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "AnimationConfig",
+                                "Path": "animation/fx"
+                            }
+                        ],
+                        "DocID": "dxPopupOptions.animation.hide"
+                    },
+                    "show": {
+                        "PrimitiveTypes": [
+                            "AnimationConfig"
+                        ],
+                        "ComplexTypes": [
+                            "AnimationConfig"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "AnimationConfig",
+                                "Path": "animation/fx"
+                            }
+                        ],
+                        "DocID": "dxPopupOptions.animation.show"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.closeOnOutsideClick",
+            "isDeprecated": true,
+            "name": "closeOnOutsideClick",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "IsDeprecated": true,
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.closeOnOutsideClick"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "dxPopupOptions.container"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.contentTemplate",
+            "name": "contentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxOverlayOptions.contentTemplate"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.copyRootClassesToWrapper",
+            "isDeprecated": true,
+            "name": "copyRootClassesToWrapper",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "IsDeprecated": true,
+                "DocID": "dxOverlayOptions.copyRootClassesToWrapper"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxOverlayOptions.deferRendering"
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.dragAndResizeArea",
+            "name": "dragAndResizeArea",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "dxPopupOptions.dragAndResizeArea"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.dragEnabled",
+            "name": "dragEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.dragEnabled"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.dragOutsideBoundary",
+            "name": "dragOutsideBoundary",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.dragOutsideBoundary"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.elementAttr",
+            "isDeprecated": true,
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsDeprecated": true,
+                "DocID": "dxOverlayOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.enableBodyScroll",
+            "name": "enableBodyScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.enableBodyScroll"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.fullScreen",
+            "name": "fullScreen",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.fullScreen"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.height",
+            "name": "height",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "IsChangeable": true,
+                "DocID": "dxPopupOptions.height"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.hideOnOutsideClick",
+            "name": "hideOnOutsideClick",
+            "type": "boolean | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean",
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.hideOnOutsideClick"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.hideOnParentScroll",
+            "name": "hideOnParentScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxOverlayOptions.hideOnParentScroll"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.maxHeight",
+            "name": "maxHeight",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.maxHeight"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.maxWidth",
+            "name": "maxWidth",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.maxWidth"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.minHeight",
+            "name": "minHeight",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.minHeight"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.minWidth",
+            "name": "minWidth",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "DocID": "dxOverlayOptions.minWidth"
+            }
+        },
+        {
+            "docID": "WidgetOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "WidgetOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "DOMComponentOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.onHidden",
+            "name": "onHidden",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxOverlayOptions.onHidden"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.onHiding",
+            "name": "onHiding",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxOverlayOptions.onHiding"
+            }
+        },
+        {
+            "docID": "ComponentOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "ComponentOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "DOMComponentOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.onResize",
+            "name": "onResize",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxPopupOptions.onResize"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.onResizeEnd",
+            "name": "onResizeEnd",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxPopupOptions.onResizeEnd"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.onResizeStart",
+            "name": "onResizeStart",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxPopupOptions.onResizeStart"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.onShowing",
+            "name": "onShowing",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxOverlayOptions.onShowing"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.onShown",
+            "name": "onShown",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxOverlayOptions.onShown"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.onTitleRendered",
+            "name": "onTitleRendered",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxPopupOptions.onTitleRendered"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.position",
+            "name": "position",
+            "type": "DevExpress.PositionConfig | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.PositionConfig",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "DevExpress.PositionConfig",
+                    "Function",
+                    "string"
+                ],
+                "ComplexTypes": [
+                    "PositionConfig"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsFunc": true,
+                "IsChangeable": true,
+                "DocID": "dxPopupOptions.position"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.resizeEnabled",
+            "name": "resizeEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.resizeEnabled"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.restorePosition",
+            "name": "restorePosition",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.restorePosition"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.shading",
+            "name": "shading",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxOverlayOptions.shading"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.shadingColor",
+            "name": "shadingColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxOverlayOptions.shadingColor"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.showCloseButton",
+            "name": "showCloseButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.showCloseButton"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.showTitle",
+            "name": "showTitle",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxPopupOptions.showTitle"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.title",
+            "name": "title",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxPopupOptions.title"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.titleTemplate",
+            "name": "titleTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxPopupOptions.titleTemplate"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.toolbarItems",
+            "name": "toolbarItems",
+            "type": "Array<any | { cssClass?: string | undefined, disabled?: boolean, html?: string, locateInMenu?: string, location?: string, menuItemTemplate?: any, options?: any, showText?: string, template?: any, text?: string, toolbar?: string, visible?: boolean, widget?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ cssClass?: string | undefined, disabled?: boolean, html?: string, locateInMenu?: string, location?: string, menuItemTemplate?: any, options?: any, showText?: string, template?: any, text?: string, toolbar?: string, visible?: boolean, widget?: string }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "toolbarItem",
+                "DocID": "dxPopupOptions.toolbarItems",
+                "Options": {
+                    "cssClass": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "DocID": "dxToolbarItem.cssClass"
+                    },
+                    "disabled": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "CollectionWidgetItem.disabled"
+                    },
+                    "html": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.html"
+                    },
+                    "locateInMenu": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxToolbarItem.locateInMenu"
+                    },
+                    "location": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxToolbarItem.location"
+                    },
+                    "menuItemTemplate": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "dxToolbarItem.menuItemTemplate"
+                    },
+                    "options": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "DocID": "dxToolbarItem.options"
+                    },
+                    "showText": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxToolbarItem.showText"
+                    },
+                    "template": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "CollectionWidgetItem.template"
+                    },
+                    "text": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.text"
+                    },
+                    "toolbar": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxPopupToolbarItem.toolbar"
+                    },
+                    "visible": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "CollectionWidgetItem.visible"
+                    },
+                    "widget": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxToolbarItem.widget"
+                    }
+                }
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxOverlayOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxOverlayOptions.visible"
+            }
+        },
+        {
+            "docID": "dxPopupOptions.width",
+            "name": "width",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "IsFunc": true,
+                "IsChangeable": true,
+                "DocID": "dxPopupOptions.width"
+            }
+        },
+        {
+            "docID": "dxOverlayOptions.wrapperAttr",
+            "name": "wrapperAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxOverlayOptions.wrapperAttr"
+            }
+        }
+    ]
+}

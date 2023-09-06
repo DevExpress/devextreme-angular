@@ -1,0 +1,1116 @@
+{
+    "docID": "dxGantt",
+    "className": "DxGantt",
+    "widgetName": "dxGantt",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-gantt",
+    "events": [
+        {
+            "docID": "dxGanttOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onContextMenuPreparing",
+            "emit": "onContextMenuPreparing",
+            "subscribe": "contextMenuPreparing",
+            "type": "EventEmitter<ContextMenuPreparingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onCustomCommand",
+            "emit": "onCustomCommand",
+            "subscribe": "customCommand",
+            "type": "EventEmitter<CustomCommandEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onDependencyDeleted",
+            "emit": "onDependencyDeleted",
+            "subscribe": "dependencyDeleted",
+            "type": "EventEmitter<DependencyDeletedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onDependencyDeleting",
+            "emit": "onDependencyDeleting",
+            "subscribe": "dependencyDeleting",
+            "type": "EventEmitter<DependencyDeletingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onDependencyInserted",
+            "emit": "onDependencyInserted",
+            "subscribe": "dependencyInserted",
+            "type": "EventEmitter<DependencyInsertedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onDependencyInserting",
+            "emit": "onDependencyInserting",
+            "subscribe": "dependencyInserting",
+            "type": "EventEmitter<DependencyInsertingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceAssigned",
+            "emit": "onResourceAssigned",
+            "subscribe": "resourceAssigned",
+            "type": "EventEmitter<ResourceAssignedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceAssigning",
+            "emit": "onResourceAssigning",
+            "subscribe": "resourceAssigning",
+            "type": "EventEmitter<ResourceAssigningEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceDeleted",
+            "emit": "onResourceDeleted",
+            "subscribe": "resourceDeleted",
+            "type": "EventEmitter<ResourceDeletedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceDeleting",
+            "emit": "onResourceDeleting",
+            "subscribe": "resourceDeleting",
+            "type": "EventEmitter<ResourceDeletingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceInserted",
+            "emit": "onResourceInserted",
+            "subscribe": "resourceInserted",
+            "type": "EventEmitter<ResourceInsertedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceInserting",
+            "emit": "onResourceInserting",
+            "subscribe": "resourceInserting",
+            "type": "EventEmitter<ResourceInsertingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceManagerDialogShowing",
+            "emit": "onResourceManagerDialogShowing",
+            "subscribe": "resourceManagerDialogShowing",
+            "type": "EventEmitter<ResourceManagerDialogShowingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceUnassigned",
+            "emit": "onResourceUnassigned",
+            "subscribe": "resourceUnassigned",
+            "type": "EventEmitter<ResourceUnassignedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onResourceUnassigning",
+            "emit": "onResourceUnassigning",
+            "subscribe": "resourceUnassigning",
+            "type": "EventEmitter<ResourceUnassigningEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onScaleCellPrepared",
+            "emit": "onScaleCellPrepared",
+            "subscribe": "scaleCellPrepared",
+            "type": "EventEmitter<ScaleCellPreparedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskClick",
+            "emit": "onTaskClick",
+            "subscribe": "taskClick",
+            "type": "EventEmitter<TaskClickEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskDblClick",
+            "emit": "onTaskDblClick",
+            "subscribe": "taskDblClick",
+            "type": "EventEmitter<TaskDblClickEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskDeleted",
+            "emit": "onTaskDeleted",
+            "subscribe": "taskDeleted",
+            "type": "EventEmitter<TaskDeletedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskDeleting",
+            "emit": "onTaskDeleting",
+            "subscribe": "taskDeleting",
+            "type": "EventEmitter<TaskDeletingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskEditDialogShowing",
+            "emit": "onTaskEditDialogShowing",
+            "subscribe": "taskEditDialogShowing",
+            "type": "EventEmitter<TaskEditDialogShowingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskInserted",
+            "emit": "onTaskInserted",
+            "subscribe": "taskInserted",
+            "type": "EventEmitter<TaskInsertedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskInserting",
+            "emit": "onTaskInserting",
+            "subscribe": "taskInserting",
+            "type": "EventEmitter<TaskInsertingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskMoving",
+            "emit": "onTaskMoving",
+            "subscribe": "taskMoving",
+            "type": "EventEmitter<TaskMovingEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskUpdated",
+            "emit": "onTaskUpdated",
+            "subscribe": "taskUpdated",
+            "type": "EventEmitter<TaskUpdatedEvent>"
+        },
+        {
+            "docID": "dxGanttOptions.onTaskUpdating",
+            "emit": "onTaskUpdating",
+            "subscribe": "taskUpdating",
+            "type": "EventEmitter<TaskUpdatingEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowSelectionChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "columnsChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxGanttColumn | string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "contextMenuChange",
+            "type": "EventEmitter<dxGanttContextMenu>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dependenciesChange",
+            "type": "EventEmitter<{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, predecessorIdExpr?: Function | string, successorIdExpr?: Function | string, typeExpr?: Function | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editingChange",
+            "type": "EventEmitter<{ allowDependencyAdding?: boolean, allowDependencyDeleting?: boolean, allowResourceAdding?: boolean, allowResourceDeleting?: boolean, allowResourceUpdating?: boolean, allowTaskAdding?: boolean, allowTaskDeleting?: boolean, allowTaskResourceUpdating?: boolean, allowTaskUpdating?: boolean, enabled?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "endDateRangeChange",
+            "type": "EventEmitter<Date>"
+        },
+        {
+            "isInternal": true,
+            "emit": "filterRowChange",
+            "type": "EventEmitter<dxGanttFilterRow>"
+        },
+        {
+            "isInternal": true,
+            "emit": "firstDayOfWeekChange",
+            "type": "EventEmitter<number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "headerFilterChange",
+            "type": "EventEmitter<dxGanttHeaderFilter>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resourceAssignmentsChange",
+            "type": "EventEmitter<{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, resourceIdExpr?: Function | string, taskIdExpr?: Function | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resourcesChange",
+            "type": "EventEmitter<{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, textExpr?: Function | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rootValueChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scaleTypeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scaleTypeRangeChange",
+            "type": "EventEmitter<{ max?: string, min?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedRowKeyChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showDependenciesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showResourcesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRowLinesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortingChange",
+            "type": "EventEmitter<dxGanttSorting>"
+        },
+        {
+            "isInternal": true,
+            "emit": "startDateRangeChange",
+            "type": "EventEmitter<Date>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stripLinesChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxGanttStripLine>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskContentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskListWidthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskProgressTooltipContentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tasksChange",
+            "type": "EventEmitter<{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, endExpr?: Function | string, keyExpr?: Function | string, parentIdExpr?: Function | string, progressExpr?: Function | string, startExpr?: Function | string, titleExpr?: Function | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskTimeTooltipContentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskTitlePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "taskTooltipContentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "toolbarChange",
+            "type": "EventEmitter<dxGanttToolbar>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationChange",
+            "type": "EventEmitter<{ autoUpdateParentTasks?: boolean, enablePredecessorGap?: boolean, validateDependencies?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.allowSelection",
+            "name": "allowSelection",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.columns",
+            "name": "columns",
+            "type": "Array<DevExpress.ui.dxGanttColumn | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxGanttColumn",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxGanttOptions.contextMenu",
+            "name": "contextMenu",
+            "type": "dxGanttContextMenu",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxGanttContextMenu"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.dependencies",
+            "name": "dependencies",
+            "type": "{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, predecessorIdExpr?: Function | string, successorIdExpr?: Function | string, typeExpr?: Function | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, predecessorIdExpr?: Function | string, successorIdExpr?: Function | string, typeExpr?: Function | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.editing",
+            "name": "editing",
+            "type": "{ allowDependencyAdding?: boolean, allowDependencyDeleting?: boolean, allowResourceAdding?: boolean, allowResourceDeleting?: boolean, allowResourceUpdating?: boolean, allowTaskAdding?: boolean, allowTaskDeleting?: boolean, allowTaskResourceUpdating?: boolean, allowTaskUpdating?: boolean, enabled?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowDependencyAdding?: boolean, allowDependencyDeleting?: boolean, allowResourceAdding?: boolean, allowResourceDeleting?: boolean, allowResourceUpdating?: boolean, allowTaskAdding?: boolean, allowTaskDeleting?: boolean, allowTaskResourceUpdating?: boolean, allowTaskUpdating?: boolean, enabled?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.endDateRange",
+            "name": "endDateRange",
+            "type": "Date",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.filterRow",
+            "name": "filterRow",
+            "type": "dxGanttFilterRow",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxGanttFilterRow"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.firstDayOfWeek",
+            "name": "firstDayOfWeek",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.headerFilter",
+            "name": "headerFilter",
+            "type": "dxGanttHeaderFilter",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxGanttHeaderFilter"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.resourceAssignments",
+            "name": "resourceAssignments",
+            "type": "{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, resourceIdExpr?: Function | string, taskIdExpr?: Function | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, resourceIdExpr?: Function | string, taskIdExpr?: Function | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.resources",
+            "name": "resources",
+            "type": "{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, textExpr?: Function | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, keyExpr?: Function | string, textExpr?: Function | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.rootValue",
+            "name": "rootValue",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.scaleType",
+            "name": "scaleType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.scaleTypeRange",
+            "name": "scaleTypeRange",
+            "type": "{ max?: string, min?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ max?: string, min?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.selectedRowKey",
+            "name": "selectedRowKey",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.showDependencies",
+            "name": "showDependencies",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.showResources",
+            "name": "showResources",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.showRowLines",
+            "name": "showRowLines",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.sorting",
+            "name": "sorting",
+            "type": "dxGanttSorting",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxGanttSorting"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.startDateRange",
+            "name": "startDateRange",
+            "type": "Date",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.stripLines",
+            "name": "stripLines",
+            "type": "Array<DevExpress.ui.dxGanttStripLine>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxGanttStripLine"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskContentTemplate",
+            "name": "taskContentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskListWidth",
+            "name": "taskListWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskProgressTooltipContentTemplate",
+            "name": "taskProgressTooltipContentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.tasks",
+            "name": "tasks",
+            "type": "{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, endExpr?: Function | string, keyExpr?: Function | string, parentIdExpr?: Function | string, progressExpr?: Function | string, startExpr?: Function | string, titleExpr?: Function | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ colorExpr?: Function | string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, endExpr?: Function | string, keyExpr?: Function | string, parentIdExpr?: Function | string, progressExpr?: Function | string, startExpr?: Function | string, titleExpr?: Function | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskTimeTooltipContentTemplate",
+            "name": "taskTimeTooltipContentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskTitlePosition",
+            "name": "taskTitlePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.taskTooltipContentTemplate",
+            "name": "taskTooltipContentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.toolbar",
+            "name": "toolbar",
+            "type": "dxGanttToolbar",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxGanttToolbar"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.validation",
+            "name": "validation",
+            "type": "{ autoUpdateParentTasks?: boolean, enablePredecessorGap?: boolean, validateDependencies?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ autoUpdateParentTasks?: boolean, enablePredecessorGap?: boolean, validateDependencies?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/gantt",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/gantt",
+            "importString": "{ ContentReadyEvent, ContextMenuPreparingEvent, CustomCommandEvent, DependencyDeletedEvent, DependencyDeletingEvent, DependencyInsertedEvent, DependencyInsertingEvent, DisposingEvent, dxGanttContextMenu, dxGanttFilterRow, dxGanttHeaderFilter, dxGanttSorting, dxGanttToolbar, InitializedEvent, OptionChangedEvent, ResourceAssignedEvent, ResourceAssigningEvent, ResourceDeletedEvent, ResourceDeletingEvent, ResourceInsertedEvent, ResourceInsertingEvent, ResourceManagerDialogShowingEvent, ResourceUnassignedEvent, ResourceUnassigningEvent, ScaleCellPreparedEvent, SelectionChangedEvent, TaskClickEvent, TaskDblClickEvent, TaskDeletedEvent, TaskDeletingEvent, TaskEditDialogShowingEvent, TaskInsertedEvent, TaskInsertingEvent, TaskMovingEvent, TaskUpdatedEvent, TaskUpdatingEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "column-dxi",
+            "propertyName": "columns",
+            "className": "DxiColumn",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "filterValueChange",
+                    "type": "EventEmitter<any | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.filterValue"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "filterValuesChange",
+                    "type": "EventEmitter<Array<any>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "filterValue",
+                        "DocID": "GridBaseColumn.filterValues"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedFilterOperationChange",
+                    "type": "EventEmitter<string | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.selectedFilterOperation"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "sortIndexChange",
+                    "type": "EventEmitter<number | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.sortIndex"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "sortOrderChange",
+                    "type": "EventEmitter<string | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.sortOrder"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.visible"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visibleIndexChange",
+                    "type": "EventEmitter<number | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "GridBaseColumn.visibleIndex"
+                    }
+                }
+            ],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "header-filter",
+            "propertyName": "headerFilter",
+            "className": "DxoHeaderFilter",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "search",
+            "propertyName": "search",
+            "className": "DxoSearch",
+            "events": []
+        },
+        {
+            "path": "context-menu",
+            "propertyName": "contextMenu",
+            "className": "DxoContextMenu",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "dependencies",
+            "propertyName": "dependencies",
+            "className": "DxoDependencies",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "editing",
+            "propertyName": "editing",
+            "className": "DxoEditing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "filter-row",
+            "propertyName": "filterRow",
+            "className": "DxoFilterRow",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "operation-descriptions",
+            "propertyName": "operationDescriptions",
+            "className": "DxoOperationDescriptions",
+            "events": []
+        },
+        {
+            "path": "texts",
+            "propertyName": "texts",
+            "className": "DxoTexts",
+            "events": []
+        },
+        {
+            "path": "resource-assignments",
+            "propertyName": "resourceAssignments",
+            "className": "DxoResourceAssignments",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "resources",
+            "propertyName": "resources",
+            "className": "DxoResources",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "scale-type-range",
+            "propertyName": "scaleTypeRange",
+            "className": "DxoScaleTypeRange",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "sorting",
+            "propertyName": "sorting",
+            "className": "DxoSorting",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "strip-line-dxi",
+            "propertyName": "stripLines",
+            "className": "DxiStripLine",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "tasks",
+            "propertyName": "tasks",
+            "className": "DxoTasks",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "toolbar",
+            "propertyName": "toolbar",
+            "className": "DxoToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "validation",
+            "propertyName": "validation",
+            "className": "DxoValidation",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

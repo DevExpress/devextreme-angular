@@ -1,0 +1,712 @@
+{
+    "docID": "dxMenu",
+    "className": "DxMenu",
+    "widgetName": "dxMenu",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-menu",
+    "events": [
+        {
+            "docID": "dxMenuOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onItemContextMenu",
+            "emit": "onItemContextMenu",
+            "subscribe": "itemContextMenu",
+            "type": "EventEmitter<ItemContextMenuEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onItemRendered",
+            "emit": "onItemRendered",
+            "subscribe": "itemRendered",
+            "type": "EventEmitter<ItemRenderedEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onSubmenuHidden",
+            "emit": "onSubmenuHidden",
+            "subscribe": "submenuHidden",
+            "type": "EventEmitter<SubmenuHiddenEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onSubmenuHiding",
+            "emit": "onSubmenuHiding",
+            "subscribe": "submenuHiding",
+            "type": "EventEmitter<SubmenuHidingEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onSubmenuShowing",
+            "emit": "onSubmenuShowing",
+            "subscribe": "submenuShowing",
+            "type": "EventEmitter<SubmenuShowingEvent>"
+        },
+        {
+            "docID": "dxMenuOptions.onSubmenuShown",
+            "emit": "onSubmenuShown",
+            "subscribe": "submenuShown",
+            "type": "EventEmitter<SubmenuShownEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptivityEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "animationChange",
+            "type": "EventEmitter<{ hide?: AnimationConfig, show?: AnimationConfig }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cssClassChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.dxMenuItem>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "displayExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideSubmenuOnMouseLeaveChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxMenuItem>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "orientationChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectByClickChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedExprChange",
+            "type": "EventEmitter<Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showFirstSubmenuModeChange",
+            "type": "EventEmitter<string | { delay?: number | { hide?: number, show?: number }, name?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showSubmenuModeChange",
+            "type": "EventEmitter<string | { delay?: number | { hide?: number, show?: number }, name?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "submenuDirectionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.adaptivityEnabled",
+            "name": "adaptivityEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.animation",
+            "name": "animation",
+            "type": "{ hide?: AnimationConfig, show?: AnimationConfig }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ hide?: AnimationConfig, show?: AnimationConfig }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.cssClass",
+            "name": "cssClass",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.dxMenuItem>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "DevExpress.ui.dxMenuItem"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.disabledExpr",
+            "name": "disabledExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.displayExpr",
+            "name": "displayExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.hideSubmenuOnMouseLeave",
+            "name": "hideSubmenuOnMouseLeave",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxMenuItem>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxMenuItem"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.itemsExpr",
+            "name": "itemsExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.orientation",
+            "name": "orientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.selectByClick",
+            "name": "selectByClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "HierarchicalCollectionWidgetOptions.selectedExpr",
+            "name": "selectedExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.selectedItem",
+            "name": "selectedItem",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.showFirstSubmenuMode",
+            "name": "showFirstSubmenuMode",
+            "type": "string | { delay?: number | { hide?: number, show?: number }, name?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ delay?: number | { hide?: number, show?: number }, name?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuBaseOptions.showSubmenuMode",
+            "name": "showSubmenuMode",
+            "type": "string | { delay?: number | { hide?: number, show?: number }, name?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ delay?: number | { hide?: number, show?: number }, name?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMenuOptions.submenuDirection",
+            "name": "submenuDirection",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/menu",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/animation/fx",
+            "importString": "{ AnimationConfig }"
+        },
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/menu",
+            "importString": "{ ContentReadyEvent, DisposingEvent, InitializedEvent, ItemClickEvent, ItemContextMenuEvent, ItemRenderedEvent, OptionChangedEvent, SelectionChangedEvent, SubmenuHiddenEvent, SubmenuHidingEvent, SubmenuShowingEvent, SubmenuShownEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "hide",
+            "propertyName": "hide",
+            "className": "DxoHide",
+            "events": []
+        },
+        {
+            "path": "from",
+            "propertyName": "from",
+            "className": "DxoFrom",
+            "events": []
+        },
+        {
+            "path": "position",
+            "propertyName": "position",
+            "className": "DxoPosition",
+            "events": []
+        },
+        {
+            "path": "at",
+            "propertyName": "at",
+            "className": "DxoAt",
+            "events": []
+        },
+        {
+            "path": "boundary-offset",
+            "propertyName": "boundaryOffset",
+            "className": "DxoBoundaryOffset",
+            "events": []
+        },
+        {
+            "path": "collision",
+            "propertyName": "collision",
+            "className": "DxoCollision",
+            "events": []
+        },
+        {
+            "path": "my",
+            "propertyName": "my",
+            "className": "DxoMy",
+            "events": []
+        },
+        {
+            "path": "offset",
+            "propertyName": "offset",
+            "className": "DxoOffset",
+            "events": []
+        },
+        {
+            "path": "to",
+            "propertyName": "to",
+            "className": "DxoTo",
+            "events": []
+        },
+        {
+            "path": "show",
+            "propertyName": "show",
+            "className": "DxoShow",
+            "events": []
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "show-first-submenu-mode",
+            "propertyName": "showFirstSubmenuMode",
+            "className": "DxoShowFirstSubmenuMode",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "delay",
+            "propertyName": "delay",
+            "className": "DxoDelay",
+            "events": []
+        },
+        {
+            "path": "show-submenu-mode",
+            "propertyName": "showSubmenuMode",
+            "className": "DxoShowSubmenuMode",
+            "events": [],
+            "root": true
+        }
+    ],
+    "optionsTypeParams": [
+        "TKey"
+    ],
+    "renderReexports": true
+}

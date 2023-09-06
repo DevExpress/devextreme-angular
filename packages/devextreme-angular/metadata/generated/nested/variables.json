@@ -1,0 +1,128 @@
+{
+    "docID": "dxHtmlEditorOptions.variables",
+    "className": "DxoVariables",
+    "selector": "dxo-variables",
+    "optionName": "variables",
+    "path": "variables",
+    "propertyName": "variables",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoHtmlEditorVariables",
+    "basePath": "./base/html-editor-variables",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxHtmlEditorVariables.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "escapeChar",
+            "DocID": "dxHtmlEditorVariables.escapeChar"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxHtmlEditorVariables.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DataSource",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Options",
+                        "Alias": "DataSourceOptions",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Store",
+                        "Path": "data"
+                    }
+                ],
+                "IsDataSource": true,
+                "DocID": "dxHtmlEditorVariables.dataSource"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorVariables.escapeChar",
+            "name": "escapeChar",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "escapeChar",
+                "DocID": "dxHtmlEditorVariables.escapeChar"
+            },
+            "isCollection": true
+        }
+    ]
+}

@@ -1,0 +1,1761 @@
+{
+    "docID": "dxChartOptions.valueAxis",
+    "className": "DxiValueAxis",
+    "selector": "dxi-value-axis",
+    "optionName": "valueAxis",
+    "properties": [
+        {
+            "docID": "dxChartOptions.commonAxisSettings.aggregatedPointsPosition",
+            "name": "aggregatedPointsPosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.allowDecimals",
+            "name": "allowDecimals",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.autoBreaksEnabled",
+            "name": "autoBreaksEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.axisDivisionFactor",
+            "name": "axisDivisionFactor",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.breaks",
+            "name": "breaks",
+            "type": "Array<DevExpress.common.charts.ScaleBreak>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.common.charts.ScaleBreak"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.breakStyle",
+            "name": "breakStyle",
+            "type": "{ color?: string, line?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, line?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.categories",
+            "name": "categories",
+            "type": "Array<number | string | Date>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number",
+                    "string",
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.constantLines",
+            "name": "constantLines",
+            "type": "Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.constantLineStyle",
+            "name": "constantLineStyle",
+            "type": "{ color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.customPosition",
+            "name": "customPosition",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.discreteAxisDivisionMode",
+            "name": "discreteAxisDivisionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.endOnTick",
+            "name": "endOnTick",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.grid",
+            "name": "grid",
+            "type": "{ color?: string, opacity?: number | undefined, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, opacity?: number | undefined, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.inverted",
+            "name": "inverted",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.label",
+            "name": "label",
+            "type": "{ alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.linearThreshold",
+            "name": "linearThreshold",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.logarithmBase",
+            "name": "logarithmBase",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.maxAutoBreakCount",
+            "name": "maxAutoBreakCount",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.maxValueMargin",
+            "name": "maxValueMargin",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.minorGrid",
+            "name": "minorGrid",
+            "type": "{ color?: string, opacity?: number | undefined, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, opacity?: number | undefined, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.minorTick",
+            "name": "minorTick",
+            "type": "{ color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.minorTickCount",
+            "name": "minorTickCount",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.minorTickInterval",
+            "name": "minorTickInterval",
+            "type": "number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.minValueMargin",
+            "name": "minValueMargin",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.minVisualRangeLength",
+            "name": "minVisualRangeLength",
+            "type": "number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.multipleAxesSpacing",
+            "name": "multipleAxesSpacing",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.name",
+            "name": "name",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.offset",
+            "name": "offset",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.opacity",
+            "name": "opacity",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.pane",
+            "name": "pane",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.placeholderSize",
+            "name": "placeholderSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.position",
+            "name": "position",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.showZero",
+            "name": "showZero",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.strips",
+            "name": "strips",
+            "type": "Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.stripStyle",
+            "name": "stripStyle",
+            "type": "{ label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.synchronizedValue",
+            "name": "synchronizedValue",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.tick",
+            "name": "tick",
+            "type": "{ color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.tickInterval",
+            "name": "tickInterval",
+            "type": "number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "{ days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.title",
+            "name": "title",
+            "type": "string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.type",
+            "name": "type",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.valueMarginsEnabled",
+            "name": "valueMarginsEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.valueType",
+            "name": "valueType",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.visualRange",
+            "name": "visualRange",
+            "type": "DevExpress.common.charts.VisualRange | Array<number | string | Date>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.common.charts.VisualRange"
+                ],
+                "arrayTypes": [
+                    "number",
+                    "string",
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.visualRangeUpdateMode",
+            "name": "visualRangeUpdateMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis.wholeRange",
+            "name": "wholeRange",
+            "type": "DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.common.charts.VisualRange",
+                    "undefined"
+                ],
+                "arrayTypes": [
+                    "number",
+                    "string",
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "categoriesChange",
+            "type": "EventEmitter<Array<number | string | Date>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visualRangeChange",
+            "type": "EventEmitter<DevExpress.common.charts.VisualRange | Array<number | string | Date>>"
+        }
+    ],
+    "path": "value-axis-dxi",
+    "propertyName": "valueAxis",
+    "isCollection": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiBreak",
+            "path": "break-dxi",
+            "propertyName": "breaks"
+        },
+        {
+            "className": "DxiConstantLine",
+            "path": "constant-line-dxi",
+            "propertyName": "constantLines"
+        },
+        {
+            "className": "DxiStrip",
+            "path": "strip-dxi",
+            "propertyName": "strips"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.aggregatedPointsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.allowDecimals"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.valueAxis.autoBreaksEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.valueAxis.axisDivisionFactor"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.common.charts.ScaleBreak"
+            ],
+            "ItemComplexTypes": [
+                "VizScaleBreak"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "break",
+            "DocID": "dxChartOptions.valueAxis.breaks"
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.breakStyle",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.breakStyle.color"
+                },
+                "line": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.breakStyle.line"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.breakStyle.width"
+                }
+            }
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "category",
+            "DocID": "dxChartOptions.valueAxis.categories"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.color"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "constantLine",
+            "DocID": "dxChartOptions.valueAxis.constantLines",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.color"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+                },
+                "displayBehindSeries": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.displayBehindSeries"
+                },
+                "extendAxis": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.extendAxis"
+                },
+                "label": {
+                    "DocID": "dxChartOptions.valueAxis.constantLines.label",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                        },
+                        "horizontalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.constantLines.label.horizontalAlignment"
+                        },
+                        "position": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.position"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.constantLines.label.text"
+                        },
+                        "verticalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.constantLines.label.verticalAlignment"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                        }
+                    }
+                },
+                "paddingLeftRight": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingLeftRight"
+                },
+                "paddingTopBottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingTopBottom"
+                },
+                "value": {
+                    "PrimitiveTypes": [
+                        "Date",
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.constantLines.value"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.width"
+                }
+            }
+        },
+        {
+            "DocID": "dxChartOptions.valueAxis.constantLineStyle",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.color"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.dashStyle"
+                },
+                "label": {
+                    "DocID": "dxChartOptions.valueAxis.constantLineStyle.label",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.font"
+                        },
+                        "horizontalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.constantLineStyle.label.horizontalAlignment"
+                        },
+                        "position": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.position"
+                        },
+                        "verticalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.constantLineStyle.label.verticalAlignment"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.label.visible"
+                        }
+                    }
+                },
+                "paddingLeftRight": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingLeftRight"
+                },
+                "paddingTopBottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.paddingTopBottom"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.constantLineStyle.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.customPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.discreteAxisDivisionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.endOnTick"
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.grid",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.grid.color"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.grid.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.grid.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.grid.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.inverted"
+        },
+        {
+            "DocID": "dxChartOptions.valueAxis.label",
+            "Options": {
+                "alignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.alignment"
+                },
+                "customizeHint": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxChartOptions.valueAxis.label.customizeHint"
+                },
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxChartOptions.valueAxis.label.customizeText"
+                },
+                "displayMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.displayMode"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.font"
+                },
+                "format": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.label.format"
+                },
+                "indentFromAxis": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.indentFromAxis"
+                },
+                "overlappingBehavior": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.overlappingBehavior"
+                },
+                "position": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.position"
+                },
+                "rotationAngle": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.rotationAngle"
+                },
+                "staggeringSpacing": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.staggeringSpacing"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any",
+                        "undefined"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxChartOptions.commonAxisSettings.label.template"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.textOverflow"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.visible"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.label.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.linearThreshold"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.valueAxis.logarithmBase"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.valueAxis.maxAutoBreakCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.maxValueMargin"
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.minorGrid",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorGrid.color"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorGrid.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorGrid.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorGrid.width"
+                }
+            }
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.minorTick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.opacity"
+                },
+                "shift": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.shift"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.minorTick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.minorTickCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxChartOptions.valueAxis.minorTickInterval",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.minValueMargin"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.minVisualRangeLength",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.valueAxis.multipleAxesSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.offset"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.opacity"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.pane"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.valueAxis.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.showZero"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "strip",
+            "DocID": "dxChartOptions.valueAxis.strips",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.strips.color"
+                },
+                "endValue": {
+                    "PrimitiveTypes": [
+                        "Date",
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.strips.endValue"
+                },
+                "label": {
+                    "DocID": "dxChartOptions.valueAxis.strips.label",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.font"
+                        },
+                        "horizontalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.horizontalAlignment"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxChartOptions.valueAxis.strips.label.text"
+                        },
+                        "verticalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.verticalAlignment"
+                        }
+                    }
+                },
+                "paddingLeftRight": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingLeftRight"
+                },
+                "paddingTopBottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingTopBottom"
+                },
+                "startValue": {
+                    "PrimitiveTypes": [
+                        "Date",
+                        "number",
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.strips.startValue"
+                }
+            }
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.stripStyle",
+            "Options": {
+                "label": {
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.font"
+                        },
+                        "horizontalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.horizontalAlignment"
+                        },
+                        "verticalAlignment": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxChartOptions.commonAxisSettings.stripStyle.label.verticalAlignment"
+                        }
+                    }
+                },
+                "paddingLeftRight": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingLeftRight"
+                },
+                "paddingTopBottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.stripStyle.paddingTopBottom"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.synchronizedValue"
+        },
+        {
+            "DocID": "dxChartOptions.commonAxisSettings.tick",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.color"
+                },
+                "length": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.length"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.opacity"
+                },
+                "shift": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.shift"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.tick.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxChartOptions.valueAxis.tickInterval",
+            "Options": {
+                "days": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.days"
+                },
+                "hours": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.hours"
+                },
+                "milliseconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.milliseconds"
+                },
+                "minutes": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.minutes"
+                },
+                "months": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.months"
+                },
+                "quarters": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.quarters"
+                },
+                "seconds": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.seconds"
+                },
+                "weeks": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.weeks"
+                },
+                "years": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "VizTimeInterval.years"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.valueAxis.title",
+            "Options": {
+                "alignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.title.alignment"
+                },
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.title.font"
+                },
+                "margin": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.title.margin"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.valueAxis.title.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.title.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonAxisSettings.title.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.type"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.valueMarginsEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.valueType"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "DevExpress.common.charts.VisualRange"
+            ],
+            "ComplexTypes": [
+                "VisualRange"
+            ],
+            "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "visualRange",
+            "DocID": "dxChartOptions.valueAxis.visualRange"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.valueAxis.visualRangeUpdateMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "DevExpress.common.charts.VisualRange",
+                "undefined"
+            ],
+            "ComplexTypes": [
+                "VisualRange"
+            ],
+            "ItemPrimitiveTypes": [
+                "number",
+                "string",
+                "Date"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "wholeRange",
+            "DocID": "dxChartOptions.valueAxis.wholeRange"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.width"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

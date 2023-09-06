@@ -1,0 +1,153 @@
+{
+    "docID": "dxGanttOptions.dependencies",
+    "className": "DxoDependencies",
+    "selector": "dxo-dependencies",
+    "optionName": "dependencies",
+    "properties": [
+        {
+            "docID": "dxGanttOptions.dependencies.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "dxGanttOptions.dependencies.keyExpr",
+            "name": "keyExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.dependencies.predecessorIdExpr",
+            "name": "predecessorIdExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.dependencies.successorIdExpr",
+            "name": "successorIdExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxGanttOptions.dependencies.typeExpr",
+            "name": "typeExpr",
+            "type": "Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "dependencies",
+    "propertyName": "dependencies",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxGanttOptions.dependencies.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.dependencies.keyExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.dependencies.predecessorIdExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.dependencies.successorIdExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string"
+            ],
+            "IsFunc": true,
+            "DocID": "dxGanttOptions.dependencies.typeExpr"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

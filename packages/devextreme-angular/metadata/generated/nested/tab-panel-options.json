@@ -1,0 +1,3767 @@
+{
+    "docID": "dxFormTabbedItem.tabPanelOptions",
+    "className": "DxoTabPanelOptions",
+    "selector": "dxo-tab-panel-options",
+    "optionName": "tabPanelOptions",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, tabTemplate?: any, template?: any, text?: string, title?: string }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemChange",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "path": "tab-panel-options",
+    "propertyName": "tabPanelOptions",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        }
+    ],
+    "baseClass": "DxoTabPanelOptions",
+    "basePath": "./base/tab-panel-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.animationEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxTabPanelItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "TabPanelItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxTabPanelOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.deferRendering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.iconPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxTabPanelOptions.items",
+            "Options": {
+                "badge": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.badge"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.icon"
+                },
+                "tabTemplate": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "dxTabPanelItem.tabTemplate"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTabPanelItem.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxTabPanelOptions.itemTitleTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxMultiViewOptions.loop"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "CollectionWidgetOptions.noDataText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "SelectionChangedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "SelectionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onSelectionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleClickEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleHoldEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "TitleRenderedEvent",
+                    "Path": "ui/tab_panel"
+                }
+            ],
+            "EventArgName": "TitleRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTabPanelOptions.onTitleRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.repaintChangesOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollByContent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.scrollingEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxMultiViewOptions.selectedIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsChangeable": true,
+            "DocID": "CollectionWidgetOptions.selectedItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.showNavButtons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTabPanelOptions.swipeEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTabPanelOptions.tabsPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.activeStateEnabled"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.animationEnabled",
+            "name": "animationEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.animationEnabled"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxTabPanelItem | any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.ui.dxTabPanelItem",
+                    "any"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "DevExpress.ui.dxTabPanelItem",
+                    "any"
+                ],
+                "ItemComplexTypes": [
+                    "TabPanelItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DataSource",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Options",
+                        "Alias": "DataSourceOptions",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Store",
+                        "Path": "data"
+                    },
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsDataSource": true,
+                "DocID": "dxTabPanelOptions.dataSource"
+            }
+        },
+        {
+            "docID": "dxMultiViewOptions.deferRendering",
+            "name": "deferRendering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxMultiViewOptions.deferRendering"
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxMultiViewOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxMultiViewOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.iconPosition",
+            "name": "iconPosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTabPanelOptions.iconPosition"
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemHoldTimeout",
+            "name": "itemHoldTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.items",
+            "name": "items",
+            "type": "Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, tabTemplate?: any, template?: any, text?: string, title?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "any",
+                    "{ badge?: string, disabled?: boolean, html?: string, icon?: string, tabTemplate?: any, template?: any, text?: string, title?: string }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "any"
+                ],
+                "IsCollection": true,
+                "IsChangeable": true,
+                "SingularName": "item",
+                "DocID": "dxTabPanelOptions.items",
+                "Options": {
+                    "badge": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxTabPanelItem.badge"
+                    },
+                    "disabled": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "CollectionWidgetItem.disabled"
+                    },
+                    "html": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.html"
+                    },
+                    "icon": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxTabPanelItem.icon"
+                    },
+                    "tabTemplate": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "dxTabPanelItem.tabTemplate"
+                    },
+                    "template": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "CollectionWidgetItem.template"
+                    },
+                    "text": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.text"
+                    },
+                    "title": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxTabPanelItem.title"
+                    }
+                }
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "CollectionWidgetOptions.itemTemplate"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.itemTitleTemplate",
+            "name": "itemTitleTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxTabPanelOptions.itemTitleTemplate"
+            }
+        },
+        {
+            "docID": "dxMultiViewOptions.loop",
+            "name": "loop",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxMultiViewOptions.loop"
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.noDataText",
+            "name": "noDataText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "CollectionWidgetOptions.noDataText"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "((e: ContentReadyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ContentReadyEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "ContentReadyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onItemClick",
+            "name": "onItemClick",
+            "type": "((e: ItemClickEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemClickEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "ItemClickEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onItemClick"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onItemContextMenu",
+            "name": "onItemContextMenu",
+            "type": "((e: ItemContextMenuEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemContextMenuEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "ItemContextMenuEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onItemContextMenu"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onItemHold",
+            "name": "onItemHold",
+            "type": "((e: ItemHoldEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemHoldEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "ItemHoldEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onItemHold"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onItemRendered",
+            "name": "onItemRendered",
+            "type": "((e: ItemRenderedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemRenderedEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "ItemRenderedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onItemRendered"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onSelectionChanged",
+            "name": "onSelectionChanged",
+            "type": "((e: SelectionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "SelectionChangedEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "SelectionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onSelectionChanged"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onTitleClick",
+            "name": "onTitleClick",
+            "type": "((e: TitleClickEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "TitleClickEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "TitleClickEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onTitleClick"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onTitleHold",
+            "name": "onTitleHold",
+            "type": "((e: TitleHoldEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "TitleHoldEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "TitleHoldEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onTitleHold"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.onTitleRendered",
+            "name": "onTitleRendered",
+            "type": "((e: TitleRenderedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "TitleRenderedEvent",
+                        "Path": "ui/tab_panel"
+                    }
+                ],
+                "EventArgName": "TitleRenderedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTabPanelOptions.onTitleRendered"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.repaintChangesOnly",
+            "name": "repaintChangesOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.repaintChangesOnly"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.scrollByContent",
+            "name": "scrollByContent",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.scrollByContent"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.scrollingEnabled",
+            "name": "scrollingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.scrollingEnabled"
+            }
+        },
+        {
+            "docID": "dxMultiViewOptions.selectedIndex",
+            "name": "selectedIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxMultiViewOptions.selectedIndex"
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.selectedItem",
+            "name": "selectedItem",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsChangeable": true,
+                "DocID": "CollectionWidgetOptions.selectedItem"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.showNavButtons",
+            "name": "showNavButtons",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.showNavButtons"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.swipeEnabled",
+            "name": "swipeEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTabPanelOptions.swipeEnabled"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "dxTabPanelOptions.tabsPosition",
+            "name": "tabsPosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTabPanelOptions.tabsPosition"
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

@@ -1,0 +1,706 @@
+{
+    "docID": "dxFileManager",
+    "className": "DxFileManager",
+    "widgetName": "dxFileManager",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-file-manager",
+    "events": [
+        {
+            "docID": "dxFileManagerOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onContextMenuItemClick",
+            "emit": "onContextMenuItemClick",
+            "subscribe": "contextMenuItemClick",
+            "type": "EventEmitter<ContextMenuItemClickEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onContextMenuShowing",
+            "emit": "onContextMenuShowing",
+            "subscribe": "contextMenuShowing",
+            "type": "EventEmitter<ContextMenuShowingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onCurrentDirectoryChanged",
+            "emit": "onCurrentDirectoryChanged",
+            "subscribe": "currentDirectoryChanged",
+            "type": "EventEmitter<CurrentDirectoryChangedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onDirectoryCreated",
+            "emit": "onDirectoryCreated",
+            "subscribe": "directoryCreated",
+            "type": "EventEmitter<DirectoryCreatedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onDirectoryCreating",
+            "emit": "onDirectoryCreating",
+            "subscribe": "directoryCreating",
+            "type": "EventEmitter<DirectoryCreatingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onErrorOccurred",
+            "emit": "onErrorOccurred",
+            "subscribe": "errorOccurred",
+            "type": "EventEmitter<ErrorOccurredEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onFileUploaded",
+            "emit": "onFileUploaded",
+            "subscribe": "fileUploaded",
+            "type": "EventEmitter<FileUploadedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onFileUploading",
+            "emit": "onFileUploading",
+            "subscribe": "fileUploading",
+            "type": "EventEmitter<FileUploadingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onFocusedItemChanged",
+            "emit": "onFocusedItemChanged",
+            "subscribe": "focusedItemChanged",
+            "type": "EventEmitter<FocusedItemChangedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemCopied",
+            "emit": "onItemCopied",
+            "subscribe": "itemCopied",
+            "type": "EventEmitter<ItemCopiedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemCopying",
+            "emit": "onItemCopying",
+            "subscribe": "itemCopying",
+            "type": "EventEmitter<ItemCopyingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemDeleted",
+            "emit": "onItemDeleted",
+            "subscribe": "itemDeleted",
+            "type": "EventEmitter<ItemDeletedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemDeleting",
+            "emit": "onItemDeleting",
+            "subscribe": "itemDeleting",
+            "type": "EventEmitter<ItemDeletingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemDownloading",
+            "emit": "onItemDownloading",
+            "subscribe": "itemDownloading",
+            "type": "EventEmitter<ItemDownloadingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemMoved",
+            "emit": "onItemMoved",
+            "subscribe": "itemMoved",
+            "type": "EventEmitter<ItemMovedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemMoving",
+            "emit": "onItemMoving",
+            "subscribe": "itemMoving",
+            "type": "EventEmitter<ItemMovingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemRenamed",
+            "emit": "onItemRenamed",
+            "subscribe": "itemRenamed",
+            "type": "EventEmitter<ItemRenamedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onItemRenaming",
+            "emit": "onItemRenaming",
+            "subscribe": "itemRenaming",
+            "type": "EventEmitter<ItemRenamingEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onSelectedFileOpened",
+            "emit": "onSelectedFileOpened",
+            "subscribe": "selectedFileOpened",
+            "type": "EventEmitter<SelectedFileOpenedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "docID": "dxFileManagerOptions.onToolbarItemClick",
+            "emit": "onToolbarItemClick",
+            "subscribe": "toolbarItemClick",
+            "type": "EventEmitter<ToolbarItemClickEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowedFileExtensionsChange",
+            "type": "EventEmitter<Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "contextMenuChange",
+            "type": "EventEmitter<dxFileManagerContextMenu>"
+        },
+        {
+            "isInternal": true,
+            "emit": "currentPathChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "currentPathKeysChange",
+            "type": "EventEmitter<Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeDetailColumnsChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeThumbnailChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fileSystemProviderChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusedItemKeyChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemViewChange",
+            "type": "EventEmitter<{ details?: { columns?: Array<DevExpress.ui.dxFileManagerDetailsColumn | string> }, mode?: string, showFolders?: boolean, showParentFolder?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "notificationsChange",
+            "type": "EventEmitter<{ showPanel?: boolean, showPopup?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "permissionsChange",
+            "type": "EventEmitter<{ copy?: boolean, create?: boolean, delete?: boolean, download?: boolean, move?: boolean, rename?: boolean, upload?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rootFolderNameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedItemKeysChange",
+            "type": "EventEmitter<Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "toolbarChange",
+            "type": "EventEmitter<dxFileManagerToolbar>"
+        },
+        {
+            "isInternal": true,
+            "emit": "uploadChange",
+            "type": "EventEmitter<{ chunkSize?: number, maxFileSize?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.allowedFileExtensions",
+            "name": "allowedFileExtensions",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFileManagerOptions.contextMenu",
+            "name": "contextMenu",
+            "type": "dxFileManagerContextMenu",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFileManagerContextMenu"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.currentPath",
+            "name": "currentPath",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.currentPathKeys",
+            "name": "currentPathKeys",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFileManagerOptions.customizeDetailColumns",
+            "name": "customizeDetailColumns",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.customizeThumbnail",
+            "name": "customizeThumbnail",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.fileSystemProvider",
+            "name": "fileSystemProvider",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.focusedItemKey",
+            "name": "focusedItemKey",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.itemView",
+            "name": "itemView",
+            "type": "{ details?: { columns?: Array<DevExpress.ui.dxFileManagerDetailsColumn | string> }, mode?: string, showFolders?: boolean, showParentFolder?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ details?: { columns?: Array<DevExpress.ui.dxFileManagerDetailsColumn | string> }, mode?: string, showFolders?: boolean, showParentFolder?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.notifications",
+            "name": "notifications",
+            "type": "{ showPanel?: boolean, showPopup?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ showPanel?: boolean, showPopup?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.permissions",
+            "name": "permissions",
+            "type": "{ copy?: boolean, create?: boolean, delete?: boolean, download?: boolean, move?: boolean, rename?: boolean, upload?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ copy?: boolean, create?: boolean, delete?: boolean, download?: boolean, move?: boolean, rename?: boolean, upload?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.rootFolderName",
+            "name": "rootFolderName",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.selectedItemKeys",
+            "name": "selectedItemKeys",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFileManagerOptions.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.toolbar",
+            "name": "toolbar",
+            "type": "dxFileManagerToolbar",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFileManagerToolbar"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.upload",
+            "name": "upload",
+            "type": "{ chunkSize?: number, maxFileSize?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ chunkSize?: number, maxFileSize?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/file_manager",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/file_manager",
+            "importString": "{ ContentReadyEvent, ContextMenuItemClickEvent, ContextMenuShowingEvent, CurrentDirectoryChangedEvent, DirectoryCreatedEvent, DirectoryCreatingEvent, DisposingEvent, dxFileManagerContextMenu, dxFileManagerToolbar, ErrorOccurredEvent, FileUploadedEvent, FileUploadingEvent, FocusedItemChangedEvent, InitializedEvent, ItemCopiedEvent, ItemCopyingEvent, ItemDeletedEvent, ItemDeletingEvent, ItemDownloadingEvent, ItemMovedEvent, ItemMovingEvent, ItemRenamedEvent, ItemRenamingEvent, OptionChangedEvent, SelectedFileOpenedEvent, SelectionChangedEvent, ToolbarItemClickEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "context-menu",
+            "propertyName": "contextMenu",
+            "className": "DxoContextMenu",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "item-view",
+            "propertyName": "itemView",
+            "className": "DxoItemView",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "details",
+            "propertyName": "details",
+            "className": "DxoDetails",
+            "events": []
+        },
+        {
+            "path": "column-dxi",
+            "propertyName": "columns",
+            "className": "DxiColumn",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "notifications",
+            "propertyName": "notifications",
+            "className": "DxoNotifications",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "permissions",
+            "propertyName": "permissions",
+            "className": "DxoPermissions",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "toolbar",
+            "propertyName": "toolbar",
+            "className": "DxoToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "file-selection-item-dxi",
+            "propertyName": "fileSelectionItems",
+            "className": "DxiFileSelectionItem",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "upload",
+            "propertyName": "upload",
+            "className": "DxoUpload",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

@@ -1,0 +1,656 @@
+{
+    "docID": "dxSankey",
+    "className": "DxSankey",
+    "widgetName": "dxSankey",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-sankey",
+    "events": [
+        {
+            "docID": "dxSankeyOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onLinkClick",
+            "emit": "onLinkClick",
+            "subscribe": "linkClick",
+            "type": "EventEmitter<LinkClickEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onLinkHoverChanged",
+            "emit": "onLinkHoverChanged",
+            "subscribe": "linkHoverChanged",
+            "type": "EventEmitter<LinkHoverEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onNodeClick",
+            "emit": "onNodeClick",
+            "subscribe": "nodeClick",
+            "type": "EventEmitter<NodeClickEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onNodeHoverChanged",
+            "emit": "onNodeHoverChanged",
+            "subscribe": "nodeHoverChanged",
+            "type": "EventEmitter<NodeHoverEvent>"
+        },
+        {
+            "docID": "dxSankeyOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptiveLayoutChange",
+            "type": "EventEmitter<{ height?: number, keepLabels?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "alignmentChange",
+            "type": "EventEmitter<string | Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelChange",
+            "type": "EventEmitter<{ border?: { color?: string, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, horizontalOffset?: number, overlappingBehavior?: string, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, useNodeColors?: boolean, verticalOffset?: number, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "linkChange",
+            "type": "EventEmitter<{ border?: { color?: string, visible?: boolean, width?: number }, color?: string, colorMode?: string, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number }, opacity?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "marginChange",
+            "type": "EventEmitter<{ bottom?: number, left?: number, right?: number, top?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nodeChange",
+            "type": "EventEmitter<{ border?: { color?: string, visible?: boolean, width?: number }, color?: string | undefined, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number | undefined }, opacity?: number, padding?: number, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteChange",
+            "type": "EventEmitter<string | Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteExtensionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sortDataChange",
+            "type": "EventEmitter<any | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sourceFieldChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "targetFieldChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "weightFieldChange",
+            "type": "EventEmitter<string>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxSankeyOptions.adaptiveLayout",
+            "name": "adaptiveLayout",
+            "type": "{ height?: number, keepLabels?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number, keepLabels?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.alignment",
+            "name": "alignment",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSankeyOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.hoverEnabled",
+            "name": "hoverEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.label",
+            "name": "label",
+            "type": "{ border?: { color?: string, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, horizontalOffset?: number, overlappingBehavior?: string, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, useNodeColors?: boolean, verticalOffset?: number, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, visible?: boolean, width?: number }, customizeText?: Function, font?: Font, horizontalOffset?: number, overlappingBehavior?: string, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, useNodeColors?: boolean, verticalOffset?: number, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.link",
+            "name": "link",
+            "type": "{ border?: { color?: string, visible?: boolean, width?: number }, color?: string, colorMode?: string, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number }, opacity?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, visible?: boolean, width?: number }, color?: string, colorMode?: string, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number }, opacity?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.node",
+            "name": "node",
+            "type": "{ border?: { color?: string, visible?: boolean, width?: number }, color?: string | undefined, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number | undefined }, opacity?: number, padding?: number, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, visible?: boolean, width?: number }, color?: string | undefined, hoverStyle?: { border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, color?: string | undefined, hatching?: { direction?: string, opacity?: number, step?: number, width?: number }, opacity?: number | undefined }, opacity?: number, padding?: number, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSankeyOptions.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.sortData",
+            "name": "sortData",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.sourceField",
+            "name": "sourceField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.targetField",
+            "name": "targetField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, cornerRadius?: number, customizeLinkTooltip?: Function | undefined, customizeNodeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, linkTooltipTemplate?: any | undefined, nodeTooltipTemplate?: any | undefined, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, zIndex?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSankeyOptions.weightField",
+            "name": "weightField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/viz/sankey",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        },
+        {
+            "path": "devextreme/viz/sankey",
+            "importString": "{ DisposingEvent, DrawnEvent, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, LinkClickEvent, LinkHoverEvent, NodeClickEvent, NodeHoverEvent, OptionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "adaptive-layout",
+            "propertyName": "adaptiveLayout",
+            "className": "DxoAdaptiveLayout",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "shadow",
+            "propertyName": "shadow",
+            "className": "DxoShadow",
+            "events": []
+        },
+        {
+            "path": "link",
+            "propertyName": "link",
+            "className": "DxoLink",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "hover-style",
+            "propertyName": "hoverStyle",
+            "className": "DxoHoverStyle",
+            "events": []
+        },
+        {
+            "path": "hatching",
+            "propertyName": "hatching",
+            "className": "DxoHatching",
+            "events": []
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "node",
+            "propertyName": "node",
+            "className": "DxoNode",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

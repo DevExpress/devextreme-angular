@@ -1,0 +1,66 @@
+{
+    "docID": "dxHtmlEditorOptions.mediaResizing",
+    "className": "DxoMediaResizing",
+    "selector": "dxo-media-resizing",
+    "optionName": "mediaResizing",
+    "path": "media-resizing",
+    "propertyName": "mediaResizing",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoHtmlEditorMediaResizing",
+    "basePath": "./base/html-editor-media-resizing",
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "allowedTarget",
+            "DocID": "dxHtmlEditorMediaResizing.allowedTargets"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxHtmlEditorMediaResizing.enabled"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxHtmlEditorMediaResizing.allowedTargets",
+            "name": "allowedTargets",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "allowedTarget",
+                "DocID": "dxHtmlEditorMediaResizing.allowedTargets"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorMediaResizing.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxHtmlEditorMediaResizing.enabled"
+            }
+        }
+    ]
+}

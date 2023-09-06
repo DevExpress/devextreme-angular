@@ -1,0 +1,174 @@
+{
+    "properties": [
+        {
+            "docID": "GridBaseColumn.headerFilter.allowSearch",
+            "isDeprecated": true,
+            "name": "allowSearch",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.allowSelectAll",
+            "name": "allowSelectAll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.dataSource",
+            "name": "dataSource",
+            "type": "DataSourceOptions | Store | Function | null | undefined | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSourceOptions",
+                    "Store",
+                    "Function",
+                    "null",
+                    "undefined"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.groupInterval",
+            "name": "groupInterval",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.height",
+            "name": "height",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.search",
+            "name": "search",
+            "type": "ColumnHeaderFilterSearchConfig | HeaderFilterSearchConfig",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "ColumnHeaderFilterSearchConfig",
+                    "HeaderFilterSearchConfig"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.searchMode",
+            "isDeprecated": true,
+            "name": "searchMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.headerFilter.width",
+            "name": "width",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.headerFilter.searchTimeout",
+            "isDeprecated": true,
+            "name": "searchTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.headerFilter.texts",
+            "name": "texts",
+            "type": "{ cancel?: string, emptyValue?: string, ok?: string } | dxGanttHeaderFilterTexts",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ cancel?: string, emptyValue?: string, ok?: string }",
+                    "dxGanttHeaderFilterTexts"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.headerFilter.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.headerFilter.showRelevantValues",
+            "name": "showRelevantValues",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [],
+    "className": "DxoGanttHeaderFilter",
+    "path": "gantt-header-filter",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/common/grids",
+            "importString": "{ ColumnHeaderFilterSearchConfig, HeaderFilterSearchConfig }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "{ Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/gantt",
+            "importString": "{ dxGanttHeaderFilterTexts }"
+        }
+    ]
+}

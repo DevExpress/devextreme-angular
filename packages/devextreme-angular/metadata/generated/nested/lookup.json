@@ -1,0 +1,452 @@
+{
+    "docID": "GridBaseColumn.lookup",
+    "className": "DxoLookup",
+    "selector": "dxo-lookup",
+    "optionName": "lookup",
+    "properties": [
+        {
+            "docID": "GridBaseColumn.lookup.allowClearing",
+            "name": "allowClearing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.lookup.calculateCellValue",
+            "name": "calculateCellValue",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.lookup.dataSource",
+            "name": "dataSource",
+            "type": "DataSourceOptions | Store | Function | null | undefined | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSourceOptions",
+                    "Store",
+                    "Function",
+                    "null",
+                    "undefined"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        },
+        {
+            "docID": "GridBaseColumn.lookup.displayExpr",
+            "name": "displayExpr",
+            "type": "Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseColumn.lookup.valueExpr",
+            "name": "valueExpr",
+            "type": "string | undefined | Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined",
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "lookup",
+    "propertyName": "lookup",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "{ Options as DataSourceOptions }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "Function",
+                "null",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsFunc": true,
+            "IsDataSource": true,
+            "DocID": "GridBaseColumn.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "Function",
+                "null",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsFunc": true,
+            "IsDataSource": true,
+            "DocID": "GridBaseColumn.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFilterBuilderField.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxFilterBuilderField.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFilterBuilderField.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxFilterBuilderField.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "Function",
+                "null",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsFunc": true,
+            "IsDataSource": true,
+            "DocID": "GridBaseColumn.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseColumn.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.calculateCellValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "Function",
+                "null",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsFunc": true,
+            "IsDataSource": true,
+            "DocID": "GridBaseColumn.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseColumn.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseColumn.lookup.valueExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFilterBuilderField.lookup.allowClearing"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSourceOptions",
+                "Store",
+                "undefined"
+            ],
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxFilterBuilderField.lookup.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.displayExpr"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.lookup.valueExpr"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

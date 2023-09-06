@@ -1,0 +1,963 @@
+{
+    "docID": "dxRangeSelector",
+    "className": "DxRangeSelector",
+    "widgetName": "dxRangeSelector",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-range-selector",
+    "events": [
+        {
+            "docID": "dxRangeSelectorOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxRangeSelectorOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "backgroundChange",
+            "type": "EventEmitter<{ color?: string, image?: { location?: string, url?: string | undefined }, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "behaviorChange",
+            "type": "EventEmitter<{ allowSlidersSwap?: boolean, animationEnabled?: boolean, callValueChanged?: string, manualRangeSelectionEnabled?: boolean, moveSelectedRangeByClick?: boolean, snapToTicks?: boolean, valueChangeMode?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "chartChange",
+            "type": "EventEmitter<{ barGroupPadding?: number, barGroupWidth?: number | undefined, bottomIndent?: number, commonSeriesSettings?: any, dataPrepareSettings?: { checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }, maxBubbleSize?: number, minBubbleSize?: number, negativesAsZeroes?: boolean, palette?: string | Array<string>, paletteExtensionMode?: string, series?: any | undefined | Array<any>, seriesTemplate?: { customizeSeries?: Function, nameField?: string }, topIndent?: number, valueAxis?: { inverted?: boolean, logarithmBase?: number, max?: number | undefined, min?: number | undefined, type?: string | undefined, valueType?: string | undefined } }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "containerBackgroundColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceFieldChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "indentChange",
+            "type": "EventEmitter<{ left?: number | undefined, right?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "marginChange",
+            "type": "EventEmitter<{ bottom?: number, left?: number, right?: number, top?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scaleChange",
+            "type": "EventEmitter<{ aggregateByCategory?: boolean, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, discreteAxisDivisionMode?: string, endOnTick?: boolean, endValue?: Date | number | string | undefined, holidays?: Array<Date | string | number>, label?: { customizeText?: Function, font?: Font, format?: Format | string | undefined, overlappingBehavior?: string, topIndent?: number, visible?: boolean }, linearThreshold?: number, logarithmBase?: number, marker?: { label?: { customizeText?: Function, format?: Format | string | undefined }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }, maxRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minorTick?: { color?: string, opacity?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, placeholderHeight?: number | undefined, showCustomBoundaryTicks?: boolean, singleWorkdays?: Array<Date | string | number>, startValue?: Date | number | string | undefined, tick?: { color?: string, opacity?: number, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, type?: string | undefined, valueType?: string | undefined, workdaysOnly?: boolean, workWeek?: Array<number> }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedRangeColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedRangeUpdateModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "shutterChange",
+            "type": "EventEmitter<{ color?: string | undefined, opacity?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sliderHandleChange",
+            "type": "EventEmitter<{ color?: string, opacity?: number, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sliderMarkerChange",
+            "type": "EventEmitter<{ color?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, invalidRangeColor?: string, paddingLeftRight?: number, paddingTopBottom?: number, placeholderHeight?: number | undefined, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<DevExpress.common.charts.VisualRange | Array<number | string | Date>>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxRangeSelectorOptions.background",
+            "name": "background",
+            "type": "{ color?: string, image?: { location?: string, url?: string | undefined }, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, image?: { location?: string, url?: string | undefined }, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.behavior",
+            "name": "behavior",
+            "type": "{ allowSlidersSwap?: boolean, animationEnabled?: boolean, callValueChanged?: string, manualRangeSelectionEnabled?: boolean, moveSelectedRangeByClick?: boolean, snapToTicks?: boolean, valueChangeMode?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSlidersSwap?: boolean, animationEnabled?: boolean, callValueChanged?: string, manualRangeSelectionEnabled?: boolean, moveSelectedRangeByClick?: boolean, snapToTicks?: boolean, valueChangeMode?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.chart",
+            "name": "chart",
+            "type": "{ barGroupPadding?: number, barGroupWidth?: number | undefined, bottomIndent?: number, commonSeriesSettings?: any, dataPrepareSettings?: { checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }, maxBubbleSize?: number, minBubbleSize?: number, negativesAsZeroes?: boolean, palette?: string | Array<string>, paletteExtensionMode?: string, series?: any | undefined | Array<any>, seriesTemplate?: { customizeSeries?: Function, nameField?: string }, topIndent?: number, valueAxis?: { inverted?: boolean, logarithmBase?: number, max?: number | undefined, min?: number | undefined, type?: string | undefined, valueType?: string | undefined } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ barGroupPadding?: number, barGroupWidth?: number | undefined, bottomIndent?: number, commonSeriesSettings?: any, dataPrepareSettings?: { checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }, maxBubbleSize?: number, minBubbleSize?: number, negativesAsZeroes?: boolean, palette?: string | Array<string>, paletteExtensionMode?: string, series?: any | undefined | Array<any>, seriesTemplate?: { customizeSeries?: Function, nameField?: string }, topIndent?: number, valueAxis?: { inverted?: boolean, logarithmBase?: number, max?: number | undefined, min?: number | undefined, type?: string | undefined, valueType?: string | undefined } }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.containerBackgroundColor",
+            "name": "containerBackgroundColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxRangeSelectorOptions.dataSourceField",
+            "name": "dataSourceField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.indent",
+            "name": "indent",
+            "type": "{ left?: number | undefined, right?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ left?: number | undefined, right?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.scale",
+            "name": "scale",
+            "type": "{ aggregateByCategory?: boolean, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, discreteAxisDivisionMode?: string, endOnTick?: boolean, endValue?: Date | number | string | undefined, holidays?: Array<Date | string | number>, label?: { customizeText?: Function, font?: Font, format?: Format | string | undefined, overlappingBehavior?: string, topIndent?: number, visible?: boolean }, linearThreshold?: number, logarithmBase?: number, marker?: { label?: { customizeText?: Function, format?: Format | string | undefined }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }, maxRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minorTick?: { color?: string, opacity?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, placeholderHeight?: number | undefined, showCustomBoundaryTicks?: boolean, singleWorkdays?: Array<Date | string | number>, startValue?: Date | number | string | undefined, tick?: { color?: string, opacity?: number, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, type?: string | undefined, valueType?: string | undefined, workdaysOnly?: boolean, workWeek?: Array<number> }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ aggregateByCategory?: boolean, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, discreteAxisDivisionMode?: string, endOnTick?: boolean, endValue?: Date | number | string | undefined, holidays?: Array<Date | string | number>, label?: { customizeText?: Function, font?: Font, format?: Format | string | undefined, overlappingBehavior?: string, topIndent?: number, visible?: boolean }, linearThreshold?: number, logarithmBase?: number, marker?: { label?: { customizeText?: Function, format?: Format | string | undefined }, separatorHeight?: number, textLeftIndent?: number, textTopIndent?: number, topIndent?: number, visible?: boolean }, maxRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minorTick?: { color?: string, opacity?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minRange?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, placeholderHeight?: number | undefined, showCustomBoundaryTicks?: boolean, singleWorkdays?: Array<Date | string | number>, startValue?: Date | number | string | undefined, tick?: { color?: string, opacity?: number, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, type?: string | undefined, valueType?: string | undefined, workdaysOnly?: boolean, workWeek?: Array<number> }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.selectedRangeColor",
+            "name": "selectedRangeColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.selectedRangeUpdateMode",
+            "name": "selectedRangeUpdateMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.shutter",
+            "name": "shutter",
+            "type": "{ color?: string | undefined, opacity?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string | undefined, opacity?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.sliderHandle",
+            "name": "sliderHandle",
+            "type": "{ color?: string, opacity?: number, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, opacity?: number, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.sliderMarker",
+            "name": "sliderMarker",
+            "type": "{ color?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, invalidRangeColor?: string, paddingLeftRight?: number, paddingTopBottom?: number, placeholderHeight?: number | undefined, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, invalidRangeColor?: string, paddingLeftRight?: number, paddingTopBottom?: number, placeholderHeight?: number | undefined, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxRangeSelectorOptions.value",
+            "name": "value",
+            "type": "DevExpress.common.charts.VisualRange | Array<number | string | Date>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.common.charts.VisualRange"
+                ],
+                "arrayTypes": [
+                    "number",
+                    "string",
+                    "Date"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/viz/range_selector",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        },
+        {
+            "path": "devextreme/viz/range_selector",
+            "importString": "{ DisposingEvent, DrawnEvent, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, OptionChangedEvent, ValueChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "background",
+            "propertyName": "background",
+            "className": "DxoBackground",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "image",
+            "propertyName": "image",
+            "className": "DxoImage",
+            "events": []
+        },
+        {
+            "path": "behavior",
+            "propertyName": "behavior",
+            "className": "DxoBehavior",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "chart",
+            "propertyName": "chart",
+            "className": "DxoChart",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "common-series-settings",
+            "propertyName": "commonSeriesSettings",
+            "className": "DxoCommonSeriesSettings",
+            "events": []
+        },
+        {
+            "path": "aggregation",
+            "propertyName": "aggregation",
+            "className": "DxoAggregation",
+            "events": []
+        },
+        {
+            "path": "area",
+            "propertyName": "area",
+            "className": "DxoArea",
+            "events": []
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "hover-style",
+            "propertyName": "hoverStyle",
+            "className": "DxoHoverStyle",
+            "events": []
+        },
+        {
+            "path": "hatching",
+            "propertyName": "hatching",
+            "className": "DxoHatching",
+            "events": []
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": []
+        },
+        {
+            "path": "connector",
+            "propertyName": "connector",
+            "className": "DxoConnector",
+            "events": []
+        },
+        {
+            "path": "point",
+            "propertyName": "point",
+            "className": "DxoPoint",
+            "events": []
+        },
+        {
+            "path": "height",
+            "propertyName": "height",
+            "className": "DxoHeight",
+            "events": []
+        },
+        {
+            "path": "url",
+            "propertyName": "url",
+            "className": "DxoUrl",
+            "events": []
+        },
+        {
+            "path": "width",
+            "propertyName": "width",
+            "className": "DxoWidth",
+            "events": []
+        },
+        {
+            "path": "selection-style",
+            "propertyName": "selectionStyle",
+            "className": "DxoSelectionStyle",
+            "events": []
+        },
+        {
+            "path": "reduction",
+            "propertyName": "reduction",
+            "className": "DxoReduction",
+            "events": []
+        },
+        {
+            "path": "value-error-bar",
+            "propertyName": "valueErrorBar",
+            "className": "DxoValueErrorBar",
+            "events": []
+        },
+        {
+            "path": "bar",
+            "propertyName": "bar",
+            "className": "DxoBar",
+            "events": []
+        },
+        {
+            "path": "bubble",
+            "propertyName": "bubble",
+            "className": "DxoBubble",
+            "events": []
+        },
+        {
+            "path": "candlestick",
+            "propertyName": "candlestick",
+            "className": "DxoCandlestick",
+            "events": []
+        },
+        {
+            "path": "color",
+            "propertyName": "color",
+            "className": "DxoColor",
+            "events": []
+        },
+        {
+            "path": "fullstackedarea",
+            "propertyName": "fullstackedarea",
+            "className": "DxoFullstackedarea",
+            "events": []
+        },
+        {
+            "path": "fullstackedbar",
+            "propertyName": "fullstackedbar",
+            "className": "DxoFullstackedbar",
+            "events": []
+        },
+        {
+            "path": "fullstackedline",
+            "propertyName": "fullstackedline",
+            "className": "DxoFullstackedline",
+            "events": []
+        },
+        {
+            "path": "fullstackedspline",
+            "propertyName": "fullstackedspline",
+            "className": "DxoFullstackedspline",
+            "events": []
+        },
+        {
+            "path": "fullstackedsplinearea",
+            "propertyName": "fullstackedsplinearea",
+            "className": "DxoFullstackedsplinearea",
+            "events": []
+        },
+        {
+            "path": "argument-format",
+            "propertyName": "argumentFormat",
+            "className": "DxoArgumentFormat",
+            "events": []
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "line",
+            "propertyName": "line",
+            "className": "DxoLine",
+            "events": []
+        },
+        {
+            "path": "rangearea",
+            "propertyName": "rangearea",
+            "className": "DxoRangearea",
+            "events": []
+        },
+        {
+            "path": "rangebar",
+            "propertyName": "rangebar",
+            "className": "DxoRangebar",
+            "events": []
+        },
+        {
+            "path": "scatter",
+            "propertyName": "scatter",
+            "className": "DxoScatter",
+            "events": []
+        },
+        {
+            "path": "spline",
+            "propertyName": "spline",
+            "className": "DxoSpline",
+            "events": []
+        },
+        {
+            "path": "splinearea",
+            "propertyName": "splinearea",
+            "className": "DxoSplinearea",
+            "events": []
+        },
+        {
+            "path": "stackedarea",
+            "propertyName": "stackedarea",
+            "className": "DxoStackedarea",
+            "events": []
+        },
+        {
+            "path": "stackedbar",
+            "propertyName": "stackedbar",
+            "className": "DxoStackedbar",
+            "events": []
+        },
+        {
+            "path": "stackedline",
+            "propertyName": "stackedline",
+            "className": "DxoStackedline",
+            "events": []
+        },
+        {
+            "path": "stackedspline",
+            "propertyName": "stackedspline",
+            "className": "DxoStackedspline",
+            "events": []
+        },
+        {
+            "path": "stackedsplinearea",
+            "propertyName": "stackedsplinearea",
+            "className": "DxoStackedsplinearea",
+            "events": []
+        },
+        {
+            "path": "steparea",
+            "propertyName": "steparea",
+            "className": "DxoSteparea",
+            "events": []
+        },
+        {
+            "path": "stepline",
+            "propertyName": "stepline",
+            "className": "DxoStepline",
+            "events": []
+        },
+        {
+            "path": "stock",
+            "propertyName": "stock",
+            "className": "DxoStock",
+            "events": []
+        },
+        {
+            "path": "data-prepare-settings",
+            "propertyName": "dataPrepareSettings",
+            "className": "DxoDataPrepareSettings",
+            "events": []
+        },
+        {
+            "path": "series-dxi",
+            "propertyName": "series",
+            "className": "DxiSeries",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "series-template",
+            "propertyName": "seriesTemplate",
+            "className": "DxoSeriesTemplate",
+            "events": []
+        },
+        {
+            "path": "value-axis",
+            "propertyName": "valueAxis",
+            "className": "DxoValueAxis",
+            "events": []
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "indent",
+            "propertyName": "indent",
+            "className": "DxoIndent",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "scale",
+            "propertyName": "scale",
+            "className": "DxoScale",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "aggregation-interval",
+            "propertyName": "aggregationInterval",
+            "className": "DxoAggregationInterval",
+            "events": []
+        },
+        {
+            "path": "break-dxi",
+            "propertyName": "breaks",
+            "className": "DxiBreak",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "break-style",
+            "propertyName": "breakStyle",
+            "className": "DxoBreakStyle",
+            "events": []
+        },
+        {
+            "path": "marker",
+            "propertyName": "marker",
+            "className": "DxoMarker",
+            "events": []
+        },
+        {
+            "path": "max-range",
+            "propertyName": "maxRange",
+            "className": "DxoMaxRange",
+            "events": []
+        },
+        {
+            "path": "minor-tick",
+            "propertyName": "minorTick",
+            "className": "DxoMinorTick",
+            "events": []
+        },
+        {
+            "path": "minor-tick-interval",
+            "propertyName": "minorTickInterval",
+            "className": "DxoMinorTickInterval",
+            "events": []
+        },
+        {
+            "path": "min-range",
+            "propertyName": "minRange",
+            "className": "DxoMinRange",
+            "events": []
+        },
+        {
+            "path": "tick",
+            "propertyName": "tick",
+            "className": "DxoTick",
+            "events": []
+        },
+        {
+            "path": "tick-interval",
+            "propertyName": "tickInterval",
+            "className": "DxoTickInterval",
+            "events": []
+        },
+        {
+            "path": "shutter",
+            "propertyName": "shutter",
+            "className": "DxoShutter",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "slider-handle",
+            "propertyName": "sliderHandle",
+            "className": "DxoSliderHandle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "slider-marker",
+            "propertyName": "sliderMarker",
+            "className": "DxoSliderMarker",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

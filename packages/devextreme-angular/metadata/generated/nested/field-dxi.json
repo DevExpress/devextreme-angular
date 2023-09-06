@@ -1,0 +1,1583 @@
+{
+    "docID": "dxFilterBuilderOptions.fields",
+    "className": "DxiField",
+    "selector": "dxi-field",
+    "optionName": "fields",
+    "path": "field-dxi",
+    "propertyName": "fields",
+    "isCollection": true,
+    "collectionNestedComponents": [],
+    "baseClass": "DxiFilterBuilderField",
+    "basePath": "./base/filter-builder-field-dxi",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFilterBuilderField.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFilterBuilderField.editorTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "dxFilterBuilderField.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "dxFilterBuilderField.format"
+        },
+        {
+            "DocID": "dxFilterBuilderField.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFilterBuilderField.lookup.allowClearing"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsDataSource": true,
+                    "DocID": "dxFilterBuilderField.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFilterBuilderField.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFilterBuilderField.editorTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "dxFilterBuilderField.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "dxFilterBuilderField.format"
+        },
+        {
+            "DocID": "dxFilterBuilderField.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFilterBuilderField.lookup.allowClearing"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsDataSource": true,
+                    "DocID": "dxFilterBuilderField.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.trueText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether to allow the predefined summary post-processing functions ('absoluteVariation' and 'percentVariation') and runningTotal to take values of different groups into account."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Allows an end-user to expand/collapse all header items within a header level."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Allows an end-user to change sorting options."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Allows an end-user to sort columns by summary values."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Type of the area where the field is located."
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "Description": "Index among the other fields displayed within the same area."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "Description": "Allows you to use a custom aggregate function to calculate the summary values. Cannot be used for the XmlaStore store type."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "Description": "Specifies a callback function that allows you to modify summary values after they are calculated."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "A caption that will be displayed in the pivot grid's field chooser and field panel to identify the field."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "Description": "Specifies a callback function that returns the text to be displayed in the cells of a field."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Name of the data source field containing data for the pivot grid field."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies a type of field values."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "The name of the folder in which the field is located."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Indicates whether all header items of the field's header level are expanded."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies whether a user can change the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterValue",
+            "Description": "Specifies by which values the field is filtered."
+        },
+        {
+            "PrimitiveTypes": [
+                "format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "format",
+                    "Path": "ui/widget/ui.widget"
+                }
+            ],
+            "Description": "Specifies a display format for field values."
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "Description": "The index of the field within a group."
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "Description": "Specifies how the values of the current field are combined into groups. Cannot be used for the XmlaStore store type."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "The name of the group to which the field belongs."
+        },
+        {
+            "Description": "Configures the header filter feature.",
+            "Options": {
+                "allowSearch": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "Description": "Specifies whether searching is enabled in the header filter."
+                },
+                "height": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "Description": "Specifies the height of the popup menu containing filtering values."
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "Description": "Specifies the width of the popup menu containing filtering values."
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether the field should be treated as a Data Field."
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsDeprecated": true,
+            "Description": "Use the format.precision option instead."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies whether to summarize each next summary value with the previous one by rows or columns."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type and along with remote operations."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether or not to display Grand Total values for the field."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether or not to display Total values for the field."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether or not to display summary values. Applies only to the fields whose area is \"data\". Inherits the value of showTotals by default."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies how field data should be sorted. Can be used for the XmlaStore store type only."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Sorts the header items of this field by the summary values of another field."
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "sortBySummaryPath",
+            "Description": "The array of field names that specify a path to column/row whose summary field is used for sorting of this field's header items."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "Description": "Specifies how to sort header items."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies the sort order of field values."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies the summary post-processing algorithm."
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "Description": "Specifies how to aggregate field data. Cannot be used for the XmlaStore store type."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "A boolean value specifying whether or not the field is visible in the pivot grid and the Field Chooser."
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "Description": "Specifies the absolute width of the field in the pivot grid."
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "Description": "Specifies whether or not long text in header items should be wrapped."
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.calculateFilterExpression"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.caption"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFilterBuilderField.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.dataField"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.dataType"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFilterBuilderField.editorOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFilterBuilderField.editorTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.falseText"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "filterOperation",
+            "DocID": "dxFilterBuilderField.filterOperations"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "dxFilterBuilderField.format"
+        },
+        {
+            "DocID": "dxFilterBuilderField.lookup",
+            "Options": {
+                "allowClearing": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFilterBuilderField.lookup.allowClearing"
+                },
+                "dataSource": {
+                    "PrimitiveTypes": [
+                        "DataSourceOptions",
+                        "Store",
+                        "undefined"
+                    ],
+                    "ItemPrimitiveTypes": [
+                        "any"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Options",
+                            "Alias": "DataSourceOptions",
+                            "Path": "data/data_source"
+                        },
+                        {
+                            "Name": "Store",
+                            "Path": "data"
+                        }
+                    ],
+                    "IsDataSource": true,
+                    "DocID": "dxFilterBuilderField.lookup.dataSource"
+                },
+                "displayExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.displayExpr"
+                },
+                "valueExpr": {
+                    "PrimitiveTypes": [
+                        "Function",
+                        "string",
+                        "undefined"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxFilterBuilderField.lookup.valueExpr"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFilterBuilderField.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFilterBuilderField.trueText"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxFilterBuilderField.calculateFilterExpression",
+            "name": "calculateFilterExpression",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxFilterBuilderField.calculateFilterExpression"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.caption",
+            "name": "caption",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFilterBuilderField.caption"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.customizeText",
+            "name": "customizeText",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxFilterBuilderField.customizeText"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.dataField",
+            "name": "dataField",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFilterBuilderField.dataField"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.dataType",
+            "name": "dataType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFilterBuilderField.dataType"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.editorOptions",
+            "name": "editorOptions",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxFilterBuilderField.editorOptions"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.editorTemplate",
+            "name": "editorTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxFilterBuilderField.editorTemplate"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.falseText",
+            "name": "falseText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFilterBuilderField.falseText"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.filterOperations",
+            "name": "filterOperations",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "filterOperation",
+                "DocID": "dxFilterBuilderField.filterOperations"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFilterBuilderField.format",
+            "name": "format",
+            "type": "Format | string | format",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Format",
+                    "string",
+                    "format"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Format",
+                    "string"
+                ],
+                "ComplexTypes": [
+                    "Format"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "Format",
+                        "Path": "localization"
+                    }
+                ],
+                "DocID": "dxFilterBuilderField.format"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.lookup",
+            "name": "lookup",
+            "type": "{ allowClearing?: boolean, dataSource?: DataSourceOptions | Store | undefined | Array<any>, displayExpr?: Function | string | undefined, valueExpr?: Function | string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowClearing?: boolean, dataSource?: DataSourceOptions | Store | undefined | Array<any>, displayExpr?: Function | string | undefined, valueExpr?: Function | string | undefined }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxFilterBuilderField.lookup",
+                "Options": {
+                    "allowClearing": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxFilterBuilderField.lookup.allowClearing"
+                    },
+                    "dataSource": {
+                        "PrimitiveTypes": [
+                            "DataSourceOptions",
+                            "Store",
+                            "undefined"
+                        ],
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "Options",
+                                "Alias": "DataSourceOptions",
+                                "Path": "data/data_source"
+                            },
+                            {
+                                "Name": "Store",
+                                "Path": "data"
+                            }
+                        ],
+                        "IsDataSource": true,
+                        "DocID": "dxFilterBuilderField.lookup.dataSource"
+                    },
+                    "displayExpr": {
+                        "PrimitiveTypes": [
+                            "Function",
+                            "string",
+                            "undefined"
+                        ],
+                        "IsFunc": true,
+                        "DocID": "dxFilterBuilderField.lookup.displayExpr"
+                    },
+                    "valueExpr": {
+                        "PrimitiveTypes": [
+                            "Function",
+                            "string",
+                            "undefined"
+                        ],
+                        "IsFunc": true,
+                        "DocID": "dxFilterBuilderField.lookup.valueExpr"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.name",
+            "name": "name",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFilterBuilderField.name"
+            }
+        },
+        {
+            "docID": "dxFilterBuilderField.trueText",
+            "name": "trueText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFilterBuilderField.trueText"
+            }
+        },
+        {
+            "name": "allowCrossGroupCalculation",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether to allow the predefined summary post-processing functions ('absoluteVariation' and 'percentVariation') and runningTotal to take values of different groups into account."
+            }
+        },
+        {
+            "name": "allowExpandAll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Allows an end-user to expand/collapse all header items within a header level."
+            }
+        },
+        {
+            "name": "allowFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Allows a user to filter fields by selecting or deselecting values in the popup menu."
+            }
+        },
+        {
+            "name": "allowSorting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Allows an end-user to change sorting options."
+            }
+        },
+        {
+            "name": "allowSortingBySummary",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Allows an end-user to sort columns by summary values."
+            }
+        },
+        {
+            "name": "area",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Type of the area where the field is located."
+            }
+        },
+        {
+            "name": "areaIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "Description": "Index among the other fields displayed within the same area."
+            }
+        },
+        {
+            "name": "calculateCustomSummary",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "Description": "Allows you to use a custom aggregate function to calculate the summary values. Cannot be used for the XmlaStore store type."
+            }
+        },
+        {
+            "name": "calculateSummaryValue",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "Description": "Specifies a callback function that allows you to modify summary values after they are calculated."
+            }
+        },
+        {
+            "name": "displayFolder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "The name of the folder in which the field is located."
+            }
+        },
+        {
+            "name": "expanded",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Indicates whether all header items of the field's header level are expanded."
+            }
+        },
+        {
+            "name": "filterType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies whether a user can change the current filter by including (selecting) or excluding (clearing the selection) values. Applies only if allowFiltering is true."
+            }
+        },
+        {
+            "name": "filterValues",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "filterValue",
+                "Description": "Specifies by which values the field is filtered."
+            },
+            "isCollection": true
+        },
+        {
+            "name": "groupIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "Description": "The index of the field within a group."
+            }
+        },
+        {
+            "name": "groupInterval",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "Description": "Specifies how the values of the current field are combined into groups. Cannot be used for the XmlaStore store type."
+            }
+        },
+        {
+            "name": "groupName",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "The name of the group to which the field belongs."
+            }
+        },
+        {
+            "name": "headerFilter",
+            "type": "{ allowSearch?: boolean, height?: number, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, height?: number, width?: number }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "Description": "Configures the header filter feature.",
+                "Options": {
+                    "allowSearch": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "Description": "Specifies whether searching is enabled in the header filter."
+                    },
+                    "height": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "Description": "Specifies the height of the popup menu containing filtering values."
+                    },
+                    "width": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "Description": "Specifies the width of the popup menu containing filtering values."
+                    }
+                }
+            }
+        },
+        {
+            "name": "isMeasure",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether the field should be treated as a Data Field."
+            }
+        },
+        {
+            "isDeprecated": true,
+            "name": "precision",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "IsDeprecated": true,
+                "Description": "Use the format.precision option instead."
+            }
+        },
+        {
+            "name": "runningTotal",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies whether to summarize each next summary value with the previous one by rows or columns."
+            }
+        },
+        {
+            "name": "selector",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "Description": "Specifies the function that determines how to split data from the data source into ranges for header items. Cannot be used for the XmlaStore store type and along with remote operations."
+            }
+        },
+        {
+            "name": "showGrandTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether or not to display Grand Total values for the field."
+            }
+        },
+        {
+            "name": "showTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether or not to display Total values for the field."
+            }
+        },
+        {
+            "name": "showValues",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether or not to display summary values. Applies only to the fields whose area is \"data\". Inherits the value of showTotals by default."
+            }
+        },
+        {
+            "name": "sortBy",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies how field data should be sorted. Can be used for the XmlaStore store type only."
+            }
+        },
+        {
+            "name": "sortBySummaryField",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Sorts the header items of this field by the summary values of another field."
+            }
+        },
+        {
+            "name": "sortBySummaryPath",
+            "type": "Array<number | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "sortBySummaryPath",
+                "Description": "The array of field names that specify a path to column/row whose summary field is used for sorting of this field's header items."
+            },
+            "isCollection": true
+        },
+        {
+            "name": "sortingMethod",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "Description": "Specifies how to sort header items."
+            }
+        },
+        {
+            "name": "sortOrder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies the sort order of field values."
+            }
+        },
+        {
+            "name": "summaryDisplayMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies the summary post-processing algorithm."
+            }
+        },
+        {
+            "name": "summaryType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "Description": "Specifies how to aggregate field data. Cannot be used for the XmlaStore store type."
+            }
+        },
+        {
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "A boolean value specifying whether or not the field is visible in the pivot grid and the Field Chooser."
+            }
+        },
+        {
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "Description": "Specifies the absolute width of the field in the pivot grid."
+            }
+        },
+        {
+            "name": "wordWrapEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "Description": "Specifies whether or not long text in header items should be wrapped."
+            }
+        }
+    ]
+}

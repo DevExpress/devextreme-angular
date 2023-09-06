@@ -1,0 +1,78 @@
+{
+    "properties": [
+        {
+            "docID": "dxHtmlEditorImageUpload.fileUploaderOptions",
+            "name": "fileUploaderOptions",
+            "type": "dxFileUploaderOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFileUploaderOptions"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.fileUploadMode",
+            "name": "fileUploadMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.tabs",
+            "name": "tabs",
+            "type": "Array<DevExpress.ui.dxHtmlEditorImageUploadTabItem | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxHtmlEditorImageUploadTabItem",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.uploadDirectory",
+            "name": "uploadDirectory",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.uploadUrl",
+            "name": "uploadUrl",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [],
+    "className": "DxoHtmlEditorImageUpload",
+    "path": "html-editor-image-upload",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/file_uploader",
+            "importString": "{ dxFileUploaderOptions }"
+        }
+    ]
+}

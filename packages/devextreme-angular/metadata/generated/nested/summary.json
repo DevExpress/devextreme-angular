@@ -1,0 +1,357 @@
+{
+    "docID": "dxDataGridOptions.summary",
+    "className": "DxoSummary",
+    "selector": "dxo-summary",
+    "optionName": "summary",
+    "properties": [
+        {
+            "docID": "dxDataGridOptions.summary.calculateCustomSummary",
+            "name": "calculateCustomSummary",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.summary.groupItems",
+            "name": "groupItems",
+            "type": "Array<any | { alignByColumn?: boolean, column?: string | undefined, customizeText?: Function, displayFormat?: string | undefined, name?: string | undefined, showInColumn?: string | undefined, showInGroupFooter?: boolean, skipEmptyValues?: boolean, summaryType?: string | undefined, valueFormat?: Format | string | undefined }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ alignByColumn?: boolean, column?: string | undefined, customizeText?: Function, displayFormat?: string | undefined, name?: string | undefined, showInColumn?: string | undefined, showInGroupFooter?: boolean, skipEmptyValues?: boolean, summaryType?: string | undefined, valueFormat?: Format | string | undefined }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDataGridOptions.summary.recalculateWhileEditing",
+            "name": "recalculateWhileEditing",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.summary.skipEmptyValues",
+            "name": "skipEmptyValues",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.summary.texts",
+            "name": "texts",
+            "type": "{ avg?: string, avgOtherColumn?: string, count?: string, max?: string, maxOtherColumn?: string, min?: string, minOtherColumn?: string, sum?: string, sumOtherColumn?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ avg?: string, avgOtherColumn?: string, count?: string, max?: string, maxOtherColumn?: string, min?: string, minOtherColumn?: string, sum?: string, sumOtherColumn?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridOptions.summary.totalItems",
+            "name": "totalItems",
+            "type": "Array<any | { alignment?: string | undefined, column?: string | undefined, cssClass?: string | undefined, customizeText?: Function, displayFormat?: string | undefined, name?: string | undefined, showInColumn?: string | undefined, skipEmptyValues?: boolean, summaryType?: string | undefined, valueFormat?: Format | string | undefined }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ alignment?: string | undefined, column?: string | undefined, cssClass?: string | undefined, customizeText?: Function, displayFormat?: string | undefined, name?: string | undefined, showInColumn?: string | undefined, skipEmptyValues?: boolean, summaryType?: string | undefined, valueFormat?: Format | string | undefined }"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "path": "summary",
+    "propertyName": "summary",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiGroupItem",
+            "path": "group-item-dxi",
+            "propertyName": "groupItems"
+        },
+        {
+            "className": "DxiTotalItem",
+            "path": "total-item-dxi",
+            "propertyName": "totalItems"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxDataGridOptions.summary.calculateCustomSummary"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "groupItem",
+            "DocID": "dxDataGridOptions.summary.groupItems",
+            "Options": {
+                "alignByColumn": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.alignByColumn"
+                },
+                "column": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.column"
+                },
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxDataGridOptions.summary.groupItems.customizeText"
+                },
+                "displayFormat": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.displayFormat"
+                },
+                "name": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.name"
+                },
+                "showInColumn": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.showInColumn"
+                },
+                "showInGroupFooter": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.showInGroupFooter"
+                },
+                "skipEmptyValues": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.skipEmptyValues"
+                },
+                "summaryType": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.summaryType"
+                },
+                "valueFormat": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "dxDataGridOptions.summary.groupItems.valueFormat"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridOptions.summary.recalculateWhileEditing"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDataGridOptions.summary.skipEmptyValues"
+        },
+        {
+            "DocID": "dxDataGridOptions.summary.texts",
+            "Options": {
+                "avg": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.avg"
+                },
+                "avgOtherColumn": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.avgOtherColumn"
+                },
+                "count": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.count"
+                },
+                "max": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.max"
+                },
+                "maxOtherColumn": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.maxOtherColumn"
+                },
+                "min": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.min"
+                },
+                "minOtherColumn": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.minOtherColumn"
+                },
+                "sum": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.sum"
+                },
+                "sumOtherColumn": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.texts.sumOtherColumn"
+                }
+            }
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "totalItem",
+            "DocID": "dxDataGridOptions.summary.totalItems",
+            "Options": {
+                "alignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.alignment"
+                },
+                "column": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.column"
+                },
+                "cssClass": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.cssClass"
+                },
+                "customizeText": {
+                    "PrimitiveTypes": [
+                        "Function"
+                    ],
+                    "IsFunc": true,
+                    "DocID": "dxDataGridOptions.summary.totalItems.customizeText"
+                },
+                "displayFormat": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.displayFormat"
+                },
+                "name": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.name"
+                },
+                "showInColumn": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.showInColumn"
+                },
+                "skipEmptyValues": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.skipEmptyValues"
+                },
+                "summaryType": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.summaryType"
+                },
+                "valueFormat": {
+                    "PrimitiveTypes": [
+                        "Format",
+                        "string",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "Format"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Format",
+                            "Path": "localization"
+                        }
+                    ],
+                    "DocID": "dxDataGridOptions.summary.totalItems.valueFormat"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

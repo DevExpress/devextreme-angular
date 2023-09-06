@@ -1,0 +1,489 @@
+{
+    "docID": "dxMap",
+    "className": "DxMap",
+    "widgetName": "dxMap",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-map",
+    "events": [
+        {
+            "docID": "dxMapOptions.onClick",
+            "emit": "onClick",
+            "subscribe": "click",
+            "type": "EventEmitter<ClickEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onMarkerAdded",
+            "emit": "onMarkerAdded",
+            "subscribe": "markerAdded",
+            "type": "EventEmitter<MarkerAddedEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onMarkerRemoved",
+            "emit": "onMarkerRemoved",
+            "subscribe": "markerRemoved",
+            "type": "EventEmitter<MarkerRemovedEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onReady",
+            "emit": "onReady",
+            "subscribe": "ready",
+            "type": "EventEmitter<ReadyEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onRouteAdded",
+            "emit": "onRouteAdded",
+            "subscribe": "routeAdded",
+            "type": "EventEmitter<RouteAddedEvent>"
+        },
+        {
+            "docID": "dxMapOptions.onRouteRemoved",
+            "emit": "onRouteRemoved",
+            "subscribe": "routeRemoved",
+            "type": "EventEmitter<RouteRemovedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "apiKeyChange",
+            "type": "EventEmitter<string | { bing?: string, google?: string, googleStatic?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoAdjustChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "centerChange",
+            "type": "EventEmitter<string | Array<number | { lat?: number, lng?: number }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "controlsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "markerIconSrcChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "markersChange",
+            "type": "EventEmitter<Array<any | { iconSrc?: string, location?: string | Array<number | { lat?: number, lng?: number }>, onClick?: Function, tooltip?: string | { isShown?: boolean, text?: string } }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "providerChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "routesChange",
+            "type": "EventEmitter<Array<any | { color?: string, locations?: Array<any | { lat?: number, lng?: number }>, mode?: string, opacity?: number, weight?: number }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "typeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomChange",
+            "type": "EventEmitter<number>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.apiKey",
+            "name": "apiKey",
+            "type": "string | { bing?: string, google?: string, googleStatic?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ bing?: string, google?: string, googleStatic?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.autoAdjust",
+            "name": "autoAdjust",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.center",
+            "name": "center",
+            "type": "string | Array<number | { lat?: number, lng?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "number",
+                    "{ lat?: number, lng?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxMapOptions.controls",
+            "name": "controls",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.height",
+            "name": "height",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.markerIconSrc",
+            "name": "markerIconSrc",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.markers",
+            "name": "markers",
+            "type": "Array<any | { iconSrc?: string, location?: string | Array<number | { lat?: number, lng?: number }>, onClick?: Function, tooltip?: string | { isShown?: boolean, text?: string } }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ iconSrc?: string, location?: string | Array<number | { lat?: number, lng?: number }>, onClick?: Function, tooltip?: string | { isShown?: boolean, text?: string } }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxMapOptions.provider",
+            "name": "provider",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.routes",
+            "name": "routes",
+            "type": "Array<any | { color?: string, locations?: Array<any | { lat?: number, lng?: number }>, mode?: string, opacity?: number, weight?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ color?: string, locations?: Array<any | { lat?: number, lng?: number }>, mode?: string, opacity?: number, weight?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.type",
+            "name": "type",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.width",
+            "name": "width",
+            "type": "number | Function | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.zoom",
+            "name": "zoom",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/map",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/ui/map",
+            "importString": "{ ClickEvent, DisposingEvent, InitializedEvent, MarkerAddedEvent, MarkerRemovedEvent, OptionChangedEvent, ReadyEvent, RouteAddedEvent, RouteRemovedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "api-key",
+            "propertyName": "apiKey",
+            "className": "DxoApiKey",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "center-dxi",
+            "propertyName": "center",
+            "className": "DxiCenter",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "marker-dxi",
+            "propertyName": "markers",
+            "className": "DxiMarker",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "location-dxi",
+            "propertyName": "location",
+            "className": "DxiLocation",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": []
+        },
+        {
+            "path": "route-dxi",
+            "propertyName": "routes",
+            "className": "DxiRoute",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

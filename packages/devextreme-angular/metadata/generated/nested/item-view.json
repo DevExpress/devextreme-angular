@@ -1,0 +1,108 @@
+{
+    "docID": "dxFileManagerOptions.itemView",
+    "className": "DxoItemView",
+    "selector": "dxo-item-view",
+    "optionName": "itemView",
+    "properties": [
+        {
+            "docID": "dxFileManagerOptions.itemView.details",
+            "name": "details",
+            "type": "{ columns?: Array<DevExpress.ui.dxFileManagerDetailsColumn | string> }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ columns?: Array<DevExpress.ui.dxFileManagerDetailsColumn | string> }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.itemView.mode",
+            "name": "mode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.itemView.showFolders",
+            "name": "showFolders",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerOptions.itemView.showParentFolder",
+            "name": "showParentFolder",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "item-view",
+    "propertyName": "itemView",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "DocID": "dxFileManagerOptions.itemView.details",
+            "Options": {
+                "columns": {
+                    "ItemPrimitiveTypes": [
+                        "DevExpress.ui.dxFileManagerDetailsColumn",
+                        "string"
+                    ],
+                    "ItemComplexTypes": [
+                        "FileManagerDetailsColumn"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "column",
+                    "DocID": "dxFileManagerOptions.itemView.details.columns"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileManagerOptions.itemView.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileManagerOptions.itemView.showFolders"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileManagerOptions.itemView.showParentFolder"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

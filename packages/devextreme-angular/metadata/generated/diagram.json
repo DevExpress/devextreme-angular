@@ -1,0 +1,889 @@
+{
+    "docID": "dxDiagram",
+    "className": "DxDiagram",
+    "widgetName": "dxDiagram",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-diagram",
+    "events": [
+        {
+            "docID": "dxDiagramOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onCustomCommand",
+            "emit": "onCustomCommand",
+            "subscribe": "customCommand",
+            "type": "EventEmitter<CustomCommandEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onItemClick",
+            "emit": "onItemClick",
+            "subscribe": "itemClick",
+            "type": "EventEmitter<ItemClickEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onItemDblClick",
+            "emit": "onItemDblClick",
+            "subscribe": "itemDblClick",
+            "type": "EventEmitter<ItemDblClickEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onRequestEditOperation",
+            "emit": "onRequestEditOperation",
+            "subscribe": "requestEditOperation",
+            "type": "EventEmitter<RequestEditOperationEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onRequestLayoutUpdate",
+            "emit": "onRequestLayoutUpdate",
+            "subscribe": "requestLayoutUpdate",
+            "type": "EventEmitter<RequestLayoutUpdateEvent>"
+        },
+        {
+            "docID": "dxDiagramOptions.onSelectionChanged",
+            "emit": "onSelectionChanged",
+            "subscribe": "selectionChanged",
+            "type": "EventEmitter<SelectionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoZoomModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "contextMenuChange",
+            "type": "EventEmitter<{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, enabled?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "contextToolboxChange",
+            "type": "EventEmitter<{ category?: string, displayMode?: string, enabled?: boolean, shapeIconsPerRow?: number, shapes?: Array<string>, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customShapesChange",
+            "type": "EventEmitter<Array<any | { allowEditImage?: boolean, allowEditText?: boolean, allowResize?: boolean, backgroundImageHeight?: number, backgroundImageLeft?: number, backgroundImageToolboxUrl?: string, backgroundImageTop?: number, backgroundImageUrl?: string, backgroundImageWidth?: number, baseType?: string, category?: string, connectionPoints?: Array<any | { x?: number, y?: number }>, defaultHeight?: number, defaultImageUrl?: string, defaultText?: string, defaultWidth?: number, imageHeight?: number, imageLeft?: number, imageTop?: number, imageWidth?: number, keepRatioOnAutoSize?: boolean, maxHeight?: number, maxWidth?: number, minHeight?: number, minWidth?: number, template?: any, templateHeight?: number, templateLeft?: number, templateTop?: number, templateWidth?: number, textHeight?: number, textLeft?: number, textTop?: number, textWidth?: number, title?: string, toolboxTemplate?: any, toolboxWidthToHeightRatio?: number, type?: string }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customShapeTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customShapeToolboxTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "defaultItemPropertiesChange",
+            "type": "EventEmitter<{ connectorLineEnd?: string, connectorLineStart?: string, connectorLineType?: string, shapeMaxHeight?: number | undefined, shapeMaxWidth?: number | undefined, shapeMinHeight?: number | undefined, shapeMinWidth?: number | undefined, style?: any, textStyle?: any }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "edgesChange",
+            "type": "EventEmitter<{ customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, fromExpr?: Function | string, fromLineEndExpr?: Function | string | undefined, fromPointIndexExpr?: Function | string | undefined, keyExpr?: Function | string, lineTypeExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, pointsExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string | undefined, textStyleExpr?: Function | string | undefined, toExpr?: Function | string, toLineEndExpr?: Function | string | undefined, toPointIndexExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editingChange",
+            "type": "EventEmitter<{ allowAddShape?: boolean, allowChangeConnection?: boolean, allowChangeConnectorPoints?: boolean, allowChangeConnectorText?: boolean, allowChangeShapeText?: boolean, allowDeleteConnector?: boolean, allowDeleteShape?: boolean, allowMoveShape?: boolean, allowResizeShape?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ fileName?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fullScreenChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "gridSizeChange",
+            "type": "EventEmitter<number | { items?: Array<number>, value?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hasChangesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "historyToolbarChange",
+            "type": "EventEmitter<{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "mainToolbarChange",
+            "type": "EventEmitter<{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nodesChange",
+            "type": "EventEmitter<{ autoLayout?: string | { orientation?: string, type?: string }, autoSizeEnabled?: boolean, containerChildrenExpr?: Function | string | undefined, containerKeyExpr?: Function | string, customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, heightExpr?: Function | string | undefined, imageUrlExpr?: Function | string | undefined, itemsExpr?: Function | string | undefined, keyExpr?: Function | string, leftExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, parentKeyExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string, textStyleExpr?: Function | string | undefined, topExpr?: Function | string | undefined, typeExpr?: Function | string, widthExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageOrientationChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pageSizeChange",
+            "type": "EventEmitter<{ height?: number, items?: Array<any | { height?: number, text?: string, width?: number }>, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "propertiesPanelChange",
+            "type": "EventEmitter<{ tabs?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, groups?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>, title?: string }>, visibility?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showGridChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "simpleViewChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "snapToGridChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "toolboxChange",
+            "type": "EventEmitter<{ groups?: Array<any | string | { category?: string, displayMode?: string, expanded?: boolean, shapes?: Array<string>, title?: string }>, shapeIconsPerRow?: number, showSearch?: boolean, visibility?: string, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "unitsChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useNativeScrollingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "viewToolbarChange",
+            "type": "EventEmitter<{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "viewUnitsChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomLevelChange",
+            "type": "EventEmitter<number | { items?: Array<number>, value?: number | undefined }>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.autoZoomMode",
+            "name": "autoZoomMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.contextMenu",
+            "name": "contextMenu",
+            "type": "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, enabled?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, enabled?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.contextToolbox",
+            "name": "contextToolbox",
+            "type": "{ category?: string, displayMode?: string, enabled?: boolean, shapeIconsPerRow?: number, shapes?: Array<string>, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ category?: string, displayMode?: string, enabled?: boolean, shapeIconsPerRow?: number, shapes?: Array<string>, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.customShapes",
+            "name": "customShapes",
+            "type": "Array<any | { allowEditImage?: boolean, allowEditText?: boolean, allowResize?: boolean, backgroundImageHeight?: number, backgroundImageLeft?: number, backgroundImageToolboxUrl?: string, backgroundImageTop?: number, backgroundImageUrl?: string, backgroundImageWidth?: number, baseType?: string, category?: string, connectionPoints?: Array<any | { x?: number, y?: number }>, defaultHeight?: number, defaultImageUrl?: string, defaultText?: string, defaultWidth?: number, imageHeight?: number, imageLeft?: number, imageTop?: number, imageWidth?: number, keepRatioOnAutoSize?: boolean, maxHeight?: number, maxWidth?: number, minHeight?: number, minWidth?: number, template?: any, templateHeight?: number, templateLeft?: number, templateTop?: number, templateWidth?: number, textHeight?: number, textLeft?: number, textTop?: number, textWidth?: number, title?: string, toolboxTemplate?: any, toolboxWidthToHeightRatio?: number, type?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ allowEditImage?: boolean, allowEditText?: boolean, allowResize?: boolean, backgroundImageHeight?: number, backgroundImageLeft?: number, backgroundImageToolboxUrl?: string, backgroundImageTop?: number, backgroundImageUrl?: string, backgroundImageWidth?: number, baseType?: string, category?: string, connectionPoints?: Array<any | { x?: number, y?: number }>, defaultHeight?: number, defaultImageUrl?: string, defaultText?: string, defaultWidth?: number, imageHeight?: number, imageLeft?: number, imageTop?: number, imageWidth?: number, keepRatioOnAutoSize?: boolean, maxHeight?: number, maxWidth?: number, minHeight?: number, minWidth?: number, template?: any, templateHeight?: number, templateLeft?: number, templateTop?: number, templateWidth?: number, textHeight?: number, textLeft?: number, textTop?: number, textWidth?: number, title?: string, toolboxTemplate?: any, toolboxWidthToHeightRatio?: number, type?: string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.customShapeTemplate",
+            "name": "customShapeTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.customShapeToolboxTemplate",
+            "name": "customShapeToolboxTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.defaultItemProperties",
+            "name": "defaultItemProperties",
+            "type": "{ connectorLineEnd?: string, connectorLineStart?: string, connectorLineType?: string, shapeMaxHeight?: number | undefined, shapeMaxWidth?: number | undefined, shapeMinHeight?: number | undefined, shapeMinWidth?: number | undefined, style?: any, textStyle?: any }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ connectorLineEnd?: string, connectorLineStart?: string, connectorLineType?: string, shapeMaxHeight?: number | undefined, shapeMaxWidth?: number | undefined, shapeMinHeight?: number | undefined, shapeMinWidth?: number | undefined, style?: any, textStyle?: any }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.edges",
+            "name": "edges",
+            "type": "{ customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, fromExpr?: Function | string, fromLineEndExpr?: Function | string | undefined, fromPointIndexExpr?: Function | string | undefined, keyExpr?: Function | string, lineTypeExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, pointsExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string | undefined, textStyleExpr?: Function | string | undefined, toExpr?: Function | string, toLineEndExpr?: Function | string | undefined, toPointIndexExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, fromExpr?: Function | string, fromLineEndExpr?: Function | string | undefined, fromPointIndexExpr?: Function | string | undefined, keyExpr?: Function | string, lineTypeExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, pointsExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string | undefined, textStyleExpr?: Function | string | undefined, toExpr?: Function | string, toLineEndExpr?: Function | string | undefined, toPointIndexExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.editing",
+            "name": "editing",
+            "type": "{ allowAddShape?: boolean, allowChangeConnection?: boolean, allowChangeConnectorPoints?: boolean, allowChangeConnectorText?: boolean, allowChangeShapeText?: boolean, allowDeleteConnector?: boolean, allowDeleteShape?: boolean, allowMoveShape?: boolean, allowResizeShape?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowAddShape?: boolean, allowChangeConnection?: boolean, allowChangeConnectorPoints?: boolean, allowChangeConnectorText?: boolean, allowChangeShapeText?: boolean, allowDeleteConnector?: boolean, allowDeleteShape?: boolean, allowMoveShape?: boolean, allowResizeShape?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.export",
+            "name": "export",
+            "type": "{ fileName?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ fileName?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.fullScreen",
+            "name": "fullScreen",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.gridSize",
+            "name": "gridSize",
+            "type": "number | { items?: Array<number>, value?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "{ items?: Array<number>, value?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.hasChanges",
+            "name": "hasChanges",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.historyToolbar",
+            "name": "historyToolbar",
+            "type": "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.mainToolbar",
+            "name": "mainToolbar",
+            "type": "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.nodes",
+            "name": "nodes",
+            "type": "{ autoLayout?: string | { orientation?: string, type?: string }, autoSizeEnabled?: boolean, containerChildrenExpr?: Function | string | undefined, containerKeyExpr?: Function | string, customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, heightExpr?: Function | string | undefined, imageUrlExpr?: Function | string | undefined, itemsExpr?: Function | string | undefined, keyExpr?: Function | string, leftExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, parentKeyExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string, textStyleExpr?: Function | string | undefined, topExpr?: Function | string | undefined, typeExpr?: Function | string, widthExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ autoLayout?: string | { orientation?: string, type?: string }, autoSizeEnabled?: boolean, containerChildrenExpr?: Function | string | undefined, containerKeyExpr?: Function | string, customDataExpr?: Function | string | undefined, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, heightExpr?: Function | string | undefined, imageUrlExpr?: Function | string | undefined, itemsExpr?: Function | string | undefined, keyExpr?: Function | string, leftExpr?: Function | string | undefined, lockedExpr?: Function | string | undefined, parentKeyExpr?: Function | string | undefined, styleExpr?: Function | string | undefined, textExpr?: Function | string, textStyleExpr?: Function | string | undefined, topExpr?: Function | string | undefined, typeExpr?: Function | string, widthExpr?: Function | string | undefined, zIndexExpr?: Function | string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.pageColor",
+            "name": "pageColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.pageOrientation",
+            "name": "pageOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.pageSize",
+            "name": "pageSize",
+            "type": "{ height?: number, items?: Array<any | { height?: number, text?: string, width?: number }>, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number, items?: Array<any | { height?: number, text?: string, width?: number }>, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.propertiesPanel",
+            "name": "propertiesPanel",
+            "type": "{ tabs?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, groups?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>, title?: string }>, visibility?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ tabs?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, groups?: Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>, title?: string }>, visibility?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.showGrid",
+            "name": "showGrid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.simpleView",
+            "name": "simpleView",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.snapToGrid",
+            "name": "snapToGrid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox",
+            "name": "toolbox",
+            "type": "{ groups?: Array<any | string | { category?: string, displayMode?: string, expanded?: boolean, shapes?: Array<string>, title?: string }>, shapeIconsPerRow?: number, showSearch?: boolean, visibility?: string, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ groups?: Array<any | string | { category?: string, displayMode?: string, expanded?: boolean, shapes?: Array<string>, title?: string }>, shapeIconsPerRow?: number, showSearch?: boolean, visibility?: string, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.units",
+            "name": "units",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.useNativeScrolling",
+            "name": "useNativeScrolling",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.viewToolbar",
+            "name": "viewToolbar",
+            "type": "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.viewUnits",
+            "name": "viewUnits",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.zoomLevel",
+            "name": "zoomLevel",
+            "type": "number | { items?: Array<number>, value?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "{ items?: Array<number>, value?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/diagram",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/diagram",
+            "importString": "{ ContentReadyEvent, CustomCommandEvent, DisposingEvent, InitializedEvent, ItemClickEvent, ItemDblClickEvent, OptionChangedEvent, RequestEditOperationEvent, RequestLayoutUpdateEvent, SelectionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "context-menu",
+            "propertyName": "contextMenu",
+            "className": "DxoContextMenu",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "command-dxi",
+            "propertyName": "commands",
+            "className": "DxiCommand",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "context-toolbox",
+            "propertyName": "contextToolbox",
+            "className": "DxoContextToolbox",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "custom-shape-dxi",
+            "propertyName": "customShapes",
+            "className": "DxiCustomShape",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true,
+            "root": true
+        },
+        {
+            "path": "connection-point-dxi",
+            "propertyName": "connectionPoints",
+            "className": "DxiConnectionPoint",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "default-item-properties",
+            "propertyName": "defaultItemProperties",
+            "className": "DxoDefaultItemProperties",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "edges",
+            "propertyName": "edges",
+            "className": "DxoEdges",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "editing",
+            "propertyName": "editing",
+            "className": "DxoEditing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "grid-size",
+            "propertyName": "gridSize",
+            "className": "DxoGridSize",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxDiagramOptions.gridSize.value"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "history-toolbar",
+            "propertyName": "historyToolbar",
+            "className": "DxoHistoryToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "main-toolbar",
+            "propertyName": "mainToolbar",
+            "className": "DxoMainToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "nodes",
+            "propertyName": "nodes",
+            "className": "DxoNodes",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "auto-layout",
+            "propertyName": "autoLayout",
+            "className": "DxoAutoLayout",
+            "events": []
+        },
+        {
+            "path": "page-size",
+            "propertyName": "pageSize",
+            "className": "DxoPageSize",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "heightChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxDiagramOptions.pageSize.height"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "widthChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxDiagramOptions.pageSize.width"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "properties-panel",
+            "propertyName": "propertiesPanel",
+            "className": "DxoPropertiesPanel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "tab-dxi",
+            "propertyName": "tabs",
+            "className": "DxiTab",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "group-dxi",
+            "propertyName": "groups",
+            "className": "DxiGroup",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "toolbox",
+            "propertyName": "toolbox",
+            "className": "DxoToolbox",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "view-toolbar",
+            "propertyName": "viewToolbar",
+            "className": "DxoViewToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "zoom-level",
+            "propertyName": "zoomLevel",
+            "className": "DxoZoomLevel",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<number | undefined>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxDiagramOptions.zoomLevel.value"
+                    }
+                }
+            ],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

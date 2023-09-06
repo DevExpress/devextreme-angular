@@ -1,0 +1,222 @@
+{
+    "docID": "dxHtmlEditorOptions.tableContextMenu",
+    "className": "DxoTableContextMenu",
+    "selector": "dxo-table-context-menu",
+    "optionName": "tableContextMenu",
+    "path": "table-context-menu",
+    "propertyName": "tableContextMenu",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        }
+    ],
+    "baseClass": "DxoHtmlEditorTableContextMenu",
+    "basePath": "./base/html-editor-table-context-menu",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxHtmlEditorTableContextMenu.enabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxHtmlEditorTableContextMenu.items",
+            "Options": {
+                "beginGroup": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.beginGroup"
+                },
+                "closeMenuOnClick": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.closeMenuOnClick"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.disabled"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxMenuBaseItem.icon"
+                },
+                "items": {
+                    "ItemPrimitiveTypes": [
+                        "any",
+                        "string"
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "item",
+                    "DocID": "dxHtmlEditorTableContextMenuItem.items"
+                },
+                "name": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxHtmlEditorTableContextMenuItem.name"
+                },
+                "selectable": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.selectable"
+                },
+                "selected": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.selected"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxMenuBaseItem.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.visible"
+                }
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxHtmlEditorTableContextMenu.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxHtmlEditorTableContextMenu.enabled"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorTableContextMenu.items",
+            "name": "items",
+            "type": "Array<any | string | { beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<any | string>, name?: string | undefined, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "string",
+                    "{ beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<any | string>, name?: string | undefined, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any",
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "item",
+                "DocID": "dxHtmlEditorTableContextMenu.items",
+                "Options": {
+                    "beginGroup": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.beginGroup"
+                    },
+                    "closeMenuOnClick": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.closeMenuOnClick"
+                    },
+                    "disabled": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.disabled"
+                    },
+                    "icon": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxMenuBaseItem.icon"
+                    },
+                    "items": {
+                        "ItemPrimitiveTypes": [
+                            "any",
+                            "string"
+                        ],
+                        "IsCollection": true,
+                        "SingularName": "item",
+                        "DocID": "dxHtmlEditorTableContextMenuItem.items"
+                    },
+                    "name": {
+                        "PrimitiveTypes": [
+                            "string",
+                            "undefined"
+                        ],
+                        "DocID": "dxHtmlEditorTableContextMenuItem.name"
+                    },
+                    "selectable": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.selectable"
+                    },
+                    "selected": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.selected"
+                    },
+                    "template": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "CollectionWidgetItem.template"
+                    },
+                    "text": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxMenuBaseItem.text"
+                    },
+                    "visible": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "dxMenuBaseItem.visible"
+                    }
+                }
+            },
+            "isCollection": true
+        }
+    ]
+}

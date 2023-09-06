@@ -1,0 +1,199 @@
+{
+    "docID": "dxTreeMapOptions.tile",
+    "className": "DxoTile",
+    "selector": "dxo-tile",
+    "optionName": "tile",
+    "properties": [
+        {
+            "docID": "dxTreeMapOptions.tile.border",
+            "name": "border",
+            "type": "{ color?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.tile.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.tile.hoverStyle",
+            "name": "hoverStyle",
+            "type": "{ border?: { color?: string | undefined, width?: number | undefined }, color?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string | undefined, width?: number | undefined }, color?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.tile.label",
+            "name": "label",
+            "type": "{ font?: Font, textOverflow?: string, visible?: boolean, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ font?: Font, textOverflow?: string, visible?: boolean, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxTreeMapOptions.tile.selectionStyle",
+            "name": "selectionStyle",
+            "type": "{ border?: { color?: string, width?: number | undefined }, color?: string | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string, width?: number | undefined }, color?: string | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "tile",
+    "propertyName": "tile",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "DocID": "dxTreeMapOptions.tile.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.border.color"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTreeMapOptions.tile.color"
+        },
+        {
+            "DocID": "dxTreeMapOptions.tile.hoverStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxTreeMapOptions.tile.hoverStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.tile.hoverStyle.border.color"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.tile.hoverStyle.border.width"
+                        }
+                    }
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.hoverStyle.color"
+                }
+            }
+        },
+        {
+            "DocID": "dxTreeMapOptions.tile.label",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.label.font"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.label.textOverflow"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.label.visible"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.label.wordWrap"
+                }
+            }
+        },
+        {
+            "DocID": "dxTreeMapOptions.tile.selectionStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxTreeMapOptions.tile.selectionStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxTreeMapOptions.tile.selectionStyle.border.color"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxTreeMapOptions.tile.selectionStyle.border.width"
+                        }
+                    }
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "dxTreeMapOptions.tile.selectionStyle.color"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,1006 @@
+{
+    "docID": "dxListOptions.itemDragging",
+    "className": "DxoItemDragging",
+    "selector": "dxo-item-dragging",
+    "optionName": "itemDragging",
+    "path": "item-dragging",
+    "propertyName": "itemDragging",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoSortableOptions",
+    "basePath": "./base/sortable-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSortableOptions.allowDropInsideItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSortableOptions.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DraggableBaseOptions.autoScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "DraggableBaseOptions.boundary"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "DraggableBaseOptions.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "DraggableBaseOptions.cursorOffset",
+            "Options": {
+                "x": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "DraggableBaseOptions.cursorOffset.x"
+                },
+                "y": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "DraggableBaseOptions.cursorOffset.y"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "DocID": "DraggableBaseOptions.data"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "DraggableBaseOptions.dragDirection"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxSortableOptions.dragTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxSortableOptions.dropFeedbackMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxSortableOptions.filter"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "DraggableBaseOptions.group"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "DraggableBaseOptions.handle"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxSortableOptions.itemOrientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxSortableOptions.moveItemOnDrop"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "AddEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "AddEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onAdd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DragChangeEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "DragChangeEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onDragChange"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DragEndEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "DragEndEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onDragEnd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DragMoveEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "DragMoveEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onDragMove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DragStartEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "DragStartEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onDragStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "RemoveEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "RemoveEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onRemove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ReorderEvent",
+                    "Path": "ui/sortable"
+                }
+            ],
+            "EventArgName": "ReorderEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxSortableOptions.onReorder"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "DraggableBaseOptions.scrollSensitivity"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "DraggableBaseOptions.scrollSpeed"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxSortableOptions.allowDropInsideItem",
+            "name": "allowDropInsideItem",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxSortableOptions.allowDropInsideItem"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.allowReordering",
+            "name": "allowReordering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxSortableOptions.allowReordering"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.autoScroll",
+            "name": "autoScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DraggableBaseOptions.autoScroll"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.boundary",
+            "name": "boundary",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "DraggableBaseOptions.boundary"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "DraggableBaseOptions.container"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.cursorOffset",
+            "name": "cursorOffset",
+            "type": "string | { x?: number, y?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ x?: number, y?: number }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "DraggableBaseOptions.cursorOffset",
+                "Options": {
+                    "x": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "DocID": "DraggableBaseOptions.cursorOffset.x"
+                    },
+                    "y": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "DocID": "DraggableBaseOptions.cursorOffset.y"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.data",
+            "name": "data",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "DocID": "DraggableBaseOptions.data"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.dragDirection",
+            "name": "dragDirection",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "DraggableBaseOptions.dragDirection"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.dragTemplate",
+            "name": "dragTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxSortableOptions.dragTemplate"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.dropFeedbackMode",
+            "name": "dropFeedbackMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxSortableOptions.dropFeedbackMode"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.filter",
+            "name": "filter",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxSortableOptions.filter"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.group",
+            "name": "group",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "DraggableBaseOptions.group"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.handle",
+            "name": "handle",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "DraggableBaseOptions.handle"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.itemOrientation",
+            "name": "itemOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxSortableOptions.itemOrientation"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.moveItemOnDrop",
+            "name": "moveItemOnDrop",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxSortableOptions.moveItemOnDrop"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onAdd",
+            "name": "onAdd",
+            "type": "((e: AddEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "AddEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "AddEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onAdd"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onDragChange",
+            "name": "onDragChange",
+            "type": "((e: DragChangeEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DragChangeEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "DragChangeEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onDragChange"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onDragEnd",
+            "name": "onDragEnd",
+            "type": "((e: DragEndEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DragEndEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "DragEndEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onDragEnd"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onDragMove",
+            "name": "onDragMove",
+            "type": "((e: DragMoveEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DragMoveEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "DragMoveEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onDragMove"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onDragStart",
+            "name": "onDragStart",
+            "type": "((e: DragStartEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DragStartEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "DragStartEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onDragStart"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onRemove",
+            "name": "onRemove",
+            "type": "((e: RemoveEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "RemoveEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "RemoveEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onRemove"
+            }
+        },
+        {
+            "docID": "dxSortableOptions.onReorder",
+            "name": "onReorder",
+            "type": "((e: ReorderEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ReorderEvent",
+                        "Path": "ui/sortable"
+                    }
+                ],
+                "EventArgName": "ReorderEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxSortableOptions.onReorder"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.scrollSensitivity",
+            "name": "scrollSensitivity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "DraggableBaseOptions.scrollSensitivity"
+            }
+        },
+        {
+            "docID": "DraggableBaseOptions.scrollSpeed",
+            "name": "scrollSpeed",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "DraggableBaseOptions.scrollSpeed"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

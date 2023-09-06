@@ -1,0 +1,153 @@
+{
+    "docID": "GridBaseOptions.filterPanel",
+    "className": "DxoFilterPanel",
+    "selector": "dxo-filter-panel",
+    "optionName": "filterPanel",
+    "properties": [
+        {
+            "docID": "GridBaseOptions.filterPanel.customizeText",
+            "name": "customizeText",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterPanel.filterEnabled",
+            "name": "filterEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterPanel.texts",
+            "name": "texts",
+            "type": "{ clearFilter?: string, createFilter?: string, filterEnabledHint?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ clearFilter?: string, createFilter?: string, filterEnabledHint?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.filterPanel.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "filterEnabledChange",
+            "type": "EventEmitter<boolean>"
+        }
+    ],
+    "path": "filter-panel",
+    "propertyName": "filterPanel",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseOptions.filterPanel.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.filterPanel.filterEnabled"
+        },
+        {
+            "DocID": "GridBaseOptions.filterPanel.texts",
+            "Options": {
+                "clearFilter": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.clearFilter"
+                },
+                "createFilter": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.createFilter"
+                },
+                "filterEnabledHint": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.filterEnabledHint"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.filterPanel.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "GridBaseOptions.filterPanel.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "IsChangeable": true,
+            "DocID": "GridBaseOptions.filterPanel.filterEnabled"
+        },
+        {
+            "DocID": "GridBaseOptions.filterPanel.texts",
+            "Options": {
+                "clearFilter": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.clearFilter"
+                },
+                "createFilter": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.createFilter"
+                },
+                "filterEnabledHint": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "GridBaseOptions.filterPanel.texts.filterEnabledHint"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.filterPanel.visible"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,2143 @@
+{
+    "docID": "dxFormTabbedItem.tabs",
+    "className": "DxiTab",
+    "selector": "dxi-tab",
+    "optionName": "tabs",
+    "path": "tab-dxi",
+    "propertyName": "tabs",
+    "isCollection": true,
+    "hasTemplate": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        },
+        {
+            "className": "DxiCommand",
+            "path": "command-dxi",
+            "propertyName": "commands"
+        },
+        {
+            "className": "DxiGroup",
+            "path": "group-dxi",
+            "propertyName": "groups"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DiagramCustomCommand"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "command",
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs.commands"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "group",
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups",
+            "Options": {
+                "commands": {
+                    "ItemPrimitiveTypes": [
+                        "DevExpress.ui.dxDiagramCustomCommand",
+                        "string"
+                    ],
+                    "ItemComplexTypes": [
+                        "DiagramCustomCommand"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "command",
+                    "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.commands"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxHtmlEditorImageUploadTabItem.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.badge"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.colCount"
+        },
+        {
+            "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "Options": {
+                "lg": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.lg"
+                },
+                "md": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.md"
+                },
+                "sm": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.sm"
+                },
+                "xs": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "ColCountResponsible.xs"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.icon"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFormSimpleItem",
+                "DevExpress.ui.dxFormGroupItem",
+                "DevExpress.ui.dxFormTabbedItem",
+                "DevExpress.ui.dxFormEmptyItem",
+                "DevExpress.ui.dxFormButtonItem"
+            ],
+            "ItemComplexTypes": [
+                "FormSimpleItem",
+                "FormGroupItem",
+                "FormTabbedItem",
+                "FormEmptyItem",
+                "FormButtonItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFormTabbedItem.tabs.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFormTabbedItem.tabs.template"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxFormTabbedItem.tabs.title"
+        }
+    ],
+    "baseClass": "DxiHtmlEditorImageUploadTabItem",
+    "basePath": "./base/html-editor-image-upload-tab-item-dxi",
+    "inputs": [
+        {
+            "docID": "dxFormTabbedItem.tabs.alignItemLabels",
+            "name": "alignItemLabels",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.alignItemLabels"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.badge",
+            "name": "badge",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.badge"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.colCount",
+            "name": "colCount",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.colCount"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.colCountByScreen",
+            "name": "colCountByScreen",
+            "type": "{ lg?: number | undefined, md?: number | undefined, sm?: number | undefined, xs?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ lg?: number | undefined, md?: number | undefined, sm?: number | undefined, xs?: number | undefined }"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "DocID": "dxFormTabbedItem.tabs.colCountByScreen",
+                "Options": {
+                    "lg": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "ColCountResponsible.lg"
+                    },
+                    "md": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "ColCountResponsible.md"
+                    },
+                    "sm": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "ColCountResponsible.sm"
+                    },
+                    "xs": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "undefined"
+                        ],
+                        "DocID": "ColCountResponsible.xs"
+                    }
+                }
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.disabled"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.icon",
+            "name": "icon",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.icon"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxFormSimpleItem | DevExpress.ui.dxFormGroupItem | DevExpress.ui.dxFormTabbedItem | DevExpress.ui.dxFormEmptyItem | DevExpress.ui.dxFormButtonItem>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFormSimpleItem",
+                    "DevExpress.ui.dxFormGroupItem",
+                    "DevExpress.ui.dxFormTabbedItem",
+                    "DevExpress.ui.dxFormEmptyItem",
+                    "DevExpress.ui.dxFormButtonItem"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFormSimpleItem",
+                    "DevExpress.ui.dxFormGroupItem",
+                    "DevExpress.ui.dxFormTabbedItem",
+                    "DevExpress.ui.dxFormEmptyItem",
+                    "DevExpress.ui.dxFormButtonItem"
+                ],
+                "ItemComplexTypes": [
+                    "FormSimpleItem",
+                    "FormGroupItem",
+                    "FormTabbedItem",
+                    "FormEmptyItem",
+                    "FormButtonItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "item",
+                "DocID": "dxFormTabbedItem.tabs.items"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.tabTemplate",
+            "name": "tabTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxFormTabbedItem.tabs.tabTemplate"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.template",
+            "name": "template",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxFormTabbedItem.tabs.template"
+            }
+        },
+        {
+            "docID": "dxFormTabbedItem.tabs.title",
+            "name": "title",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxFormTabbedItem.tabs.title"
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.tabs.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "DiagramCustomCommand"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "command",
+                "DocID": "dxDiagramOptions.propertiesPanel.tabs.commands"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.tabs.groups",
+            "name": "groups",
+            "type": "Array<any | { commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ commands?: Array<DevExpress.ui.dxDiagramCustomCommand | string>, title?: string }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "group",
+                "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups",
+                "Options": {
+                    "commands": {
+                        "ItemPrimitiveTypes": [
+                            "DevExpress.ui.dxDiagramCustomCommand",
+                            "string"
+                        ],
+                        "ItemComplexTypes": [
+                            "DiagramCustomCommand"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsCollection": true,
+                        "SingularName": "command",
+                        "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.commands"
+                    },
+                    "title": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.title"
+                    }
+                }
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorImageUploadTabItem.name",
+            "name": "name",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxHtmlEditorImageUploadTabItem.name"
+            }
+        }
+    ]
+}

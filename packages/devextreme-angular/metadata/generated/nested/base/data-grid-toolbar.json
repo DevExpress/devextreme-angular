@@ -1,0 +1,95 @@
+{
+    "properties": [
+        {
+            "docID": "dxDataGridToolbar.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDataGridToolbar.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxDataGrid.dxDataGridToolbarItem | string | DevExpress.ui.dxFileManagerToolbarItem | DevExpress.ui.dxGanttToolbarItem | DevExpress.ui.dxHtmlEditorToolbarItem | DevExpress.ui.dxTreeList.dxTreeListToolbarItem>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDataGrid.dxDataGridToolbarItem",
+                    "string",
+                    "DevExpress.ui.dxFileManagerToolbarItem",
+                    "DevExpress.ui.dxGanttToolbarItem",
+                    "DevExpress.ui.dxHtmlEditorToolbarItem",
+                    "DevExpress.ui.dxTreeList.dxTreeListToolbarItem"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDataGridToolbar.visible",
+            "name": "visible",
+            "type": "boolean | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerToolbar.fileSelectionItems",
+            "name": "fileSelectionItems",
+            "type": "Array<DevExpress.ui.dxFileManagerToolbarItem | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFileManagerToolbarItem",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorToolbar.container",
+            "name": "container",
+            "type": "string | UserDefinedElement",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorToolbar.multiline",
+            "name": "multiline",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [],
+    "className": "DxoDataGridToolbar",
+    "path": "data-grid-toolbar",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        }
+    ]
+}

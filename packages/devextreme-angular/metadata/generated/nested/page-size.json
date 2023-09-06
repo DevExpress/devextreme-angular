@@ -1,0 +1,111 @@
+{
+    "docID": "dxDiagramOptions.pageSize",
+    "className": "DxoPageSize",
+    "selector": "dxo-page-size",
+    "optionName": "pageSize",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.pageSize.height",
+            "name": "height",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.pageSize.items",
+            "name": "items",
+            "type": "Array<any | { height?: number, text?: string, width?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ height?: number, text?: string, width?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.pageSize.width",
+            "name": "width",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number>"
+        }
+    ],
+    "path": "page-size",
+    "propertyName": "pageSize",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDiagramOptions.pageSize.height"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxDiagramOptions.pageSize.items",
+            "Options": {
+                "height": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxDiagramOptions.pageSize.items.height"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.pageSize.items.text"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxDiagramOptions.pageSize.items.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDiagramOptions.pageSize.width"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

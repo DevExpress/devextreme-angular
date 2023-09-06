@@ -1,0 +1,63 @@
+{
+    "docID": "dxDiagramOptions.zoomLevel",
+    "className": "DxoZoomLevel",
+    "selector": "dxo-zoom-level",
+    "optionName": "zoomLevel",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.zoomLevel.items",
+            "name": "items",
+            "type": "Array<number>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "number"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.zoomLevel.value",
+            "name": "value",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<number | undefined>"
+        }
+    ],
+    "path": "zoom-level",
+    "propertyName": "zoomLevel",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxDiagramOptions.zoomLevel.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxDiagramOptions.zoomLevel.value"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

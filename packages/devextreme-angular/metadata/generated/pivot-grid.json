@@ -1,0 +1,692 @@
+{
+    "docID": "dxPivotGrid",
+    "className": "DxPivotGrid",
+    "widgetName": "dxPivotGrid",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-pivot-grid",
+    "events": [
+        {
+            "docID": "dxPivotGridOptions.onCellClick",
+            "emit": "onCellClick",
+            "subscribe": "cellClick",
+            "type": "EventEmitter<CellClickEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onCellPrepared",
+            "emit": "onCellPrepared",
+            "subscribe": "cellPrepared",
+            "type": "EventEmitter<CellPreparedEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onContextMenuPreparing",
+            "emit": "onContextMenuPreparing",
+            "subscribe": "contextMenuPreparing",
+            "type": "EventEmitter<ContextMenuPreparingEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxPivotGridOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowExpandAllChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowFilteringChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowSortingChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowSortingBySummaryChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataFieldAreaChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<PivotGridDataSource | PivotGridDataSourceOptions | null | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "encodeHtmlChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ enabled?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fieldChooserChange",
+            "type": "EventEmitter<{ allowSearch?: boolean, applyChangesMode?: string, enabled?: boolean, height?: number, layout?: number | string, searchTimeout?: number, texts?: { allFields?: string, columnFields?: string, dataFields?: string, filterFields?: string, rowFields?: string }, title?: string, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "fieldPanelChange",
+            "type": "EventEmitter<{ allowFieldDragging?: boolean, showColumnFields?: boolean, showDataFields?: boolean, showFilterFields?: boolean, showRowFields?: boolean, texts?: { columnFieldArea?: string, dataFieldArea?: string, filterFieldArea?: string, rowFieldArea?: string }, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "headerFilterChange",
+            "type": "EventEmitter<{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, showRelevantValues?: boolean, texts?: { cancel?: string, emptyValue?: string, ok?: string }, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hideEmptySummaryCellsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadPanelChange",
+            "type": "EventEmitter<{ enabled?: boolean, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rowHeaderLayoutChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollingChange",
+            "type": "EventEmitter<{ mode?: string, useNative?: boolean | string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showBordersChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showColumnGrandTotalsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showColumnTotalsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRowGrandTotalsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRowTotalsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showTotalsPriorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stateStoringChange",
+            "type": "EventEmitter<{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "textsChange",
+            "type": "EventEmitter<{ collapseAll?: string, dataNotAvailable?: string, expandAll?: string, exportToExcel?: string, grandTotal?: string, noData?: string, removeAllSorting?: string, showFieldChooser?: string, sortColumnBySummary?: string, sortRowBySummary?: string, total?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "wordWrapEnabledChange",
+            "type": "EventEmitter<boolean>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "dxPivotGridOptions.allowExpandAll",
+            "name": "allowExpandAll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.allowFiltering",
+            "name": "allowFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.allowSorting",
+            "name": "allowSorting",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.allowSortingBySummary",
+            "name": "allowSortingBySummary",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.dataFieldArea",
+            "name": "dataFieldArea",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.dataSource",
+            "name": "dataSource",
+            "type": "PivotGridDataSource | PivotGridDataSourceOptions | null | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "PivotGridDataSource",
+                    "PivotGridDataSourceOptions",
+                    "null"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.encodeHtml",
+            "name": "encodeHtml",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.export",
+            "name": "export",
+            "type": "{ enabled?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.fieldChooser",
+            "name": "fieldChooser",
+            "type": "{ allowSearch?: boolean, applyChangesMode?: string, enabled?: boolean, height?: number, layout?: number | string, searchTimeout?: number, texts?: { allFields?: string, columnFields?: string, dataFields?: string, filterFields?: string, rowFields?: string }, title?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, applyChangesMode?: string, enabled?: boolean, height?: number, layout?: number | string, searchTimeout?: number, texts?: { allFields?: string, columnFields?: string, dataFields?: string, filterFields?: string, rowFields?: string }, title?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.fieldPanel",
+            "name": "fieldPanel",
+            "type": "{ allowFieldDragging?: boolean, showColumnFields?: boolean, showDataFields?: boolean, showFilterFields?: boolean, showRowFields?: boolean, texts?: { columnFieldArea?: string, dataFieldArea?: string, filterFieldArea?: string, rowFieldArea?: string }, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowFieldDragging?: boolean, showColumnFields?: boolean, showDataFields?: boolean, showFilterFields?: boolean, showRowFields?: boolean, texts?: { columnFieldArea?: string, dataFieldArea?: string, filterFieldArea?: string, rowFieldArea?: string }, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.headerFilter",
+            "name": "headerFilter",
+            "type": "{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, showRelevantValues?: boolean, texts?: { cancel?: string, emptyValue?: string, ok?: string }, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowSearch?: boolean, allowSelectAll?: boolean, height?: number, search?: HeaderFilterSearchConfig, searchTimeout?: number, showRelevantValues?: boolean, texts?: { cancel?: string, emptyValue?: string, ok?: string }, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.hideEmptySummaryCells",
+            "name": "hideEmptySummaryCells",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.loadPanel",
+            "name": "loadPanel",
+            "type": "{ enabled?: boolean, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ enabled?: boolean, height?: number, indicatorSrc?: string, shading?: boolean, shadingColor?: string, showIndicator?: boolean, showPane?: boolean, text?: string, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.rowHeaderLayout",
+            "name": "rowHeaderLayout",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.scrolling",
+            "name": "scrolling",
+            "type": "{ mode?: string, useNative?: boolean | string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ mode?: string, useNative?: boolean | string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showBorders",
+            "name": "showBorders",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showColumnGrandTotals",
+            "name": "showColumnGrandTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showColumnTotals",
+            "name": "showColumnTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showRowGrandTotals",
+            "name": "showRowGrandTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showRowTotals",
+            "name": "showRowTotals",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.showTotalsPrior",
+            "name": "showTotalsPrior",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.stateStoring",
+            "name": "stateStoring",
+            "type": "{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customLoad?: Function, customSave?: Function, enabled?: boolean, savingTimeout?: number, storageKey?: string, type?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.texts",
+            "name": "texts",
+            "type": "{ collapseAll?: string, dataNotAvailable?: string, expandAll?: string, exportToExcel?: string, grandTotal?: string, noData?: string, removeAllSorting?: string, showFieldChooser?: string, sortColumnBySummary?: string, sortRowBySummary?: string, total?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ collapseAll?: string, dataNotAvailable?: string, expandAll?: string, exportToExcel?: string, grandTotal?: string, noData?: string, removeAllSorting?: string, showFieldChooser?: string, sortColumnBySummary?: string, sortRowBySummary?: string, total?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxPivotGridOptions.wordWrapEnabled",
+            "name": "wordWrapEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/pivot_grid",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/common/grids",
+            "importString": "{ HeaderFilterSearchConfig }"
+        },
+        {
+            "path": "devextreme/ui/pivot_grid",
+            "importString": "{ CellClickEvent, CellPreparedEvent, ContentReadyEvent, ContextMenuPreparingEvent, DisposingEvent, ExportingEvent, InitializedEvent, OptionChangedEvent }"
+        },
+        {
+            "path": "devextreme/ui/pivot_grid/data_source",
+            "importString": "PivotGridDataSource, { Options as PivotGridDataSourceOptions }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "data-source",
+            "propertyName": "dataSource",
+            "className": "DxoDataSource",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "field-dxi",
+            "propertyName": "fields",
+            "className": "DxiField",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "header-filter",
+            "propertyName": "headerFilter",
+            "className": "DxoHeaderFilter",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "store",
+            "propertyName": "store",
+            "className": "DxoStore",
+            "events": []
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "field-chooser",
+            "propertyName": "fieldChooser",
+            "className": "DxoFieldChooser",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "texts",
+            "propertyName": "texts",
+            "className": "DxoTexts",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "field-panel",
+            "propertyName": "fieldPanel",
+            "className": "DxoFieldPanel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "search",
+            "propertyName": "search",
+            "className": "DxoSearch",
+            "events": []
+        },
+        {
+            "path": "load-panel",
+            "propertyName": "loadPanel",
+            "className": "DxoLoadPanel",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "scrolling",
+            "propertyName": "scrolling",
+            "className": "DxoScrolling",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "state-storing",
+            "propertyName": "stateStoring",
+            "className": "DxoStateStoring",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

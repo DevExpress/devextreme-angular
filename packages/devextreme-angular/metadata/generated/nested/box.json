@@ -1,0 +1,1250 @@
+{
+    "docID": "dxBoxItem.box",
+    "className": "DxoBox",
+    "selector": "dxo-box",
+    "optionName": "box",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<string | any | { baseSize?: number | string, box?: dxBoxOptions | undefined, disabled?: boolean, html?: string, ratio?: number, shrink?: number, template?: any, text?: string, visible?: boolean }>>"
+        }
+    ],
+    "path": "box",
+    "propertyName": "box",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/ui/box",
+            "importString": "{ dxBoxOptions }"
+        }
+    ],
+    "baseClass": "DxoBoxOptions",
+    "basePath": "./base/box-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.align"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.crossAlign"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxBoxItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "BoxItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxBoxOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.direction"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxBoxOptions.items",
+            "Options": {
+                "baseSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string"
+                    ],
+                    "DocID": "dxBoxItem.baseSize"
+                },
+                "box": {
+                    "PrimitiveTypes": [
+                        "dxBoxOptions",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "dxBoxOptions"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "dxBoxOptions",
+                            "Path": "ui/box"
+                        }
+                    ],
+                    "DocID": "dxBoxItem.box"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "ratio": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxBoxItem.ratio"
+                },
+                "shrink": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxBoxItem.shrink"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.align"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.crossAlign"
+        },
+        {
+            "PrimitiveTypes": [
+                "DataSource",
+                "DataSourceOptions",
+                "Store",
+                "null",
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.ui.dxBoxItem",
+                "any"
+            ],
+            "ItemComplexTypes": [
+                "BoxItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DataSource",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Options",
+                    "Alias": "DataSourceOptions",
+                    "Path": "data/data_source"
+                },
+                {
+                    "Name": "Store",
+                    "Path": "data"
+                },
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsDataSource": true,
+            "DocID": "dxBoxOptions.dataSource"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxBoxOptions.direction"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "item",
+            "DocID": "dxBoxOptions.items",
+            "Options": {
+                "baseSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "string"
+                    ],
+                    "DocID": "dxBoxItem.baseSize"
+                },
+                "box": {
+                    "PrimitiveTypes": [
+                        "dxBoxOptions",
+                        "undefined"
+                    ],
+                    "ComplexTypes": [
+                        "dxBoxOptions"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "dxBoxOptions",
+                            "Path": "ui/box"
+                        }
+                    ],
+                    "DocID": "dxBoxItem.box"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.disabled"
+                },
+                "html": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.html"
+                },
+                "ratio": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxBoxItem.ratio"
+                },
+                "shrink": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxBoxItem.shrink"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "CollectionWidgetItem.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "CollectionWidgetItem.visible"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "CollectionWidgetOptions.itemTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemClickEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemClickEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemContextMenuEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemContextMenuEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemContextMenu"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemHoldEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemHoldEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemHold"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ItemRenderedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "ItemRenderedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onItemRendered"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/box"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxBoxOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxBoxOptions.align",
+            "name": "align",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxBoxOptions.align"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.crossAlign",
+            "name": "crossAlign",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxBoxOptions.crossAlign"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string | DevExpress.ui.dxBoxItem | any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.ui.dxBoxItem",
+                    "any"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "DevExpress.ui.dxBoxItem",
+                    "any"
+                ],
+                "ItemComplexTypes": [
+                    "BoxItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DataSource",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Options",
+                        "Alias": "DataSourceOptions",
+                        "Path": "data/data_source"
+                    },
+                    {
+                        "Name": "Store",
+                        "Path": "data"
+                    },
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsDataSource": true,
+                "DocID": "dxBoxOptions.dataSource"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.direction",
+            "name": "direction",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxBoxOptions.direction"
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemHoldTimeout",
+            "name": "itemHoldTimeout",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "CollectionWidgetOptions.itemHoldTimeout"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.items",
+            "name": "items",
+            "type": "Array<string | any | { baseSize?: number | string, box?: dxBoxOptions | undefined, disabled?: boolean, html?: string, ratio?: number, shrink?: number, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "any",
+                    "{ baseSize?: number | string, box?: dxBoxOptions | undefined, disabled?: boolean, html?: string, ratio?: number, shrink?: number, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "any"
+                ],
+                "IsCollection": true,
+                "IsChangeable": true,
+                "SingularName": "item",
+                "DocID": "dxBoxOptions.items",
+                "Options": {
+                    "baseSize": {
+                        "PrimitiveTypes": [
+                            "number",
+                            "string"
+                        ],
+                        "DocID": "dxBoxItem.baseSize"
+                    },
+                    "box": {
+                        "PrimitiveTypes": [
+                            "dxBoxOptions",
+                            "undefined"
+                        ],
+                        "ComplexTypes": [
+                            "dxBoxOptions"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "dxBoxOptions",
+                                "Path": "ui/box"
+                            }
+                        ],
+                        "DocID": "dxBoxItem.box"
+                    },
+                    "disabled": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "CollectionWidgetItem.disabled"
+                    },
+                    "html": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.html"
+                    },
+                    "ratio": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "DocID": "dxBoxItem.ratio"
+                    },
+                    "shrink": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "DocID": "dxBoxItem.shrink"
+                    },
+                    "template": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsTemplate": true,
+                        "DocID": "CollectionWidgetItem.template"
+                    },
+                    "text": {
+                        "PrimitiveTypes": [
+                            "string"
+                        ],
+                        "DocID": "CollectionWidgetItem.text"
+                    },
+                    "visible": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "DocID": "CollectionWidgetItem.visible"
+                    }
+                }
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "CollectionWidgetOptions.itemTemplate",
+            "name": "itemTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "CollectionWidgetOptions.itemTemplate"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "((e: ContentReadyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ContentReadyEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "ContentReadyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onItemClick",
+            "name": "onItemClick",
+            "type": "((e: ItemClickEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemClickEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "ItemClickEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onItemClick"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onItemContextMenu",
+            "name": "onItemContextMenu",
+            "type": "((e: ItemContextMenuEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemContextMenuEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "ItemContextMenuEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onItemContextMenu"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onItemHold",
+            "name": "onItemHold",
+            "type": "((e: ItemHoldEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemHoldEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "ItemHoldEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onItemHold"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onItemRendered",
+            "name": "onItemRendered",
+            "type": "((e: ItemRenderedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ItemRenderedEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "ItemRenderedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onItemRendered"
+            }
+        },
+        {
+            "docID": "dxBoxOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/box"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxBoxOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

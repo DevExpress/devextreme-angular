@@ -1,0 +1,188 @@
+{
+    "docID": "dxHtmlEditorOptions.imageUpload",
+    "className": "DxoImageUpload",
+    "selector": "dxo-image-upload",
+    "optionName": "imageUpload",
+    "path": "image-upload",
+    "propertyName": "imageUpload",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiTab",
+            "path": "tab-dxi",
+            "propertyName": "tabs"
+        }
+    ],
+    "baseClass": "DxoHtmlEditorImageUpload",
+    "basePath": "./base/html-editor-image-upload",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "dxFileUploaderOptions"
+            ],
+            "ComplexTypes": [
+                "FileUploaderOptions"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "dxFileUploaderOptions",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "DocID": "dxHtmlEditorImageUpload.fileUploaderOptions"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxHtmlEditorImageUpload.fileUploadMode"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxHtmlEditorImageUploadTabItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "HtmlEditorImageUploadTabItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "tab",
+            "DocID": "dxHtmlEditorImageUpload.tabs"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxHtmlEditorImageUpload.uploadDirectory"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxHtmlEditorImageUpload.uploadUrl"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxHtmlEditorImageUpload.fileUploaderOptions",
+            "name": "fileUploaderOptions",
+            "type": "dxFileUploaderOptions",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxFileUploaderOptions"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "dxFileUploaderOptions"
+                ],
+                "ComplexTypes": [
+                    "FileUploaderOptions"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "dxFileUploaderOptions",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "DocID": "dxHtmlEditorImageUpload.fileUploaderOptions"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.fileUploadMode",
+            "name": "fileUploadMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxHtmlEditorImageUpload.fileUploadMode"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.tabs",
+            "name": "tabs",
+            "type": "Array<DevExpress.ui.dxHtmlEditorImageUploadTabItem | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxHtmlEditorImageUploadTabItem",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxHtmlEditorImageUploadTabItem",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "HtmlEditorImageUploadTabItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "tab",
+                "DocID": "dxHtmlEditorImageUpload.tabs"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.uploadDirectory",
+            "name": "uploadDirectory",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxHtmlEditorImageUpload.uploadDirectory"
+            }
+        },
+        {
+            "docID": "dxHtmlEditorImageUpload.uploadUrl",
+            "name": "uploadUrl",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxHtmlEditorImageUpload.uploadUrl"
+            }
+        }
+    ]
+}

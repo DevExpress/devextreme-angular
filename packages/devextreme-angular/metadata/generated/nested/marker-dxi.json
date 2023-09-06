@@ -1,0 +1,131 @@
+{
+    "docID": "dxMapOptions.markers",
+    "className": "DxiMarker",
+    "selector": "dxi-marker",
+    "optionName": "markers",
+    "properties": [
+        {
+            "docID": "dxMapOptions.markers.iconSrc",
+            "name": "iconSrc",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.markers.location",
+            "name": "location",
+            "type": "string | Array<number | { lat?: number, lng?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "number",
+                    "{ lat?: number, lng?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxMapOptions.markers.onClick",
+            "name": "onClick",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.markers.tooltip",
+            "name": "tooltip",
+            "type": "string | { isShown?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ isShown?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "marker-dxi",
+    "propertyName": "markers",
+    "isCollection": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiLocation",
+            "path": "location-dxi",
+            "propertyName": "location"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxMapOptions.markers.iconSrc"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "number"
+            ],
+            "IsCollection": true,
+            "SingularName": "location",
+            "DocID": "dxMapOptions.markers.location",
+            "Options": {
+                "lat": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "MapLocation.lat"
+                },
+                "lng": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "MapLocation.lng"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxMapOptions.markers.onClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxMapOptions.markers.tooltip",
+            "Options": {
+                "isShown": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMapOptions.markers.tooltip.isShown"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxMapOptions.markers.tooltip.text"
+                }
+            }
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

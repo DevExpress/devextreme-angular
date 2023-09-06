@@ -1,0 +1,155 @@
+{
+    "docID": "dxDiagramOptions.propertiesPanel.tabs.groups",
+    "className": "DxiGroup",
+    "selector": "dxi-group",
+    "optionName": "groups",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.tabs.groups.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.propertiesPanel.tabs.groups.title",
+            "name": "title",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.groups.category",
+            "name": "category",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.groups.displayMode",
+            "name": "displayMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.groups.expanded",
+            "name": "expanded",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.groups.shapes",
+            "name": "shapes",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "path": "group-dxi",
+    "propertyName": "groups",
+    "isCollection": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiCommand",
+            "path": "command-dxi",
+            "propertyName": "commands"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DiagramCustomCommand"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "command",
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.commands"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.propertiesPanel.tabs.groups.title"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.groups.category"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.groups.displayMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.groups.expanded"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "shape",
+            "DocID": "dxDiagramOptions.toolbox.groups.shapes"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.groups.title"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,50 @@
+{
+    "properties": [
+        {
+            "docID": "dxHtmlEditorVariables.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            }
+        },
+        {
+            "docID": "dxHtmlEditorVariables.escapeChar",
+            "name": "escapeChar",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "events": [],
+    "className": "DxoHtmlEditorVariables",
+    "path": "html-editor-variables",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        }
+    ]
+}

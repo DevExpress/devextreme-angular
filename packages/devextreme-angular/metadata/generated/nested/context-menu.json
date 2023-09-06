@@ -1,0 +1,249 @@
+{
+    "docID": "dxDiagramOptions.contextMenu",
+    "className": "DxoContextMenu",
+    "selector": "dxo-context-menu",
+    "optionName": "contextMenu",
+    "path": "context-menu",
+    "propertyName": "contextMenu",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiCommand",
+            "path": "command-dxi",
+            "propertyName": "commands"
+        },
+        {
+            "className": "DxiItem",
+            "path": "item-dxi",
+            "propertyName": "items"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxDiagramCustomCommand",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "DiagramCustomCommand"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "command",
+            "DocID": "dxDiagramOptions.contextMenu.commands"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.contextMenu.enabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "DevExpress.ui.dxFileManagerContextMenuItem",
+                "string"
+            ],
+            "ItemComplexTypes": [
+                "FileManagerContextMenuItem"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxFileManagerContextMenu.items"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxGanttContextMenu.enabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "item",
+            "DocID": "dxGanttContextMenu.items",
+            "Options": {
+                "beginGroup": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.beginGroup"
+                },
+                "closeMenuOnClick": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.closeMenuOnClick"
+                },
+                "disabled": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.disabled"
+                },
+                "icon": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxMenuBaseItem.icon"
+                },
+                "items": {
+                    "ItemPrimitiveTypes": [
+                        "DevExpress.ui.dxContextMenuItem"
+                    ],
+                    "ItemComplexTypes": [
+                        "ContextMenuItem"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "item",
+                    "DocID": "dxContextMenuItem.items"
+                },
+                "name": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxGanttContextMenuItem.name"
+                },
+                "selectable": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.selectable"
+                },
+                "selected": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.selected"
+                },
+                "template": {
+                    "PrimitiveTypes": [
+                        "any"
+                    ],
+                    "IsTemplate": true,
+                    "DocID": "CollectionWidgetItem.template"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxMenuBaseItem.text"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxMenuBaseItem.visible"
+                }
+            }
+        }
+    ],
+    "baseClass": "DxoFileManagerContextMenu",
+    "basePath": "./base/file-manager-context-menu",
+    "inputs": [
+        {
+            "docID": "dxDiagramOptions.contextMenu.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "DiagramCustomCommand"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "command",
+                "DocID": "dxDiagramOptions.contextMenu.commands"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.contextMenu.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxDiagramOptions.contextMenu.enabled"
+            }
+        },
+        {
+            "docID": "dxFileManagerContextMenu.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxFileManagerContextMenuItem | string | any | { beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<DevExpress.ui.dxContextMenuItem>, name?: string, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFileManagerContextMenuItem",
+                    "string",
+                    "any",
+                    "{ beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<DevExpress.ui.dxContextMenuItem>, name?: string, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "DevExpress.ui.dxFileManagerContextMenuItem",
+                    "string"
+                ],
+                "ItemComplexTypes": [
+                    "FileManagerContextMenuItem"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "item",
+                "DocID": "dxFileManagerContextMenu.items"
+            },
+            "isCollection": true
+        }
+    ]
+}

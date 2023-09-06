@@ -1,0 +1,2129 @@
+{
+    "docID": "SearchBoxMixinOptions.searchEditorOptions",
+    "className": "DxoSearchEditorOptions",
+    "selector": "dxo-search-editor-options",
+    "optionName": "searchEditorOptions",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "textChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<string>"
+        }
+    ],
+    "path": "search-editor-options",
+    "propertyName": "searchEditorOptions",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiButton",
+            "path": "button-dxi",
+            "propertyName": "buttons"
+        }
+    ],
+    "baseClass": "DxoTextBoxOptions",
+    "basePath": "./base/text-box-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.common.TextEditorButton"
+            ],
+            "ItemComplexTypes": [
+                "TextEditorButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxTextEditorOptions.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxTextEditorOptions.inputAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isDirty"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isValid"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.label"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.labelMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.mask"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.maskChar"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.maskInvalidMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxTextEditorOptions.maskRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxTextBoxOptions.maxLength"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextBoxOptions.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ChangeEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ChangeEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onChange"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "CopyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "CopyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onCopy"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "CutEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "CutEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onCut"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EnterKeyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "EnterKeyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onEnterKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "FocusInEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "FocusInEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onFocusIn"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "FocusOutEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "FocusOutEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onFocusOut"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InputEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "InputEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onInput"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "KeyDownEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "KeyDownEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onKeyDown"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "KeyUpEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "KeyUpEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onKeyUp"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "PasteEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "PasteEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onPaste"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.placeholder"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.readOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.showClearButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.showMaskMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.spellcheck"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.stylingMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsReadonly": true,
+            "DocID": "dxTextEditorOptions.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.useMaskedValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "EditorOptions.validationError"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "validationError",
+            "DocID": "EditorOptions.validationErrors"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessageMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessagePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationStatus"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxTextBoxOptions.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.valueChangeEvent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string",
+                "DevExpress.common.TextEditorButton"
+            ],
+            "ItemComplexTypes": [
+                "TextEditorButton"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "IsCollection": true,
+            "SingularName": "button",
+            "DocID": "dxTextEditorOptions.buttons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxTextEditorOptions.inputAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isDirty"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isValid"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.label"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.labelMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.mask"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.maskChar"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.maskInvalidMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxTextEditorOptions.maskRules"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string"
+            ],
+            "DocID": "dxTextBoxOptions.maxLength"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextBoxOptions.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ChangeEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ChangeEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onChange"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "CopyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "CopyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onCopy"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "CutEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "CutEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onCut"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "EnterKeyEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "EnterKeyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onEnterKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "FocusInEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "FocusInEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onFocusIn"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "FocusOutEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "FocusOutEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onFocusOut"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InputEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "InputEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onInput"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "KeyDownEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "KeyDownEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onKeyDown"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "KeyUpEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "KeyUpEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onKeyUp"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "PasteEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "PasteEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onPaste"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/text_box"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxTextBoxOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.placeholder"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.readOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.showClearButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.showMaskMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.spellcheck"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.stylingMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsReadonly": true,
+            "DocID": "dxTextEditorOptions.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxTextEditorOptions.useMaskedValue"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "EditorOptions.validationError"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "validationError",
+            "DocID": "EditorOptions.validationErrors"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessageMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessagePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationStatus"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxTextBoxOptions.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxTextEditorOptions.valueChangeEvent"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.activeStateEnabled"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.buttons",
+            "name": "buttons",
+            "type": "Array<string | DevExpress.common.TextEditorButton>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string",
+                    "DevExpress.common.TextEditorButton"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string",
+                    "DevExpress.common.TextEditorButton"
+                ],
+                "ItemComplexTypes": [
+                    "TextEditorButton"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "default",
+                        "Alias": "DevExpress",
+                        "Path": "bundles/dx.all"
+                    }
+                ],
+                "IsCollection": true,
+                "SingularName": "button",
+                "DocID": "dxTextEditorOptions.buttons"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTextEditorOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTextEditorOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.inputAttr",
+            "name": "inputAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxTextEditorOptions.inputAttr"
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isDirty"
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isValid"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.label",
+            "name": "label",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.label"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.labelMode",
+            "name": "labelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.labelMode"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.mask",
+            "name": "mask",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.mask"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.maskChar",
+            "name": "maskChar",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.maskChar"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.maskInvalidMessage",
+            "name": "maskInvalidMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.maskInvalidMessage"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.maskRules",
+            "name": "maskRules",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxTextEditorOptions.maskRules"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.maxLength",
+            "name": "maxLength",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "DocID": "dxTextBoxOptions.maxLength"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.mode",
+            "name": "mode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextBoxOptions.mode"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.name"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onChange",
+            "name": "onChange",
+            "type": "((e: ChangeEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ChangeEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "ChangeEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onChange"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "((e: ContentReadyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ContentReadyEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "ContentReadyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onCopy",
+            "name": "onCopy",
+            "type": "((e: CopyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "CopyEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "CopyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onCopy"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onCut",
+            "name": "onCut",
+            "type": "((e: CutEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "CutEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "CutEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onCut"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onEnterKey",
+            "name": "onEnterKey",
+            "type": "((e: EnterKeyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "EnterKeyEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "EnterKeyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onEnterKey"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onFocusIn",
+            "name": "onFocusIn",
+            "type": "((e: FocusInEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "FocusInEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "FocusInEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onFocusIn"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onFocusOut",
+            "name": "onFocusOut",
+            "type": "((e: FocusOutEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "FocusOutEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "FocusOutEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onFocusOut"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onInput",
+            "name": "onInput",
+            "type": "((e: InputEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InputEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "InputEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onInput"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onKeyDown",
+            "name": "onKeyDown",
+            "type": "((e: KeyDownEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "KeyDownEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "KeyDownEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onKeyDown"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onKeyUp",
+            "name": "onKeyUp",
+            "type": "((e: KeyUpEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "KeyUpEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "KeyUpEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onKeyUp"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onPaste",
+            "name": "onPaste",
+            "type": "((e: PasteEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "PasteEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "PasteEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onPaste"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.onValueChanged",
+            "name": "onValueChanged",
+            "type": "((e: ValueChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ValueChangedEvent",
+                        "Path": "ui/text_box"
+                    }
+                ],
+                "EventArgName": "ValueChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxTextBoxOptions.onValueChanged"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.placeholder",
+            "name": "placeholder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.placeholder"
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.readOnly"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.showClearButton",
+            "name": "showClearButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTextEditorOptions.showClearButton"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.showMaskMode",
+            "name": "showMaskMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.showMaskMode"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.spellcheck",
+            "name": "spellcheck",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTextEditorOptions.spellcheck"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.stylingMode",
+            "name": "stylingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.stylingMode"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.text",
+            "name": "text",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "IsReadonly": true,
+                "DocID": "dxTextEditorOptions.text"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.useMaskedValue",
+            "name": "useMaskedValue",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxTextEditorOptions.useMaskedValue"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "EditorOptions.validationError"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "validationError",
+                "DocID": "EditorOptions.validationErrors"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationMessageMode"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationMessagePosition"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationStatus"
+            }
+        },
+        {
+            "docID": "dxTextBoxOptions.value",
+            "name": "value",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxTextBoxOptions.value"
+            }
+        },
+        {
+            "docID": "dxTextEditorOptions.valueChangeEvent",
+            "name": "valueChangeEvent",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxTextEditorOptions.valueChangeEvent"
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

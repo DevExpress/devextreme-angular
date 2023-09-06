@@ -1,0 +1,54 @@
+{
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.contextMenu.commands",
+            "name": "commands",
+            "type": "Array<DevExpress.ui.dxDiagramCustomCommand | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxDiagramCustomCommand",
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.contextMenu.enabled",
+            "name": "enabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFileManagerContextMenu.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxFileManagerContextMenuItem | string | any | { beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<DevExpress.ui.dxContextMenuItem>, name?: string, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFileManagerContextMenuItem",
+                    "string",
+                    "any",
+                    "{ beginGroup?: boolean, closeMenuOnClick?: boolean, disabled?: boolean, icon?: string, items?: Array<DevExpress.ui.dxContextMenuItem>, name?: string, selectable?: boolean, selected?: boolean, template?: any, text?: string, visible?: boolean }"
+                ]
+            },
+            "isCollection": true
+        }
+    ],
+    "events": [],
+    "className": "DxoFileManagerContextMenu",
+    "path": "file-manager-context-menu",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ]
+}

@@ -1,0 +1,336 @@
+{
+    "docID": "dxCircularGaugeOptions.rangeContainer",
+    "className": "DxoRangeContainer",
+    "selector": "dxo-range-container",
+    "optionName": "rangeContainer",
+    "properties": [
+        {
+            "docID": "BaseGaugeOptions.rangeContainer.backgroundColor",
+            "name": "backgroundColor",
+            "type": "DevExpress.common.charts.ChartsColor | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.common.charts.ChartsColor",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.rangeContainer.offset",
+            "name": "offset",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxCircularGaugeOptions.rangeContainer.orientation",
+            "name": "orientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.rangeContainer.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseGaugeOptions.rangeContainer.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseGaugeOptions.rangeContainer.ranges",
+            "name": "ranges",
+            "type": "Array<any | { color?: DevExpress.common.charts.ChartsColor | string, endValue?: number, startValue?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ color?: DevExpress.common.charts.ChartsColor | string, endValue?: number, startValue?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxCircularGaugeOptions.rangeContainer.width",
+            "name": "width",
+            "type": "number | { end?: number, start?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "{ end?: number, start?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxLinearGaugeOptions.rangeContainer.horizontalOrientation",
+            "name": "horizontalOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxLinearGaugeOptions.rangeContainer.verticalOrientation",
+            "name": "verticalOrientation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "range-container",
+    "propertyName": "rangeContainer",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiRange",
+            "path": "range-dxi",
+            "propertyName": "ranges"
+        }
+    ],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "DevExpress.common.charts.ChartsColor",
+                "string"
+            ],
+            "ComplexTypes": [
+                "ChartsColor"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.backgroundColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.offset"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCircularGaugeOptions.rangeContainer.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "palette",
+            "DocID": "BaseGaugeOptions.rangeContainer.palette"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.paletteExtensionMode"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "range",
+            "DocID": "BaseGaugeOptions.rangeContainer.ranges",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "DevExpress.common.charts.ChartsColor",
+                        "string"
+                    ],
+                    "ComplexTypes": [
+                        "ChartsColor"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.color"
+                },
+                "endValue": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.endValue"
+                },
+                "startValue": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.startValue"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxCircularGaugeOptions.rangeContainer.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "DevExpress.common.charts.ChartsColor",
+                "string"
+            ],
+            "ComplexTypes": [
+                "ChartsColor"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.backgroundColor"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxLinearGaugeOptions.rangeContainer.horizontalOrientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.offset"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "palette",
+            "DocID": "BaseGaugeOptions.rangeContainer.palette"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseGaugeOptions.rangeContainer.paletteExtensionMode"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "range",
+            "DocID": "BaseGaugeOptions.rangeContainer.ranges",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "DevExpress.common.charts.ChartsColor",
+                        "string"
+                    ],
+                    "ComplexTypes": [
+                        "ChartsColor"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "default",
+                            "Alias": "DevExpress",
+                            "Path": "bundles/dx.all"
+                        }
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.color"
+                },
+                "endValue": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.endValue"
+                },
+                "startValue": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseGaugeOptions.rangeContainer.ranges.startValue"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxLinearGaugeOptions.rangeContainer.verticalOrientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxLinearGaugeOptions.rangeContainer.width",
+            "Options": {
+                "end": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxLinearGaugeOptions.rangeContainer.width.end"
+                },
+                "start": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxLinearGaugeOptions.rangeContainer.width.start"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

@@ -1,0 +1,122 @@
+{
+    "docID": "dxChartOptions.commonPaneSettings",
+    "className": "DxoCommonPaneSettings",
+    "selector": "dxo-common-pane-settings",
+    "optionName": "commonPaneSettings",
+    "properties": [
+        {
+            "docID": "dxChartOptions.commonPaneSettings.backgroundColor",
+            "name": "backgroundColor",
+            "type": "DevExpress.common.charts.ChartsColor | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DevExpress.common.charts.ChartsColor",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonPaneSettings.border",
+            "name": "border",
+            "type": "{ bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "common-pane-settings",
+    "propertyName": "commonPaneSettings",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "DevExpress.common.charts.ChartsColor",
+                "string"
+            ],
+            "ComplexTypes": [
+                "ChartsColor"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "default",
+                    "Alias": "DevExpress",
+                    "Path": "bundles/dx.all"
+                }
+            ],
+            "DocID": "dxChartOptions.commonPaneSettings.backgroundColor"
+        },
+        {
+            "DocID": "dxChartOptions.commonPaneSettings.border",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.bottom"
+                },
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.color"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.dashStyle"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.left"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.opacity"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.top"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxChartOptions.commonPaneSettings.border.width"
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

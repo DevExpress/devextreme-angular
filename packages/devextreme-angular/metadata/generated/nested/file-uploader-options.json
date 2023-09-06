@@ -1,0 +1,1833 @@
+{
+    "docID": "dxHtmlEditorImageUpload.fileUploaderOptions",
+    "className": "DxoFileUploaderOptions",
+    "selector": "dxo-file-uploader-options",
+    "optionName": "fileUploaderOptions",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<Array<any>>"
+        }
+    ],
+    "path": "file-uploader-options",
+    "propertyName": "fileUploaderOptions",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoFileUploaderOptions",
+    "basePath": "./base/file-uploader-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFileUploaderOptions.abortUpload"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.accept"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileUploaderOptions.allowCanceling"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "allowedFileExtension",
+            "DocID": "dxFileUploaderOptions.allowedFileExtensions"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFileUploaderOptions.chunkSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxFileUploaderOptions.dialogTrigger"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "dxFileUploaderOptions.dropZone"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileUploaderOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileUploaderOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFileUploaderOptions.inputAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.invalidFileExtensionMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.invalidMaxFileSizeMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.invalidMinFileSizeMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isDirty"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isValid"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.labelText"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFileUploaderOptions.maxFileSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFileUploaderOptions.minFileSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileUploaderOptions.multiple"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "BeforeSendEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "BeforeSendEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onBeforeSend"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ContentReadyEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "ContentReadyEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onContentReady"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DropZoneEnterEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "DropZoneEnterEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onDropZoneEnter"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DropZoneLeaveEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "DropZoneLeaveEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onDropZoneLeave"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "FilesUploadedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "FilesUploadedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onFilesUploaded"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ProgressEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "ProgressEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onProgress"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UploadAbortedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "UploadAbortedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onUploadAborted"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UploadedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "UploadedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onUploaded"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UploadErrorEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "UploadErrorEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onUploadError"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UploadStartedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "UploadStartedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onUploadStarted"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/file_uploader"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxFileUploaderOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxFileUploaderOptions.progress"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.readOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.readyToUploadMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.selectButtonText"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFileUploaderOptions.showFileList"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadAbortedMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadButtonText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFileUploaderOptions.uploadChunk"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadCustomData"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadedMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadFailedMessage"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFileUploaderOptions.uploadFile"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadHeaders"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadMethod"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxFileUploaderOptions.uploadUrl"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "EditorOptions.validationError"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "validationError",
+            "DocID": "EditorOptions.validationErrors"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationStatus"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "IsChangeable": true,
+            "SingularName": "value",
+            "DocID": "dxFileUploaderOptions.value"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "dxFileUploaderOptions.abortUpload",
+            "name": "abortUpload",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxFileUploaderOptions.abortUpload"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.accept",
+            "name": "accept",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.accept"
+            }
+        },
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.activeStateEnabled"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.allowCanceling",
+            "name": "allowCanceling",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFileUploaderOptions.allowCanceling"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.allowedFileExtensions",
+            "name": "allowedFileExtensions",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "allowedFileExtension",
+                "DocID": "dxFileUploaderOptions.allowedFileExtensions"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFileUploaderOptions.chunkSize",
+            "name": "chunkSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxFileUploaderOptions.chunkSize"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.dialogTrigger",
+            "name": "dialogTrigger",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "dxFileUploaderOptions.dialogTrigger"
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.dropZone",
+            "name": "dropZone",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UserDefinedElement",
+                        "Path": "core/element"
+                    }
+                ],
+                "DocID": "dxFileUploaderOptions.dropZone"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFileUploaderOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFileUploaderOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.inputAttr",
+            "name": "inputAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxFileUploaderOptions.inputAttr"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.invalidFileExtensionMessage",
+            "name": "invalidFileExtensionMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.invalidFileExtensionMessage"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.invalidMaxFileSizeMessage",
+            "name": "invalidMaxFileSizeMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.invalidMaxFileSizeMessage"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.invalidMinFileSizeMessage",
+            "name": "invalidMinFileSizeMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.invalidMinFileSizeMessage"
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isDirty"
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isValid"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.labelText",
+            "name": "labelText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.labelText"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.maxFileSize",
+            "name": "maxFileSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxFileUploaderOptions.maxFileSize"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.minFileSize",
+            "name": "minFileSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxFileUploaderOptions.minFileSize"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.multiple",
+            "name": "multiple",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFileUploaderOptions.multiple"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.name"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onBeforeSend",
+            "name": "onBeforeSend",
+            "type": "((e: BeforeSendEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "BeforeSendEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "BeforeSendEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onBeforeSend"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onContentReady",
+            "name": "onContentReady",
+            "type": "((e: ContentReadyEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ContentReadyEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "ContentReadyEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onContentReady"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onDropZoneEnter",
+            "name": "onDropZoneEnter",
+            "type": "((e: DropZoneEnterEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DropZoneEnterEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "DropZoneEnterEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onDropZoneEnter"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onDropZoneLeave",
+            "name": "onDropZoneLeave",
+            "type": "((e: DropZoneLeaveEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DropZoneLeaveEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "DropZoneLeaveEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onDropZoneLeave"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onFilesUploaded",
+            "name": "onFilesUploaded",
+            "type": "((e: FilesUploadedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "FilesUploadedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "FilesUploadedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onFilesUploaded"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onProgress",
+            "name": "onProgress",
+            "type": "((e: ProgressEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ProgressEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "ProgressEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onProgress"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onUploadAborted",
+            "name": "onUploadAborted",
+            "type": "((e: UploadAbortedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UploadAbortedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "UploadAbortedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onUploadAborted"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onUploaded",
+            "name": "onUploaded",
+            "type": "((e: UploadedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UploadedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "UploadedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onUploaded"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onUploadError",
+            "name": "onUploadError",
+            "type": "((e: UploadErrorEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UploadErrorEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "UploadErrorEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onUploadError"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onUploadStarted",
+            "name": "onUploadStarted",
+            "type": "((e: UploadStartedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "UploadStartedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "UploadStartedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onUploadStarted"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.onValueChanged",
+            "name": "onValueChanged",
+            "type": "((e: ValueChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ValueChangedEvent",
+                        "Path": "ui/file_uploader"
+                    }
+                ],
+                "EventArgName": "ValueChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxFileUploaderOptions.onValueChanged"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.progress",
+            "name": "progress",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "dxFileUploaderOptions.progress"
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.readOnly"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.readyToUploadMessage",
+            "name": "readyToUploadMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.readyToUploadMessage"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.selectButtonText",
+            "name": "selectButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.selectButtonText"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.showFileList",
+            "name": "showFileList",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxFileUploaderOptions.showFileList"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadAbortedMessage",
+            "name": "uploadAbortedMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadAbortedMessage"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadButtonText",
+            "name": "uploadButtonText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadButtonText"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadChunk",
+            "name": "uploadChunk",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxFileUploaderOptions.uploadChunk"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadCustomData",
+            "name": "uploadCustomData",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadCustomData"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadedMessage",
+            "name": "uploadedMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadedMessage"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadFailedMessage",
+            "name": "uploadFailedMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadFailedMessage"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadFile",
+            "name": "uploadFile",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "IsFunc": true,
+                "DocID": "dxFileUploaderOptions.uploadFile"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadHeaders",
+            "name": "uploadHeaders",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadHeaders"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadMethod",
+            "name": "uploadMethod",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadMethod"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadMode",
+            "name": "uploadMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadMode"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.uploadUrl",
+            "name": "uploadUrl",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxFileUploaderOptions.uploadUrl"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "EditorOptions.validationError"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "validationError",
+                "DocID": "EditorOptions.validationErrors"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationStatus"
+            }
+        },
+        {
+            "docID": "dxFileUploaderOptions.value",
+            "name": "value",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "IsChangeable": true,
+                "SingularName": "value",
+                "DocID": "dxFileUploaderOptions.value"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        }
+    ]
+}

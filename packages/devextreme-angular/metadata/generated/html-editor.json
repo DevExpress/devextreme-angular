@@ -1,0 +1,715 @@
+{
+    "docID": "dxHtmlEditor",
+    "className": "DxHtmlEditor",
+    "widgetName": "dxHtmlEditor",
+    "isTranscludedContent": true,
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-html-editor",
+    "events": [
+        {
+            "docID": "dxHtmlEditorOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onFocusIn",
+            "emit": "onFocusIn",
+            "subscribe": "focusIn",
+            "type": "EventEmitter<FocusInEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onFocusOut",
+            "emit": "onFocusOut",
+            "subscribe": "focusOut",
+            "type": "EventEmitter<FocusOutEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxHtmlEditorOptions.onValueChanged",
+            "emit": "onValueChanged",
+            "subscribe": "valueChanged",
+            "type": "EventEmitter<ValueChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allowSoftLineBreakChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeModulesChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "imageUploadChange",
+            "type": "EventEmitter<dxHtmlEditorImageUpload>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isValidChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "mediaResizingChange",
+            "type": "EventEmitter<dxHtmlEditorMediaResizing>"
+        },
+        {
+            "isInternal": true,
+            "emit": "mentionsChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxHtmlEditorMention>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "nameChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "placeholderChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stylingModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tableContextMenuChange",
+            "type": "EventEmitter<dxHtmlEditorTableContextMenu>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tableResizingChange",
+            "type": "EventEmitter<dxHtmlEditorTableResizing>"
+        },
+        {
+            "isInternal": true,
+            "emit": "toolbarChange",
+            "type": "EventEmitter<dxHtmlEditorToolbar>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationErrorsChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessageModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationMessagePositionChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationStatusChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueTypeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "variablesChange",
+            "type": "EventEmitter<dxHtmlEditorVariables>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "emit": "onBlur",
+            "type": "EventEmitter<any>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.allowSoftLineBreak",
+            "name": "allowSoftLineBreak",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.customizeModules",
+            "name": "customizeModules",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.imageUpload",
+            "name": "imageUpload",
+            "type": "dxHtmlEditorImageUpload",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorImageUpload"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.mediaResizing",
+            "name": "mediaResizing",
+            "type": "dxHtmlEditorMediaResizing",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorMediaResizing"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.mentions",
+            "name": "mentions",
+            "type": "Array<DevExpress.ui.dxHtmlEditorMention>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxHtmlEditorMention"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxHtmlEditorOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.placeholder",
+            "name": "placeholder",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.stylingMode",
+            "name": "stylingMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.tableContextMenu",
+            "name": "tableContextMenu",
+            "type": "dxHtmlEditorTableContextMenu",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorTableContextMenu"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.tableResizing",
+            "name": "tableResizing",
+            "type": "dxHtmlEditorTableResizing",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorTableResizing"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.toolbar",
+            "name": "toolbar",
+            "type": "dxHtmlEditorToolbar",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorToolbar"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "EditorOptions.value",
+            "name": "value",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.valueType",
+            "name": "valueType",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxHtmlEditorOptions.variables",
+            "name": "variables",
+            "type": "dxHtmlEditorVariables",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxHtmlEditorVariables"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": true,
+    "module": "devextreme/ui/html_editor",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/html_editor",
+            "importString": "{ ContentReadyEvent, DisposingEvent, dxHtmlEditorImageUpload, dxHtmlEditorMediaResizing, dxHtmlEditorTableContextMenu, dxHtmlEditorTableResizing, dxHtmlEditorToolbar, dxHtmlEditorVariables, FocusInEvent, FocusOutEvent, InitializedEvent, OptionChangedEvent, ValueChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "image-upload",
+            "propertyName": "imageUpload",
+            "className": "DxoImageUpload",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "file-uploader-options",
+            "propertyName": "fileUploaderOptions",
+            "className": "DxoFileUploaderOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "valueChange",
+                    "type": "EventEmitter<Array<any>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "value",
+                        "DocID": "dxFileUploaderOptions.value"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "tab-dxi",
+            "propertyName": "tabs",
+            "className": "DxiTab",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "media-resizing",
+            "propertyName": "mediaResizing",
+            "className": "DxoMediaResizing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "mention-dxi",
+            "propertyName": "mentions",
+            "className": "DxiMention",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "table-context-menu",
+            "propertyName": "tableContextMenu",
+            "className": "DxoTableContextMenu",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "table-resizing",
+            "propertyName": "tableResizing",
+            "className": "DxoTableResizing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "toolbar",
+            "propertyName": "toolbar",
+            "className": "DxoToolbar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "variables",
+            "propertyName": "variables",
+            "className": "DxoVariables",
+            "events": [],
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

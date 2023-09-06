@@ -1,0 +1,126 @@
+{
+    "docID": "dxMapOptions.routes",
+    "className": "DxiRoute",
+    "selector": "dxi-route",
+    "optionName": "routes",
+    "properties": [
+        {
+            "docID": "dxMapOptions.routes.color",
+            "name": "color",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.routes.locations",
+            "name": "locations",
+            "type": "Array<any | { lat?: number, lng?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ lat?: number, lng?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxMapOptions.routes.mode",
+            "name": "mode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.routes.opacity",
+            "name": "opacity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxMapOptions.routes.weight",
+            "name": "weight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "route-dxi",
+    "propertyName": "routes",
+    "isCollection": true,
+    "collectionNestedComponents": [
+        {
+            "className": "DxiLocation",
+            "path": "location-dxi",
+            "propertyName": "locations"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxMapOptions.routes.color"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "location",
+            "DocID": "dxMapOptions.routes.locations",
+            "Options": {
+                "lat": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "MapLocation.lat"
+                },
+                "lng": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "MapLocation.lng"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxMapOptions.routes.mode"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxMapOptions.routes.opacity"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxMapOptions.routes.weight"
+        }
+    ],
+    "baseClass": "CollectionNestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

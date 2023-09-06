@@ -1,0 +1,121 @@
+{
+    "properties": [
+        {
+            "name": "fields",
+            "type": "Array<any | { allowCrossGroupCalculation?: boolean, allowExpandAll?: boolean, allowFiltering?: boolean, allowSorting?: boolean, allowSortingBySummary?: boolean, area?: string, areaIndex?: number, calculateCustomSummary?: Function, calculateSummaryValue?: Function, caption?: string, customizeText?: Function, dataField?: string, dataType?: string, displayFolder?: string, expanded?: boolean, filterType?: string, filterValues?: Array<any>, format?: format | string, groupIndex?: number, groupInterval?: number | string, groupName?: string, headerFilter?: { allowSearch?: boolean, height?: number, width?: number }, isMeasure?: boolean, precision?: number, runningTotal?: string, selector?: Function, showGrandTotals?: boolean, showTotals?: boolean, showValues?: boolean, sortBy?: string, sortBySummaryField?: string, sortBySummaryPath?: Array<number | string>, sortingMethod?: Function, sortOrder?: string, summaryDisplayMode?: string, summaryType?: string, visible?: boolean, width?: number, wordWrapEnabled?: boolean }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ allowCrossGroupCalculation?: boolean, allowExpandAll?: boolean, allowFiltering?: boolean, allowSorting?: boolean, allowSortingBySummary?: boolean, area?: string, areaIndex?: number, calculateCustomSummary?: Function, calculateSummaryValue?: Function, caption?: string, customizeText?: Function, dataField?: string, dataType?: string, displayFolder?: string, expanded?: boolean, filterType?: string, filterValues?: Array<any>, format?: format | string, groupIndex?: number, groupInterval?: number | string, groupName?: string, headerFilter?: { allowSearch?: boolean, height?: number, width?: number }, isMeasure?: boolean, precision?: number, runningTotal?: string, selector?: Function, showGrandTotals?: boolean, showTotals?: boolean, showValues?: boolean, sortBy?: string, sortBySummaryField?: string, sortBySummaryPath?: Array<number | string>, sortingMethod?: Function, sortOrder?: string, summaryDisplayMode?: string, summaryType?: string, visible?: boolean, width?: number, wordWrapEnabled?: boolean }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "name": "filter",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "onChanged",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "onFieldsPrepared",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "onLoadError",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "onLoadingChanged",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "remoteOperations",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "retrieveFields",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "name": "store",
+            "type": "Store | StoreOptions | XmlaStore | XmlaStoreOptions | { type?: string } | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Store",
+                    "StoreOptions",
+                    "XmlaStore",
+                    "XmlaStoreOptions",
+                    "{ type?: string }"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            }
+        }
+    ],
+    "events": [],
+    "className": "DxoPivotGridDataSource",
+    "path": "pivot-grid-data-source",
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "imports": [
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store, StoreOptions }"
+        },
+        {
+            "path": "devextreme/ui/pivot_grid/xmla_store",
+            "importString": "XmlaStore, { XmlaStoreOptions }"
+        },
+        {
+            "path": "devextreme/ui/widget/ui.widget",
+            "importString": "{ format }"
+        }
+    ]
+}

@@ -1,0 +1,192 @@
+{
+    "docID": "dxFunnelOptions.item",
+    "className": "DxoItem",
+    "selector": "dxo-item",
+    "optionName": "item",
+    "properties": [
+        {
+            "docID": "dxFunnelOptions.item.border",
+            "name": "border",
+            "type": "{ color?: string, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.item.hoverStyle",
+            "name": "hoverStyle",
+            "type": "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFunnelOptions.item.selectionStyle",
+            "name": "selectionStyle",
+            "type": "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ border?: { color?: string | undefined, visible?: boolean | undefined, width?: number | undefined }, hatching?: { direction?: string, opacity?: number, step?: number, width?: number } }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "item",
+    "propertyName": "item",
+    "collectionNestedComponents": [],
+    "options": [
+        {
+            "DocID": "dxFunnelOptions.item.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxFunnelOptions.item.border.color"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxFunnelOptions.item.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "dxFunnelOptions.item.border.width"
+                }
+            }
+        },
+        {
+            "DocID": "dxFunnelOptions.item.hoverStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxFunnelOptions.item.hoverStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.border.color"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.border.visible"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.border.width"
+                        }
+                    }
+                },
+                "hatching": {
+                    "DocID": "dxFunnelOptions.item.hoverStyle.hatching",
+                    "Options": {
+                        "direction": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.hatching.direction"
+                        },
+                        "opacity": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.hatching.opacity"
+                        },
+                        "step": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.hatching.step"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.hoverStyle.hatching.width"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "DocID": "dxFunnelOptions.item.selectionStyle",
+            "Options": {
+                "border": {
+                    "DocID": "dxFunnelOptions.item.selectionStyle.border",
+                    "Options": {
+                        "color": {
+                            "PrimitiveTypes": [
+                                "string",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.border.color"
+                        },
+                        "visible": {
+                            "PrimitiveTypes": [
+                                "boolean",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.border.visible"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number",
+                                "undefined"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.border.width"
+                        }
+                    }
+                },
+                "hatching": {
+                    "DocID": "dxFunnelOptions.item.selectionStyle.hatching",
+                    "Options": {
+                        "direction": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.hatching.direction"
+                        },
+                        "opacity": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.hatching.opacity"
+                        },
+                        "step": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.hatching.step"
+                        },
+                        "width": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "dxFunnelOptions.item.selectionStyle.hatching.width"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

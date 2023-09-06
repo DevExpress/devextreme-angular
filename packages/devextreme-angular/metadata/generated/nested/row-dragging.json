@@ -1,0 +1,658 @@
+{
+    "docID": "GridBaseOptions.rowDragging",
+    "className": "DxoRowDragging",
+    "selector": "dxo-row-dragging",
+    "optionName": "rowDragging",
+    "properties": [
+        {
+            "docID": "GridBaseOptions.rowDragging.allowDropInsideItem",
+            "name": "allowDropInsideItem",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.allowReordering",
+            "name": "allowReordering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.autoScroll",
+            "name": "autoScroll",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.boundary",
+            "name": "boundary",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.container",
+            "name": "container",
+            "type": "string | UserDefinedElement | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "UserDefinedElement",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.cursorOffset",
+            "name": "cursorOffset",
+            "type": "string | { x?: number, y?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ x?: number, y?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.data",
+            "name": "data",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.dragDirection",
+            "name": "dragDirection",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.dragTemplate",
+            "name": "dragTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.dropFeedbackMode",
+            "name": "dropFeedbackMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.filter",
+            "isDeprecated": true,
+            "name": "filter",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.group",
+            "name": "group",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.handle",
+            "name": "handle",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onAdd",
+            "name": "onAdd",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onDragChange",
+            "name": "onDragChange",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onDragEnd",
+            "name": "onDragEnd",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onDragMove",
+            "name": "onDragMove",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onDragStart",
+            "name": "onDragStart",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onRemove",
+            "name": "onRemove",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.onReorder",
+            "name": "onReorder",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.scrollSensitivity",
+            "name": "scrollSensitivity",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.scrollSpeed",
+            "name": "scrollSpeed",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "GridBaseOptions.rowDragging.showDragIcons",
+            "name": "showDragIcons",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "row-dragging",
+    "propertyName": "rowDragging",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.allowDropInsideItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.autoScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.rowDragging.boundary"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.rowDragging.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.cursorOffset",
+            "Options": {
+                "x": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "GridBaseOptions.rowDragging.cursorOffset.x"
+                },
+                "y": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "GridBaseOptions.rowDragging.cursorOffset.y"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.data"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.dragDirection"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "GridBaseOptions.rowDragging.dragTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.dropFeedbackMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.rowDragging.filter"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.group"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.handle"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onAdd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragChange"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragEnd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragMove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onRemove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onReorder"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.scrollSensitivity"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.scrollSpeed"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.showDragIcons"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.allowDropInsideItem"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.allowReordering"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.autoScroll"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.rowDragging.boundary"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "UserDefinedElement",
+                "undefined"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "UserDefinedElement",
+                    "Path": "core/element"
+                }
+            ],
+            "DocID": "GridBaseOptions.rowDragging.container"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.cursorOffset",
+            "Options": {
+                "x": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "GridBaseOptions.rowDragging.cursorOffset.x"
+                },
+                "y": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "GridBaseOptions.rowDragging.cursorOffset.y"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.data"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.dragDirection"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "GridBaseOptions.rowDragging.dragTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.dropFeedbackMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsDeprecated": true,
+            "DocID": "GridBaseOptions.rowDragging.filter"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.group"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.handle"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onAdd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragChange"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragEnd"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragMove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onDragStart"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onRemove"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "GridBaseOptions.rowDragging.onReorder"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.scrollSensitivity"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.scrollSpeed"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "GridBaseOptions.rowDragging.showDragIcons"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

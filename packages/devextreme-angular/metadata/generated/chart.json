@@ -1,0 +1,1654 @@
+{
+    "docID": "dxChart",
+    "className": "DxChart",
+    "widgetName": "dxChart",
+    "isViz": true,
+    "isExtension": false,
+    "selector": "dx-chart",
+    "events": [
+        {
+            "docID": "dxChartOptions.onArgumentAxisClick",
+            "emit": "onArgumentAxisClick",
+            "subscribe": "argumentAxisClick",
+            "type": "EventEmitter<ArgumentAxisClickEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onDone",
+            "emit": "onDone",
+            "subscribe": "done",
+            "type": "EventEmitter<DoneEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onDrawn",
+            "emit": "onDrawn",
+            "subscribe": "drawn",
+            "type": "EventEmitter<DrawnEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onExported",
+            "emit": "onExported",
+            "subscribe": "exported",
+            "type": "EventEmitter<ExportedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onExporting",
+            "emit": "onExporting",
+            "subscribe": "exporting",
+            "type": "EventEmitter<ExportingEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onFileSaving",
+            "emit": "onFileSaving",
+            "subscribe": "fileSaving",
+            "type": "EventEmitter<FileSavingEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onIncidentOccurred",
+            "emit": "onIncidentOccurred",
+            "subscribe": "incidentOccurred",
+            "type": "EventEmitter<IncidentOccurredEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onLegendClick",
+            "emit": "onLegendClick",
+            "subscribe": "legendClick",
+            "type": "EventEmitter<LegendClickEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onPointClick",
+            "emit": "onPointClick",
+            "subscribe": "pointClick",
+            "type": "EventEmitter<PointClickEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onPointHoverChanged",
+            "emit": "onPointHoverChanged",
+            "subscribe": "pointHoverChanged",
+            "type": "EventEmitter<PointHoverChangedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onPointSelectionChanged",
+            "emit": "onPointSelectionChanged",
+            "subscribe": "pointSelectionChanged",
+            "type": "EventEmitter<PointSelectionChangedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onSeriesClick",
+            "emit": "onSeriesClick",
+            "subscribe": "seriesClick",
+            "type": "EventEmitter<SeriesClickEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onSeriesHoverChanged",
+            "emit": "onSeriesHoverChanged",
+            "subscribe": "seriesHoverChanged",
+            "type": "EventEmitter<SeriesHoverChangedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onSeriesSelectionChanged",
+            "emit": "onSeriesSelectionChanged",
+            "subscribe": "seriesSelectionChanged",
+            "type": "EventEmitter<SeriesSelectionChangedEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onTooltipHidden",
+            "emit": "onTooltipHidden",
+            "subscribe": "tooltipHidden",
+            "type": "EventEmitter<TooltipHiddenEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onTooltipShown",
+            "emit": "onTooltipShown",
+            "subscribe": "tooltipShown",
+            "type": "EventEmitter<TooltipShownEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onZoomEnd",
+            "emit": "onZoomEnd",
+            "subscribe": "zoomEnd",
+            "type": "EventEmitter<ZoomEndEvent>"
+        },
+        {
+            "docID": "dxChartOptions.onZoomStart",
+            "emit": "onZoomStart",
+            "subscribe": "zoomStart",
+            "type": "EventEmitter<ZoomStartEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptiveLayoutChange",
+            "type": "EventEmitter<{ height?: number, keepLabels?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adjustOnZoomChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "animationChange",
+            "type": "EventEmitter<boolean | { duration?: number, easing?: string, enabled?: boolean, maxPointCountSupported?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "annotationsChange",
+            "type": "EventEmitter<Array<DevExpress.viz.dxChartAnnotationConfig | any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "argumentAxisChange",
+            "type": "EventEmitter<{ aggregateByCategory?: boolean, aggregatedPointsPosition?: string, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, argumentType?: string | undefined, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, customPositionAxis?: string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, holidays?: Array<Date | string | number>, hoverMode?: string, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, offset?: number | undefined, opacity?: number | undefined, placeholderSize?: number, position?: string, singleWorkdays?: Array<Date | string | number>, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number, workdaysOnly?: boolean, workWeek?: Array<number> }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "autoHidePointMarkersChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "barGroupPaddingChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "barGroupWidthChange",
+            "type": "EventEmitter<number | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "commonAnnotationSettingsChange",
+            "type": "EventEmitter<dxChartCommonAnnotationConfig>"
+        },
+        {
+            "isInternal": true,
+            "emit": "commonAxisSettingsChange",
+            "type": "EventEmitter<{ aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, breakStyle?: { color?: string, line?: string, width?: number }, color?: string, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, position?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, displayMode?: string, font?: Font, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minValueMargin?: number | undefined, opacity?: number | undefined, placeholderSize?: number, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, title?: { alignment?: string, font?: Font, margin?: number, textOverflow?: string, wordWrap?: string }, valueMarginsEnabled?: boolean, visible?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "commonPaneSettingsChange",
+            "type": "EventEmitter<{ backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number } }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "commonSeriesSettingsChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "containerBackgroundColorChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "crosshairChange",
+            "type": "EventEmitter<{ color?: string, dashStyle?: string, enabled?: boolean, horizontalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, verticalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeAnnotationChange",
+            "type": "EventEmitter<Function | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeLabelChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizePointChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataPrepareSettingsChange",
+            "type": "EventEmitter<{ checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "defaultPaneChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "exportChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "legendChange",
+            "type": "EventEmitter<{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, hoverMode?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, position?: string, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "loadingIndicatorChange",
+            "type": "EventEmitter<{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "marginChange",
+            "type": "EventEmitter<{ bottom?: number, left?: number, right?: number, top?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxBubbleSizeChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minBubbleSizeChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "negativesAsZeroesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteChange",
+            "type": "EventEmitter<string | Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "paletteExtensionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "panesChange",
+            "type": "EventEmitter<Array<any | { backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number }, height?: number | string | undefined, name?: string | undefined }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pathModifiedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "pointSelectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "redrawOnResizeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resizePanesOnZoomChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resolveLabelOverlappingChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rotatedChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollBarChange",
+            "type": "EventEmitter<{ color?: string, offset?: number, opacity?: number | undefined, position?: string, visible?: boolean, width?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "seriesChange",
+            "type": "EventEmitter<any | undefined | Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "seriesSelectionModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "seriesTemplateChange",
+            "type": "EventEmitter<{ customizeSeries?: Function, nameField?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "sizeChange",
+            "type": "EventEmitter<{ height?: number | undefined, width?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "stickyHoveringChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "synchronizeMultiAxesChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "themeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "titleChange",
+            "type": "EventEmitter<string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tooltipChange",
+            "type": "EventEmitter<{ argumentFormat?: Format | string | undefined, arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, location?: string, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, shared?: boolean, zIndex?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "valueAxisChange",
+            "type": "EventEmitter<Array<any | { aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, autoBreaksEnabled?: boolean, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxAutoBreakCount?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, multipleAxesSpacing?: number, name?: string | undefined, offset?: number | undefined, opacity?: number | undefined, pane?: string | undefined, placeholderSize?: number, position?: string, showZero?: boolean | undefined, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, synchronizedValue?: number | undefined, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, valueType?: string | undefined, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomAndPanChange",
+            "type": "EventEmitter<{ allowMouseWheel?: boolean, allowTouchGestures?: boolean, argumentAxis?: string, dragBoxStyle?: { color?: string | undefined, opacity?: number | undefined }, dragToZoom?: boolean, panKey?: string, valueAxis?: string }>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "BaseChartOptions.adaptiveLayout",
+            "name": "adaptiveLayout",
+            "type": "{ height?: number, keepLabels?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number, keepLabels?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.adjustOnZoom",
+            "name": "adjustOnZoom",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.animation",
+            "name": "animation",
+            "type": "boolean | { duration?: number, easing?: string, enabled?: boolean, maxPointCountSupported?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "{ duration?: number, easing?: string, enabled?: boolean, maxPointCountSupported?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.annotations",
+            "name": "annotations",
+            "type": "Array<DevExpress.viz.dxChartAnnotationConfig | any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.viz.dxChartAnnotationConfig",
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.argumentAxis",
+            "name": "argumentAxis",
+            "type": "{ aggregateByCategory?: boolean, aggregatedPointsPosition?: string, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, argumentType?: string | undefined, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, customPositionAxis?: string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, holidays?: Array<Date | string | number>, hoverMode?: string, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, offset?: number | undefined, opacity?: number | undefined, placeholderSize?: number, position?: string, singleWorkdays?: Array<Date | string | number>, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number, workdaysOnly?: boolean, workWeek?: Array<number> }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ aggregateByCategory?: boolean, aggregatedPointsPosition?: string, aggregationGroupWidth?: number | undefined, aggregationInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, allowDecimals?: boolean | undefined, argumentType?: string | undefined, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, customPositionAxis?: string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, holidays?: Array<Date | string | number>, hoverMode?: string, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, offset?: number | undefined, opacity?: number | undefined, placeholderSize?: number, position?: string, singleWorkdays?: Array<Date | string | number>, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number, workdaysOnly?: boolean, workWeek?: Array<number> }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.autoHidePointMarkers",
+            "name": "autoHidePointMarkers",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.barGroupPadding",
+            "name": "barGroupPadding",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.barGroupWidth",
+            "name": "barGroupWidth",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAnnotationSettings",
+            "name": "commonAnnotationSettings",
+            "type": "dxChartCommonAnnotationConfig",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxChartCommonAnnotationConfig"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings",
+            "name": "commonAxisSettings",
+            "type": "{ aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, breakStyle?: { color?: string, line?: string, width?: number }, color?: string, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, position?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, displayMode?: string, font?: Font, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minValueMargin?: number | undefined, opacity?: number | undefined, placeholderSize?: number, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, title?: { alignment?: string, font?: Font, margin?: number, textOverflow?: string, wordWrap?: string }, valueMarginsEnabled?: boolean, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, breakStyle?: { color?: string, line?: string, width?: number }, color?: string, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, position?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, displayMode?: string, font?: Font, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minValueMargin?: number | undefined, opacity?: number | undefined, placeholderSize?: number, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, title?: { alignment?: string, font?: Font, margin?: number, textOverflow?: string, wordWrap?: string }, valueMarginsEnabled?: boolean, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonPaneSettings",
+            "name": "commonPaneSettings",
+            "type": "{ backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number } }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number } }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonSeriesSettings",
+            "name": "commonSeriesSettings",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.containerBackgroundColor",
+            "name": "containerBackgroundColor",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.crosshair",
+            "name": "crosshair",
+            "type": "{ color?: string, dashStyle?: string, enabled?: boolean, horizontalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, verticalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, dashStyle?: string, enabled?: boolean, horizontalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, verticalLine?: boolean | { color?: string, dashStyle?: string, label?: { backgroundColor?: string, customizeText?: Function, font?: Font, format?: Format | string | undefined, visible?: boolean }, opacity?: number | undefined, visible?: boolean, width?: number }, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.customizeAnnotation",
+            "name": "customizeAnnotation",
+            "type": "Function | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.customizeLabel",
+            "name": "customizeLabel",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.customizePoint",
+            "name": "customizePoint",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.dataPrepareSettings",
+            "name": "dataPrepareSettings",
+            "type": "{ checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ checkTypeForAllData?: boolean, convertToAxisDataType?: boolean, sortingMethod?: boolean | Function }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.defaultPane",
+            "name": "defaultPane",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.export",
+            "name": "export",
+            "type": "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, fileName?: string, formats?: Array<string>, margin?: number, printingEnabled?: boolean, svgToCanvas?: Function | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.legend",
+            "name": "legend",
+            "type": "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, hoverMode?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, position?: string, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string | undefined, border?: { color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, columnCount?: number, columnItemSpacing?: number, customizeHint?: Function, customizeItems?: Function, customizeText?: Function, font?: Font, horizontalAlignment?: string, hoverMode?: string, itemsAlignment?: string | undefined, itemTextPosition?: string | undefined, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, markerSize?: number, markerTemplate?: any | undefined, orientation?: string | undefined, paddingLeftRight?: number, paddingTopBottom?: number, position?: string, rowCount?: number, rowItemSpacing?: number, title?: string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }, verticalAlignment?: string, visible?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.loadingIndicator",
+            "name": "loadingIndicator",
+            "type": "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ backgroundColor?: string, enabled?: boolean, font?: Font, show?: boolean, text?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.maxBubbleSize",
+            "name": "maxBubbleSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.minBubbleSize",
+            "name": "minBubbleSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.negativesAsZeroes",
+            "name": "negativesAsZeroes",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.palette",
+            "name": "palette",
+            "type": "string | Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseChartOptions.paletteExtensionMode",
+            "name": "paletteExtensionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.panes",
+            "name": "panes",
+            "type": "Array<any | { backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number }, height?: number | string | undefined, name?: string | undefined }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ backgroundColor?: DevExpress.common.charts.ChartsColor | string, border?: { bottom?: boolean, color?: string, dashStyle?: string, left?: boolean, opacity?: number | undefined, right?: boolean, top?: boolean, visible?: boolean, width?: number }, height?: number | string | undefined, name?: string | undefined }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "BaseWidgetOptions.pathModified",
+            "name": "pathModified",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseChartOptions.pointSelectionMode",
+            "name": "pointSelectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.redrawOnResize",
+            "name": "redrawOnResize",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.resizePanesOnZoom",
+            "name": "resizePanesOnZoom",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.resolveLabelOverlapping",
+            "name": "resolveLabelOverlapping",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.rotated",
+            "name": "rotated",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.scrollBar",
+            "name": "scrollBar",
+            "type": "{ color?: string, offset?: number, opacity?: number | undefined, position?: string, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, offset?: number, opacity?: number | undefined, position?: string, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.series",
+            "name": "series",
+            "type": "any | undefined | Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.seriesSelectionMode",
+            "name": "seriesSelectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.seriesTemplate",
+            "name": "seriesTemplate",
+            "type": "{ customizeSeries?: Function, nameField?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ customizeSeries?: Function, nameField?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.size",
+            "name": "size",
+            "type": "{ height?: number | undefined, width?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ height?: number | undefined, width?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.stickyHovering",
+            "name": "stickyHovering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.synchronizeMultiAxes",
+            "name": "synchronizeMultiAxes",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.theme",
+            "name": "theme",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string, margin?: number | { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }, text?: string, textOverflow?: string, verticalAlignment?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.tooltip",
+            "name": "tooltip",
+            "type": "{ argumentFormat?: Format | string | undefined, arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, location?: string, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, shared?: boolean, zIndex?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ argumentFormat?: Format | string | undefined, arrowLength?: number, border?: { color?: string, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }, color?: string, container?: string | UserDefinedElement | undefined, contentTemplate?: any | undefined, cornerRadius?: number, customizeTooltip?: Function | undefined, enabled?: boolean, font?: Font, format?: Format | string | undefined, interactive?: boolean, location?: string, opacity?: number | undefined, paddingLeftRight?: number, paddingTopBottom?: number, shadow?: { blur?: number, color?: string, offsetX?: number, offsetY?: number, opacity?: number }, shared?: boolean, zIndex?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.valueAxis",
+            "name": "valueAxis",
+            "type": "Array<any | { aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, autoBreaksEnabled?: boolean, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxAutoBreakCount?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, multipleAxesSpacing?: number, name?: string | undefined, offset?: number | undefined, opacity?: number | undefined, pane?: string | undefined, placeholderSize?: number, position?: string, showZero?: boolean | undefined, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, synchronizedValue?: number | undefined, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, valueType?: string | undefined, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ aggregatedPointsPosition?: string, allowDecimals?: boolean | undefined, autoBreaksEnabled?: boolean, axisDivisionFactor?: number, breaks?: Array<DevExpress.common.charts.ScaleBreak>, breakStyle?: { color?: string, line?: string, width?: number }, categories?: Array<number | string | Date>, color?: string, constantLines?: Array<any | { color?: string, dashStyle?: string, displayBehindSeries?: boolean, extendAxis?: boolean, label?: { font?: Font, horizontalAlignment?: string, position?: string, text?: string | undefined, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, value?: Date | number | string | undefined, width?: number }>, constantLineStyle?: { color?: string, dashStyle?: string, label?: { font?: Font, horizontalAlignment?: string, position?: string, verticalAlignment?: string, visible?: boolean }, paddingLeftRight?: number, paddingTopBottom?: number, width?: number }, customPosition?: Date | number | string | undefined, discreteAxisDivisionMode?: string, endOnTick?: boolean | undefined, grid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, inverted?: boolean, label?: { alignment?: string | undefined, customizeHint?: Function, customizeText?: Function, displayMode?: string, font?: Font, format?: Format | string | undefined, indentFromAxis?: number, overlappingBehavior?: string, position?: string, rotationAngle?: number, staggeringSpacing?: number, template?: any | undefined, textOverflow?: string, visible?: boolean, wordWrap?: string }, linearThreshold?: number | undefined, logarithmBase?: number, maxAutoBreakCount?: number, maxValueMargin?: number | undefined, minorGrid?: { color?: string, opacity?: number | undefined, visible?: boolean, width?: number }, minorTick?: { color?: string, length?: number, opacity?: number, shift?: number, visible?: boolean, width?: number }, minorTickCount?: number | undefined, minorTickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, minValueMargin?: number | undefined, minVisualRangeLength?: number | string | undefined | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, multipleAxesSpacing?: number, name?: string | undefined, offset?: number | undefined, opacity?: number | undefined, pane?: string | undefined, placeholderSize?: number, position?: string, showZero?: boolean | undefined, strips?: Array<any | { color?: string | undefined, endValue?: Date | number | string | undefined, label?: { font?: Font, horizontalAlignment?: string, text?: string | undefined, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number, startValue?: Date | number | string | undefined }>, stripStyle?: { label?: { font?: Font, horizontalAlignment?: string, verticalAlignment?: string }, paddingLeftRight?: number, paddingTopBottom?: number }, synchronizedValue?: number | undefined, tick?: { color?: string, length?: number, opacity?: number | undefined, shift?: number, visible?: boolean, width?: number }, tickInterval?: number | string | { days?: number, hours?: number, milliseconds?: number, minutes?: number, months?: number, quarters?: number, seconds?: number, weeks?: number, years?: number }, title?: string | { alignment?: string, font?: Font, margin?: number, text?: string | undefined, textOverflow?: string, wordWrap?: string }, type?: string | undefined, valueMarginsEnabled?: boolean, valueType?: string | undefined, visible?: boolean, visualRange?: DevExpress.common.charts.VisualRange | Array<number | string | Date>, visualRangeUpdateMode?: string, wholeRange?: DevExpress.common.charts.VisualRange | undefined | Array<number | string | Date>, width?: number }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxChartOptions.zoomAndPan",
+            "name": "zoomAndPan",
+            "type": "{ allowMouseWheel?: boolean, allowTouchGestures?: boolean, argumentAxis?: string, dragBoxStyle?: { color?: string | undefined, opacity?: number | undefined }, dragToZoom?: boolean, panKey?: string, valueAxis?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ allowMouseWheel?: boolean, allowTouchGestures?: boolean, argumentAxis?: string, dragBoxStyle?: { color?: string | undefined, opacity?: number | undefined }, dragToZoom?: boolean, panKey?: string, valueAxis?: string }"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/viz/chart",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/core/element",
+            "importString": "{ UserDefinedElement }"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/chart",
+            "importString": "{ ArgumentAxisClickEvent, DisposingEvent, DoneEvent, DrawnEvent, dxChartCommonAnnotationConfig, ExportedEvent, ExportingEvent, FileSavingEvent, IncidentOccurredEvent, InitializedEvent, LegendClickEvent, OptionChangedEvent, PointClickEvent, PointHoverChangedEvent, PointSelectionChangedEvent, SeriesClickEvent, SeriesHoverChangedEvent, SeriesSelectionChangedEvent, TooltipHiddenEvent, TooltipShownEvent, ZoomEndEvent, ZoomStartEvent }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "adaptive-layout",
+            "propertyName": "adaptiveLayout",
+            "className": "DxoAdaptiveLayout",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "animation",
+            "propertyName": "animation",
+            "className": "DxoAnimation",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "annotation-dxi",
+            "propertyName": "annotations",
+            "className": "DxiAnnotation",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "border",
+            "propertyName": "border",
+            "className": "DxoBorder",
+            "events": []
+        },
+        {
+            "path": "font",
+            "propertyName": "font",
+            "className": "DxoFont",
+            "events": []
+        },
+        {
+            "path": "image",
+            "propertyName": "image",
+            "className": "DxoImage",
+            "events": []
+        },
+        {
+            "path": "shadow",
+            "propertyName": "shadow",
+            "className": "DxoShadow",
+            "events": []
+        },
+        {
+            "path": "argument-axis",
+            "propertyName": "argumentAxis",
+            "className": "DxoArgumentAxis",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "categoriesChange",
+                    "type": "EventEmitter<Array<number | string | Date>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "number",
+                            "string",
+                            "Date"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "category",
+                        "DocID": "dxChartOptions.argumentAxis.categories"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visualRangeChange",
+                    "type": "EventEmitter<DevExpress.common.charts.VisualRange | Array<number | string | Date>>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.common.charts.VisualRange"
+                        ],
+                        "ComplexTypes": [
+                            "VisualRange"
+                        ],
+                        "ItemPrimitiveTypes": [
+                            "number",
+                            "string",
+                            "Date"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "visualRange",
+                        "DocID": "dxChartOptions.argumentAxis.visualRange"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "aggregation-interval",
+            "propertyName": "aggregationInterval",
+            "className": "DxoAggregationInterval",
+            "events": []
+        },
+        {
+            "path": "break-dxi",
+            "propertyName": "breaks",
+            "className": "DxiBreak",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "break-style",
+            "propertyName": "breakStyle",
+            "className": "DxoBreakStyle",
+            "events": []
+        },
+        {
+            "path": "constant-line-dxi",
+            "propertyName": "constantLines",
+            "className": "DxiConstantLine",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": []
+        },
+        {
+            "path": "constant-line-style",
+            "propertyName": "constantLineStyle",
+            "className": "DxoConstantLineStyle",
+            "events": []
+        },
+        {
+            "path": "grid",
+            "propertyName": "grid",
+            "className": "DxoGrid",
+            "events": []
+        },
+        {
+            "path": "format",
+            "propertyName": "format",
+            "className": "DxoFormat",
+            "events": []
+        },
+        {
+            "path": "minor-grid",
+            "propertyName": "minorGrid",
+            "className": "DxoMinorGrid",
+            "events": []
+        },
+        {
+            "path": "minor-tick",
+            "propertyName": "minorTick",
+            "className": "DxoMinorTick",
+            "events": []
+        },
+        {
+            "path": "minor-tick-interval",
+            "propertyName": "minorTickInterval",
+            "className": "DxoMinorTickInterval",
+            "events": []
+        },
+        {
+            "path": "min-visual-range-length",
+            "propertyName": "minVisualRangeLength",
+            "className": "DxoMinVisualRangeLength",
+            "events": []
+        },
+        {
+            "path": "strip-dxi",
+            "propertyName": "strips",
+            "className": "DxiStrip",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "strip-style",
+            "propertyName": "stripStyle",
+            "className": "DxoStripStyle",
+            "events": []
+        },
+        {
+            "path": "tick",
+            "propertyName": "tick",
+            "className": "DxoTick",
+            "events": []
+        },
+        {
+            "path": "tick-interval",
+            "propertyName": "tickInterval",
+            "className": "DxoTickInterval",
+            "events": []
+        },
+        {
+            "path": "title",
+            "propertyName": "title",
+            "className": "DxoTitle",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "common-annotation-settings",
+            "propertyName": "commonAnnotationSettings",
+            "className": "DxoCommonAnnotationSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "common-axis-settings",
+            "propertyName": "commonAxisSettings",
+            "className": "DxoCommonAxisSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "common-pane-settings",
+            "propertyName": "commonPaneSettings",
+            "className": "DxoCommonPaneSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "background-color",
+            "propertyName": "backgroundColor",
+            "className": "DxoBackgroundColor",
+            "events": []
+        },
+        {
+            "path": "common-series-settings",
+            "propertyName": "commonSeriesSettings",
+            "className": "DxoCommonSeriesSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "aggregation",
+            "propertyName": "aggregation",
+            "className": "DxoAggregation",
+            "events": []
+        },
+        {
+            "path": "area",
+            "propertyName": "area",
+            "className": "DxoArea",
+            "events": []
+        },
+        {
+            "path": "hover-style",
+            "propertyName": "hoverStyle",
+            "className": "DxoHoverStyle",
+            "events": []
+        },
+        {
+            "path": "hatching",
+            "propertyName": "hatching",
+            "className": "DxoHatching",
+            "events": []
+        },
+        {
+            "path": "connector",
+            "propertyName": "connector",
+            "className": "DxoConnector",
+            "events": []
+        },
+        {
+            "path": "point",
+            "propertyName": "point",
+            "className": "DxoPoint",
+            "events": []
+        },
+        {
+            "path": "height",
+            "propertyName": "height",
+            "className": "DxoHeight",
+            "events": []
+        },
+        {
+            "path": "url",
+            "propertyName": "url",
+            "className": "DxoUrl",
+            "events": []
+        },
+        {
+            "path": "width",
+            "propertyName": "width",
+            "className": "DxoWidth",
+            "events": []
+        },
+        {
+            "path": "selection-style",
+            "propertyName": "selectionStyle",
+            "className": "DxoSelectionStyle",
+            "events": []
+        },
+        {
+            "path": "reduction",
+            "propertyName": "reduction",
+            "className": "DxoReduction",
+            "events": []
+        },
+        {
+            "path": "value-error-bar",
+            "propertyName": "valueErrorBar",
+            "className": "DxoValueErrorBar",
+            "events": []
+        },
+        {
+            "path": "bar",
+            "propertyName": "bar",
+            "className": "DxoBar",
+            "events": []
+        },
+        {
+            "path": "bubble",
+            "propertyName": "bubble",
+            "className": "DxoBubble",
+            "events": []
+        },
+        {
+            "path": "candlestick",
+            "propertyName": "candlestick",
+            "className": "DxoCandlestick",
+            "events": []
+        },
+        {
+            "path": "color",
+            "propertyName": "color",
+            "className": "DxoColor",
+            "events": []
+        },
+        {
+            "path": "fullstackedarea",
+            "propertyName": "fullstackedarea",
+            "className": "DxoFullstackedarea",
+            "events": []
+        },
+        {
+            "path": "fullstackedbar",
+            "propertyName": "fullstackedbar",
+            "className": "DxoFullstackedbar",
+            "events": []
+        },
+        {
+            "path": "fullstackedline",
+            "propertyName": "fullstackedline",
+            "className": "DxoFullstackedline",
+            "events": []
+        },
+        {
+            "path": "fullstackedspline",
+            "propertyName": "fullstackedspline",
+            "className": "DxoFullstackedspline",
+            "events": []
+        },
+        {
+            "path": "fullstackedsplinearea",
+            "propertyName": "fullstackedsplinearea",
+            "className": "DxoFullstackedsplinearea",
+            "events": []
+        },
+        {
+            "path": "argument-format",
+            "propertyName": "argumentFormat",
+            "className": "DxoArgumentFormat",
+            "events": []
+        },
+        {
+            "path": "line",
+            "propertyName": "line",
+            "className": "DxoLine",
+            "events": []
+        },
+        {
+            "path": "rangearea",
+            "propertyName": "rangearea",
+            "className": "DxoRangearea",
+            "events": []
+        },
+        {
+            "path": "rangebar",
+            "propertyName": "rangebar",
+            "className": "DxoRangebar",
+            "events": []
+        },
+        {
+            "path": "scatter",
+            "propertyName": "scatter",
+            "className": "DxoScatter",
+            "events": []
+        },
+        {
+            "path": "spline",
+            "propertyName": "spline",
+            "className": "DxoSpline",
+            "events": []
+        },
+        {
+            "path": "splinearea",
+            "propertyName": "splinearea",
+            "className": "DxoSplinearea",
+            "events": []
+        },
+        {
+            "path": "stackedarea",
+            "propertyName": "stackedarea",
+            "className": "DxoStackedarea",
+            "events": []
+        },
+        {
+            "path": "stackedbar",
+            "propertyName": "stackedbar",
+            "className": "DxoStackedbar",
+            "events": []
+        },
+        {
+            "path": "stackedline",
+            "propertyName": "stackedline",
+            "className": "DxoStackedline",
+            "events": []
+        },
+        {
+            "path": "stackedspline",
+            "propertyName": "stackedspline",
+            "className": "DxoStackedspline",
+            "events": []
+        },
+        {
+            "path": "stackedsplinearea",
+            "propertyName": "stackedsplinearea",
+            "className": "DxoStackedsplinearea",
+            "events": []
+        },
+        {
+            "path": "steparea",
+            "propertyName": "steparea",
+            "className": "DxoSteparea",
+            "events": []
+        },
+        {
+            "path": "stepline",
+            "propertyName": "stepline",
+            "className": "DxoStepline",
+            "events": []
+        },
+        {
+            "path": "stock",
+            "propertyName": "stock",
+            "className": "DxoStock",
+            "events": []
+        },
+        {
+            "path": "crosshair",
+            "propertyName": "crosshair",
+            "className": "DxoCrosshair",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "horizontal-line",
+            "propertyName": "horizontalLine",
+            "className": "DxoHorizontalLine",
+            "events": []
+        },
+        {
+            "path": "vertical-line",
+            "propertyName": "verticalLine",
+            "className": "DxoVerticalLine",
+            "events": []
+        },
+        {
+            "path": "data-prepare-settings",
+            "propertyName": "dataPrepareSettings",
+            "className": "DxoDataPrepareSettings",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "export",
+            "propertyName": "export",
+            "className": "DxoExport",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "legend",
+            "propertyName": "legend",
+            "className": "DxoLegend",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "margin",
+            "propertyName": "margin",
+            "className": "DxoMargin",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "subtitle",
+            "propertyName": "subtitle",
+            "className": "DxoSubtitle",
+            "events": []
+        },
+        {
+            "path": "loading-indicator",
+            "propertyName": "loadingIndicator",
+            "className": "DxoLoadingIndicator",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "showChange",
+                    "type": "EventEmitter<boolean>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "boolean"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "BaseWidgetOptions.loadingIndicator.show"
+                    }
+                }
+            ],
+            "root": true
+        },
+        {
+            "path": "pane-dxi",
+            "propertyName": "panes",
+            "className": "DxiPane",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "scroll-bar",
+            "propertyName": "scrollBar",
+            "className": "DxoScrollBar",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "series-dxi",
+            "propertyName": "series",
+            "className": "DxiSeries",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "series-template",
+            "propertyName": "seriesTemplate",
+            "className": "DxoSeriesTemplate",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "size",
+            "propertyName": "size",
+            "className": "DxoSize",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "tooltip",
+            "propertyName": "tooltip",
+            "className": "DxoTooltip",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "value-axis-dxi",
+            "propertyName": "valueAxis",
+            "className": "DxiValueAxis",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "categoriesChange",
+                    "type": "EventEmitter<Array<number | string | Date>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "number",
+                            "string",
+                            "Date"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "category",
+                        "DocID": "dxChartOptions.valueAxis.categories"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "visualRangeChange",
+                    "type": "EventEmitter<DevExpress.common.charts.VisualRange | Array<number | string | Date>>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "DevExpress.common.charts.VisualRange"
+                        ],
+                        "ComplexTypes": [
+                            "VisualRange"
+                        ],
+                        "ItemPrimitiveTypes": [
+                            "number",
+                            "string",
+                            "Date"
+                        ],
+                        "TypeImports": [
+                            {
+                                "Name": "default",
+                                "Alias": "DevExpress",
+                                "Path": "bundles/dx.all"
+                            }
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "visualRange",
+                        "DocID": "dxChartOptions.valueAxis.visualRange"
+                    }
+                }
+            ],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "zoom-and-pan",
+            "propertyName": "zoomAndPan",
+            "className": "DxoZoomAndPan",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "drag-box-style",
+            "propertyName": "dragBoxStyle",
+            "className": "DxoDragBoxStyle",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

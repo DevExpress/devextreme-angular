@@ -1,0 +1,2340 @@
+{
+    "docID": "BaseLegend.title",
+    "className": "DxoTitle",
+    "selector": "dxo-title",
+    "optionName": "title",
+    "properties": [
+        {
+            "docID": "BaseLegend.title.font",
+            "name": "font",
+            "type": "Font",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Font"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.horizontalAlignment",
+            "name": "horizontalAlignment",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.margin",
+            "name": "margin",
+            "type": "{ bottom?: number, left?: number, right?: number, top?: number } | number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ bottom?: number, left?: number, right?: number, top?: number }",
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.placeholderSize",
+            "name": "placeholderSize",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.subtitle",
+            "name": "subtitle",
+            "type": "string | { font?: Font, offset?: number, text?: string } | { font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, offset?: number, text?: string }",
+                    "{ font?: Font, offset?: number, text?: string, textOverflow?: string, wordWrap?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.text",
+            "name": "text",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title.verticalAlignment",
+            "name": "verticalAlignment",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title.textOverflow",
+            "name": "textOverflow",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseWidgetOptions.title.wordWrap",
+            "name": "wordWrap",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.commonAxisSettings.title.alignment",
+            "name": "alignment",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "title",
+    "propertyName": "title",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.margin"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.argumentAxis.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.margin"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.alignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.margin"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxChartOptions.valueAxis.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.commonAxisSettings.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.horizontalAlignment"
+        },
+        {
+            "DocID": "BaseLegend.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle.text"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseWidgetOptions.title.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseWidgetOptions.title.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "BaseWidgetOptions.title.placeholderSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.subtitle",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.font"
+                },
+                "offset": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.offset"
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.text"
+                },
+                "textOverflow": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.textOverflow"
+                },
+                "wordWrap": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseWidgetOptions.title.subtitle.wordWrap"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.text"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.textOverflow"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseWidgetOptions.title.wordWrap"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

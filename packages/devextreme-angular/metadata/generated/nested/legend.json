@@ -1,0 +1,1946 @@
+{
+    "docID": "dxBarGaugeOptions.legend",
+    "className": "DxoLegend",
+    "selector": "dxo-legend",
+    "optionName": "legend",
+    "properties": [
+        {
+            "docID": "BaseLegend.backgroundColor",
+            "name": "backgroundColor",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.border",
+            "name": "border",
+            "type": "{ color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ color?: string, cornerRadius?: number, dashStyle?: string, opacity?: number | undefined, visible?: boolean, width?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.columnCount",
+            "name": "columnCount",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.columnItemSpacing",
+            "name": "columnItemSpacing",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.customizeHint",
+            "name": "customizeHint",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.customizeItems",
+            "name": "customizeItems",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.customizeText",
+            "name": "customizeText",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.font",
+            "name": "font",
+            "type": "Font",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Font"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.horizontalAlignment",
+            "name": "horizontalAlignment",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.itemsAlignment",
+            "name": "itemsAlignment",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.itemTextFormat",
+            "name": "itemTextFormat",
+            "type": "Format | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Format",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.itemTextPosition",
+            "name": "itemTextPosition",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.margin",
+            "name": "margin",
+            "type": "number | { bottom?: number, left?: number, right?: number, top?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "{ bottom?: number, left?: number, right?: number, top?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.markerSize",
+            "name": "markerSize",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.markerTemplate",
+            "name": "markerTemplate",
+            "type": "any | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.orientation",
+            "name": "orientation",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.paddingLeftRight",
+            "name": "paddingLeftRight",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.paddingTopBottom",
+            "name": "paddingTopBottom",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.rowCount",
+            "name": "rowCount",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.rowItemSpacing",
+            "name": "rowItemSpacing",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.title",
+            "name": "title",
+            "type": "string | { font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "{ font?: Font, horizontalAlignment?: string | undefined, margin?: { bottom?: number, left?: number, right?: number, top?: number }, placeholderSize?: number | undefined, subtitle?: string | { font?: Font, offset?: number, text?: string }, text?: string, verticalAlignment?: string }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "BaseLegend.verticalAlignment",
+            "name": "verticalAlignment",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxBarGaugeOptions.legend.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.legend.hoverMode",
+            "name": "hoverMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxChartOptions.legend.position",
+            "name": "position",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "legend",
+    "propertyName": "legend",
+    "collectionNestedComponents": [],
+    "imports": [
+        {
+            "path": "devextreme/localization",
+            "importString": "{ Format }"
+        },
+        {
+            "path": "devextreme/viz/core/base_widget",
+            "importString": "{ Font }"
+        }
+    ],
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.backgroundColor"
+        },
+        {
+            "DocID": "BaseLegend.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.color"
+                },
+                "cornerRadius": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.cornerRadius"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.dashStyle"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.border.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseLegend.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxBarGaugeOptions.legend.customizeHint"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxBarGaugeOptions.legend.customizeItems"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxBarGaugeOptions.legend.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemsAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "Format",
+                "string",
+                "undefined"
+            ],
+            "ComplexTypes": [
+                "Format"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Format",
+                    "Path": "localization"
+                }
+            ],
+            "DocID": "dxBarGaugeOptions.legend.itemTextFormat"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemTextPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.markerSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxBarGaugeOptions.legend.markerTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.horizontalAlignment"
+                },
+                "margin": {
+                    "DocID": "BaseLegend.title.margin",
+                    "Options": {
+                        "bottom": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.bottom"
+                        },
+                        "left": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.left"
+                        },
+                        "right": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.right"
+                        },
+                        "top": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.top"
+                        }
+                    }
+                },
+                "placeholderSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.placeholderSize"
+                },
+                "subtitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.font"
+                        },
+                        "offset": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.offset"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.text"
+                        }
+                    }
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxBarGaugeOptions.legend.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.backgroundColor"
+        },
+        {
+            "DocID": "BaseLegend.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.color"
+                },
+                "cornerRadius": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.cornerRadius"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.dashStyle"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.border.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseLegend.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxChartOptions.legend.customizeHint"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "BaseChartOptions.legend.customizeItems"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxChartOptions.legend.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.legend.hoverMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemsAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemTextPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.markerSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "BaseChartOptions.legend.markerTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxChartOptions.legend.position"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.horizontalAlignment"
+                },
+                "margin": {
+                    "DocID": "BaseLegend.title.margin",
+                    "Options": {
+                        "bottom": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.bottom"
+                        },
+                        "left": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.left"
+                        },
+                        "right": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.right"
+                        },
+                        "top": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.top"
+                        }
+                    }
+                },
+                "placeholderSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.placeholderSize"
+                },
+                "subtitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.font"
+                        },
+                        "offset": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.offset"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.text"
+                        }
+                    }
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "BaseLegend.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.backgroundColor"
+        },
+        {
+            "DocID": "BaseLegend.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.color"
+                },
+                "cornerRadius": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.cornerRadius"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.dashStyle"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.border.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseLegend.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFunnelOptions.legend.customizeHint"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFunnelOptions.legend.customizeItems"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxFunnelOptions.legend.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemsAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemTextPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.markerSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxFunnelOptions.legend.markerTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.horizontalAlignment"
+                },
+                "margin": {
+                    "DocID": "BaseLegend.title.margin",
+                    "Options": {
+                        "bottom": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.bottom"
+                        },
+                        "left": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.left"
+                        },
+                        "right": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.right"
+                        },
+                        "top": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.top"
+                        }
+                    }
+                },
+                "placeholderSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.placeholderSize"
+                },
+                "subtitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.font"
+                        },
+                        "offset": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.offset"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.text"
+                        }
+                    }
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxFunnelOptions.legend.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.backgroundColor"
+        },
+        {
+            "DocID": "BaseLegend.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.color"
+                },
+                "cornerRadius": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.cornerRadius"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.dashStyle"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.border.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseLegend.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxPieChartOptions.legend.customizeHint"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxPieChartOptions.legend.customizeItems"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxPieChartOptions.legend.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPieChartOptions.legend.hoverMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemsAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemTextPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.markerSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxPieChartOptions.legend.markerTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.horizontalAlignment"
+                },
+                "margin": {
+                    "DocID": "BaseLegend.title.margin",
+                    "Options": {
+                        "bottom": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.bottom"
+                        },
+                        "left": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.left"
+                        },
+                        "right": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.right"
+                        },
+                        "top": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.top"
+                        }
+                    }
+                },
+                "placeholderSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.placeholderSize"
+                },
+                "subtitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.font"
+                        },
+                        "offset": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.offset"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.text"
+                        }
+                    }
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "BaseLegend.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.backgroundColor"
+        },
+        {
+            "DocID": "BaseLegend.border",
+            "Options": {
+                "color": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.color"
+                },
+                "cornerRadius": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.cornerRadius"
+                },
+                "dashStyle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.border.dashStyle"
+                },
+                "opacity": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.border.opacity"
+                },
+                "visible": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "BaseLegend.border.visible"
+                },
+                "width": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.border.width"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.columnItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxPolarChartOptions.legend.customizeHint"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "BaseChartOptions.legend.customizeItems"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "IsFunc": true,
+            "DocID": "dxPolarChartOptions.legend.customizeText"
+        },
+        {
+            "PrimitiveTypes": [
+                "Font"
+            ],
+            "ComplexTypes": [
+                "VizFont"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "Font",
+                    "Path": "viz/core/base_widget"
+                }
+            ],
+            "DocID": "BaseLegend.font"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.horizontalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxPolarChartOptions.legend.hoverMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemsAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.itemTextPosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.margin",
+            "Options": {
+                "bottom": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.bottom"
+                },
+                "left": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.left"
+                },
+                "right": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.right"
+                },
+                "top": {
+                    "PrimitiveTypes": [
+                        "number"
+                    ],
+                    "DocID": "BaseLegend.margin.top"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.markerSize"
+        },
+        {
+            "PrimitiveTypes": [
+                "any",
+                "undefined"
+            ],
+            "IsTemplate": true,
+            "DocID": "BaseChartOptions.legend.markerTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "BaseLegend.orientation"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingLeftRight"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.paddingTopBottom"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowCount"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "BaseLegend.rowItemSpacing"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.title",
+            "Options": {
+                "font": {
+                    "PrimitiveTypes": [
+                        "Font"
+                    ],
+                    "ComplexTypes": [
+                        "VizFont"
+                    ],
+                    "TypeImports": [
+                        {
+                            "Name": "Font",
+                            "Path": "viz/core/base_widget"
+                        }
+                    ],
+                    "DocID": "BaseLegend.title.font"
+                },
+                "horizontalAlignment": {
+                    "PrimitiveTypes": [
+                        "string",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.horizontalAlignment"
+                },
+                "margin": {
+                    "DocID": "BaseLegend.title.margin",
+                    "Options": {
+                        "bottom": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.bottom"
+                        },
+                        "left": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.left"
+                        },
+                        "right": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.right"
+                        },
+                        "top": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.margin.top"
+                        }
+                    }
+                },
+                "placeholderSize": {
+                    "PrimitiveTypes": [
+                        "number",
+                        "undefined"
+                    ],
+                    "DocID": "BaseLegend.title.placeholderSize"
+                },
+                "subtitle": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.subtitle",
+                    "Options": {
+                        "font": {
+                            "PrimitiveTypes": [
+                                "Font"
+                            ],
+                            "ComplexTypes": [
+                                "VizFont"
+                            ],
+                            "TypeImports": [
+                                {
+                                    "Name": "Font",
+                                    "Path": "viz/core/base_widget"
+                                }
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.font"
+                        },
+                        "offset": {
+                            "PrimitiveTypes": [
+                                "number"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.offset"
+                        },
+                        "text": {
+                            "PrimitiveTypes": [
+                                "string"
+                            ],
+                            "DocID": "BaseLegend.title.subtitle.text"
+                        }
+                    }
+                },
+                "text": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.text"
+                },
+                "verticalAlignment": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "BaseLegend.title.verticalAlignment"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "BaseLegend.verticalAlignment"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "BaseLegend.visible"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

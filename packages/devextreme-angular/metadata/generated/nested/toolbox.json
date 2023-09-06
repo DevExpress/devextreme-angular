@@ -1,0 +1,149 @@
+{
+    "docID": "dxDiagramOptions.toolbox",
+    "className": "DxoToolbox",
+    "selector": "dxo-toolbox",
+    "optionName": "toolbox",
+    "properties": [
+        {
+            "docID": "dxDiagramOptions.toolbox.groups",
+            "name": "groups",
+            "type": "Array<any | string | { category?: string, displayMode?: string, expanded?: boolean, shapes?: Array<string>, title?: string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "string",
+                    "{ category?: string, displayMode?: string, expanded?: boolean, shapes?: Array<string>, title?: string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.shapeIconsPerRow",
+            "name": "shapeIconsPerRow",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.showSearch",
+            "name": "showSearch",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.visibility",
+            "name": "visibility",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxDiagramOptions.toolbox.width",
+            "name": "width",
+            "type": "number | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "path": "toolbox",
+    "propertyName": "toolbox",
+    "collectionNestedComponents": [
+        {
+            "className": "DxiGroup",
+            "path": "group-dxi",
+            "propertyName": "groups"
+        }
+    ],
+    "options": [
+        {
+            "ItemPrimitiveTypes": [
+                "any",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "group",
+            "DocID": "dxDiagramOptions.toolbox.groups",
+            "Options": {
+                "category": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.toolbox.groups.category"
+                },
+                "displayMode": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.toolbox.groups.displayMode"
+                },
+                "expanded": {
+                    "PrimitiveTypes": [
+                        "boolean"
+                    ],
+                    "DocID": "dxDiagramOptions.toolbox.groups.expanded"
+                },
+                "shapes": {
+                    "ItemPrimitiveTypes": [
+                        "string"
+                    ],
+                    "IsCollection": true,
+                    "SingularName": "shape",
+                    "DocID": "dxDiagramOptions.toolbox.groups.shapes"
+                },
+                "title": {
+                    "PrimitiveTypes": [
+                        "string"
+                    ],
+                    "DocID": "dxDiagramOptions.toolbox.groups.title"
+                }
+            }
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.shapeIconsPerRow"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.showSearch"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.visibility"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "undefined"
+            ],
+            "DocID": "dxDiagramOptions.toolbox.width"
+        }
+    ],
+    "baseClass": "NestedOption",
+    "basePath": "devextreme-angular/core",
+    "hasSimpleBaseClass": true
+}

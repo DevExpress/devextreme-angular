@@ -1,0 +1,764 @@
+{
+    "docID": "dxForm",
+    "className": "DxForm",
+    "widgetName": "dxForm",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-form",
+    "events": [
+        {
+            "docID": "dxFormOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxFormOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxFormOptions.onEditorEnterKey",
+            "emit": "onEditorEnterKey",
+            "subscribe": "editorEnterKey",
+            "type": "EventEmitter<EditorEnterKeyEvent>"
+        },
+        {
+            "docID": "dxFormOptions.onFieldDataChanged",
+            "emit": "onFieldDataChanged",
+            "subscribe": "fieldDataChanged",
+            "type": "EventEmitter<FieldDataChangedEvent>"
+        },
+        {
+            "docID": "dxFormOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxFormOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "activeStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "alignItemLabelsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "alignItemLabelsInAllGroupsChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "colCountChange",
+            "type": "EventEmitter<number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "colCountByScreenChange",
+            "type": "EventEmitter<{ lg?: number | undefined, md?: number | undefined, sm?: number | undefined, xs?: number | undefined }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeItemChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "formDataChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hoverStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "isDirtyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "itemsChange",
+            "type": "EventEmitter<Array<DevExpress.ui.dxFormSimpleItem | DevExpress.ui.dxFormGroupItem | DevExpress.ui.dxFormTabbedItem | DevExpress.ui.dxFormEmptyItem | DevExpress.ui.dxFormButtonItem>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelLocationChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "labelModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minColWidthChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "optionalMarkChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "readOnlyChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "requiredMarkChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "requiredMessageChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "screenByWidthChange",
+            "type": "EventEmitter<Function>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showColonAfterLabelChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showOptionalMarkChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showRequiredMarkChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showValidationSummaryChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "validationGroupChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.alignItemLabels",
+            "name": "alignItemLabels",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.alignItemLabelsInAllGroups",
+            "name": "alignItemLabelsInAllGroups",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.colCount",
+            "name": "colCount",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.colCountByScreen",
+            "name": "colCountByScreen",
+            "type": "{ lg?: number | undefined, md?: number | undefined, sm?: number | undefined, xs?: number | undefined }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ lg?: number | undefined, md?: number | undefined, sm?: number | undefined, xs?: number | undefined }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.customizeItem",
+            "name": "customizeItem",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.formData",
+            "name": "formData",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.items",
+            "name": "items",
+            "type": "Array<DevExpress.ui.dxFormSimpleItem | DevExpress.ui.dxFormGroupItem | DevExpress.ui.dxFormTabbedItem | DevExpress.ui.dxFormEmptyItem | DevExpress.ui.dxFormButtonItem>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "DevExpress.ui.dxFormSimpleItem",
+                    "DevExpress.ui.dxFormGroupItem",
+                    "DevExpress.ui.dxFormTabbedItem",
+                    "DevExpress.ui.dxFormEmptyItem",
+                    "DevExpress.ui.dxFormButtonItem"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxFormOptions.labelLocation",
+            "name": "labelLocation",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.labelMode",
+            "name": "labelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.minColWidth",
+            "name": "minColWidth",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.optionalMark",
+            "name": "optionalMark",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.requiredMark",
+            "name": "requiredMark",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.requiredMessage",
+            "name": "requiredMessage",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.screenByWidth",
+            "name": "screenByWidth",
+            "type": "Function",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.scrollingEnabled",
+            "name": "scrollingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.showColonAfterLabel",
+            "name": "showColonAfterLabel",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.showOptionalMark",
+            "name": "showOptionalMark",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.showRequiredMark",
+            "name": "showRequiredMark",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.showValidationSummary",
+            "name": "showValidationSummary",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxFormOptions.validationGroup",
+            "name": "validationGroup",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/form",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/ui/form",
+            "importString": "{ ContentReadyEvent, DisposingEvent, EditorEnterKeyEvent, FieldDataChangedEvent, InitializedEvent, OptionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "col-count-by-screen",
+            "propertyName": "colCountByScreen",
+            "className": "DxoColCountByScreen",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "item-dxi",
+            "propertyName": "items",
+            "className": "DxiItem",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "label",
+            "propertyName": "label",
+            "className": "DxoLabel",
+            "events": [],
+            "hasTemplate": true
+        },
+        {
+            "path": "validation-rule-dxi",
+            "propertyName": "validationRules",
+            "className": "DxiValidationRule",
+            "events": [],
+            "isCollection": true
+        },
+        {
+            "path": "tab-panel-options",
+            "propertyName": "tabPanelOptions",
+            "className": "DxoTabPanelOptions",
+            "events": [
+                {
+                    "isInternal": true,
+                    "emit": "itemsChange",
+                    "type": "EventEmitter<Array<string | any | { badge?: string, disabled?: boolean, html?: string, icon?: string, tabTemplate?: any, template?: any, text?: string, title?: string }>>",
+                    "option": {
+                        "ItemPrimitiveTypes": [
+                            "string",
+                            "any"
+                        ],
+                        "IsCollection": true,
+                        "IsChangeable": true,
+                        "SingularName": "item",
+                        "DocID": "dxTabPanelOptions.items",
+                        "Options": {
+                            "badge": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.badge"
+                            },
+                            "disabled": {
+                                "PrimitiveTypes": [
+                                    "boolean"
+                                ],
+                                "DocID": "CollectionWidgetItem.disabled"
+                            },
+                            "html": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "CollectionWidgetItem.html"
+                            },
+                            "icon": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.icon"
+                            },
+                            "tabTemplate": {
+                                "PrimitiveTypes": [
+                                    "any"
+                                ],
+                                "IsTemplate": true,
+                                "DocID": "dxTabPanelItem.tabTemplate"
+                            },
+                            "template": {
+                                "PrimitiveTypes": [
+                                    "any"
+                                ],
+                                "IsTemplate": true,
+                                "DocID": "CollectionWidgetItem.template"
+                            },
+                            "text": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "CollectionWidgetItem.text"
+                            },
+                            "title": {
+                                "PrimitiveTypes": [
+                                    "string"
+                                ],
+                                "DocID": "dxTabPanelItem.title"
+                            }
+                        }
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedIndexChange",
+                    "type": "EventEmitter<number>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "number"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "dxMultiViewOptions.selectedIndex"
+                    }
+                },
+                {
+                    "isInternal": true,
+                    "emit": "selectedItemChange",
+                    "type": "EventEmitter<any>",
+                    "option": {
+                        "PrimitiveTypes": [
+                            "any"
+                        ],
+                        "IsChangeable": true,
+                        "DocID": "CollectionWidgetOptions.selectedItem"
+                    }
+                }
+            ]
+        },
+        {
+            "path": "tab-dxi",
+            "propertyName": "tabs",
+            "className": "DxiTab",
+            "events": [],
+            "isCollection": true,
+            "hasTemplate": true
+        },
+        {
+            "path": "button-options",
+            "propertyName": "buttonOptions",
+            "className": "DxoButtonOptions",
+            "events": []
+        }
+    ],
+    "renderReexports": true
+}

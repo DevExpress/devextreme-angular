@@ -1,0 +1,1164 @@
+{
+    "docID": "dxScheduler",
+    "className": "DxScheduler",
+    "widgetName": "dxScheduler",
+    "isViz": false,
+    "isExtension": false,
+    "selector": "dx-scheduler",
+    "events": [
+        {
+            "docID": "dxSchedulerOptions.onAppointmentAdded",
+            "emit": "onAppointmentAdded",
+            "subscribe": "appointmentAdded",
+            "type": "EventEmitter<AppointmentAddedEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentAdding",
+            "emit": "onAppointmentAdding",
+            "subscribe": "appointmentAdding",
+            "type": "EventEmitter<AppointmentAddingEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentClick",
+            "emit": "onAppointmentClick",
+            "subscribe": "appointmentClick",
+            "type": "EventEmitter<AppointmentClickEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentContextMenu",
+            "emit": "onAppointmentContextMenu",
+            "subscribe": "appointmentContextMenu",
+            "type": "EventEmitter<AppointmentContextMenuEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentDblClick",
+            "emit": "onAppointmentDblClick",
+            "subscribe": "appointmentDblClick",
+            "type": "EventEmitter<AppointmentDblClickEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentDeleted",
+            "emit": "onAppointmentDeleted",
+            "subscribe": "appointmentDeleted",
+            "type": "EventEmitter<AppointmentDeletedEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentDeleting",
+            "emit": "onAppointmentDeleting",
+            "subscribe": "appointmentDeleting",
+            "type": "EventEmitter<AppointmentDeletingEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentFormOpening",
+            "emit": "onAppointmentFormOpening",
+            "subscribe": "appointmentFormOpening",
+            "type": "EventEmitter<AppointmentFormOpeningEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentRendered",
+            "emit": "onAppointmentRendered",
+            "subscribe": "appointmentRendered",
+            "type": "EventEmitter<AppointmentRenderedEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentTooltipShowing",
+            "emit": "onAppointmentTooltipShowing",
+            "subscribe": "appointmentTooltipShowing",
+            "type": "EventEmitter<AppointmentTooltipShowingEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentUpdated",
+            "emit": "onAppointmentUpdated",
+            "subscribe": "appointmentUpdated",
+            "type": "EventEmitter<AppointmentUpdatedEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onAppointmentUpdating",
+            "emit": "onAppointmentUpdating",
+            "subscribe": "appointmentUpdating",
+            "type": "EventEmitter<AppointmentUpdatingEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onCellClick",
+            "emit": "onCellClick",
+            "subscribe": "cellClick",
+            "type": "EventEmitter<CellClickEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onCellContextMenu",
+            "emit": "onCellContextMenu",
+            "subscribe": "cellContextMenu",
+            "type": "EventEmitter<CellContextMenuEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onContentReady",
+            "emit": "onContentReady",
+            "subscribe": "contentReady",
+            "type": "EventEmitter<ContentReadyEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onDisposing",
+            "emit": "onDisposing",
+            "subscribe": "disposing",
+            "type": "EventEmitter<DisposingEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onInitialized",
+            "emit": "onInitialized",
+            "subscribe": "initialized",
+            "type": "EventEmitter<InitializedEvent>"
+        },
+        {
+            "docID": "dxSchedulerOptions.onOptionChanged",
+            "emit": "onOptionChanged",
+            "subscribe": "optionChanged",
+            "type": "EventEmitter<OptionChangedEvent>"
+        },
+        {
+            "isInternal": true,
+            "emit": "accessKeyChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "adaptivityEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allDayExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "allDayPanelModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "appointmentCollectorTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "appointmentDraggingChange",
+            "type": "EventEmitter<{ autoScroll?: boolean, data?: any | undefined, group?: string | undefined, onAdd?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, scrollSensitivity?: number, scrollSpeed?: number }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "appointmentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "appointmentTooltipTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "cellDurationChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "crossScrollingEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "currentDateChange",
+            "type": "EventEmitter<Date | number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "currentViewChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "customizeDateNavigatorTextChange",
+            "type": "EventEmitter<Function | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataCellTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dataSourceChange",
+            "type": "EventEmitter<DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.dxSchedulerAppointment>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dateCellTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dateSerializationFormatChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "descriptionExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "disabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "dropDownAppointmentTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "editingChange",
+            "type": "EventEmitter<boolean | { allowAdding?: boolean, allowDeleting?: boolean, allowDragging?: boolean, allowResizing?: boolean, allowTimeZoneEditing?: boolean, allowUpdating?: boolean }>"
+        },
+        {
+            "isInternal": true,
+            "emit": "elementAttrChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "endDateExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "endDateTimeZoneExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "endDayHourChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "firstDayOfWeekChange",
+            "type": "EventEmitter<number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "focusStateEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupByDateChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "groupsChange",
+            "type": "EventEmitter<Array<string>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "heightChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "hintChange",
+            "type": "EventEmitter<string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "indicatorUpdateIntervalChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxChange",
+            "type": "EventEmitter<Date | number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "maxAppointmentsPerCellChange",
+            "type": "EventEmitter<number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "minChange",
+            "type": "EventEmitter<Date | number | string | undefined>"
+        },
+        {
+            "isInternal": true,
+            "emit": "noDataTextChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "recurrenceEditModeChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "recurrenceExceptionExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "recurrenceRuleExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "remoteFilteringChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resourceCellTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "resourcesChange",
+            "type": "EventEmitter<Array<any | { allowMultiple?: boolean, colorExpr?: string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, displayExpr?: Function | string, fieldExpr?: string, label?: string, useColorAsDefault?: boolean, valueExpr?: Function | string }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "rtlEnabledChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "scrollingChange",
+            "type": "EventEmitter<dxSchedulerScrolling>"
+        },
+        {
+            "isInternal": true,
+            "emit": "selectedCellDataChange",
+            "type": "EventEmitter<Array<any>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "shadeUntilCurrentTimeChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showAllDayPanelChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "showCurrentTimeIndicatorChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "startDateExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "startDateTimeZoneExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "startDayHourChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "tabIndexChange",
+            "type": "EventEmitter<number>"
+        },
+        {
+            "isInternal": true,
+            "emit": "textExprChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "timeCellTemplateChange",
+            "type": "EventEmitter<any>"
+        },
+        {
+            "isInternal": true,
+            "emit": "timeZoneChange",
+            "type": "EventEmitter<string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "useDropDownViewSwitcherChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "viewsChange",
+            "type": "EventEmitter<string | Array<string | any | { agendaDuration?: number, allDayPanelMode?: string, appointmentCollectorTemplate?: any, appointmentTemplate?: any, appointmentTooltipTemplate?: any, cellDuration?: number, dataCellTemplate?: any, dateCellTemplate?: any, dropDownAppointmentTemplate?: any, endDayHour?: number, firstDayOfWeek?: number | string | undefined, groupByDate?: boolean, groupOrientation?: string, groups?: Array<string>, intervalCount?: number, maxAppointmentsPerCell?: number | string, name?: string | undefined, resourceCellTemplate?: any, scrolling?: dxSchedulerScrolling, startDate?: Date | number | string | undefined, startDayHour?: number, timeCellTemplate?: any, type?: string | undefined }>>"
+        },
+        {
+            "isInternal": true,
+            "emit": "visibleChange",
+            "type": "EventEmitter<boolean>"
+        },
+        {
+            "isInternal": true,
+            "emit": "widthChange",
+            "type": "EventEmitter<number | Function | string | undefined>"
+        }
+    ],
+    "properties": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.adaptivityEnabled",
+            "name": "adaptivityEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.allDayExpr",
+            "name": "allDayExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.allDayPanelMode",
+            "name": "allDayPanelMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.appointmentCollectorTemplate",
+            "name": "appointmentCollectorTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.appointmentDragging",
+            "name": "appointmentDragging",
+            "type": "{ autoScroll?: boolean, data?: any | undefined, group?: string | undefined, onAdd?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, scrollSensitivity?: number, scrollSpeed?: number }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "{ autoScroll?: boolean, data?: any | undefined, group?: string | undefined, onAdd?: Function, onDragEnd?: Function, onDragMove?: Function, onDragStart?: Function, onRemove?: Function, scrollSensitivity?: number, scrollSpeed?: number }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.appointmentTemplate",
+            "name": "appointmentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.appointmentTooltipTemplate",
+            "name": "appointmentTooltipTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.cellDuration",
+            "name": "cellDuration",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.crossScrollingEnabled",
+            "name": "crossScrollingEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.currentDate",
+            "name": "currentDate",
+            "type": "Date | number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.currentView",
+            "name": "currentView",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.customizeDateNavigatorText",
+            "name": "customizeDateNavigatorText",
+            "type": "Function | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.dataCellTemplate",
+            "name": "dataCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.dataSource",
+            "name": "dataSource",
+            "type": "DataSource | DataSourceOptions | Store | null | string | Array<DevExpress.ui.dxSchedulerAppointment>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "DataSource",
+                    "DataSourceOptions",
+                    "Store",
+                    "null",
+                    "string"
+                ],
+                "arrayTypes": [
+                    "DevExpress.ui.dxSchedulerAppointment"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSchedulerOptions.dateCellTemplate",
+            "name": "dateCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.dateSerializationFormat",
+            "name": "dateSerializationFormat",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.descriptionExpr",
+            "name": "descriptionExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.dropDownAppointmentTemplate",
+            "isDeprecated": true,
+            "name": "dropDownAppointmentTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.editing",
+            "name": "editing",
+            "type": "boolean | { allowAdding?: boolean, allowDeleting?: boolean, allowDragging?: boolean, allowResizing?: boolean, allowTimeZoneEditing?: boolean, allowUpdating?: boolean }",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean",
+                    "{ allowAdding?: boolean, allowDeleting?: boolean, allowDragging?: boolean, allowResizing?: boolean, allowTimeZoneEditing?: boolean, allowUpdating?: boolean }"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.endDateExpr",
+            "name": "endDateExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.endDateTimeZoneExpr",
+            "name": "endDateTimeZoneExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.endDayHour",
+            "name": "endDayHour",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.firstDayOfWeek",
+            "name": "firstDayOfWeek",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.groupByDate",
+            "name": "groupByDate",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.groups",
+            "name": "groups",
+            "type": "Array<string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "string"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.indicatorUpdateInterval",
+            "name": "indicatorUpdateInterval",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.max",
+            "name": "max",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.maxAppointmentsPerCell",
+            "name": "maxAppointmentsPerCell",
+            "type": "number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.min",
+            "name": "min",
+            "type": "Date | number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.noDataText",
+            "name": "noDataText",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.recurrenceEditMode",
+            "name": "recurrenceEditMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.recurrenceExceptionExpr",
+            "name": "recurrenceExceptionExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.recurrenceRuleExpr",
+            "name": "recurrenceRuleExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.remoteFiltering",
+            "name": "remoteFiltering",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.resourceCellTemplate",
+            "name": "resourceCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.resources",
+            "name": "resources",
+            "type": "Array<any | { allowMultiple?: boolean, colorExpr?: string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, displayExpr?: Function | string, fieldExpr?: string, label?: string, useColorAsDefault?: boolean, valueExpr?: Function | string }>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any",
+                    "{ allowMultiple?: boolean, colorExpr?: string, dataSource?: DataSource | DataSourceOptions | Store | null | string | Array<any>, displayExpr?: Function | string, fieldExpr?: string, label?: string, useColorAsDefault?: boolean, valueExpr?: Function | string }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.scrolling",
+            "name": "scrolling",
+            "type": "dxSchedulerScrolling",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "dxSchedulerScrolling"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.selectedCellData",
+            "name": "selectedCellData",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "dxSchedulerOptions.shadeUntilCurrentTime",
+            "name": "shadeUntilCurrentTime",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.showAllDayPanel",
+            "name": "showAllDayPanel",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.showCurrentTimeIndicator",
+            "name": "showCurrentTimeIndicator",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.startDateExpr",
+            "name": "startDateExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.startDateTimeZoneExpr",
+            "name": "startDateTimeZoneExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.startDayHour",
+            "name": "startDayHour",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.textExpr",
+            "name": "textExpr",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.timeCellTemplate",
+            "name": "timeCellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.timeZone",
+            "name": "timeZone",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.useDropDownViewSwitcher",
+            "name": "useDropDownViewSwitcher",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "dxSchedulerOptions.views",
+            "name": "views",
+            "type": "string | Array<string | any | { agendaDuration?: number, allDayPanelMode?: string, appointmentCollectorTemplate?: any, appointmentTemplate?: any, appointmentTooltipTemplate?: any, cellDuration?: number, dataCellTemplate?: any, dateCellTemplate?: any, dropDownAppointmentTemplate?: any, endDayHour?: number, firstDayOfWeek?: number | string | undefined, groupByDate?: boolean, groupOrientation?: string, groups?: Array<string>, intervalCount?: number, maxAppointmentsPerCell?: number | string, name?: string | undefined, resourceCellTemplate?: any, scrolling?: dxSchedulerScrolling, startDate?: Date | number | string | undefined, startDayHour?: number, timeCellTemplate?: any, type?: string | undefined }>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": [
+                    "string",
+                    "any",
+                    "{ agendaDuration?: number, allDayPanelMode?: string, appointmentCollectorTemplate?: any, appointmentTemplate?: any, appointmentTooltipTemplate?: any, cellDuration?: number, dataCellTemplate?: any, dateCellTemplate?: any, dropDownAppointmentTemplate?: any, endDayHour?: number, firstDayOfWeek?: number | string | undefined, groupByDate?: boolean, groupOrientation?: string, groups?: Array<string>, intervalCount?: number, maxAppointmentsPerCell?: number | string, name?: string | undefined, resourceCellTemplate?: any, scrolling?: dxSchedulerScrolling, startDate?: Date | number | string | undefined, startDayHour?: number, timeCellTemplate?: any, type?: string | undefined }"
+                ]
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            }
+        }
+    ],
+    "isEditor": false,
+    "module": "devextreme/ui/scheduler",
+    "packageName": "devextreme-angular",
+    "imports": [
+        {
+            "path": "devextreme/bundles/dx.all",
+            "importString": "DevExpress"
+        },
+        {
+            "path": "devextreme/data",
+            "importString": "{ Store }"
+        },
+        {
+            "path": "devextreme/data/data_source",
+            "importString": "DataSource, { Options as DataSourceOptions }"
+        },
+        {
+            "path": "devextreme/ui/scheduler",
+            "importString": "{ AppointmentAddedEvent, AppointmentAddingEvent, AppointmentClickEvent, AppointmentContextMenuEvent, AppointmentDblClickEvent, AppointmentDeletedEvent, AppointmentDeletingEvent, AppointmentFormOpeningEvent, AppointmentRenderedEvent, AppointmentTooltipShowingEvent, AppointmentUpdatedEvent, AppointmentUpdatingEvent, CellClickEvent, CellContextMenuEvent, ContentReadyEvent, DisposingEvent, dxSchedulerScrolling, InitializedEvent, OptionChangedEvent }"
+        }
+    ],
+    "nestedComponents": [
+        {
+            "path": "appointment-dragging",
+            "propertyName": "appointmentDragging",
+            "className": "DxoAppointmentDragging",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "editing",
+            "propertyName": "editing",
+            "className": "DxoEditing",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "resource-dxi",
+            "propertyName": "resources",
+            "className": "DxiResource",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        },
+        {
+            "path": "scrolling",
+            "propertyName": "scrolling",
+            "className": "DxoScrolling",
+            "events": [],
+            "root": true
+        },
+        {
+            "path": "view-dxi",
+            "propertyName": "views",
+            "className": "DxiView",
+            "events": [],
+            "isCollection": true,
+            "root": true
+        }
+    ],
+    "renderReexports": true
+}

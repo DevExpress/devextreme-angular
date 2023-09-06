@@ -1,0 +1,1450 @@
+{
+    "docID": "DateBoxBaseOptions.calendarOptions",
+    "className": "DxoCalendarOptions",
+    "selector": "dxo-calendar-options",
+    "optionName": "calendarOptions",
+    "events": [
+        {
+            "isInternal": true,
+            "emit": "valueChange",
+            "type": "EventEmitter<Date | number | string>"
+        },
+        {
+            "isInternal": true,
+            "emit": "zoomLevelChange",
+            "type": "EventEmitter<string>"
+        }
+    ],
+    "path": "calendar-options",
+    "propertyName": "calendarOptions",
+    "collectionNestedComponents": [],
+    "baseClass": "DxoCalendarOptions",
+    "basePath": "./base/calendar-options",
+    "options": [
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxCalendarOptions.cellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxCalendarOptions.dateSerializationFormat"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "ItemPrimitiveTypes": [
+                "Date"
+            ],
+            "IsCollection": true,
+            "IsFunc": true,
+            "SingularName": "disabledDate",
+            "DocID": "dxCalendarOptions.disabledDates"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxCalendarOptions.firstDayOfWeek"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isDirty"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isValid"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.maxZoomLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.minZoomLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.readOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.selectionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.selectWeekOnClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.showTodayButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.showWeekNumbers"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "EditorOptions.validationError"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "validationError",
+            "DocID": "EditorOptions.validationErrors"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessageMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessagePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationStatus"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxCalendarOptions.value"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "value",
+            "DocID": "dxCalendarOptions.values"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.weekNumberRule"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxCalendarOptions.zoomLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.accessKey"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.activeStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "IsTemplate": true,
+            "DocID": "dxCalendarOptions.cellTemplate"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxCalendarOptions.dateSerializationFormat"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.disabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "ItemPrimitiveTypes": [
+                "Date"
+            ],
+            "IsCollection": true,
+            "IsFunc": true,
+            "SingularName": "disabledDate",
+            "DocID": "dxCalendarOptions.disabledDates"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "DOMComponentOptions.elementAttr"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "string",
+                "undefined"
+            ],
+            "DocID": "dxCalendarOptions.firstDayOfWeek"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.focusStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.height"
+        },
+        {
+            "PrimitiveTypes": [
+                "string",
+                "undefined"
+            ],
+            "DocID": "WidgetOptions.hint"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.hoverStateEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isDirty"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.isValid"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.max"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.maxZoomLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.min"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.minZoomLevel"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.name"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "DisposingEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "DisposingEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onDisposing"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "InitializedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "InitializedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onInitialized"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "OptionChangedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "OptionChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onOptionChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "Function"
+            ],
+            "TypeImports": [
+                {
+                    "Name": "ValueChangedEvent",
+                    "Path": "ui/calendar"
+                }
+            ],
+            "EventArgName": "ValueChangedEvent",
+            "IsFunc": true,
+            "IsEvent": true,
+            "DocID": "dxCalendarOptions.onValueChanged"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "EditorOptions.readOnly"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "DOMComponentOptions.rtlEnabled"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.selectionMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.selectWeekOnClick"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.showTodayButton"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "dxCalendarOptions.showWeekNumbers"
+        },
+        {
+            "PrimitiveTypes": [
+                "number"
+            ],
+            "DocID": "WidgetOptions.tabIndex"
+        },
+        {
+            "PrimitiveTypes": [
+                "any"
+            ],
+            "DocID": "EditorOptions.validationError"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "any"
+            ],
+            "IsCollection": true,
+            "SingularName": "validationError",
+            "DocID": "EditorOptions.validationErrors"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessageMode"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationMessagePosition"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "EditorOptions.validationStatus"
+        },
+        {
+            "PrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxCalendarOptions.value"
+        },
+        {
+            "ItemPrimitiveTypes": [
+                "Date",
+                "number",
+                "string"
+            ],
+            "IsCollection": true,
+            "SingularName": "value",
+            "DocID": "dxCalendarOptions.values"
+        },
+        {
+            "PrimitiveTypes": [
+                "boolean"
+            ],
+            "DocID": "WidgetOptions.visible"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "DocID": "dxCalendarOptions.weekNumberRule"
+        },
+        {
+            "PrimitiveTypes": [
+                "number",
+                "Function",
+                "string",
+                "undefined"
+            ],
+            "IsFunc": true,
+            "DocID": "DOMComponentOptions.width"
+        },
+        {
+            "PrimitiveTypes": [
+                "string"
+            ],
+            "IsChangeable": true,
+            "DocID": "dxCalendarOptions.zoomLevel"
+        }
+    ],
+    "inputs": [
+        {
+            "docID": "WidgetOptions.accessKey",
+            "name": "accessKey",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.accessKey"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.activeStateEnabled",
+            "name": "activeStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.activeStateEnabled"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.cellTemplate",
+            "name": "cellTemplate",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "IsTemplate": true,
+                "DocID": "dxCalendarOptions.cellTemplate"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.dateSerializationFormat",
+            "name": "dateSerializationFormat",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxCalendarOptions.dateSerializationFormat"
+            }
+        },
+        {
+            "docID": "WidgetOptions.disabled",
+            "name": "disabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.disabled"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.disabledDates",
+            "name": "disabledDates",
+            "type": "Function | Array<Date>",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": [
+                    "Date"
+                ]
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "ItemPrimitiveTypes": [
+                    "Date"
+                ],
+                "IsCollection": true,
+                "IsFunc": true,
+                "SingularName": "disabledDate",
+                "DocID": "dxCalendarOptions.disabledDates"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "DOMComponentOptions.elementAttr",
+            "name": "elementAttr",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "DOMComponentOptions.elementAttr"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.firstDayOfWeek",
+            "name": "firstDayOfWeek",
+            "type": "number | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "dxCalendarOptions.firstDayOfWeek"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.focusStateEnabled",
+            "name": "focusStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.focusStateEnabled"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.height",
+            "name": "height",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.height"
+            }
+        },
+        {
+            "docID": "WidgetOptions.hint",
+            "name": "hint",
+            "type": "string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string",
+                    "undefined"
+                ],
+                "DocID": "WidgetOptions.hint"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.hoverStateEnabled",
+            "name": "hoverStateEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.hoverStateEnabled"
+            }
+        },
+        {
+            "docID": "EditorOptions.isDirty",
+            "name": "isDirty",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isDirty"
+            }
+        },
+        {
+            "docID": "EditorOptions.isValid",
+            "name": "isValid",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.isValid"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.max",
+            "name": "max",
+            "type": "Date | number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.max"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.maxZoomLevel",
+            "name": "maxZoomLevel",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.maxZoomLevel"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.min",
+            "name": "min",
+            "type": "Date | number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.min"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.minZoomLevel",
+            "name": "minZoomLevel",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.minZoomLevel"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.name",
+            "name": "name",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.name"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.onDisposing",
+            "name": "onDisposing",
+            "type": "((e: DisposingEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "DisposingEvent",
+                        "Path": "ui/calendar"
+                    }
+                ],
+                "EventArgName": "DisposingEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxCalendarOptions.onDisposing"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.onInitialized",
+            "name": "onInitialized",
+            "type": "((e: InitializedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "InitializedEvent",
+                        "Path": "ui/calendar"
+                    }
+                ],
+                "EventArgName": "InitializedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxCalendarOptions.onInitialized"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.onOptionChanged",
+            "name": "onOptionChanged",
+            "type": "((e: OptionChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "OptionChangedEvent",
+                        "Path": "ui/calendar"
+                    }
+                ],
+                "EventArgName": "OptionChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxCalendarOptions.onOptionChanged"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.onValueChanged",
+            "name": "onValueChanged",
+            "type": "((e: ValueChangedEvent) => void)",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Function"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Function"
+                ],
+                "TypeImports": [
+                    {
+                        "Name": "ValueChangedEvent",
+                        "Path": "ui/calendar"
+                    }
+                ],
+                "EventArgName": "ValueChangedEvent",
+                "IsFunc": true,
+                "IsEvent": true,
+                "DocID": "dxCalendarOptions.onValueChanged"
+            }
+        },
+        {
+            "docID": "EditorOptions.readOnly",
+            "name": "readOnly",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "EditorOptions.readOnly"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.rtlEnabled",
+            "name": "rtlEnabled",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "DOMComponentOptions.rtlEnabled"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.selectionMode",
+            "name": "selectionMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.selectionMode"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.selectWeekOnClick",
+            "name": "selectWeekOnClick",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.selectWeekOnClick"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.showTodayButton",
+            "name": "showTodayButton",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.showTodayButton"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.showWeekNumbers",
+            "name": "showWeekNumbers",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "dxCalendarOptions.showWeekNumbers"
+            }
+        },
+        {
+            "docID": "WidgetOptions.tabIndex",
+            "name": "tabIndex",
+            "type": "number",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number"
+                ],
+                "DocID": "WidgetOptions.tabIndex"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationError",
+            "name": "validationError",
+            "type": "any",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "any"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "any"
+                ],
+                "DocID": "EditorOptions.validationError"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationErrors",
+            "name": "validationErrors",
+            "type": "Array<any>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "any"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "any"
+                ],
+                "IsCollection": true,
+                "SingularName": "validationError",
+                "DocID": "EditorOptions.validationErrors"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "EditorOptions.validationMessageMode",
+            "name": "validationMessageMode",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationMessageMode"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationMessagePosition",
+            "name": "validationMessagePosition",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationMessagePosition"
+            }
+        },
+        {
+            "docID": "EditorOptions.validationStatus",
+            "name": "validationStatus",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "EditorOptions.validationStatus"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.value",
+            "name": "value",
+            "type": "Date | number | string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxCalendarOptions.value"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.values",
+            "name": "values",
+            "type": "Array<Date | number | string>",
+            "typesDescription": {
+                "primitiveTypes": [],
+                "arrayTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ]
+            },
+            "option": {
+                "ItemPrimitiveTypes": [
+                    "Date",
+                    "number",
+                    "string"
+                ],
+                "IsCollection": true,
+                "SingularName": "value",
+                "DocID": "dxCalendarOptions.values"
+            },
+            "isCollection": true
+        },
+        {
+            "docID": "WidgetOptions.visible",
+            "name": "visible",
+            "type": "boolean",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "boolean"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "boolean"
+                ],
+                "DocID": "WidgetOptions.visible"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.weekNumberRule",
+            "name": "weekNumberRule",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "DocID": "dxCalendarOptions.weekNumberRule"
+            }
+        },
+        {
+            "docID": "DOMComponentOptions.width",
+            "name": "width",
+            "type": "number | Function | string | undefined",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "number",
+                    "Function",
+                    "string",
+                    "undefined"
+                ],
+                "IsFunc": true,
+                "DocID": "DOMComponentOptions.width"
+            }
+        },
+        {
+            "docID": "dxCalendarOptions.zoomLevel",
+            "name": "zoomLevel",
+            "type": "string",
+            "typesDescription": {
+                "primitiveTypes": [
+                    "string"
+                ],
+                "arrayTypes": []
+            },
+            "option": {
+                "PrimitiveTypes": [
+                    "string"
+                ],
+                "IsChangeable": true,
+                "DocID": "dxCalendarOptions.zoomLevel"
+            }
+        }
+    ]
+}
