@@ -7,7 +7,6 @@ This project allows you to use [DevExtreme components](http://js.devexpress.com/
 
 * [Documentation](https://js.devexpress.com/Documentation/Guide/Angular_Components/DevExtreme_Angular_Components/)
 * [Technical Demos](https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/Overview/Angular/Light/)
-* [API Reference](http://js.devexpress.com/Documentation/ApiReference/)
 * [Responsive UI Templates](https://js.devexpress.com/Angular/Templates/UITemplates/)
 * [Application Template](https://js.devexpress.com/Angular/Documentation/Guide/Angular_Components/Application_Template/)
 
